@@ -1,24 +1,28 @@
-== Requirement Class "Tiles Multitiles"
+== Requirement Class "Tiles Multi-tiles"
 
 === Overview
+
+This requirement class opens the possibility exchange multiple tiles covering a bounding box and belonging to one or more scales with a single client-server interaction.
+
+WARNING: Currently, this requirement class does not provide any way that clients or servers can limit the size of the multi-tile response. Even with a relatively small bounding box, the result of a multi-tile request (in particular to a collection that has tiles available at very small scale denominator values) could result in list of tiles too big for the server to generate or for the client to handle. The current specified default values for bounding box and scales range parameters will most probably incur in this problem. Before this requirement class is endorsed by the OGC, this issue should be addressed. One possible solution is to allow the server for specifying a maximum size limit (in kilobytes, or in number of tiles) and to force the server to start from the higher level of scale denominator and stop when the limit is reached. Adding a paging mechanism in the request could help on fragmenting big responses in smaller chunks that can be sequentially requested.
 
 [[tiles-multitiles-overview]]
 
 include::requirements/tiles/requirements_class_multitiles.adoc[]
 
-In this extension, we define a mechanism to request more than one tile from a single collection in a single request. The result can be a document listing the needed tiles to cover bounding box or a package with all tiles inside.
+In this requirements class, a mechanism to request more than one tile from a single collection in a single request. This mechanism is called a ‘multi-tile’ is defined. The result can be a document listing the needed tiles to cover a bounding box or a package with all tiles inside.
 
 === Declaration of conformance classes
 
 ==== Response
 
-The conformance page mainly consists in a list of links. OWS Commmon already requires some links.
+The conformance page mainly consists of a list of links. OGC API - Common already requires some links.
 
 include::requirements/tiles/multitiles/REQ_conformance-success.adoc[]
 
-In the conformance page (commonly in JSON format) the links are following the link schema defined in the OGC API Common. The following is an example fragment of the response of a OGC API tiles conformance information page
+In the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API - Common. The following is an example fragment of the response to an OGC API - Tiles conformance information page with support for multi-tiles.
 
-[[ConformancePage]]
+[[ConformancePageTilesMultitiles]]
 .Conformance Information Page fragment
 =================
 [source,JSON]
@@ -33,21 +37,21 @@ In the conformance page (commonly in JSON format) the links are following the li
 =================
 
 === Tiles description
-The response of this operation contains the necessary information to later formulate a tile or a multitile request for a collection.
+The response to a tiles description request contains the necessary information to later formulate a tile or a multi-tile request for a collection.
 
 ==== Response
-A successful response of a tiles request for a collection that can be retrieved as tiles will respond with a data structure with specific information necessary to get tiles or map-tiles representing the resource collection. In this extension, adds the URL template to a multitile.
+A successful response to a tiles request for a collection that can be retrieved as tiles will respond with a data structure with specific information necessary to get tiles representing the resource collection. This extension adds the URL template to a multi-tile.
 
 include::requirements/tiles/multitiles/REQ_mtc-multitiles-examples.adoc[]
 
-One common order used in URL templates for tiles is .../tiles/{tileMatrixSetId} this standard allows for other URL template dispositions.
+One common order used in URL templates for tiles is .../tiles/{tileMatrixSetId} this draft specification allows for other URL template composition.
 
 [#URL_template_multitile,reftext='{table-caption} {counter:table-num}']
 .URI template variables for tiles and possible values
-[cols="30,35,70,30",options="header"]
+[cols="30,35,70",options="header"]
 !===
 |URL template variable |Meaning |Possible values
-|TileMatrixSetId |tile matrix set identifier |the ones included in Annex D of OGC 17-083r2 or defined by extensions of this core.
+|TileMatrixSetId |tile matrix set identifier |The identifiers included in Annex D of OGC 17-083r2 or defined by extensions of the core specification.
 !===
 
 .API tiles response fragment
@@ -57,14 +61,14 @@ links:
 [
     {
       "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}",
-      "rel": "multitiles",
+      "rel": "items",
       "type": "image/png",
     }
 ]
 =================
 
 === Multiple tiles from one collection
-This extension provides a mechanism to select and retrieve a set of tiles at once following a TileMatrixSet.
+The following requirements provide a mechanism to select and retrieve a set of tiles at once following a TileMatrixSet.
 
 ==== Operation
 
@@ -78,7 +82,7 @@ include::requirements/tiles/multitiles/REQ_mtc-tilematrixsetid-definition.adoc[]
 ==== Parameter bbox
 include::requirements/tiles/multitiles/REQ_mtc-bbox-definition.adoc[]
 
-This definition in inherited from OGC API Common.
+This definition in inherited from OGC API - Common.
 
 ==== Parameter scaleDenominator
 include::requirements/tiles/multitiles/REQ_mtc-scaledenominator-definition.adoc[]
@@ -91,19 +95,19 @@ include::requirements/tiles/multitiles/REQ_mtc-multitiletype-definition.adoc[]
 include::recommendations/tiles/multitiles/PER_mtc-multitiletype-definition.adoc[]
 
 ==== Formats
-In the cases of the multitile response, there are two formats involved. The multitile itself can be returned as a package (e.g. a zip file) that contains the tiles inside. The individual tiles also has its format. The format of the multitile if governed by the format procedure specified in the OGC API common. When the server supports multiple encoding for the individual tiles and the client has a preference for the tiles format, there is a need for communicating this preference to the server. This document does not mandate any particular approach how this is supported but provides the following recommendation.
+In the cases of the multi-tile response, there are two formats involved. The multi-tile itself can be returned as a package (e.g. a ZIP file) that contains the tiles inside. The individual tiles also have their format. The format of the multi-tile is governed by the format procedure specified in the OGC API - Common. When the server supports multiple encoding for the individual tiles and the client has a preference for the tiles format, there is a need for communicating this preference to the server. This document does not mandate any particular approach how this is supported but provides the following recommendation.
 include::recommendations/tiles/multitiles/REC_mtc-f-tile-definition.adoc[]
 
 ==== Response
-A successful response of a set of tiles will be consistent with the media type of resource requested.
+A successful response to a set of tiles will be consistent with the media type of resource requested.
 include::requirements/tiles/multitiles/REQ_mtc-success.adoc[]
 
-Mainly this extension suggests 3 possible alternatives for a multitile response being the last one (`full`) the combination of the first two (`url` and `package`).
+Mainly this extension suggests 3 possible alternatives for a multi-tile response being the last one (`full`) the combination of the first two (`url` and `package`).
 
 ===== List Response
-This format assumes that the client has viewport to represent an geographic area defined by the bounding box and the scale (that defines the pixel size of the viewport). This area should be populated with tiles. The server is expected to enumerate the tiles needed to populate the viewport and optionally to provide information on how to position the tiles in the viewport.
+This format assumes that the client has a viewport to represent an geographic area defined by the bounding box and the scale (that defines the pixel size of the viewport) in the screen. This area should be populated with tiles. The server is expected to enumerate the tiles needed to populate the viewport and optionally to provide information on how to position the tiles in the viewport.
 
-In the following example, we assume that the bounding box and scale provided implies a viewport of 336x446 pixels. The viewport it covered by 4 tiles. The client has requested a `url` type of multitile and negociated a JSON format. The URL of each tile is provided, accompanied with information on the position of the top left corner of each one in the viewport.
+In the following example, we assume that the bounding box and scale provided implies a viewport of 336x446 pixels (height by width). The viewport it covered by 4 tiles. The client has requested a `url` type of multi-tile and negotiated a response a JSON format. The URL of each tile is provided, accompanied with information on the position of the top left corner of each one in the viewport.
 
 [[ListResponseMultitile]]
 .Example of a tileSet document
@@ -159,7 +163,7 @@ In the following example, we assume that the bounding box and scale provided imp
 
 This format assumes that the client is interested in the tiles that cover a geographic area defined by the bounding box and the scale (or scales). The client knows what to do with the tiles and it is able to identify the tiles by their path using the URI template of the server as a pattern to extract the TileMatrix, TileRow and TileCol of each one.
 
-Assuming that the client has requested a scale that fits with TileMatrix "2" and a bounding box that requires 2x2 tiles and that he client has requested a `package` type of multitile and negociated a ZIP format, a ZIP file is produced and sent by the server with the following files and paths:
+Assuming that the client has requested a scale that fits with TileMatrix "2" and a bounding box that requires 2x2 tiles and that he client has requested a `package` type of multi-tile and negotiated a ZIP format, a ZIP file is produced and sent by the server with the following files and paths:
 
 [#PackageResponseMultitile,reftext='{table-caption} {counter:table-num}']
 .Content of a package containing 4 tiles
@@ -172,8 +176,8 @@ Assuming that the client has requested a scale that fits with TileMatrix "2" and
 |1.png |WebMercatorQuad/2/1 |2 |1 |1
 !===
 
-==== Error situations
+==== Error conditions
 
-A general summary of the HTTP status codes can be found in OWS Common.
+A general summary of the HTTP status codes can be found in OGC API - Common.
 
 If the parameter value `tileMatrixSetId` is not available by the server for this resource or the parameters values `bbox` or `scaleDenominator` are out-of-range, the status code of the response will be 404.
