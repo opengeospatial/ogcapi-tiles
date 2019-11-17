@@ -1,0 +1,26 @@
+[[req_tiles_core_sct-tmxslink.adoc]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tiles/core/sct-tmxslink*
+^|A |The content of the response to a successful execution SHALL contain a property called _tileMatrixSetLinks_ with a list of _tileMatrixSetLink_ objects following a data model defined in the clause 7.3 of OGC 17-083r2. In the core specification _tileMatrixSetLink_ is only used for referencing the supported TileMatrixSets for the tiles limiting it to the following schema (expressed as an OpenAPI Specification 3.0 fragment):
+[source,YAML]
+----
+  tileMatrixSetLink-set:
+    description: This list of tileMatrixSetLink objects, as defined in OGC 17-083r2 supported by this collectionId.
+    type: array
+    items:
+      $ref: '#/components/schemas/tileMatrixSetLink-entry'
+  tileMatrixSetLink-entry:
+    type: object
+    required:
+      - tileMatrixSet
+    properties:
+      tileMatrixSet:
+        type: string
+        example: 'WebMercatorQuad'
+      tileMatrixSetURI:
+        type: string
+        format: uri
+        example: 'http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad'
+----
+|===

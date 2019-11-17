@@ -1,0 +1,8 @@
+[[req_tiles_cols-multitiles_mtcs-multitiles-examples]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tiles/cols-multitiles/mtcs-multitiles-examples*
+^|A |The content of the response to a successful execution SHALL include at least a link to a multi-tiles from multiple collections URI template (rel: `items`).
+^|B |These links SHALL provide a URL template with the fragment `/tiles` followed by the variables {tileMatrixSetId}. Once the variables are substituted by their respective valid values, a URL to a multi-tiles endpoint is obtained.
+^|C |There SHALL be a link to a multi-tile URI template for each format that the server supports (the format is indicated in the `type` attribute of the link)
+|===

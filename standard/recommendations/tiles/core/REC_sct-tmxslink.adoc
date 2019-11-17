@@ -1,0 +1,7 @@
+[[rec_tiles_core_sct-tmxslink.adoc]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:req-id}* |*/rec/tiles/core/sct-tmxslink*
+^|A |This core requirements class does not provide any mechanism to defined TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 Annex D.
+^|B |The server SHOULD do a effort to provide to the client a way to get full description of the TileMatrixSet. Even if the TileMatrixSet is not directly defined by the API, when a full definition of the TileMatrixSet is available as a resolvable URL, a resolvable URL SHOULD be used as the value of the tileMatrixSetURI.
+|===

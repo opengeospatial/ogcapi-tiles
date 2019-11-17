@@ -102,16 +102,16 @@ include::clause_7_tile_multitiles.adoc[]
 
 include::clause_7_tile_cols_multitiles.adoc[]
 
-include::clause_10_encodings.adoc[]
+//include::clause_10_encodings.adoc[]
 
-include::clause_11_oas.adoc[]
+//include::clause_11_oas.adoc[]
 
-include::clause_11_media_types.adoc[]
+//include::clause_11_media_types.adoc[]
 
 include::annex-ats.adoc[]
 
-include::annex-history.adoc[]
+include::annex_history.adoc[]
 
-include::annex-bibliography.adoc[]
+include::annex_bibliography.adoc[]
 
 <<<
