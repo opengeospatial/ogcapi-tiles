@@ -1,16 +1,13 @@
 # OGC-API-Map-Tiles
 
-This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Service and Web Map Tile Service standards for requesting maps and tiles of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
+This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventualy coverage tiles) of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
 
-IMPORTANT: Current work has been moved to the deliverables in Testbed-15 that contain the LAST VERSION of the materials. See:
+This is the CURRENT working version of this initiative (Old version work has been moved to the deliverables in Testbed-15 that contain the LAST VERSION of the materials. See: https://github.com/opengeospatial/T-15-D014-WMTS_draft_specification)
 
-https://github.com/opengeospatial/T-15-D014-WMTS_draft_specification
-
-many examples of OpenAPI document can be found here:
-
+IMPORTANT: Many examples of OpenAPI documents that are used as inspiration and test of this work is here:
 https://app.swaggerhub.com/apis/UAB-CREAF
 
-This work encompasses two standards that will be developed simultaneously. In the end, most people believe at least 2 standards will emerge or even more when the core and extension model is applied. I'm not so sure.
+There is some level of overlap with the OGC API - Maps. OGC API - Tiles will be elaborated first and we will continue with this one.
 
 ## Standards
 After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having 2 cores, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
@@ -37,32 +34,10 @@ We foresee the following extensions (some of them can end into OGC standards and
 * Collections (more than one) (started in: [clause_7_tile_collections](standard/clause_7_tile_collections.adoc) )
 * Collections-info (with feautureInfo) (pending)
 * Multi-tile (retrieve a ZIP with many tiles) (pending, necessary for the update workflow)
-* Delta-updates (using checkpoints) (pending, necessary for the update workflow)
-
-### Maps
-#### Core
-The definition of the maps core is the immediate next step that will be done [here: clause_8_map_core](standard/clause_8_map_core.adoc).
-
-The maps core would be something that allows to create a map that cannot be necessarily retrievable (yet). The reason: We need to support /maps/{styleID}/tiles/…
-* It has no resolution
-** No parameters related with width, height, bbox, crs… etc.
-* Actually, it is map that can only be retrieved by extending it to (one of):
-** a tile
-** a map+resolution
-* It will not have styles (because this forces a dependency to the styles API that I would like to avoid): {styleID}=“default”.
-
-#### Extensions
-We foresee the following extensions (some of them can end into OGC standards and some might not).
-None of them has been started yet.
-
-* StyleIds (Pending. In collaboration with the styles API. The only one necessary for the delta updates use cases)
-* Map+resolution
-* Info
-* Collections (more than one)
-* Collections-info
-* Maps with styles on the fly (involving collections)
 
 ## Examples
+This section need to be updated.
+
 Until mid July 2019, the work was focused on providing OpenAPI services description examples and domains (libraries). Now we believe this work is finalized, but each time that we take a look we still find gaps, mistakes and things that can be improved.
 We expect that during the effort of extracting the knowledge accumulated (hopefully) in these files to create the standard, we will keep fixing, perfecting and evolving things.
 
@@ -96,7 +71,7 @@ Libraries:
 
 ## Overview
 
-IMPORTANT NOTE: The description in this README.md can be older than the one in the [standard](standard) draft. In case of discrepancy the standard draft takes precedence.
+IMPORTANT NOTE: This section is old The [standard](standard) candidate takes precedence.
 
 ### Maps
 
