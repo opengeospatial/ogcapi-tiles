@@ -36,7 +36,7 @@ We foresee the following extensions (some of them can end into OGC standards and
 * Multi-tile (retrieve a ZIP with many tiles) (pending, necessary for the update workflow)
 
 ## Examples
-This section need to be updated.
+WARNING: This section need to be updated.
 
 Until mid July 2019, the work was focused on providing OpenAPI services description examples and domains (libraries). Now we believe this work is finalized, but each time that we take a look we still find gaps, mistakes and things that can be improved.
 We expect that during the effort of extracting the knowledge accumulated (hopefully) in these files to create the standard, we will keep fixing, perfecting and evolving things.

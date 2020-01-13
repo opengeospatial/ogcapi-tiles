@@ -29,7 +29,7 @@
 |Internal reference number of this OGC(R) document:    YY-nnnrx
 |Version: 0.0.1
 |Category: OGC(R) Implementation Specification
-|Editor:   Charles Heazel
+|Editor:   Joan Masó
 |===
 
 [cols = "^", frame = "none"]
