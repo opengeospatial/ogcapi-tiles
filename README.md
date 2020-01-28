@@ -134,3 +134,17 @@ The WMS Standards Working Group (SWG) is the group at OGC responsible for the st
 
 * [Open issues](https://github.com/opengeospatial/OGC-API-Map-Tiles/issues)
 * [Copy of License Language](https://raw.githubusercontent.com/opengeospatial/OGC-API-Map-Tiles/master/LICENSE)
+
+## Building
+
+To generate the html version of the standard from this repo, ensure that you have [Ruby](https://www.ruby-lang.org/en/) and
+[Asciidoctor](https://asciidoctor.org/) set up and [installed](https://asciidoctor.org/docs/#get-started-with-asciidoctor). 
+You may need to install additional ruby gems like `coderay` to be able to run, just do a `gem install` of any gem warning you get. 
+
+Then run:
+
+```
+asciidoctor standard/OAPI_Tiles.adoc
+```
+
+All configuration needed is contained in the asciidoctor.json file. The resulting html file will be built to `standard/OAPI_Tiles.html`
