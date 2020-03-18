@@ -95,9 +95,9 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_overview.adoc[]
 
-include::clause_7_tile_core.adoc[]
+include::clause_7_tile_multitiles.adoc[]
 
-include::clause_7_tile_collections.adoc[]
+include::clause_7_tile_cols_multitiles.adoc[]
 
 //include::clause_10_encodings.adoc[]
 
