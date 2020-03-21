@@ -1,18 +1,16 @@
 # OGC API - Tiles
 
-This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventualy coverage tiles) of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
+This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventually coverage tiles) of geospatial information on the web. It is a complete rewrite of WMTS, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
 
 This is the CURRENT working version of this initiative (Old version work has been moved to the deliverables in Testbed-15 that contain the LAST VERSION of the materials. See: https://github.com/opengeospatial/T-15-D014-WMTS_draft_specification)
-
-IMPORTANT: Many examples of OpenAPI documents that are used as inspiration and test of this work is here:
-https://app.swaggerhub.com/apis/UAB-CREAF
 
 There is some level of overlap with the OGC API - Maps. OGC API - Tiles will be elaborated first and we will continue with this one.
 
 ## Standards
-After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having 2 cores, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
 
-The standard is written using asciidoc using many files that might be dificult to trace. Please see the standard document as a long HTML page EASY TO READ FORMAT here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Map-Tiles/blob/master/standard/OAPI_MapsTiles.html
+The current approach to write is to create a building block that can be applied to resources. As a principle design a building block should be independent of the API general structure. This means that we will avoid any reference to OGC API Features or even to OGC API Common.
+
+The standard is written using ASCIIDOC using many files that might be difficult to trace. Please look for the PDF or HTML page EASY TO READ FORMAT: (https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Map-Tiles/blob/master/standard/OAPI_MapsTiles.html)
 
 ### Tiles
 #### Core
@@ -37,6 +35,9 @@ We foresee the following extensions (some of them can end into OGC standards and
 
 ## Examples
 WARNING: This section need to be updated.
+
+Many examples of OpenAPI documents that are used as inspiration and test of this work is here:
+https://app.swaggerhub.com/apis/UAB-CREAF
 
 Until mid July 2019, the work was focused on providing OpenAPI services description examples and domains (libraries). Now we believe this work is finalized, but each time that we take a look we still find gaps, mistakes and things that can be improved.
 We expect that during the effort of extracting the knowledge accumulated (hopefully) in these files to create the standard, we will keep fixing, perfecting and evolving things.
