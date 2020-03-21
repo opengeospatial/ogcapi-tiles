@@ -1,4 +1,4 @@
-== Requirement Class "Tiles Core"
+== Requirement Class "Tiles core"
 
 === Overview
 
@@ -6,34 +6,19 @@
 
 include::requirements/tiles/requirements_class_core.adoc[]
 
-An API that implements this conformance class provides access to tiled resources of a link:https://www.w3.org/TR/vocab-dcat/#class-dataset[dataset]. In other words, the API enables the link:https://www.w3.org/TR/vocab-dcat/#class-distribution[distribution] of that dataset.  An implementation of OGC API - Features standard, for example, could be another distribution.
+This is a building block for the an OGC API that is able to provide geospatial resources. When applying the building block to a geospatial resource, it becomes available as tiles. The server can select which resources are available as tiles and will advertise which resources are available as tiles.
 
-The entry point is a `Landing page` (path `/`).
+This building block does not specify how to get an API definition, the conformance class list or the geospatial resources lists. The standard assumes that the first two are defined by an API specification (e.g. OGC API Common) and the later by an OGC API for geospatial resource (e.g. OGC API Features).
 
-The `Landing page` provides links to:
+The core of the OGC API - Tiles core draft specification does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D (or compatible future update of it) and there is no need to define new TileMatrixSets. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.
 
-* the `API definition` (path `/api`, link relation `service-desc`),
-* the `Conformance declaration` (path `/conformance`, link relation `conformance`), and
-* the `Collections` (path `/collections`, link relation `data`).
+This draft specification assumes that data is organized in on or more geospatial resources (e.g. the "collections" in OGC API features). Geospatial resources are referenced using URIs.
 
-The `API definition` describes the capabilities of the API instance that can be used by clients to retrieve resources from the API or by development tools to support the implementation of API servers and clients. Accessing the `API definition` using HTTP GET returns a description of the API.
+This document does not specify any requirements for geospatial resources, and they could be  features, coverages, a resource that does not represent data per-se (e.g. an annotation) as far as they can be represented a tile. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial resource (tiles that are generated as a combination of geospatial resources will be defined as an extension).
 
-The `Conformance declaration` states the requirements classes from standards or community specifications, identified by a Uniform Resource Identifier (URI), that the API conforms to. Clients can, but are not required to, use this information. Accessing the `Conformance declaration` using HTTP GET returns the list of URIs of requirements classes implemented by the API.
+Accessing the geospatial resource content (other than as tiles) or its descriptions is out of the scope of this draft specification. If a description of the geospatial resource exists and it has a mechanism to add links to it, this specification will indicate the need to add a link to the tile representation description.
 
-The core of the OGC API - Tiles draft specification (as defined in this chapter) does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D and there is no need to communicate these definitions. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.
-
-This draft specification assumes that data is organized into one or more collections. `Collections` provides information about the collections and enumerate the collection identifier.
-
-This document does not specify requirements for collections, and they can consist of features, coverages, a resource that does not represent data per-se (e.g. an annotation) any other resource that can be represented in a tile. collectionId replaces the concept of layer in WMS and WMTS. Maps or tiles can be generated from one collection (or a combination of collections as an extension).
-
-Accessing `Collections` using HTTP GET returns a response that contains at least the list of collections. Accessing `Collections/{collectionId}` using HTTP GET returns a description of a collection with an indication of whether the collection can be retrieved as a map or a tile or both. Accessing the items of a collection is out of the scope of this draft specification but is described in other draft OGC API specifications for features or coverages, for instance. For each `Collection`, a link to metadata about the collection is available (path `/collections/{collectionId}`) with key information about the collection. This information includes:
-
-* A local identifier for the collection that is unique for the dataset;
-* An optional title and description for the collection;
-* An optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;
-* A list of TileMatrixSetLink objects relating to the available tiling schemas supported by the collection (from the linked TileMatrixSet member, the client can determine the coordinate reference systems (CRS) in which tiles may be returned by the API)
-
-The `Collection` resource is available at path `/collections/{collectionId}`, often with more details than included in the `Collections` response. In particular, there is a list of links. If there is a link to more metadata about tiles, the collection is available directly as tiles. In the metadata about tiles there are also links and at least one of these links will provide the template to get individual tiles.
+The tile representation description will include metadata about tiles as well as links to other resources including at least one with a template to get individual tiles.
 
 === General
 include::requirements/tiles/core/REQ_api-common.adoc[]
