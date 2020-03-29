@@ -3,5 +3,10 @@ This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which 
 
 For the purposes of this document, the following additional terms and definitions apply.
 
-=== *term name*
-text of the definition
+=== *geospatial resource*
+A resource that consists in a set of geospatial data
+
+=== *geospatial resource view*
+A resource that provide a view (e.g. feature items, tiles, metadata, schemas,...) of another geospatial resource (e.g. a collection)
+
+NOTE: Do not confuse this with a resource representation. While representations share the same path and are selected by format negotiation, resource views use different paths. Generally a resource view is a child path of a geospatial resource

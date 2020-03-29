@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/tiles/core/tc-tile-desc-links*
-^|A |A `links` property of the collection SHALL include a link to the description of the tiles (rel: `tiles`) (in addition to other links specified in OGC API Commons).
+^|A |If the API has a mechanism for their geospatial resources to expose links to geospatial resource views (e.g. feature items), the API SHALL include a `link` with the `href` pointing to a the description of the tiles that presents a view of this geospatial resource and with `rel: "tiles"`.
 |===

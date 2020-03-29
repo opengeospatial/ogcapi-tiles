@@ -21,16 +21,9 @@ Accessing the geospatial resource content (other than as tiles) or its descripti
 The tile representation description will include metadata about tiles as well as links to other resources including at least one with a template to get individual tiles.
 
 === General
-include::requirements/tiles/core/REQ_api-common.adoc[]
+include::recommendations/tiles/core/REC_api-common.adoc[]
 
-In practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes. This draft specification provides extra additions to the OGC API - Common requirements that are particular to tiles.
-
-=== API landing page
-
-The landing page provides links to start exploring the resources offered by the API. The landing page mainly consists of a list of links. OGC API - Common already requires some common links that are enough for this draft specification core.
-
-==== Response
-There are no required variations to the landing page.
+This building block stays flexible and does not require to implement OWS Common, allowing for other API architectures to adopt it. However, a server integrating some of the OGC APIs is expected to implement OGC API Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes will be used.
 
 === Declaration of conformance classes
 
@@ -38,11 +31,11 @@ To support "generic" clients that want to access multiple OGC API standards and 
 
 ==== Response
 
-The conformance page mainly consists of a list of links. OGC API - Common already requires some links.
+The conformance page mainly consists of a list of links.
 
 include::requirements/tiles/core/REQ_conformance-success.adoc[]
 
-In the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API - Common. Below is an example fragment of the response to an OGC API - Tiles conformance information page.
+If the server declares also conformity to OGC API - Common; it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the links follow the link schema defined in the OGC API - Common. Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
 
 [[ConformancePageTilesCore]]
 .Conformance Information Page fragment
@@ -57,16 +50,10 @@ In the conformance page (typically in JSON format) the links follow the link sch
 }
 =================
 
-=== Collections
-This draft specification includes dependencies on OGC API - Common collections. Collections are mandatory in the core of this draft specification because collections are the object that will be included in a tile.
+=== Geospatial resources
+This draft specification does not specify how geospatial resources are exposed and if they have to be retrievable as geospatial data (e.g. feature items). For example OGC API features includes de definition of collections and each collection is available in the /collections/{collectionId} path. OGC API common provides a similar mechanism. Other paths in the API could also give access to geospatial resources.
 
-Collections will enumerate the collectionId identifiers available in this implementation of the OGC API draft specification as well as basic information about each collectionId: id, title, description, extent, CRS and links. This common response is considered enough for a general description of the collection.
-
-include::requirements/tiles/core/REQ_tc-md-collection-links.adoc[]
-
-More specific details about the collection can be found following the link to the individual collections that follow the pattern /collections/{collectionId}
-
-NOTE: The collectionId substitutes the concept of "layer" in WMTS 1.0.
+NOTE: The concept of geospatial resource path substitutes the concept of "layer" in WMTS 1.0.
 
 === Collection
 This draft specification includes dependencies on the OGC API - Common collection requirement. The response to the operation is extended with a new link for the tiles description.
@@ -75,7 +62,9 @@ This draft specification includes dependencies on the OGC API - Common collectio
 
 include::requirements/tiles/core/REQ_tc-tile-desc-links.adoc[]
 
-.Fragment of the collection links.
+For example, the OGC API Features return a list of links that could include resource views for each geospatial resource in the /collections/{collectionId} path. OGC API common provides a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
+
+.Fragment of a collection with a links array with one item of the array pointing to a tiles description.
 =================
 [source,JSON]
 
@@ -104,7 +93,7 @@ The response to this operation contains the necessary metadata to enable a clien
 
 include::requirements/tiles/core/REQ_sct-op.adoc[]
 
-The request of this operation has no parameters.
+This standard does not specify the need for any parameter in the GET request.
 
 ==== Response
 

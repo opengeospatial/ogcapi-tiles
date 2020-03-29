@@ -6,32 +6,54 @@ This is the CURRENT working version of this initiative (Old version work has bee
 
 There is some level of overlap with the OGC API - Maps. OGC API - Tiles will be elaborated first and we will continue with this one.
 
-## Standards
+## Use cases
+This is the list of use cases that OGC Tiles should cover
+* Retrieve a tile linked to a resource available as features or coverages
+* Retrieve a tile linked to a resource that is not available in other formats
+* Tiles that are in a tilematrixset that is well known
+* Tiles that are in tilematrixset defined in the service
+* Several tiles as a ZIP files
+* Tiles from more than one geospatial resource.
 
+## Standards
 The current approach to write is to create a building block that can be applied to resources. As a principle design a building block should be independent of the API general structure. This means that we will avoid any reference to OGC API Features or even to OGC API Common.
 
 The standard is written using ASCIIDOC using many files that might be difficult to trace. Please look for the PDF or HTML page EASY TO READ FORMAT: (https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Map-Tiles/blob/master/standard/OAPI_MapsTiles.html)
 
 ### Tiles
-#### Core
-For the moment we have focus out efforts on defining the "tile core" that you can find [here: clause_7_tile_core](standard/clause_7_tile_core.adoc).
+#### Core document
+##### Core class in the core
+For the moment we have focus out efforts on defining the "tile core" that you can find [here: clause_7_tile_core](core/standard/clause_7_tile_core.adoc).
 
 The core is:
-* Only one collection
-* Only support for WebMercatorQuad
-* No TileMatrixSet definition
-* No TileMatrixSet Link
+* Only support for well known tilematrixsets.
+* Only one geospatial resource (collection)
+* No TileMatrixSet internal definition (only the eight TileMatrixSets defined in OGC 17-083r2 annex D)
 * No featureInfo
 * Can only retrieve one tile at a time
-* Has no information about updates
+* No information about updates in tiles data
 
-#### Extensions
+#### Second class in the core
+* More than one geospatial resource (collections) (started in: [clause_7_tile_collections](core/standard/clause_7_tile_collections.adoc) )
+
+#### Extension's documents
 We foresee the following extensions (some of them can end into OGC standards and some might not)
-* Other TileMatrixSets  (started in: [clause_7_tile_tms](standard/clause_7_tile_tms.adoc) )
-* Info (featureInfo) (started in: [clause_7_tile_info](standard/clause_7_tile_info.adoc) )
-* Collections (more than one) (started in: [clause_7_tile_collections](standard/clause_7_tile_collections.adoc) )
-* Collections-info (with feautureInfo) (pending)
-* Multi-tile (retrieve a ZIP with many tiles) (pending, necessary for the update workflow)
+* Other TileMatrixSets  (started in: [clause_7_tile_tms](extensions/tmxs/standard/clause_7_tile_tms.adoc) )
+* Info (featureInfo) (started in: [clause_7_tile_info](extensions/info/standard/clause_7_tile_info.adoc) )
+* Multi-tile (retrieve a ZIP with many tiles) (pending, necessary for the update workflow) (started in: [clause_7_tile_info](extensions/multitile/standard/clause_7_tile_cols_multitiles.adoc) )
+
+#### How to do vector tiles service
+The minimum set of modules to implement a vector tiles API is:
+* OGC API Commons core
+* OGC API Commons collections or OGC API Features core
+* OGC API Tiles core
+
+#### How to do map tiles service
+Map tiles are tiles that are provided as rendered information. The minimum set of modules to implement a map tiles API is:
+* OGC API Commons core
+* OGC API Commons collections or OGC API Features core
+* OGC API Maps core
+* OGC API Tiles core
 
 ## Examples
 WARNING: This section need to be updated.
@@ -113,18 +135,11 @@ There is a need for describing the TileMatrixSet available
 GET /tileMatrixSet/{tileMatrixSetId}
 ```
 
-## Using the standard
-
-Those who want to just see the endpoints and responses can explore generic
-OpenAPI definitions in this folder (please paste one of them in the Swagger Editor):
-
-* OGC-API-Map-Tiles/standard/openapi/
-
 ## Communication
 
 Join the WMS mailing list
 
-Most work on the specification takes place in [GitHub issues](https://github.com/opengeospatial/OGC-API-Map-Tiles/issues),
+Most work on the specification takes place in [GitHub issues](https://github.com/opengeospatial/OGC-API-Tiles/issues),
 so browse there to get a good idea of what is happening, as well as past decisions.
 
 ## Contributing
