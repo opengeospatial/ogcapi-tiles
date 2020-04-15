@@ -6,7 +6,7 @@ For the purposes of this document, the following additional terms and definition
 === *geospatial resource*
 A resource that consists in a set of geospatial data
 
-=== *geospatial resource view*
-A resource that provide a view (e.g. feature items, tiles, metadata, schemas,...) of another geospatial resource (e.g. a collection)
+=== *geospatial representation*
+An resources that represents an aspect or data model (e.g. feature items, tiles, metadata, schemas,...) of a more generic geospatial resource (e.g. a collection)
 
-NOTE: Do not confuse this with a resource representation. While representations share the same path and are selected by format negotiation, resource views use different paths. Generally a resource view is a child path of a geospatial resource
+NOTE: Do not confuse this with a resource representation. While resource representations share the same path and are selected by format negotiation, geospatial representations use different paths. Commonly a geospatial representations is a child path of a geospatial resource

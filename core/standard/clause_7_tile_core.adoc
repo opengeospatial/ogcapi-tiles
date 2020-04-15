@@ -23,7 +23,7 @@ The tile representation description will include metadata about tiles as well as
 === General
 include::recommendations/tiles/core/REC_api-common.adoc[]
 
-This building block stays flexible and does not require to implement OWS Common, allowing for other API architectures to adopt it. However, a server integrating some of the OGC APIs is expected to implement OGC API Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes will be used.
+This building block stays flexible and does not require to implement OWS Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes will be used. Temporarily, it is also possible to combine this building block with OGC API features v1 that is not tied to OWS Common.
 
 === Declaration of conformance classes
 
@@ -35,7 +35,7 @@ The conformance page mainly consists of a list of links.
 
 include::requirements/tiles/core/REQ_conformance-success.adoc[]
 
-If the server declares also conformity to OGC API - Common; it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the links follow the link schema defined in the OGC API - Common. Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
+If the server declares also conformity to OGC API - Common or to OGC API - Features v1, then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the conformance page is an array of links following the link schema defined in the OGC API - Common or in OGC API - Features v1. Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
 
 [[ConformancePageTilesCore]]
 .Conformance Information Page fragment
@@ -51,18 +51,24 @@ If the server declares also conformity to OGC API - Common; it has to consider t
 =================
 
 === Geospatial resources
-This draft specification does not specify how geospatial resources are exposed and if they have to be retrievable as geospatial data (e.g. feature items). For example OGC API features includes de definition of collections and each collection is available in the /collections/{collectionId} path. OGC API common provides a similar mechanism. Other paths in the API could also give access to geospatial resources.
+This draft specification does not specify how geospatial resources are exposed in the API and if they have the possibility to be retrievable as geospatial data (e.g. feature items). For example OGC API features v1 includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API common will provide a similar mechanism. Other paths in the API could also give access to geospatial resources.
 
-NOTE: The concept of geospatial resource path substitutes the concept of "layer" in WMTS 1.0.
+NOTE: The concept of geospatial resource path substitutes the concept of "layer" in WMTS 1.0 but it intended to give a better integration between data visualization and data access.
 
-=== Collection
-This draft specification includes dependencies on the OGC API - Common collection requirement. The response to the operation is extended with a new link for the tiles description.
+=== Tiles description
+A tile description contains the necessary metadata to enable a client application to formulate a tile request from a single geospatial resource.
 
-==== Collection Links
+==== Tiles description path
+
+include::requirements/tiles/core/REQ_sct-op.adoc[]
+
+This standard does not specify the need for any additional query parameter in the GET request.
+
+==== Tiles description Link
 
 include::requirements/tiles/core/REQ_tc-tile-desc-links.adoc[]
 
-For example, the OGC API Features return a list of links that could include resource views for each geospatial resource in the /collections/{collectionId} path. OGC API common provides a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
+For example, the OGC API Features v1 return a list of links that include geospatial representations for each geospatial resource in the /collections/{collectionId} path. OGC API Common is expected to provide a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
 
 .Fragment of a collection with a links array with one item of the array pointing to a tiles description.
 =================
@@ -86,20 +92,21 @@ For example, the OGC API Features return a list of links that could include reso
 }
 =================
 
-=== Tiles description
-The response to this operation contains the necessary metadata to enable a client application to formulate a tile request from a single collection.
-
-==== Operation
-
-include::requirements/tiles/core/REQ_sct-op.adoc[]
-
-This standard does not specify the need for any parameter in the GET request.
-
 ==== Response
 
-A successful response to a tiles request for a collection that can be retrieved as tiles will respond with a data structure with specific information necessary to get tiles representing the resource collection. In this core draft specification, the response is only required to inform about from which tile matrix sets tiles can be retrieved and the URL template to a tile.
+A successful GET response to a tiles description resource will respond a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial resource. In this core draft specification, the response is only required to inform about from which tile matrix sets tiles can be retrieved and the URL template to the tiles.
 
 include::requirements/tiles/core/REQ_sct-tmxslink.adoc[]
+
+include::recommendations/tiles/core/REC_sct-tmxslink.adoc[]
+
+Resolvable URLs for the 8 URIs defined in the OGC 17-083r2 Annex D are available in the OGC schemas repository in XML, JSON and RDF formats. For example, JSON descriptions can be found here: http://schemas.opengis.net/tms/1.0/json/examples/
+
+include::requirements/tiles/core/REQ_sct-tile-examples.adoc[]
+
+NOTE: One common order used in URL templates for tiles is .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}, but this standard allows for other URL template composition.
+
+NOTE: The geospatial resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
 [[TilesLinkResponseExample]]
 .Example of a tiles metadata response.
@@ -117,6 +124,7 @@ include::requirements/tiles/core/REQ_sct-tmxslink.adoc[]
     ...
     {
      "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png",
+     "templated": true,
      "rel": "item",
      "type": "image/png",
    }
@@ -125,13 +133,9 @@ include::requirements/tiles/core/REQ_sct-tmxslink.adoc[]
 }
 =================
 
-include::recommendations/tiles/core/REC_sct-tmxslink.adoc[]
+NOTE: The use of "templated" is inspired in the JSON Hypertext Application Language (HAL), https://tools.ietf.org/html/draft-kelly-json-hal-08
 
-Resolvable URLs for the 8 URIs defined in the OGC 17-083r2 Annex D are available in the OGC schemas repository in XML, JSON and RDF formats. For example, JSON descriptions can be found here: http://schemas.opengis.net/tms/1.0/json/examples/
-
-include::requirements/tiles/core/REQ_sct-tile-examples.adoc[]
-
-One common order used in URL templates for tiles is .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}, but this draft specification allows for other URL template composition.
+The following table explains the meaning to the URI template variables.
 
 [#URL_template_tile_core,reftext='{table-caption} {counter:table-num}']
 .URI template variables for tiles and valid values
@@ -144,33 +148,22 @@ One common order used in URL templates for tiles is .../tiles/{tileMatrixSetId}/
 |TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
 !===
 
-.link to get tiles as a URL template in the tiles metadata response fragment
-=================
-[source,JSON]
-links:
-[
-    {
-      "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}",
-      "rel": "tiles",
-      "type": "image/png",
-    }
-]
-=================
+=== A tile from a geospatial resource
+A tile resource is a geospatial representation of a fragment of a geospatial resource that is spatially constrained tot the boundaries of the selected tile in a tile matrix set.
 
-=== Tiled data from one collection
-
-The core of the OGC API -Tiles draft specification provides a mechanism to select and retrieve a tile in a TileMatrixSet. If the service does not advertise any other TileMatrixSet (this core does not describe any mechanism to do that, but an extension will do it) only the TileMatrixSet identifiers specified in the Annex D.1 of the OGC 17-083r2 standard can be used.
+==== Tile path and link
+As described before a tile path is obtained by extracting a tile URL templated from one of the links with `rel`: `item` in tiles description document and substituting the templated variables of with valid values.
 
 ==== Operation
 
 include::requirements/tiles/core/REQ_tc-op.adoc[]
 
-Typical resources that can be retrieved as tiles are: features (/collections/{collectionId}), coverages (/collections/{collectionId}/coverage/{coverageId} or /coverage/{coverageId}) or maps (/collections/{collectionId}/map/styleId}).
-
-NOTE: The common path for coverages is still under discussion.
+Typical geospatial resources that can be retrieved as tiles are: features (in OGC API Features v1 represented by /collections/{collectionId}), or full maps (specified in the OGC API Maps).
 
 ==== Parameter tileMatrixSetId
 include::requirements/tiles/core/REQ_tc-tilematrixsetid-definition.adoc[]
+
+The core of the OGC API -Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet. If the service does not advertise any other TileMatrixSet (this core does not describe any mechanism to do that, but an extension will do it) the TileMatrixSet identifiers possible are limited to the ones specified in the Annex D.1 of the OGC 17-083r2 standard.
 
 ==== Parameter tileMatrix
 include::requirements/tiles/core/REQ_tc-tilematrix-definition.adoc[]
@@ -183,20 +176,20 @@ include::requirements/tiles/core/REQ_tc-tilecol-definition.adoc[]
 
 ==== Response
 
-A successful response to a tile request will be consistent with the media type of resource requested. This draft specification does not impose any media type. For example:
+A successful response to a tile GET operation will be consistent with the media type of resource requested. This draft specification does not impose any media type or file format. For example:
 
-* For features the media type can be geojson or Mapbox vector tiles;
-* For coverages the response may be a geotiff;
-* For maps the response may be a jpeg or a png.
+* For features the media type can be GeoJSON or Mapbox vector tiles;
+* For coverages the response may be a GeoTIFF;
+* For maps the response may be a JPEG or a PNG.
 
 include::requirements/tiles/core/REQ_tc-success.adoc[]
 
-Normally, the content partially outside the tile bounding box will be clipped and this is particularly true when tiles are in raster format. Nevertheless, tiles containing features in vector format may not clip features that are partially outside.
+Normally, the content partially outside the tile bounding box will be clipped. This is particularly true and easy to when tiles are in raster format (e.g. map tiles). Nevertheless, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features of for preformance.
 
 include::recommendations/tiles/core/REC_tc-success-scale.adoc[]
 
 ==== Error conditions
 
-A general summary of the HTTP status codes can be found in the OGC API - Common.
+A general summary of the HTTP status codes can be found in OGC API - Features v1 and in OGC API - Common.
 
-If the parameter value `tileMatrixSetId` is not available by the server for this resource or the parameters values `tileMatrix`, `tileRow`, `tileCol` are out-of-range, the status code of the response will be 404.
+If the parameter value `tileMatrixSetId` is not available by the server for this resource or the parameters values `tileMatrix`, `tileRow`, `tileCol` are out-of-range, of the tile ins not provided due to lack of data in the area, the status code of the response will be `404`.
