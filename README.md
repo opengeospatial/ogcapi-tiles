@@ -1,21 +1,21 @@
 # OGC API - Tiles
 
-This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventualy coverage tiles) of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
+This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventually coverage tiles) of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
 
 This is the CURRENT working version of this initiative (Old version work has been moved to the deliverables in Testbed-15 that contain the LAST VERSION of the materials. See: https://github.com/opengeospatial/T-15-D014-WMTS_draft_specification)
 
 IMPORTANT: Many examples of OpenAPI documents that are used as inspiration and test of this work is here:
 https://app.swaggerhub.com/apis/UAB-CREAF
 
-The OGC API - Maps and the OGC API - Tiles are deaply related and should be considered together.
+The OGC API - Maps and the OGC API - Tiles are deeply related and should be considered together.
 
 ## Standards
 After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having 2 cores, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
 
-The standard is written using asciidoc using many files that might be dificult to trace. Please see the standard document as a long HTML page EASY TO READ FORMAT here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Map-Tiles/blob/master/standard/OAPI_MapsTiles.html
+The standard is written using AsciiDoc using many files that might be difficult to trace. Please see the standard document as a long HTML page EASY TO READ FORMAT here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Map-Tiles/blob/master/standard/OAPI_MapsTiles.html
 
 ### Tiles
-We have received several recomendations to separate the specifications into a core and some extensions. In March 2020 we decided to reestructure the GitHub repository to separate the core and the extensions in different documents that might be elaborated at different speads.
+We have received several recommendations to separate the specifications into a core and some extensions. In March 2020 we decided to restructure the GitHub repository to separate the core and the extensions in different documents that might be elaborated at different speeds.
 
 At this moment in time we are working on doing this separation by moving files around.
 
@@ -24,9 +24,8 @@ For the moment we have focus out efforts on defining the "tile core" that you ca
 
 The core is:
 * Only one collection
-* Only support for WebMercatorQuad
-* No TileMatrixSet definition
-* No TileMatrixSet Link
+* Support for predefined Tile Matrix Set (in OGC 17-083r2)
+  - No TileMatrixSet definition
 * No featureInfo
 * Can only retrieve one tile at a time
 * Has no information about updates
