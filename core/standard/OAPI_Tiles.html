@@ -149,7 +149,8 @@
 <li><a href="#_references">3. References</a></li>
 <li><a href="#_terms_and_definitions">4. Terms and Definitions</a>
 <ul class="sectlevel2">
-<li><a href="#_term_name">4.1. <strong>term name</strong></a></li>
+<li><a href="#_geospatial_resource">4.1. <strong>geospatial resource</strong></a></li>
+<li><a href="#_geospatial_representation">4.2. <strong>geospatial representation</strong></a></li>
 </ul>
 </li>
 <li><a href="#_conventions">5. Conventions</a>
@@ -164,41 +165,33 @@
 <li><a href="#_how_to_approach_an_ogc_api">6.3. How to approach an OGC API</a></li>
 </ul>
 </li>
-<li><a href="#_requirement_class_tiles_core">7. Requirement Class "Tiles Core"</a>
+<li><a href="#_requirement_class_tiles_core">7. Requirement Class "Tiles core"</a>
 <ul class="sectlevel2">
 <li><a href="#_overview">7.1. Overview</a></li>
 <li><a href="#_general">7.2. General</a></li>
-<li><a href="#_api_landing_page">7.3. API landing page</a>
+<li><a href="#_declaration_of_conformance_classes">7.3. Declaration of conformance classes</a>
 <ul class="sectlevel3">
 <li><a href="#_response">7.3.1. Response</a></li>
 </ul>
 </li>
-<li><a href="#_declaration_of_conformance_classes">7.4. Declaration of conformance classes</a>
+<li><a href="#_geospatial_resources">7.4. Geospatial resources</a></li>
+<li><a href="#_tiles_description">7.5. Tiles description</a>
 <ul class="sectlevel3">
-<li><a href="#_response_2">7.4.1. Response</a></li>
+<li><a href="#_tiles_description_path">7.5.1. Tiles description path</a></li>
+<li><a href="#_tiles_description_link">7.5.2. Tiles description Link</a></li>
+<li><a href="#_response_2">7.5.3. Response</a></li>
 </ul>
 </li>
-<li><a href="#_collections">7.5. Collections</a></li>
-<li><a href="#_collection">7.6. Collection</a>
+<li><a href="#_a_tile_from_a_geospatial_resource">7.6. A tile from a geospatial resource</a>
 <ul class="sectlevel3">
-<li><a href="#_collection_links">7.6.1. Collection Links</a></li>
-</ul>
-</li>
-<li><a href="#_tiles_description">7.7. Tiles description</a>
-<ul class="sectlevel3">
-<li><a href="#_operation">7.7.1. Operation</a></li>
-<li><a href="#_response_3">7.7.2. Response</a></li>
-</ul>
-</li>
-<li><a href="#_tiled_data_from_one_collection">7.8. Tiled data from one collection</a>
-<ul class="sectlevel3">
-<li><a href="#_operation_2">7.8.1. Operation</a></li>
-<li><a href="#_parameter_tilematrixsetid">7.8.2. Parameter tileMatrixSetId</a></li>
-<li><a href="#_parameter_tilematrix">7.8.3. Parameter tileMatrix</a></li>
-<li><a href="#_parameter_tilerow">7.8.4. Parameter tileRow</a></li>
-<li><a href="#_parameter_tilecol">7.8.5. Parameter tileCol</a></li>
-<li><a href="#_response_4">7.8.6. Response</a></li>
-<li><a href="#_error_conditions">7.8.7. Error conditions</a></li>
+<li><a href="#_tile_path_and_link">7.6.1. Tile path and link</a></li>
+<li><a href="#_operation">7.6.2. Operation</a></li>
+<li><a href="#_parameter_tilematrixsetid">7.6.3. Parameter tileMatrixSetId</a></li>
+<li><a href="#_parameter_tilematrix">7.6.4. Parameter tileMatrix</a></li>
+<li><a href="#_parameter_tilerow">7.6.5. Parameter tileRow</a></li>
+<li><a href="#_parameter_tilecol">7.6.6. Parameter tileCol</a></li>
+<li><a href="#_response_3">7.6.7. Response</a></li>
+<li><a href="#_error_conditions">7.6.8. Error conditions</a></li>
 </ul>
 </li>
 </ul>
@@ -206,31 +199,31 @@
 <li><a href="#_requirement_class_tiles_from_more_than_one_collection">8. Requirement Class "Tiles from more than one collection"</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_2">8.1. Overview</a></li>
-<li><a href="#_api_landing_page_2">8.2. API landing page</a>
+<li><a href="#_api_landing_page">8.2. API landing page</a>
 <ul class="sectlevel3">
-<li><a href="#_response_5">8.2.1. Response</a></li>
+<li><a href="#_response_4">8.2.1. Response</a></li>
 </ul>
 </li>
 <li><a href="#_declaration_of_conformance_classes_2">8.3. Declaration of conformance classes</a>
 <ul class="sectlevel3">
-<li><a href="#_response_6">8.3.1. Response</a></li>
+<li><a href="#_response_5">8.3.1. Response</a></li>
 </ul>
 </li>
 <li><a href="#_tiles_description_2">8.4. Tiles description</a>
 <ul class="sectlevel3">
-<li><a href="#_operation_3">8.4.1. Operation</a></li>
-<li><a href="#_response_7">8.4.2. Response</a></li>
+<li><a href="#_operation_2">8.4.1. Operation</a></li>
+<li><a href="#_response_6">8.4.2. Response</a></li>
 </ul>
 </li>
 <li><a href="#_tiles_from_more_than_one_collection">8.5. Tiles from more than one collection</a>
 <ul class="sectlevel3">
-<li><a href="#_operation_4">8.5.1. Operation</a></li>
+<li><a href="#_operation_3">8.5.1. Operation</a></li>
 <li><a href="#_parameter_tilematrixsetid_2">8.5.2. Parameter tileMatrixSetId</a></li>
 <li><a href="#_parameter_tilematrix_2">8.5.3. Parameter tileMatrix</a></li>
 <li><a href="#_parameter_tilerow_2">8.5.4. Parameter tileRow</a></li>
 <li><a href="#_parameter_tilecol_2">8.5.5. Parameter tileCol</a></li>
 <li><a href="#_parameter_collections">8.5.6. Parameter Collections</a></li>
-<li><a href="#_response_8">8.5.7. Response</a></li>
+<li><a href="#_response_7">8.5.7. Response</a></li>
 <li><a href="#_error_conditions_2">8.5.8. Error conditions</a></li>
 </ul>
 </li>
@@ -408,9 +401,27 @@
 <p>For the purposes of this document, the following additional terms and definitions apply.</p>
 </div>
 <div class="sect2">
-<h3 id="_term_name"><a class="anchor" href="#_term_name"></a>4.1. <strong>term name</strong></h3>
+<h3 id="_geospatial_resource"><a class="anchor" href="#_geospatial_resource"></a>4.1. <strong>geospatial resource</strong></h3>
 <div class="paragraph">
-<p>text of the definition</p>
+<p>A resource that consists in a set of geospatial data</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_geospatial_representation"><a class="anchor" href="#_geospatial_representation"></a>4.2. <strong>geospatial representation</strong></h3>
+<div class="paragraph">
+<p>An resources that represents an aspect or data model (e.g. feature items, tiles, metadata, schemas,&#8230;&#8203;) of a more generic geospatial resource (e.g. a collection)</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Do not confuse this with a resource representation. While resource representations share the same path and are selected by format negotiation, geospatial representations use different paths. Commonly a geospatial representations is a child path of a geospatial resource
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -452,13 +463,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Clear separation between core requirements and more advanced capabilities. This OGC API – Maps and Tiles draft specification presents the requirements that are relevant for almost everyone who wants to share or use Tiled Map Data on a fine-grained level. Additional capabilities that several communities are using today will be specified as extensions to the Core API.</p>
+<p>Clear separation between core requirements and more advanced capabilities. This OGC API Tiles draft specification presents the requirements that are relevant for almost everyone who wants to share or use Tiled Data on a fine-grained level. Additional capabilities that several communities are using today will be specified as extensions to the Core API.</p>
 </li>
 <li>
 <p>Technologies that change more frequently are decoupled and specified in separate modules ("requirements classes" in OGC terminology). This enables, for example, the use/re-use of new encodings for spatial data or API descriptions.</p>
 </li>
 <li>
-<p>Modularization is not just about a single "service". OGC APIs will provide building blocks that can be reused in APIs in general. In other words, a server supporting the OGC API - Tiles should not be seen as a standalone service. Rather it should be viewed as a collection of API building blocks which together implement Map and Tile capabilities. A corollary for this is that it should be possible to implement an API that simultaneously conforms to conformance classes from the Feature, Coverage, Map, Tiles, and other future OGC Web API standards.</p>
+<p>Modularization is not just about a single "service". OGC APIs will provide building blocks that can be reused in APIs in general. In other words, a server supporting the OGC API - Tiles should not be seen as a standalone service. Rather it should be viewed as a collection of API building blocks which together implement Tile capabilities. A corollary for this is that it should be possible to implement an API that simultaneously conforms to conformance classes from the Feature, Coverage, Map, Tiles, and other future OGC Web API standards.</p>
 </li>
 </ul>
 </div>
@@ -491,7 +502,7 @@
 <p>With time, the concept of a tile has been generalized to other data models such as feature data (some vendors use the expression <em>vector tiles</em>) and even to coverage data. This draft specification presents an approach to tiles that can be applied to almost every resource type that returns data representations. If applied in conjunction with the OGC API - Features standard and on top of a feature collection, the expected result is tiled feature data. If applied in conjunction with the OGC API - Maps draft specification and on top of a collection that is transformed into a map by applying a style, the result should be map tiles (usually in PNG or JPEG format).</p>
 </div>
 <div class="paragraph">
-<p>In this draft specification the OGC API - Tiles is almost fully described. It includes the a core and extensions for defining tile matrix sets, tiles from more that one collection, multi-tiles and multitiles from more than one collection. And info extension is foreseen but not fully developed. In contrast, OGC API - Maps is only partially described based on Testbed-15 requirements. The Maps API is described only to the extent to allow for map tiles to be created on top of a map created by selecting a collection with style or multiple collections with styles. This draft specification contains a section for retrieving a map of an arbitrary number of rows and columns but is not fully formulated. Other extensions for maps are also foreseen. In the future, the WMS SWG could take this document and complete the missing capabilities.</p>
+<p>This draft specification only describes the core capabilities for the  API - Tiles. Other extensions to the core will define how to add tile matrix set descriptions, multi-tiles and simple pixel queries. To produce map tiles, some modules of the OGC API - Maps will be need.</p>
 </div>
 <div id="img_CoreAndExtension" class="imageblock text-center">
 <div class="content">
@@ -503,142 +514,23 @@
 <div class="sect2">
 <h3 id="_how_to_approach_an_ogc_api"><a class="anchor" href="#_how_to_approach_an_ogc_api"></a>6.3. How to approach an OGC API</h3>
 <div class="paragraph">
-<p>There are two ways to approach an OGC API.</p>
+<p>This specification cannot be implemented alone and should be considered a building block that could be applied to one or more existing resources in the API to get access spatial subsets of existing resources. This core defined two ways to get tiles defined in to separated conformance classes. Developers are free to implement one of the approaches or both:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Read the landing page, look for links, follow them and discover new links until the desired resource is found</p>
+<p>tiles are applied as a transformation of a resource to obtain another resource as tiles.</p>
 </li>
 <li>
-<p>Read and API definition document that will specify a list of paths to resources.</p>
+<p>tiles are resources that are the result to combine one or more resources that characterized by their URLS.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>For the first approach, many resources in the API include links with rel properties to know the reason for this relation. The following figure illustrates does links.</p>
-</div>
-<div id="img_relMapTiles" class="imageblock text-center">
-<div class="content">
-<img src="images/relMapTiles.png" alt="relMapTiles" width="600">
-</div>
-<div class="title">Figure 2. Resources and relations to them via links</div>
-</div>
-<div class="paragraph">
-<p>For the second approach, the section <a href="#OpenAPIExamples">[OpenAPIExamples]</a> will provide some examples of OpenAPI definition documents that enumerate the paths to get to the necessary resources directly.</p>
-</div>
-<table id="table_resources" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Overview of resources and common direct links defined in the API</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Resource name</th>
-<th class="tableblock halign-left valign-top" style="background-color: #FFFFFF;">Common path</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Landing page</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Conformance declaration</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/conformance</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Collections</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Collection</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Tiling Schemas</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/tileMatrixSets</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Tiling Schema</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/tileMatrixSets/{tileMatrixSetId}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock">Tiles</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Vector Tiles description</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/tiles</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Vector Tiles description from collections</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/tiles</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Vector Tile</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Vector tile collections<sup>1</sup></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Vector Multi-tiles</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/tiles/{tileMatrixSetId}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Vector Multi-tiles collections<sup>1</sup></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/tiles/{tileMatrixSetId}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock">Map tiles</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Map tiles description</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/map/</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Map tiles description collections<sup>1</sup></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/map/tiles</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Map tile</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/map/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Map tile collections<sup>1</sup></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Map tile multi-tiles</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/map/{styleId}/tiles/{tileMatrixSetId}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Map tile multi-tiles collections<sup>1</sup></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/map/tiles/{tileMatrixSetId}</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock">Maps</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Maps description</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/collections/{collectionId}/map</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Maps description collections<sup>1</sup></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><code>/map</code></p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><sup>1</sup>: In first column of the table, the word "collections" means "from more than one collection"</p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requirement_class_tiles_core"><a class="anchor" href="#_requirement_class_tiles_core"></a>7. Requirement Class "Tiles Core"</h2>
+<h2 id="_requirement_class_tiles_core"><a class="anchor" href="#_requirement_class_tiles_core"></a>7. Requirement Class "Tiles core"</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_overview"><a class="anchor" href="#_overview"></a>7.1. Overview</h3>
@@ -689,112 +581,62 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p>An API that implements this conformance class provides access to tiled resources of a <a href="https://www.w3.org/TR/vocab-dcat/#class-dataset">dataset</a>. In other words, the API enables the <a href="https://www.w3.org/TR/vocab-dcat/#class-distribution">distribution</a> of that dataset.  An implementation of OGC API - Features standard, for example, could be another distribution.</p>
+<p>This is a building block for the an OGC API that is able to provide geospatial resources. When applying the building block to a geospatial resource, it becomes available as tiles. The server can select which resources are available as tiles and will advertise which resources are available as tiles.</p>
 </div>
 <div class="paragraph">
-<p>The entry point is a <code>Landing page</code> (path <code>/</code>).</p>
+<p>This building block does not specify how to get an API definition, the conformance class list or the geospatial resources lists. The standard assumes that the first two are defined by an API specification (e.g. OGC API Common) and the later by an OGC API for geospatial resource (e.g. OGC API Features).</p>
 </div>
 <div class="paragraph">
-<p>The <code>Landing page</code> provides links to:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>the <code>API definition</code> (path <code>/api</code>, link relation <code>service-desc</code>),</p>
-</li>
-<li>
-<p>the <code>Conformance declaration</code> (path <code>/conformance</code>, link relation <code>conformance</code>), and</p>
-</li>
-<li>
-<p>the <code>Collections</code> (path <code>/collections</code>, link relation <code>data</code>).</p>
-</li>
-</ul>
+<p>The core of the OGC API - Tiles core draft specification does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D (or compatible future update of it) and there is no need to define new TileMatrixSets. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.</p>
 </div>
 <div class="paragraph">
-<p>The <code>API definition</code> describes the capabilities of the API instance that can be used by clients to retrieve resources from the API or by development tools to support the implementation of API servers and clients. Accessing the <code>API definition</code> using HTTP GET returns a description of the API.</p>
+<p>This draft specification assumes that data is organized in on or more geospatial resources (e.g. the "collections" in OGC API features). Geospatial resources are referenced using URIs.</p>
 </div>
 <div class="paragraph">
-<p>The <code>Conformance declaration</code> states the requirements classes from standards or community specifications, identified by a Uniform Resource Identifier (URI), that the API conforms to. Clients can, but are not required to, use this information. Accessing the <code>Conformance declaration</code> using HTTP GET returns the list of URIs of requirements classes implemented by the API.</p>
+<p>This document does not specify any requirements for geospatial resources, and they could be  features, coverages, a resource that does not represent data per-se (e.g. an annotation) as far as they can be represented a tile. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial resource (tiles that are generated as a combination of geospatial resources will be defined as an extension).</p>
 </div>
 <div class="paragraph">
-<p>The core of the OGC API - Tiles draft specification (as defined in this chapter) does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D and there is no need to communicate these definitions. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.</p>
+<p>Accessing the geospatial resource content (other than as tiles) or its descriptions is out of the scope of this draft specification. If a description of the geospatial resource exists and it has a mechanism to add links to it, this specification will indicate the need to add a link to the tile representation description.</p>
 </div>
 <div class="paragraph">
-<p>This draft specification assumes that data is organized into one or more collections. <code>Collections</code> provides information about the collections and enumerate the collection identifier.</p>
-</div>
-<div class="paragraph">
-<p>This document does not specify requirements for collections, and they can consist of features, coverages, a resource that does not represent data per-se (e.g. an annotation) any other resource that can be represented in a tile. collectionId replaces the concept of layer in WMS and WMTS. Maps or tiles can be generated from one collection (or a combination of collections as an extension).</p>
-</div>
-<div class="paragraph">
-<p>Accessing <code>Collections</code> using HTTP GET returns a response that contains at least the list of collections. Accessing <code>Collections/{collectionId}</code> using HTTP GET returns a description of a collection with an indication of whether the collection can be retrieved as a map or a tile or both. Accessing the items of a collection is out of the scope of this draft specification but is described in other draft OGC API specifications for features or coverages, for instance. For each <code>Collection</code>, a link to metadata about the collection is available (path <code>/collections/{collectionId}</code>) with key information about the collection. This information includes:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A local identifier for the collection that is unique for the dataset;</p>
-</li>
-<li>
-<p>An optional title and description for the collection;</p>
-</li>
-<li>
-<p>An optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;</p>
-</li>
-<li>
-<p>A list of TileMatrixSetLink objects relating to the available tiling schemas supported by the collection (from the linked TileMatrixSet member, the client can determine the coordinate reference systems (CRS) in which tiles may be returned by the API)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The <code>Collection</code> resource is available at path <code>/collections/{collectionId}</code>, often with more details than included in the <code>Collections</code> response. In particular, there is a list of links. If there is a link to more metadata about tiles, the collection is available directly as tiles. In the metadata about tiles there are also links and at least one of these links will provide the template to get individual tiles.</p>
+<p>The tile representation description will include metadata about tiles as well as links to other resources including at least one with a template to get individual tiles.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_general"><a class="anchor" href="#_general"></a>7.2. General</h3>
-<table id="req_tiles_core_api-common" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="rec_tiles_core_api-common" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 26</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 5</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/core/api-common</strong></p>
+<p><strong>/rec/tiles/core/api-common</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>An OGC API – Tiles implementation SHALL comply with the requirements specified in the <a href="http://www.opengis.net/spec/OAPI_Common/1.0/req/core" class="bare">http://www.opengis.net/spec/OAPI_Common/1.0/req/core</a> and <a href="http://www.opengis.net/spec/OAPI_Common/1.0/req/collections" class="bare">http://www.opengis.net/spec/OAPI_Common/1.0/req/collections</a> Requirements Classes of the OGC API-Common version 1.0 Standard.</p>
+<p>An implementation this standard should consider to implement the requirements specified in the <a href="http://www.opengis.net/spec/OAPI_Common/1.0/req/core" class="bare">http://www.opengis.net/spec/OAPI_Common/1.0/req/core</a> and <a href="http://www.opengis.net/spec/OAPI_Common/1.0/req/collections" class="bare">http://www.opengis.net/spec/OAPI_Common/1.0/req/collections</a> Requirements Classes of the OGC API-Common version 1.0 Standard.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>In practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes. This draft specification provides extra additions to the OGC API - Common requirements that are particular to tiles.</p>
+<p>This building block stays flexible and does not require to implement OWS Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes will be used. Temporarily, it is also possible to combine this building block with OGC API features v1 that is not tied to OWS Common.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_api_landing_page"><a class="anchor" href="#_api_landing_page"></a>7.3. API landing page</h3>
-<div class="paragraph">
-<p>The landing page provides links to start exploring the resources offered by the API. The landing page mainly consists of a list of links. OGC API - Common already requires some common links that are enough for this draft specification core.</p>
-</div>
-<div class="sect3">
-<h4 id="_response"><a class="anchor" href="#_response"></a>7.3.1. Response</h4>
-<div class="paragraph">
-<p>There are no required variations to the landing page.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_declaration_of_conformance_classes"><a class="anchor" href="#_declaration_of_conformance_classes"></a>7.4. Declaration of conformance classes</h3>
+<h3 id="_declaration_of_conformance_classes"><a class="anchor" href="#_declaration_of_conformance_classes"></a>7.3. Declaration of conformance classes</h3>
 <div class="paragraph">
 <p>To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the requirements classes it implements and conforms to.</p>
 </div>
 <div class="sect3">
-<h4 id="_response_2"><a class="anchor" href="#_response_2"></a>7.4.1. Response</h4>
+<h4 id="_response"><a class="anchor" href="#_response"></a>7.3.1. Response</h4>
 <div class="paragraph">
-<p>The conformance page mainly consists of a list of links. OGC API - Common already requires some links.</p>
+<p>The conformance page mainly consists of a list of links.</p>
 </div>
 <table id="req_tiles_core_conformance-success" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -803,7 +645,7 @@
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 27</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 23</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/conformance-success</strong></p>
 </div></div></td>
@@ -811,13 +653,13 @@
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The API conformance path SHALL advertise the tiles core conformance class as links to <a href="http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core</a>.</p>
+<p>If the API has a mechanism to advertise conformance classes, the API SHALL advertise the tiles core conformance class with a link to <a href="http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core" class="bare">http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>In the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API - Common. Below is an example fragment of the response to an OGC API - Tiles conformance information page.</p>
+<p>If the server declares also conformity to OGC API - Common or to OGC API - Features v1, then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the conformance page is an array of links following the link schema defined in the OGC API - Common or in OGC API - Features v1. Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.</p>
 </div>
 <div id="ConformancePageTilesCore" class="exampleblock">
 <div class="title">Example 1. Conformance Information Page fragment</div>
@@ -838,35 +680,9 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_collections"><a class="anchor" href="#_collections"></a>7.5. Collections</h3>
+<h3 id="_geospatial_resources"><a class="anchor" href="#_geospatial_resources"></a>7.4. Geospatial resources</h3>
 <div class="paragraph">
-<p>This draft specification includes dependencies on OGC API - Common collections. Collections are mandatory in the core of this draft specification because collections are the object that will be included in a tile.</p>
-</div>
-<div class="paragraph">
-<p>Collections will enumerate the collectionId identifiers available in this implementation of the OGC API draft specification as well as basic information about each collectionId: id, title, description, extent, CRS and links. This common response is considered enough for a general description of the collection.</p>
-</div>
-<table id="req_tiles_core_tc-md-collection-links" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 28</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/core/tc-md-collection-links</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>In the array of <code>collections</code> included in the response, for each collection that can be retrieved as tiles, a <code>links</code> property of the collection SHALL include a link to the description of the collection (rel: <code>self</code>) (in addition to other links specified in OGC API Commons). This link will allow to request information about this collection and, in particular to get another link, this time to the information about the tile structure.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>More specific details about the collection can be found following the link to the individual collections that follow the pattern /collections/{collectionId}</p>
+<p>This draft specification does not specify how geospatial resources are exposed in the API and if they have the possibility to be retrievable as geospatial data (e.g. feature items). For example OGC API features v1 includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API common will provide a similar mechanism. Other paths in the API could also give access to geospatial resources.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -875,19 +691,51 @@
 <div class="title">Note</div>
 </td>
 <td class="content">
-The collectionId substitutes the concept of "layer" in WMTS 1.0.
+The concept of geospatial resource path substitutes the concept of "layer" in WMTS 1.0 but it intended to give a better integration between data visualization and data access.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_collection"><a class="anchor" href="#_collection"></a>7.6. Collection</h3>
+<h3 id="_tiles_description"><a class="anchor" href="#_tiles_description"></a>7.5. Tiles description</h3>
 <div class="paragraph">
-<p>This draft specification includes dependencies on the OGC API - Common collection requirement. The response to the operation is extended with a new link for the tiles description.</p>
+<p>A tile description contains the necessary metadata to enable a client application to formulate a tile request from a single geospatial resource.</p>
 </div>
 <div class="sect3">
-<h4 id="_collection_links"><a class="anchor" href="#_collection_links"></a>7.6.1. Collection Links</h4>
+<h4 id="_tiles_description_path"><a class="anchor" href="#_tiles_description_path"></a>7.5.1. Tiles description path</h4>
+<table id="req_tiles_core_sct-op" class="tableblock frame-all grid-all" style="width: 90%;">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 24</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p><strong>/req/tiles/core/sct-op</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>Every geospatial resource available as tiles SHALL support an path URL and a HTTP GET operation to retrieve the description of the tiles the API implementation can provide</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>The URI shall be composed by two parts: the initial part is the URI of the geospatial resource that can be represented as tiles and the final part follows the pattern <code>/tiles</code></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>This standard does not specify the need for any additional query parameter in the GET request.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tiles_description_link"><a class="anchor" href="#_tiles_description_link"></a>7.5.2. Tiles description Link</h4>
 <table id="req_tiles_core_tc-tile-desc-links" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -895,7 +743,7 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 29</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 25</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/tc-tile-desc-links</strong></p>
 </div></div></td>
@@ -903,13 +751,16 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>A <code>links</code> property of the collection SHALL include a link to the description of the tiles (rel: <code>tiles</code>) (in addition to other links specified in OGC API Commons).</p>
+<p>If the API has a mechanism for their geospatial resources to expose links to geospatial representations (e.g. feature items), the API SHALL include a <code>link</code> with the <code>href</code> pointing to a the description of the tiles that presents a tile representation of this geospatial resource and with <code>rel: "tiles"</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>For example, the OGC API Features v1 return a list of links that include geospatial representations for each geospatial resource in the /collections/{collectionId} path. OGC API Common is expected to provide a similar mechanism. In the JSON response, the array <code>links</code> is the place for adding a resource reference to the 'tiles' description.</p>
+</div>
 <div class="exampleblock">
-<div class="title">Example 2. Fragment of the collection links.</div>
+<div class="title">Example 2. Fragment of a collection with a links array with one item of the array pointing to a tiles description.</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -934,42 +785,10 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_tiles_description"><a class="anchor" href="#_tiles_description"></a>7.7. Tiles description</h3>
-<div class="paragraph">
-<p>The response to this operation contains the necessary metadata to enable a client application to formulate a tile request from a single collection.</p>
-</div>
 <div class="sect3">
-<h4 id="_operation"><a class="anchor" href="#_operation"></a>7.7.1. Operation</h4>
-<table id="req_tiles_core_sct-op" class="tableblock frame-all grid-all" style="width: 90%;">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 30</strong></p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/core/sct-op</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Every resource available as tiles SHALL support an operation to retrieve the description of the tiles the API implementation can provide, available as a HTTP GET request to a URI that will be composed by two parts: the initial part is the URI of a resource that can be represented as tiles and the final part follows the pattern /tiles. Only the resources or collection that supports this operation can be retrieved as tiles.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
+<h4 id="_response_2"><a class="anchor" href="#_response_2"></a>7.5.3. Response</h4>
 <div class="paragraph">
-<p>The request of this operation has no parameters.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_response_3"><a class="anchor" href="#_response_3"></a>7.7.2. Response</h4>
-<div class="paragraph">
-<p>A successful response to a tiles request for a collection that can be retrieved as tiles will respond with a data structure with specific information necessary to get tiles representing the resource collection. In this core draft specification, the response is only required to inform about from which tile matrix sets tiles can be retrieved and the URL template to a tile.</p>
+<p>A successful GET response to a tiles description resource will respond a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial resource. In this core draft specification, the response is only required to inform about from which tile matrix sets tiles can be retrieved and the URL template to the tiles.</p>
 </div>
 <table id="req_tiles_core_sct-tmxslink.adoc" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -978,7 +797,7 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 31</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 26</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/sct-tmxslink</strong></p>
 </div></div></td>
@@ -986,7 +805,7 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The content of the response to a successful execution SHALL contain a property called <em>tileMatrixSetLinks</em> with a list of <em>tileMatrixSetLink</em> objects following a data model defined in the clause 7.3 of OGC 17-083r2. In the core specification <em>tileMatrixSetLink</em> is only used for referencing the supported TileMatrixSets for the tiles limiting it to the following schema (expressed as an OpenAPI Specification 3.0 fragment):</p>
+<p>If the tiles are available in a tile matrix set different from WebMercatorQuad, the content of the response to a successful execution to a tiles description SHALL contain a property called <em>tileMatrixSetLinks</em> with a list of <em>tileMatrixSetLink</em> objects following a data model defined in the clause 7.3 of OGC 17-083r2. In the core specification <em>tileMatrixSetLink</em> is only used for referencing the supported TileMatrixSets for the tiles, limiting it to the following schema (expressed as an OpenAPI Specification 3.0 fragment):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1012,33 +831,6 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </tr>
 </tbody>
 </table>
-<div id="TilesLinkResponseExample" class="exampleblock">
-<div class="title">Example 3. Example of a tiles metadata response.</div>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="JSON">{
-  "tileMatrixSetLinks": [
-    {
-      "tileMatrixSet": "WorldMercatorWGS84Quad",
-      "tileMatrixSetURI": "http://schemas.opengis.net/tms/1.0/json/examples/WorldMercatorWGS84Quad.json"
-    }
-  ],
-  ...
-  "links": [
-    ...
-    {
-     "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png",
-     "rel": "item",
-     "type": "image/png",
-   }
-   ...
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
 <table id="rec_tiles_core_sct-tmxslink.adoc" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1046,7 +838,7 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 32</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 6</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/tiles/core/sct-tmxslink</strong></p>
 </div></div></td>
@@ -1075,7 +867,7 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 33</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 27</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/sct-tile-examples</strong></p>
 </div></div></td>
@@ -1083,7 +875,7 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The content of the response to a successful execution SHALL include at least a link to a tile URI template (rel: <code>item</code>).</p>
+<p>The content of the response to a successful execution of a tile description SHALL include at least a link to a tile URI template (rel: <code>item</code>).</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1095,16 +887,86 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>There SHALL be a link to a tile URI template for each format that the server supports (the format is indicated in the 'type' attribute of the link)</p>
+<p>There SHALL be a link to a tile URI template for each file format that the server supports (the format is indicated in the 'type' attribute of the link)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>A property <code>templated</code> SHALL be part of the link properties to indicate that the link needs to be processed to substitute the templated variables with valid values before being used as a URL to a tile.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+One common order used in URL templates for tiles is &#8230;&#8203;/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}, but this standard allows for other URL template composition.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The geospatial resource URL is expected to be the first part of the URL template (presented by the '&#8230;&#8203;' in the previous note) but this standard does not mandate this.
+</td>
+</tr>
+</table>
+</div>
+<div id="TilesLinkResponseExample" class="exampleblock">
+<div class="title">Example 3. Example of a tiles metadata response.</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="JSON">{
+  "tileMatrixSetLinks": [
+    {
+      "tileMatrixSet": "WorldMercatorWGS84Quad",
+      "tileMatrixSetURI": "http://schemas.opengis.net/tms/1.0/json/examples/WorldMercatorWGS84Quad.json"
+    }
+  ],
+  ...
+  "links": [
+    ...
+    {
+     "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png",
+     "templated": true,
+     "rel": "item",
+     "type": "image/png",
+   }
+   ...
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The use of "templated" is inspired in the JSON Hypertext Application Language (HAL), <a href="https://tools.ietf.org/html/draft-kelly-json-hal-08" class="bare">https://tools.ietf.org/html/draft-kelly-json-hal-08</a>
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>One common order used in URL templates for tiles is &#8230;&#8203;/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}, but this draft specification allows for other URL template composition.</p>
+<p>The following table explains the meaning to the URI template variables.</p>
 </div>
 <table id="URL_template_tile_core" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. URI template variables for tiles and valid values</caption>
+<caption class="title">Table 1. URI template variables for tiles and valid values</caption>
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 25.9259%;">
@@ -1140,32 +1002,21 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </tr>
 </tbody>
 </table>
-<div class="exampleblock">
-<div class="title">Example 4. link to get tiles as a URL template in the tiles metadata response fragment</div>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="JSON">links:
-[
-    {
-      "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}",
-      "rel": "tiles",
-      "type": "image/png",
-    }
-]</code></pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tiled_data_from_one_collection"><a class="anchor" href="#_tiled_data_from_one_collection"></a>7.8. Tiled data from one collection</h3>
+<h3 id="_a_tile_from_a_geospatial_resource"><a class="anchor" href="#_a_tile_from_a_geospatial_resource"></a>7.6. A tile from a geospatial resource</h3>
 <div class="paragraph">
-<p>The core of the OGC API -Tiles draft specification provides a mechanism to select and retrieve a tile in a TileMatrixSet. If the service does not advertise any other TileMatrixSet (this core does not describe any mechanism to do that, but an extension will do it) only the TileMatrixSet identifiers specified in the Annex D.1 of the OGC 17-083r2 standard can be used.</p>
+<p>A tile resource is a geospatial representation of a fragment of a geospatial resource that is spatially constrained tot the boundaries of the selected tile in a tile matrix set.</p>
 </div>
 <div class="sect3">
-<h4 id="_operation_2"><a class="anchor" href="#_operation_2"></a>7.8.1. Operation</h4>
+<h4 id="_tile_path_and_link"><a class="anchor" href="#_tile_path_and_link"></a>7.6.1. Tile path and link</h4>
+<div class="paragraph">
+<p>As described before a tile path is obtained by extracting a tile URL templated from one of the links with <code>rel</code>: <code>item</code> in tiles description document and substituting the templated variables of with valid values.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_operation"><a class="anchor" href="#_operation"></a>7.6.2. Operation</h4>
 <table id="req_tiles_core_tc-op" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1173,7 +1024,7 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 34</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 28</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/tc-op</strong></p>
 </div></div></td>
@@ -1181,29 +1032,17 @@ The collectionId substitutes the concept of "layer" in WMTS 1.0.
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Every tile SHALL be available as a HTTP GET request to a URI that will be composed by two parts: The first part is the URI of a resource that can be represented as tiles and the second part follows the pattern /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</p>
+<p>A tile that contains available data SHALL be available as a HTTP GET request to a URI that will be composed by two parts: The first part is the URI of a geospatial resource that can be represented as tiles and the second part follows the pattern /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Typical resources that can be retrieved as tiles are: features (/collections/{collectionId}), coverages (/collections/{collectionId}/coverage/{coverageId} or /coverage/{coverageId}) or maps (/collections/{collectionId}/map/styleId}).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-The common path for coverages is still under discussion.
-</td>
-</tr>
-</table>
+<p>Typical geospatial resources that can be retrieved as tiles are: features (in OGC API Features v1 represented by /collections/{collectionId}), or full maps (specified in the OGC API Maps).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilematrixsetid"><a class="anchor" href="#_parameter_tilematrixsetid"></a>7.8.2. Parameter tileMatrixSetId</h4>
+<h4 id="_parameter_tilematrixsetid"><a class="anchor" href="#_parameter_tilematrixsetid"></a>7.6.3. Parameter tileMatrixSetId</h4>
 <table id="req_tiles_core_tc-tilematrixsetid-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1211,7 +1050,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 35</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 29</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/tc-tilematrixsetid-definition</strong></p>
 </div></div></td>
@@ -1235,9 +1074,12 @@ The common path for coverages is still under discussion.
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The core of the OGC API -Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet. If the service does not advertise any other TileMatrixSet (this core does not describe any mechanism to do that, but an extension will do it) the TileMatrixSet identifiers possible are limited to the ones specified in the Annex D.1 of the OGC 17-083r2 standard.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilematrix"><a class="anchor" href="#_parameter_tilematrix"></a>7.8.3. Parameter tileMatrix</h4>
+<h4 id="_parameter_tilematrix"><a class="anchor" href="#_parameter_tilematrix"></a>7.6.4. Parameter tileMatrix</h4>
 <table id="req_tiles_core_tc-tilematrix-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1245,7 +1087,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 36</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 30</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/tc-tilematrix-definition</strong></p>
 </div></div></td>
@@ -1271,7 +1113,7 @@ The common path for coverages is still under discussion.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilerow"><a class="anchor" href="#_parameter_tilerow"></a>7.8.4. Parameter tileRow</h4>
+<h4 id="_parameter_tilerow"><a class="anchor" href="#_parameter_tilerow"></a>7.6.5. Parameter tileRow</h4>
 <table id="req_tiles_core_tc-tilerow-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1279,7 +1121,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 37</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 31</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/tc-tilerow-definition</strong></p>
 </div></div></td>
@@ -1306,7 +1148,7 @@ The common path for coverages is still under discussion.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilecol"><a class="anchor" href="#_parameter_tilecol"></a>7.8.5. Parameter tileCol</h4>
+<h4 id="_parameter_tilecol"><a class="anchor" href="#_parameter_tilecol"></a>7.6.6. Parameter tileCol</h4>
 <table id="req_tiles_core_tc-tilecol-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1314,7 +1156,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 38</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 32</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/tc-tilecol-definition</strong></p>
 </div></div></td>
@@ -1341,20 +1183,20 @@ The common path for coverages is still under discussion.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_4"><a class="anchor" href="#_response_4"></a>7.8.6. Response</h4>
+<h4 id="_response_3"><a class="anchor" href="#_response_3"></a>7.6.7. Response</h4>
 <div class="paragraph">
-<p>A successful response to a tile request will be consistent with the media type of resource requested. This draft specification does not impose any media type. For example:</p>
+<p>A successful response to a tile GET operation will be consistent with the media type of resource requested. This draft specification does not impose any media type or file format. For example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>For features the media type can be geojson or Mapbox vector tiles;</p>
+<p>For features the media type can be GeoJSON or Mapbox vector tiles;</p>
 </li>
 <li>
-<p>For coverages the response may be a geotiff;</p>
+<p>For coverages the response may be a GeoTIFF;</p>
 </li>
 <li>
-<p>For maps the response may be a jpeg or a png.</p>
+<p>For maps the response may be a JPEG or a PNG.</p>
 </li>
 </ul>
 </div>
@@ -1365,7 +1207,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 39</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 33</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/core/tc-success</strong></p>
 </div></div></td>
@@ -1385,7 +1227,7 @@ The common path for coverages is still under discussion.
 </tbody>
 </table>
 <div class="paragraph">
-<p>Normally, the content partially outside the tile bounding box will be clipped and this is particularly true when tiles are in raster format. Nevertheless, tiles containing features in vector format may not clip features that are partially outside.</p>
+<p>Normally, the content partially outside the tile bounding box will be clipped. This is particularly true and easy to when tiles are in raster format (e.g. map tiles). Nevertheless, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features of for preformance.</p>
 </div>
 <table id="rec_tiles_core_tc-success-scale" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1394,7 +1236,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 3</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 7</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/tiles/core/tc-success-scale</strong></p>
 </div></div></td>
@@ -1402,19 +1244,19 @@ The common path for coverages is still under discussion.
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The content of that response should be simplified to comply with the scale denominator represented by the TileMatrix identified. Full resolution geographical elements will only be provided for the lower values of scale denominators.</p>
+<p>The content of that response should be simplified to comply with the scale denominator represented by the TileMatrix identified. Full resolution geographical elements are only expected for the lower values of scale denominators.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_error_conditions"><a class="anchor" href="#_error_conditions"></a>7.8.7. Error conditions</h4>
+<h4 id="_error_conditions"><a class="anchor" href="#_error_conditions"></a>7.6.8. Error conditions</h4>
 <div class="paragraph">
-<p>A general summary of the HTTP status codes can be found in the OGC API - Common.</p>
+<p>A general summary of the HTTP status codes can be found in OGC API - Features v1 and in OGC API - Common.</p>
 </div>
 <div class="paragraph">
-<p>If the parameter value <code>tileMatrixSetId</code> is not available by the server for this resource or the parameters values <code>tileMatrix</code>, <code>tileRow</code>, <code>tileCol</code> are out-of-range, the status code of the response will be 404.</p>
+<p>If the parameter value <code>tileMatrixSetId</code> is not available by the server for this resource or the parameters values <code>tileMatrix</code>, <code>tileRow</code>, <code>tileCol</code> are out-of-range, of the tile ins not provided due to lack of data in the area, the status code of the response will be <code>404</code>.</p>
 </div>
 </div>
 </div>
@@ -1452,12 +1294,12 @@ The common path for coverages is still under discussion.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_api_landing_page_2"><a class="anchor" href="#_api_landing_page_2"></a>8.2. API landing page</h3>
+<h3 id="_api_landing_page"><a class="anchor" href="#_api_landing_page"></a>8.2. API landing page</h3>
 <div class="paragraph">
 <p>The landing page provides links to start exploring the resources offered by the API. It mainly consists of a list of links. The core of this draft specification does not add anything to the links required by OGC API - Common. This requirements class for <em>tiles from more than one collection</em> requires a new link for getting the description of the <em>tiles from more than one collection</em> on top of the common ones.</p>
 </div>
 <div class="sect3">
-<h4 id="_response_5"><a class="anchor" href="#_response_5"></a>8.2.1. Response</h4>
+<h4 id="_response_4"><a class="anchor" href="#_response_4"></a>8.2.1. Response</h4>
 <table id="req_tiles_collections_root-success" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1465,7 +1307,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 40</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 34</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/root-success</strong></p>
 </div></div></td>
@@ -1482,7 +1324,7 @@ The common path for coverages is still under discussion.
 <p>In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common. Below is an example fragment of the response to an OGC API - Tiles landing page showing the new link.</p>
 </div>
 <div id="landingPageTilesCollections" class="exampleblock">
-<div class="title">Example 5. API Landing Page fragment that advertises the path to get tiles for more than one collection</div>
+<div class="title">Example 4. API Landing Page fragment that advertises the path to get tiles for more than one collection</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -1506,7 +1348,7 @@ The common path for coverages is still under discussion.
 <div class="sect2">
 <h3 id="_declaration_of_conformance_classes_2"><a class="anchor" href="#_declaration_of_conformance_classes_2"></a>8.3. Declaration of conformance classes</h3>
 <div class="sect3">
-<h4 id="_response_6"><a class="anchor" href="#_response_6"></a>8.3.1. Response</h4>
+<h4 id="_response_5"><a class="anchor" href="#_response_5"></a>8.3.1. Response</h4>
 <div class="paragraph">
 <p>The conformance page mainly consists of a list of links. OGC API - Common already requires some links.</p>
 </div>
@@ -1517,7 +1359,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 41</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 35</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/conformance-success</strong></p>
 </div></div></td>
@@ -1534,7 +1376,7 @@ The common path for coverages is still under discussion.
 <p>On the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API – Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for <em>tiles from more than one collection</em></p>
 </div>
 <div id="ConformancePageTilesCollections" class="exampleblock">
-<div class="title">Example 6. Conformance Information Page fragment</div>
+<div class="title">Example 5. Conformance Information Page fragment</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -1558,7 +1400,7 @@ The common path for coverages is still under discussion.
 <p>The response to the tiles description operation contains the necessary information to later formulate a tile request of tiles from more than one collection.</p>
 </div>
 <div class="sect3">
-<h4 id="_operation_3"><a class="anchor" href="#_operation_3"></a>8.4.1. Operation</h4>
+<h4 id="_operation_2"><a class="anchor" href="#_operation_2"></a>8.4.1. Operation</h4>
 <table id="req_tiles_collections_ts-op" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1566,7 +1408,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 42</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 36</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/ts-op</strong></p>
 </div></div></td>
@@ -1584,7 +1426,7 @@ The common path for coverages is still under discussion.
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_7"><a class="anchor" href="#_response_7"></a>8.4.2. Response</h4>
+<h4 id="_response_6"><a class="anchor" href="#_response_6"></a>8.4.2. Response</h4>
 <div class="paragraph">
 <p>A successful response to a tiles request for more than one collection will respond with a data structure with specific information necessary to get tiles representing the resource collection. In this requirements class, the response only provides the URL template to retrieve a tile.</p>
 </div>
@@ -1595,7 +1437,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 43</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 37</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/ts-tile-examples</strong></p>
 </div></div></td>
@@ -1624,7 +1466,7 @@ The common path for coverages is still under discussion.
 <p>One common order used in URL templates for tiles is: /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}. However, this draft specification allows for other URL template composition.</p>
 </div>
 <table id="URL_template_tile_collections" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. URI template variables for tiles and possible values</caption>
+<caption class="title">Table 2. URI template variables for tiles and possible values</caption>
 <colgroup>
 <col style="width: 22.2222%;">
 <col style="width: 25.9259%;">
@@ -1661,7 +1503,7 @@ The common path for coverages is still under discussion.
 </tbody>
 </table>
 <div class="exampleblock">
-<div class="title">Example 7. API tiles response fragment with the link to retrieve tiles form more than one collection</div>
+<div class="title">Example 6. API tiles response fragment with the link to retrieve tiles form more than one collection</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -1688,7 +1530,7 @@ The common path for coverages is still under discussion.
 <p>This operation allows retrieving a single tile that represents information coming from more than one collection.</p>
 </div>
 <div class="sect3">
-<h4 id="_operation_4"><a class="anchor" href="#_operation_4"></a>8.5.1. Operation</h4>
+<h4 id="_operation_3"><a class="anchor" href="#_operation_3"></a>8.5.1. Operation</h4>
 <table id="req_tiles_collections_tcs-op" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
@@ -1696,7 +1538,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 44</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 38</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/tcs-op</strong></p>
 </div></div></td>
@@ -1719,7 +1561,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 45</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 39</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/tcs-tilematrixsetid-definition</strong></p>
 </div></div></td>
@@ -1753,7 +1595,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 46</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 40</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/tcs-tilematrix-definition</strong></p>
 </div></div></td>
@@ -1787,7 +1629,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 47</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 41</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/tcs-tilerow-definition</strong></p>
 </div></div></td>
@@ -1822,7 +1664,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 48</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 42</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/tcs-tilecol-definition</strong></p>
 </div></div></td>
@@ -1857,7 +1699,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 49</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 43</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/tcs-collections-definition</strong></p>
 </div></div></td>
@@ -1908,7 +1750,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 4</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 8</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/rec/tiles/collections/tcs-collections-definition</strong></p>
 </div></div></td>
@@ -1949,7 +1791,7 @@ The common path for coverages is still under discussion.
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_8"><a class="anchor" href="#_response_8"></a>8.5.7. Response</h4>
+<h4 id="_response_7"><a class="anchor" href="#_response_7"></a>8.5.7. Response</h4>
 <div class="paragraph">
 <p>A successful response to a tile request is consistent with the media type of resource requested. This draft specification does not impose any media type. For example, for features the media type can be GeoJSON or Mapbox vector tiles,for coverages it may be a GeoTIFF, and for maps it may be a JPEG or a PNG.</p>
 </div>
@@ -1960,7 +1802,7 @@ The common path for coverages is still under discussion.
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 50</strong></p></td>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 44</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
 <p><strong>/req/tiles/collections/tcs-success</strong></p>
 </div></div></td>
