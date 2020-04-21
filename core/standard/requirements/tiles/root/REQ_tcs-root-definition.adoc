@@ -1,0 +1,21 @@
+[[req_tiles_root_tcs-root-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tiles/root/tcs-root-definition*
+^|A |The operation SHALL support an optional parameter `resources` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
+[source,YAML]
+----
+  name: resources
+  in: query
+  required: false
+  style: form
+  explode: false
+  schema:
+    type: array
+    items:
+      type: string
+----
+^|B |The parameter `resources` SHALL contain a comma-separated list of geospatial resource identifiers (collectionId's) or a comma-separated list of full URLs to geospatial resource identifiers.
+^|C |Only the geospatial resource identifiers that advertise a link with type=`tiles` in the geospatial resource description SHALL be included.
+^|D |Only geospatial resources that support the same TileMatrixSetId parameter value SHALL be included.
+|===

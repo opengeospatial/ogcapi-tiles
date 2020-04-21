@@ -1,0 +1,6 @@
+[[req_tiles_root_root-success]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tiles/root/root-success*
+^|A | If the API has mechanism to expose root resources (e.g. a landing page), the API SHALL advertise a URI to retrieve tile definitions defined by this service as links to the descriptions paths with rel: `tiles`.
+|===
