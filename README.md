@@ -33,9 +33,16 @@ The core is (https://htmlpreview.github.io/?https://raw.githubusercontent.com/op
 We foresee the following extensions (some of them can end into OGC standards and some might not)
 * Other TileMatrixSets  (started in: [clause_7_tile_tms](extensions/tmxs/standard/clause_7_tile_tms.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/tmxs/standard/OAPI_Tiles.html)
 * Info (featureInfo) (started in: [clause_7_tile_info](extensions/info/standard/clause_7_tile_info.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/info/standard/OAPI_Tiles.html)
-* Collections (more than one) (started in: [clause_7_tile_collections](core/standard/clause_7_tile_collections.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/core/standard/OAPI_Tiles.html )
-* Collections-info (with feautureInfo) (pending)
+* Root (one or more geospatial resources) (started in: [clause_7_tile_root](core/standard/clause_7_tile_root.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/core/standard/OAPI_Tiles.html )
+* Root Info (with feautureInfo) (pending)
 * Multi-tile (retrieve a ZIP with many tiles) (started in: [clause_7_multitile](extensions/multitile/standard/clause_7_tile_collections.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/multitile/standard/OAPI_Tiles.html )
+
+## Using the standard
+
+Those who want to just see the endpoints and responses can explore generic
+OpenAPI definitions in this folder (please paste one of them in the Swagger Editor):
+
+* OGC-API-Map-Tiles/standard/openapi/
 
 ## Examples
 WARNING: This section need to be updated.
@@ -71,55 +78,6 @@ Libraries:
 * A [OGC API maps and tiles DOMAIN document in Swagger](https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0) or in [GitHub](standard/openapi/ogc-api-map-tiles.yaml). It contains fragments that can be reference in api document instances or other domain document. It will be included by OGC API maps standard and tiles standard.
 * A [OGC API tiles DOMAIN document in Swagger](https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0) or in [GitHub](standard/openapi/ogc-api-tiles.yaml). It contains fragments that can be reference in api document instances or other domain document. It could become part of a future OGC API tiles standard additional material.
 
-## Overview
-
-IMPORTANT NOTE: This section is old The [standard](standard) candidate takes precedence.
-
-### Maps
-
-A "OGC API - Maps" is a standard API that provides maps representing geospatial data.
-
-```
-GET /.../.../map/{styleId}
-```
-
-The identifier of the "layer" is replaced by "{collectionId}" or "coverage"...
-
-Maps can be requested in any available CRS and can be subset by bbox width and height (and eventually other parameters such as time and elevation)
-```
-GET /.../.../map/{styleId}?crs=CRS84&bbox=160.6,-55.95,-170,-25.89&width=600&height=400
-```
-Returns a map - a representation of real-world elements at a given resolution. {styleId} is optional.
-
-
-### Tiles
-
-A "OGC API - Tiles" is a standard API that provides tiles of maps representing geospatial data.
-
-```
-GET /.../.../tiles/{styleId}/{tileMatrixSetId}/{tileMatrixId}/{tileRow}/{tileCol}
-```
-
-Returns a tile - a representation of real-world elements at a given resolution restricted by the selected Tile Matrix Set. {styleId} is optional.
-
-The identifier of the "layer" is replaced by "{collectionId}" or "coverage"...
-
-Tiles are available at some TileMatrixSetId and styles that need to be enumerated in:
-```
-GET /.../.../tiles
-```
-
-There is a need for describing the TileMatrixSet available
-```
-GET /tileMatrixSet/{tileMatrixSetId}
-```
-
-## Using the standard
-
-Those who want to just see the endpoints and responses can explore generic
-OpenAPI definitions in this folder (please paste one of them in the Swagger Editor):
-
-* OGC-API-Map-Tiles/standard/openapi/
 
 ## Communication
 
