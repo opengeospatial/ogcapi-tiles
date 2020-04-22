@@ -196,35 +196,36 @@
 </li>
 </ul>
 </li>
-<li><a href="#_requirement_class_tiles_from_more_than_one_collection">8. Requirement Class "Tiles from more than one collection"</a>
+<li><a href="#_requirement_class_tiles_root">8. Requirement Class "Tiles root"</a>
 <ul class="sectlevel2">
 <li><a href="#_overview_2">8.1. Overview</a></li>
-<li><a href="#_api_landing_page">8.2. API landing page</a>
+<li><a href="#_general_2">8.2. General</a></li>
+<li><a href="#_api_landing_page">8.3. API landing page</a>
 <ul class="sectlevel3">
-<li><a href="#_response_4">8.2.1. Response</a></li>
+<li><a href="#_response_4">8.3.1. Response</a></li>
 </ul>
 </li>
-<li><a href="#_declaration_of_conformance_classes_2">8.3. Declaration of conformance classes</a>
+<li><a href="#_declaration_of_conformance_classes_2">8.4. Declaration of conformance classes</a>
 <ul class="sectlevel3">
-<li><a href="#_response_5">8.3.1. Response</a></li>
+<li><a href="#_response_5">8.4.1. Response</a></li>
 </ul>
 </li>
-<li><a href="#_tiles_description_2">8.4. Tiles description</a>
+<li><a href="#_root_tiles_description">8.5. Root tiles description</a>
 <ul class="sectlevel3">
-<li><a href="#_operation_2">8.4.1. Operation</a></li>
-<li><a href="#_response_6">8.4.2. Response</a></li>
+<li><a href="#_operation_2">8.5.1. Operation</a></li>
+<li><a href="#_response_6">8.5.2. Response</a></li>
 </ul>
 </li>
-<li><a href="#_tiles_from_more_than_one_collection">8.5. Tiles from more than one collection</a>
+<li><a href="#_tiles">8.6. Tiles</a>
 <ul class="sectlevel3">
-<li><a href="#_operation_3">8.5.1. Operation</a></li>
-<li><a href="#_parameter_tilematrixsetid_2">8.5.2. Parameter tileMatrixSetId</a></li>
-<li><a href="#_parameter_tilematrix_2">8.5.3. Parameter tileMatrix</a></li>
-<li><a href="#_parameter_tilerow_2">8.5.4. Parameter tileRow</a></li>
-<li><a href="#_parameter_tilecol_2">8.5.5. Parameter tileCol</a></li>
-<li><a href="#_parameter_collections">8.5.6. Parameter Collections</a></li>
-<li><a href="#_response_7">8.5.7. Response</a></li>
-<li><a href="#_error_conditions_2">8.5.8. Error conditions</a></li>
+<li><a href="#_operation_3">8.6.1. Operation</a></li>
+<li><a href="#_parameter_tilematrixsetid_2">8.6.2. Parameter tileMatrixSetId</a></li>
+<li><a href="#_parameter_tilematrix_2">8.6.3. Parameter tileMatrix</a></li>
+<li><a href="#_parameter_tilerow_2">8.6.4. Parameter tileRow</a></li>
+<li><a href="#_parameter_tilecol_2">8.6.5. Parameter tileCol</a></li>
+<li><a href="#_parameter_resources">8.6.6. Parameter Resources</a></li>
+<li><a href="#_response_7">8.6.7. Response</a></li>
+<li><a href="#_error_conditions_2">8.6.8. Error conditions</a></li>
 </ul>
 </li>
 </ul>
@@ -1263,11 +1264,11 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </div>
 </div>
 <div class="sect1">
-<h2 id="_requirement_class_tiles_from_more_than_one_collection"><a class="anchor" href="#_requirement_class_tiles_from_more_than_one_collection"></a>8. Requirement Class "Tiles from more than one collection"</h2>
+<h2 id="_requirement_class_tiles_root"><a class="anchor" href="#_requirement_class_tiles_root"></a>8. Requirement Class "Tiles root"</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_overview_2"><a class="anchor" href="#_overview_2"></a>8.1. Overview</h3>
-<table id="rc_tiles-collections" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="rc_tiles-root" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 80%;">
@@ -1277,7 +1278,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirements Class</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections</a></p></td>
+<td class="tableblock halign-left valign-top" colspan="2" style="background-color: #FFFFFF;"><p class="tableblock"><a href="http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root" class="bare">http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Target type</p></td>
@@ -1290,17 +1291,29 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </tbody>
 </table>
 <div class="paragraph">
-<p>In previous clauses tiles that are produced from one, and only one resource were discussed. This scenario is achieved by concatenating the tile path to a resource (e.g. a feature collection). This requirements class is an extension of the core requirements class that defines how to create tiles that combine more than one resource. This is achieved by having the tile path also available at the root of the service.</p>
+<p>In previous clauses tiles are produced from one, and only one geospatial resource available in this API. This scenario is achieved by concatenating the tile path to the geospatial resource.</p>
+</div>
+<div class="paragraph">
+<p>This OGC API requirements class is an extension of the core requirements class that defines how to create tiles that combine one or more geospatial resources in any way that is decided in the client side. This is achieved by having the tile path available at the root of the service.</p>
+</div>
+<div class="paragraph">
+<p>It has been argued that this approach is too flexible. In an API that has several geospatial resources, the number of potential combinations of geospatial resources may be too big to be efficiently handle. If the implementers see a potential performance issue, they may not choose to declare conformity to this requirements class.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_api_landing_page"><a class="anchor" href="#_api_landing_page"></a>8.2. API landing page</h3>
+<h3 id="_general_2"><a class="anchor" href="#_general_2"></a>8.2. General</h3>
 <div class="paragraph">
-<p>The landing page provides links to start exploring the resources offered by the API. It mainly consists of a list of links. The core of this draft specification does not add anything to the links required by OGC API - Common. This requirements class for <em>tiles from more than one collection</em> requires a new link for getting the description of the <em>tiles from more than one collection</em> on top of the common ones.</p>
+<p>This building block stays flexible and does not require to implement OWS Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core. Temporarily, it is also possible to combine this building block with OGC API features v1 that is not tied to OWS Common.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_api_landing_page"><a class="anchor" href="#_api_landing_page"></a>8.3. API landing page</h3>
+<div class="paragraph">
+<p>The landing page provides links to start exploring the resources offered by the API. It mainly consists of a list of links to root resources. This standard extension requires a new link in the landing page for getting a description of the URL that allows for retrieving tiles of one or more resources.</p>
 </div>
 <div class="sect3">
-<h4 id="_response_4"><a class="anchor" href="#_response_4"></a>8.2.1. Response</h4>
-<table id="req_tiles_collections_root-success" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_response_4"><a class="anchor" href="#_response_4"></a>8.3.1. Response</h4>
+<table id="req_tiles_root_root-success" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1309,21 +1322,21 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 34</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/root-success</strong></p>
+<p><strong>/req/tiles/root/root-success</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The API SHALL advertise a URI to retrieve tiles definitions defined by this service as links to the descriptions paths with rel: <code>tiles</code>.</p>
+<p>If the API has mechanism to expose root resources (e.g. a landing page), the API SHALL advertise a URI to retrieve tile definitions defined by this service as links to the descriptions paths with rel: <code>tiles</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common. Below is an example fragment of the response to an OGC API - Tiles landing page showing the new link.</p>
+<p>In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to root tiles.</p>
 </div>
-<div id="landingPageTilesCollections" class="exampleblock">
+<div id="landingPageTilesRoot" class="exampleblock">
 <div class="title">Example 4. API Landing Page fragment that advertises the path to get tiles for more than one collection</div>
 <div class="content">
 <div class="listingblock">
@@ -1346,13 +1359,13 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </div>
 </div>
 <div class="sect2">
-<h3 id="_declaration_of_conformance_classes_2"><a class="anchor" href="#_declaration_of_conformance_classes_2"></a>8.3. Declaration of conformance classes</h3>
+<h3 id="_declaration_of_conformance_classes_2"><a class="anchor" href="#_declaration_of_conformance_classes_2"></a>8.4. Declaration of conformance classes</h3>
 <div class="sect3">
-<h4 id="_response_5"><a class="anchor" href="#_response_5"></a>8.3.1. Response</h4>
+<h4 id="_response_5"><a class="anchor" href="#_response_5"></a>8.4.1. Response</h4>
 <div class="paragraph">
-<p>The conformance page mainly consists of a list of links. OGC API - Common already requires some links.</p>
+<p>The conformance page mainly consists of a list of links.</p>
 </div>
-<table id="req_tiles_collections_conformance-success" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_tiles_root_conformance-success" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1361,13 +1374,13 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 35</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/conformance-success</strong></p>
+<p><strong>/req/tiles/root/conformance-success</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The API conformance path SHALL advertise the capability of generating tiles from multiple collections adding the conformance class for this capability as a link to <a href="http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections" class="bare">http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections</a>.</p>
+<p>If the API has a mechanism to advertise conformance classes, the API SHALL advertise the capability of generating tiles from multiple collections adding the conformance class for this capability as a link to <a href="http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root" class="bare">http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1375,7 +1388,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <div class="paragraph">
 <p>On the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API – Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for <em>tiles from more than one collection</em></p>
 </div>
-<div id="ConformancePageTilesCollections" class="exampleblock">
+<div id="ConformancePageTilesroot" class="exampleblock">
 <div class="title">Example 5. Conformance Information Page fragment</div>
 <div class="content">
 <div class="listingblock">
@@ -1385,7 +1398,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core",
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections",
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core"
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root"
   ]
 }</code></pre>
 </div>
@@ -1395,13 +1408,13 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tiles_description_2"><a class="anchor" href="#_tiles_description_2"></a>8.4. Tiles description</h3>
+<h3 id="_root_tiles_description"><a class="anchor" href="#_root_tiles_description"></a>8.5. Root tiles description</h3>
 <div class="paragraph">
 <p>The response to the tiles description operation contains the necessary information to later formulate a tile request of tiles from more than one collection.</p>
 </div>
 <div class="sect3">
-<h4 id="_operation_2"><a class="anchor" href="#_operation_2"></a>8.4.1. Operation</h4>
-<table id="req_tiles_collections_ts-op" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_operation_2"><a class="anchor" href="#_operation_2"></a>8.5.1. Operation</h4>
+<table id="req_tiles_root_ts-op" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1410,13 +1423,13 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 36</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/ts-op</strong></p>
+<p><strong>/req/tiles/toot/ts-op</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The server SHALL support an operation to retrieve the description of the tiles from more than one collection, available as a HTTP GET request to a URI that is composed by two parts: the first part is the URI of a resource that can be represented as tiles (e.g. <code>/map</code> or simply <code>/</code>) and the second part follows the pattern <code>/tiles</code>.</p>
+<p>The server SHALL support an operation to retrieve the description of the root tiles available as a HTTP GET request to a URI that is composed by two parts: the first part is the URI of a resource that can be represented as tiles (e.g. <code>/map</code> or simply <code>/</code>) and the second part follows the pattern <code>/tiles</code>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1426,11 +1439,11 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_6"><a class="anchor" href="#_response_6"></a>8.4.2. Response</h4>
+<h4 id="_response_6"><a class="anchor" href="#_response_6"></a>8.5.2. Response</h4>
 <div class="paragraph">
-<p>A successful response to a tiles request for more than one collection will respond with a data structure with specific information necessary to get tiles representing the resource collection. In this requirements class, the response only provides the URL template to retrieve a tile.</p>
+<p>A successful response to a tiles request for a root tiles will return a data structure with a link to get tiles representing the resources and other relevant resources. This requirements class, the response only requires a URL template to retrieve a tile.</p>
 </div>
-<table id="req_tiles_collections_ts-tile-examples" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_tiles_root_ts-tile-examples" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1439,7 +1452,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 37</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/ts-tile-examples</strong></p>
+<p><strong>/req/tiles/root/ts-tile-examples</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1451,7 +1464,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>These links SHALL provide a URL template with the fragment <code>/tiles</code> followed by the variables {tileMatrixSetId}, {tileMatrix}, {tileRow} and {tileCol}. Once the variables are substituted by their respective valid values, a URL to a tile is obtained.</p>
+<p>These links SHALL provide a URL template composed by the URL of this resource followed by the variables {tileMatrixSetId}, {tileMatrix}, {tileRow} and {tileCol}. Once the variables are substituted by their respective valid values, a URL to a tile is obtained.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1463,9 +1476,9 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </tbody>
 </table>
 <div class="paragraph">
-<p>One common order used in URL templates for tiles is: /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}. However, this draft specification allows for other URL template composition.</p>
+<p>One common order used in URL templates for tiles is: tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}. However, this draft specification allows for other URL template composition.</p>
 </div>
-<table id="URL_template_tile_collections" class="tableblock frame-all grid-all stretch">
+<table id="URL_template_tile_root" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. URI template variables for tiles and possible values</caption>
 <colgroup>
 <col style="width: 22.2222%;">
@@ -1503,7 +1516,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </tbody>
 </table>
 <div class="exampleblock">
-<div class="title">Example 6. API tiles response fragment with the link to retrieve tiles form more than one collection</div>
+<div class="title">Example 6. API tiles response fragment with the link to retrieve tiles</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -1511,6 +1524,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 [
     {
       "href": "http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}",
+      "templated": true,
       "rel": "item",
       "type": "image/png",
     }
@@ -1520,18 +1534,18 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </div>
 </div>
 <div class="paragraph">
-<p>In general, the <code>tileMatrixSetLinks</code> and the <code>tileMatrixSetLimits</code> can be determined by examining this information in the individual collections. In some cases, the server could also include the <code>tileMatrixSetLinks</code> data structure as part of the response to this operation. Clients should be prepared to determine if a <code>tileMatrixSetLinks</code> data structure is not provided in certain combinations of collections by examining the tileMatrixSet values and limits from the information in the individual collections and calculating the limits as the most restrictive intersection of them.</p>
+<p>In general, the <code>tileMatrixSetLinks</code> and the <code>tileMatrixSetLimits</code> can be determined by examining this information in the individual geospatial resource <code>tiles</code> of geospatial resource. In some cases, the server could also include the <code>tileMatrixSetLinks</code> data structure as part of the response to this operation. Clients should be prepared to determine if a <code>tileMatrixSetLinks</code> data structure is not provided in certain combinations of geospatial resources by examining the tileMatrixSet values and limits from the information in the individual geospatial resources and calculating the limits as the most restrictive intersection of them.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tiles_from_more_than_one_collection"><a class="anchor" href="#_tiles_from_more_than_one_collection"></a>8.5. Tiles from more than one collection</h3>
+<h3 id="_tiles"><a class="anchor" href="#_tiles"></a>8.6. Tiles</h3>
 <div class="paragraph">
-<p>This operation allows retrieving a single tile that represents information coming from more than one collection.</p>
+<p>This operation allows retrieving a single tile that represents information coming from one or more geospatial resources.</p>
 </div>
 <div class="sect3">
-<h4 id="_operation_3"><a class="anchor" href="#_operation_3"></a>8.5.1. Operation</h4>
-<table id="req_tiles_collections_tcs-op" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_operation_3"><a class="anchor" href="#_operation_3"></a>8.6.1. Operation</h4>
+<table id="req_tiles_root_tcs-op" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1540,21 +1554,24 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 38</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/tcs-op</strong></p>
+<p><strong>/req/tiles/root/tcs-op</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The server SHALL support the HTTP GET operation at the path /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</p>
+<p>The server SHALL support a set of HTTP GET operations following a URL template composed by the the root tile resource URL followed by values that substitute the variables {tileMatrixSetId}, {tileMatrix}, {tileRow} and {tileCol}.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>One common order used in URL templates for tiles is: tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}. However, this draft specification allows for other URL template composition.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilematrixsetid_2"><a class="anchor" href="#_parameter_tilematrixsetid_2"></a>8.5.2. Parameter tileMatrixSetId</h4>
-<table id="req_tiles_collections_tcs-tilematrixsetid-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_parameter_tilematrixsetid_2"><a class="anchor" href="#_parameter_tilematrixsetid_2"></a>8.6.2. Parameter tileMatrixSetId</h4>
+<table id="req_tiles_root_tcs-tilematrixsetid-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1563,7 +1580,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 39</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/tcs-tilematrixsetid-definition</strong></p>
+<p><strong>/req/tiles/root/tcs-tilematrixsetid-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1587,8 +1604,8 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </table>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilematrix_2"><a class="anchor" href="#_parameter_tilematrix_2"></a>8.5.3. Parameter tileMatrix</h4>
-<table id="req_tiles_collections_tcs-tilematrix-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_parameter_tilematrix_2"><a class="anchor" href="#_parameter_tilematrix_2"></a>8.6.3. Parameter tileMatrix</h4>
+<table id="req_tiles_root_tcs-tilematrix-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1597,7 +1614,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 40</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/tcs-tilematrix-definition</strong></p>
+<p><strong>/req/tiles/root/tcs-tilematrix-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1621,8 +1638,8 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </table>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilerow_2"><a class="anchor" href="#_parameter_tilerow_2"></a>8.5.4. Parameter tileRow</h4>
-<table id="req_tiles_collections_tcs-tilerow-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_parameter_tilerow_2"><a class="anchor" href="#_parameter_tilerow_2"></a>8.6.4. Parameter tileRow</h4>
+<table id="req_tiles_root_tcs-tilerow-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1631,7 +1648,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 41</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/tcs-tilerow-definition</strong></p>
+<p><strong>/req/tiles/root/tcs-tilerow-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1656,8 +1673,8 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </table>
 </div>
 <div class="sect3">
-<h4 id="_parameter_tilecol_2"><a class="anchor" href="#_parameter_tilecol_2"></a>8.5.5. Parameter tileCol</h4>
-<table id="req_tiles_collections_tcs-tilecol-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_parameter_tilecol_2"><a class="anchor" href="#_parameter_tilecol_2"></a>8.6.5. Parameter tileCol</h4>
+<table id="req_tiles_root_tcs-tilecol-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1666,7 +1683,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 42</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/tcs-tilecol-definition</strong></p>
+<p><strong>/req/tiles/root/tcs-tilecol-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1691,8 +1708,8 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </table>
 </div>
 <div class="sect3">
-<h4 id="_parameter_collections"><a class="anchor" href="#_parameter_collections"></a>8.5.6. Parameter Collections</h4>
-<table id="req_tiles_collections_tcs-collections-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<h4 id="_parameter_resources"><a class="anchor" href="#_parameter_resources"></a>8.6.6. Parameter Resources</h4>
+<table id="req_tiles_root_tcs-root-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1701,17 +1718,17 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 43</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/tcs-collections-definition</strong></p>
+<p><strong>/req/tiles/root/tcs-root-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The operation SHALL support an optional parameter <code>collections</code> with the following characteristics (shown as OpenAPI Specification 3.0 fragment)</p>
+<p>The operation SHALL support an optional parameter <code>resources</code> with the following characteristics (shown as OpenAPI Specification 3.0 fragment)</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="YAML">  name: collections
+<pre class="CodeRay highlight"><code data-lang="YAML">  name: resources
   in: query
   required: false
   style: form
@@ -1726,24 +1743,24 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The parameter <code>collections</code> SHALL contain a comma-separated list of collection identifiers.</p>
+<p>The parameter <code>resources</code> SHALL contain a comma-separated list of geospatial resource identifiers (collectionId&#8217;s) or a comma-separated list of full URLs to geospatial resource identifiers.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Only the collections that advertise a link type=tiles in the /collections/{collectionId} SHALL be included.</p>
+<p>Only the geospatial resource identifiers that advertise a link with type=<code>tiles</code> in the geospatial resource description SHALL be included.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">D</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>Only the collections that support the same TileMatrixSetId parameter value SHALL be included.</p>
+<p>Only geospatial resources that support the same TileMatrixSetId parameter value SHALL be included.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table id="rec_tiles_collections_tcs-collections-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="rec_tiles_root_tcs-root-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1752,24 +1769,18 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Recommendation 8</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/rec/tiles/collections/tcs-collections-definition</strong></p>
+<p><strong>/rec/tiles/root/tcs-root-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>If the parameter <code>collections</code> is missing, and when  it is possible and sensible, all collections supporting the TileMatrixSetId parameter value SHOULD be represented in the tiles.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
-<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The collection ids that can be used for this operation SHOULD be listed in the description of the <code>collections</code> parameter in the API definition</p>
+<p>If the parameter <code>resources</code> is missing, and when  it is possible and sensible, all geospatial resources supporting the TileMatrixSetId parameter value SHOULD be represented in the tiles.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
-<table id="per_tiles_collections_tcs-collections-definition" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="per_tiles_root_tcs-root-definition" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1778,24 +1789,24 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Permission 2</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/per/tiles/collections/tcs-collections-definition</strong></p>
+<p><strong>/per/tiles/root/tcs-root-definition</strong></p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>If the parameter <code>collections</code> is missing and if it is not possible and sensible to represent all collections in tiles (e.g. it compromises performance or tiles are become packed with too many elements), the server is allowed to select only the most significant collections.</p>
+<p>If the parameter <code>resources</code> is missing and if it is not possible and sensible to represent all geospatial resources in tiles (e.g. it compromises performance or tiles are become packed with too many elements), the server is allowed to select only the most significant geospatial resources.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_7"><a class="anchor" href="#_response_7"></a>8.5.7. Response</h4>
+<h4 id="_response_7"><a class="anchor" href="#_response_7"></a>8.6.7. Response</h4>
 <div class="paragraph">
-<p>A successful response to a tile request is consistent with the media type of resource requested. This draft specification does not impose any media type. For example, for features the media type can be GeoJSON or Mapbox vector tiles,for coverages it may be a GeoTIFF, and for maps it may be a JPEG or a PNG.</p>
+<p>A successful response to a tile request is consistent with the media type of resource requested. This draft specification does not impose any media type. For example, for features the media type can be GeoJSON or Mapbox vector tiles, for coverages it may be a GeoTIFF, and for maps it may be a JPEG or a PNG.</p>
 </div>
-<table id="req_tiles_collections_tcs-success" class="tableblock frame-all grid-all" style="width: 90%;">
+<table id="req_tiles_root_tcs-success" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
 <col style="width: 25%;">
 <col style="width: 75%;">
@@ -1804,7 +1815,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Requirement 44</strong></p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p><strong>/req/tiles/collections/tcs-success</strong></p>
+<p><strong>/req/tiles/root/tcs-success</strong></p>
 </div></div></td>
 </tr>
 <tr>
@@ -1816,7 +1827,7 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">B</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>The content of that response SHALL be consistent with the format requested and represent elements inside or  intersecting with the spatial extent of the geographical area of the tile identified by TileMatrixSet, TileMatrix, TileRow and TileCol.</p>
+<p>The content of that response SHALL be consistent with the format requested and represent elements inside or intersecting with the spatial extent of the geographical area of the tile identified by TileMatrixSet, TileMatrix, TileRow and TileCol.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1829,15 +1840,15 @@ The use of "templated" is inspired in the JSON Hypertext Application Language (H
 </table>
 </div>
 <div class="sect3">
-<h4 id="_error_conditions_2"><a class="anchor" href="#_error_conditions_2"></a>8.5.8. Error conditions</h4>
+<h4 id="_error_conditions_2"><a class="anchor" href="#_error_conditions_2"></a>8.6.8. Error conditions</h4>
 <div class="paragraph">
 <p>If the value of the parameter <code>tileMatrixSetId</code> is not available by the server for this resource or the values of the parameters <code>tileMatrix</code>, <code>tileRow</code>, <code>tileCol</code> are out-of-range, the status code of the response is 404.</p>
 </div>
 <div class="paragraph">
-<p>If the value of the parameter <code>collections</code> contains a collection id that does not exist on the server, the status code of the response is 404.</p>
+<p>If the value of the parameter <code>resources</code> contains a resource id of URI that does not exist on the API, the status code of the response is 404.</p>
 </div>
 <div class="paragraph">
-<p>If the value of the parameter <code>collections</code> has a wrong format or combines collections and some of them are not compatible with the <code>tileMatrixSetId</code> value, the status code of the response is 500.</p>
+<p>If the value of the parameter <code>resources</code> has a wrong format or combines one of more geospatial resources that are not compatible with the <code>tileMatrixSetId</code> value, the status code of the response is 500.</p>
 </div>
 </div>
 </div>
@@ -1951,7 +1962,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-03-18 13:02:03 +0100
+Last updated 2020-04-21 20:43:14 +0200
 </div>
 </div>
 </body>

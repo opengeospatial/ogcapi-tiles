@@ -1,7 +1,0 @@
-[[rec_tiles_collections_tcs-collections-definition]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/tiles/collections/tcs-collections-definition*
-^|A |If the parameter `collections` is missing, and when  it is possible and sensible, all collections supporting the TileMatrixSetId parameter value SHOULD be represented in the tiles.
-^|B |The collection ids that can be used for this operation SHOULD be listed in the description of the `collections` parameter in the API definition
-|===

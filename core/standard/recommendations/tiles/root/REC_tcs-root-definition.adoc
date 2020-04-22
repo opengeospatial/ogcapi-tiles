@@ -1,0 +1,6 @@
+[[rec_tiles_root_tcs-root-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/tiles/root/tcs-root-definition*
+^|A |If the parameter `resources` is missing, and when  it is possible and sensible, all geospatial resources supporting the TileMatrixSetId parameter value SHOULD be represented in the tiles.
+|===

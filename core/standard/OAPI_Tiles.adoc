@@ -97,7 +97,7 @@ include::clause_6_overview.adoc[]
 
 include::clause_7_tile_core.adoc[]
 
-include::clause_7_tile_collections.adoc[]
+include::clause_7_tile_root.adoc[]
 
 //include::clause_10_encodings.adoc[]
 
