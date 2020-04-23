@@ -1,12 +1,13 @@
 # OGC API - Tiles
 
 This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventually coverage tiles) of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
+
 This is the CURRENT working version of this initiative (Old version work was one of the  engineering reports in Testbed-15 see the public version in http://docs.opengeospatial.org/per/19-069.html; or the GitHub version:  https://github.com/opengeospatial/T-15-D014-WMTS_draft_specification; if you are not a member or observer in Testbed15 you will get a 404)
 
 IMPORTANT: Many examples of OpenAPI documents that are used as inspiration and test of this work is here:
 https://app.swaggerhub.com/apis/UAB-CREAF
 
-The OGC API - Maps and the OGC API - Tiles are deeply related and should be considered together.
+The OGC API - Maps and the OGC API - Tiles are related and should be considered together. Visit the [Quick guide](QuickGuide/README.md)
 
 ## Standards
 After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having 2 cores, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
