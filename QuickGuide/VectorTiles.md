@@ -48,7 +48,7 @@ The identifier of the {geospatialResource} is replaced by "/collections/{collect
 
 Tiles are available at some TileMatrixSetId are enumerated in:
 ```
-GET /.../.../tiles
+GET /{geospatialResource}/tiles
 ```
 
 When there is a need for describing new TileMatrixSet that are beyond the ones in Annex D of the  2D Tile Matrix Set standard you can find them in this path

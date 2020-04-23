@@ -5,4 +5,4 @@ What do you what to do?
   - [Vector tiles](VectorTiles.md)
   - [Map tiles](MapTiles.md)
 * maps
-  - [Maps](/opengeospatial/OGC-API-Maps/QuickGuide/Maps.md)
+  - [Maps](https://github.com/opengeospatial/OGC-API-Maps/blob/master/QuickGuide/Maps.md)
