@@ -1,4 +1,4 @@
-# Map Tiles
+# Vector Tiles
 
 ## How to get a vector tile from a feature collection step by step
 
@@ -19,7 +19,7 @@
 * Use the URL template and substitute the variables by values to get a URL
   - get your tile!
 
-### API approach
+### OpenAPI approach
 * Visit the API page directly
   - look for the /collections path
   - look for the /collections/{collectionId}/tiles path
