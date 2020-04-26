@@ -1,0 +1,21 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 8* |*/ats/core/tc-tilematrix-definition*
+^|Test Purpose |Validate that the tileMatrix parameters are constructed correctly.
+^|Requirement |/req/tiles/core/tc-tilematrix-definition
+^|Test Method |
+
+Verify that the tileMatrix parameter complies with the following definition (using an OpenAPI Specification 3.0 fragment):
+```
+name: tileMatrix
+    in: path
+    description: Identifier selecting one of the scales
+defined in the TileMatrixSet and representing the scaleDenominator the tile.
+    required: true
+    schema:
+      type: string
+    example: '11'
+ 
+ 
+```
+|===

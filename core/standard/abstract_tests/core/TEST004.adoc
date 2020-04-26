@@ -1,0 +1,28 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 4* |*/ats/core/sct-tmxslink*
+^|Test Purpose |Verify that the response to a successful execution to a tiles description contains tileMatrixSetLinks 
+^|Requirement |/req/tiles/core/sct-tmxslink
+^|Test Method |1. Validate that the response document contains a property tileMatrixSetLinks
+
+2. Validate the document against the schema using an JSON Schema validator. 
+```
+tileMatrixSetLink-set:
+description: This list of tileMatrixSetLink objects,
+as defined in OGC 17-083r2 supported by this collectionId.
+      type: array
+      items:
+$ref: '#/components/schemas/tileMatrixSetLink- entry'
+tileMatrixSetLink-entry: type: object
+required:
+- tileMatrixSet properties:
+        tileMatrixSet:
+          type: string
+          example: 'WebMercatorQuad'
+        tileMatrixSetURI:
+          type: string
+          format: uri
+          example:
+'http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad'
+```
+|===

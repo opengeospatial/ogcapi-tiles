@@ -1,0 +1,11 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 1* |*/ats/core/conformance-success*
+^|Test Purpose |Validate that the Conformance Declaration response complies with the required structure and contents.
+^|Requirement |/req/tiles/core/conformance-success
+^|Test Method |1. Validate the response document against OpenAPI 3.0 schema confClasses.yaml
+
+2. Validate that the document includes the conformance class "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core"
+
+3. Validate that the document list all OGC API conformance classes that the API implements.
+|===

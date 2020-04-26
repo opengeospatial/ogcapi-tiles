@@ -1,0 +1,18 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 7* |*/ats/core/tc-tilematrixsetid-definition*
+^|Test Purpose |Validate that the tileMatrixSetId parameters are constructed correctly.
+^|Requirement |/req/tiles/core/tc-tilematrixsetid-definition
+^|Test Method |Verify that the tileMatrixSetId parameter complies with the following definition (using an OpenAPI Specification 3.0 fragment):
+```
+name: tileMatrixSetId
+in: path
+description: Identifier of a specific tiling scheme.
+It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
+    required: true
+    schema:
+      type: string
+    example: WebMercatorQuad
+ 
+```
+|===
