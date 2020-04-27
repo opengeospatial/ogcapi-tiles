@@ -6,7 +6,9 @@
 ^|Test Method |
 
 Verify that the tileMatrix parameter complies with the following definition (using an OpenAPI Specification 3.0 fragment):
-```
+ 
+[source,YAML]
+----
 name: tileMatrix
     in: path
     description: Identifier selecting one of the scales
@@ -16,6 +18,5 @@ defined in the TileMatrixSet and representing the scaleDenominator the tile.
       type: string
     example: '11'
  
- 
-```
+----
 |===

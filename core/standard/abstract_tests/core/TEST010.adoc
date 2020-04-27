@@ -4,7 +4,9 @@
 ^|Test Purpose |Validate that the tileCol parameters are constructed correctly.
 ^|Requirement |/req/tiles/core/tc-tilecol-definition
 ^|Test Method |Verify that the tileCol parameter complies with the following definition (using an OpenAPI Specification 3.0 fragment):
-```
+ 
+[source,YAML]
+----
 name: tileCol
     in: path
     description: Column index of the tile on the selected
@@ -16,5 +18,5 @@ TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix.
     example: 1231
  
  
-```
+----
 |===

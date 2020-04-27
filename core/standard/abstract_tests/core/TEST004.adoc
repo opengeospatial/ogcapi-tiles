@@ -6,7 +6,9 @@
 ^|Test Method |1. Validate that the response document contains a property tileMatrixSetLinks
 
 2. Validate the document against the schema using an JSON Schema validator. 
-```
+ 
+[source,YAML]
+----
 tileMatrixSetLink-set:
 description: This list of tileMatrixSetLink objects,
 as defined in OGC 17-083r2 supported by this collectionId.
@@ -24,5 +26,5 @@ required:
           format: uri
           example:
 'http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad'
-```
+----
 |===

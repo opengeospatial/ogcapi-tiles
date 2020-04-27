@@ -4,7 +4,9 @@
 ^|Test Purpose |Validate that the tileRow parameters are constructed correctly.
 ^|Requirement |/req/tiles/core/tc-tilerow-definition
 ^|Test Method |Verify that the tileRow parameter complies with the following definition (using an OpenAPI Specification 3.0 fragment):
-```
+ 
+[source,YAML]
+----
 name: tileRow
    in: path
    description: Row index of the tile on the selected
@@ -15,5 +17,5 @@ TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix
      minimum: 0
    example: '827'
  
-```
+----
 |===
