@@ -41,6 +41,7 @@ We foresee the following extensions (some of them can end into OGC standards and
 * Other TileMatrixSets  (started in: [clause_7_tile_tms](extensions/tmxs/standard/clause_7_tile_tms.adoc) )
 * Info (featureInfo) (started in: [clause_7_tile_info](extensions/info/standard/clause_7_tile_info.adoc) )
 * Multi-tile (retrieve a ZIP with many tiles) (pending, necessary for the update workflow) (started in: [clause_7_tile_info](extensions/multitile/standard/clause_7_tile_cols_multitiles.adoc) )
+* Time and elevation. There is some discussion if this should be "delegated" to collections/coverage filtering capabilities or should implement here because there is some demand for "simple approaches".
 
 #### How to do vector tiles service
 The minimum set of modules to implement a vector tiles API is:
