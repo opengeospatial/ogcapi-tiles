@@ -1,0 +1,7 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 12* |*/ats/root/root-success*
+^|Test Purpose |Validate that the API advertises a URI for retrieving tile definitions defined by the service as links to the descriptions paths with rel: tiles.
+^|Requirement |/req/tiles/root/root-success
+^|Test Method |Verify that the API advertises a URI, as links to the descriptions paths with `rel: tiles`, for retrieving tile definitions defined by the service.
+|===

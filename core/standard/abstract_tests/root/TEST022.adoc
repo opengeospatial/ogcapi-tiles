@@ -1,0 +1,13 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 22* |*/ats/root/tcs-success*
+^|Test Purpose |Verify that the response to a tile request is consistent with the spatial extent and media type of resource requested.
+^|Requirement |/req/tiles/root/tcs-success
+^|Test Method |1. Verify that the format of the response is as requested.
+
+2. Verify that the spatial extent of the contents of the response are inside or intersecting with the spatial extent of the geographical area of the tile identified by TileMatrixSet, TileMatrix, TileRow and TileCol in the request.
+
+3. Verify that the content of the response complies with the scale denominator represented by the TileMatrix identified.
+
+4.  Validate that the response is returned with a status code 200.
+|===
