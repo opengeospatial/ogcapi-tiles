@@ -15,24 +15,53 @@ Ensure that there is a conformance class for each requirements class and a test 
 |Requirements class | http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 |===
 
-==== Requirement 1
-[cols=">20h,<80d",width="100%"]
-|===
-|Test id: |/conf/conf-class-a/req-name-1
-|Requirement: |/req/req-class-a/req-name-1
-|Test purpose: | Verify that...
-|Test method: | Inspect...
-|===
+==== Declaration of conformance classes
 
-==== Requirement 2
+===== Response
 
-[cols=">20h,<80d",width="100%"]
-|===
-|Test id: |/conf/conf-class-a/req-name-1
-|Requirement: |/req/req-class-a/req-name-1
-|Test purpose: | Verify that...
-|Test method: | Inspect...
-|===
+include::abstract_tests/core/TEST001.adoc[]
+
+==== Tiles description
+
+===== Tiles description path
+
+include::abstract_tests/core/TEST002.adoc[]
+
+===== Tiles description Link
+
+include::abstract_tests/core/TEST003.adoc[]
+
+===== Response
+
+include::abstract_tests/core/TEST004.adoc[]
+
+include::abstract_tests/core/TEST005.adoc[]
+
+==== A tile from a geospatial resource
+
+===== Operation
+
+include::abstract_tests/core/TEST006.adoc[]
+
+===== Parameter tileMatrixSetId
+
+include::abstract_tests/core/TEST007.adoc[]
+
+===== Parameter tileMatrix
+
+include::abstract_tests/core/TEST008.adoc[]
+
+===== Parameter tileRow
+
+include::abstract_tests/core/TEST009.adoc[]
+
+===== Parameter tileCol
+
+include::abstract_tests/core/TEST010.adoc[]
+
+===== Response
+
+include::abstract_tests/core/TEST011.adoc[]
 
 === Conformance Class Root
 
@@ -44,21 +73,54 @@ Ensure that there is a conformance class for each requirements class and a test 
 |Requirements class | http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root
 |===
 
-==== Requirement 3
-[cols=">20h,<80d",width="100%"]
-|===
-|Test id: |/conf/conf-class-a/req-name-1
-|Requirement: |/req/req-class-a/req-name-1
-|Test purpose: | Verify that...
-|Test method: | Inspect...
-|===
+==== API landing page
 
-==== Requirement 4
+===== Response
 
-[cols=">20h,<80d",width="100%"]
-|===
-|Test id: |/conf/conf-class-a/req-name-1
-|Requirement: |/req/req-class-a/req-name-1
-|Test purpose: | Verify that...
-|Test method: | Inspect...
-|===
+include::abstract_tests/root/TEST012.adoc[]
+
+==== Declaration of conformance classes
+
+===== Response
+
+include::abstract_tests/root/TEST013.adoc[]
+
+==== Root tiles description
+
+===== Operation
+
+include::abstract_tests/root/TEST014.adoc[]
+
+===== Response
+
+include::abstract_tests/root/TEST015.adoc[]
+
+==== Tiles
+
+===== Operation
+
+include::abstract_tests/root/TEST016.adoc[]
+
+===== Parameter tileMatrixSetId
+
+include::abstract_tests/root/TEST017.adoc[]
+
+===== Parameter tileMatrix
+
+include::abstract_tests/root/TEST018.adoc[]
+
+===== Parameter tileRow
+
+include::abstract_tests/root/TEST019.adoc[]
+
+===== Parameter tileCol
+
+include::abstract_tests/root/TEST020.adoc[]
+
+===== Parameter Resources
+
+include::abstract_tests/root/TEST021.adoc[]
+
+===== Response
+
+include::abstract_tests/root/TEST022.adoc[]

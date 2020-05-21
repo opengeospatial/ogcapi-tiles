@@ -3,7 +3,9 @@
 ^|*Abstract Test 21* |*/ats/root/tcs-root-definition*
 ^|Test Purpose |Verify that the operation optionally supports a parameter `resources`.
 ^|Requirement |/req/tiles/root/tcs-root-definition
-^|Test Method |1. Validate that the operation returns an HTTP 200 code for a `resources` parameter constructed following schema the below.
+^|Test Method |
+[start=1]
+. Validate that the operation returns an HTTP 200 code for a `resources` parameter constructed following schema the below.
 
 [source,YAML]
 ----
@@ -16,12 +18,10 @@ name: resources
       type: array
       items:
         type: string
----- 
+----
 
 [start=2]
-2. Verify that `resources` parameter only contains a comma-separated list of geospatial resource identifiers (collectionId’s) or a comma- separated list of full URLs to geospatial resource identifiers.
-
-3. Verify that the geospatial resource identifiers advertise links with type=tiles in the geospatial resource description
-
-4. Verify that the geospatial resource identifiers support the same TileMatrixSetId parameter value
+. Verify that `resources` parameter only contains a comma-separated list of geospatial resource identifiers (collectionId’s) or a comma- separated list of full URLs to geospatial resource identifiers.
+. Verify that the geospatial resource identifiers advertise links with type=tiles in the geospatial resource description
+. Verify that the geospatial resource identifiers support the same TileMatrixSetId parameter value
 |===

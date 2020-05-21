@@ -27,4 +27,13 @@ Organization name(s)
 
 All questions regarding this submission should be directed to the editor or the submitters:
 
-Name  Affiliation
+[cols=",",options="header",]
+|===
+|Name |Affiliation
+|Joan Masó | UAB-CREAF
+|Chuck Heazel | Heazel Tech
+|Jeff Harrison | AGC
+|Jérôme Jacovella-St-Louis| Ecere Corporation
+|TBA | TBA
+|TBA | TBA
+|===

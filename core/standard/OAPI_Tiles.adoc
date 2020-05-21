@@ -8,6 +8,8 @@
 :toclevels: 3
 :numbered:
 :sectanchors:
+:sectnums:
+:sectnumlevels: 5
 //:source-highlighter: pygments
 :source-highlighter: coderay
 

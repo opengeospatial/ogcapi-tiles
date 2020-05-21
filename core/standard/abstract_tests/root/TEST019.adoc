@@ -3,7 +3,9 @@
 ^|*Abstract Test 19* |*/ats/root/tcs-tilerow-definition*
 ^|Test Purpose |Verify that the operation supports a parameter `tileRow`.
 ^|Requirement |/req/tiles/root/tcs-tilerow-definition
-^|Test Method |1. Issue an HTTP GET request with a `tileRow` parameter value constructed following schema the below.
+^|Test Method |
+[start=1]
+. Issue an HTTP GET request with a `tileRow` parameter value constructed following schema the below.
 
 [source,YAML]
 ----
@@ -16,7 +18,7 @@ TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix
       type: integer
       minimum: 0
     example: '827'
----- 
+----
 [start=2]
-2. Validate that responses are returned with a status code 200.
+. Validate that responses are returned with a status code 200.
 |===
