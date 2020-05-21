@@ -1,0 +1,24 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 20* |*/ats/root/tcs-tilecol-definition*
+^|Test Purpose |Verify that the operation supports a parameter `tileCol`.
+^|Requirement |/req/tiles/root/tcs-tilecol-definition
+^|Test Method |1. Issue an HTTP GET request with a `tileCol` parameter value constructed following schema the below.
+
+[source,YAML]
+----
+name: tileCol
+    in: path
+    description: Column index of the tile on the selected
+TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix.
+    required: true
+    schema:
+      type: integer
+      minimum: 0
+    example: 1231
+ 
+---- 
+
+[start=2]
+2. Validate that responses are returned with a status code 200.
+|===

@@ -1,0 +1,9 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 11* |*/ats/core/tc-success*
+^|Test Purpose |Validate that the response complies with the required format, structure and contents.
+^|Requirement |/req/tiles/core/tc-success
+^|Test Method |1. Validate that a successful execution of the operation is reported with a HTTP status code 200.
+
+2. Validate that the content of that response is consistent with the format requested and represents elements inside or intersecting with the spatial extent of the geographical area of the tile identified by TileMatrixSet, TileMatrix, TileRow and TileCol.
+|===

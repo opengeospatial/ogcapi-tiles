@@ -1,0 +1,11 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 15* |*/ats/root/ts-tile-examples*
+^|Test Purpose |Validate that the response to a tiles request for a root tiles returns a data structure with a link to get tiles representing the resources.
+^|Requirement |/req/tiles/root/ts-tile-examples
+^|Test Method |1. Verify that the response includes at least one link labeled with the relation type `rel: item`
+
+2. Verify that links with `rel: item` follow a URL template consisting consisting of the variables {tileMatrixSetId}, {tileMatrix}, {tileRow} and {tileCol}
+
+3. If multiple links are provided with the same URL template, verify that they have a different `type` attribute value (each indicating a different format)
+|===

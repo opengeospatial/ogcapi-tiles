@@ -1,0 +1,10 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 5* |*/ats/core/sct-tile-examples*
+^|Test Purpose |Verify that the response to a successful execution to a tiles description includes the required tile URI templates.
+^|Requirement |/req/tiles/core/sct-tile-examples
+^|Test Method |1. Verify that the content of the response to a successful execution of a tile description includes at least a link to a tile URI template (rel: item).
+2. Verify that the links provide a URL template with the fragment /tiles followed by the variables {tileMatrixSetId}, {tileMatrix}, {tileRow} and {tileCol}. 
+3. Verify that there is a link to a tile URI template for each file format that the server supports (the format is indicated in the 'type' attribute of the link).
+4. Verify that a property 'templated' is part of the link properties to indicate that the link needs to be processed to substitute the templated variables with valid values before being used as a URL to a tile.
+|===

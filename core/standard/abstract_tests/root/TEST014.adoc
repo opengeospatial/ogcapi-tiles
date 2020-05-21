@@ -1,0 +1,12 @@
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test 14* |*/ats/toot/ts-op*
+^|Test Purpose |Validate that the server supports retrieval of descriptions of the root tiles
+^|Requirement |/req/tiles/toot/ts-op
+^|Test Method |1. Validate that the first part of the URL is the URI of a resource that can be represented as tiles (e.g. /map or simply /)
+
+2. Validate that the second part of the URL follows the pattern `/tiles`.
+
+3. Issue an HTTP GET request to the URL provided for retrieving the description of the root tiles
+4. Validate that a document was returned with a status code 200
+|===
