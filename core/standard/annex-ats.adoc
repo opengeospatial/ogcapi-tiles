@@ -5,7 +5,15 @@
 [NOTE]
 Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)
 
-=== Conformance Class A
+=== Conformance Class Core
+
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
+|Target type |Web API
+|Requirements class | http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+|===
 
 ==== Requirement 1
 [cols=">20h,<80d",width="100%"]
@@ -17,3 +25,40 @@ Ensure that there is a conformance class for each requirements class and a test 
 |===
 
 ==== Requirement 2
+
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |/conf/conf-class-a/req-name-1
+|Requirement: |/req/req-class-a/req-name-1
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+
+=== Conformance Class Root
+
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/root
+|Target type |Web API
+|Requirements class | http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root
+|===
+
+==== Requirement 3
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |/conf/conf-class-a/req-name-1
+|Requirement: |/req/req-class-a/req-name-1
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===
+
+==== Requirement 4
+
+[cols=">20h,<80d",width="100%"]
+|===
+|Test id: |/conf/conf-class-a/req-name-1
+|Requirement: |/req/req-class-a/req-name-1
+|Test purpose: | Verify that...
+|Test method: | Inspect...
+|===

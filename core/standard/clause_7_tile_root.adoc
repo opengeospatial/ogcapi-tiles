@@ -61,10 +61,10 @@ On the conformance page (typically in JSON format) the links follow the link sch
 [source,JSON]
 {
   "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core",
-    "http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core"
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root"
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/root"
   ]
 }
 =================
