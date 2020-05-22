@@ -179,7 +179,7 @@ include::requirements/tiles/core/REQ_tc-tilecol-definition.adoc[]
 
 A successful response to a tile GET operation will be consistent with the media type of resource requested. This draft specification does not impose any media type or file format. For example:
 
-* For features the media type can be GeoJSON or Mapbox vector tiles;
+* For features the media type may be GeoJSON or Mapbox Vector Tiles;
 * For coverages the response may be a GeoTIFF;
 * For maps the response may be a JPEG or a PNG.
 

@@ -140,7 +140,7 @@ include::recommendations/tiles/root/REC_tcs-root-definition.adoc[]
 include::recommendations/tiles/root/PER_tcs-root-definition.adoc[]
 
 ==== Response
-A successful response to a tile request is consistent with the media type of resource requested. This draft specification does not impose any media type. For example, for features the media type can be GeoJSON or Mapbox vector tiles, for coverages it may be a GeoTIFF, and for maps it may be a JPEG or a PNG.
+A successful response to a tile request is consistent with the media type of resource requested. This draft specification does not impose any media type. For example, for features the media type may be GeoJSON or Mapbox Vector Tiles, for coverages it may be a GeoTIFF, and for maps it may be a JPEG or a PNG.
 
 include::requirements/tiles/root/REQ_tcs-success.adoc[]
 
