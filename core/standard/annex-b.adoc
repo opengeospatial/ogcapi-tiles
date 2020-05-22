@@ -2,9 +2,9 @@
 :appendix-caption: Annex
 == Multi-layer Tile Support (Informative)
 
-This draft specification does not impose any limits on the number of layers (e.g. feature types) that are included in a single tile. The draft specification therefore allows a server to return a tile consisting of multiple layers. Such tiles are referred to as "multi-layer tiles".
+This draft specification does not impose any limits on the number of layers or collections that are included in a single tile. The draft specification therefore allows a server to return a tile consisting of multiple layers or collections. Such tiles are referred to as "multi-layer tiles".
 
-Metadata about a multi-layer tile that consists of a set of feature types may be serialized as JSON, for example using the https://github.com/mapbox/tilejson-spec[Mapbox TileJSON] format. TileJSON conveys information such as the layers found within a tileset, the fields for attribute information, the vector geometry type, the zoom levels as well as a simple URL template for retrieving the tiles themselves. As example TileJSON document is shown in the following section.
+Metadata about single or multi-layer tiles may be serialized as JSON, for example using the https://github.com/mapbox/tilejson-spec[Mapbox TileJSON] format. TileJSON conveys information such as the layers found within a tileset, the fields for attribute information, the vector geometry type, the zoom levels as well as a simple URL template for retrieving the tiles themselves. An example TileJSON document is shown in the following section.
 
 === Example TileJSON document
 
