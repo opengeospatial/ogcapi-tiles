@@ -1,0 +1,6 @@
+[[per_tiles_core_tc-multilayer-tile]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/tiles/core/tc-multilayer-tile*
+^|A |This draft specification does not impose any limits on the number of layers (e.g. feature types) that are included in a single tile, the server is therefore allowed to return a tile consisting of multiple layers. 
+|===
