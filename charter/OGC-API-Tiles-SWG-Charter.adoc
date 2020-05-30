@@ -57,7 +57,12 @@ The formal proposed name of the new multi-part standard is "{swgname}". The shor
 
 === Business Value Proposition
 
-TBA
+The lineage of OGC API - Tiles can be traced back to the release of the OGC's Web Map Tile Service (WMTS) standard. WMTS offered what was then an alternative strategy for retrieving rendered maps. Rather than retrieving a complete map, WMTS client applications were required to retrieve subsets of the map in predefined sizes and representing predefined extents. Upon retrieving those tiles, the client applications were then able to mosaic the tiles together to display a complete map.
+
+There are several benefits to delivering maps using a tiling approach. The restriction of image requests to a fixed predefined image allows for servers to scale based on communication processing capabilities rather than image processing abilities because serves can pre-render some or all of their images and can use image caching strategies. The fixed set of images also enables network providers to cache images between the client and the server, reducing latency and bandwidth use.
+
+OGC API - Tiles follows in the footsteps of WMTS but adopts the OGC Web API guidelines and Spatial Data on the Web best practices. The Tiles API leverages the OGC Two Dimensional Tile Matrix Set standard, a specification that has established the Tile Matrix Set concept introduced by WMTS into a separate fully-independent standard. The Tiles API has been proven in OGC Innovation Program initiatives such as the Vector Tiles Pilot (VTP) to be able to support the handling of tiled feature data, colloquially referred to as vector tiles. This means that OGC API - Tiles will be able to handle different types of tiling content, whether that content is made of vector feature data, coverages or rendered maps.
+
 
 === Scope of Work
 
