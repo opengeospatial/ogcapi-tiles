@@ -1,0 +1,186 @@
+[appendix]
+:appendix-caption: Annex
+== Multi-layer Tile Support (Informative)
+
+This draft specification does not impose any limits on the number of data layers that are included in a single tile. The server is therefore allowed to return a tile consisting of multiple data layers, where each individual data layer, or the set of data layers as a whole, may correspond to a collection. Such tiles are referred to as "multi-layer tiles".
+
+Metadata about single or multi-layer tiles may be serialized as JSON, for example using the https://github.com/mapbox/tilejson-spec[Mapbox TileJSON] format. TileJSON conveys information such as the layers found within a tileset, the fields for attribute information, the vector geometry type, the zoom levels as well as a simple URL template for retrieving the tiles themselves. An example TileJSON document is shown in the following section.
+
+=== Example TileJSON document
+
+The following TileJSON could be retrieved from a URL such as: ``https://someserver.ogc.org/tiles/collections/vtp_daraa/tiles/{tileMatrixSetId}?f=application%2Fjson``
+
+NOTE: The OGC Vector Tiles Pilot Phase 2 (VTP2) initiative successfully proved that the TileJSON documents could be served from a URL such as: ``https://someserver.ogc.org/tiles/collections/vtp_daraa/tiles/{tileMatrixSetId}/metadata?f=application%2Fjson``
+
+[source,json]
+----
+{
+  "name": "vtp_daraa",
+  "scheme": "xyz",
+  "tiles": [
+    "https://someserver.ogc.org/tiles/collections/vtp_daraa/tiles/WebMercatorQuad/{z}/{y}/{x}?f=application%2Fvnd.mapbox-vector-tile"
+  ],
+  "center": [
+    36.56250000000041,
+    34.27502568554792,
+    6
+  ],
+  "bounds": [
+    35.8995094299316,
+    32.4131851196289,
+    36.5781326293945,
+    33.1460647583008
+  ],
+  "vector_layers": [
+    {
+      "id": "AgricultureSrf",
+      "fields": {
+        "OTH": "string",
+        "PVH": "number",
+        "TSCL": "number",
+        "ZI005_FNA": "string",
+        "CDR": "string",
+        "..." : "..."
+      },
+      "geometry_type": "polygon"
+    },
+    {
+      "id": "VegetationSrf",
+      "fields": {
+        "LZN": "number",
+        "OTH": "string",
+        "PVH": "number",
+        "TRE": "integer",
+        "..." : "..."
+      },
+      "geometry_type": "polygon"
+    },
+    {
+      "id": "MilitarySrf",
+      "fields": {
+        "OTH": "string",
+        "WD3": "number",
+        "FRT": "integer",
+        "FRT3": "integer",
+        "FRT2": "integer",
+        "ZI005_FNA": "string",
+        "..." : "..."
+      },
+      "geometry_type": "polygon"
+    },
+    "..."
+  ]
+}
+
+----
+
+The *draft* schema for TileJSON 3.0.0 is presented below for reference.
+
+[source,json]
+----
+{
+    "name": "TileJSON",
+    "type": "object",
+    "properties": {
+        "tilejson": {
+            "type": "string",
+            "pattern": "\\d+\\.\\d+\\.\\d+\\w?[\\w\\d]*"
+        },
+        "tiles": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "vector_layers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "fields": {
+                        "type": "object",
+                        "additionalProperties": { "type": "string" }
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "maxzoom": {
+                        "type": "integer"
+                    },
+                    "minzoom": {
+                        "type": "integer"
+                    }
+                },
+                "required": [ "id", "fields" ],
+                "additionalProperties": true
+            }
+        },
+        "attribution": {
+            "type": "string"
+        },
+        "bounds": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "center": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "description": {
+            "type": "string"
+        },
+        "fillzoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "grids": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "legend": {
+            "type": "string"
+        },
+        "maxzoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "minzoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "name": {
+            "type": "string"
+        },
+        "scheme": {
+            "type": "string"
+        },
+        "template": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string",
+            "pattern": "\\d+\\.\\d+\\.\\d+\\w?[\\w\\d]*"
+        }
+    },
+    "required": ["tilejson", "tiles", "vector_layers"],
+    "additionalProperties": true
+}
+----
