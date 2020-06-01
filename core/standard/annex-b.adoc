@@ -2,13 +2,15 @@
 :appendix-caption: Annex
 == Multi-layer Tile Support (Informative)
 
-This draft specification does not impose any limits on the number of layers or collections that are included in a single tile. The draft specification therefore allows a server to return a tile consisting of multiple layers or collections. Such tiles are referred to as "multi-layer tiles".
+This draft specification does not impose any limits on the number of data layers that are included in a single tile. The server is therefore allowed to return a tile consisting of multiple data layers, where each individual data layer, or the set of data layers as a whole, may correspond to a collection. Such tiles are referred to as "multi-layer tiles".
 
 Metadata about single or multi-layer tiles may be serialized as JSON, for example using the https://github.com/mapbox/tilejson-spec[Mapbox TileJSON] format. TileJSON conveys information such as the layers found within a tileset, the fields for attribute information, the vector geometry type, the zoom levels as well as a simple URL template for retrieving the tiles themselves. An example TileJSON document is shown in the following section.
 
 === Example TileJSON document
 
-The following TileJSON could be retrieved from a URL such as: ``https://someserver.ogc.org/tiles/collections/vtp_daraa/tiles/{tileMatrixSetId}/metadata?f=application%2Fjson``
+The following TileJSON could be retrieved from a URL such as: ``https://someserver.ogc.org/tiles/collections/vtp_daraa/tiles/{tileMatrixSetId}?f=application%2Fjson``
+
+NOTE: The OGC Vector Tiles Pilot Phase 2 (VTP2) initiative successfully proved that the TileJSON documents could be served from a URL such as: ``https://someserver.ogc.org/tiles/collections/vtp_daraa/tiles/{tileMatrixSetId}/metadata?f=application%2Fjson``
 
 [source,json]
 ----
