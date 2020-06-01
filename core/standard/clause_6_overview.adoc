@@ -3,7 +3,7 @@
 
 === Evolution from OGC Web Services
 
-OGC Web Service (OWS) standards have historically implemented a Remote Procedure Call (RPC) architectural style using Extensible Markup Language (XML) for payloads. This was the state-of-the-art when some of the initial versions of OGC Web Services were originally designed in the late 1990s and early 2000s. This architectural style has now a competing RESTful API style that is proposed as an alternative to the RPC pattern. A RESTful API style is resource-oriented instead of service-oriented. This OGC API - Maps and Tiles draft specification specifies an API that follows this Web architecture and in particular the W3C/OGC best practices for sharing Spatial Data on the Web as well as the W3C best practices for sharing Data on the Web.
+OGC Web Service (OWS) standards have historically implemented a Remote Procedure Call (RPC) architectural style using Extensible Markup Language (XML) for payloads. This was the state-of-the-art when some of the initial versions of OGC Web Services were originally designed in the late 1990s and early 2000s. This architectural style has now a competing RESTful API style that is proposed as an alternative to the RPC pattern. A RESTful API style is resource-oriented instead of service-oriented. This OGC API - Tiles draft specification specifies an API that follows this Web architecture and in particular the W3C/OGC best practices for sharing Spatial Data on the Web as well as the W3C best practices for sharing Data on the Web.
 
 The OGC API – Common draft specification specifies the common kernel of an API approach to services that follows current resource-oriented architecture practices. The draft OGC API - Common specification is the foundation upon which OGC APIs will be built. This common API is to be extended by resource-specific API standards. The OGC API - Tiles specification extends OGC API - Common to support tiled resources.
 
@@ -28,7 +28,7 @@ WMS and WMTS share the concept of a map and the capability to create and distrib
 
 With time, the concept of a tile has been generalized to other data models such as feature data (some vendors use the expression _vector tiles_) and even to coverage data. This draft specification presents an approach to tiles that can be applied to almost every resource type that returns data representations. If applied in conjunction with the OGC API - Features standard and on top of a feature collection, the expected result is tiled feature data such as vector tiles. If applied in conjunction with the OGC API - Maps draft specification and on top of a collection that is transformed into a map by applying a style, the result should be map tiles (usually in PNG or JPEG format).
 
-This draft specification only describes the core capabilities for the Tiles API. Other extensions to the core will define how to add tile matrix set descriptions, multi-tiles and simple pixel queries. To produce map tiles, some modules of the OGC API - Maps will be need.
+This draft specification only describes the core capabilities for the Tiles API. Other extensions to the core will define how to add tile matrix set descriptions, multi-tiles and simple pixel queries. To produce map tiles, some modules of the OGC API - Tiles will be needed.
 
 [#img_CoreAndExtension,reftext='{figure-caption} {counter:figure-num}']
 .Modular approach in the Maps and Tiles draft specification

@@ -13,9 +13,9 @@ This building block does not specify how to get an API definition, the conforman
 
 The core of the OGC API - Tiles core draft specification does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D (or compatible future update of it) and there is no need to define new TileMatrixSets. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.
 
-This draft specification assumes that data is organized in on or more geospatial resources (e.g. the "collections" in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core]). Geospatial resources are referenced using URIs.
+This draft specification assumes that data is organized into one or more geospatial resources (e.g. the "collections" in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core]). Geospatial resources are referenced using URIs.
 
-This document does not specify any requirements for geospatial resources, and they could be  features, coverages, a resource that does not represent data per-se (e.g. an annotation) as far as they can be represented a tile. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial resource (tiles that are generated as a combination of geospatial resources will be defined as an extension).
+This document does not specify any requirements for the type of geospatial resource that should be supported. Provided that the geospatial resources can be organized into tiles, they can be supported regardless of whether they are features, coverages, a resource that does not represent data per-se (e.g. an annotation) and so forth. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial resource (tiles that are generated as a combination of geospatial resources will be defined as an extension).
 
 Accessing the geospatial resource content (other than as tiles) or its descriptions is out of the scope of this draft specification. If a description of the geospatial resource exists and it has a mechanism to add links to it, this specification will indicate the need to add a link to the tile representation description.
 
@@ -185,7 +185,7 @@ A successful response to a tile GET operation will be consistent with the media 
 
 include::requirements/tiles/core/REQ_tc-success.adoc[]
 
-Normally, the content partially outside the tile bounding box will be clipped. This is particularly true and easy to when tiles are in raster format (e.g. map tiles). Nevertheless, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features for performance.
+Normally, the content partially outside the tile bounding box will be clipped at the extent of the bounding box. This can be done efficiently when tiles are in raster format (e.g. map tiles). However, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features for performance.
 
 include::recommendations/tiles/core/REC_tc-success-scale.adoc[]
 
