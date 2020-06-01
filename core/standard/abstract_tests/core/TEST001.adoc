@@ -7,5 +7,5 @@
 
 2. Validate that the document includes the conformance class "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core"
 
-3. Validate that the document list all OGC API conformance classes that the API implements.
+3. Validate that the document lists all OGC API conformance classes that the API implements.
 |===

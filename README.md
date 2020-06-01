@@ -12,7 +12,7 @@ The OGC API - Maps and the OGC API - Tiles are related and should be considered 
 ## Standards
 After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having 2 cores, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
 
-The standard is written using AsciiDoc using many files that might be difficult to trace. Please see the standard document as a long HTML page EASY TO READ FORMAT here: https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/master/core/standard/OAPI_Tiles.html
+The standard is written using AsciiDoc using many files that might be difficult to trace. Please see the standard document as a long HTML page EASY TO READ FORMAT here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html
 
 ### Tiles
 We have received several recommendations to separate the specifications into a core and some extensions. In March 2020 we decided to restructure the GitHub repository to separate the core and the extensions in different documents that might be elaborated at different speeds.

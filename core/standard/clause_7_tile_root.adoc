@@ -14,7 +14,7 @@ It has been argued that this approach is too flexible. In an API that has severa
 
 === General
 
-This building block stays flexible and does not require to implement OWS Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core. Temporarily, it is also possible to combine this building block with OGC API features v1 that is not tied to OWS Common.
+This building block stays flexible and does not require implementation of OGC API - Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common - Part 1: Core. 
 
 === API landing page
 
