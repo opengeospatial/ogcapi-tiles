@@ -107,7 +107,7 @@ The basic resource described in {swgname} are {resources}. The {shortname} descr
 
 ==== Specific Contribution of Existing Work as a Starting Point
 
-The starting point for the work will be the draft document that is currently on the proposed SWG's repository ({githubrepo}). This charter recognises the prior work done by the {base_swg}. Upon approval of this Charter, responsibility for {swgname} shall be transferred to the proposed {swgname} SWG.
+The starting point for the work will be the draft document that is currently on the proposed SWG's repository ({githubrepo}). This charter recognises the prior work done by the {base_swg}. Upon approval of this Charter, responsibility for {swgname} shall be transferred to the proposed {swgname} SWG. The {swgname} SWG will meet with the OGC API - Maps SWG on a regular basis.
 
 The work shall also be informed by the following specifications and by recommendations found in:
 
