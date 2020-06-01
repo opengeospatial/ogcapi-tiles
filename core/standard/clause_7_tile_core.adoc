@@ -185,9 +185,15 @@ A successful response to a tile GET operation will be consistent with the media 
 
 include::requirements/tiles/core/REQ_tc-success.adoc[]
 
+include::recommendations/tiles/core/PER_tc-core-tile-encoding.adoc[]
+
 Normally, the content partially outside the tile bounding box will be clipped. This is particularly true and easy to when tiles are in raster format (e.g. map tiles). Nevertheless, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features for performance.
 
 include::recommendations/tiles/core/REC_tc-success-scale.adoc[]
+
+To enable search engines to easily discover the content offered by an implementation of OGC API - Tiles, as well as to enable web browsers to easily display the content offered by the APIs, this specification allows for responses to operations to be encoded in HTML.
+
+include::recommendations/tiles/core/PER_tc-core-html.adoc[]
 
 ==== Error conditions
 
