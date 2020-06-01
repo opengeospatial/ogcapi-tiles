@@ -1,5 +1,5 @@
-:authors: FirstName1 LastName1,FirstName2 LastName2
-:authors_email: a@a.com, b@b.com
+:authors: Joan Maso
+:authors_email: TBA
 :date: YYYY-MM-DD
 :title: OGC API - Tiles
 :swgname: OGC API - Tiles
@@ -191,13 +191,13 @@ The following people support this proposal and are committed to the Charter and 
 [cols=",",width="75%",options="header",align="center"]
 |===
 |Name| Organization
-|FirstName1 LastName1 | OrganizationName1
-|FirstName2 LastName2 | OrganizationName2
-|FirstName3 LastName3 | OrganizationName3
-|FirstName4 LastName4 | OrganizationName4
+|Joan Maso  | UAB-CREAF
+|Jeff Harrison | AGC
+|Matt Sorenson  | Strategic Alliance Consulting Inc.
+|Carl Reed | Carl Reed & Associates
+|FirstName1 | LastName1
+|FirstName2 | LastName2
 |===
-
-
 
 [loweralpha, start=5]
 .	Convener(s)
