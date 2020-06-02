@@ -101,7 +101,7 @@ include::requirements/tiles/core/REQ_sct-tmxslink.adoc[]
 
 include::recommendations/tiles/core/REC_sct-tmxslink.adoc[]
 
-TileMatrixSetLink is mandatory as part of the response of a ‘tiles’ description. Clients or servers are not required to support a specific default TileMatrixSet. This is illustrated by the <<TilesLinkResponseExample>>.
+TileMatrixSetLink is mandatory as part of the response of a ‘tiles’ description. Clients or servers are not required to support a specific default TileMatrixSet. The <<TilesLinkResponseExample>> shows how a TileMatrixSet can be reference.
 
 Resolvable URLs for the 8 URIs defined in the OGC 17-083r2 Annex D are available in the OGC schemas repository in XML, JSON and RDF formats. For example, JSON descriptions can be found here: http://schemas.opengis.net/tms/1.0/json/examples/
 
