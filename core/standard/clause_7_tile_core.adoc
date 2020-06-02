@@ -101,6 +101,8 @@ include::requirements/tiles/core/REQ_sct-tmxslink.adoc[]
 
 include::recommendations/tiles/core/REC_sct-tmxslink.adoc[]
 
+TileMatrixSetLink is mandatory as part of the response of a ‘tiles’ description. Clients or servers are not required to support a specific default TileMatrixSet. This is illustrated by the <<TilesLinkResponseExample>>.
+
 Resolvable URLs for the 8 URIs defined in the OGC 17-083r2 Annex D are available in the OGC schemas repository in XML, JSON and RDF formats. For example, JSON descriptions can be found here: http://schemas.opengis.net/tms/1.0/json/examples/
 
 include::requirements/tiles/core/REQ_sct-tile-examples.adoc[]
@@ -110,7 +112,7 @@ NOTE: One common order used in URL templates for tiles is .../tiles/{tileMatrixS
 NOTE: The geospatial resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
 [[TilesLinkResponseExample]]
-.Example of a tiles metadata response.
+.Example of a tiles metadata response
 =================
 [source,JSON]
 {
