@@ -1028,7 +1028,7 @@ See <a href="https://www.w3.org/TR/dwbp/#APIHttpVerbs">Best Practice 24: Use Web
 <div class="sect2">
 <h3 id="_evolution_from_ogc_web_services"><a class="anchor" href="#_evolution_from_ogc_web_services"></a>6.1. Evolution from OGC Web Services</h3>
 <div class="paragraph">
-<p>OGC Web Service (OWS) standards have historically implemented a Remote Procedure Call (RPC) architectural style using Extensible Markup Language (XML) for payloads. This was the state-of-the-art when some of the initial versions of OGC Web Services were originally designed in the late 1990s and early 2000s. This architectural style has now a competing RESTful API style that is proposed as an alternative to the RPC pattern. A RESTful API style is resource-oriented instead of service-oriented. This OGC API - Maps and Tiles draft specification specifies an API that follows this Web architecture and in particular the W3C/OGC best practices for sharing Spatial Data on the Web as well as the W3C best practices for sharing Data on the Web.</p>
+<p>OGC Web Service (OWS) standards have historically implemented a Remote Procedure Call (RPC) architectural style using Extensible Markup Language (XML) for payloads. This was the state-of-the-art when some of the initial versions of OGC Web Services were originally designed in the late 1990s and early 2000s. This architectural style has now a competing RESTful API style that is proposed as an alternative to the RPC pattern. A RESTful API style is resource-oriented instead of service-oriented. This OGC API - Tiles draft specification specifies an API that follows this Web architecture and in particular the W3C/OGC best practices for sharing Spatial Data on the Web as well as the W3C best practices for sharing Data on the Web.</p>
 </div>
 <div class="paragraph">
 <p>The OGC API – Common draft specification specifies the common kernel of an API approach to services that follows current resource-oriented architecture practices. The draft OGC API - Common specification is the foundation upon which OGC APIs will be built. This common API is to be extended by resource-specific API standards. The OGC API - Tiles specification extends OGC API - Common to support tiled resources.</p>
@@ -1078,7 +1078,7 @@ See <a href="https://www.w3.org/TR/dwbp/#APIHttpVerbs">Best Practice 24: Use Web
 <p>With time, the concept of a tile has been generalized to other data models such as feature data (some vendors use the expression <em>vector tiles</em>) and even to coverage data. This draft specification presents an approach to tiles that can be applied to almost every resource type that returns data representations. If applied in conjunction with the OGC API - Features standard and on top of a feature collection, the expected result is tiled feature data such as vector tiles. If applied in conjunction with the OGC API - Maps draft specification and on top of a collection that is transformed into a map by applying a style, the result should be map tiles (usually in PNG or JPEG format).</p>
 </div>
 <div class="paragraph">
-<p>This draft specification only describes the core capabilities for the Tiles API. Other extensions to the core will define how to add tile matrix set descriptions, multi-tiles and simple pixel queries. To produce map tiles, some modules of the OGC API - Maps will be need.</p>
+<p>This draft specification only describes the core capabilities for the Tiles API. Other extensions to the core will define how to add tile matrix set descriptions, multi-tiles and simple pixel queries. To produce map tiles, some modules of the OGC API - Tiles will be needed.</p>
 </div>
 <div id="img_CoreAndExtension" class="imageblock text-center">
 <div class="content">
@@ -1166,10 +1166,10 @@ See <a href="https://www.w3.org/TR/dwbp/#APIHttpVerbs">Best Practice 24: Use Web
 <p>The core of the OGC API - Tiles core draft specification does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D (or compatible future update of it) and there is no need to define new TileMatrixSets. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.</p>
 </div>
 <div class="paragraph">
-<p>This draft specification assumes that data is organized in on or more geospatial resources (e.g. the "collections" in <a href="http://www.opengis.net/doc/IS/ogcapi-features-1/1.0">OGC API - Features - Part 1: Core</a>). Geospatial resources are referenced using URIs.</p>
+<p>This draft specification assumes that data is organized into one or more geospatial resources (e.g. the "collections" in <a href="http://www.opengis.net/doc/IS/ogcapi-features-1/1.0">OGC API - Features - Part 1: Core</a>). Geospatial resources are referenced using URIs.</p>
 </div>
 <div class="paragraph">
-<p>This document does not specify any requirements for geospatial resources, and they could be  features, coverages, a resource that does not represent data per-se (e.g. an annotation) as far as they can be represented a tile. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial resource (tiles that are generated as a combination of geospatial resources will be defined as an extension).</p>
+<p>This document does not specify any requirements for the type of geospatial resource that should be supported. Provided that the geospatial resources can be organized into tiles, they can be supported regardless of whether they are features, coverages, a resource that does not represent data per-se (e.g. an annotation) and so forth. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial resource (tiles that are generated as a combination of geospatial resources will be defined as an extension).</p>
 </div>
 <div class="paragraph">
 <p>Accessing the geospatial resource content (other than as tiles) or its descriptions is out of the scope of this draft specification. If a description of the geospatial resource exists and it has a mechanism to add links to it, this specification will indicate the need to add a link to the tile representation description.</p>
@@ -1422,7 +1422,7 @@ The concept of geospatial resource path substitutes the concept of "layer" in WM
 <tr>
 <td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">A</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
-<p>This core requirements class does not provide any mechanism to defined TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 Annex D.</p>
+<p>This core requirements class does not provide any mechanism to define TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 <a href="http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61">Annex D</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1431,8 +1431,17 @@ The concept of geospatial resource path substitutes the concept of "layer" in WM
 <p>The server SHOULD do a effort to provide to the client a way to get full description of the TileMatrixSet. Even if the TileMatrixSet is not directly defined by the API, when a full definition of the TileMatrixSet is available as a resolvable URL, a resolvable URL SHOULD be used as the value of the tileMatrixSetURI.</p>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">C</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><div class="content"><div class="paragraph">
+<p>This standard recommends the use of the TileMatrixSets defined in <a href="http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61">Annex D</a> of OGC 17-083r2. In the case of variable-width tiles, the standard recommends the use of the TileMatrixSets defined in <a href="http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#104">Annex H</a> of OGC 17-083r2.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>TileMatrixSetLink is mandatory as part of the response of a ‘tiles’ description. Clients or servers are not required to support a specific default TileMatrixSet. This is illustrated by the <a href="#TilesLinkResponseExample">Example of a tiles metadata response</a>.</p>
+</div>
 <div class="paragraph">
 <p>Resolvable URLs for the 8 URIs defined in the OGC 17-083r2 Annex D are available in the OGC schemas repository in XML, JSON and RDF formats. For example, JSON descriptions can be found here: <a href="http://schemas.opengis.net/tms/1.0/json/examples/" class="bare">http://schemas.opengis.net/tms/1.0/json/examples/</a></p>
 </div>
@@ -1499,7 +1508,7 @@ The geospatial resource URL is expected to be the first part of the URL template
 </table>
 </div>
 <div id="TilesLinkResponseExample" class="exampleblock">
-<div class="title">Example 3. Example of a tiles metadata response.</div>
+<div class="title">Example 3. Example of a tiles metadata response</div>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -1803,7 +1812,7 @@ The use of "templated" is inspired by the JSON Hypertext Application Language (H
 </tbody>
 </table>
 <div class="paragraph">
-<p>Normally, the content partially outside the tile bounding box will be clipped. This is particularly true and easy to when tiles are in raster format (e.g. map tiles). Nevertheless, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features for performance.</p>
+<p>Normally, the content partially outside the tile bounding box will be clipped at the extent of the bounding box. This can be done efficiently when tiles are in raster format (e.g. map tiles). However, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features for performance.</p>
 </div>
 <table id="rec_tiles_core_tc-success-scale" class="tableblock frame-all grid-all" style="width: 90%;">
 <colgroup>
@@ -1878,7 +1887,7 @@ The use of "templated" is inspired by the JSON Hypertext Application Language (H
 <div class="sect2">
 <h3 id="_general_2"><a class="anchor" href="#_general_2"></a>8.2. General</h3>
 <div class="paragraph">
-<p>This building block stays flexible and does not require to implement OWS Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core. Temporarily, it is also possible to combine this building block with OGC API features v1 that is not tied to OWS Common.</p>
+<p>This building block stays flexible and does not require implementation of OGC API - Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common - Part 1: Core.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2507,7 +2516,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 <p>Validate that the document includes the conformance class "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core"</p>
 </li>
 <li>
-<p>Validate that the document list all OGC API conformance classes that the API implements.</p>
+<p>Validate that the document lists all OGC API conformance classes that the API implements.</p>
 </li>
 </ol>
 </div></div></td>
@@ -2600,7 +2609,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 <p>a link to the response document in every other media type supported by the server (relation: alternate).</p>
 </li>
 <li>
-<p>a link with the href pointing to a the description of the tiles that presents a tile representation of this geospatial resource and with relation: tiles.</p>
+<p>a link with the href pointing to the description of the tiles that presents a tile representation of this geospatial resource and with relation: tiles.</p>
 </li>
 </ol>
 </div></div></td>
@@ -3670,7 +3679,7 @@ Ensure that there is a conformance class for each requirements class and a test 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-22 07:23:24 +0100
+Last updated 2020-06-02 08:27:43 +0100
 </div>
 </div>
 <style>
