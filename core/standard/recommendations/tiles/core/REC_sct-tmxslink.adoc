@@ -2,6 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tiles/core/sct-tmxslink*
-^|A |This core requirements class does not provide any mechanism to defined TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 Annex D.
+^|A |This core requirements class does not provide any mechanism to define TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D].
 ^|B |The server SHOULD do a effort to provide to the client a way to get full description of the TileMatrixSet. Even if the TileMatrixSet is not directly defined by the API, when a full definition of the TileMatrixSet is available as a resolvable URL, a resolvable URL SHOULD be used as the value of the tileMatrixSetURI.
+^|C |This standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D] of OGC 17-083r2. In the case of variable-width tiles, the standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#104[Annex H] of OGC 17-083r2.
 |===
