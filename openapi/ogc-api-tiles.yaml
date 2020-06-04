@@ -175,7 +175,7 @@ components:
       # This object does not include the links element that should be added as and additional element using tiles-link      
       type: object
       required:
-        - tileMatrixSetLink
+        - tileMatrixSetLinks
       properties:
         # A WMTS layer definition has id, title, description, keyword that are already defined in OWS Common
         # wgs84BoundingBox is the 'extent' that is already defined in OWS Common
