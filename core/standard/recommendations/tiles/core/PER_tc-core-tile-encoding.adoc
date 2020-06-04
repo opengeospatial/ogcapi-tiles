@@ -1,0 +1,8 @@
+[[per_tiles_core_tc-core-tile-encoding]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/tiles/root/tc-core-tile-encoding*
+^|A |This draft specification does not impose any media type on the encoding of a response containing tiled feature data. For features the media type MAY be GeoJSON, Mapbox vector tiles or other format.
+^|B |This draft specification does not impose any media type on the encoding of a response containing tiled coverage data. For coverages it MAY be a GeoTIFF or other format.
+^|C |This draft specification does not impose any media type on the encoding of a map tile response. For maps it MAY be a JPEG, PNG or other format.
+|===
