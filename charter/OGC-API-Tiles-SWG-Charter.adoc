@@ -49,8 +49,10 @@ Please feel free to forward this announcement to any other appropriate lists. Th
 
 The purpose of this Standards Working Group is to:
 
-•	Develop and maintain an {swgname} core standard.
-•	Develop and maintain extensions of the {swgname} standard as identified in section 4 (Scope).
+*	Develop and maintain an {swgname} core standard.
+*	Develop and maintain extensions of the {swgname} standard as identified in section 4 (Scope).
+* Maintain the https://www.ogc.org/standards/wmts[Web Map Tile Service (WMTS)] standard
+* Develop and maintain the https://www.ogc.org/standards/tms[Two Dimensional Tile Matrix Set (TMS)] standard.
 
 The formal proposed name of the new multi-part standard is "{swgname}". The short name “{shortname}” may also be used to refer to this effort in the charter and work products.
 
@@ -107,7 +109,7 @@ The basic resource described in {swgname} are {resources}. The {shortname} descr
 
 ==== Specific Contribution of Existing Work as a Starting Point
 
-The starting point for the work will be the draft document that is currently on the proposed SWG's repository ({githubrepo}). This charter recognises the prior work done by the {base_swg}. Upon approval of this Charter, responsibility for {swgname} shall be transferred to the proposed {swgname} SWG. The {swgname} SWG will meet with the OGC API - Maps SWG on a regular basis.
+The starting point for the work will be the draft document that is currently on the proposed SWG's repository ({githubrepo}). This charter recognises the prior work done by the {base_swg}. Upon approval of this Charter, responsibility for {swgname}, WMTS and the TMS standards shall be transferred to the proposed {swgname} SWG. The {swgname} SWG will meet with the OGC API - Maps SWG on a regular basis.
 
 The work shall also be informed by the following specifications and by recommendations found in:
 
