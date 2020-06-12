@@ -137,16 +137,15 @@ The SWG can be inactivated once the final multipart standard has been developed 
 The following deliverables will result from the work of this SWG:
 
 *	A final version of the "{swgname} - Part 1: Core" document for submission to the TC;
-*	Identification of at least three prototype implementations of the core based on the standard — although more would be preferred; and
-*	Zero or more additional parts as time and community interest permits.
+*	Identification of at least three prototype implementations for each conformance class of the standard — although more would be preferred; and
 
-Part 1 will cover basic capabilities to GET, PUT, PATCH, POST, and DELETE {resources} and define {resource} metadata. Capabilities for richer {resource} interfaces or extension for unique geospatial resource considerations will be specified in additional parts.
+Part 1 will cover basic capabilities to GET {resources} and GET information about the tile sets that the Web API provides, including {resource} metadata. Capabilities for richer {resource} interfaces or extension for unique geospatial resource considerations will be specified in additional parts.
 
 The targeted start date is in {target_start_date} once charter is approved. Formal approval of the core {shortname} is envisaged to take place nearer {target_end_date}.
 
 ==== Additional SWG Tasks
 
-To be completed as SWG takes on new tasks.
+The SWG will work on additional parts as time and community interest permits. Any new parts will follow the SWG Task approval process specified in the Technical Committee Policies and Procedures.
 
 === IPR Policy for this SWG
 
@@ -197,7 +196,7 @@ The following people support this proposal and are committed to the Charter and 
 |Jeff Harrison | AGC
 |Matt Sorenson  | Strategic Alliance Consulting Inc.
 |Carl Reed | Carl Reed & Associates
-|FirstName1 | LastName1
+|Clemens Portele | interactive instruments GmbH
 |FirstName2 | LastName2
 |===
 
