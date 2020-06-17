@@ -109,6 +109,8 @@ include::clause_7_tile_root.adoc[]
 
 include::annex-ats.adoc[]
 
+include::annex-b.adoc[]
+
 include::annex_history.adoc[]
 
 include::annex_bibliography.adoc[]
