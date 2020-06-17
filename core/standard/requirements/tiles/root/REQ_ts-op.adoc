@@ -1,6 +1,6 @@
 [[req_tiles_root_ts-op]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/tiles/toot/ts-op*
+^|*Requirement {counter:req-id}* |*/req/tiles/root/ts-op*
 ^|A |The server SHALL support an operation to retrieve the description of the root tiles available as a HTTP GET request to a URI that is composed by two parts: the first part is the URI of a resource that can be represented as tiles (e.g. `/map` or simply `/`) and the second part follows the pattern `/tiles`.
 |===
