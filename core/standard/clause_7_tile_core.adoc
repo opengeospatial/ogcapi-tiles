@@ -7,17 +7,17 @@
 
 include::requirements/tiles/requirements_class_core.adoc[]
 
-This is a building block for the an OGC API that is able to provide geospatial resources. When applying the building block to a geospatial resource, it becomes available as tiles. The server can select which resources are available as tiles and will advertise which resources are available as tiles.
+This is a building block for the an OGC API that is able to provide geospatial data resources. When applying the building block to a geospatial data resource, it becomes available as tiles. The server can select which resources are available as tiles and will advertise which resources are available as tiles.
 
-This building block does not specify how to get an API definition, the conformance class list or the geospatial resources lists. The standard assumes that the first two are defined by an API specification (e.g. OGC API Common) and the later by an OGC API for geospatial resource (e.g. OGC API - Features).
+This building block does not specify how to get an API definition, the conformance class list or the geospatial data resources lists. The standard assumes that the first two are defined by an API specification (e.g. OGC API Common) and the later by an OGC API for geospatial data resource (e.g. OGC API - Features).
 
 The core of the OGC API - Tiles core draft specification does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D (or compatible future update of it) and there is no need to define new TileMatrixSets. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.
 
-This draft specification assumes that data is organized into one or more geospatial resources (e.g. the "collections" in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core]). Geospatial resources are referenced using URIs.
+This draft specification assumes that data is organized into one or more geospatial data resources (e.g. the "collections" in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core]). Geospatial data resources are referenced using URIs.
 
-This document does not specify any requirements for the type of geospatial resource that should be supported. Provided that the geospatial resources can be organized into tiles, they can be supported regardless of whether they are features, coverages, a resource that does not represent data per-se (e.g. an annotation) and so forth. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial resource (tiles that are generated as a combination of geospatial resources will be defined as an extension).
+This document does not specify any requirements for the type of geospatial data resource that should be supported. Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are features, coverages, a resource that does not represent data per-se (e.g. an annotation) and so forth. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial data resource (tiles that are generated as a combination of geospatial data resources will be defined as an extension).
 
-Accessing the geospatial resource content (other than as tiles) or its descriptions is out of the scope of this draft specification. If a description of the geospatial resource exists and it has a mechanism to add links to it, this specification will indicate the need to add a link to the tile representation description.
+Accessing the geospatial data resource content (other than as tiles) or its descriptions is out of the scope of this draft specification. If a description of the geospatial data resource exists and it has a mechanism to add links to it, this specification will indicate the need to add a link to the tile representation description.
 
 The tile representation description will include metadata about tiles as well as links to other resources including at least one with a template to get individual tiles.
 
@@ -51,13 +51,13 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 }
 =================
 
-=== Geospatial resources
-This draft specification does not specify how geospatial resources are exposed in the API and if they can be retrieved as geospatial data (e.g. feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the API could also give access to geospatial resources.
+=== geospatial data resources
+This draft specification does not specify how geospatial data resources are exposed in the API and if they can be retrieved as geospatial data (e.g. feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the API could also give access to geospatial data resources.
 
-NOTE: The concept of geospatial resource path substitutes the concept of "layer" in WMTS 1.0 but it is intended to give a better integration between data visualization and data access.
+NOTE: The concept of geospatial data resource path substitutes the concept of "layer" in WMTS 1.0 but it is intended to give a better integration between data visualization and data access.
 
 === Tiles description
-A tile description contains the necessary metadata to enable a client application to formulate a tile request from a single geospatial resource.
+A tile description contains the necessary metadata to enable a client application to formulate a tile request from a single geospatial data resource.
 
 ==== Tiles description path
 
@@ -69,7 +69,7 @@ This standard does not specify the need for any additional query parameter in th
 
 include::requirements/tiles/core/REQ_tc-tile-desc-links.adoc[]
 
-For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] returns a list of links that include geospatial representations for each geospatial resource in the /collections/{collectionId} path. OGC API  - Common is expected to provide a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
+For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] returns a list of links that include geospatial representations for each geospatial data resource in the /collections/{collectionId} path. OGC API  - Common is expected to provide a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
 
 .Fragment of a collection with a links array with one item of the array pointing to a tiles description.
 =================
@@ -95,7 +95,7 @@ For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-featu
 
 ==== Response
 
-A successful GET response to a tiles description resource will respond with a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial resource. In this core draft specification, the response is only required to inform about from which tile matrix sets the tiles can be retrieved and the URL template for retrieving the tiles.
+A successful GET response to a tiles description resource will respond with a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial data resource. In this core draft specification, the response is only required to inform about from which tile matrix sets the tiles can be retrieved and the URL template for retrieving the tiles.
 
 include::requirements/tiles/core/REQ_sct-tmxslink.adoc[]
 
@@ -107,9 +107,9 @@ Resolvable URLs for the 8 URIs defined in the OGC 17-083r2 Annex D are available
 
 include::requirements/tiles/core/REQ_sct-tile-examples.adoc[]
 
-NOTE: One common order used in URL templates for tiles is .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}, but this standard allows for other URL template composition.
+NOTE: The geospatial data resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
-NOTE: The geospatial resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
+include::recommendations/tiles/core/REC_tc-op.adoc[]
 
 [[TilesLinkResponseExample]]
 .Example of a tiles metadata response
@@ -151,8 +151,8 @@ The following table explains the meaning of the URI template variables.
 |TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
 !===
 
-=== A tile from a geospatial resource
-A tile resource is a geospatial representation of a fragment of a geospatial resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
+=== A tile from a geospatial data resource
+A tile resource is a geospatial representation of a fragment of a geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
 
 ==== Tile path and link
 As described before a tile path is obtained by extracting a tile URL templated from one of the links with `rel`: `item` in tiles description document and substituting the templated variables of with valid values.
@@ -161,7 +161,9 @@ As described before a tile path is obtained by extracting a tile URL templated f
 
 include::requirements/tiles/core/REQ_tc-op.adoc[]
 
-Typical geospatial resources that can be retrieved as tiles are: features (in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] represented by /collections/{collectionId}), or full maps (specified in the OGC API Maps).
+Typical geospatial data resources that can be retrieved as tiles are: features (in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] represented by /collections/{collectionId}), or full maps (specified in the OGC API Maps).
+
+include::recommendations/tiles/core/REC_tc-op.adoc[]
 
 ==== Parameter tileMatrixSetId
 include::requirements/tiles/core/REQ_tc-tilematrixsetid-definition.adoc[]

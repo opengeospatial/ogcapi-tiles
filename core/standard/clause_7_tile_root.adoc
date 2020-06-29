@@ -6,15 +6,15 @@
 
 include::requirements/tiles/requirements_class_root.adoc[]
 
-In previous clauses tiles are produced from one, and only one geospatial resource available in this API. This scenario is achieved by concatenating the tile path to the geospatial resource.
+In previous clauses tiles are produced from one, and only one geospatial data resource available in this API. This scenario is achieved by concatenating the tile path to the geospatial data resource.
 
-This OGC API requirements class is an extension of the core requirements class that defines how to create tiles that combine one or more geospatial resources in any way that is decided in the client side. This is achieved by having the tile path available at the root of the service.
+This OGC API requirements class is an extension of the core requirements class that defines how to create tiles that combine one or more geospatial data resources in any way that is decided in the client side. This is achieved by having the tile path available at the root of the service.
 
-It has been argued that this approach is too flexible. In an API that has several geospatial resources, the number of potential combinations of geospatial resources may be too big to be efficiently handle. If the implementers see a potential performance issue, they may not choose to declare conformity to this requirements class.
+It has been argued that this approach is too flexible. In an API that has several geospatial data resources, the number of potential combinations of geospatial data resources may be too big to be efficiently handle. If the implementers see a potential performance issue, they may not choose to declare conformity to this requirements class.
 
 === General
 
-This building block stays flexible and does not require implementation of OGC API - Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common - Part 1: Core. 
+This building block stays flexible and does not require implementation of OGC API - Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common - Part 1: Core.
 
 === API landing page
 
@@ -110,10 +110,10 @@ links:
 ]
 =================
 
-In general, the `tileMatrixSetLinks` and the `tileMatrixSetLimits` can be determined by examining this information in the individual geospatial resource `tiles` of geospatial resource. In some cases, the server could also include the `tileMatrixSetLinks` data structure as part of the response to this operation. Clients should be prepared to determine if a `tileMatrixSetLinks` data structure is not provided in certain combinations of geospatial resources by examining the tileMatrixSet values and limits from the information in the individual geospatial resources and calculating the limits as the most restrictive intersection of them.
+In general, the `tileMatrixSetLinks` and the `tileMatrixSetLimits` can be determined by examining this information in the individual geospatial data resource `tiles` of geospatial data resource. In some cases, the server could also include the `tileMatrixSetLinks` data structure as part of the response to this operation. Clients should be prepared to determine if a `tileMatrixSetLinks` data structure is not provided in certain combinations of geospatial data resources by examining the tileMatrixSet values and limits from the information in the individual geospatial data resources and calculating the limits as the most restrictive intersection of them.
 
 === Tiles
-This operation allows retrieving a single tile that represents information coming from one or more geospatial resources.
+This operation allows retrieving a single tile that represents information coming from one or more geospatial data resources.
 
 ==== Operation
 include::requirements/tiles/root/REQ_tcs-op.adoc[]
@@ -149,4 +149,4 @@ If the value of the parameter `tileMatrixSetId` is not available by the server f
 
 If the value of the parameter `resources` contains a resource id of URI that does not exist on the API, the status code of the response is 404.
 
-If the value of the parameter `resources` has a wrong format or combines one of more geospatial resources that are not compatible with the `tileMatrixSetId` value, the status code of the response is 500.
+If the value of the parameter `resources` has a wrong format or combines one of more geospatial data resources that are not compatible with the `tileMatrixSetId` value, the status code of the response is 500.

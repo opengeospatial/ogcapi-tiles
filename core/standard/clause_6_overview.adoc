@@ -46,15 +46,15 @@ For the first approach, many resources in the API include links with rel propert
 .Resources and relations to them via links
 image::images/relMapTiles.png[width=600,align="center"]
 
-For the second approach, the section <<OpenAPIExamples>> will provide some examples of OpenAPI definition documents that enumerate the paths to get to the necessary resources directly.
+For the second approach, we provide some examples of paths templates that an OpenAPI definition documents commonly enumerate. The paths ans path templates can be used to get the necessary resources directly.
 
 [#table_resources,reftext='{table-caption} {counter:table-num}']
-.Overview of resources and common direct links defined in the OGC API
+.Overview of resources and common direct links that can be used to define an OGC API and can be described in an Open API document
 [cols="33,66",options="header"]
 !===
 |Resource name |Common path
-|Landing page |`/`
-|Conformance declaration |`/conformance`
+|Landing page^4^ |`/`
+|Conformance declaration^4^ |`/conformance`
 |Collections |`/collections`
 |Collection |`/collections/{collectionId}`
 |Tiling Schemas |`/tileMatrixSets`
@@ -66,15 +66,20 @@ For the second approach, the section <<OpenAPIExamples>> will provide some examp
 |Vector Tiles description (geospatial resources^1^) |`/tiles`
 |Vector Tile |`/collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |Vector tile (geospatial resources^1^) |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
+2+|Maps
+|Maps description^3^ |`/collections/{collectionId}/map`
+|Maps description (geospatial resources^1^)^3^ |`/map`
 2+|Map tiles
-|Map tiles description |`/collections/{collectionId}/map/`
+|Map tiles description |`/collections/{collectionId}/map/tiles`
 |Map tiles description in one tile matrix set^2^ |`/collections/{collectionId}/map/tiles/{tileMatrixSetId}`
 |Map tiles description (geospatial resources^1^) |`/map/tiles`
+|Map tiles description (geospatial resources^1^) in one tile matrix set^2^ |`/map/tiles/{tileMatrixSetId}
 |Map tile |`/collections/{collectionId}/map/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |Map tile (geospatial resources^1^) |`/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-2+|Maps
-|Maps description |`/collections/{collectionId}/map`
-|Maps description (geospatial resources^1^) |`/map`
 !===
-^1^: In first column of the table, the expression "geospatial resources" means "from more than one geospatial resource or collection"
-^2^: This path is described in an annnex of this document and provides support for the "TileJSON" format.
+^1^: The expression "geospatial resources" means "from more than one geospatial resource or collection"
+^2^: Specified in an annnex of this document, providing support for the "TileJSON" format.
+^3^: Specified in the OGC API - Maps Part1, core
+^4^: Specified in the OGC API - Commonn Part1, core
+
+NOTE: Depite the fact that the previous list of path and path templates are used in many implementations of the OGC API - Tiles, the use of these exact paths are not require by this document and others are possible if correctly described in both approaches. 

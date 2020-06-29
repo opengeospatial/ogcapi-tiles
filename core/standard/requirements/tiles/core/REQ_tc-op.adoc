@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/tiles/core/tc-op*
-^|A |A tile that contains available data SHALL be available as a HTTP GET request to a URI that will be composed by two parts: The first part is the URI of a geospatial resource that can be represented as tiles and the second part follows the pattern /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}
+^|A |A tile that contains available data SHALL be available as a HTTP GET request to a URI that will be composed by two parts: The first part is the URI of a geospatial data resource that can be represented as tiles, followed by the word 'tiles', followed by the a URL template that makes use of the following URI template variables {tileMatrixSetId}, {tileMatrix}, {tileRow}, {tileCol} (the variable {tileMatrixSetId} can be omitted if only one tile matrix set available in the server) (the variable {tileMatrix} can be omitted in the rare case that there is only one tile matrix set and it only defined one tile matrix). Once the variables are substituted by their respective valid values, a URL to a tile is obtained.
 |===

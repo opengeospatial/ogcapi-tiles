@@ -1,6 +1,6 @@
 [[per_tiles_core_tc-core-html]]
 [width="90%",cols="2,6a"]
 |===
-^|*Permission {counter:per-id}* |*/per/tiles/root/tc-core-html*
+^|*Permission {counter:per-id}* |*/per/tiles/core/tc-core-html*
 ^|A |Every `200`-response of an operation of the server MAY support the media type `text/html`.
 |===
