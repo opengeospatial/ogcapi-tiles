@@ -109,7 +109,7 @@ include::requirements/tiles/core/REQ_sct-tile-examples.adoc[]
 
 NOTE: The geospatial data resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
-include::recommendations/tiles/core/REC_tc-op.adoc[]
+NOTE: see recommendation rec_tiles_core_tc-op below
 
 [[TilesLinkResponseExample]]
 .Example of a tiles metadata response
