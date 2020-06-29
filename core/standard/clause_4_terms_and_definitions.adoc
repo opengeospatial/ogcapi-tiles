@@ -1,23 +1,27 @@
 == Terms and Definitions
-This document uses the terms defined in Sub-clause 5.3 of [OGC 06-121r8], which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+This document uses the terms defined in Sub-clause 5.3 of https://portal.opengeospatial.org/files/?artifact_id=38867[OGC Web Services Common] (OGC 06-121r9), which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+
+This document also uses terms defined in Sub-clause "Terms and Definitions" of OGC API - Common, Part 1: core.
 
 For the purposes of this document, the following additional terms and definitions apply.
 
 === *geospatial resource*
-A resource that consists in a set of geospatial data
+web resource that consists in a set of geospatial data (e.g. a collection)
 
 === *geospatial representation*
-An resources that represents an aspect or data model (e.g. feature items, tiles, metadata, schemas,...) of a more generic geospatial resource (e.g. a collection)
+web resource that represents an aspect or data model (e.g. feature items, tiles, metadata, schemas,...) of a more generic geospatial resource (e.g. a collection)
 
-NOTE: Do not confuse this with a resource representation. While resource representations share the same path and are selected by format negotiation, geospatial representations use different paths. Commonly a geospatial representations is a child path of a geospatial resource
-
+NOTE: Do not confuse this with a web resource representation. While resource representations share the same path and are selected by format negotiation, geospatial representations use different paths. Commonly a geospatial representations is a child path of a geospatial resource
 
 === *tile*
 
 geometric shape with known properties that may or may not be the result of a tiling (tessellation) process. A tile consists of a single connected "piece" without "holes" or "lines" (topological disc).
 
-NOTE: For the purposes of this OGC ER, a tile is a small rectangular representation of geographic data, often part of a set of such elements, covering a tiling scheme and sharing similar information content and graphical styling. A tile can be uniquely defined in a tile matrix by one integer index in each dimension. Tiles are mainly used for fast transfer (particularly in the web) and easy display at the resolution of a rendering device. Tiles can be grid based pictorial representations, coverage subsets, or feature based representations (e.g., vector tiles).
+NOTE: From OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space
 
+small rectangular representation of geographic data, often part of a set of such elements, covering a tiling scheme and sharing similar information content and graphical styling. A tile can be uniquely defined in a tile matrix by one integer index in each dimension. Tiles are mainly used for fast transfer (particularly in the web) and easy display at the resolution of a rendering device. Tiles can be grid based pictorial representations, coverage subsets, or feature based representations (e.g., vector tiles).
+
+NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set
 
 === *tile matrix*
 
