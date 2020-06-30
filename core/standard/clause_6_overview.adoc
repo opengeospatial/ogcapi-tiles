@@ -73,7 +73,7 @@ For the second approach, we provide some examples of paths templates that an Ope
 |Map tiles description |`/collections/{collectionId}/map/tiles`
 |Map tiles description in one tile matrix set^2^ |`/collections/{collectionId}/map/tiles/{tileMatrixSetId}`
 |Map tiles description (geospatial resources^1^) |`/map/tiles`
-|Map tiles description (geospatial resources^1^) in one tile matrix set^2^ |`/map/tiles/{tileMatrixSetId}
+|Map tiles description (geospatial resources^1^) in one tile matrix set^2^ |`/map/tiles/{tileMatrixSetId}`
 |Map tile |`/collections/{collectionId}/map/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |Map tile (geospatial resources^1^) |`/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 !===
@@ -82,4 +82,4 @@ For the second approach, we provide some examples of paths templates that an Ope
 ^3^: Specified in the OGC API - Maps Part1, core
 ^4^: Specified in the OGC API - Commonn Part1, core
 
-NOTE: Depite the fact that the previous list of path and path templates are used in many implementations of the OGC API - Tiles, the use of these exact paths are not require by this document and others are possible if correctly described in both approaches. 
+NOTE: Depite the fact that the previous list of path and path templates are used in many implementations of the OGC API - Tiles, the use of these exact paths are not require by this document and others are possible if correctly described in both approaches.
