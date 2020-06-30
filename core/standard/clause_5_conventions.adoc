@@ -9,19 +9,23 @@ All requirements and conformance tests that appear in this document are denoted 
 
 === Link relations
 
-To express relationships between resources, http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#rfc8288[RFC 8288 (Web Linking)] is used.
+To express relationships between resources, https://tools.ietf.org/rfc/rfc8288.txt[RFC 8288 (Web Linking)] is used.
 
-The following http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#link-relations[registered link relation types] are used in this document.
+The following https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA link relation types] are used in this document:
 
 * *alternate*: Refers to a substitute for this context.
-* *item*: The target IRI points to a resource that is a member of the collection represented by the context IRI.
 * *self*: Conveys an identifier for the link’s context.
+* *item*: The target IRI points to a resource that is a member of the collection represented by the context IRI.
 
-In addition, the following link relation types are used for which no applicable registered link relation type could be identified.
+In addition, the following link relation types are used for which no applicable registered link relation type could be identified:
 
+* *tiles*: The target IRI points to a resource that describes how to provide tiles of the context resource.
+
+Used in combination with OGC API - Features Part 1: core or OGC API Common other link relation types will be used, being the most common:
 * *conformance*: Refers to a resource that identifies the specifications that the link’s context conforms to.
-* *tiles*: Refers to a resource that provides the description of the tiles represented by this geospatial resource
+* *service-desc*: Identifies service description for the context that is primarily intended for consumption by machines. (API definitions are considered service descriptions)
+* *service-doc*: Identifies service documentation for the context that is primarily intended for human consumption.
 
 === Use of HTTPS
 
-For simplicity, this document in general only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS and simply is a shorthand notation for "HTTP or HTTPS." In fact, most servers are expected to use http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#rfc2818[HTTPS], not http://docs.opengeospatial.org/is/17-069r3/17-069r3.html#rc2616[HTTP].
+For simplicity, this document in general only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS and simply is a shorthand notation for "HTTP or HTTPS." In fact, most servers are expected to use https://tools.ietf.org/html/rfc2818[HTTPS], not https://www.ietf.org/rfc/rfc2616.txt[HTTP].
