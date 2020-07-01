@@ -1,7 +1,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test 3* |*/ats/core/tc-tile-desc-links*
-^|Test Purpose |Validate that the description of the tiles presents a tile representation of a geospatial resource and with rel: "tiles"
+^|Test Purpose |Validate that the description of the tiles presents a tile aspect of a geospatial resource and with rel: "tiles"
 ^|Requirement |/req/tiles/core/tc-tile-desc-links
 ^|Test Method |Verify that the response document includes:
 
@@ -9,5 +9,5 @@
 
 2. a link to the response document in every other media type supported by the server (relation: alternate).
 
-3. a link with the href pointing to the description of the tiles that presents a tile representation of this geospatial resource and with relation: tiles.
+3. a link with the href pointing to the description of the tiles that presents a tile aspect of this geospatial resource and with relation: tiles.
 |===

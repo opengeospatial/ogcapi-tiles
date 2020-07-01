@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/tiles/core/tc-tile-desc-links*
-^|A |If the API has a mechanism for their geospatial data resources to expose links to geospatial representations (e.g. feature items), the API SHALL include a `link` with the `href` pointing to a the description of the tiles that presents a tile representation of this geospatial data resource and with `rel: "tiles"`.
+^|A |If the API has a mechanism for their geospatial data resources to expose links to geospatial aspects (e.g. feature items, metadata...), the API SHALL include a `link` with the `href` pointing to a the description of the tiles that presents a tile aspect of this geospatial data resource and with `rel: "tiles"`.
 |===
