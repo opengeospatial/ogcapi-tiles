@@ -1,22 +1,24 @@
 == Conformance
-This standard defines *TBD* requirements / conformance classes.
+This standard defines two requirements / conformance classes.
 
-The standardization targets of all conformance classes are "web services".
+The standardization targets of all conformance classes are "Web APIs."
 
 The main requirements class is:
 
-* <<rc_core,Core>>.
+* Core.
 
-The _Core_ specifies requirements that all applications and services claiming compliance to the OGC API - Tiles standard have to implement.
+The Core specifies requirements that all Web APIs have to implement is they are claiming to support tiles from one geopatial resource following the OGC API - Tiles Part 1: core standard.
 
-*TBD* requirements classes depend on the _Core_ and <enter their purpose here>:
+Another requirements class is:
 
-**Capture additional requirements classes here**
+* Root
+
+The Root specifies requirements that all Web APIs have to implement is they are claiming to support tiles from more than one geopatial resource following the OGC API - Tiles Part 1: core standard.
+
+This document does not mandate a specific encoding or format for representing tiles. There are no requirements classes making considerations on specify representations.
+
+_Core_ and _Root_ are comformance classes that act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for API discovery, conformity and API formal definition (e.g. OpenAPI). Possible altermantives for these fundamental conformance classes are OGC API - Common Part 1: core, OGC API - Features Part 1: core or any other non-OGC classes that provide this functionality.
 
 Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
-
-In order to conform to this OGC® interface standard, a software implementation shall choose to implement:
-* Any one of the conformance levels specified in Annex A (normative).
-* Any one of the Distributed Computing Platform profiles specified in Annexes TBD through TBD (normative).
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.

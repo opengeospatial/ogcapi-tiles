@@ -1,9 +1,4 @@
 == Scope
-This International Standard specifies how to access tiled data and map tiles in a manner independent of the underlying data store through [OpenAPI](https://www.openapis.org/[https://www.openapis.org/]). This standard specifies discovery and query operations.
+This document specifies the behavior of Web APIs that provide access to tiles of one geospatial resource or more than one geopatial resource. This standard defines how to discover which resources offered by the API can be retrieved as tiles, what are the tile matrix sets supported by the geospatial resources, which are the limits of the tiled space and how to request one tile at a time.
 
-=== Current scope:
-
-* Discovery operations allow the API to be interrogated to determine its capabilities and retrieve information (metadata) about this distribution of tiled data and map tiles. This includes the API definition as well as metadata about the data collections provided through the API and the Tile Matrix Sets (also referred to as TileMatrixSets) supported by this service.
-* Retrieval of tiles
-* Query about a point in a map or a tile
-* Retrieval of multiple tiles in a single request
+A web API can be combine this standard with other standards to extend the scope of the API by adding functionality.

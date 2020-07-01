@@ -35,7 +35,7 @@ NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set
 
 grid tile set scheme defining how space is partitioned into a set of regular conterminous tiles at a fixed scale giving tile scheme to each tile.
 
-NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set but modified.
+NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set (modified).
 
 NOTE: For the purposes of this document a tile matrix is restricted to a tessellation of the space that resembles a matrix in a 2D space characterized by a matrix width (columns) and a matrix height (rows).
 
