@@ -1,0 +1,88 @@
+== Implementations
+
+=== Services
+
+[#table_implementation,reftext='{table-caption} {counter:table-num}']
+.Service implementations
+[cols=",,",width="75%",options="header",align="center"]
+|===
+|Implementation | Type | Contact
+
+| https://app.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0[UAB CREAF implementation of OGC API - Tiles]
+| OGC API - Tiles
+| https://github.com/joanma747[Joan Maso]
+
+| http://maps.ecere.com/geoapi/[Ecere Tiles Server (Vector Tiles Pilot 2, D103 deliverable)]
+| OGC API - Tiles
+| https://github.com/jerstlouis[Jerome St Louis]
+
+
+| https://services.interactive-instruments.de/t15/daraa[interactive instruments Tiles Server (Vector Tiles Pilot 2, D101 deliverable)]
+| OGC API - Tiles, Features, Styles
+| https://github.com/cportele[Clemens Portele]
+
+
+| http://ogc-vtp.gospatial.org/ogc-api-tiles[Terranodo Tiles Server (Vector Tiles Pilot 2, D100 deliverable)]
+| OGC API - Tiles
+| https://github.com/jj0hns0n[Jeffrey Johnson]
+
+
+| https://vtp2.geo-solutions.it/geoserver/ogc/features[GeoSolutions Feature Server (http/https supported) (Vector Tiles Pilot 2, D100 deliverable) ]
+| OGC API - Features
+| https://github.com/aaime[Andrea Aime]
+
+| https://vtp2.geo-solutions.it/geoserver/ogc/tiles[GeoSolutions Tiles Server (http/https supported) (Vector Tiles Pilot 2, D102 deliverable)]
+| OGC API - Tiles
+| https://github.com/aaime[Andrea Aime]
+
+| https://azavea.github.io/franklin/[Franklin] - Documentation & https://github.com/azavea/franklin[GitHub] Code
+| STAC, OGC API - Tiles, Features
+| https://github.com/notthatbreezy[Chris Brown]
+
+| https://github.com/geopython/pygeoapi/pull/419[pygeoapi implementation of OGC API - Tiles (draft PR)]
+| OGC API - Tiles
+| https://github.com/francbartoli[Francesco Bartoli]
+
+| TBA
+| TBA
+| TBA
+|===
+
+
+=== Clients
+
+[#table_implementation,reftext='{table-caption} {counter:table-num}']
+.Client implementations
+[cols=",,",width="75%",options="header",align="center"]
+|===
+|Implementation | Type | Contact
+
+| http://ogc-vtp2.s3.us-east-2.amazonaws.com/index.html[Terranodo client (Vector Tiles Pilot 2, D100 deliverable)]
+| OGC API - Tiles
+| https://github.com/jj0hns0n[Jeffrey Johnson]
+
+| http://ogc-vtp2.s3.us-east-2.amazonaws.com/index.html[GeoSolutions client (Vector Tiles Pilot 2, D104 deliverable)]
+| OGC API - Tiles
+| https://github.com/aaime[Andrea Aime]
+
+
+| https://ecere.org[Ecere client (Vector Tiles Pilot 2, deliverable)]
+| OGC API - Tiles
+| https://github.com/jerstlouis[Jerome St Louis]
+
+| https://skymantics.com[Skymantics Client (Vector Tiles Pilot 2, D104 deliverable)]
+| OGC API - Tiles
+| https://github.com/Lestark728[Logan Stark]
+
+| https://www.hexagongeospatial.com/products/luciad-portfolio[Hexagon - Luciad Client]
+| OGC API - Tiles
+| https://github.com/robinhoutmeyers[Robin Houtmeyers]
+
+| https://github.com/openlayers/openlayers/pull/10963[OpenLayers]
+| OGC API - Tiles
+| https://github.com/tschaub[Tim Schaub]
+
+| TBA
+| TBA
+| TBA
+|===

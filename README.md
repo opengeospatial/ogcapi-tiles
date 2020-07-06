@@ -7,20 +7,20 @@ This is the CURRENT working version of this initiative (Old version work was one
 IMPORTANT: Many examples of OpenAPI documents that are used as inspiration and test of this work is here:
 https://app.swaggerhub.com/apis/UAB-CREAF
 
-The OGC API - Maps and the OGC API - Tiles are related and should be considered together. Visit the [Quick guide](QuickGuide/README.md)
+The OGC API - Maps and the OGC API - Tiles are related and should be considered complementary. Visit the [Quick guide](QuickGuide/README.md)
 
 ## Standards
-After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having 2 cores, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
+After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having two separate core standards, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
 
-The standard is written using AsciiDoc using many files that might be difficult to trace. Please see the standard document as a long HTML page EASY TO READ FORMAT here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html
+While under development, the standards are written using AsciiDoc using many files that might be difficult to trace. Please see the compiled standard document as it is easier to read here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html
 
 ### Tiles
-We have received several recommendations to separate the specifications into a core and some extensions. In March 2020 we decided to restructure the GitHub repository to separate the core and the extensions in different documents that might be elaborated at different speeds.
+We received several recommendations to separate the specifications into a core and some extensions. In March 2020 we decided to restructure the GitHub repository to separate the core and the extensions in different documents that might be elaborated at different speeds.
 
 At this moment in time we are working on doing this separation by moving files around.
 
 #### Core
-For the moment we have focus out efforts on defining the "tile core" that you can find [here: clause_7_tile_core](standard/clause_7_tile_core.adoc).
+For the moment we are focusing our efforts on defining the "tile core" that you can find [here: clause_7_tile_core](standard/clause_7_tile_core.adoc).
 
 The core is (https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/master/core/standard/OAPI_Tiles.html):
 * Only one collection
@@ -43,7 +43,11 @@ We foresee the following extensions (some of them can end into OGC standards and
 Those who want to just see the endpoints and responses can explore generic
 OpenAPI definitions in this folder (please paste one of them in the Swagger Editor):
 
-* OGC-API-Map-Tiles/standard/openapi/
+* [OGC-API-Tiles/openapi/](https://github.com/opengeospatial/OGC-API-Tiles/tree/master/openapi)
+
+Several implementations of the draft standard exist:
+
+[Implementations of the draft specification / demo services](./implementations.adoc)
 
 ## Examples
 WARNING: This section need to be updated.
@@ -78,7 +82,6 @@ Libraries:
 * A [OGC API maps DOMAIN document in Swagger](https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-maps/1.0.0) or in [GitHub](standard/openapi/ogc-api-maps.yaml). It contains fragments that can be reference in api document instances or other domain document. It could become part of a future OGC API maps standard additional material.
 * A [OGC API maps and tiles DOMAIN document in Swagger](https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0) or in [GitHub](standard/openapi/ogc-api-map-tiles.yaml). It contains fragments that can be reference in api document instances or other domain document. It will be included by OGC API maps standard and tiles standard.
 * A [OGC API tiles DOMAIN document in Swagger](https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0) or in [GitHub](standard/openapi/ogc-api-tiles.yaml). It contains fragments that can be reference in api document instances or other domain document. It could become part of a future OGC API tiles standard additional material.
-
 
 ## Communication
 
