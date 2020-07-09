@@ -1,4 +1,4 @@
 == Scope
-This document specifies the behavior of Web APIs that provide access to tiles of one geospatial resource or more than one geopatial resource. This standard defines how to discover which resources offered by the API can be retrieved as tiles, what are the tile matrix sets supported by the geospatial resources, which are the limits of the tiled space and how to request one tile at a time.
+This document specifies the behavior of Web APIs that provide access to tiles of one geospatial data resource or more than one geopatial data resource. This standard defines how to discover which resources offered by the API can be retrieved as tiles, what are the tile matrix sets supported by the geospatial data resources, which are the limits of the tiled space and how to request one tile at a time.
 
 A web API can be combine this standard with other standards to extend the scope of the API by adding functionality.
