@@ -1,6 +1,0 @@
-[[req_tiles_root_tcs-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/tiles/root/tcs-op*
-^|A |The server SHALL support a set of HTTP GET operations following a URL template composed by the the root tile resource URL followed by values that substitute the variables {tileMatrixSetId}, {tileMatrix}, {tileRow} and {tileCol}.
-|===

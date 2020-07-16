@@ -3,9 +3,13 @@
 
 === Overview
 
-[[tiles-root-overview]]
+[[tiles-dataset-tiles-overview]]
 
-include::requirements/tiles/requirements_class_root.adoc[]
+include::requirements/requirements_class_dataset-tilesets.adoc[]
+
+Defines how to get tiles from the dataset (or datasets) represented by the services. it will tell the path to get a tilesets resources
+
+**TBD**
 
 In previous clauses tiles are produced from one, and only one geospatial data resource available in this API. This scenario is achieved by concatenating the tile path to the geospatial data resource.
 
@@ -19,11 +23,11 @@ This building block stays flexible and does not require implementation of OGC AP
 
 === API landing page
 
-The landing page provides links to start exploring the resources offered by the API. It mainly consists of a list of links to root resources. This standard extension requires a new link in the landing page for getting a description of the URL that allows for retrieving tiles of one or more resources.
+The landing page provides links to start exploring the resources offered by the API. It mainly consists of a list of links to root resources. This standard extension requires a new link in the landing page for getting a description of the URL that allows for retrieving tiles of the resources in the dataset
 
 ==== Response
 
-include::requirements/tiles/root/REQ_root-success.adoc[]
+include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
 
 In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to root tiles.
 
@@ -39,7 +43,7 @@ In the landing page, in JSON format, the links follow the link schema defined in
        "href": "http://data.example.org/tiles",
        "rel": "tiles",
        "type": "application/json",
-       "title": "Link to information on map tiles combining more than one collection",
+       "title": "Link to information on map tilesets from the dataset",
     }
   ]
 }
@@ -52,9 +56,9 @@ In the landing page, in JSON format, the links follow the link schema defined in
 
 The conformance page mainly consists of a list of links.
 
-include::requirements/tiles/root/REQ_conformance-success.adoc[]
+include::requirements/dataset-tilesets/REQ_conformance-success.adoc[]
 
-On the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API – Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for _tiles from more than one collection_
+On the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API – Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for dataset tilesets
 
 [[ConformancePageTilesroot]]
 .Conformance Information Page fragment
@@ -64,90 +68,24 @@ On the conformance page (typically in JSON format) the links follow the link sch
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core"
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/root"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets"
   ]
 }
 =================
 
-=== Root tiles description
+=== tilesets
 The response to the tiles description operation contains the necessary information to later formulate a tile request of tiles from more than one collection.
 
 ==== Operation
 
-include::requirements/tiles/root/REQ_ts-op.adoc[]
+include::requirements/dataset-tilesets/REQ_operation.adoc[]
 
 The request of this operation has no parameters.
 
 ==== Response
-A successful response to a tiles request for a root tiles will return a data structure with a link to get tiles representing the resources and other relevant resources. This requirements class, the response only requires a URL template to retrieve a tile.
-
-include::requirements/tiles/root/REQ_ts-tile-examples.adoc[]
-
-One common order used in URL templates for tiles is: tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}. However, this draft specification allows for other URL template composition.
-
-[#URL_template_tile_root,reftext='{table-caption} {counter:table-num}']
-.URI template variables for tiles and possible values
-[cols="30,35,70",options="header"]
-!===
-|URL template variable |Meaning |Possible values
-|TileMatrixSetId |tile matrix set identifier |The identifiers included in Annex D of OGC 17-083r2 or defined by extensions of the core requirements class.
-|TileMatrix |tile matrix identifier |Identifier of the tile matrix (representing a zoom level, a.k.a. a scale) listed in the TileMatrixSet definition
-|TileRow |row index of tile matrix	|A non-negative integer between 0 and the MatrixHeight – 1. If there is a TileMatrixSetLimits the value is limited between MinTileRow and MaxTileRow
-|TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
-!===
-
-.API tiles response fragment with the link to retrieve tiles
-=================
-[source,JSON]
-links:
-[
-    {
-      "href": "http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}",
-      "templated": true,
-      "rel": "item",
-      "type": "image/png",
-    }
-]
-=================
-
-In general, the `tileMatrixSetLinks` and the `tileMatrixSetLimits` can be determined by examining this information in the individual geospatial data resource `tiles` of geospatial data resource. In some cases, the server could also include the `tileMatrixSetLinks` data structure as part of the response to this operation. Clients should be prepared to determine if a `tileMatrixSetLinks` data structure is not provided in certain combinations of geospatial data resources by examining the tileMatrixSet values and limits from the information in the individual geospatial data resources and calculating the limits as the most restrictive intersection of them.
+A successful response to a tilesets request is a data structure defined by the tilesets and tileset classes
 
 === Tiles
-This operation allows retrieving a single tile that represents information coming from one or more geospatial data resources.
-
-==== Operation
-include::requirements/tiles/root/REQ_tcs-op.adoc[]
-
-One common order used in URL templates for tiles is: tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}. However, this draft specification allows for other URL template composition.
-
-==== Parameter tileMatrixSetId
-include::requirements/tiles/root/REQ_tcs-tilematrixsetid-definition.adoc[]
-
-==== Parameter tileMatrix
-include::requirements/tiles/root/REQ_tcs-tilematrix-definition.adoc[]
-
-==== Parameter tileRow
-include::requirements/tiles/root/REQ_tcs-tilerow-definition.adoc[]
-
-==== Parameter tileCol
-include::requirements/tiles/root/REQ_tcs-tilecol-definition.adoc[]
-
-==== Parameter Resources
-include::requirements/tiles/root/REQ_tcs-root-definition.adoc[]
-
-include::recommendations/tiles/root/REC_tcs-root-definition.adoc[]
-
-include::recommendations/tiles/root/PER_tcs-root-definition.adoc[]
-
-==== Response
-A successful response to a tile request is consistent with the media type of resource requested. This draft specification does not impose any media type. For example, for features the media type may be GeoJSON or Mapbox Vector Tiles, for coverages it may be a GeoTIFF, and for maps it may be a JPEG or a PNG.
-
-include::requirements/tiles/root/REQ_tcs-success.adoc[]
-
-==== Error conditions
-If the value of the parameter `tileMatrixSetId` is not available by the server for this resource or the values of the parameters `tileMatrix`, `tileRow`, `tileCol` are out-of-range, the status code of the response is 404.
-
-If the value of the parameter `resources` contains a resource id of URI that does not exist on the API, the status code of the response is 404.
-
-If the value of the parameter `resources` has a wrong format or combines one of more geospatial data resources that are not compatible with the `tileMatrixSetId` value, the status code of the response is 500.
+The Tilesets have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class

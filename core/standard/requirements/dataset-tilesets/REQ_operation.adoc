@@ -1,0 +1,6 @@
+[[req_dataset-tilesets-operation]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/dataset-tilesets/operation*
+^|A |The server SHALL support an operation to retrieve tilesets from the dataset as a HTTP GET request to a URI that is composed by two parts: the first part is the URI of a resource that can be represented as tiles (e.g. `/map` or simply `/`) and the second part follows the pattern `/tiles`.
+|===
