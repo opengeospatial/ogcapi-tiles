@@ -1,5 +1,5 @@
-[[rc_core]]
-== Requirement Class "Tiles core"
+[[rc_geoDataResourceTileSets]]
+== Requirement Class "Geo Data Resource TileSets"
 
 === Overview
 

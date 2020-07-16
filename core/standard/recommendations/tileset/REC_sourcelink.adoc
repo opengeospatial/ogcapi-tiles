@@ -1,0 +1,6 @@
+[[rec_tileset-sourcelink.adoc]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/tileset/sourcelink*
+^|A | In addition to the mandatory link to the tiles template, link to the geospatial data resource that originated the tiles can be provided with the rel=`data`. This is particularly useful if the tiles resource are composed by more than one geospatial data resource
+|===

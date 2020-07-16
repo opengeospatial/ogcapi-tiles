@@ -97,9 +97,15 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_overview.adoc[]
 
-include::clause_7_tile_core.adoc[]
+include::clause_7_tile_tileSet.adoc[]
 
-include::clause_7_tile_root.adoc[]
+include::clause_7_tile_tileSets.adoc[]
+
+include::clause_7_tile_datasetTileSets.adoc[]
+
+include::clause_7_tile_geoDataResourceSelection.adoc[]
+
+include::clause_7_tile_geoDataResourceTileSets.adoc[]
 
 //include::clause_10_encodings.adoc[]
 

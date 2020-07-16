@@ -4,7 +4,7 @@
 
 This draft specification does not impose any limits on the number of data layers that are included in a single tile. The server is therefore allowed to return a tile consisting of multiple data layers, where each individual data layer, or the set of data layers as a whole, may correspond to a collection. Such tiles are referred to as "multi-layer tiles".
 
-Metadata about single or multi-layer tiles may be serialized as JSON, for example using the https://github.com/mapbox/tilejson-spec[Mapbox TileJSON] format. TileJSON conveys information such as the layers found within a tileset, the fields for attribute information, the vector geometry type, the zoom levels as well as a simple URL template for retrieving the tiles themselves. An example TileJSON document is shown in the following section.
+Metadata about single or multi-layer tiles may be serialized as JSON, for example using the https://github.com/mapbox/tilejson-spec[Mapbox TileJSON] format version 3. TileJSON conveys information such as the layers found within a tileset, the fields for attribute information, the vector geometry type, the zoom levels as well as a simple URL template for retrieving the tiles themselves. An example TileJSON document is shown in the following section.
 
 === Example TileJSON document
 
