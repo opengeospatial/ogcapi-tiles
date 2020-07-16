@@ -89,3 +89,8 @@ A successful response to a tilesets request is a data structure defined by the t
 
 === Tiles
 The Tilesets have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
+
+==== Response
+include::recommendations/dataset-tilesets/REC_geodata-selection.adoc[]
+
+include::recommendations/dataset-tilesets/PER_geodata-selection.adoc[]

@@ -1,0 +1,21 @@
+[[req_geodata-selection_query-geodata]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/geodata-selection/query-geodata*
+^|A |The tile operation SHALL support an optional parameter `geodata` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
+[source,YAML]
+----
+  name: geodata
+  in: query
+  required: false
+  style: form
+  explode: false
+  schema:
+    type: array
+    items:
+      type: string
+----
+^|B |The parameter `geodata` SHALL contain a comma-separated list of geospatial resource identifiers (collectionId's) or a comma-separated list of full URLs to geospatial resource identifiers.
+^|C |Only the geospatial data resource identifiers that advertise a link with type=`tiles` in the geospatial data resource description SHALL be included.
+^|D |Only geospatial data resources that support the same TileMatrixSetId parameter value SHALL be combined in the coma-separated list.
+|===
