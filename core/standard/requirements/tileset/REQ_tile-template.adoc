@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/tiles/core/sct-tile-template*
 ^|A |The content of the response to a successful execution of a tileset SHALL include at least a link to a tile URI template (rel: `item`).
-^|B |These links SHALL provide a URL template with the fragment `/tiles` followed by a a URI template that makes use of the following URL template variables {tileMatrixSetId}, {tileMatrix}, {tileRow}, {tileCol} (the variable {tileMatrixSetId} can be omitted if only one tile matrix set available in the server) (the variable {tileMatrix} can be omitted in the rare case that there is only one tile matrix set and it only defined one tile matrix). Once the variables are substituted by their respective valid values, a URL to a tile is obtained.
+^|B |These links SHALL provide a URL template with the fragment `/tiles` followed by the value of the tileMatrixSet identifier and a URI template that makes use of the following URL template variables {tileMatrix}, {tileRow}, {tileCol}. Once the variables are substituted by their respective valid values, a URL to a tile is obtained.
 ^|C |There SHALL be a link to a tile URI template for each file format that the server supports (the format is indicated in the 'type' attribute of the link)
 ^|D |A property `templated` SHALL be part of the link properties to indicate that the link needs to be processed to substitute the templated variables with valid values before being used as a URL to a tile.
 |===

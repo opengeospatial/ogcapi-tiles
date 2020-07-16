@@ -5,9 +5,13 @@
 
 [[tile-set-overview]]
 
-include::requirements/tiles/requirements_class_tileset.adoc[]
+include::requirements/requirements_class_tileset.adoc[]
 
 This is a building block for the an OGC API that describes the TileSet resource and how to retrieve a tile from a tileset
+
+Defines the response of a TileSet GET request (but not the path or the link for the request).
+The response has two formats: tilejson and OGC json. The OGC json includes tilematrixset links, a central point (optional), a links to the URI template to individual tiles, and the geospatial data resources involved in the creation of the tiles (optional), and other metadata (including attribution; optional)
+Defines how to formulate a request for individual tiles and how the response will look like (success and failure)
 
 **TBD**
 
@@ -50,7 +54,7 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 =================
 
 === Tileset resource
-A tileset resource represents an array of tiles. The resource itself the contains the necessary metadata to enable a client application to formulate a tile request.
+A tileset resource represents the set of tiles that belongs to a particular tilematrixset. The resource contains the necessary metadata to enable a client application to formulate a tile request.
 
 ==== Tileset path
 
