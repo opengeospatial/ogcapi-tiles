@@ -2,8 +2,8 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tileset/tmxslink*
-^|A |This core requirements class does not provide any mechanism to define TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D].
-^|B |The link to a tilematrixset can be done using a property called _tileMatrixSetLink_ with a _tileMatrixSetLink_ object following a data model defined in the clause 7.3 of OGC 17-083r2. In the core specification _tileMatrixSetLink_ is only used for referencing the supported TileMatrixSets for the tiles, limiting it to the following schema (expressed as an OpenAPI Specification 3.0 fragment):
+^|A |This requirements class does not provide any mechanism to define TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D].
+^|B |Implementation SHOULD a JSON format that does the link to a tilematrixset using a property called _tileMatrixSetLink_ with a _tileMatrixSetLink_ object following a data model defined in the clause 7.3 of OGC 17-083r2. In the core specification _tileMatrixSetLink_ is only used for referencing the supported TileMatrixSets for the tiles, limiting it to the following schema (expressed as an OpenAPI Specification 3.0 fragment):
 [source,YAML]
 ----
 tileMatrixSetLink-entry:

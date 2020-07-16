@@ -1,0 +1,6 @@
+[[req_tilesets_conformance-success]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tilesets/conformance-success*
+^|A |If the API has a mechanism to advertise conformance classes, the API SHALL advertise the tilesets conformance class with a link to http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets.
+|===

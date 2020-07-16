@@ -1,6 +1,0 @@
-[[per_tiles_core_tc-multilayer-tile]]
-[width="90%",cols="2,6a"]
-|===
-^|*Permission {counter:per-id}* |*/per/tiles/core/tc-multilayer-tile*
-^|A |This draft specification does not impose any limits on the number of data layers that are included in a single tile. The server is therefore allowed to return a tile consisting of multiple data layers, where each individual data layer, or the set of data layers as a whole, may correspond to a collection.
-|===

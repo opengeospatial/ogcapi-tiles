@@ -11,6 +11,11 @@ It will define how to include a query parameter to subsets of the dataset (e.g. 
 
 **TBD**
 
+=== General
+include::recommendations/geodata-tilesets/REC_api-common.adoc[]
+
+This building block stays flexible and does not require implementation OGC API - Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes when used. Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
+
 === Declaration of conformance classes
 
 To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the requirements classes it implements and conforms to.
