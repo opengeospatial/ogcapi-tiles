@@ -33,7 +33,7 @@ include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
 In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to root tiles.
 
 [[landingPageTilesRoot]]
-.API Landing Page fragment that advertises the path to get tiles for more than one collection
+.API Landing Page fragment that advertises dataset tiles
 =================
 [source,JSON]
 ----
@@ -41,7 +41,7 @@ In the landing page, in JSON format, the links follow the link schema defined in
   links: [
     ...,
     {
-       "href": "http://data.example.org/tiles",
+       "href": "http://data.example.org/map",
        "rel": "tiles",
        "type": "application/json",
        "title": "Link to information on map tilesets from the dataset",
@@ -76,7 +76,7 @@ On the conformance page (typically in JSON format) the links follow the link sch
 =================
 
 === tilesets
-The response to the tiles description operation contains the necessary information to later formulate a tile request of tiles from more than one collection.
+The response to the tilesets operation contains the necessary information to later formulate a tile request of tiles from the dataset.
 
 ==== Operation
 
@@ -88,7 +88,7 @@ The request of this operation has no parameters.
 A successful response to a tilesets request is a data structure defined by the tilesets and tileset classes
 
 === Tiles
-The Tilesets have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
+The Tilesets class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
 
 ==== Response
 include::recommendations/dataset-tilesets/REC_geodata-selection.adoc[]
