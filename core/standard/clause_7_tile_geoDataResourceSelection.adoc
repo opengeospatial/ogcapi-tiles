@@ -3,7 +3,7 @@
 
 === Overview
 
-[[tiles-geodata-resouce-selection-overview]]
+[[tiles-geodata-resource-selection-overview]]
 
 include::requirements/requirements_class_geodata-selection.adoc[]
 
