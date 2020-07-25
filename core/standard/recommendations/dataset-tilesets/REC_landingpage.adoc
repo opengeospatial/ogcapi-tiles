@@ -1,0 +1,7 @@
+[[rec_dataset-tilesets-landingpage]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/dataset-tilesets/landingpage*
+^|A | If the API has mechanism to expose root resources (e.g. a landing page), the API can advertise a URI to retrieve the tilesets defined by this service as links to the descriptions paths with rel: `tilesets`.
+^|B | The URI will be '/tiles'
+|===

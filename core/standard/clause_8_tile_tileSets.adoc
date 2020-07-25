@@ -24,6 +24,8 @@ Accessing the geospatial data resource content (other than as tiles) or its desc
 
 The tile description will include metadata about tiles as well as links to other resources including at least one with a template to get individual tiles.
 
+**End of TBD**
+
 === Declaration of conformance classes
 
 To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the requirements classes it implements and conforms to.

@@ -99,19 +99,21 @@ include::clause_6_overview.adoc[]
 
 include::clause_7_tile_tileSet.adoc[]
 
-include::clause_7_tile_tileSets.adoc[]
+include::clause_8_tile_tileSets.adoc[]
 
-include::clause_7_tile_datasetTileSets.adoc[]
+include::clause_9_tile_datasetTileSets.adoc[]
 
-include::clause_7_tile_geoDataResourceSelection.adoc[]
+include::clause_10_tile_geoDataSelection.adoc[]
 
-include::clause_7_tile_geoDataResourceTileSets.adoc[]
+include::clause_11_tile_geoDataTileSets.adoc[]
 
-//include::clause_10_encodings.adoc[]
+include::clause_12_tile_mapTileSets.adoc[]
 
-//include::clause_11_oas.adoc[]
+//include::clause_13_encodings.adoc[]
 
-//include::clause_11_media_types.adoc[]
+//include::clause_14_oas.adoc[]
+
+//include::clause_15_media_types.adoc[]
 
 include::annex-ats.adoc[]
 

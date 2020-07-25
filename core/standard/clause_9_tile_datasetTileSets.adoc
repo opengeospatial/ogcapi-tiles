@@ -17,6 +17,8 @@ This OGC API requirements class is an extension of the core requirements class t
 
 It has been argued that this approach is too flexible. In an API that has several geospatial data resources, the number of potential combinations of geospatial data resources may be too big to be efficiently handle. If the implementers see a potential performance issue, they may not choose to declare conformity to this requirements class.
 
+**End of TBD**
+
 === General
 include::recommendations/dataset-tilesets/REC_api-common.adoc[]
 
@@ -30,10 +32,10 @@ The landing page provides links to start exploring the resources offered by the 
 
 include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
 
-In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to root tiles.
+In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to dataset tilesets.
 
 [[landingPageTilesRoot]]
-.API Landing Page fragment that advertises dataset tiles
+.API Landing Page fragment that advertises dataset tilesets
 =================
 [source,JSON]
 ----
@@ -41,15 +43,17 @@ In the landing page, in JSON format, the links follow the link schema defined in
   links: [
     ...,
     {
-       "href": "http://data.example.org/map",
+       "href": "http://data.example.org/tiles/WebMercatorQuad",
        "rel": "tiles",
        "type": "application/json",
-       "title": "Link to information on map tilesets from the dataset",
+       "title": "Link to information on map tileset from the dataset",
     }
   ]
 }
 ----
 =================
+
+include::recommendations/dataset-tilesets/REC_landingpage.adoc[]
 
 === Declaration of conformance classes
 
@@ -69,14 +73,13 @@ On the conformance page (typically in JSON format) the links follow the link sch
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset"
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets"
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets"
   ]
 }
 =================
 
 === tilesets
-The response to the tilesets operation contains the necessary information to later formulate a tile request of tiles from the dataset.
+The response to the tileset operation contains the necessary information to later formulate a tile request of tiles from the dataset.
 
 ==== Operation
 
@@ -85,10 +88,10 @@ include::requirements/dataset-tilesets/REQ_operation.adoc[]
 The request of this operation has no parameters.
 
 ==== Response
-A successful response to a tilesets request is a data structure defined by the tilesets and tileset classes
+A successful response to a tileset request is a data structure defined by the tileset class
 
 === Tiles
-The Tilesets class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
+The Tileset class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
 
 ==== Response
 include::recommendations/dataset-tilesets/REC_geodata-selection.adoc[]

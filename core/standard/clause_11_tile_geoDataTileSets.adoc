@@ -25,6 +25,8 @@ Accessing the geospatial data resource content (other than as tiles) or its desc
 
 The tile description will include metadata about tiles as well as links to other resources including at least one with a template to get individual tiles.
 
+**End of TBD**
+
 === General
 include::recommendations/geodata-tilesets/REC_api-common.adoc[]
 
@@ -56,27 +58,16 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 }
 =================
 
-=== geospatial data resources
+=== Geospatial data resources
 This standard does not specify how geospatial data resources are exposed in the API and if they can be retrieved as geospatial data (e.g. feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the API could also give access to geospatial data resources.
 
 NOTE: The concept of geospatial data resource path substitutes the concept of "layer" in WMTS 1.0 but it is intended to give a better integration between data visualization and data access.
-
-=== Geospatial data resources Tileset
-A tileset contains the necessary metadata to enable a client application to formulate a tile request from a single geospatial data resource.
-
-==== Tiles description path
-
-include::requirements/geodata-tilesets/REQ_operation.adoc[]
-
-This standard does not specify the need for any additional query parameter in the GET request.
-
-==== Tiles description Link
 
 include::requirements/geodata-tilesets/REQ_desc-links.adoc[]
 
 For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] returns a list of links that include geospatial aspects for each geospatial data resource in the /collections/{collectionId} path. OGC API  - Common is expected to provide a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
 
-.Fragment of a collection with a links array with one item of the array pointing to a tiles description.
+.Fragment of a collection with a links array with one item of the array pointing to a tilesets.
 =================
 [source,JSON]
 
@@ -90,13 +81,24 @@ For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-featu
   "links": [
     ...
     {
-      "href": "http://data.example.com/collections/buildings/tiles",
+      "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
       "rel": "tiles",
       "type": "application/json",
     }
   ]
 }
 =================
+
+include::recommendations/geodata-tilesets/REC_desc-links.adoc[]
+
+=== Geospatial data resources Tileset
+A tileset contains the necessary metadata to enable a client application to formulate a tile request from a single geospatial data resource.
+
+==== Tilesets path
+
+include::requirements/geodata-tilesets/REQ_operation.adoc[]
+
+This standard does not specify the need for any additional query parameter in the GET request.
 
 ==== Response
 

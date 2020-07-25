@@ -2,5 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/dataset-tilesets/landingpage*
-^|A | If the API has mechanism to expose root resources (e.g. a landing page), the API SHALL advertise a URI to retrieve the tilesets defined by this service as links to the descriptions paths with rel: `tiles`.
+^|A |If the API has mechanism to expose root resources (e.g. a landing page), the API SHALL advertise URI to retrieve every tileset supported by this service as links to the descriptions paths with rel: `tiles`.
+^|B |The tileset SHALL be available as a URI that will be composed by two parts: The first part is the word '\tiles\', followed by the id of the tile matrix set supported.
 |===
