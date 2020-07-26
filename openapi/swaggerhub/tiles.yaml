@@ -1,13 +1,17 @@
 openapi: 3.0.0
 info:
-  title: Map Tiles service example.
+  title: Tiled feature data service example. Part of the OGC API Maps and Tiles OpenAPI
+    work.
   description: |-
-    Maps tiles of more that one collection.
-    This is a draft of an example of a service following the OGC API maps and tiles that produces tiled map data.
+    Example of vector tiles of more than one collection.
+    This is a draft of an example of a service following the OGC API maps and tiles that produces tiled feature data.
 
     It is elaborated in the Testbed-15 Open Portrayal Framework in collaboration with the WMS.SWG. The Map Tile API is a Web API for fetching and managing maps and tiles.
 
-    It illustrated how to request tiled maps from one or more than one collections
+    It illustrated how to request tiled feature data (sometimes refered as vector tiles) from one or more than one collections
+
+    For more background information see [the Vector Tiles Pilot Extension Engineering
+    Report](https://github.com/opengeospatial/OGC-API-Map-Tiles/tree/master/standard/openapi).
   contact:
     name: Joan Maso
     email: joan.maso@uab.cat
@@ -16,21 +20,22 @@ info:
     url: https://raw.githubusercontent.com/opengeospatial/OGC-API-Map-Tiles/master/LICENSE
   version: 1.0.0
 servers:
-- url: https://virtserver.swaggerhub.com/UAB-CREAF/ogc-api-map-tiles-opf-xmp-mt-more-1-collection/1.0.0
+- url: https://virtserver.swaggerhub.com/UAB-CREAF/ogc-api-tiles-opf-xmp-vt-more-1-collection/1.0.0
   description: SwaggerHub API Auto Mocking
 - url: http://data.example.org
-  description: Server examples
+  description: Server example
 tags:
 - name: OGC API Common
   description: Common characteristics of this API
-- name: Map tiles metadata
-  description: Metadata about tiles and tileMatrixSets
-- name: Geospatial Resource Tiled Maps
-  description: map (renderizations or vector tiles) partitioned into a hierarchy of
-    tiles  of a collection
-- name: Dataset tiled Maps
-  description: access to maps, partitioned into a hierarchy of tiles of one or more
-    geospatial data resources.
+- name: Tile Matrix Sets
+  description: Metadata about tileMatrixSets
+- name: TileSets
+  description: Tilesets definitions
+- name: Geospatial Resource Vector Tiles
+  description: Data partitioned into a hierarchy of tiles of a collection
+- name: Dataset Tiles
+  description: Data representations, partitioned into a hierarchy of tiles of one
+    or more geospatial data resources.
 paths:
   /:
     get:
@@ -114,17 +119,15 @@ paths:
                 conformsTo:
                 - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core
                 - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/core
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/bbox
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/dataset
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/geodata
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/info
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/maptiles
+                - http://www.opengis.net/spec/ogcapi-features-1/1.1/req/oas30
+                - http://www.opengis.net/spec/ogcapi-features-1/1.1/req/html
+                - http://www.opengis.net/spec/ogcapi-features-1/1.1/req/geojson
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
                 - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tmxs
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections
                 - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/info
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-info
         "400":
           description: Invalid or unknown query parameters
         "406":
@@ -253,7 +256,7 @@ paths:
   /tileMatrixSets:
     get:
       tags:
-      - Map tiles metadata
+      - Tile Matrix Sets
       summary: fetch all available tile matrix sets (tiling schemes)
       operationId: getTileMatrixSets
       parameters:
@@ -292,7 +295,7 @@ paths:
   /tileMatrixSets/{tileMatrixSetId}:
     get:
       tags:
-      - Map tiles metadata
+      - Tile Matrix Sets
       summary: fetch a tile matrix sets (tiling scheme) by id
       operationId: getTileMatrixSetDescription
       parameters:
@@ -339,23 +342,15 @@ paths:
             text/html:
               schema:
                 type: string
-  /collections/{collectionId}/map/{styleId}/tiles:
+  /collections/{collectionId}/tiles:
     get:
       tags:
-      - Map tiles metadata
+      - TileSets
       summary: fetch a tiles description
       description: Retrieves the tiles description for this collection including the
         `links` to get a `tile`, the `TileMatrixSetLink` and the `infoTemplate`
-      operationId: describeMapTiles
+      operationId: describeTiles
       parameters:
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
-        required: true
-        schema:
-          type: string
       - name: collectionId
         in: path
         description: local identifier of a collection
@@ -364,11 +359,11 @@ paths:
           type: string
       responses:
         "200":
-          description: Description of the map tiles.
+          description: Description of the tiles.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/map-tiles'
+                $ref: '#/components/schemas/tiles'
         "404":
           description: The requested URI was not found
         "500":
@@ -380,23 +375,15 @@ paths:
             text/html:
               schema:
                 type: string
-  /collections/{collectionId}/map/{styleId}/tiles/{tileMatrixSetId}:
+  /collections/{collectionId}/tiles/{tileMatrixSetId}:
     get:
       tags:
-      - Map tiles metadata
-      summary: fetch a tiles description
+      - TileSets
+      summary: fetch a tileset description
       description: Retrieves the tiles description for this collection including the
         `links` to get a `tile`, the `TileMatrixSetLink` and the `infoTemplate`
-      operationId: describeMapTilesets
+      operationId: describeTileset
       parameters:
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
-        required: true
-        schema:
-          type: string
       - name: collectionId
         in: path
         description: local identifier of a collection
@@ -414,11 +401,11 @@ paths:
         example: WebMercatorQuad
       responses:
         "200":
-          description: Description of the map tiles.
+          description: Description of the tileset.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/map-tiles'
+                $ref: '#/components/schemas/tile-set'
         "404":
           description: The requested URI was not found
         "500":
@@ -430,26 +417,17 @@ paths:
             text/html:
               schema:
                 type: string
-  /map/{styleId}/tiles:
+  /tiles:
     get:
       tags:
-      - Dataset tiled Maps
-      summary: fetch a map tiles description
-      description: Retrieves the map tiles description including the `links` to get
-        a `map`
-      operationId: describeMapTilesCollections
-      parameters:
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
-        required: true
-        schema:
-          type: string
+      - TileSets
+      summary: fetch a tiles description
+      description: Retrieves the tiles description for this collection including the
+        `links` to get a `tile`
+      operationId: describeTilesCollections
       responses:
         "200":
-          description: Links to the map tiles.
+          description: Description of the tiles.
           content:
             application/json:
               schema:
@@ -460,68 +438,33 @@ paths:
                   links:
                     type: array
                     example:
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-this
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-tile
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-info
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-multitile
+                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-col-this
+                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-col-tile
+                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-col-info
                     items:
                       $ref: '#/components/schemas/link'
-  /map/{styleId}/tiles/{tileMatrixSetId}:
-    get:
-      tags:
-      - Dataset tiled Maps
-      summary: fetch a map tiles description
-      description: Retrieves the map tiles description including the `links` to get
-        a `map`
-      operationId: describeMapTilesetsCollections
-      parameters:
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
-        required: true
-        schema:
-          type: string
-      - name: tileMatrixSetId
-        in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
-        required: true
-        schema:
-          type: string
-        example: WebMercatorQuad
-      responses:
-        "200":
-          description: Links to the map tiles.
+        "404":
+          description: The requested URI was not found
+        "500":
+          description: A server error occurred
           content:
             application/json:
               schema:
-                required:
-                - links
-                type: object
-                properties:
-                  links:
-                    type: array
-                    example:
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-this
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-tile
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-info
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-col-multitile
-                    items:
-                      $ref: '#/components/schemas/link'
-  /collections/{collectionId}/map/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+                $ref: '#/components/schemas/exception'
+            text/html:
+              schema:
+                type: string
+  /collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
     get:
       tags:
-      - Geospatial Resource Tiled Maps
-      summary: fetch a tile from a geospatial resource
+      - Geospatial Resource Vector Tiles
+      summary: fetch a tile from a collection
       description: Retrieves the tile in the requested tileMatrixSet, on the requested
         tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow,
         tileCol). The tile has a single collection (formerly refered as layer) with
         all selected features in the bounding box of the tile. The feature properties
         to include in the tile representation can be limited using a query parameter.
-      operationId: getMapTileOfCollectionId
+      operationId: getTileOfCollectionId
       parameters:
       - name: collectionId
         in: path
@@ -529,34 +472,6 @@ paths:
         required: true
         schema:
           type: string
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
-        required: true
-        schema:
-          type: string
-      - name: transparent
-        in: query
-        description: Background transparency of map (default=true).
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: boolean
-          default: true
-      - name: bgcolor
-        in: query
-        description: Hexadecimal red-green-blue[-alpha] color value for the background
-          color (default=0xFFFFFF). If alpha is not specified "opaque" opacity is
-          assumed.
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: string
-          default: 0xFFFFFF
       - name: tileMatrixSetId
         in: path
         description: Identifier of a specific tiling scheme. It can be one of those
@@ -618,20 +533,12 @@ paths:
         explode: false
         schema:
           type: string
-      - name: elevation
-        in: query
-        description: Elevation value
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: number
       - name: f
         in: query
         description: |-
           The format of the response. If no value is provided, the standard http rules apply, i.e., the accept header is used to determine the format.
 
-          Pre-defined values jpeg, png or gif for image based tiles
+          Pre-defined values are "mvt" for a Mapbox Vector Tile, "json" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles
           The response to other values is determined by the server.
         required: false
         style: form
@@ -639,33 +546,17 @@ paths:
         schema:
           type: string
           enum:
-          - image/png
-          - image/jpeg
-          - image/gif
-        example: image/png
+          - mvt
+          - json
+        example: json
       responses:
         "200":
           description: A tile of the collection.
           content:
-            image/jpeg:
-              schema:
-                type: string
-                format: binary
-              example: JPEG image
-            image/png:
-              schema:
-                type: string
-                format: binary
-              example: PNG image
-            image/gif:
-              schema:
-                type: string
-                format: binary
-              example: GIF image
             image/mvt:
               schema:
                 type: string
-              example: MVT tile
+              example: MVT image
             application/geo+json:
               schema:
                 $ref: '#/components/schemas/featureCollectionGeoJSON'
@@ -680,10 +571,10 @@ paths:
             text/html:
               schema:
                 type: string
-  /collections/{collectionId}/map/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info:
+  /collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info:
     get:
       tags:
-      - Geospatial Resource Tiled Maps
+      - Geospatial Resource Vector Tiles
       summary: fetch information about a point on a tile from a collection
       description: Retrieves inforamtion on a point of a tile in the requested tileMatrixSet,
         on the requested tileMatrix in the TileMatrixSet, with the requested tile
@@ -691,19 +582,11 @@ paths:
         as layer) with all selected features in the bounding box of the tile. The
         feature properties to include in the tile representation can be limited using
         a query parameter.
-      operationId: getFeatureInfoMapTileOfCollectionId
+      operationId: getFeatureInfoTileOfCollectionId
       parameters:
       - name: collectionId
         in: path
         description: local identifier of a collection
-        required: true
-        schema:
-          type: string
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
         required: true
         schema:
           type: string
@@ -768,19 +651,19 @@ paths:
           type: string
       - name: fTile
         in: query
-        description: "The format of the response. \nPre-defined values are jpeg, png\
-          \ or gif for image based tiles\nThe response to other values is determined\
-          \ by the server."
+        description: "The format of the response. \nPre-defined values are \"mvt\"\
+          \ for a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection\
+          \ and jpeg, png or gif for image based tiles\nThe response to other values\
+          \ is determined by the server."
         required: false
         style: form
         explode: false
         schema:
           type: string
           enum:
-          - image/png
-          - image/jpeg
-          - image/gif
-        example: image/png
+          - mvt
+          - json
+        example: json
       - name: datetime
         in: query
         description: |-
@@ -804,14 +687,6 @@ paths:
         explode: false
         schema:
           type: string
-      - name: elevation
-        in: query
-        description: Elevation value
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: number
       - name: f
         in: query
         description: |-
@@ -831,9 +706,7 @@ paths:
         example: application/json
       responses:
         "200":
-          description: Retrieves a map that renders objects of the collectionId in
-            the requested crs, on the requested bbox desigend to be shown in a rendering
-            device of a width and a height.
+          description: A getFeatureInfo of a tile
           content:
             application/geo+json:
               schema:
@@ -849,26 +722,17 @@ paths:
             text/html:
               schema:
                 type: string
-  /map/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+  /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
     get:
       tags:
-      - Dataset tiled Maps
-      summary: retrieves a map composed by one or more geospatial data resources
-      description: Retrieves a map in the requested crs, on the requested bbox desigend
-        to be shown in a device of a width and a height. Some formats require to apply
-        a style in the server side (e.g. png, jpeg, gif) and some others might include
-        a reference to a style to be applied in the client side. The feature properties
-        to include in the tile representation can be limited using a query parameter.
-      operationId: GetMapTileCollections
+      - Dataset Tiles
+      summary: fetch a tile from one or more geospatial data resources
+      description: Retrieves a tile in the requested tileMatrixSet, on the requested
+        tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow,
+        tileCol). The tile has multiple collections (formerly refered as layers) with
+        all selected features in the bounding box of the tile.
+      operationId: getTileCollections
       parameters:
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
-        required: true
-        schema:
-          type: string
       - name: geodata
         in: query
         description: The collections that should be included in the response. The
@@ -881,26 +745,6 @@ paths:
           type: array
           items:
             type: string
-      - name: transparent
-        in: query
-        description: Background transparency of map (default=true).
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: boolean
-          default: true
-      - name: bgcolor
-        in: query
-        description: Hexadecimal red-green-blue[-alpha] color value for the background
-          color (default=0xFFFFFF). If alpha is not specified "opaque" opacity is
-          assumed.
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: string
-          default: 0xFFFFFF
       - name: tileMatrixSetId
         in: path
         description: Identifier of a specific tiling scheme. It can be one of those
@@ -975,7 +819,7 @@ paths:
         description: |-
           The format of the response. If no value is provided, the standard http rules apply, i.e., the accept header is used to determine the format.
 
-          Pre-defined values jpeg, png or gif for image based tiles
+          Pre-defined values are "mvt" for a Mapbox Vector Tile, "json" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles
           The response to other values is determined by the server.
         required: false
         style: form
@@ -983,33 +827,17 @@ paths:
         schema:
           type: string
           enum:
-          - image/png
-          - image/jpeg
-          - image/gif
-        example: image/png
+          - mvt
+          - json
+        example: json
       responses:
         "200":
-          description: A multi-collection tile of the dataset.
+          description: A tile of the collection.
           content:
-            image/jpeg:
-              schema:
-                type: string
-                format: binary
-              example: JPEG image
-            image/png:
-              schema:
-                type: string
-                format: binary
-              example: PNG image
-            image/gif:
-              schema:
-                type: string
-                format: binary
-              example: GIF image
             image/mvt:
               schema:
                 type: string
-              example: MVT tile
+              example: MVT image
             application/geo+json:
               schema:
                 $ref: '#/components/schemas/featureCollectionGeoJSON'
@@ -1024,26 +852,20 @@ paths:
             text/html:
               schema:
                 type: string
-  /map/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info:
+  /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info:
     get:
       tags:
-      - Dataset tiled Maps
-      summary: retrieves a map composed by one or more geospatial resource
-      description: Retrieves a map in the requested crs, on the requested bbox desigend
-        to be shown in a device of a width and a height. Some formats require to apply
-        a style in the server side (e.g. png, jpeg, gif) and some others might include
-        a reference to a style to be applied in the client side. The feature properties
-        to include in the tile representation can be limited using a query parameter.
-      operationId: GetFeatureInfoTileCollections
+      - Dataset Tiles
+      summary: fetch information about a point in a tile from one or more geospatial
+        data resources
+      description: Retrieves information about a point of a tile in the requested
+        tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the
+        requested tile indices (tileRow, tileCol). The tile has a single collection
+        (formerly refered as layer) with all selected features in the bounding box
+        of the tile. The feature properties to include in the tile representation
+        can be limited using a query parameter.
+      operationId: getFeatureInfoTileOfCollections
       parameters:
-      - name: styleId
-        in: path
-        description: The styleId that should be included in the map or tile. Each
-          collectionId has a valid list of stylesId. To know the valid styleId values
-          of each collectionId use /collections/{collectionId}.
-        required: true
-        schema:
-          type: string
       - name: geodata
         in: query
         description: The collections that should be included in the response. The
@@ -1056,37 +878,6 @@ paths:
           type: array
           items:
             type: string
-      - name: styles
-        in: query
-        description: |-
-          The styleId that should be included in the map or tile. Each collectionId has a valid list of stylesId. To know the valid styleId values of each collectionId use /collections/{collectionId}.
-          The parameter value is a list of comma separated styles identifiers. If the parameter 'collections' exists, the list should be as long as 'collections' and each style identifier corresponds to one collection identifier. Default style can be represented as a blank name or with the `default` word.
-          If the parameter is missing, the default style is assumed for all collections.
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: string
-      - name: transparent
-        in: query
-        description: Background transparency of map (default=true).
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: boolean
-          default: true
-      - name: bgcolor
-        in: query
-        description: Hexadecimal red-green-blue[-alpha] color value for the background
-          color (default=0xFFFFFF). If alpha is not specified "opaque" opacity is
-          assumed.
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: string
-          default: 0xFFFFFF
       - name: tileMatrixSetId
         in: path
         description: Identifier of a specific tiling scheme. It can be one of those
@@ -1125,6 +916,42 @@ paths:
           minimum: 0
           type: integer
         example: 1231
+      - name: i
+        in: query
+        description: Horizontal (x) coordinate within a map or tile.
+        required: true
+        schema:
+          type: number
+      - name: j
+        in: query
+        description: Vertical (y) coordinate within a map or tile.
+        required: true
+        schema:
+          type: number
+      - name: infoTemplate
+        in: query
+        description: Template used for the information response. This parameter can
+          be used to select among GML application schemas or JSON schemas and provide
+          alternative presentations for the same information. If the parameter is
+          missing, the server will select the first template available.
+        explode: false
+        schema:
+          type: string
+      - name: fTile
+        in: query
+        description: "The format of the response. \nPre-defined values are \"mvt\"\
+          \ for a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection\
+          \ and jpeg, png or gif for image based tiles\nThe response to other values\
+          \ is determined by the server."
+        required: false
+        style: form
+        explode: false
+        schema:
+          type: string
+          enum:
+          - mvt
+          - json
+        example: json
       - name: datetime
         in: query
         description: |-
@@ -1156,42 +983,6 @@ paths:
         explode: false
         schema:
           type: number
-      - name: fTile
-        in: query
-        description: "The format of the response. \nPre-defined values are jpeg, png\
-          \ or gif for image based tiles\nThe response to other values is determined\
-          \ by the server."
-        required: false
-        style: form
-        explode: false
-        schema:
-          type: string
-          enum:
-          - image/png
-          - image/jpeg
-          - image/gif
-        example: image/png
-      - name: i
-        in: query
-        description: Horizontal (x) coordinate within a map or tile.
-        required: true
-        schema:
-          type: number
-      - name: j
-        in: query
-        description: Vertical (y) coordinate within a map or tile.
-        required: true
-        schema:
-          type: number
-      - name: infoTemplate
-        in: query
-        description: Template used for the information response. This parameter can
-          be used to select among GML application schemas or JSON schemas and provide
-          alternative presentations for the same information. If the parameter is
-          missing, the server will select the first template available.
-        explode: false
-        schema:
-          type: string
       - name: f
         in: query
         description: |-
@@ -1211,9 +1002,7 @@ paths:
         example: application/json
       responses:
         "200":
-          description: Retrieves a map that renders objects of the collectionId in
-            the requested crs, on the requested bbox desigend to be shown in a rendering
-            device of a width and a height.
+          description: A getFeatureInfo of a tile
           content:
             application/geo+json:
               schema:
@@ -1251,7 +1040,8 @@ components:
           - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-collections-json
           - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-collections-html
           - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-landingPage-tms-json
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-landingPage-map-tiles
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-landingPage-tms-html
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-landingPage-tiles
           items:
             $ref: '#/components/schemas/link'
     collection:
@@ -1271,14 +1061,18 @@ components:
           - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-collection-license-html
           - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-collection-license-rdf
           - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-features/1.0.0#/components/examples/link-collection-items
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-collection-map-tiles
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-collection-tiles
           items:
             $ref: '#/components/schemas/link'
-    map-tiles:
+    tile-set:
       allOf:
-      - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/schemas/tiles
-      - $ref: '#/components/schemas/map-tiles-link'
-    map-tiles-link:
+      - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/schemas/tile-set
+      - $ref: '#/components/schemas/tile-set-link'
+    tiles:
+      allOf:
+      - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/schemas/tiles
+      - $ref: '#/components/schemas/tiles-link'
+    tile-set-link:
       required:
       - links
       type: object
@@ -1286,9 +1080,22 @@ components:
         links:
           type: array
           example:
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-this
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-tile
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/examples/link-map-tiles-info
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tile-set-this
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-tile
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-info
+          items:
+            $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/link
+    tiles-link:
+      required:
+      - links
+      type: object
+      properties:
+        links:
+          type: array
+          example:
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-this
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-tile
+          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-info
           items:
             $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/link
     exception:
@@ -1972,33 +1779,57 @@ components:
         rel: data
         type: text/html
         title: The collections in the dataset in HTML
-  responses: {}
+    tile-set_2:
+      required:
+      - tileMatrixSetLink
+      type: object
+      properties:
+        tileMatrixSetLink:
+          $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/schemas/tileMatrixSetLink-entry
+        infoTemplates:
+          $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/schemas/infoTemplates
+    tileMatrixSetLink-entry:
+      required:
+      - tileMatrixSet
+      type: object
+      properties:
+        tileMatrixSet:
+          type: string
+          example: WorldMercatorWGS84Quad
+        tileMatrixSetURI:
+          type: string
+          format: uri
+          example: http://schemas.opengis.net/tms/1.0/json/examples/WorldMercatorWGS84Quad.json
+        tileMatrixSetLimits:
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/tileMatrixSetLimits-entry'
+  responses:
+    tile:
+      description: A tile of the collection.
+      content:
+        image/mvt:
+          schema:
+            type: string
+          example: MVT image
+        application/geo+json:
+          schema:
+            $ref: '#/components/schemas/featureCollectionGeoJSON'
+    info:
+      description: A getFeatureInfo of a tile
+      content:
+        application/geo+json:
+          schema:
+            $ref: '#/components/schemas/featureCollectionGeoJSON'
   parameters:
-    f-json-zip:
-      name: f
-      in: query
-      description: |-
-        The format of the response. If no value is provided, the standard http
-        rules apply, i.e., the accept header is used to determine the format.
-
-        The only pre-defined value is "json". The response to other values is
-        determined by the server.
-      required: false
-      style: form
-      explode: false
-      schema:
-        type: string
-        enum:
-        - image/json
-        - application/zip
-      example: image/json
-    f-png-jpeg:
+    f-png-jpeg-vector:
       name: f
       in: query
       description: |-
         The format of the response. If no value is provided, the standard http rules apply, i.e., the accept header is used to determine the format.
 
-        Pre-defined values jpeg, png or gif for image based tiles
+        Pre-defined values are "mvt" for a Mapbox Vector Tile, "json" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles
         The response to other values is determined by the server.
       required: false
       style: form
@@ -2006,23 +1837,22 @@ components:
       schema:
         type: string
         enum:
-        - image/png
-        - image/jpeg
-        - image/gif
-      example: image/png
+        - mvt
+        - json
+      example: json
     f-tile:
       name: fTile
       in: query
-      description: "The format of the response. \nPre-defined values are jpeg, png\
-        \ or gif for image based tiles\nThe response to other values is determined\
-        \ by the server."
+      description: "The format of the response. \nPre-defined values are \"mvt\" for\
+        \ a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection and\
+        \ jpeg, png or gif for image based tiles\nThe response to other values is\
+        \ determined by the server."
       required: false
       style: form
       explode: false
       schema:
         type: string
         enum:
-        - image/png
-        - image/jpeg
-        - image/gif
-      example: image/png
+        - mvt
+        - json
+      example: json
