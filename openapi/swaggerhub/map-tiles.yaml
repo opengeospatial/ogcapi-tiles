@@ -112,19 +112,19 @@ paths:
                 $ref: '#/components/schemas/confClasses'
               example:
                 conformsTo:
-                - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core
-                - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/core
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/bbox
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/dataset
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/geodata
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/info
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/maptiles
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tmxs
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/info
+                - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core
+                - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/core
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/bbox
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/dataset
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/geodata
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/info
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/maptiles
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tmxs
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/info
         "400":
           description: Invalid or unknown query parameters
         "406":
