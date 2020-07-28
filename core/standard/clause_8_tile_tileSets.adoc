@@ -38,7 +38,7 @@ include::requirements/tilesets/REQ_conformance-success.adoc[]
 
 If the server declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0], then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the conformance page is an array of links following the link schema defined in the OGC API - Common or in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0]. Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
 
-[[ConformancePageTilesCore]]
+[[ConformancePageTilesets]]
 .Conformance Information Page fragment
 =================
 [source,JSON]
@@ -64,7 +64,7 @@ A successful GET response to a tiles description resource will respond with a da
 include::requirements/tilesets/REQ_tileset-links.adoc[]
 
 
-[[TilesLinkResponseExample]]
+[[TilesetsTilesLinkResponseExample]]
 .Example of a tiles metadata response
 =================
 [source,JSON]

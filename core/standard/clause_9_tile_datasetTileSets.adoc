@@ -65,7 +65,7 @@ include::requirements/dataset-tilesets/REQ_conformance-success.adoc[]
 
 On the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API – Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for dataset tilesets
 
-[[ConformancePageTilesroot]]
+[[ConformancePageDatasetTilesets]]
 .Conformance Information Page fragment
 =================
 [source,JSON]
