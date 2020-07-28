@@ -94,6 +94,8 @@ A successful response to a tileset request is a data structure defined by the ti
 The Tileset class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
 
 ==== Response
+The response is expected to represent the dataset as a whole. In a Web API providing access to  a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information included. This can be achieved by applying a manual filter currently described in a OGC API - Tiles - Part 1 or as an automatic decision by the server side.
+
 include::recommendations/dataset-tilesets/REC_geodata-selection.adoc[]
 
 include::recommendations/dataset-tilesets/PER_geodata-selection.adoc[]
