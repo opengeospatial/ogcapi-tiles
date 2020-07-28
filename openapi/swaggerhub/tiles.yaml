@@ -117,17 +117,17 @@ paths:
                 $ref: '#/components/schemas/confClasses'
               example:
                 conformsTo:
-                - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core
-                - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections
-                - http://www.opengis.net/spec/ogcapi-features-1/1.1/req/oas30
-                - http://www.opengis.net/spec/ogcapi-features-1/1.1/req/html
-                - http://www.opengis.net/spec/ogcapi-features-1/1.1/req/geojson
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tmxs
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/info
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-info
+                - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core
+                - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections
+                - http://www.opengis.net/spec/ogcapi-features-1/1.1/conf/oas30
+                - http://www.opengis.net/spec/ogcapi-features-1/1.1/conf/html
+                - http://www.opengis.net/spec/ogcapi-features-1/1.1/conf/geojson
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tmxs
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/info
         "400":
           description: Invalid or unknown query parameters
         "406":

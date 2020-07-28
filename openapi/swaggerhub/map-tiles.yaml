@@ -112,19 +112,19 @@ paths:
                 $ref: '#/components/schemas/confClasses'
               example:
                 conformsTo:
-                - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core
-                - http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/core
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/bbox
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/dataset
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/geodata
-                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/req/info
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/maptiles
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tmxs
-                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/info
+                - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core
+                - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/core
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/bbox
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/dataset
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/geodata
+                - http://www.opengis.net/spec/ogcapi-maps-1/1.0/conf/info
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/maptiles
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tmxs
+                - http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/info
         "400":
           description: Invalid or unknown query parameters
         "406":
@@ -1276,7 +1276,7 @@ components:
             $ref: '#/components/schemas/link'
     map-tiles:
       allOf:
-      - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/schemas/tiles
+      - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/schemas/tiles
       - $ref: '#/components/schemas/map-tiles-link'
     map-tiles-link:
       required:
@@ -1415,25 +1415,6 @@ components:
             type: string
           default:
           - http://www.opengis.net/def/crs/OGC/1.3/CRS84
-        crsSpatialExtents:
-          type: array
-          description: Minimum spatial extent surrounding the spatial resource for
-            each CRS available
-          example:
-          - bbox:
-            - -180
-            - -90
-            - 180
-            - 90
-            crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-          - bbox:
-            - -2.00375083427892E7
-            - -2.00375083427892E7
-            - 2.00375083427892E7
-            - 2.00375083427892E7
-            crs: http://www.opengis.net/def/crs/EPSG/0/3395
-          items:
-            $ref: '#/components/schemas/spatialExtent'
     keyword:
       required:
       - keyword
@@ -1972,6 +1953,38 @@ components:
         rel: data
         type: text/html
         title: The collections in the dataset in HTML
+    tiles:
+      required:
+      - tileMatrixSetLink
+      type: object
+      properties:
+        tileMatrixSetLinks:
+          $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/schemas/tileMatrixSetLink-set
+        infoTemplates:
+          $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-map-tiles/1.0.0#/components/schemas/infoTemplates
+    tileMatrixSetLink-set:
+      type: array
+      description: This list of tileMatrixSetLink objects, as defined in OGC 17-083r2,
+        supported by this collectionId.
+      items:
+        $ref: '#/components/schemas/tileMatrixSetLink-entry'
+    tileMatrixSetLink-entry:
+      required:
+      - tileMatrixSet
+      type: object
+      properties:
+        tileMatrixSet:
+          type: string
+          example: WorldMercatorWGS84Quad
+        tileMatrixSetURI:
+          type: string
+          format: uri
+          example: http://schemas.opengis.net/tms/1.0/json/examples/WorldMercatorWGS84Quad.json
+        tileMatrixSetLimits:
+          minItems: 1
+          type: array
+          items:
+            $ref: '#/components/schemas/tileMatrixSetLimits-entry'
   responses: {}
   parameters:
     f-json-zip:
