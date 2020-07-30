@@ -118,7 +118,7 @@ paths:
               example:
                 conformsTo:
                 - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core
-                - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections
+                - http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections
                 - http://www.opengis.net/spec/ogcapi-features-1/1.1/conf/oas30
                 - http://www.opengis.net/spec/ogcapi-features-1/1.1/conf/html
                 - http://www.opengis.net/spec/ogcapi-features-1/1.1/conf/geojson
@@ -169,23 +169,22 @@ paths:
       responses:
         "200":
           description: |-
-            The collections shared by this API.
+            The collections (geospatial data resources) shared by this API.
 
             This response can be references directly for every service that wants only essential information at the collections level. /collections/collectionId might return more information.
 
-            The dataset is organized as one or more collections. This resource
-            provides information about and access to the collections.
+            The dataset is organized as one or more collections. This resource provides information about and how to access the collections.
 
             The response contains the list of collections. For each collection, a link
-            to other resources is present (e.g. the items in the collection; path `/collections/{collectionId}/items`,
-            link relation `items`) as well as key information about the collection.
-            This information includes:
+            to other resources present (e.g. the items in the collection, path `/collections/{collectionId}/items`,
+            link relation `items`, a map created with data from  collection, path `/collections/{collectionId}/map`,
+            link relation `map`) as well as key information about the collection.
+            This information includes, but is not limited to:
 
             * A local identifier for the collection that is unique for the dataset;
-            * A list of coordinate reference systems (CRS) in which geometries may be returned by the server. The first CRS is the default coordinate reference system (the default is always WGS 84 with axis order longitude/latitude);
+            * A list of coordinate reference systems (CRS) in which geometries may be returned by the server. The first CRS is the default coordinate reference system (the default is always WGS84 with axis order longitude/latitude);
             * An optional title and description for the collection;
             * An optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;
-            * An optional indicator about the type of elements in the collection (the default value, if the indicator is not provided, is 'feature').
           content:
             application/json:
               schema:
@@ -438,9 +437,17 @@ paths:
                   links:
                     type: array
                     example:
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-col-this
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-col-tile
-                    - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-col-info
+                    - href: http://data.example.com/tiles
+                      rel: self
+                      type: application/json
+                    - href: http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png
+                      templated: true
+                      rel: item
+                      type: image/png
+                    - href: http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
+                      templated: true
+                      rel: info
+                      type: text/html
                     items:
                       $ref: '#/components/schemas/link'
         "404":
@@ -1032,16 +1039,46 @@ components:
         links:
           type: array
           example:
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-this
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-alternate
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-service-json
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-service-html
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-conformance
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-collections-json
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-landingPage-collections-html
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-landingPage-tms-json
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-landingPage-tms-html
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-landingPage-tiles
+          - href: http://data.example.org/?f=json
+            rel: self
+            type: application/json
+            title: this document
+          - href: http://data.example.org/?f=html
+            rel: alternate
+            type: text/html
+            title: this document in HTML
+          - href: http://data.example.org/api?f=json
+            rel: service
+            type: application/vnd.oai.openapi+json;version=3.0
+            title: the API definition in OpenAPI 3.0 JSON
+          - href: http://data.example.org/api?f=html
+            rel: service
+            type: text/html
+            title: the API definition in HTML
+          - href: http://data.example.org/conformance?f=json
+            rel: conformance
+            type: application/json
+            title: the list of conformance classes implemented by this API
+          - href: http://data.example.org/collections?f=json
+            rel: data
+            type: application/json
+            title: The collections in the dataset in JSON
+          - href: http://data.example.org/collections?f=html
+            rel: data
+            type: text/html
+            title: The collections in the dataset in HTML
+          - href: http://data.example.org/tileMatrixSets?f=json
+            rel: tiling-schema
+            type: application/json
+            title: List of tileMatrixSets implemented by this API in JSON
+          - href: http://data.example.org/tileMatrixSets?f=html
+            rel: tiling-schema
+            type: text/html
+            title: List of tileMatrixSets implemented by this API in HTML
+          - href: http://data.example.org/tiles
+            rel: tilesets
+            type: application/json
+            title: Link to information on tiles combining more than one collection
           items:
             $ref: '#/components/schemas/link'
     collection:
@@ -1056,12 +1093,28 @@ components:
         links:
           type: array
           example:
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-collection-this
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-collection-describedBy
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-collection-license-html
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/examples/link-collection-license-rdf
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-features/1.0.0#/components/examples/link-collection-items
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-collection-tiles
+          - href: http://example.com/collections/buildings?f=json
+            rel: self
+            type: application/json
+            title: This document
+          - href: http://example.com/concepts/buildings.html
+            rel: describedby
+            type: text/html'
+          - href: https://creativecommons.org/publicdomain/zero/1.0/
+            rel: license
+            type: text/html
+            title: CC0-1.0
+          - href: https://creativecommons.org/publicdomain/zero/1.0/rdf
+            rel: license
+            type: application/rdf+xml
+            title: CC0-1.0
+          - href: http://data.example.com/collections/buildings/items
+            rel: items
+            title: Retrieve the items of the buildings collection
+            type: application/geo+json
+          - href: http://data.example.com/collections/buildings/tiles
+            rel: tiles
+            type: application/json
           items:
             $ref: '#/components/schemas/link'
     tile-set:
@@ -1080,9 +1133,17 @@ components:
         links:
           type: array
           example:
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tile-set-this
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-tile
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-info
+          - href: http://data.example.com/collections/buildings/tiles/WebMercatorQuad
+            rel: self
+            type: application/json
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png
+            templated: true
+            rel: item
+            type: image/png
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
+            templated: true
+            rel: info
+            type: text/html
           items:
             $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/link
     tiles-link:
@@ -1093,9 +1154,17 @@ components:
         links:
           type: array
           example:
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-this
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-tile
-          - $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-info
+          - href: http://data.example.com/collections/buildings/tiles
+            rel: self
+            type: application/json
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png
+            templated: true
+            rel: item
+            type: image/png
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
+            templated: true
+            rel: info
+            type: text/html
           items:
             $ref: https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/link
     exception:
@@ -1222,25 +1291,6 @@ components:
             type: string
           default:
           - http://www.opengis.net/def/crs/OGC/1.3/CRS84
-        crsSpatialExtents:
-          type: array
-          description: Minimum spatial extent surrounding the spatial resource for
-            each CRS available
-          example:
-          - bbox:
-            - -180
-            - -90
-            - 180
-            - 90
-            crs: http://www.opengis.net/def/crs/OGC/1.3/CRS84
-          - bbox:
-            - -2.00375083427892E7
-            - -2.00375083427892E7
-            - 2.00375083427892E7
-            - 2.00375083427892E7
-            crs: http://www.opengis.net/def/crs/EPSG/0/3395
-          items:
-            $ref: '#/components/schemas/spatialExtent'
     keyword:
       required:
       - keyword
@@ -1363,10 +1413,21 @@ components:
         links:
           type: array
           example:
-          - $ref: '#/components/examples/link-collection-from-collections'
-          - $ref: '#/components/examples/link-collection-describedBy'
-          - $ref: '#/components/examples/link-collection-license-html'
-          - $ref: '#/components/examples/link-collection-license-rdf'
+          - href: http://example.com/collections/buildings?f=json
+            rel: item
+            type: application/json
+            title: CollectionId path description in the OpenAPI
+          - href: http://example.com/concepts/buildings.html
+            rel: describedby
+            type: text/html'
+          - href: https://creativecommons.org/publicdomain/zero/1.0/
+            rel: license
+            type: text/html
+            title: CC0-1.0
+          - href: https://creativecommons.org/publicdomain/zero/1.0/rdf
+            rel: license
+            type: application/rdf+xml
+            title: CC0-1.0
           items:
             $ref: '#/components/schemas/link'
     tileMatrixSets:
