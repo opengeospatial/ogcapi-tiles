@@ -10,6 +10,11 @@ https://app.swaggerhub.com/apis/UAB-CREAF
 The OGC API - Maps and the OGC API - Tiles are related and should be considered complementary. Visit the [Quick guide](QuickGuide/README.md)
 
 ## Standards
+
+[OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs
+in a consistent way. [OpenAPI](http://openapis.org) is used to define the reusable
+API building blocks.
+
 After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having two separate core standards, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
 
 While under development, the standards are written using AsciiDoc using many files that might be difficult to trace. Please see the compiled standard document as it is easier to read here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html
