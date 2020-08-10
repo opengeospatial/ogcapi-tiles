@@ -102,3 +102,5 @@ The WMS Standards Working Group (SWG) is the group at OGC responsible for the st
 
 * [Open issues](https://github.com/opengeospatial/OGC-API-Map-Tiles/issues)
 * [Copy of License Language](https://raw.githubusercontent.com/opengeospatial/OGC-API-Map-Tiles/master/LICENSE)
+
+Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the Observer Agreement https://portal.ogc.org/files/?artifact_id=92169
