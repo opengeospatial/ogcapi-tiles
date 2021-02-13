@@ -3,7 +3,7 @@
                 "OGC_doc_number": "20-057",
                 "urn":"http://www.opengis.net/doc/IS/ogcapi-tiles-1/1.0",
                 "title":"OGC API - Tiles - Part 1: Core",
-                "path":"core/20-057.adoc",
+                "path":"core/standard/20-057.adoc",
                 "options": ["--trace"],
                 "a":[
                         "data-uri"
