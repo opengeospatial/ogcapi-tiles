@@ -17,7 +17,7 @@ API building blocks.
 
 After a while getting familiar and playing with the OpenAPI definition files (explained just below in the "Examples section"), we have finally started to write the standard. We have decided an aggressive path to modularization having two separate core standards, one for tiles and another for maps that can be combined as needed. Several extension for tiles and maps will emerge in the process.
 
-While under development, the standards are written using AsciiDoc using many files that might be difficult to trace. Please see the compiled standard document as it is easier to read here: https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html
+While under development, the standards are written using AsciiDoc using many files that might be difficult to trace. Please see the compiled standard document as it is easier to read here: https://docs.ogc.org/DRAFTS/20-057.html
 
 ### OGC API - Tiles - Part 1: Core
 he definition of OGC API - Tiles - Part 1: Core is the immediate next step. The Standards Working Group (SWG) agreed on the structure shown below.
