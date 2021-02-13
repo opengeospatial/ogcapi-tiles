@@ -6,7 +6,7 @@
                 "path":"core/standard/20-057.adoc",
                 "options": ["--trace"],
                 "a":[
-                        "data-uri"
+                        "data-uri",
                         "stylesdir=./resources/stylesheets",
                         "dot=/usr/bin/dot"
                 ],
