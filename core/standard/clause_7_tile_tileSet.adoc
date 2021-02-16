@@ -65,15 +65,13 @@ This class does not specify the path for a tileSet. Generally, TileSet resources
 ==== Response
 A successful GET response to a tileset resource will be a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial data resource.
 
-include::requirements/tileset/REQ_tmxslink.adoc[]
+include::requirements/tileset/REQ_tileset-description.adoc[]
 
 include::recommendations/tileset/REC_tmxslink.adoc[]
 
 Clients or servers are not required to support a specific default TileMatrixSet.
 
-Resolvable URLs for the 8 URIs defined in the OGC 17-083r2 Annex D are available in the OGC schemas repository in XML, JSON and RDF formats. For example, JSON descriptions can be found here: http://schemas.opengis.net/tms/1.0/json/examples/
-
-include::requirements/tileset/REQ_tile-template.adoc[]
+The OGC TileMatrixSets registry is available at http://opengis.net/def/tms.
 
 NOTE: The geospatial data resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
@@ -86,21 +84,31 @@ include::recommendations/tileset/REC_sourcelink.adoc[]
 =================
 [source,JSON]
 {
-  "tileMatrixSetLink":
-    {
-      "tileMatrixSet": "WorldMercatorWGS84Quad",
-      "tileMatrixSetURI": "http://schemas.opengis.net/tms/1.0/json/examples/WorldMercatorWGS84Quad.json"
-    },
   ...
+  "tileMatrixSetURI": "http://www.opengis.net/def/tilematrixset/OGC/1.0/WorldMercatorWGS84Quad",
+  "dataType": "map",
   "links": [
     ...
     {
-     "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png",
+     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad",
+     "rel": "self",
+     "type": "application/json",
+    },
+    {
+     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/{tileMatrix}/{tileRow}/{tileCol}.png",
      "templated": true,
      "rel": "item",
      "type": "image/png",
-   }
+    }
    ...
+  ],
+  "tileMatrixSetLimits":
+  [
+    { "tileMatrix" : "0", "minTileRow" : 0, "maxTileRow" : 0, "minTileCol" : 0, "maxTileCol" : 0 },
+    { "tileMatrix" : "1", "minTileRow" : 0, "maxTileRow" : 0, "minTileCol" : 1, "maxTileCol" : 1 },
+    { "tileMatrix" : "2", "minTileRow" : 1, "maxTileRow" : 1, "minTileCol" : 2, "maxTileCol" : 2 },
+    { "tileMatrix" : "3", "minTileRow" : 3, "maxTileRow" : 3, "minTileCol" : 4, "maxTileCol" : 4 },
+    ...
   ]
 }
 =================
@@ -114,7 +122,6 @@ The following table explains the meaning of the URI template variables.
 [cols="30,35,70",options="header"]
 !===
 |URL template variable |Meaning |Possible values
-|TileMatrixSetId |tile matrix set identifier |One of the identifiers included in Annex D of OGC 17-083r2 or an identifier defined by extensions of this core
 |TileMatrix |tile matrix identifier |Identifier of the tile matrix (representing a zoom level, a.k.a. a scale) listed in the TileMatrixSet definition
 |TileRow |row index of tile matrix	|A non-negative integer between 0 and the MatrixHeight – 1. If there is a TileMatrixSetLimits the value is limited between MinTileRow and MaxTileRow
 |TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
@@ -135,16 +142,16 @@ This operation allows retrieving a single tile that represents information comin
 
 include::requirements/tileset/REQ_tc-op.adoc[]
 
-Typical geospatial data resources that can be retrieved as tiles are: features (in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] represented by /collections/{collectionId}), or full maps (specified in the OGC API Maps).
+Typical geospatial data resources that can be retrieved as tiles are: vector features (available at `/collections/{collectionId}/items` in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core], for which it is recommended to provide tilesets at `/collections/{collectionId}/tiles`),
+maps (specified in OGC - API Maps) or coverages (specified in OGC API - Coverages).
 
 include::recommendations/tileset/REC_tc-op.adoc[]
 
 The supported encodings, or more precisely the media types of the supported encodings, can be determined from the API definition. The desired encoding is selected using HTTP content negotiation.
 
-==== Parameter tileMatrixSetId
-include::requirements/tileset/REQ_tc-tilematrixsetid-definition.adoc[]
-
-The core of the OGC API -Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet. If the service does not advertise any other TileMatrixSet (this core does not describe any mechanism to do that, but an extension will do it) the TileMatrixSet identifiers possible are limited to the ones specified in the Annex D.1 of the OGC 17-083r2 standard.
+The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet.
+A resource will be available providing metadata for each available tileset, including a link to either a TileMatrixSet registered in the OGC TileMatrixSet registry,
+or to a custom TileMatrixSet definition.
 
 ==== Parameter tileMatrix
 include::requirements/tileset/REQ_tc-tilematrix-definition.adoc[]
@@ -171,6 +178,8 @@ Normally, the content partially outside the tile bounding box will be clipped at
 
 include::recommendations/tileset/REC_tc-success-scale.adoc[]
 
+include::recommendations/tileset/REC_tc-deepfullempty.adoc[]
+
 To enable search engines to easily discover the content offered by an implementation of OGC API - Tiles, as well as to enable web browsers to easily display the content offered by the APIs, this standard allows for responses to operations to be encoded in HTML.
 
 include::recommendations/tileset/PER_tc-core-html.adoc[]
@@ -179,4 +188,6 @@ include::recommendations/tileset/PER_tc-core-html.adoc[]
 
 A general summary of the HTTP status codes can be found in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] as well as in OGC API - Common.
 
-If the parameter value `tileMatrixSetId` is not available by the server for this resource or the parameters values `tileMatrix`, `tileRow`, `tileCol` are out-of-range, or the tile is not provided due to lack of data in the area, the status code of the response will be `404`.
+If the parameters values `tileMatrix`, `tileRow`, `tileCol` are out-of-range, the status code of the response will be `404`.
+
+If the tile is not provided due to lack of data in the area, but within the data resource's tile matrix sets limit, the status code of the response will be either 204, indicating an empty tile, or 200 with an empty file (which or may not be zero bytes, depending on the output format).

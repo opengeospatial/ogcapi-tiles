@@ -2,5 +2,8 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/dataset-tilesets/operation*
-^|A |The server SHALL support an operation to retrieve tileset's from the dataset as a HTTP GET request to a URI that is composed by three parts: the first part is the URI of a resource that can be represented as tiles (e.g. `/map` or simply `/`) and the second part follows the pattern `/tiles/` followed by the identified of the tile matrix set.
+^|A |The dataset SHALL have an associated list of at least one tileset accessible at `.../tiles` supporting an HTTP GET operation
+^|B |The URI shall be composed of two parts: the initial part is the URI of the dataset resource that can be represented as tiles and the final part follows the pattern `/tiles`
+^|C |The dataset landing page SHALL include a link with relation type http://www.opengis.net/def/rel/ogc/1.0/tilesets,
+  or a more specific tilesets relation type as defined by other specifications, linking to that resource listing available tilesets
 |===

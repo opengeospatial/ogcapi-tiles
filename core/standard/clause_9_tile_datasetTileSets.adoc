@@ -30,8 +30,6 @@ The landing page provides links to start exploring the resources offered by the 
 
 ==== Response
 
-include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
-
 In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to dataset tilesets.
 
 [[landingPageTilesRoot]]
@@ -40,13 +38,13 @@ In the landing page, in JSON format, the links follow the link schema defined in
 [source,JSON]
 ----
 {
-  links: [
+  "links": [
     ...,
     {
-       "href": "http://data.example.org/tiles/WebMercatorQuad",
-       "rel": "tiles",
+       "href": "http://data.example.org/tiles",
+       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tilesets",
        "type": "application/json",
-       "title": "Link to information on map tileset from the dataset",
+       "title": "List of available tilesets for the dataset",
     }
   ]
 }

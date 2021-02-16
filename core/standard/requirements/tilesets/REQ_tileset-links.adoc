@@ -1,6 +1,0 @@
-[[req_tilesets-tileset-links]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/tilesets/tileset-links*
-^|A |The content of the response to a successful execution of a tile description SHALL include links to all tileset supported by the tilesets (rel: `item`).
-|===

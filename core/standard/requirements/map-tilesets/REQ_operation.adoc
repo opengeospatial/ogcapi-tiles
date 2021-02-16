@@ -1,7 +1,0 @@
-[[req_map-tilesets_operation]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/map-tilesets/operation*
-^|A |Every map available as tiles SHALL support an path URL and a HTTP GET operation to retrieve the description of the tiles the API implementation can provide
-^|B |The URI shall be composed by two parts: the initial part is the URI of the styled map (e.g. `.../map/{styleID}`) that can be represented as tiles and the final part follows the pattern `/tiles`
-|===
