@@ -45,8 +45,8 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 {
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/collections",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset"
+    "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets"
   ]
 }
 =================
