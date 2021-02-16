@@ -1,0 +1,9 @@
+[[req_tilesets-tileset-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tilesets-list/tileset-links*
+^|A |The API SHALL support a GET operation on a `.../tiles` path returning a list of available tilesets
+^|B |Each element of that list SHALL contain a subset of the tileset metadata, as defined by the 2D Tile Matrix Set and Metadata standard
+^|C |Each element of that list SHALL include a link to a resource providing the full available tileset metadata, using link relation
+ `http://www.opengis.net/def/rel/ogc/1.0/tileset`.
+|===

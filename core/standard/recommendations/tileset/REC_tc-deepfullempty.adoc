@@ -1,0 +1,12 @@
+[[rec_tileset_tc-deepfullempty]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/tileset/tc-deepfullempty*
+^|A | If a requested tile is empty (no data) and all tiles within its extent at all more detailed zoom levels (tile matrices) are guaranteed to also be empty,
+ the response header SHOULD include `OATiles-hint: empty`.
+^|B | If a requested tile is full (e.g. the inside of a polygon for vector features, a solid color for a map, or a grid completely filled with the same value
+ for a coverage) and all tiles within its extent at all more detailed zoom level (tile matrices) are guaranteed to also be identically full, the response header
+  SHOULD include `OATiles-hint: full`.
+|===
+
+NOTE: A client could use this information to avoid requesting the more detailed tiles of that area.
