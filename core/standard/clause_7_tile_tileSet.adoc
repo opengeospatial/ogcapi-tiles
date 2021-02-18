@@ -56,11 +56,13 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 =================
 
 === Tileset resource
-A tileset resource represents the set of tiles that belongs to a particular tilematrixset. The resource contains the necessary metadata to enable a client application to formulate a tile request.
+A tileset resource represents the set of tiles that belongs are partitioned based on a tilematrixset. The resource contains the necessary metadata to enable a client application to formulate a tile request.
 
 ==== Tileset path
 
-This class does not specify the path for a tileSet. Generally, TileSet resources are linked from a Tilesets resource. Refer to the TileSets class to know how TileSets can link to TileSet resources. Refer to the DatasetTileSets and GeoDataResourceTileSets classes that describes two mechanisms to associate tileSets to datasets and to geospatial data resources respectively.
+This class does not specify a full path to a tileSet. Generally, TileSet resources are linked from a Tilesetslist resource (see <<rc_tileSets-list>>). Refer to the TileSetList class to know how TileSetLists can link to TileSet resources. It is expected that a tileset can be used as a building block in other APIs and on top of resources such as features, coverage or any other geospatial resources that can benefit from tiling.
+
+//Refer to the DatasetTileSets and GeoDataResourceTileSets classes that describes two mechanisms to associate tileSets to datasets and to geospatial data resources respectively.
 
 ==== Response
 A successful GET response to a tileset resource will be a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial data resource.
