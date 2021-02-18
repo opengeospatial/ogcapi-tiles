@@ -96,9 +96,9 @@ paths:
               example:
                 conformsTo:
                 # OGC API Common core consists on the landingPage, conformance
-                  - 'http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core'
+                  - 'http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core'
                   # OGC API Common collections consists adds the capability to have collections
-                  - 'http://www.opengis.net/spec/ogcapi-common-1/1.0/req/collections'
+                  - 'http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections'
                   # We need to be sure which ones are still valid when adopting OpenAPI.
                   - 'http://www.opengis.net/spec/ogcapi-features-1/1.0/req/core'
                   - 'http://www.opengis.net/spec/ogcapi-features-1/1.0/req/oas30'

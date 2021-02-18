@@ -444,6 +444,6 @@ components:
   examples:
     link-collection-items:
       href: 'http://data.example.com/collections/buildings/items'
-      rel: items
+      rel: http://www.opengis.net/def/rel/ogc/1.0/items
       title: Retrieve the items of the buildings collection
       type: 'application/geo+json'
