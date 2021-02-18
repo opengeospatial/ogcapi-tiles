@@ -3,7 +3,7 @@
 
 === Evolution from OGC Web Services
 
-OGC Web Service (OWS) standards have historically implemented a Remote-Procedure-Call-over-HTTP architectural style using Extensible Markup Language (XML) for payloads. This was the state-of-the-art when some of the initial versions of OGC Web Services were originally designed in the late 1990s and early 2000s. This architectural style has now a competing RESTful API style that is proposed as an alternative to RPC pattern. A RESTful API style is resource-oriented instead of service-oriented. The Web Map Tile Service 1.0 already defines a resource oriented architechtural style but it lack an API defintion. This OGC API - Tiles standard specifies an API that follows this Web architecture and in particular the W3C/OGC best practices for sharing Spatial Data on the Web as well as the W3C best practices for sharing Data on the Web.
+OGC Web Service (OWS) standards have historically implemented a Remote-Procedure-Call-over-HTTP architectural style using Extensible Markup Language (XML) for payloads. This was the state-of-the-art when some of the initial versions of OGC Web Services were originally designed in the late 1990s and early 2000s. This architectural style has now a competing RESTful API style that is proposed as an alternative to RPC pattern. A RESTful API style is resource-oriented instead of service-oriented. The Web Map Tile Service 1.0 already defines a resource oriented architectural style but it lack an API definition. This OGC API - Tiles standard specifies an API that follows this Web architecture and in particular the W3C/OGC best practices for sharing Spatial Data on the Web as well as the W3C best practices for sharing Data on the Web.
 
 This document provides de necessary elements to incorporate tile support to an API implementation. These elements can be incorporated in an API based on the OGC API - Features Part 1, core or can be incorporated in an API implementation based on the OGC API – Common Part 1, core. Both specifies a kernel of an API approach to services that follows current resource-oriented architecture practices in the OGC. The OGC API - Common standard provides the foundation upon which implementations of the OGC APIs can be built. The OGC API - common can be combined with this standard and other resource-specific OGC API standards to build and OGC API implementation. However, this standard is done in a way that can extend OGC API - Common but does not make  OGC API - Common mandatory. This way This standard it can be reused as a building block in other frameworks.
 
@@ -78,8 +78,8 @@ For the second approach, we provide some examples of paths templates that an Ope
 |Map tile (geospatial resources^1^) |`/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 !===
 ^1^: The expression "geospatial resources" means "from more than one geospatial resource or collection"
-^2^: Specified in an annnex of this document, providing support for the "TileJSON" format.
-^3^: Specified in the OGC API - Maps Part1, core
-^4^: Specified in the OGC API - Commonn Part1, core
+^2^: Specified in an annex of this document, providing support for the "TileJSON" format.
+^3^: Specified in the OGC API - Maps Part 1, core
+^4^: Specified in the OGC API - Common Part 1, core
 
-NOTE: Depite the fact that the previous list of path and path templates are used in many implementations of the OGC API - Tiles, the use of these exact paths are not require by this document and others are possible if correctly described in both approaches.
+NOTE: Despite the fact that the previous list of path and path templates are used in many implementations of the OGC API - Tiles, the use of these exact paths are not require by this document and others are possible if correctly described in both approaches.

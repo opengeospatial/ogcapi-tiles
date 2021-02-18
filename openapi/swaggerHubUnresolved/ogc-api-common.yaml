@@ -337,7 +337,7 @@ components:
             type: string
             format: uri
           example:
-            - 'http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core'
+            - 'http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core'
     exception:
       type: object
       required:
@@ -349,11 +349,11 @@ components:
           type: string
       example:
         code: '500'
-        description: 'An internal server error occured. Incident ID: 1234567. Please contact admin@example.org.'
+        description: 'An internal server error occurred. Incident ID: 1234567. Please contact admin@example.org.'
     extent:
       description: |-
         The extent of the collection. In the Core only spatial and temporal extents are specified. Extensions may add additional members to represent other  extents, for example, thermal or pressure ranges.
-        It is recommended that the statial extent is expected in CRS84 except if this is not possible.
+        It is recommended that the spatial extent is provided in CRS84 where possible.
       type: object
       properties:
         spatial:
@@ -484,15 +484,15 @@ components:
           type: text/html
           title: the API definition in HTML
         - href: 'http://data.example.org/conformance?f=json'
-          rel: conformance
+          rel: http://www.opengis.net/def/rel/ogc/1.0/conformance
           type: application/json
           title: the list of conformance classes implemented by this API
         - href: 'http://data.example.org/collections?f=json'
-          rel: data
+          rel: http://www.opengis.net/def/rel/ogc/1.0/data
           type: application/json
           title: The collections in the dataset in JSON
         - href: 'http://data.example.org/collections?f=html'
-          rel: data
+          rel: http://www.opengis.net/def/rel/ogc/1.0/data
           type: text/html
           title: The collections in the dataset in HTML
     id-link:
@@ -782,16 +782,16 @@ components:
       title: the API definition in HTML
     link-landingPage-conformance:
       href: 'http://data.example.org/conformance?f=json'
-      rel: conformance
+      rel: http://www.opengis.net/def/rel/ogc/1.0/conformance
       type: application/json
       title: the list of conformance classes implemented by this API
     link-landingPage-collections-json:
       href: 'http://data.example.org/collections?f=json'
-      rel: data
+      rel: http://www.opengis.net/def/rel/ogc/1.0/data
       type: application/json
       title: The collections in the dataset in JSON
     link-landingPage-collections-html:
       href: 'http://data.example.org/collections?f=html'
-      rel: data
+      rel: http://www.opengis.net/def/rel/ogc/1.0/data
       type: text/html
       title: The collections in the dataset in HTML

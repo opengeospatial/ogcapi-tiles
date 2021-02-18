@@ -133,8 +133,6 @@ The following table explains the meaning of the URI template variables.
 |TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
 !===
 
-NOTE: The use of "templated" is inspired by the JSON Hypertext Application Language (HAL), https://tools.ietf.org/html/draft-kelly-json-hal-08
-
 NOTE: TileJSON is an alternative for a tileset description document. See Annex TBD for more details about this format. Currently this specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. The version 3 of this specification provides a mechanism to cite data sources too.
 
 === A tile
@@ -144,7 +142,7 @@ A tile resource is a geospatial resource of a fragment of a more bigger geospati
 As described before a tile path is obtained by extracting a tile URL templated from one of the links with `rel`: `item` in tileset description document and substituting the templated variables of with valid values.
 
 ==== Operation
-This operation allows retrieving a single tile that represents information coming from geospatial data resources.
+This operation allows retrieving a single tile that represents information sourced from geospatial data resources.
 
 include::requirements/tileset/REQ_tc-op.adoc[]
 
