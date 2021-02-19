@@ -20,7 +20,7 @@ After a while getting familiar and playing with the OpenAPI definition files (ex
 While under development, the standards are written using AsciiDoc using many files that might be difficult to trace. Please see the compiled standard document as it is easier to read here: https://docs.ogc.org/DRAFTS/20-057.html
 
 ### OGC API - Tiles - Part 1: Core
-he definition of OGC API - Tiles - Part 1: Core is the immediate next step. The Standards Working Group (SWG) agreed on the structure shown below.
+The definition of OGC API - Tiles - Part 1: Core is the immediate next step. The Standards Working Group (SWG) agreed on the structure shown below.
 
 1. TileSet - It specifies a tileset resource (a tileset in a single Tile Matrix Set), which is a resource that contains information on how to formulate a request to a tile. It also specifies how the get a tile by indicating the Tile Matrix and the row and column.
 2. TileSets - It It specifies a tilesets resource describing multiple tile sets

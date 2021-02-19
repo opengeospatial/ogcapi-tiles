@@ -1,23 +1,44 @@
 == Conformance
-This standard defines two requirements / conformance classes.
+This standard defines six requirements / conformance classes.
 
-The standardization targets of all conformance classes are "Web APIs."
+The standardization targets of all conformance classes are "Web APIs".
 
-The main requirements class is:
+The main requirements classes are:
 
-* Core.
+* Core
 
 The Core specifies requirements that all Web APIs have to implement if they are claiming to support tiles from one geospatial resource following the OGC API - Tiles Part 1: core standard.
+It defines the operation to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.
 
-Another requirements class is:
+* Tileset
 
-* Root
+The _tileset_ conformance class defines a mechanism to describe a tileset using a specific tile matrix set and obtain a templated link to individual tiles.
 
-The Root specifies requirements that all Web APIs have to implement if they are claiming to support tiles from more than one geospatial resource following the OGC API - Tiles Part 1: core standard.
+* Tilesets list
+
+The _tilesets list_ conformance class defines a generic operation to retrieve a list of tilesets, without association to any particular type of resources.
+
+
+Additional requirements class are:
+
+* Dataset tilesets
+
+The _dataset tilesets_ conformance class allows retrieving tiles for a whole dataset potentially made up of multiple geospatial data resources.
+All Web APIs have to implement this conformance class if they are claiming to support tiles from more than one geospatial resource following the OGC API - Tiles Part 1: core standard.
+
+* Geodata selection
+
+The _geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve dataset tiles.
+
+* Geodata tilesets
+
+The _geodata tilesets_ conformance class allows retrieving tiles from a specific geospatial data resource.
+
+
 
 This document does not mandate a specific encoding or format for representing tiles. There are no requirements classes making considerations on specify representations.
 
-_Core_ and _Root_ are conformance classes that act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for API discovery, conformity and API formal definition (e.g. OpenAPI). Possible alternatives for these fundamental conformance classes are OGC API - Common Part 1: core, OGC API - Features Part 1: core or any other non-OGC classes that provide this functionality.
+These conformance classes act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for API discovery, conformity and API formal definition (e.g. OpenAPI). Possible alternatives for these fundamental conformance classes are OGC API - Common Part 1: core, OGC API - Features Part 1: core or any other non-OGC classes that provide this functionality.
 
 Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 

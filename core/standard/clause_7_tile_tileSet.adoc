@@ -1,3 +1,111 @@
+
+[[rc_core]]
+== Requirement Class "Core"
+
+[[core-overview]]
+
+include::requirements/requirements_class_core.adoc[]
+
+The core conformance class describes the HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard.
+It does not prescribe a particular path or template form for the URL of those tiles, but the tileset conformance class does.
+
+A mechanism other than the tileset conformance class can be used to describe the tileset in conjunction with the core conformance class, such as TileJSON.
+See Annex TBD for more details about this format.
+Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit, while
+version 3 provides a mechanism to cite data sources as well.
+
+=== Declaration of conformance classes
+To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server,
+the API has to declare the requirements classes it implements and conforms to.
+
+==== Response
+
+The conformance page mainly consists of a list of links.
+
+include::requirements/core/REQ_conformance-success.adoc[]
+
+If the server declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0],
+then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page.
+In the JSON format the conformance page is an array of links following the link schema defined in the OGC API - Common or in
+http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0].
+Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
+
+[[ConformancePageCore]]
+.Conformance Information Page fragment
+=================
+[source,JSON]
+{
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core"
+  ]
+}
+=================
+
+Clients or servers are not required to support a specific default TileMatrixSet.
+
+The OGC TileMatrixSets registry is available at http://opengis.net/def/tms.
+
+=== A tile
+A tile resource is a geospatial resource of a fragment of a more bigger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
+
+==== Operation
+This operation allows retrieving a single tile that represents information coming from geospatial data resources.
+
+include::requirements/core/REQ_tc-op.adoc[]
+
+Typical geospatial data resources that can be retrieved as tiles are: vector features
+(available at `/collections/{collectionId}/items` in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core],
+for which it is recommended to provide tilesets at `/collections/{collectionId}/tiles`),
+maps (specified in OGC - API Maps) or coverages (specified in OGC API - Coverages).
+
+include::recommendations/tileset/REC_tc-op.adoc[]
+
+The supported encodings, or more precisely the media types of the supported encodings, can be determined from the API definition. The desired encoding is selected using HTTP content negotiation.
+
+
+The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet.
+
+==== Parameter tileMatrix
+include::requirements/core/REQ_tc-tilematrix-definition.adoc[]
+
+==== Parameter tileRow
+include::requirements/core/REQ_tc-tilerow-definition.adoc[]
+
+==== Parameter tileCol
+include::requirements/core/REQ_tc-tilecol-definition.adoc[]
+
+==== Response
+
+A successful response to a tile GET operation will be consistent with the media type of resource requested. This draft specification does not impose any media type or file format. For example:
+
+* For features the media type may be GeoJSON or Mapbox Vector Tiles;
+* For coverages the response may be a GeoTIFF;
+* For maps the response may be a JPEG or a PNG.
+
+include::requirements/core/REQ_tc-success.adoc[]
+
+include::recommendations/tileset/PER_tc-core-tile-encoding.adoc[]
+
+Normally, the content partially outside the tile bounding box will be clipped at the extent of the bounding box. This can be done efficiently when tiles are in raster format (e.g. map tiles). However, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features or for performance.
+
+include::recommendations/tileset/REC_tc-success-scale.adoc[]
+
+include::recommendations/tileset/REC_tc-deepfullempty.adoc[]
+
+To enable search engines to easily discover the content offered by an implementation of OGC API - Tiles, as well as to enable web browsers to easily display the content offered by the APIs, this standard allows for responses to operations to be encoded in HTML.
+
+include::recommendations/tileset/PER_tc-core-html.adoc[]
+
+==== Error conditions
+
+A general summary of the HTTP status codes can be found in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] as well as in OGC API - Common.
+
+If the parameters values `tileMatrix`, `tileRow`, `tileCol` are out-of-range, the status code of the response will be `404`.
+
+If the tile has no content due to lack of data in the area, but is within the data resource's tile matrix sets limits, the status code of the response will be either 204, indicating an empty tile, or 200 with an empty file (which or may not be zero bytes, depending on the output format).
+
 [[rc_tileSet]]
 == Requirement Class "TileSet"
 
@@ -7,32 +115,35 @@
 
 include::requirements/requirements_class_tileset.adoc[]
 
-This is a building block for the an OGC API that describes the TileSet resource and how to retrieve a tile from a tileset
+The tileset conformance class provides a mechanism to describe a single tileset, for one particular geospatial data resource and tiled using one
+according to one specific TileMatrixSet.
+It also provides a mechanism to obtain a templated link to retrieve individual tiles as defined in the _core_ conformance class.
 
-Defines the response of a TileSet GET request (but not the path or the link for the request).
-The response has two formats: tilejson and OGC json. The OGC json includes tilematrixset links, a central point (optional), a links to the URI template to individual tiles, and the geospatial data resources involved in the creation of the tiles (optional), and other metadata (including attribution; optional)
-Defines how to formulate a request for individual tiles and how the response will look like (success and failure)
+It describes the HTTP GET operation on a tileset resource and its response, but not a specific path.
+The response provides metadata as per the 2D Tile Matrix Set and TileSet Metadata standard.
 
-**TBD**
+The essential elements of this metadata are:
+- a link to the definition of the TileMatrixSet (either one registered in the OGC TileMatrixSet registry, or to a custom TileMatrixSet definition),
+- a templated link (URI) to individual tiles,
+- and a data type (indicating whether the tileset consists of vector, coverage or map tiles).
 
-This is a building block for the an OGC API that is able to provide geospatial data resources. When applying the building block to a geospatial data resource, it becomes available as tiles. The server can select which resources are available as tiles and will advertise which resources are available as tiles.
+It may optionally also provide additional information, such as:
+- the geospatial data resources involved in the creation of the tiles (potentially including links to OGC API collections),
+- a schema of the available properties contained within the tiles,
+- styles used to create the tiles,
+- a central point on which a viewer may initially focus,
+- attribution.
 
-This building block does not specify how to get an API definition, the conformance class list or the geospatial data resources lists. The standard assumes that the first two are defined by an API specification (e.g. OGC API Common) and the later by an OGC API for geospatial data resource (e.g. OGC API - Features).
+The explicit definition of a TileMatrixSet is only required for custom TileMatrixSet not registered in the OGC TileMatrixSet registry.
+However, it is recommended that the API always provides a link to a local definition of the TileMatrixSets used.
 
-The core of the OGC API - Tiles core draft specification does not mandate the inclusion of an explicit definition of any TileMatrixSet. This draft specification assumes that clients and services know about the eight TileMatrixSets defined in OGC 17-083r2 annex D (or compatible future update of it) and there is no need to define new TileMatrixSets. An extension to the core provides the capability to include definitions of flexible TileMatrixSets that are explicitly defined.
-
-This draft specification assumes that data is organized into one or more geospatial data resources (e.g. the "collections" in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core]). Geospatial data resources are referenced using URIs.
-
-This document does not specify any requirements for the type of geospatial data resource that should be supported. Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are features, coverages, a resource that does not represent data per-se (e.g. an annotation) and so forth. The resource path replaces the concept of layer in WMS and WMTS. In this core tiles can be generated from only one geospatial data resource (tiles that are generated as a combination of geospatial data resources will be defined as an extension).
-
-Accessing the geospatial data resource content (other than as tiles) or its descriptions is out of the scope of this draft specification. If a description of the geospatial data resource exists and it has a mechanism to add links to it, this specification will indicate the need to add a link to the tile description.
-
-The tile description will include metadata about tiles as well as links to other resources including at least one with a template to get individual tiles.
-
-**End of TBD**
+Services and clients are encouraged to support as many of the TileMatrixSets defined in the OGC TileMatrixSet registry as possible to maximize
+interoperability, but support is not required for any specific tile matrix set.
+See also annexes D and H for TileMatrixSets defined and registered at the time of publication of this specification.
 
 === Declaration of conformance classes
-To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the requirements classes it implements and conforms to.
+To support "generic" clients wishing to access multiple OGC API standards and extensions - and not "just" a specific API / server,
+the API has to declare the requirements classes it implements and conforms to.
 
 ==== Response
 
@@ -50,19 +161,23 @@ If the server declares also conformity to OGC API - Common or to http://www.open
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
     "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset"
   ]
 }
 =================
 
 === Tileset resource
-A tileset resource represents the set of tiles that belongs are partitioned based on a tilematrixset. The resource contains the necessary metadata to enable a client application to formulate a tile request.
+A tileset consists of a set of tiles obtained by partitioning geospatial data according to a particular TileMatrixSet.
+The tileset description resource contains all the information necessary for a client application to request tiles from that tileset.
 
 ==== Tileset path
 
-This class does not specify a full path to a tileSet. Generally, TileSet resources are linked from a Tilesetslist resource (see <<rc_tileSets-list>>). Refer to the TileSetList class to know how TileSetLists can link to TileSet resources. It is expected that a tileset can be used as a building block in other APIs and on top of resources such as features, coverage or any other geospatial resources that can benefit from tiling.
-
-//Refer to the DatasetTileSets and GeoDataResourceTileSets classes that describes two mechanisms to associate tileSets to datasets and to geospatial data resources respectively.
+This class does not specify a full path to a tileSet. Generally, TileSet resources are linked from a Tilesetslist resource (see <<rc_tileSets-list>>).
+Refer to the _tilesets list_ conformance class to know how to list available TileSets and link to individual TileSet resources.
+Refer to the _dataset tilesets_ and _geodata tilesets_ conformance classes describing two mechanisms to associate list of tilesets to
+OGC API dataset (landing page) and to geospatial data (collection) resources respectively.
+It is expected that a tileset can be used as a building block in other APIs and on top of resources such as maps, features, coverages or any other geospatial resources that can benefit from tiling.
 
 ==== Response
 A successful GET response to a tileset resource will be a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial data resource.
@@ -133,65 +248,8 @@ The following table explains the meaning of the URI template variables.
 |TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
 !===
 
-NOTE: TileJSON is an alternative for a tileset description document. See Annex TBD for more details about this format. Currently this specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. The version 3 of this specification provides a mechanism to cite data sources too.
-
 === A tile
-A tile resource is a geospatial resource of a fragment of a more bigger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
+A tile resource is a fragment of a larger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
 
 ==== Tile path and link
-As described before a tile path is obtained by extracting a tile URL templated from one of the links with `rel`: `item` in tileset description document and substituting the templated variables of with valid values.
-
-==== Operation
-This operation allows retrieving a single tile that represents information sourced from geospatial data resources.
-
-include::requirements/tileset/REQ_tc-op.adoc[]
-
-Typical geospatial data resources that can be retrieved as tiles are: vector features (available at `/collections/{collectionId}/items` in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core], for which it is recommended to provide tilesets at `/collections/{collectionId}/tiles`),
-maps (specified in OGC - API Maps) or coverages (specified in OGC API - Coverages).
-
-include::recommendations/tileset/REC_tc-op.adoc[]
-
-The supported encodings, or more precisely the media types of the supported encodings, can be determined from the API definition. The desired encoding is selected using HTTP content negotiation.
-
-The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet.
-A resource will be available providing metadata for each available tileset, including a link to either a TileMatrixSet registered in the OGC TileMatrixSet registry,
-or to a custom TileMatrixSet definition.
-
-==== Parameter tileMatrix
-include::requirements/tileset/REQ_tc-tilematrix-definition.adoc[]
-
-==== Parameter tileRow
-include::requirements/tileset/REQ_tc-tilerow-definition.adoc[]
-
-==== Parameter tileCol
-include::requirements/tileset/REQ_tc-tilecol-definition.adoc[]
-
-==== Response
-
-A successful response to a tile GET operation will be consistent with the media type of resource requested. This draft specification does not impose any media type or file format. For example:
-
-* For features the media type may be GeoJSON or Mapbox Vector Tiles;
-* For coverages the response may be a GeoTIFF;
-* For maps the response may be a JPEG or a PNG.
-
-include::requirements/tileset/REQ_tc-success.adoc[]
-
-include::recommendations/tileset/PER_tc-core-tile-encoding.adoc[]
-
-Normally, the content partially outside the tile bounding box will be clipped at the extent of the bounding box. This can be done efficiently when tiles are in raster format (e.g. map tiles). However, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features or for performance.
-
-include::recommendations/tileset/REC_tc-success-scale.adoc[]
-
-include::recommendations/tileset/REC_tc-deepfullempty.adoc[]
-
-To enable search engines to easily discover the content offered by an implementation of OGC API - Tiles, as well as to enable web browsers to easily display the content offered by the APIs, this standard allows for responses to operations to be encoded in HTML.
-
-include::recommendations/tileset/PER_tc-core-html.adoc[]
-
-==== Error conditions
-
-A general summary of the HTTP status codes can be found in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] as well as in OGC API - Common.
-
-If the parameters values `tileMatrix`, `tileRow`, `tileCol` are out-of-range, the status code of the response will be `404`.
-
-If the tile has no content due to lack of data in the area, but within the data resource's tile matrix sets limits, the status code of the response will be either 204, indicating an empty tile, or 200 with an empty file (which or may not be zero bytes, depending on the output format).
+The path to a tile is obtained by extracting a tile URL templated from one of the links with "rel": "item" in the tileset description document and substituting the templated variables of with valid values.

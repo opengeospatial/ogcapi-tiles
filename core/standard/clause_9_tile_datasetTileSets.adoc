@@ -7,22 +7,20 @@
 
 include::requirements/requirements_class_dataset-tilesets.adoc[]
 
-Defines how to get tiles from the dataset (or datasets) represented by the services. it will tell the path to get a tilesets resources
+This conformance class defines a mechanism to retrieve a list of tilesets for a dataset which may contain multiple geospatial data resources.
 
-**TBD**
+Combined with the _geodata selection_ conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrieved as tiles.
 
-In previous clauses tiles are produced from one, and only one geospatial data resource available in this API. This scenario is achieved by concatenating the tile path to the geospatial data resource.
-
-This OGC API requirements class is an extension of the core requirements class that defines how to create tiles that combine one or more geospatial data resources in any way that is decided in the client side. This is achieved by having the tile path available at the root of the service.
-
-It has been argued that this approach is too flexible. In an API that has several geospatial data resources, the number of potential combinations of geospatial data resources may be too big to be efficiently handle. If the implementers see a potential performance issue, they may not choose to declare conformity to this requirements class.
-
-**End of TBD**
+If an API offers several geospatial data resources for a dataset, it may limit the number of collections that can be retrieved together, and/or provide a limited subset of the collections by default.
 
 === General
 include::recommendations/dataset-tilesets/REC_api-common.adoc[]
 
-This building block stays flexible and does not require implementation OGC API - Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes when used. Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
+This building block stays flexible and does not require implementation OGC API - Common - Part 1,
+allowing for other API architectures outside the OGC API framework to adopt it.
+However, a server under the OGC APIs is expected to implement OGC API - Common - Part 1.
+If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core requirement classes when used.
+Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
 
 === API landing page
 
@@ -78,8 +76,8 @@ On the conformance page (typically in JSON format) the links follow the link sch
 }
 =================
 
-=== tilesets
-The response to the tileset operation contains the necessary information to later formulate a tile request of tiles from the dataset.
+=== Dataset tilesets
+The dataset tilesets operation provides essential tileset metadata and links to tilesets resources allowing to request tiles from the dataset.
 
 ==== Operation
 
@@ -88,13 +86,13 @@ include::requirements/dataset-tilesets/REQ_operation.adoc[]
 The request of this operation has no parameters.
 
 ==== Response
-A successful response to a tileset request is a data structure defined by the tileset class
+A successful response to a dataset tilesets list request is a list of tilesets as defined by the tilesets list conformance class.
 
 === Tiles
-The Tileset class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
+The Tileset class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the core and tileset classes
 
 ==== Response
-The response is expected to represent the dataset as a whole. In a Web API providing access to  a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information included. This can be achieved by applying a manual filter currently described in a OGC API - Tiles - Part 1 or as an automatic decision by the server side.
+The response is expected to represent the dataset as a whole. In a Web API providing access to a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information included. This can be achieved by applying a manual filter currently described in a OGC API - Tiles - Part 1 or as an automatic decision by the server side.
 
 include::recommendations/dataset-tilesets/REC_geodata-selection.adoc[]
 
