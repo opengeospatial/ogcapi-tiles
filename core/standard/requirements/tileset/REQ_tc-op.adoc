@@ -1,7 +1,0 @@
-[[req_tileset_tc-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Requirement {counter:req-id}* |*/req/tileset/tc-op*
-^|A |The tiles making up the tileset containing available data SHALL be available as an HTTP GET request to a URI that is built from a template provided
-containing the variables `{tileMatrix}`, `{tileRow}` and `{tileCol}`. The URI is obtained by substituting the variables by their respective valid values.
-|===

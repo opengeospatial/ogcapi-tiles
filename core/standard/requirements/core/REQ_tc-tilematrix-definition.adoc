@@ -1,8 +1,9 @@
-[[req_tileset_tc-tilematrix-definition]]
+[[req_core_tc-tilematrix-definition]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/tileset/tc-tilematrix-definition*
-^|A |The operation SHALL support a parameter `tileMatrix` with the following characteristics (shown as OpenAPI Specification 3.0 fragment):
+^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileMatrix` with the
+following characteristics (shown as OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
 ----
