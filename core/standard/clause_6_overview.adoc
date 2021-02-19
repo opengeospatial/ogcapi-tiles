@@ -1,18 +1,9 @@
 [[overview]]
 == Overview
 
-=== Tiles API Conformance Classes
+=== Introduction
 
 The _Tiles API_ defines building blocks which can be used in an OGC API to retrieve geospatial data as tiles as defined by the _2D Tile Matrix Set_ standard.
-
-It defines the following conformance classes:
-
-- The _core_ conformance class defines the operation to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.
-- The _tileset_ conformance class defines a mechanism to describe a tileset using a specific tile matrix set and obtain a templated link to individual tiles.
-- The _tilesets list_ conformance class defines a generic operation to retrieve a list of tilesets, without association to any particular type of resources.
-- The _dataset tilesets_ conformance class allows retrieving tiles for a whole dataset potentially made up of multiple geospatial data resources.
-- The _geodata tilesets_ conformance class allows retrieving tiles from a specific geospatial data resource.
-- The _geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve dataset tiles.
 
 This document does not specify any requirements for the type of geospatial data resource that should be supported.
 Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are maps, vector features,
