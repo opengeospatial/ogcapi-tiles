@@ -9,7 +9,7 @@ include::requirements/requirements_class_dataset-tilesets.adoc[]
 
 This conformance class defines a mechanism to retrieve a list of tilesets for a dataset which may contain multiple geospatial data resources.
 
-Combined with the _geodata selection_ conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrived as tiles.
+Combined with the _geodata selection_ conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrieved as tiles.
 
 If an API offers several geospatial data resources for a dataset, it may limit the number of collections that can be retrieved together, and/or provide a limited subset of the collections by default.
 
@@ -76,8 +76,8 @@ On the conformance page (typically in JSON format) the links follow the link sch
 }
 =================
 
-=== tilesets
-The response to the tileset operation contains the necessary information to later formulate a tile request of tiles from the dataset.
+=== Dataset tilesets
+The dataset tilesets operation provides essential tileset metadata and links to tilesets resources allowing to request tiles from the dataset.
 
 ==== Operation
 
@@ -86,13 +86,13 @@ include::requirements/dataset-tilesets/REQ_operation.adoc[]
 The request of this operation has no parameters.
 
 ==== Response
-A successful response to a tileset request is a data structure defined by the tileset class
+A successful response to a dataset tilesets list request is a list of tilesets as defined by the tilesets list conformance class.
 
 === Tiles
-The Tileset class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the tileset class
+The Tileset class have information on how to retrieve a single tile representing a piece of information in the dataset in the way explained in the core and tileset classes
 
 ==== Response
-The response is expected to represent the dataset as a whole. In a Web API providing access to  a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information included. This can be achieved by applying a manual filter currently described in a OGC API - Tiles - Part 1 or as an automatic decision by the server side.
+The response is expected to represent the dataset as a whole. In a Web API providing access to a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information included. This can be achieved by applying a manual filter currently described in a OGC API - Tiles - Part 1 or as an automatic decision by the server side.
 
 include::recommendations/dataset-tilesets/REC_geodata-selection.adoc[]
 

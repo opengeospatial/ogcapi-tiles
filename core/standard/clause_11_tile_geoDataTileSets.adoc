@@ -83,8 +83,8 @@ For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-featu
 
 include::recommendations/geodata-tilesets/REC_desc-links.adoc[]
 
-=== Geospatial data resources Tileset
-A tileset contains the necessary metadata to enable a client application to formulate a tile request from a single geospatial data resource.
+=== Geospatial data resources tilesets list
+The geospatial data resource tilesets operation provides essential tileset metadata and links to tilesets resources allowing to request tiles from the resource.
 
 ==== Tilesets path
 
@@ -93,8 +93,8 @@ include::requirements/geodata-tilesets/REQ_operation.adoc[]
 This standard does not specify the need for any additional query parameter in the GET request.
 
 ==== Response
-
-A successful GET response is described in the tileset class
+A successful response to a geospatial data tilesets request is a list of tilesets as defined by the tilesets list conformance class.
 
 === A tile from a geospatial data resource
-A tile resource is a geospatial data resource of a fragment of a more bigger single geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set. Details of the operation are described in the tileset class.
+A tile resource is a fragment of a larger single geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
+Details of the operation are described in the core conformance class.
