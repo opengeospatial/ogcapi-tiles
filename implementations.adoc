@@ -17,7 +17,7 @@
 | https://github.com/jerstlouis[Jerome St Louis]
 
 
-| https://services.interactive-instruments.de/t15/daraa[interactive instruments Tiles Server (Vector Tiles Pilot 2, D101 deliverable)]
+| https://demo.ldproxy.net/daraa[interactive instruments demo server]
 | OGC API - Tiles, Features, Styles
 | https://github.com/cportele[Clemens Portele]
 
