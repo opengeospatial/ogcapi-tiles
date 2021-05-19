@@ -1,0 +1,6 @@
+[[req_geodata-tilesets_desc-links]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/geodata-tilesets/desc-links*
+^|A |If the API has a mechanism for their geospatial data resources to expose links to geospatial aspects (e.g. feature items, metadata...), the API SHALL include a `link` with the `href` pointing to a list of tilesets for this geospatial data resource and with `rel: "http://www.opengis.net/def/rel/ogc/1.0/tilesets"`.
+|===

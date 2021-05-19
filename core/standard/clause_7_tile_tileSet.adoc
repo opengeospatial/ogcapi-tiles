@@ -247,9 +247,3 @@ The following table explains the meaning of the URI template variables.
 |TileRow |row index of tile matrix	|A non-negative integer between 0 and the MatrixHeight – 1. If there is a TileMatrixSetLimits the value is limited between MinTileRow and MaxTileRow
 |TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
 !===
-
-=== A tile
-A tile resource is a fragment of a larger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
-
-==== Tile path and link
-The path to a tile is obtained by extracting a tile URL templated from one of the links with "rel": "item" in the tileset description document and substituting the templated variables of with valid values.

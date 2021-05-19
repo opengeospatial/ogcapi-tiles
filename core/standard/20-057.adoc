@@ -31,7 +31,7 @@
 |Internal reference number of this OGC(R) document:    20-057
 |Version: 0.0.1
 |Category: OGC(R) Implementation Specification
-|Editor:   Joan Masó
+|Editor: Joan Masó, Jérôme St-Louis
 |===
 
 [cols = "^", frame = "none"]

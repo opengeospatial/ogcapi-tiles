@@ -28,7 +28,7 @@ The landing page provides links to start exploring the resources offered by the 
 
 ==== Response
 
-// include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
+include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
 
 In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to dataset tilesets.
 
@@ -71,6 +71,7 @@ On the conformance page (typically in JSON format) the links follow the link sch
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list"
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets"
   ]
 }

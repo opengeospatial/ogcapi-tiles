@@ -4,6 +4,4 @@
 ^|*Requirement {counter:req-id}* |*/req/geodata-tilesets/operation*
 ^|A |The geospatial data resource SHALL have an associated list of at least one tileset accessible at `.../tiles` supporting an HTTP GET operation
 ^|B |The URI shall be composed of two parts: the initial part is the URI of the geospatial data resource that can be represented as tiles and the final part follows the pattern `/tiles`
-^|C |The collection description document at `.../{collectionId}` SHALL include a link with relation type http://www.opengis.net/def/rel/ogc/1.0/tilesets,
-  or a more specific tilesets relation type as defined by other specifications, linking to that resource listing available tilesets
 |===

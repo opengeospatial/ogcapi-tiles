@@ -3,22 +3,6 @@
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tileset/tmxslink*
 ^|A |This requirements class does not provide any mechanism to define TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D].
-^|B |Implementation SHOULD a JSON format that does the link to a tilematrixset using a property called _tileMatrixSetLink_ with a _tileMatrixSetLink_ object following a data model defined in the clause 7.3 of OGC 17-083r2. In the core specification _tileMatrixSetLink_ is only used for referencing the supported TileMatrixSets for the tiles, limiting it to the following schema (expressed as an OpenAPI Specification 3.0 fragment):
-[source,YAML]
-----
-tileMatrixSetLink-entry:
-  type: object
-  required:
-    - tileMatrixSet
-  properties:
-    tileMatrixSet:
-      type: string
-      example: 'WebMercatorQuad'
-    tileMatrixSetURI:
-      type: string
-      format: uri
-      example: 'http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad'
-----
-^|C |The server SHOULD do a effort to provide to the client a way to get full description of the TileMatrixSet. Even if the TileMatrixSet is not directly defined by the API, when a full definition of the TileMatrixSet is available as a resolvable URL, a resolvable URL SHOULD be used as the value of the tileMatrixSetURI.
-^|D |This standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D] of OGC 17-083r2. In the case of variable-width tiles, the standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#104[Annex H] of OGC 17-083r2.
+^|B |The server SHOULD do a effort to provide to the client a way to get full description of the TileMatrixSet. Even if the TileMatrixSet is not directly defined by the API, when a full definition of the TileMatrixSet is available as a resolvable URL, a resolvable URL SHOULD be used as the value of the tileMatrixSetURI.
+^|C |This standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D] of OGC 17-083r2. In the case of variable-width tiles, the standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#104[Annex H] of OGC 17-083r2.
 |===

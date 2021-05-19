@@ -46,8 +46,8 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 {
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list"
   ]
 }
 =================
@@ -78,7 +78,7 @@ include::requirements/tilesets-list/REQ_tileset-links.adoc[]
       "links" :
       {
         "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
-        "rel": "http://www.opengis.net/def/rel/ogc/1.0/tilesets",
+        "rel": "http://www.opengis.net/def/rel/ogc/1.0/tileset",
         "type": "application/json"
       }
    }
