@@ -4,5 +4,5 @@
 2+|*Requirements Class*
 2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-selection
 |Target type |Web API
-|Dependency |http://www.opengis.net/spec/ogcapi-common-2/1.0/req/dataset
+|Dependency |http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
 |===
