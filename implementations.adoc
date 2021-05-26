@@ -82,9 +82,9 @@
 | OGC API - Tiles
 | https://github.com/tschaub[Tim Schaub]
 
-| https://github.com/gdal[GDAL/OGR] (OPC API driver)
+| https://gdal.org[GDAL/OGR] (https://gdal.org/drivers/raster/ogcapi.html[OPC API driver])
 | OGC API - Features/Coverages/Maps/Tiles
-| 
+| https://github.com/gdal
 
 | TBA
 | TBA
