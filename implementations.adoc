@@ -84,7 +84,7 @@
 
 | https://gdal.org[GDAL/OGR] (https://gdal.org/drivers/raster/ogcapi.html[OPC API driver])
 | OGC API - Features/Coverages/Maps/Tiles
-| https://github.com/osgeo/gdal
+| https://github.com/osgeo/gdal [osgeo/gdal]
 
 | TBA
 | TBA
