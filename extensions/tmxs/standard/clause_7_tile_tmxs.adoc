@@ -6,16 +6,7 @@
 
 include::requirements/tiles/requirements_class_tmxs.adoc[]
 
-The _tiles core_ requirements class states that the service can support the eight TileMatrixSets defined in the Annex D.1 of the OGC 17-083r2 standard by mentioning their identifiers without the need to describe them. This requirement class acts as and extension of the core requirements class that adds all the necessary elements to support other TileMatrixSets by adding a mechanism to fully describe TileMatrixSets that are specific to the API instance.
-
-The entry point is a `Landing page` (path `/`).
-
-The `Landing page` provides links to:
-
-* the `API definition` (path `/api`, link relation `service-desc`),
-* the `Conformance declaration` (path `/conformance`, link relation `conformance`), and
-* the `Collections` (path `/collections`, link relation `data`).
-* the `TileMatrixSets` (path `/tileMatrixSets`, link relation `tiling-schemes`).
+The OGC API - tiles part 1 defines how to retrieve tiles in a TileMatrixSet but does not provide an endpoint to manage the list of TileMatrixSets supported by the API. Actually, the 2DTMS standard defines common TileMatrixSets in the Annex D and Annex G of the OGC 17-083r2 standard that can be used only mentioning the URI without the need to describe them. This requirement class acts as and extension of the core requirements class that adds all the necessary elements to support other TileMatrixSets. It adds a mechanism to fully describe TileMatrixSets that are specific to the API instance.
 
 === API landing page
 
@@ -37,13 +28,13 @@ In the landing page, in JSON format, the links follow the link schema defined in
     ...,
     {
       "href": "http://data.example.org/tileMatrixSet?f=json",
-      "rel": "tiling-schemas",
+      "rel": "http://www.opengis.net/def/rel/OGC/1.0/tiling-schemas",
       "type": "application/json",
       "title": "List of tileMatrixSets implemented by this API in JSON",
     },
     {
       "href": "http://data.example.org/tileMatrixSet?f=html",
-      "rel": "tiling-schemas",
+      "rel": "http://www.opengis.net/def/rel/OGC/1.0/tiling-schemas",
       "type": "text/html",
       "title": "List of tileMatrixSets implemented by this API in HTML",
     }
@@ -70,19 +61,17 @@ In the conformance page (typically in JSON format) the links follow the link sch
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
     "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tmxs",
-    "http://www.opengis.net/spec/tilematrixset/1.0/conf/tilematrixset2d",
-    "http://www.opengis.net/spec/tilematrixset/1.0/conf/json-tilematrixset2d",
-    "http://www.opengis.net/spec/tilematrixset/1.0/conf/tilematrixsetlimits2d",
-    "http://www.opengis.net/spec/tilematrixset/1.0/conf/json-tilematrixsetlimits2d"
+    "http://www.opengis.net/spec/tilematrixset/1.0/conf/tilematrixset",
+    "http://www.opengis.net/spec/tilematrixset/1.0/conf/json-tilematrixset",
   ]
 }
 =================
 
 === TileMatrixSets
 
-The TileMatrixSets operation retrieves links to the descriptions of the tile matrix sets supported by the API instance in addition to the eight TileMatrixSets defined in the Annex D.1 of the OGC 17-083r2 standard.
+The TileMatrixSets operation retrieves links to the descriptions of the tile matrix sets supported by the API instance in addition to the TileMatrixSets defined in the Annex D and the Annex G of the OGC 17-083r2 standard.
 
 ==== Operation
 include::requirements/tiles/tmxs/REQ_tilematrixsets-op.adoc[]
@@ -188,49 +177,6 @@ include::recommendations/tiles/tmxs/REC_tilematrixset-response.adoc[]
       "matrixWidth": 8
     }
     ...
-  ]
-}
-=================
-
-
-=== Tiles
-The requirements class described in this section also defines and extra element _limits_ in the tiles metadata returned by a successful /collection/{collectionId}/tiles request that can be used for the API instance to document limitations in the scales and extents supported in the context of the tile matrix set that is defined in a more unrestricted way.
-
-==== Collection extra properties
-
-include::requirements/tiles/tmxs/REQ_stc-limits.adoc[]
-
-[[TilesLimitsResponseExample]]
-.Fragment of a Tiles resource with limits
-=================
-[source,JSON]
-{
-  "tileMatrixSetLinks": [
-    {
-      "type": "tileMatrixSetLink",
-      "tileMatrixSet": "http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad",
-      "tileMatrixSetLimits": [
-        {
-          "type": "tileMatrixSetLimits",
-          "tileMatrix": "5",
-          "minTileRow": 0,
-          "maxTileRow": 1,
-          "minTileCol": 3,
-          "maxTileCol": 4
-        }
-      ]
-    }
-  ],
-  ...
-  "links": [
-    ...
-    {
-     "href": "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png",
-     "rel": "item",
-     "type": "image/png",
-     "$$ref": "https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0#/components/examples/link-tiles-tile"
-   }
-   ...
   ]
 }
 =================
