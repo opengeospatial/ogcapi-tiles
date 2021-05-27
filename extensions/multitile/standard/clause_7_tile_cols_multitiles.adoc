@@ -61,7 +61,7 @@ links:
 [
     {
       "href": "http://data.example.com/tiles/{tileMatrixSetId}",
-      "rel": "items",
+      "rel": "http://www.opengis.net/def/rel/OGC/1.0/items",
       "type": "image/png",
     }
 ]

@@ -63,13 +63,13 @@ links:
 [
     {
       "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/0/0/0",
-      "rel": "tiles",
-      "type": "image/png",
+      "rel": http://www.opengis.net/def/rel/OGC/1.0/tiles",
+      "type": "image/png"
     },
     {
       "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/0/0/0/info",
-      "rel": "attributes",
-      "type": "text/html",
+      "rel": "http://www.opengis.net/def/rel/OGC/1.0/attributes",
+      "type": "text/html"
     }
 ]
 =================

@@ -75,7 +75,7 @@ For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-featu
     ...
     {
       "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
-      "rel": "tiles",
+      "rel": "http://www.opengis.net/def/rel/OGC/1.0/tiles",
       "type": "application/json",
     }
   ]
