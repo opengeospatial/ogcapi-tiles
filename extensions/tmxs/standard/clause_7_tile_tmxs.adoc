@@ -28,13 +28,13 @@ In the landing page, in JSON format, the links follow the link schema defined in
     ...,
     {
       "href": "http://data.example.org/tileMatrixSet?f=json",
-      "rel": "http://www.opengis.net/def/rel/OGC/1.0/tiling-schemas",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
       "type": "application/json",
       "title": "List of tileMatrixSets implemented by this API in JSON",
     },
     {
       "href": "http://data.example.org/tileMatrixSet?f=html",
-      "rel": "http://www.opengis.net/def/rel/OGC/1.0/tiling-schemas",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
       "type": "text/html",
       "title": "List of tileMatrixSets implemented by this API in HTML",
     }
@@ -160,21 +160,19 @@ include::recommendations/tiles/tmxs/REC_tilematrixset-response.adoc[]
   "identifier": "WebMercatorQuad",
   "supportedCRS": "http://www.opengis.net/def/crs/EPSG/0/3857",
   "wellKnownScaleSet": "http://www.opengis.net/def/wkss/OGC/1.0/GoogleMapsCompatible",
-  "tileMatrix": [
+  "tileMatrices": [
     ...
     {
       "title": "Google Maps Compatible for the World zoom level 3",
       "abstract": "Google Maps Compatible zoom level 3 that is equivalent to a scale of 1:69885283.00358972 and has 19567.87924100512 meters of pixel size in the equator",
-      "identifier": "3",
-      "scaleDenominator": 69885283.00358972,
-      "topLeftCorner": [
-        -20037508.3427892,
-        20037508.3427892
-      ],
+      "id": "3",
+      "scaleDenominator": 69885283.0035897,
+      "cellSize": 19567.8792410051,
+      "pointOfOrigin": [-20037508.3427892,20037508.3427892],
       "tileWidth": 256,
       "tileHeight": 256,
-      "matrixHeight": 8,
-      "matrixWidth": 8
+      "matrixWidth": 8,
+      "matrixHeight": 8
     }
     ...
   ]
