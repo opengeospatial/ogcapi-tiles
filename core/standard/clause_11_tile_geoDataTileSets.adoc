@@ -63,23 +63,27 @@ For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-featu
 .Fragment of a collection with a links array with one item of the array pointing to a tilesets.
 =================
 [source,JSON]
-
-  "id": "buildings",
-  "title": "Buildings in the city of Bonn",
-  "description": "This collection contains buildings",
-  "attribution": "OpenStreetMap",
-  "extent": {
-    ...
-  }
-  "links": [
-    ...
-    {
-      "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
-      "rel": "http://www.opengis.net/def/rel/OGC/1.0/tiles",
-      "type": "application/json",
+[
+  ...
+  {
+    "id": "buildings",
+    "title": "Buildings in the city of Bonn",
+    "description": "This collection contains buildings",
+    "attribution": "OpenStreetMap",
+    "extent": {
+      ...
     }
-  ]
-}
+    "links": [
+      ...
+      {
+        "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
+        "rel": "self",
+        "type": "application/json",
+      }
+    ]
+  }
+  ...
+]
 =================
 
 include::recommendations/geodata-tilesets/REC_desc-links.adoc[]

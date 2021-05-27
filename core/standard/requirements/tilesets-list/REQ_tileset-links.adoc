@@ -4,6 +4,7 @@
 ^|*Requirement {counter:req-id}* |*/req/tilesets-list/tileset-links*
 ^|A |The API SHALL support a GET operation on a `.../tiles` path returning a list of available tilesets
 ^|B |Each element of that list SHALL contain a subset of the tileset metadata, as defined by the 2D Tile Matrix Set and Metadata standard
-^|C |Each element of that list SHALL include a link to a resource providing the full available tileset metadata, using link relation
+^|C |Each element of that list SHALL include a link to a resource providing the full version of the tileset metadata, using link relation
  `http://www.opengis.net/def/rel/ogc/1.0/tileset`.
+^|D |The tileset SHALL be available as a URI that will be composed by three parts: The first part is the URL of the map resource (e.g. '.../map') followed by the word '/tiles', and finally followed by the id of the tile matrix set supported.
 |===

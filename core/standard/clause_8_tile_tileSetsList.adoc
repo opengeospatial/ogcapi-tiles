@@ -56,7 +56,7 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 A tilesets resource represents a list of sets of tiles each one belonging to a particular tilematrixset. The resource contains the necessary metadata to enable a client application to formulate a tile request.
 
 ==== Tilesets path
-This class does not specify the path for a tileSets. Refer to the DatasetTileSets and GeoDataResourceTileSets classes that describes two mechanisms to associate tileSets to datasets and to geospatial data resources respectively.
+This class does not specify the path for a tileSet list. Refer to the DatasetTileSets and GeoDataResourceTileSets classes that describes two mechanisms to associate tileSets to datasets and to geospatial data resources respectively.
 
 ==== Response
 

@@ -1002,27 +1002,27 @@ components:
             type: text/html
             title: The API definition in HTML
           - href: http://data.example.org/conformance?f=json
-            rel: http://www.opengis.net/def/rel/OGC/1.0/conformance
+            rel: http://www.opengis.net/def/rel/ogc/1.0/conformance
             type: application/json
             title: Conformance classes implemented by this API
           - href: http://data.example.org/collections?f=json
-            rel: http://www.opengis.net/def/rel/OGC/1.0/data
+            rel: http://www.opengis.net/def/rel/ogc/1.0/data
             type: application/json
             title: Collections in the dataset in JSON
           - href: http://data.example.org/collections?f=html
-            rel: http://www.opengis.net/def/rel/OGC/1.0/data
+            rel: http://www.opengis.net/def/rel/ogc/1.0/data
             type: text/html
             title: Collections in the dataset in HTML
           - href: http://data.example.org/tileMatrixSets?f=json
-            rel: http://www.opengis.net/def/rel/OGC/1.0/tiling-schemes
+            rel: http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes
             type: application/json
             title: TileMatrixSets implemented by this API in JSON
           - href: http://data.example.org/tileMatrixSets?f=html
-            rel: http://www.opengis.net/def/rel/OGC/1.0/tiling-schemes
+            rel: http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes
             type: text/html
             title: TileMatrixSets implemented by this API in HTML
           - href: http://data.example.org/tiles
-            rel: http://www.opengis.net/def/rel/OGC/1.0/tilesets
+            rel: http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector
             type: application/json
             title: Information on tiles in the dataset
           items:
@@ -1055,14 +1055,11 @@ components:
             type: application/rdf+xml
             title: CC0-1.0
           - href: http://data.example.com/collections/buildings/items
-            rel: http://www.opengis.net/def/rel/OGC/1.0/items
+            rel: http://www.opengis.net/def/rel/ogc/1.0/items
             title: Retrieve the items of the buildings collection
             type: application/geo+json
           - href: http://data.example.com/collections/buildings/tiles
-            rel: http://www.opengis.net/def/rel/OGC/1.0/tiles
-            type: application/json
-          - href: http://data.example.com/collections/buildings/tileSets
-            rel: describedby
+            rel: http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector
             type: application/json
           items:
             $ref: '#/components/schemas/link'
@@ -1091,7 +1088,7 @@ components:
             type: image/png
           - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
             templated: true
-            rel: http://www.opengis.net/def/rel/OGC/1.0/info
+            rel: http://www.opengis.net/def/rel/ogc/1.0/info
             type: text/html
           items:
             $ref: '#/components/schemas/link'
@@ -1112,7 +1109,7 @@ components:
             type: image/png
           - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
             templated: true
-            rel: http://www.opengis.net/def/rel/OGC/1.0/info
+            rel: http://www.opengis.net/def/rel/ogc/1.0/info
             type: text/html
           items:
             $ref: '#/components/schemas/link'
@@ -1857,7 +1854,7 @@ components:
             type: image/png
           - href: http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
             templated: true
-            rel: http://www.opengis.net/def/rel/OGC/1.0/info
+            rel: http://www.opengis.net/def/rel/ogc/1.0/info
             type: text/html
           items:
             $ref: '#/components/schemas/link'

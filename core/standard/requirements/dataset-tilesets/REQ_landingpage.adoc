@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:rec-id}* |*/req/dataset-tilesets/landingpage*
-^|A | If the API has mechanism to expose root resources (e.g. a landing page), the API SHALL advertise a URI to retrieve the list of tilesets defined by this service as links to the descriptions paths with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets`.
+^|A | If the API has mechanism to expose root resources (e.g. a landing page), the API SHALL advertise at least one of three URIs to retrieve tileset lists provided by this service as links with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`, `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` and `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
 |===

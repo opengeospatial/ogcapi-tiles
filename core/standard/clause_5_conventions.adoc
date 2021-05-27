@@ -13,18 +13,31 @@ To express relationships between resources, https://tools.ietf.org/rfc/rfc8288.
 
 The following https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA link relation types] are used in this document:
 
-* *alternate*: Refers to a substitute for this context.
-* *self*: Conveys an identifier for the link’s context.
-* *item*: The target IRI points to a resource that is a member of the collection represented by the context IRI.
+* **alternate**: Refers to a substitute for this context.
+
+* **self**: Conveys an identifier for the link’s context.
+
+* **item**: The target IRI points to a resource that is a member of the collection represented by the context IRI.
 
 In addition, the following link relation types are used for which no applicable registered link relation type could be identified:
 
-* *tiles*: The target IRI points to a resource that describes how to provide tiles of the context resource.
+* **http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector**: The target IRI points to a resource that describes how to provide tile sets of the context resource in vector format..
+
+* **http://www.opengis.net/def/rel/ogc/1.0/tilesets-map**: The target IRI points to a resource that describes how to provide tile sets of the context resource in map format.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/tileset-coverage**: The target IRI points to a resource that describes how to provide tile sets of the context resource in coverage format.
 
 Used in combination with OGC API - Features Part 1: core or OGC API Common other link relation types will be used, being the most common:
-* *conformance*: Refers to a resource that identifies the specifications that the link’s context conforms to.
-* *service-desc*: Identifies service description for the context that is primarily intended for consumption by machines. (API definitions are considered service descriptions)
-* *service-doc*: Identifies service documentation for the context that is primarily intended for human consumption.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/conformance**: Refers to a resource that identifies the specifications that the link's context conforms to.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/items**: Refers to a resource that is comprised of members of the collection represented by the link's context.
+
+* *http://www.opengis.net/def/rel/ogc/1.0/service-desc*: Identifies service description for the context that is primarily intended for consumption by machines. (API definitions are considered service descriptions)
+
+* *http://www.opengis.net/def/rel/ogc/1.0/service-doc*: Identifies service documentation for the context that is primarily intended for human consumption.
+
+Each resource representation includes an array of links. Implementations are free to add additional links for all resources provided by the API.
 
 === Use of HTTPS
 
