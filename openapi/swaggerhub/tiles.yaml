@@ -1,13 +1,17 @@
+---
 openapi: 3.0.0
 info:
   title: Tiled feature data service example. Part of the OGC API Tiles OpenAPI work.
-  description: "Example of vector tiles of more than one collection.\nThis is a draft\
-    \ of an example of a service following the OGC API tiles that produces tiled feature\
-    \ data.\n\nIt is elaborated in the Testbed-15 Open Portrayal Framework in collaboration\
-    \ with the WMS.SWG. The Map Tile API is a Web API for fetching and managing maps\
-    \ and tiles.\n\nIt illustrated how to request tiled feature data (sometimes refered\
-    \ as vector tiles) from one or more than one collections\n\nFor more background\
-    \ information see [the Vector Tiles Pilot Extension Engineering\nReport](https://github.com/opengeospatial/OGC-API-Map-Tiles/tree/master/standard/openapi)."
+  description: |-
+    Example of vector tiles of more than one collection.
+    This is a draft of an example of a service following the OGC API tiles that produces tiled feature data.
+
+    It is elaborated in the Testbed-15 Open Portrayal Framework in collaboration with the WMS.SWG. The Map Tile API is a Web API for fetching and managing maps and tiles.
+
+    It illustrated how to request tiled feature data (sometimes refered as vector tiles) from one or more than one collections
+
+    For more background information see [the Vector Tiles Pilot Extension Engineering
+    Report](https://github.com/opengeospatial/OGC-API-Map-Tiles/tree/master/standard/openapi).
   contact:
     name: Joan Maso
     email: joan.maso@uab.cat
@@ -30,24 +34,24 @@ tags:
 - name: Geospatial Resource Vector Tiles
   description: Data partitioned into a hierarchy of tiles of a collection
 - name: Dataset Tiles
-  description: "Data representations, partitioned into a hierarchy of tiles of one\
-    \ or more geospatial data resources."
+  description: Data representations, partitioned into a hierarchy of tiles of one or more geospatial data resources.
 paths:
   /:
     get:
       tags:
       - OGC API Common
       summary: landing page
-      description: "The landing page provides links to the API definition, the conformance\
-        \ statements and to the feature collections in this dataset."
+      description: The landing page provides links to the API definition, the conformance statements and to the feature collections in this dataset.
       operationId: getLandingPage
       parameters:
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nPre-defined values are \"json\" and \"html\". The response to other\n\
-          values is determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          Pre-defined values are "json" and "html". The response to other
+          values is determined by the server.
         required: false
         style: form
         explode: false
@@ -59,8 +63,7 @@ paths:
         example: application/json
       responses:
         "200":
-          description: Links to the API capabilities and the TileMatrixSets shared
-            by this API.
+          description: Links to the API capabilities and the TileMatrixSets shared by this API.
           content:
             application/json:
               schema:
@@ -88,10 +91,12 @@ paths:
       parameters:
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nThe only pre-defined value is \"json\". The response to other values is\n\
-          determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          The only pre-defined value is "json". The response to other values is
+          determined by the server.
         required: false
         style: form
         explode: false
@@ -123,8 +128,7 @@ paths:
         "400":
           description: Invalid or unknown query parameters
         "406":
-          description: The media types accepted by the client are not supported for
-            this resource
+          description: The media types accepted by the client are not supported for this resource
         "500":
           description: A server error occurred
           content:
@@ -144,10 +148,12 @@ paths:
       parameters:
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nPre-defined values are \"json\" and \"html\". The response to other\n\
-          values is determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          Pre-defined values are "json" and "html". The response to other
+          values is determined by the server.
         required: false
         style: form
         explode: false
@@ -159,24 +165,23 @@ paths:
         example: application/json
       responses:
         "200":
-          description: "The collections (geospatial data resources) shared by this\
-            \ API.\n\nThis response can be references directly for every service that\
-            \ wants only essential information at the collections level. /collections/collectionId\
-            \ might return more information.\n\nThe dataset is organized as one or\
-            \ more collections. This resource provides information about and how to\
-            \ access the collections.\n\nThe response contains the list of collections.\
-            \ For each collection, a link\nto other resources present (e.g. the items\
-            \ in the collection, path `/collections/{collectionId}/items`,\nlink relation\
-            \ `items`, a map created with data from  collection, path `/collections/{collectionId}/map`,\n\
-            link relation `map`) as well as key information about the collection.\n\
-            This information includes, but is not limited to:\n\n* A local identifier\
-            \ for the collection that is unique for the dataset;\n* A list of coordinate\
-            \ reference systems (CRS) in which geometries may be returned by the server.\
-            \ The first CRS is the default coordinate reference system (the default\
-            \ is always WGS84 with axis order longitude/latitude);\n* An optional\
-            \ title and description for the collection;\n* An optional extent that\
-            \ can be used to provide an indication of the spatial and temporal extent\
-            \ of the collection - typically derived from the data;"
+          description: |-
+            The collections (geospatial data resources) shared by this API.
+
+            This response can be references directly for every service that wants only essential information at the collections level. /collections/collectionId might return more information.
+
+            The dataset is organized as one or more collections. This resource provides information about and how to access the collections.
+
+            The response contains the list of collections. For each collection, a link
+            to other resources present (e.g. the items in the collection, path `/collections/{collectionId}/items`,
+            link relation `items`, a map created with data from  collection, path `/collections/{collectionId}/map`,
+            link relation `map`) as well as key information about the collection.
+            This information includes, but is not limited to:
+
+            * A local identifier for the collection that is unique for the dataset;
+            * A list of coordinate reference systems (CRS) in which geometries may be returned by the server. The first CRS is the default coordinate reference system (the default is always WGS84 with axis order longitude/latitude);
+            * An optional title and description for the collection;
+            * An optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;
           content:
             application/json:
               schema:
@@ -208,10 +213,12 @@ paths:
           type: string
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nPre-defined values are \"json\" and \"html\". The response to other\n\
-          values is determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          Pre-defined values are "json" and "html". The response to other
+          values is determined by the server.
         required: false
         style: form
         explode: false
@@ -251,10 +258,12 @@ paths:
       parameters:
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nThe only pre-defined value is \"json\". The response to other values is\n\
-          determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          The only pre-defined value is "json". The response to other values is
+          determined by the server.
         required: false
         style: form
         explode: false
@@ -288,19 +297,19 @@ paths:
       parameters:
       - name: tileMatrixSetId
         in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
+        description: Identifier of a specific tiling scheme. It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
         required: true
         schema:
           type: string
         example: WebMercatorQuad
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nThe only pre-defined value is \"json\". The response to other values is\n\
-          determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          The only pre-defined value is "json". The response to other values is
+          determined by the server.
         required: false
         style: form
         explode: false
@@ -332,8 +341,7 @@ paths:
       tags:
       - TileSets
       summary: Retrieve a list of available tilesets for the dataset
-      description: "Retrieves the tiles description for this collection including\
-        \ the `links` to get a `tile`, the `TileMatrixSetLink` and the `infoTemplate`"
+      description: Retrieves the tiles description for this collection including the `links` to get a `tile`, the `TileMatrixSetLink` and the `infoTemplate`
       operationId: describeTileset
       parameters:
       - name: collectionId
@@ -364,10 +372,8 @@ paths:
     get:
       tags:
       - TileSets
-      summary: Retrieve the tileset metadata for the whole dataset and the specified
-        tiling scheme (tile matrix set)
-      description: "Retrieves the tiles description for this collection including\
-        \ the `links` to get a `tile`, the `TileMatrixSetLink` and the `infoTemplate`"
+      summary: Retrieve the tileset metadata for the whole dataset and the specified tiling scheme (tile matrix set)
+      description: Retrieves the tiles description for this collection including the `links` to get a `tile`, the `TileMatrixSetLink` and the `infoTemplate`
       operationId: describeTilesetSingleTMS
       parameters:
       - name: collectionId
@@ -378,9 +384,7 @@ paths:
           type: string
       - name: tileMatrixSetId
         in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
+        description: Identifier of a specific tiling scheme. It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
         required: true
         schema:
           type: string
@@ -408,8 +412,7 @@ paths:
       tags:
       - TileSets
       summary: fetch a tiles description
-      description: Retrieves the tiles description for this collection including the
-        `links` to get a `tile`
+      description: Retrieves the tiles description for this collection including the `links` to get a `tile`
       operationId: describeTilesetCollections
       responses:
         "200":
@@ -434,15 +437,12 @@ paths:
       tags:
       - TileSets
       summary: fetch a tiles description
-      description: Retrieves the tiles description for this collection including the
-        `links` to get a `tile`
+      description: Retrieves the tiles description for this collection including the `links` to get a `tile`
       operationId: describeTilesetCollectionsSingleTMS
       parameters:
       - name: tileMatrixSetId
         in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
+        description: Identifier of a specific tiling scheme. It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
         required: true
         schema:
           type: string
@@ -470,11 +470,7 @@ paths:
       tags:
       - Geospatial Resource Vector Tiles
       summary: fetch a tile from a collection
-      description: "Retrieves the tile in the requested tileMatrixSet, on the requested\
-        \ tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow,\
-        \ tileCol). The tile has a single collection (formerly refered as layer) with\
-        \ all selected features in the bounding box of the tile. The feature properties\
-        \ to include in the tile representation can be limited using a query parameter."
+      description: Retrieves the tile in the requested tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile has a single collection (formerly refered as layer) with all selected features in the bounding box of the tile. The feature properties to include in the tile representation can be limited using a query parameter.
       operationId: getTileOfCollectionId
       parameters:
       - name: collectionId
@@ -485,27 +481,23 @@ paths:
           type: string
       - name: tileMatrixSetId
         in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
+        description: Identifier of a specific tiling scheme. It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
         required: true
         schema:
           type: string
         example: WebMercatorQuad
       - name: tileMatrix
         in: path
-        description: "Identifier selecting one of the scales defined in the TileMatrixSet\
-          \ and representing the scaleDenominator the tile. For example,\nIreland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: |-
+          Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile. For example,
+          Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           type: string
         example: "11"
       - name: tileRow
         in: path
-        description: "Row index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Row index of the tile on the selected TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -513,9 +505,7 @@ paths:
         example: "827"
       - name: tileCol
         in: path
-        description: "Column index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Column index of the tile on the selected TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -523,15 +513,22 @@ paths:
         example: 1231
       - name: datetime
         in: query
-        description: "Either a date-time or an interval, open or closed. Date and\
-          \ time expressions\nadhere to RFC 3339. Open intervals are expressed using\
-          \ double-dots.\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n\
-          * A closed interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Open\
-          \ intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\
-          \nOnly elemenets that have a temporal property that intersects the value\
-          \ of\n`datetime` are selected.\n\nIf a element has multiple temporal properties,\
-          \ it is the decision of the\nserver whether only a single temporal property\
-          \ is used to determine\nthe extent or all relevant temporal properties."
+        description: |-
+          Either a date-time or an interval, open or closed. Date and time expressions
+          adhere to RFC 3339. Open intervals are expressed using double-dots.
+
+          Examples:
+
+          * A date-time: "2018-02-12T23:20:50Z"
+          * A closed interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
+          * Open intervals: "2018-02-12T00:00:00Z/.." or "../2018-03-18T12:31:12Z"
+
+          Only elemenets that have a temporal property that intersects the value of
+          `datetime` are selected.
+
+          If a element has multiple temporal properties, it is the decision of the
+          server whether only a single temporal property is used to determine
+          the extent or all relevant temporal properties.
         required: false
         style: form
         explode: false
@@ -539,11 +536,11 @@ paths:
           type: string
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http rules apply, i.e., the accept header is used to determine the format.\n\
-          \nPre-defined values are \"mvt\" for a Mapbox Vector Tile, \"json\" for\
-          \ a GeoJSON tiled feature collection and jpeg, png or gif for image based\
-          \ tiles\nThe response to other values is determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http rules apply, i.e., the accept header is used to determine the format.
+
+          Pre-defined values are "mvt" for a Mapbox Vector Tile, "json" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles
+          The response to other values is determined by the server.
         required: false
         style: form
         explode: false
@@ -580,12 +577,7 @@ paths:
       tags:
       - Geospatial Resource Vector Tiles
       summary: fetch information about a point on a tile from a collection
-      description: "Retrieves inforamtion on a point of a tile in the requested tileMatrixSet,\
-        \ on the requested tileMatrix in the TileMatrixSet, with the requested tile\
-        \ indices (tileRow, tileCol). The tile has a single collection (formerly refered\
-        \ as layer) with all selected features in the bounding box of the tile. The\
-        \ feature properties to include in the tile representation can be limited\
-        \ using a query parameter."
+      description: Retrieves inforamtion on a point of a tile in the requested tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile has a single collection (formerly refered as layer) with all selected features in the bounding box of the tile. The feature properties to include in the tile representation can be limited using a query parameter.
       operationId: getFeatureInfoTileOfCollectionId
       parameters:
       - name: collectionId
@@ -596,27 +588,23 @@ paths:
           type: string
       - name: tileMatrixSetId
         in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
+        description: Identifier of a specific tiling scheme. It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
         required: true
         schema:
           type: string
         example: WebMercatorQuad
       - name: tileMatrix
         in: path
-        description: "Identifier selecting one of the scales defined in the TileMatrixSet\
-          \ and representing the scaleDenominator the tile. For example,\nIreland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: |-
+          Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile. For example,
+          Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           type: string
         example: "11"
       - name: tileRow
         in: path
-        description: "Row index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Row index of the tile on the selected TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -624,9 +612,7 @@ paths:
         example: "827"
       - name: tileCol
         in: path
-        description: "Column index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Column index of the tile on the selected TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -646,19 +632,13 @@ paths:
           type: number
       - name: infoTemplate
         in: query
-        description: "Template used for the information response. This parameter can\
-          \ be used to select among GML application schemas or JSON schemas and provide\
-          \ alternative presentations for the same information. If the parameter is\
-          \ missing, the server will select the first template available."
+        description: Template used for the information response. This parameter can be used to select among GML application schemas or JSON schemas and provide alternative presentations for the same information. If the parameter is missing, the server will select the first template available.
         explode: false
         schema:
           type: string
       - name: fTile
         in: query
-        description: "The format of the response. \nPre-defined values are \"mvt\"\
-          \ for a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection\
-          \ and jpeg, png or gif for image based tiles\nThe response to other values\
-          \ is determined by the server."
+        description: "The format of the response. \nPre-defined values are \"mvt\" for a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles\nThe response to other values is determined by the server."
         required: false
         style: form
         explode: false
@@ -670,15 +650,22 @@ paths:
         example: json
       - name: datetime
         in: query
-        description: "Either a date-time or an interval, open or closed. Date and\
-          \ time expressions\nadhere to RFC 3339. Open intervals are expressed using\
-          \ double-dots.\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n\
-          * A closed interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Open\
-          \ intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\
-          \nOnly elemenets that have a temporal property that intersects the value\
-          \ of\n`datetime` are selected.\n\nIf a element has multiple temporal properties,\
-          \ it is the decision of the\nserver whether only a single temporal property\
-          \ is used to determine\nthe extent or all relevant temporal properties."
+        description: |-
+          Either a date-time or an interval, open or closed. Date and time expressions
+          adhere to RFC 3339. Open intervals are expressed using double-dots.
+
+          Examples:
+
+          * A date-time: "2018-02-12T23:20:50Z"
+          * A closed interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
+          * Open intervals: "2018-02-12T00:00:00Z/.." or "../2018-03-18T12:31:12Z"
+
+          Only elemenets that have a temporal property that intersects the value of
+          `datetime` are selected.
+
+          If a element has multiple temporal properties, it is the decision of the
+          server whether only a single temporal property is used to determine
+          the extent or all relevant temporal properties.
         required: false
         style: form
         explode: false
@@ -686,10 +673,12 @@ paths:
           type: string
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nPre-defined values are \"json\" and \"html\". The response to other\n\
-          values is determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          Pre-defined values are "json" and "html". The response to other
+          values is determined by the server.
         required: false
         style: form
         explode: false
@@ -722,17 +711,12 @@ paths:
       tags:
       - Dataset Tiles
       summary: fetch a tile from one or more geospatial data resources
-      description: "Retrieves a tile in the requested tileMatrixSet, on the requested\
-        \ tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow,\
-        \ tileCol). The tile has multiple collections (formerly refered as layers)\
-        \ with all selected features in the bounding box of the tile."
+      description: Retrieves a tile in the requested tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile has multiple collections (formerly refered as layers) with all selected features in the bounding box of the tile.
       operationId: getTileCollections
       parameters:
       - name: geodata
         in: query
-        description: "The collections that should be included in the response. The\
-          \ parameter value is a comma-separated list of collection identifiers. If\
-          \ the parameters is missing, some or all collections will be included."
+        description: The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included.
         required: false
         style: form
         explode: false
@@ -742,27 +726,23 @@ paths:
             type: string
       - name: tileMatrixSetId
         in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
+        description: Identifier of a specific tiling scheme. It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
         required: true
         schema:
           type: string
         example: WebMercatorQuad
       - name: tileMatrix
         in: path
-        description: "Identifier selecting one of the scales defined in the TileMatrixSet\
-          \ and representing the scaleDenominator the tile. For example,\nIreland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: |-
+          Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile. For example,
+          Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           type: string
         example: "11"
       - name: tileRow
         in: path
-        description: "Row index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Row index of the tile on the selected TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -770,9 +750,7 @@ paths:
         example: "827"
       - name: tileCol
         in: path
-        description: "Column index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Column index of the tile on the selected TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -780,15 +758,22 @@ paths:
         example: 1231
       - name: datetime
         in: query
-        description: "Either a date-time or an interval, open or closed. Date and\
-          \ time expressions\nadhere to RFC 3339. Open intervals are expressed using\
-          \ double-dots.\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n\
-          * A closed interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Open\
-          \ intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\
-          \nOnly elemenets that have a temporal property that intersects the value\
-          \ of\n`datetime` are selected.\n\nIf a element has multiple temporal properties,\
-          \ it is the decision of the\nserver whether only a single temporal property\
-          \ is used to determine\nthe extent or all relevant temporal properties."
+        description: |-
+          Either a date-time or an interval, open or closed. Date and time expressions
+          adhere to RFC 3339. Open intervals are expressed using double-dots.
+
+          Examples:
+
+          * A date-time: "2018-02-12T23:20:50Z"
+          * A closed interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
+          * Open intervals: "2018-02-12T00:00:00Z/.." or "../2018-03-18T12:31:12Z"
+
+          Only elemenets that have a temporal property that intersects the value of
+          `datetime` are selected.
+
+          If a element has multiple temporal properties, it is the decision of the
+          server whether only a single temporal property is used to determine
+          the extent or all relevant temporal properties.
         required: false
         style: form
         explode: false
@@ -804,11 +789,11 @@ paths:
           type: number
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http rules apply, i.e., the accept header is used to determine the format.\n\
-          \nPre-defined values are \"mvt\" for a Mapbox Vector Tile, \"json\" for\
-          \ a GeoJSON tiled feature collection and jpeg, png or gif for image based\
-          \ tiles\nThe response to other values is determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http rules apply, i.e., the accept header is used to determine the format.
+
+          Pre-defined values are "mvt" for a Mapbox Vector Tile, "json" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles
+          The response to other values is determined by the server.
         required: false
         style: form
         explode: false
@@ -844,21 +829,13 @@ paths:
     get:
       tags:
       - Dataset Tiles
-      summary: fetch information about a point in a tile from one or more geospatial
-        data resources
-      description: "Retrieves information about a point of a tile in the requested\
-        \ tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the\
-        \ requested tile indices (tileRow, tileCol). The tile has a single collection\
-        \ (formerly refered as layer) with all selected features in the bounding box\
-        \ of the tile. The feature properties to include in the tile representation\
-        \ can be limited using a query parameter."
+      summary: fetch information about a point in a tile from one or more geospatial data resources
+      description: Retrieves information about a point of a tile in the requested tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile has a single collection (formerly refered as layer) with all selected features in the bounding box of the tile. The feature properties to include in the tile representation can be limited using a query parameter.
       operationId: getFeatureInfoTileOfCollections
       parameters:
       - name: geodata
         in: query
-        description: "The collections that should be included in the response. The\
-          \ parameter value is a comma-separated list of collection identifiers. If\
-          \ the parameters is missing, some or all collections will be included."
+        description: The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included.
         required: false
         style: form
         explode: false
@@ -868,27 +845,23 @@ paths:
             type: string
       - name: tileMatrixSetId
         in: path
-        description: Identifier of a specific tiling scheme. It can be one of those
-          specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this
-          service.
+        description: Identifier of a specific tiling scheme. It can be one of those specified in Annex D.1 of the OGC 17-083r2 standard or one defined in this service.
         required: true
         schema:
           type: string
         example: WebMercatorQuad
       - name: tileMatrix
         in: path
-        description: "Identifier selecting one of the scales defined in the TileMatrixSet\
-          \ and representing the scaleDenominator the tile. For example,\nIreland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: |-
+          Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile. For example,
+          Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           type: string
         example: "11"
       - name: tileRow
         in: path
-        description: "Row index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Row index of the tile on the selected TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -896,9 +869,7 @@ paths:
         example: "827"
       - name: tileCol
         in: path
-        description: "Column index of the tile on the selected TileMatrix. It cannot\
-          \ exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland\
-          \ is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15."
+        description: Column index of the tile on the selected TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at tileMatrix=5, tileRow=10 and tileCol=15.
         required: true
         schema:
           minimum: 0
@@ -918,19 +889,13 @@ paths:
           type: number
       - name: infoTemplate
         in: query
-        description: "Template used for the information response. This parameter can\
-          \ be used to select among GML application schemas or JSON schemas and provide\
-          \ alternative presentations for the same information. If the parameter is\
-          \ missing, the server will select the first template available."
+        description: Template used for the information response. This parameter can be used to select among GML application schemas or JSON schemas and provide alternative presentations for the same information. If the parameter is missing, the server will select the first template available.
         explode: false
         schema:
           type: string
       - name: fTile
         in: query
-        description: "The format of the response. \nPre-defined values are \"mvt\"\
-          \ for a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection\
-          \ and jpeg, png or gif for image based tiles\nThe response to other values\
-          \ is determined by the server."
+        description: "The format of the response. \nPre-defined values are \"mvt\" for a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles\nThe response to other values is determined by the server."
         required: false
         style: form
         explode: false
@@ -942,15 +907,22 @@ paths:
         example: json
       - name: datetime
         in: query
-        description: "Either a date-time or an interval, open or closed. Date and\
-          \ time expressions\nadhere to RFC 3339. Open intervals are expressed using\
-          \ double-dots.\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n\
-          * A closed interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Open\
-          \ intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\
-          \nOnly elemenets that have a temporal property that intersects the value\
-          \ of\n`datetime` are selected.\n\nIf a element has multiple temporal properties,\
-          \ it is the decision of the\nserver whether only a single temporal property\
-          \ is used to determine\nthe extent or all relevant temporal properties."
+        description: |-
+          Either a date-time or an interval, open or closed. Date and time expressions
+          adhere to RFC 3339. Open intervals are expressed using double-dots.
+
+          Examples:
+
+          * A date-time: "2018-02-12T23:20:50Z"
+          * A closed interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
+          * Open intervals: "2018-02-12T00:00:00Z/.." or "../2018-03-18T12:31:12Z"
+
+          Only elemenets that have a temporal property that intersects the value of
+          `datetime` are selected.
+
+          If a element has multiple temporal properties, it is the decision of the
+          server whether only a single temporal property is used to determine
+          the extent or all relevant temporal properties.
         required: false
         style: form
         explode: false
@@ -966,10 +938,12 @@ paths:
           type: number
       - name: f
         in: query
-        description: "The format of the response. If no value is provided, the standard\
-          \ http\nrules apply, i.e., the accept header is used to determine the format.\n\
-          \nPre-defined values are \"json\" and \"html\". The response to other\n\
-          values is determined by the server."
+        description: |-
+          The format of the response. If no value is provided, the standard http
+          rules apply, i.e., the accept header is used to determine the format.
+
+          Pre-defined values are "json" and "html". The response to other
+          values is determined by the server.
         required: false
         style: form
         explode: false
@@ -1001,7 +975,7 @@ components:
   schemas:
     landingPage:
       allOf:
-      - $ref: '#/components/schemas/landingPage_2'
+      - $ref: '#/components/schemas/landingPage_1'
       - $ref: '#/components/schemas/landingPage-link'
     landingPage-link:
       required:
@@ -1014,48 +988,48 @@ components:
           - href: http://data.example.org/?f=json
             rel: self
             type: application/json
-            title: this document
+            title: This document
           - href: http://data.example.org/?f=html
             rel: alternate
             type: text/html
-            title: this document in HTML
+            title: This document in HTML
           - href: http://data.example.org/api?f=json
-            rel: service
+            rel: service-desc
             type: application/vnd.oai.openapi+json;version=3.0
-            title: the API definition in OpenAPI 3.0 JSON
+            title: The API definition in OpenAPI 3.0 JSON
           - href: http://data.example.org/api?f=html
-            rel: service
+            rel: service-desc
             type: text/html
-            title: the API definition in HTML
+            title: The API definition in HTML
           - href: http://data.example.org/conformance?f=json
-            rel: conformance
+            rel: http://www.opengis.net/def/rel/OGC/1.0/conformance
             type: application/json
-            title: the list of conformance classes implemented by this API
+            title: Conformance classes implemented by this API
           - href: http://data.example.org/collections?f=json
-            rel: data
+            rel: http://www.opengis.net/def/rel/OGC/1.0/data
             type: application/json
-            title: The collections in the dataset in JSON
+            title: Collections in the dataset in JSON
           - href: http://data.example.org/collections?f=html
-            rel: data
+            rel: http://www.opengis.net/def/rel/OGC/1.0/data
             type: text/html
-            title: The collections in the dataset in HTML
+            title: Collections in the dataset in HTML
           - href: http://data.example.org/tileMatrixSets?f=json
-            rel: tiling-schema
+            rel: http://www.opengis.net/def/rel/OGC/1.0/tiling-schemes
             type: application/json
-            title: List of tileMatrixSets implemented by this API in JSON
+            title: TileMatrixSets implemented by this API in JSON
           - href: http://data.example.org/tileMatrixSets?f=html
-            rel: tiling-schema
+            rel: http://www.opengis.net/def/rel/OGC/1.0/tiling-schemes
             type: text/html
-            title: List of tileMatrixSets implemented by this API in HTML
+            title: TileMatrixSets implemented by this API in HTML
           - href: http://data.example.org/tiles
-            rel: tilesets
+            rel: http://www.opengis.net/def/rel/OGC/1.0/tilesets
             type: application/json
-            title: Link to information on tiles combining more than one collection
+            title: Information on tiles in the dataset
           items:
             $ref: '#/components/schemas/link'
     collection:
       allOf:
-      - $ref: '#/components/schemas/collection_2'
+      - $ref: '#/components/schemas/collection_1'
       - $ref: '#/components/schemas/collection-link'
     collection-link:
       required:
@@ -1081,11 +1055,11 @@ components:
             type: application/rdf+xml
             title: CC0-1.0
           - href: http://data.example.com/collections/buildings/items
-            rel: items
+            rel: http://www.opengis.net/def/rel/OGC/1.0/items
             title: Retrieve the items of the buildings collection
             type: application/geo+json
           - href: http://data.example.com/collections/buildings/tiles
-            rel: tiles
+            rel: http://www.opengis.net/def/rel/OGC/1.0/tiles
             type: application/json
           - href: http://data.example.com/collections/buildings/tileSets
             rel: describedby
@@ -1094,11 +1068,11 @@ components:
             $ref: '#/components/schemas/link'
     tile-set:
       allOf:
-      - $ref: '#/components/schemas/tile-set_2'
+      - $ref: '#/components/schemas/tile-set_1'
       - $ref: '#/components/schemas/tile-set-link'
     tiles:
       allOf:
-      - $ref: '#/components/schemas/tiles_2'
+      - $ref: '#/components/schemas/tiles_1'
       - $ref: '#/components/schemas/tiles-link'
     tile-set-link:
       required:
@@ -1111,13 +1085,13 @@ components:
           - href: http://data.example.com/collections/buildings/tiles/WebMercatorQuad
             rel: self
             type: application/json
-          - href: "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png"
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png
             templated: true
             rel: item
             type: image/png
-          - href: "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info"
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
             templated: true
-            rel: info
+            rel: http://www.opengis.net/def/rel/OGC/1.0/info
             type: text/html
           items:
             $ref: '#/components/schemas/link'
@@ -1132,13 +1106,13 @@ components:
           - href: http://data.example.com/collections/buildings/tiles
             rel: self
             type: application/json
-          - href: "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png"
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png
             templated: true
             rel: item
             type: image/png
-          - href: "http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info"
+          - href: http://data.example.com/collections/buildings/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
             templated: true
-            rel: info
+            rel: http://www.opengis.net/def/rel/OGC/1.0/info
             type: text/html
           items:
             $ref: '#/components/schemas/link'
@@ -1153,8 +1127,7 @@ components:
           type: string
       example:
         code: "500"
-        description: "An internal server error occured. Incident ID: 1234567. Please\
-          \ contact admin@example.org."
+        description: 'An internal server error occured. Incident ID: 1234567. Please contact admin@example.org.'
     confClasses:
       required:
       - conformsTo
@@ -1200,8 +1173,8 @@ components:
           type: array
           items:
             allOf:
-            - $ref: '#/components/schemas/collection_2'
-            - $ref: '#/components/schemas/collection-link_2'
+            - $ref: '#/components/schemas/collection_1'
+            - $ref: '#/components/schemas/collection-link_1'
     link:
       required:
       - href
@@ -1214,8 +1187,7 @@ components:
           type: string
           example: alternate
         type:
-          pattern: "^(?=[-a-z]{1,127}/[-\\.a-z0-9]{1,127}$)[a-z]+(-[a-z]+)*/[a-z0-9]+([-\\\
-            .][a-z0-9]+)*$"
+          pattern: ^(?=[-a-z]{1,127}/[-\.a-z0-9]{1,127}$)[a-z]+(-[a-z]+)*/[a-z0-9]+([-\.][a-z0-9]+)*$
           type: string
           example: application/geo+json
         hreflang:
@@ -1223,33 +1195,29 @@ components:
           example: en
         title:
           type: string
-          example: "Trierer Strasse 70, 53115 Bonn"
+          example: Trierer Strasse 70, 53115 Bonn
         length:
           minimum: 0
           type: integer
         templated:
           type: boolean
-          description: Use `true` if the `href` property contains a URI template with
-            variables that needs to be substituted by values to get a URI
+          description: Use `true` if the `href` property contains a URI template with variables that needs to be substituted by values to get a URI
           example: false
           default: false
         types:
           type: array
-          description: "Without this parameter you should repeat a link for each media\
-            \ type the resource is offered. \nAdding this parameter allows listing\
-            \ alternative media types that you can use for this resource. The value\
-            \ in the `type` parameter becomes the recommended media type."
-          example: "image/png, image/jpeg, image/tiff"
+          description: "Without this parameter you should repeat a link for each media type the resource is offered. \nAdding this parameter allows listing alternative media types that you can use for this resource. The value in the `type` parameter becomes the recommended media type."
+          example: image/png, image/jpeg, image/tiff
           items:
             type: string
-    collection_2:
+    collection_1:
       required:
       - id
       type: object
       properties:
         id:
           type: string
-          description: "identifier of the collection used, for example, in URIs"
+          description: identifier of the collection used, for example, in URIs
           example: buildings
         title:
           type: string
@@ -1266,15 +1234,13 @@ components:
             $ref: '#/components/schemas/keyword'
         attribution:
           type: string
-          description: The provider of the source data for the collection. Map viewers
-            normally show this information at the bottom of the map
+          description: The provider of the source data for the collection. Map viewers normally show this information at the bottom of the map
           example: OpenStreetMap
         extent:
           $ref: '#/components/schemas/extent'
         crs:
           type: array
-          description: The list of coordinate reference systems supported by the service.
-            The first item is the default coordinate reference system.
+          description: The list of coordinate reference systems supported by the service. The first item is the default coordinate reference system.
           example:
           - http://www.opengis.net/def/crs/OGC/1.3/CRS84
           - http://www.opengis.net/def/crs/EPSG/0/4326
@@ -1304,10 +1270,9 @@ components:
           $ref: '#/components/schemas/spatialExtent'
         temporal:
           $ref: '#/components/schemas/temporalExtent'
-      description: "The extent of the collection. In the Core only spatial and temporal\
-        \ extents are specified. Extensions may add additional members to represent\
-        \ other  extents, for example, thermal or pressure ranges.\nIt is recommended\
-        \ that the statial extent is expected in CRS84 except if this is not possible."
+      description: |-
+        The extent of the collection. In the Core only spatial and temporal extents are specified. Extensions may add additional members to represent other  extents, for example, thermal or pressure ranges.
+        It is recommended that the statial extent is expected in CRS84 except if this is not possible.
     spatialExtent:
       required:
       - bbox
@@ -1321,10 +1286,11 @@ components:
     bbox:
       minItems: 1
       type: array
-      description: "One or more bounding boxes that describe the spatial extent of\
-        \ the dataset.\nIn the Core only a single bounding box is supported. Extensions\
-        \ may support\nadditional areas. If multiple areas are provided, the union\
-        \ of the bounding\nboxes describes the spatial extent."
+      description: |-
+        One or more bounding boxes that describe the spatial extent of the dataset.
+        In the Core only a single bounding box is supported. Extensions may support
+        additional areas. If multiple areas are provided, the union of the bounding
+        boxes describes the spatial extent.
       example:
       - - 7.01
         - 50.63
@@ -1334,9 +1300,10 @@ components:
         maxItems: 6
         minItems: 4
         type: array
-        description: "West, south, east, north edges of the bounding box. The coordinates\n\
-          are in the coordinate reference system specified in `crs`. By default\n\
-          this is WGS 84 longitude/latitude (CRS84)."
+        description: |-
+          West, south, east, north edges of the bounding box. The coordinates
+          are in the coordinate reference system specified in `crs`. By default
+          this is WGS 84 longitude/latitude (CRS84).
         items:
           type: number
     crs:
@@ -1362,11 +1329,12 @@ components:
     temporalInterval:
       minItems: 1
       type: array
-      description: "One or more time intervals that describe the temporal extent of\
-        \ the dataset.\nThe value `null` is supported and indicates an open time intervall.\n\
-        In the Core only a single time interval is supported. Extensions may support\n\
-        multiple intervals. If multiple intervals are provided, the union of the\n\
-        intervals describes the temporal extent."
+      description: |-
+        One or more time intervals that describe the temporal extent of the dataset.
+        The value `null` is supported and indicates an open time intervall.
+        In the Core only a single time interval is supported. Extensions may support
+        multiple intervals. If multiple intervals are provided, the union of the
+        intervals describes the temporal extent.
       nullable: true
       items:
         maxItems: 2
@@ -1394,7 +1362,7 @@ components:
       default: http://www.opengis.net/def/uom/ISO-8601/0/Gregorian
       enum:
       - http://www.opengis.net/def/uom/ISO-8601/0/Gregorian
-    collection-link_2:
+    collection-link_1:
       required:
       - links
       type: object
@@ -1450,13 +1418,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/link'
-      description: "Reusable object that contains an id to a resource and links where\
-        \ the object is described or a representation retrieved. Typically it is useful\
-        \ for paths like `\\resources` and `\\resources\\{resourceId}`.   `\\resources`\
-        \ will respond an array of id-link listing the `resourceId` and the links\
-        \ to get it. \\collections and \\collections\\{collectionId} is an exception\
-        \ to this pattern.\nThe fact that `links` is an array can be used to advertise\
-        \ the same object representation in different formats."
+      description: |-
+        Reusable object that contains an id to a resource and links where the object is described or a representation retrieved. Typically it is useful for paths like `\resources` and `\resources\{resourceId}`.   `\resources` will respond an array of id-link listing the `resourceId` and the links to get it. \collections and \collections\{collectionId} is an exception to this pattern.
+        The fact that `links` is an array can be used to advertise the same object representation in different formats.
       example:
         id: night
         title: Topographic night style
@@ -1474,24 +1438,20 @@ components:
       properties:
         title:
           type: string
-          description: "Title of this tile matrix set, normally used for display to\
-            \ a human"
+          description: Title of this tile matrix set, normally used for display to a human
           example: Google Maps Compatible for the World
         abstract:
           type: string
-          description: "Brief narrative description of this tile matrix set, normally\
-            \ available for display to a human"
-          example: "The most common TileMatrixSet, used in most of the main IT map\
-            \ browsers. It was initially popularized by Google Maps"
+          description: Brief narrative description of this tile matrix set, normally available for display to a human
+          example: The most common TileMatrixSet, used in most of the main IT map browsers. It was initially popularized by Google Maps
         keywords:
           type: array
-          description: Unordered list of one or more commonly used or formalized word(s)
-            or phrase(s) used to describe this dataset
+          description: Unordered list of one or more commonly used or formalized word(s) or phrase(s) used to describe this dataset
           items:
             $ref: '#/components/schemas/keyword'
         identifier:
           type: string
-          description: "Tile matrix set identifier,"
+          description: Tile matrix set identifier,
           example: WebMercatorQuad
         supportedCRS:
           type: string
@@ -1520,16 +1480,12 @@ components:
       properties:
         title:
           type: string
-          description: "Title of this tile matrix, normally used for display to a\
-            \ human"
+          description: Title of this tile matrix, normally used for display to a human
           example: Google Maps Compatible for the World zoom level 3
         abstract:
           type: string
-          description: "Brief narrative description of this tile matrix, normally\
-            \ available for display to a human"
-          example: Google Maps Compatible zoom level 3 that is equivalent to a scale
-            of 1:69885283.00358972 and has 19567.87924100512 meters of pixel size
-            in the equator
+          description: Brief narrative description of this tile matrix, normally available for display to a human
+          example: Google Maps Compatible zoom level 3 that is equivalent to a scale of 1:69885283.00358972 and has 19567.87924100512 meters of pixel size in the equator
         keywords:
           type: array
           description: keywords about the elements in the collection
@@ -1537,8 +1493,7 @@ components:
             $ref: '#/components/schemas/keyword'
         identifier:
           type: string
-          description: Identifier selecting one of the scales defined in the TileMatrixSet
-            and representing the scaleDenominator the tile.
+          description: Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile.
           example: "3"
         scaleDenominator:
           type: number
@@ -1546,8 +1501,7 @@ components:
           example: 69885283.00358972
         cornerOfOrigin:
           type: string
-          description: Position of the corner of origin with respect of the tiles
-            of this tile matrix
+          description: Position of the corner of origin with respect of the tiles of this tile matrix
           example: topLeft
           default: topLeft
           enum:
@@ -1555,9 +1509,7 @@ components:
           - bottonLeft
         pointOfOrigin:
           type: array
-          description: Position in CRS coordinates of the corner of origin of this
-            tile matrix. In previous version was `topLeftCorner` and `cornerOfOrigin`
-            did not exist.
+          description: Position in CRS coordinates of the corner of origin of this tile matrix. In previous version was `topLeftCorner` and `cornerOfOrigin` did not exist.
           example:
           - -2.00375083427892E7
           - 2.00375083427892E7
@@ -1795,11 +1747,10 @@ components:
       - $ref: '#/components/schemas/multipolygonGeoJSON'
     timeStamp:
       type: string
-      description: This property indicates the time and date when the response was
-        generated.
+      description: This property indicates the time and date when the response was generated.
       format: date-time
       example: 2017-08-17T08:05:32Z
-    landingPage_2:
+    landingPage_1:
       required:
       - links
       type: object
@@ -1809,42 +1760,12 @@ components:
           example: Buildings in Bonn
         description:
           type: string
-          example: Access to data about buildings in the city of Bonn via a Web API
-            that conforms to the OGC API Features specification.
+          example: Access to data about buildings in the city of Bonn via a Web API that conforms to the OGC API Features specification.
         links:
           type: array
           items:
             $ref: '#/components/schemas/link'
-      example:
-      - href: http://data.example.org/?f=json
-        rel: self
-        type: application/json
-        title: this document
-      - href: http://data.example.org/?f=html
-        rel: alternate
-        type: text/html
-        title: this document in HTML
-      - href: http://data.example.org/api?f=json
-        rel: service
-        type: application/vnd.oai.openapi+json;version=3.0
-        title: the API definition in OpenAPI 3.0 JSON
-      - href: http://data.example.org/api?f=html
-        rel: service
-        type: text/html
-        title: the API definition in HTML
-      - href: http://data.example.org/conformance?f=json
-        rel: conformance
-        type: application/json
-        title: the list of conformance classes implemented by this API
-      - href: http://data.example.org/collections?f=json
-        rel: data
-        type: application/json
-        title: The collections in the dataset in JSON
-      - href: http://data.example.org/collections?f=html
-        rel: data
-        type: text/html
-        title: The collections in the dataset in HTML
-    tile-set_2:
+    tile-set_1:
       required:
       - tileMatrixSetLink
       type: object
@@ -1905,7 +1826,7 @@ components:
       - summary
       items:
         type: string
-    tiles_2:
+    tiles_1:
       required:
       - tileMatrixSetLink
       type: object
@@ -1916,8 +1837,7 @@ components:
           $ref: '#/components/schemas/infoTemplates'
     tileMatrixSetLink-set:
       type: array
-      description: "This list of tileMatrixSetLink objects, as defined in OGC 17-083r2,\
-        \ supported by this collectionId."
+      description: This list of tileMatrixSetLink objects, as defined in OGC 17-083r2, supported by this collectionId.
       items:
         $ref: '#/components/schemas/tileMatrixSetLink-entry'
     inline_response_200:
@@ -1931,13 +1851,13 @@ components:
           - href: http://data.example.com/tiles
             rel: self
             type: application/json
-          - href: "http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png"
+          - href: http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}.png
             templated: true
             rel: item
             type: image/png
-          - href: "http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info"
+          - href: http://data.example.com/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
             templated: true
-            rel: info
+            rel: http://www.opengis.net/def/rel/OGC/1.0/info
             type: text/html
           items:
             $ref: '#/components/schemas/link'
@@ -1962,11 +1882,11 @@ components:
     f-png-jpeg-vector:
       name: f
       in: query
-      description: "The format of the response. If no value is provided, the standard\
-        \ http rules apply, i.e., the accept header is used to determine the format.\n\
-        \nPre-defined values are \"mvt\" for a Mapbox Vector Tile, \"json\" for a\
-        \ GeoJSON tiled feature collection and jpeg, png or gif for image based tiles\n\
-        The response to other values is determined by the server."
+      description: |-
+        The format of the response. If no value is provided, the standard http rules apply, i.e., the accept header is used to determine the format.
+
+        Pre-defined values are "mvt" for a Mapbox Vector Tile, "json" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles
+        The response to other values is determined by the server.
       required: false
       style: form
       explode: false
@@ -1979,10 +1899,7 @@ components:
     f-tile:
       name: fTile
       in: query
-      description: "The format of the response. \nPre-defined values are \"mvt\" for\
-        \ a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection and\
-        \ jpeg, png or gif for image based tiles\nThe response to other values is\
-        \ determined by the server."
+      description: "The format of the response. \nPre-defined values are \"mvt\" for a Mapbox Vector Tile, \"json\" for a GeoJSON tiled feature collection and jpeg, png or gif for image based tiles\nThe response to other values is determined by the server."
       required: false
       style: form
       explode: false
