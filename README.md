@@ -1,8 +1,23 @@
 # OGC API - Tiles
 
+## Quick links
+
+Latest draft specifications: [HTML](https://docs.ogc.org/DRAFTS/20-057.html) [PDF](https://docs.ogc.org/DRAFTS/20-057.pdf)
+
+See also the [TileMatrixSet & TileSet metadata standard](https://github.com/opengeospatial/2D-Tile-Matrix-Set) which provides the schemas used by _Tiles_.
+(Latest draft: [HTML](https://docs.opengeospatial.org/DRAFTS/17-083r3.html) [PDF](https://docs.opengeospatial.org/DRAFTS/17-083r3.pdf))
+
+[TileSet Schema](https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileSet.json) /
+[Examples](https://github.com/opengeospatial/2D-Tile-Matrix-Set/tree/master/schemas/tms/2.0/json/examples/tileset)
+
+[TileMatrixSet Schema](https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileMatrixSet.json) /
+[Examples](https://github.com/opengeospatial/2D-Tile-Matrix-Set/tree/master/schemas/tms/2.0/json/examples/tilematrixset)
+
+## Introduction
+
 This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventually coverage tiles) of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
 
-This is the CURRENT working version of this initiative (Old version work was one of the  engineering reports in Testbed-15 see the public version in http://docs.opengeospatial.org/per/19-069.html; or the GitHub version:  https://github.com/opengeospatial/T-15-D014-WMTS_draft_specification; if you are not a member or observer in Testbed15 you will get a 404)
+This is the CURRENT working version of this initiative.
 
 IMPORTANT: Many examples of OpenAPI documents that are used as inspiration and test of this work is here:
 https://app.swaggerhub.com/apis/UAB-CREAF
@@ -31,9 +46,8 @@ The definition of OGC API - Tiles - Part 1: Core is the immediate next step. The
 
 ### Extensions
 We foresee the following extensions (some of them can end into OGC standards and some might not)
-* Other TileMatrixSets  (started in: [clause_7_tile_tms](extensions/tmxs/standard/clause_7_tile_tms.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/tmxs/standard/OAPI_Tiles.html)
-* Info (featureInfo) (started in: [clause_7_tile_info](extensions/info/standard/clause_7_tile_info.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/info/standard/OAPI_Tiles.html)
-* Multi-tile (retrieve a ZIP with many tiles) (started in: [clause_7_multitile](extensions/multitile/standard/clause_7_tile_collections.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/multitile/standard/OAPI_Tiles.html )
+* Info (featureInfo) (started in: [clause_7_tile_info](extensions/info/standard/clause_7_tile_info.adoc))
+* Multi-tile (retrieve a ZIP with many tiles) (started in: [clause_7_multitile](extensions/multitile/standard/clause_7_tile_multitiles.adoc))
 
 ## Using the standard
 
