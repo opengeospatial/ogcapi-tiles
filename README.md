@@ -44,9 +44,8 @@ The definition of OGC API - Tiles - Part 1: Core is the immediate next step. The
 
 ### Extensions
 We foresee the following extensions (some of them can end into OGC standards and some might not)
-* Other TileMatrixSets  (started in: [clause_7_tile_tms](extensions/tmxs/standard/clause_7_tile_tms.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/tmxs/standard/OAPI_Tiles.html)
-* Info (featureInfo) (started in: [clause_7_tile_info](extensions/info/standard/clause_7_tile_info.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/info/standard/OAPI_Tiles.html)
-* Multi-tile (retrieve a ZIP with many tiles) (started in: [clause_7_multitile](extensions/multitile/standard/clause_7_tile_collections.adoc), https://htmlpreview.github.io/?https://raw.githubusercontent.com/opengeospatial/OGC-API-Tiles/tree/master/extensions/multitile/standard/OAPI_Tiles.html )
+* Info (featureInfo) (started in: [clause_7_tile_info](extensions/info/standard/clause_7_tile_info.adoc))
+* Multi-tile (retrieve a ZIP with many tiles) (started in: [clause_7_multitile](extensions/multitile/standard/clause_7_tile_multitiles.adoc))
 
 ## Using the standard
 
