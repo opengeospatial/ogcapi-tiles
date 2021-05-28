@@ -1,4 +1,6 @@
-# Quick links
+# OGC API - Tiles
+
+## Quick links
 
 Latest draft specifications: [HTML](https://docs.ogc.org/DRAFTS/20-057.html) [PDF](https://docs.ogc.org/DRAFTS/20-057.pdf)
 
@@ -11,7 +13,7 @@ See also the [TileMatrixSet & TileSet metadata standard](https://github.com/open
 [TileMatrixSet Schema](https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileMatrixSet.json) /
 [Examples](https://github.com/opengeospatial/2D-Tile-Matrix-Set/tree/master/schemas/tms/2.0/json/examples/tilematrixset)
 
-# OGC API - Tiles
+## Introduction
 
 This GitHub repository contains the new revision of the [OGC](http://opengeospatial.org)'s Web Map Tile Service standards for requesting tiles (both vector tiles and maps tiles; and eventually coverage tiles) of geospatial information on the web. It is a complete rewrite of previous versions, focusing on a simple RESTful core specified as reusable [OpenAPI](http://openapis.org) components.
 
