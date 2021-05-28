@@ -103,7 +103,7 @@ include::clause_8_tile_tileSetsList.adoc[]
 
 include::clause_9_tile_datasetTileSets.adoc[]
 
-include::clause_10_tile_geoDataSelection.adoc[]
+include::clause_10_tile_collectionsSelection.adoc[]
 
 include::clause_11_tile_geoDataTileSets.adoc[]
 

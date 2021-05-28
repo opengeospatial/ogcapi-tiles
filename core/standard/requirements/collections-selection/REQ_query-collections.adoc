@@ -1,11 +1,11 @@
-[[req_geodata-selection_query-geodata]]
+[[req_collections-selection_query-collections]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/geodata-selection/query-geodata*
-^|A |A operation that acts on at the dataset level SHALL support an optional parameter `geodata` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
+^|*Requirement {counter:req-id}* |*/req/collections-selection/query-collections*
+^|A |A operation that acts on at the dataset level SHALL support an optional parameter `collections` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
 [source,YAML]
 ----
-  name: geodata
+  name: collections
   in: query
   required: false
   style: form
@@ -15,7 +15,7 @@
     items:
       type: string
 ----
-^|B |The parameter `geodata` SHALL contain a comma-separated list of geospatial resource identifiers (e.g. collectionId's) or a comma-separated list of full URLs to geospatial resource identifiers.
+^|B |The parameter `collections` SHALL contain a comma-separated list of geospatial resource identifiers (e.g. collectionId's) or a comma-separated list of full URLs to geospatial resource identifiers.
 ^|C |Only the geospatial data resource identifiers that advertise a link compatible with the type of resource to be requested (e.g. with type=`tiles` for dataset tiles and with type=`map` for dataset maps) in the geospatial data resource description SHALL be included.
 ^|D |For dataset maps or dataset tiles, only geospatial data resources that support the same crs or the same TileMatrixSetId parameter value respectively SHALL be combined in the parameter value.
 |===

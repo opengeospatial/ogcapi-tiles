@@ -714,7 +714,7 @@ paths:
       description: Retrieves a tile in the requested tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile has multiple collections (formerly refered as layers) with all selected features in the bounding box of the tile.
       operationId: getTileCollections
       parameters:
-      - name: geodata
+      - name: collections
         in: query
         description: The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included.
         required: false
@@ -833,7 +833,7 @@ paths:
       description: Retrieves information about a point of a tile in the requested tileMatrixSet, on the requested tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile has a single collection (formerly refered as layer) with all selected features in the bounding box of the tile. The feature properties to include in the tile representation can be limited using a query parameter.
       operationId: getFeatureInfoTileOfCollections
       parameters:
-      - name: geodata
+      - name: collections
         in: query
         description: The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included.
         required: false
