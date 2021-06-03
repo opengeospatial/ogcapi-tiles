@@ -17,6 +17,8 @@ This standard is deeply inspired in concepts and techniques defined in the follo
 * OGC: OGC 17-069r3, OGC API - Features Part 1
 
 Many ideas standard used in this standard where tested in Testbed 15 and experiences where documented here:
+
+
 * OGC: OGC 19-069, OGC Testbed-15: Maps and Tiles API Engineering Report
 
 The OGC API standards are considering ideas, methods and practices extracted from:
@@ -25,3 +27,4 @@ The OGC API standards are considering ideas, methods and practices extracted fro
 * [[DCAT]] W3C: Data Catalog Vocabulary, W3C Recommendation 16 January 2014, https://www.w3.org/TR/vocab-dcat/
 * [[link-relations]] IANA: Link Relation Types, https://www.iana.org/assignments/link-relations/link-relations.xml
 * [[MVT]] Mapbox: Mapbox Vector Tiles Specification, https://docs.mapbox.com/vector-tiles/specification/
+* [[TileJSON]] Mapbox: TileJSON Specification version 3.0.0, https://github.com/mapbox/tilejson-spec/pull/36

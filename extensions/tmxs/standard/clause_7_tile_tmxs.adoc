@@ -108,6 +108,10 @@ id-link:
   properties:
     id:
       type: string
+    tileMatrixSetURI:
+      type: string
+      format: uri
+      description: If the Tile Matrix Set is registered in the Definitions Server, this property should the reference to this definition
     title:
       type: string
     links:

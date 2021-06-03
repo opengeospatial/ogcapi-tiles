@@ -184,6 +184,8 @@ A successful GET response to a tileset resource will be a data structure with th
 
 include::requirements/tileset/REQ_tileset-description.adoc[]
 
+Alternative encodings for tileset metadata can be supported, such as TileJSON.
+
 include::recommendations/tileset/REC_tmxslink.adoc[]
 
 Clients or servers are not required to support a specific default TileMatrixSet.
