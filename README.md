@@ -1,4 +1,22 @@
 # OGC API - Tiles
+This GitHub repository contains OGC's multi-part standard for querying and retrieving tiles of geospatial information on the web, "OGC API - Tiles". The draft specification is available in [HTML](http://docs.ogc.org/DRAFTS/20-057.html) and [PDF](http://docs.ogc.org/DRAFTS/20-057.pdf).
+
+Data with a location component (i.e. geospatial data) can be very large. For example, consider satellite images that cover vast areas of Earth's surface. To make these datasets easier to use, they can be divided into *tiles* - smaller subsets of data that can be used individually. OGC API - Tiles provides a standardized way for requesting such tiles through the web.
+
+## Overview
+*Note: section is in draft form. Some information may be incorrect.*
+
+OGC API - Tiles is a standards API that provides tiles of geospatial information. Different forms of geospatial information are supported:
+
+```
+GET /.../.../tiles
+GET /.../.../map/tiles
+```
+These requests will retrieve descriptions of the tiles available for vector (/tiles) and map (/map/tiles) datasets. 
+
+Vector data represents geospatial objects as points, lines, and polygons. Tiles of vector data (i.e. Vector Tiles) represent subsets of vector data covering a large area (e.g. lines representing rivers in a country).
+
+In this context, a map is essentially an image representing at least one type of geospatial information. Tiles of map data (i.e. Map Tiles) represent subsets of map data covering a large area (e.g. a satellite image).
 
 ## Quick links
 
