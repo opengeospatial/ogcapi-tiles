@@ -8,7 +8,7 @@ For the purposes of this document, the following additional terms and definition
 === *geospatial data resource*
 web resource that consists in a set of geospatial data
 
-NOTE: OGC API collections are considered geospatial data resource by definition
+NOTE: Most of the resources provided by OGC API _collections_ are considered geospatial data resources. Maps and coverages are also considered geospatial data resources.
 
 === *geospatial aspect*
 web resource that represents a component of geospatial information (metadata, schemas,...) or geospatial data in a particular data model (e.g. feature items, tiles, coverages,...) of a more generic geospatial data resource (e.g. a collection)

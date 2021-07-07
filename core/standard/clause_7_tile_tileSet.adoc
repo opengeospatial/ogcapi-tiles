@@ -243,6 +243,6 @@ The following table explains the meaning of the URI template variables.
 !===
 |URL template variable |Meaning |Possible values
 |TileMatrix |tile matrix identifier |Identifier of the tile matrix (representing a zoom level, a.k.a. a scale) listed in the TileMatrixSet definition
-|TileRow |row index of tile matrix	|A non-negative integer between 0 and the MatrixHeight – 1. If there is a TileMatrixSetLimits the value is limited between MinTileRow and MaxTileRow
-|TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth – 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
+|TileRow |row index of tile matrix	|A non-negative integer between 0 and the MatrixHeight - 1. If there is a TileMatrixSetLimits the value is limited between MinTileRow and MaxTileRow
+|TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth - 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
 !===
