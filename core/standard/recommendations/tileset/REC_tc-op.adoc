@@ -1,9 +1,0 @@
-[[rec_tileset_tc-op]]
-[width="90%",cols="2,6a"]
-|===
-^|*Recommendation {counter:rec-id}* |*/rec/tileset/tc-op*
-^|A | A tiles implementation should consider to use the tiles URI template variables in the following common order and form: {tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}
-^|B | A tiles implementation should consider to specify the variables {tileMatrixSetId} and {tileMatrix} even if there is only one valid value for them.
-|===
-
-NOTE: Clients should not assume the common order of URI template variable and should extract them from the examples in the "links" section or from the API description path templates.

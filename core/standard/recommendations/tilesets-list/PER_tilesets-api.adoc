@@ -1,0 +1,8 @@
+[[per_tilesets_api]]
+[width="90%",cols="2,6a"]
+|===
+^|*Permission {counter:per-id}* |*/per/tilesets/tilesets-api*
+^|A |An API document cap advertise a single URI template to get the tilesets.
+^|B |This URI template will use the {tileMatrixSetId} variable
+^|C |The {tileMatrixSetId} variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represent all the TileMatrixSet supported by the resource.
+|===

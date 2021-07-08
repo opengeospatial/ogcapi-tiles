@@ -86,3 +86,5 @@ include::requirements/tilesets-list/REQ_tileset-links.adoc[]
   ]
 }
 =================
+
+include::recommendations/tilesets-list/PER_tilesets-api.adoc[]
