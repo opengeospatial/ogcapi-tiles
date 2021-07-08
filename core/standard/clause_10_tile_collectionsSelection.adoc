@@ -39,7 +39,7 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 }
 =================
 
-=== Dataset selection
+=== Selection of collections
 
 ==== Operation
 By default, the  geospatial data resources included in the dataset is undefined but it is supposed to represent the dataset. This class adds a mechanism to select the geospatial data resources that are going to be used to create the a derived resource (e.g. maps or tiles). In practice this give use the capability to create resources involving from more than one geospatial data resource.
@@ -54,4 +54,4 @@ comma (",") as the separator between the resource identifiers in the list. Addit
 
 If the value of the parameter `collections` contains a resource id of URI that does not exist on the API, the status code of the response is 404.
 
-If the value of the parameter `collections` has a wrong format or combines one of more geospatial data resources that are not compatible (e.g. they do not have a compatible value specified by other parameters in the request), the status code of the response is 500.
+If the value of the parameter `collections` has a wrong format or combines one of more geospatial data resources that are not compatible (e.g. they do not have a compatible value specified by other parameters in the request), the status code of the response is 400.
