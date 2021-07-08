@@ -52,6 +52,6 @@ comma (",") as the separator between the resource identifiers in the list. Addit
 
 ==== Error conditions
 
-If the value of the parameter `collections` contains a resource id of URI that does not exist on the API, the status code of the response is 404.
+If the value of the parameter `collections` contains a resource id of URI that does not exist on the API, the status code of the response is 400.
 
 If the value of the parameter `collections` has a wrong format or combines one of more geospatial data resources that are not compatible (e.g. they do not have a compatible value specified by other parameters in the request), the status code of the response is 400.
