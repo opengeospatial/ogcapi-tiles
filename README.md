@@ -18,7 +18,7 @@ The **_Core_** conformance class of _OGC API - Tiles_ simply requires that tiles
 - a tile row, and
 - a tile column.
 
-That URL template can either be provided through the _**TileSet**_ conformance class, or by some outside mechanism.
+That URL template and information about the tileset can either be provided through the _**TileSet**_ conformance class, or by some outside mechanism.
 
 ### TileSet & TileSets List
 
