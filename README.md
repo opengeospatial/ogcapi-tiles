@@ -4,19 +4,71 @@ This GitHub repository contains OGC's multi-part standard for querying and retri
 Data with a location component (i.e. geospatial data) can be very large. For example, consider satellite images that cover vast areas of Earth's surface. To make these datasets easier to use, they can be divided into *tiles* - smaller subsets of data that can be used individually. OGC API - Tiles provides a standardized way for requesting such tiles through the web.
 
 ## Overview
-*Note: section is in draft form. Some information may be incorrect.*
 
-OGC API - Tiles is a standards API that provides tiles of geospatial information. Different forms of geospatial information are supported:
-
-```
-GET /.../.../tiles
-GET /.../.../map/tiles
-```
-These requests will retrieve descriptions of the tiles available for vector (/tiles) and map (/map/tiles) datasets. 
+OGC API - Tiles is a standards API that provides tiles of geospatial information. Different forms of geospatial information are supported, such as vector features, coverages and maps (or imagery).
 
 Vector data represents geospatial objects as points, lines, and polygons. Tiles of vector data (i.e. Vector Tiles) represent subsets of vector data covering a large area (e.g. lines representing rivers in a country).
 
 In this context, a map is essentially an image representing at least one type of geospatial information. Tiles of map data (i.e. Map Tiles) represent subsets of map data covering a large area (e.g. a satellite image).
+
+### Core
+
+The **_Core_** conformance class of _OGC API - Tiles_ simply requires that tiles can be retrieved according to a [tile matrix set](https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-matrix-set-concept), using some template URL made up of:
+- a tile matrix,
+- a tile row, and
+- a tile column.
+
+That URL template can either be provided through the _**TileSet**_ conformance class, or by some outside mechanism.
+
+### TileSet & TileSets List
+
+The **_TileSets List_** and **_TileSet_** conformance classes defines transportable end-points:
+
+- `GET .../tiles`
+Retrieves the list of tilesets available (links with `http://www.opengis.net/def/rel/ogc/1.0/tileset-*` relation types)
+- `GET .../tiles/{tileMatrixSetId}`
+Retrieves the [metadata](https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-set-metadata) for a specific tileset (tiled according to a particular tile matrix set).
+- `GET .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
+Retrieves a tile from a specific tileset (tiled according to a particular tile matrix set) in the requested tile matrix set, on the requested tile matrix (e.g. zoom level) with the requested row and column.
+
+### DataSet & GeoData Tile Sets
+
+The **_DataSet TileSets_** conformance class defines how a list of tilesets can be associated to an OGC API dataset / landing page, while the **_GeoData TileSets_** conformance class defines how a list of tilesets can be associated to an OGC API collection.
+
+By combining _Tiles_ building blocks with other OGC API standards, different types of tilesets can be provided from a single API:
+
+**Vector tiles:**
+
+- `{datasetAPI}/tiles`
+Dataset tilesets (multi-layer vector tiles)
+- `{datasetAPI}/collections/{collectionId}/tiles`
+Collection tilesets (vector tiles)
+
+**Map tiles** (_OGC API - Maps_):
+
+- `{datasetAPI}/map/tiles`
+Dataset map tilesets
+- `{datasetAPI}/collections/{collectionId}/map/tiles`
+Collection map tilesets
+
+**Coverage tiles** (_OGC API - Coverages_):
+
+- `{datasetAPI}/collections/{collectionId}/coverage/tiles`
+Collection coverage tilesets
+
+**Styled vector tiles**, e.g. filtered by scale (_OGC API - Styles_):
+
+- `{datasetAPI}/styles/{styleId}/tiles`
+Styled dataset tilesets (multi-layer vector tiles)
+- `{datasetAPI}/collections/{collectionId}/styles/{styleId}/tiles`
+Styled collection tilesets (vector tiles)
+
+**Styled map tiles** (_OGC API - Maps_ and _OGC API - Styles_):
+
+- `{datasetAPI}/styles/{styleId}/map/tiles`
+Styled dataset map tilesets
+- `{datasetAPI}/collections/{collectionId}/styles/{styleId}/map/tiles`
+Collection map tilesets
 
 ## Quick links
 
