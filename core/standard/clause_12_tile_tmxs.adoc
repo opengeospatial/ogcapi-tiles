@@ -6,11 +6,11 @@
 
 include::requirements/requirements_class_tmxs.adoc[]
 
-The OGC API - tiles part 1 defines how to retrieve tiles in a TileMatrixSet but does not provide an endpoint to manage the list of TileMatrixSets supported by the API. Actually, the 2DTMS standard defines common TileMatrixSets in the Annex D and Annex G of the OGC 17-083r2 standard that can be used only mentioning the URI without the need to describe them. This requirement class acts as and extension of the core requirements class that adds all the necessary elements to support other TileMatrixSets. It adds a mechanism to fully describe TileMatrixSets that are specific to the API instance.
+The 2DTMS standard defines common TileMatrixSets in the Annex D and Annex G of the OGC 17-083r2 standard. These and other Tiling schemes will be registered in the OGC NA. Web SPIS will be able to use them directly by mentioning the URI in the TileSet metadata without the need to describe them explicitelly in the API. This requirement class acts as and extension to this mechanism and adds the necessary elements to support other TileMatrixSets. It adds a mechanism to fully describe TileMatrixSets that are specific by the Web API instance.
 
 === API landing page
 
-The landing page provides links to start exploring the resources offered by the API. It mainly consists in a list of links. The core of this draft specification does not add anything to the links required by OGC API - Common. This extension for TileMatrixSet requires new links for TileMatrixSets on top of the common ones.
+The landing page provides links to start exploring the resources offered by the API. It mainly consists in a list of links. This requirements class requires new links for TileMatrixSets on top of the common ones defined elsewhere.
 
 ==== Response
 
@@ -24,8 +24,8 @@ In the landing page, in JSON format, the links follow the link schema defined in
 [source,JSON]
 ----
 {
-  links: [
-    ...,
+  "links": [
+    ...
     {
       "href": "http://data.example.org/tileMatrixSet?f=json",
       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
@@ -47,11 +47,11 @@ In the landing page, in JSON format, the links follow the link schema defined in
 
 ==== Response
 
-The conformance page mainly consists of a list of links. OGC API - Common already requires some links for the core and collections requirements classes
+The conformance page mainly consists of URIs to conformance classes. OGC API - Common already requires some links for the core and collections requirements classes
 
 include::requirements/tmxs/REQ_conformance-success.adoc[]
 
-In the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API - Common. The following is an example fragment of the response to an OGC API tiles conformance information page.
+In the conformance page (typically in JSON format) the list of URLs follows the schema defined in the OGC API - Common. The following is an example fragment of the response to an OGC API tiles conformance information page.
 
 [[ConformancePageTilesTmxs]]
 .Conformance Information Page fragment

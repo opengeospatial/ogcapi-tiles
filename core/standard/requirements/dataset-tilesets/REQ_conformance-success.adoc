@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/dataset-tilesets/conformance-success*
-2+|If the API has a mechanism to advertise conformance classes, the list of Conformance Classes advertised by the API SHALL include:
+2+|If the API has a mechanism to advertise Conformance Classes, the list of Conformance Classes advertised by the API SHALL include:
 ^|A |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
 ^|B |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
 ^|C |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
