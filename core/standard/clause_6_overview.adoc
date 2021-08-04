@@ -3,7 +3,7 @@
 
 === Introduction
 
-The OGC API -Tiles defines building blocks which can be used in an OGC API to retrieve geospatial data as tiles that follow the structure defined in _2D Tile Matrix Set_ standard.
+The OGC API -Tiles defines building blocks which can be used in an web API to retrieve geospatial data as tiles that follow the structure defined in _2D Tile Matrix Set_ standard.
 
 This document does not specify any requirement for the type of _geospatial data resource_ that could be delivered as tiles.
 Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are maps, vector features,
@@ -11,10 +11,10 @@ coverages, a resource that does not represent data per-se (e.g. an annotation) a
 
 NOTE: The geospatial data resources replace the concept of layer in WMS and WMTS. The main difference is that layers in WMS and WMTS where not defined by other OGC APIs and did not support other functionalities.
 
-These geospatial data resource can advertise one or more lists of available tilesets (see the _tilesets list_ conformance class).
+These geospatial data resources can advertise one or more lists of available tilesets (see the _tilesets list_ conformance class).
 This specification also defines how two specific data resources can link to such tilesets:
 OGC API datasets (see _dataset tilesets_ conformance class) and collections (see _geodata tilesets_ conformance class) but other OGC APIs can provide other possibilities.
-Accessing the _geospatial data resource_ content (other than as tiles) or its descriptions is out of the scope of this standard.
+Accessing the _geospatial data resource_ content (other than as tiles) or its descriptions is possible out of the scope of this standard.
 If a description of the _geospatial data resource_ is specified by another standard, and this description has a mechanism to add links to other resources, this standard indicates the need to add a link to the tile description.
 
 The _OGC API Tiles API_ standard does not specify how to get an API definition, the conformance class list or the geospatial data resources lists.
@@ -52,15 +52,16 @@ If applied in conjunction with the OGC API - Features standard and on top of a f
 If applied in conjunction with the OGC API - Maps standard and on top of a collection that is transformed into a map by applying a style,
 the result should be map tiles (usually in PNG or JPEG format).
 
-This document is the first part of a series of _OGC API - Tiles_ "parts" that use the core and extensions model.
-This document defines the conformance classes part of the "core".
-It is foreseen that future parts will specify other extensions, such as how to get information of a point in a tile and how to retrieve multiple tiles in a single request.
-Other standards or extensions of standards may also provide mechanisms (e.g. additional query parameters) to deal with time, elevation and other dimensions. For example:
+This standard can be referenced by other standards providing resources that that can be offered as tiles. For example:
 
 * _OGC API - Maps_ specifies the link relation types to access map tilesets from a dataset or collection.
 * _OGC API - Styles_ defines paths to list available styles from which tilesets can also be accessed.
 * _OGC API - Coverages_ specifies the link relation types and specifics of retrieving coverage tiles.
 * _OGC API - Processes - Part 3: Workflows and Chaining_ provides a mechanism to trigger localized processing workflows as a result of retrieving tiles (for a specific area and resolution of interest).
+
+This document is the first part of a series of _OGC API - Tiles_ "parts" that use the core and extensions model.
+It is foreseen that future parts will specify other extensions, such as how to get information of a point in a tile and how to retrieve multiple tiles in a single request.
+Other standards or extensions of standards may also provide mechanisms (e.g. additional query parameters) to deal with time, elevation and other dimensions.
 
 [#img_CoreAndExtension,reftext='{figure-caption} {counter:figure-num}']
 .Modular approach in the Maps and Tiles draft specification
@@ -72,25 +73,25 @@ There are at least two ways to approach an OGC API.
 * Read the landing page, look for links, follow them and discover new links until the desired resource is found
 * Read an API definition document that will specify a list of paths and path templates to resources.
 
-For the first approach, many resources in the API include links with _rel_ properties to know the reason for this relation. The following figure illustrates those links.
+For the first approach, many resources in the API include links with _rel_ properties to know the reason and purpose for this relation. The following figure illustrates the resources as ellipses and the links as arrows with the link _rel_ as a label .
 
 [#img_relMapTiles,reftext='{figure-caption} {counter:figure-num}']
 .Resources and relations to them via links
 image::images/relMapTiles.png[width=600,align="center"]
 
-There is still a third way to approach an OGC API that consist on assuming a set of predefined path and path templates. It is expected that many OGC API implementation follow a predefined set of path be aware that this paths are not required and used only as examples in this document. Instead an OGC API implementation should provide an API definition document (e.g. OpenAPI) detailing the paths and path templates can be used to get the necessary resources directly.
+There is still a third way to approach an OGC API that consist on assuming a set of predefined paths and path templates. It is expected that many OGC API implementations follow a predefined set of paths but this is not mandatory. Be aware that this paths are not required and are used only as examples in this document. An OGC API implementation should provide an API definition document (e.g. OpenAPI) detailing the paths and path templates can be used to get the necessary resources directly.
 
 [#table_resources,reftext='{table-caption} {counter:table-num}']
-.Overview of resources and common direct links that can be used to define an OGC API and should be described in an Open API document
+.Overview of resources and common direct links that can be used to define an OGC API
 [cols="33,66",options="header"]
 !===
 |Resource name |Common path
 |Landing page^4^ |`/`
 |Conformance declaration^4^ |`/conformance`
-|Collections |`/collections`
-|Collection |`/collections/{collectionId}`
-|Tiling Schemas |`/tileMatrixSets`
-|Tiling Schema |`/tileMatrixSets/{tileMatrixSetId}`
+|Collections^5^ |`/collections`
+|Collection^5^ |`/collections/{collectionId}`
+|Tiling Schemes |`/tileMatrixSets`
+|Tiling Scheme |`/tileMatrixSets/{tileMatrixSetId}`
 2+|Tiles
 |Vector Tiles description |`/collections/{collectionId}/tiles`
 |Vector Tiles description in one tile matrix set^2^ |`/collections/{collectionId}/tiles/{tileMatrixSetId}`
@@ -113,5 +114,6 @@ There is still a third way to approach an OGC API that consist on assuming a set
 ^2^: Specified in an annex of this document, providing support for the "TileJSON" format.
 ^3^: Specified in the OGC API - Maps Part 1, core
 ^4^: Specified in the OGC API - Common Part 1, core
+^5^: Specified in the OGC API - Common Part 2, collections
 
 NOTE: Despite the fact that full path and full path templates in the previous table are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT require by this standard. Other paths are possible if correctly described in by the API definition document and the links between resources.

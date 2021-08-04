@@ -1,5 +1,5 @@
 == Conformance
-This standard defines six requirements / conformance classes.
+This standard defines seven requirements / conformance classes.
 
 The standardization targets of all conformance classes are "Web APIs".
 
@@ -88,6 +88,19 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 |Map tiles | `/collections/{collectionId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |===
 
+*<<rc_rc_tiles-tmxs>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tmxs)
+
+The _tmxs_ conformance class allows retrieving tiling schemes (tile matrix set definitions) defined by the web API
+
+[#table_resource_tmxs,reftext='{table-caption} {counter:table-num}']
+.Overview of resource and common direct links that corresponds to the tiling schemes
+[cols="33,66",options="header"]
+|===
+|Resource name |Common path
+|Tiling schemes |`/tileMatrixSets`
+|Tiling scheme |`/tileMatrixSets/{tileMatrixSetsId}`
+|===
+
 This document does not mandate a specific encoding or format for representing tiles. There are no requirements classes making considerations on specify representations.
 
 These conformance classes act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for API discovery, conformity and API formal definition (e.g. OpenAPI). Possible alternatives for these fundamental conformance classes are OGC API - Common Part 1: core, OGC API - Features Part 1: core or any other non-OGC classes that provide this functionality.
@@ -96,4 +109,4 @@ Conformance with this standard shall be checked using all the relevant tests spe
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
-NOTE: Despite the fact that full path and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT require by this standard. Other paths are possible if correctly described in by the API definition document and the links between resources.
+NOTE: Despite the fact that full path and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the API definition document and the links between resources.

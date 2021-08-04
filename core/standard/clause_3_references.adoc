@@ -3,4 +3,4 @@ The following normative documents contain provisions that, through reference in 
 
 OGC: OGC 17-083r2, OGC Two Dimensional Tile Matrix Set Standard (2019)
 
-NOTE: Commonly, this document is expected to be used in combination with OGC: OGC 19-072, OGC API - Common Part 1: core, but this is not a requirement so it is not listed as a normative reference. For example, OGC API - Features Part 1: core could be used instead.
+NOTE: Commonly, this document is expected to be used in combination with OGC: OGC 19-072, OGC API - Common Part 1: core, but this is not a requirement so that it is not listed as a normative reference. For example, OGC API - Features Part 1: core could be used instead.

@@ -1,0 +1,184 @@
+== Requirement Class "Tiles Tile Matrix Set"
+
+=== Overview
+
+[[tiles-tmxs-overview]]
+
+include::requirements/requirements_class_tmxs.adoc[]
+
+The OGC API - tiles part 1 defines how to retrieve tiles in a TileMatrixSet but does not provide an endpoint to manage the list of TileMatrixSets supported by the API. Actually, the 2DTMS standard defines common TileMatrixSets in the Annex D and Annex G of the OGC 17-083r2 standard that can be used only mentioning the URI without the need to describe them. This requirement class acts as and extension of the core requirements class that adds all the necessary elements to support other TileMatrixSets. It adds a mechanism to fully describe TileMatrixSets that are specific to the API instance.
+
+=== API landing page
+
+The landing page provides links to start exploring the resources offered by the API. It mainly consists in a list of links. The core of this draft specification does not add anything to the links required by OGC API - Common. This extension for TileMatrixSet requires new links for TileMatrixSets on top of the common ones.
+
+==== Response
+
+include::requirements/tmxs/REQ_root-success.adoc[]
+
+In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common. The following is an example fragment of the response to an OGC API - Tiles landing page.
+
+[[landingPageTilesTmxs]]
+.API Landing Page fragment with links to TileMatrixSet descriptions
+=================
+[source,JSON]
+----
+{
+  links: [
+    ...,
+    {
+      "href": "http://data.example.org/tileMatrixSet?f=json",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
+      "type": "application/json",
+      "title": "List of tileMatrixSets implemented by this API in JSON",
+    },
+    {
+      "href": "http://data.example.org/tileMatrixSet?f=html",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
+      "type": "text/html",
+      "title": "List of tileMatrixSets implemented by this API in HTML",
+    }
+  ]
+}
+----
+=================
+
+=== Declaration of conformance classes
+
+==== Response
+
+The conformance page mainly consists of a list of links. OGC API - Common already requires some links for the core and collections requirements classes
+
+include::requirements/tmxs/REQ_conformance-success.adoc[]
+
+In the conformance page (typically in JSON format) the links follow the link schema defined in the OGC API - Common. The following is an example fragment of the response to an OGC API tiles conformance information page.
+
+[[ConformancePageTilesTmxs]]
+.Conformance Information Page fragment
+=================
+[source,JSON]
+{
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tmxs",
+    "http://www.opengis.net/spec/tilematrixset/1.0/conf/tilematrixset",
+    "http://www.opengis.net/spec/tilematrixset/1.0/conf/json-tilematrixset",
+  ]
+}
+=================
+
+=== TileMatrixSets
+
+The TileMatrixSets operation retrieves links to the descriptions of the tile matrix sets supported by the API instance in addition to the TileMatrixSets defined in the Annex D and the Annex G of the OGC 17-083r2 standard.
+
+==== Operation
+include::requirements/tmxs/REQ_tilematrixsets-op.adoc[]
+
+==== Response
+include::requirements/tmxs/REQ_tilematrixsets-success.adoc[]
+
+[[TileMatrixSetsResponseSchema]]
+.Schema for the TileMatrixSets resource
+=================
+[source,YAML]
+  type: object
+  required:
+    - tileMatrixSets
+  properties:
+    tileMatrixSets:
+      type: array
+      items:
+        $ref: 'https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/id-link'
+=================
+
+[[TileMatrixSetsResponseCommonSchema]]
+.Schema for id-link from OGC API - Common used in TileMatrixSets resource.
+=================
+[source,YAML]
+id-link:
+  type: object
+  description: |-
+    Reusable object that contains an id to a resource and links where the object is described or a representation retrieved. Typically it is useful for paths like `/resources` and `/resources/{resourceId}`.   `/resources` will respond an array of id-link listing the `resourceId` and the links to get it. /collections and /collections/{collectionId} is an exception to this pattern.
+    The fact that `links` is an array can be used to advertise the same object representation in different formats.
+  required:
+    - id
+    - links
+  properties:
+    id:
+      type: string
+    tileMatrixSetURI:
+      type: string
+      format: uri
+      description: If the Tile Matrix Set is registered in the Definitions Server, this property should the reference to this definition
+    title:
+      type: string
+    links:
+      type: array
+      minItems: 1
+      items:
+        $ref: '#/components/schemas/link'
+=================
+
+[[TileMatrixSetsResponseExample]]
+.Example for the TileMatrixSets resource
+=================
+[source,JSON]
+{
+  "tileMatrixSets": [
+    {
+      "id": "MyWebMercatorQuad",
+      "title": "My Google Maps Compatible for the World",
+      "links": [
+        {
+          "href": "https://data.example.org/tileMatrixSet/MyWebMercatorQuad",
+          "rel": "item",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}
+=================
+
+=== TileMatrixSet
+
+The TileMatrixSet operation retrieves the full description of a tile matrix set supported by the API instance following the schema described in the OGC 17-083r2 standard.
+
+==== Operation
+include::requirements/tmxs/REQ_tilematrixset-op.adoc[]
+
+==== Response
+include::requirements/tmxs/REQ_tilematrixset-success.adoc[]
+
+include::recommendations/tmxs/REC_tilematrixset-response.adoc[]
+
+[[TileMatrixSetResponseExample]]
+.Fragment of a TileMatrixSet resource
+=================
+[source,JSON]
+{
+  "title": "Google Maps Compatible for the World",
+  "abstract": "The most common TileMatrixSet, used in most of the main IT map browsers. It was initially popularized by Google Maps",
+  "identifier": "WebMercatorQuad",
+  "supportedCRS": "http://www.opengis.net/def/crs/EPSG/0/3857",
+  "wellKnownScaleSet": "http://www.opengis.net/def/wkss/OGC/1.0/GoogleMapsCompatible",
+  "tileMatrices": [
+    ...
+    {
+      "title": "Google Maps Compatible for the World zoom level 3",
+      "abstract": "Google Maps Compatible zoom level 3 that is equivalent to a scale of 1:69885283.00358972 and has 19567.87924100512 meters of pixel size in the equator",
+      "id": "3",
+      "scaleDenominator": 69885283.0035897,
+      "cellSize": 19567.8792410051,
+      "pointOfOrigin": [-20037508.3427892,20037508.3427892],
+      "tileWidth": 256,
+      "tileHeight": 256,
+      "matrixWidth": 8,
+      "matrixHeight": 8
+    }
+    ...
+  ]
+}
+=================
