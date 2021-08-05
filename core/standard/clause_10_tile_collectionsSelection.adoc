@@ -7,7 +7,9 @@
 
 include::requirements/requirements_class_collections-selection.adoc[]
 
-In a Web API providing access to a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information include when requesting an operation affecting the dataset. Here we define how to include a query parameter to filter the amount of information provided by the dataset (e.g. which geospatial data resources are involved in the creation of some derived resource).
+In a Web API providing access to a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information included when requesting an operation affecting the dataset. Here we define how to include a query parameter to the root resource to filter the amount of information provided by the dataset (e.g. which geospatial data resources (a.k.a collections) are involved in the creation of some derived resource).
+
+This conformance class can be used in conjunction to the <<rc_datasetTileSets>> conformance class or in conjunction to and equivalent conformance class in the OGC API Maps.
 
 === General
 include::recommendations/collections-selection/REC_api-common.adoc[]

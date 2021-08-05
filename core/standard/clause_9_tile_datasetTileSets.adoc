@@ -7,9 +7,9 @@
 
 include::requirements/requirements_class_dataset-tilesets.adoc[]
 
-This conformance class defines a mechanism to retrieve a list of tilesets for a dataset which may contain multiple geospatial data resources.
+This conformance class defines a mechanism to retrieve a list of tilesets for a dataset which may contain multiple geospatial data resources. It is used in conjunction with <<rc_tileSets-list>> that specifies the response to this GET request.
 
-Combined with the _collections-selection_ conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrieved as tiles.
+Combined with the <<rc_collections-selection>> conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrieved as tiles. For retrieving the list of tilesets for only one collection use the <<rc_geoDataResourceTileSets>>
 
 If an API offers several geospatial data resources for a dataset, it may limit the number of collections that can be retrieved together, and/or provide a limited subset of the collections by default.
 

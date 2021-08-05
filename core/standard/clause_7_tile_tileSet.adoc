@@ -6,13 +6,9 @@
 
 include::requirements/requirements_class_core.adoc[]
 
-The core conformance class describes the HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard.
-It does not prescribe a particular path or template form for the URL of those tiles, but the tileset conformance class does.
+The core conformance class is designed as a very generic conformance class that describes a HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard. It introduces the idea of URI templates and variables associated to the TileMatrix, TileRow and TileCol concepts defined in the 2D Tile Matrix Set standard but it does not prescribe a particular path or template form for the URL of those tiles.
 
-A mechanism other than the tileset conformance class can be used to describe the tileset in conjunction with the core conformance class, such as TileJSON.
-See Annex TBD for more details about this format.
-Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit, while
-version 3 provides a mechanism to cite data sources as well.
+With this conformance class alone, the way the tileset as a whole will be described is left open. Having a tileset description is important so the implementer of a web API should define the tileset in conjunction with the core conformance class. This can be done by choosing  between conforming to the next conformance class (<<rc_tileSet>>) or using another mechanism such as TileJSON. (Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources).
 
 === Declaration of conformance classes
 To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server,
@@ -117,11 +113,10 @@ include::requirements/core/REQ_tc-error.adoc[]
 
 include::requirements/requirements_class_tileset.adoc[]
 
-The tileset conformance class provides a mechanism to describe a single tileset, for one particular geospatial data resource and tiled using one
-according to one specific TileMatrixSet.
+The tileset conformance class provides a mechanism to retrieve the description of a single tileset, for one particular geospatial data resource and tiled according to one specific TileMatrixSet.
 It also provides a mechanism to obtain a templated link to retrieve individual tiles as defined in the _core_ conformance class.
 
-It describes the HTTP GET operation on a tileset resource and its response, but not a specific path.
+It describes the HTTP GET operation on a tileset resource and its response, but does not prescribe an specific path.
 The response provides metadata as per the 2D Tile Matrix Set and TileSet Metadata standard.
 
 The essential elements of this metadata are:

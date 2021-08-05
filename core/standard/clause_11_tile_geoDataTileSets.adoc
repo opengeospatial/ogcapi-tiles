@@ -7,11 +7,11 @@
 
 include::requirements/requirements_class_geodata-tilesets.adoc[]
 
-The _geodata tilesets_ conformance class assumes that data is organized into one or more geospatial data resources
+This conformance class assumes that data is organized into one or more geospatial data resources
 (e.g. the "collections" http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data]).
 Geospatial data resources are referenced using URIs.
 
-It will define how to specify the a link to the list of tilesets containing a representation of this geospatial data resource (path).
+It defines how to specify the a link to the list of tilesets containing a representation of this geospatial data resource (path). It is used in conjunction with <<rc_tileSets-list>> that specifies the response to this GET request.
 
 === General
 include::recommendations/geodata-tilesets/REC_api-common.adoc[]
