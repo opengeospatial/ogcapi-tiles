@@ -1,6 +1,18 @@
 == Requirement Class "Tiles Tile Matrix Set"
 
 === Overview
+*<<rc_rc_tiles-tmxs>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tmxs)
+
+The _tmxs_ conformance class allows retrieving tiling schemes (tile matrix set definitions) defined by the web API
+
+[#table_resource_tmxs,reftext='{table-caption} {counter:table-num}']
+.Overview of resource and common direct links that corresponds to the tiling schemes
+[cols="33,66",options="header"]
+|===
+|Resource name |Common path
+|Tiling schemes |`/tileMatrixSets`
+|Tiling scheme |`/tileMatrixSets/{tileMatrixSetsId}`
+|===
 
 [[tiles-tmxs-overview]]
 

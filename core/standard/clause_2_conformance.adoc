@@ -3,7 +3,7 @@ This standard defines seven requirements / conformance classes.
 
 The standardization targets of all conformance classes are "Web APIs".
 
-The main requirements classes are:
+The requirements classes are:
 
 *<<rc_core>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/core)
 
@@ -86,19 +86,6 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 |Vector Tiles |`/collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |Map tiles description | /collections/{collectionId}/map/tiles/{tileMatrixSetId}/`{tileMatrix}`
 |Map tiles | `/collections/{collectionId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-|===
-
-*<<rc_rc_tiles-tmxs>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tmxs)
-
-The _tmxs_ conformance class allows retrieving tiling schemes (tile matrix set definitions) defined by the web API
-
-[#table_resource_tmxs,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the tiling schemes
-[cols="33,66",options="header"]
-|===
-|Resource name |Common path
-|Tiling schemes |`/tileMatrixSets`
-|Tiling scheme |`/tileMatrixSets/{tileMatrixSetsId}`
 |===
 
 This document does not mandate a specific encoding or format for representing tiles. There are no requirements classes making considerations on specify representations.

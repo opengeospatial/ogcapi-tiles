@@ -97,6 +97,8 @@ include::clause_5_conventions.adoc[]
 
 include::clause_6_overview.adoc[]
 
+include::clause_7_tile_core.adoc[]
+
 include::clause_7_tile_tileSet.adoc[]
 
 include::clause_8_tile_tileSetsList.adoc[]
@@ -107,7 +109,7 @@ include::clause_10_tile_collectionsSelection.adoc[]
 
 include::clause_11_tile_geoDataTileSets.adoc[]
 
-include::clause_12_tile_tmxs.adoc[]
+//include::clause_12_tile_tmxs.adoc[]
 
 //include::clause_12_tile_mapTileSets.adoc[]
 

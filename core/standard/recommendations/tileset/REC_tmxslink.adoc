@@ -2,7 +2,10 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tileset/tmxslink*
-^|A |This requirements class does not provide any mechanism to define TileMatrixSets so if this mechanism is not provided in an extension, the tileMatrixSetURI SHOULD point to one of the 8 URIs defined in the OGC 17-083r2 http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D].
-^|B |The server SHOULD do a effort to provide to the client a way to get full description of the TileMatrixSet. Even if the TileMatrixSet is not directly defined by the API, when a full definition of the TileMatrixSet is available as a resolvable URL, a resolvable URL SHOULD be used as the value of the tileMatrixSetURI.
-^|C |This standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D] of OGC 17-083r2. In the case of variable-width tiles, the standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#104[Annex H] of OGC 17-083r2.
+^|A |The server SHOULD provide a way to get a full description of the TileMatrixSet. One common way is by providing a resolvable URI in the tileset metadata (there is also de posibility to define the TileMatrixSet inline but this is not recommended in this case)
+^|B |To improve interoperability, this standard recommends that the API provides tiles following the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D] of OGC 17-083r2. In the case of variable-width tiles, the standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#104[Annex H] of OGC 17-083r2. In this case, the value of TileMatrixSetURI correspond to URIs pointing to the OGC TileMatrixSets registry is available at http://opengis.net/def/tms
+^|C |It is also possible to use TileMatrixSet no available in a registry. Int this case the API SHOULD provide a definition of the TileMatrixSet as resolvable URI in an endpoint following this template: "/tileMatrixSets/{tileMatrixSetsId}" (where {tileMatrixSetsId} is a unique identifier of the TileMatrixSet in the service)
+^|D |When the API provides one or more definitions of TileMatrixSets as resolvable URI in "/tileMatrixSets/{tileMatrixSetsId}" the "/tileMatrixSets
+" endpoint SHOULD respond with the list of TileMatrixSets defined by the API
+^|E |When the API provides a "/tileMatrixSets" endpoint, this endpoint SHOULD be mention in one or more links in the landing page of the API with the `rel` type `http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes`.
 |===

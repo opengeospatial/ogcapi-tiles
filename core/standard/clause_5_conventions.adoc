@@ -29,7 +29,7 @@ In addition, the following link relation types are used for which no applicable 
 
 * **http://www.opengis.net/def/rel/ogc/1.0/tilesets-map**: The target IRI points to a resource that describes how to provide tile sets of the context resource in map format.
 
-* **http://www.opengis.net/def/rel/ogc/1.0/tileset-coverage**: The target IRI points to a resource that describes how to provide tile sets of the context resource in coverage format.
+* **http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage**: The target IRI points to a resource that describes how to provide tile sets of the context resource in coverage format.
 
 Used in combination with OGC API - Features Part 1: core or OGC API Common other link relation types will be used, being the most common:
 

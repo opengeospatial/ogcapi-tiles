@@ -1,109 +1,3 @@
-
-[[rc_core]]
-== Requirement Class "Core"
-
-[[core-overview]]
-
-include::requirements/requirements_class_core.adoc[]
-
-The core conformance class is designed as a very generic conformance class that describes a HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard. It introduces the idea of URI templates and variables associated to the TileMatrix, TileRow and TileCol concepts defined in the 2D Tile Matrix Set standard but it does not prescribe a particular path or template form for the URL of those tiles.
-
-With this conformance class alone, the way the tileset as a whole will be described is left open. Having a tileset description is important so the implementer of a web API should define the tileset in conjunction with the core conformance class. This can be done by choosing  between conforming to the next conformance class (<<rc_tileSet>>) or using another mechanism such as TileJSON. (Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources).
-
-=== Declaration of conformance classes
-To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server,
-the API has to declare the requirements classes it implements and conforms to.
-
-==== Response
-
-The conformance page mainly consists of a list of URIs to conformance classes.
-
-include::requirements/core/REQ_conformance-success.adoc[]
-
-If the web API declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0],
-then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page.
-In the JSON format the conformance page is an array of URIs following the schema defined in the OGC API - Common or in
-http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0].
-Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
-
-[[ConformancePageCore]]
-.Conformance Information Page fragment
-=================
-[source,JSON]
-{
-  "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core"
-  ]
-}
-=================
-
-Clients or servers are not required to support a specific default TileMatrixSet.
-
-The OGC TileMatrixSets registry is available at http://opengis.net/def/tms.
-
-=== A tile
-A tile resource is a geospatial resource of a fragment of a more bigger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
-
-==== Operation
-This operation allows retrieving a single tile that represents information coming from geospatial data resources.
-
-include::requirements/core/REQ_tc-op.adoc[]
-
-Typical geospatial data resources that can be retrieved as tiles are: vector features
-(available at `/collections/{collectionId}/items` in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core],
-for which it is recommended to provide tilesets at `/collections/{collectionId}/tiles`),
-maps (specified in OGC - API Maps) or coverages (specified in OGC API - Coverages).
-
-include::recommendations/core/REC_tc-op.adoc[]
-
-The supported encodings, or more precisely the media types of the supported encodings, can be determined from the API definition. The desired encoding is selected using HTTP content negotiation.
-
-
-The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet.
-
-==== Parameter tileMatrix
-include::requirements/core/REQ_tc-tilematrix-definition.adoc[]
-
-==== Parameter tileRow
-include::requirements/core/REQ_tc-tilerow-definition.adoc[]
-
-==== Parameter tileCol
-include::requirements/core/REQ_tc-tilecol-definition.adoc[]
-
-include::recommendations/core/PER_tc-tilematrixsetid-definition.adoc[]
-
-
-==== Response
-
-A successful response to a tile GET operation will be consistent with the media type of resource requested. This draft specification does not impose any media type or file format. For example:
-
-* For features the media type may be GeoJSON or Mapbox Vector Tiles;
-* For coverages the response may be a GeoTIFF;
-* For maps the response may be a JPEG or a PNG.
-
-include::requirements/core/REQ_tc-success.adoc[]
-
-include::recommendations/core/PER_tc-core-tile-encoding.adoc[]
-
-Normally, the content partially outside the tile bounding box will be clipped at the extent of the bounding box. This can be done efficiently when tiles are in raster format (e.g. map tiles). However, tiles containing features in vector format may not clip features that are partially outside to ensure continuity of features or for performance.
-
-include::recommendations/core/REC_tc-success-scale.adoc[]
-
-include::recommendations/core/REC_tc-deepfullempty.adoc[]
-
-To enable search engines to easily discover the content offered by an implementation of OGC API - Tiles, as well as to enable web browsers to easily display the content offered by the APIs, this standard allows for responses to operations to be encoded in HTML.
-
-include::recommendations/core/PER_tc-core-html.adoc[]
-
-==== Error conditions
-
-A general summary of the HTTP status codes can be found in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] as well as in OGC API - Common.
-
-include::requirements/core/REQ_tc-error.adoc[]
-
-
 [[rc_tileSet]]
 == Requirement Class "TileSet"
 
@@ -187,17 +81,14 @@ include::recommendations/tileset/REC_tmxslink.adoc[]
 
 Clients or servers are not required to support a specific default TileMatrixSet.
 
-The values of TileMatrixSetURI correspond to URIs pointing to the OGC TileMatrixSets registry is available at http://opengis.net/def/tms
-
 NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile Matrix Set standard.
 
 //include::requirements/tileset/REQ_tile-template.adoc[]
 
 NOTE: The geospatial data resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
-
 [[TilesetTilesLinkResponseExample]]
-.Example of a tileset response
+.Example fragment of a tileset response for a common TileMatrixSet defined in the OGC NA
 =================
 [source,JSON]
 {
@@ -243,3 +134,170 @@ The following table explains the meaning of the URI template variables.
 |TileRow |row index of tile matrix	|A non-negative integer between 0 and the MatrixHeight - 1. If there is a TileMatrixSetLimits the value is limited between MinTileRow and MaxTileRow
 |TileCol |column index of tile matrix	|A non-negative integer between 0 and the MatrixWidth - 1. If there is a TileMatrixSetLimits the value is limited between MinTileCol and MaxTileCol
 !===
+
+[[TilesetTilesLinkResponseExample]]
+.Example fragment of a tileset response for a API defined TileMatrixSet
+=================
+[source,JSON]
+{
+  ...
+  "dataType": "map",
+  "links": [
+    ...
+    {
+     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad",
+     "rel": "self",
+     "type": "application/json",
+    },
+    {
+     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/{tileMatrix}/{tileRow}/{tileCol}.png",
+     "templated": true,
+     "rel": "item",
+     "type": "image/png",
+    },
+    {
+     "href": "http://data.example.com/TileMatrixSets/MyTilingScheme",
+     "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
+     "type": "application/json",
+    }
+   ...
+  ],
+  "tileMatrixSetLimits":
+  [
+    ...
+  ]
+}
+=================
+
+===== API defined TileMatrixSets
+
+This section provides more details on the recommendations for API defined TileMatrixSets. In the future, an extension of this standard could described mechanims to manage (create, update...) tiling schemes for an API and make some ot the recomendations expressed in the section mandatory.
+
+====== API landing page
+
+The landing page provides links to start exploring the resources offered by the API. It mainly consists in a list of links. New links for TileMatrixSets on top of the common ones are introduced.
+
+In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common. The following is an example fragment of the response to an OGC API - Tiles landing page.
+
+[[landingPageTilesTmxs]]
+.API Landing Page fragment with links to TileMatrixSet descriptions
+=================
+[source,JSON]
+----
+{
+  "links": [
+    ...
+    {
+      "href": "http://data.example.org/tileMatrixSet?f=json",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
+      "type": "application/json",
+      "title": "List of tileMatrixSets implemented by this API in JSON",
+    },
+    {
+      "href": "http://data.example.org/tileMatrixSet?f=html",
+      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
+      "type": "text/html",
+      "title": "List of tileMatrixSets implemented by this API in HTML",
+    }
+  ]
+}
+----
+=================
+
+====== TileMatrixSets
+
+The TileMatrixSets endpoint retrieves links to the descriptions of the tile matrix sets supported by the API instance in addition to the TileMatrixSets defined in the Annex D and the Annex G of the OGC 17-083r2 standard. The response follows the schema below.
+
+[[TileMatrixSetsResponseSchema]]
+.Schema for the TileMatrixSets resource
+=================
+[source,YAML]
+  type: object
+  required:
+    - tileMatrixSets
+  properties:
+    tileMatrixSets:
+      type: array
+      items:
+        $ref: 'https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/id-link'
+=================
+
+[[TileMatrixSetsResponseCommonSchema]]
+.Schema for id-link from OGC API - Common used in TileMatrixSets resource.
+=================
+[source,YAML]
+id-link:
+  type: object
+  description: |-
+    Reusable object that contains an id to a resource and links where the object is described or a representation retrieved. Typically it is useful for paths like `/resources` and `/resources/{resourceId}`.   `/resources` will respond an array of id-link listing the `resourceId` and the links to get it. /collections and /collections/{collectionId} is an exception to this pattern.
+    The fact that `links` is an array can be used to advertise the same object representation in different formats.
+  required:
+    - id
+    - links
+  properties:
+    id:
+      type: string
+    tileMatrixSetURI:
+      type: string
+      format: uri
+      description: If the Tile Matrix Set is registered in the Definitions Server, this property should the reference to this definition
+    title:
+      type: string
+    links:
+      type: array
+      minItems: 1
+      items:
+        $ref: '#/components/schemas/link'
+=================
+
+[[TileMatrixSetsResponseExample]]
+.Example for the TileMatrixSets resource
+=================
+[source,JSON]
+{
+  "tileMatrixSets": [
+    {
+      "id": "MyWebMercatorQuad",
+      "title": "My Google Maps Compatible for the World",
+      "links": [
+        {
+          "href": "https://data.example.org/tileMatrixSet/MyWebMercatorQuad",
+          "rel": "item",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}
+=================
+
+====== TileMatrixSet
+
+The TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by the API instance following the schema described in the OGC 17-083r2 standard. The response follows the TileMatrixSet schema.
+
+[[TileMatrixSetResponseExample]]
+.Fragment of a TileMatrixSet resource example
+=================
+[source,JSON]
+{
+  "title": "My TileMatrixSet for the World",
+  "identifier": "MyTMS",
+  "supportedCRS": "http://www.opengis.net/def/crs/EPSG/0/3857",
+  "wellKnownScaleSet": "http://www.opengis.net/def/wkss/OGC/1.0/GoogleMapsCompatible",
+  "tileMatrices": [
+    ...
+    {
+      "title": "My zoom level 3",
+      "id": "3",
+      "scaleDenominator": 69885283.0035897,
+      "cellSize": 19567.8792410051,
+      "pointOfOrigin": [-20037508.3427892,20037508.3427892],
+      "tileWidth": 256,
+      "tileHeight": 256,
+      "matrixWidth": 8,
+      "matrixHeight": 8
+    }
+    ...
+  ]
+}
+=================
