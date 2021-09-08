@@ -111,13 +111,9 @@ include::clause_11_tile_geoDataTileSets.adoc[]
 
 //include::clause_12_tile_tmxs.adoc[]
 
-//include::clause_12_tile_mapTileSets.adoc[]
-
-//include::clause_13_encodings.adoc[]
+include::clause_13_encodings.adoc[]
 
 //include::clause_14_oas.adoc[]
-
-//include::clause_15_media_types.adoc[]
 
 include::annex-ats.adoc[]
 

@@ -1,0 +1,9 @@
+[[rc_tiff]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements TIFF*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tiff
+|Target type |Web API
+|Dependency |<<TIFF V6>>
+|Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+|===

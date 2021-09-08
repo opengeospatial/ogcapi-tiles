@@ -1,0 +1,10 @@
+[[req_geojson_content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/geojson/content*
+^|A |Every 200-response of the server with the media type application/geo+json SHALL be a GeoJOSN document representing only one tile.
+^|B | The root of the GeoJSON document SHALL be
+
+* a GeoJSON FeatureCollection Object for features, and
+* a GeoJSON Feature Object for a single feature.
+|===

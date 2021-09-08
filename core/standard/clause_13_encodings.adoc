@@ -1,198 +1,68 @@
+[[rc_encodings]]
 == Requirements classes for encodings
 
-NOTE: THIS SECTION REQUIRES A CAREFUL REVIEW. PLEASE IGNORE IT
-
-[NOTE]
-========
-The following content is from the OAPI Common specification and should be modified for Map Tile APIs. Keep in mind that both Map Tiles and metadata are supplied by the API. So HTML and GeoJSON encoding may be retained for the metadata responses.
-========
+The OGC API Tiles is designed to support tiling data that can potentially be encoded and provided in many of the existing geospatial formats or new ones that could be invented in the future. The intention of this section is NOT to limit the number of encodings offered by a Tiles Web API but to provided a minimum set of encodings that could be implemented by many Tiles APIs. For each of these encodings, a requirements class is defined. Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the API. The intention behind this minimum set of encodings is to provide a practical way to test conformance to the standard and not to limit the number of formats supported by the web API. Web APIs are free to support other encodings and data formats that can be convenient in each case, and use them despite the fact that they may not be listed as supported conformance classes by the API. In addition, the declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the API should support all of them. Partial support could be conditioned by the different the nature of the data behind each collection.
 
 === Overview
 
-This clause specifies four pre-defined requirements classes for encodings to be used by an OGC API implementation. These encodings are commonly used encodings for spatial data on the web:
+This clause specifies five pre-defined requirements classes for encodings to be used by the tiles of the OGC API implementation:
 
-* <<rc_html,HTML>>
+* <<rc_png,PNG>>
+* <<rc_jpeg,JPEG>>
+* <<rc_tiff,TIFF>>
 * <<rc_geojson,GeoJSON>>
-* <<rc_gmlsf0,Geography Markup Language (GML), Simple Features Profile, Level 0>>
-* <<rc_gmlsf2,Geography Markup Language (GML), Simple Features Profile, Level 2>>
+* <<rc_mvt,MapBOX Vector Tiles>>
 
-None of these encodings are mandatory and an implementation of the <<rc_core,Core>> requirements class may also implement none of them but implement another encoding instead.
+NOTE: None of the encodings specified here is mandatory and an implementation of this standard may implement none of them but implement other encodings instead.
 
-The <<rc_core,Core>> requirements class includes recommendations to support <<rec_html,HTML>> and <<rec_geojson,GeoJSON>> as encodings, where practical. <<overview,Clause 6 (Overview)>> includes a discussion about recommended encodings.
+=== Requirement Class "PNG"
 
-=== Requirement Class "HTML"
+One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The PNG is one of the most popular formats in de web defined by the ISO Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E), also available by the W3C in https://www.w3.org/TR/PNG.
 
-Geographic information that is only accessible in formats like GeoJSON or GML has two issues:
+PNG supports lossless data compression. PNG supports palette-based images (with palettes of 24-bit RGB or 32-bit RGBA colors), grayscale images (with or without an alpha channel for transparency), and full-color non-palette-based RGB or RGBA images. The PNG working group designed the format for transferring images on the Internet, not for professional-quality print graphics; therefore non-RGB color spaces such as CMYK are not supported.
 
-* The data is not discoverable using the most common mechanism for discovering information, that is the search engines of the Web;
-* The data can not be viewed directly in a browser - additional tools are required to view the data.
+include::requirements/requirements_class_png.adoc[]
 
-Therefore, sharing data on the Web should include publication in HTML. To be consistent with the Web, it should be done in a way that enables users and search engines to access all data.
+include::requirements/png/REQ_content.adoc[]
 
-This is discussed in detail in
-link:https://www.w3.org/TR/sdw-bp/#indexable-by-search-engines[Best Practice 2: Make your spatial data indexable by search engines]
-<<SDWBP>>. This standard therefore <<rec_html,recommends supporting HTML as an encoding>>.
+=== Requirement Class "JPEG"
 
-include::requirements/requirements_class_html.adoc[]
+One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The JPEG is one of the most popular formats in de web defined by the ITU-T Recommendation T.81 and the ISO/IEC 10918-1.
 
-include::requirements/html/REQ_definition.adoc[]
+The JPEG compression algorithm operates at its best on photographs and paintings with smooth variations of tone and color. It is best used for color and grayscale still images, but not for binary images. JPEG is also the most common format saved by digital cameras. However, JPEG is not well suited for line drawings and other textual or iconic graphics, where the sharp contrasts between adjacent pixels can cause noticeable artifacts. Such images are better saved in a lossless graphics format such as PNG. Because JPEG is a lossy compression method, which reduces the image fidelity, it is inappropriate for exact reproduction of imaging data.
 
-include::requirements/html/REQ_content.adoc[]
+include::requirements/requirements_class_jpeg.adoc[]
 
-include::requirements/html/REC_schema-org.adoc[]
+include::requirements/jpeg/REQ_content.adoc[]
+
+=== Requirement Class "TIFF"
+
+One use case for tiles is to distribute fragmented coverage gradients as regular grids. In these circumstances, selecting an encoding that is able to story grid values in their original format and eventually compress them using lossless compression is the rigth solution. The TIF is one of the older formats but still one of the most popular formats to preserve arrays of data values and defined by the TIFF v6 specification owned by Adobe Systems.
+
+TIFF is a flexible, adaptable file format for handling images and data. The ability to store data in a lossless format makes a TIFF file a useful image archive, because, unlike standard JPEG files, a TIFF file using lossless compression such as PackBits or LZW compression.
+
+include::requirements/requirements_class_tiff.adoc[]
+
+include::requirements/tiff/REQ_content.adoc[]
+
+include::recommendations/tiff/REC_geotiff.adoc[]
+
+include::requirements/tiff/REQ_geotiff.adoc[]
 
 === Requirement Class "GeoJSON"
 
-GeoJSON is a commonly used format that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format supporting GeoJSON is recommended, if the feature data can be represented in GeoJSON for the intended use.
+GeoJSON is a commonly used format for representing features with geometries and other properties. It is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based formats supporting GeoJSON is recommended for vector tiles, if the feature data can be represented in GeoJSON for the intended use.
 
 include::requirements/requirements_class_geojson.adoc[]
 
-include::requirements/geojson/REQ_definition.adoc[]
-
 include::requirements/geojson/REQ_content.adoc[]
 
-Templates for the definition of the schemas for the GeoJSON responses in OpenAPI definitions are available at link:https://raw.githubusercontent.com/opengeospatial/WFS_FES/master/core/openapi/schemas/featureCollectionGeoJSON.yaml[featureCollectionGeoJSON.yaml] and  link:https://raw.githubusercontent.com/opengeospatial/WFS_FES/master/core/openapi/schemas/featureGeoJSON.yaml[featureGeoJSON.yaml].
-These are generic schemas that do not include any application schema information about specific feature types or their properties.
+include::recommendations/geojson/PER_overflow.adoc[]
 
-.A GeoJSON FeatureCollection Object response
-=================
-In the example below, only the first and tenth feature is shown. Coordinates are not shown.
+=== Requirement Class "MapBOX"
 
-[source,JSON]
-----
-{
-  "type" : "FeatureCollection",
-  "links" : [ {
-    "href" : "http://data.example.com/collections/buildings/items/?f=json",
-    "rel" : "self",
-    "type" : "application/geo+json",
-    "title" : "this document"
-  }, {
-    "href" : "http://data.example.com/collections/buildings/items/?f=html",
-    "rel" : "alternate",
-    "type" : "text/html",
-    "title" : "this document as HTML"
-  }, {
-    "href" : "http://data.example.com/collections/buildings/items/?f=json&startIndex=10&limit=10",
-    "rel" : "next",
-    "type" : "application/geo+json",
-    "title" : "next page"
-  } ],
-  "timeStamp" : "2018-04-03T14:52:23Z",
-  "numberMatched" : 123,
-  "numberReturned" : 10,
-  "features" : [ {
-    "type" : "Feature",
-    "id" : "123",
-    "geometry" : {
-      "type" : "Polygon",
-      "coordinates" : [ ... ]
-    },
-    "properties" : {
-      "function" : "residential",
-      "floors" : "2",
-      "lastUpdate" : "2015-08-01T12:34:56Z"
-    }
-  }, { ...
-  }, {
-    "type" : "Feature",
-    "id" : "132",
-    "geometry" : {
-      "type" : "Polygon",
-      "coordinates" : [ ... ]
-    },
-    "properties" : {
-      "function" : "public use",
-      "floors" : "10",
-      "lastUpdate" : "2013-12-03T10:15:37Z"
-    }
-  } ]
-}
-----
-=================
+MapBOX vector tiles is a well known format for representing features with geometries in tile. The MapBOX Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Vector Tile represents data based on a square extent within a tile matrix set. However a MapBOX Vector Tile does not contain information about its bounds and tile matrix set. The file format assumes that the client knows the bounds and tile matrix set of the file before decoding it.
 
-.A GeoJSON Feature Object response
-=================
-In the example below, coordinates are not shown.
+include::requirements/requirements_class_mvt.adoc[]
 
-[source,JSON]
-----
-{
-  "type" : "Feature",
-  "links" : [ {
-    "href" : "http://data.example.com/collections/buildings/items/123/?f=json",
-    "rel" : "self",
-    "type" : "application/geo+json",
-    "title" : "this document"
-  }, {
-    "href" : "http://data.example.com/collections/buildings/items/123/?f=html",
-    "rel" : "alternate",
-    "type" : "text/html",
-    "title" : "this document as HTML"
-  }, {
-    "href" : "http://data.example.com/collections/buildings/items",
-    "rel" : "collection",
-    "type" : "application/geo+json",
-    "title" : "the collection document"
-  } ],
-  "id" : "123",
-  "geometry" : {
-    "type" : "Polygon",
-    "coordinates" : [ ... ]
-  },
-  "properties" : {
-    "function" : "residential",
-    "floors" : "2",
-    "lastUpdate" : "2015-08-01T12:34:56Z"
-  }
-}
-----
-=================
-
-=== Requirement Class "Geography Markup Language (GML), Simple Features Profile, Level 0"
-
-In addition to HTML and GeoJSON, a significant volume of feature data is available XML-based formats, notably  GML. Therefore, this standard specifies requirement classes for GML. The Simple Features Profile, Level 0, is the simplest profile of GML and is typically supported by tools. The GML Simple Features Profile is restricted to data with 2D geometries supported by most tools. In addition, the Level 0 profile is limited to features that can be stored in a tabular data structure.
-
-include::requirements/requirements_class_gmlsf0.adoc[]
-
-include::requirements/gmlsf0/REQ_definition.adoc[]
-
-include::requirements/gmlsf0/REQ_content.adoc[]
-
-[#gml_content,reftext='{table-caption} {counter:table-num}']
-.Media types and XML elements for each resource
-[cols="30,35,35",options="header"]
-!===
-|Resource |Path |XML root element
-|Landing page |`/` |`wfs:LandingPage`
-|Conformance classes |`/conformance` |`wfs:ConformsTo`
-|Feature collections metadata |`/collections` |`wfs:Collections`
-|Feature collection metadata |`/collections/{collectionId}` |`wfs:Collections`, with just one entry for the collection `collectionId`
-|Feature collection |`/collections/{collectionId}/items` |`wfs:FeatureCollection`
-|Feature |`/collections/{collectionId}/items/{featureId}` |substitutable for `gml:AbstractFeature`
-!===
-
-The namespace prefixes used above are:
-
-* `wfs`: `http://www.opengis.net/wfs/3.0`
-* `gml`: `http://www.opengis.net/gml/3.2`
-* `atom`: `http://www.w3.org/2005/Atom`
-* `xlink`: `http://www.w3.org/1999/xlink`
-
-The API definition resource at path `/api` is not included in <<gml_content>>. This requirements class does not prescribe any API definition approach.
-
-The mapping of the content from the responses specified in the <<rc_core,Core requirements class>> to the XML is straightforward. All links are encoded using `atom:link` elements except in GML features where simple Xlinks are used.
-
-<<xml_examples,Annex C>> has example responses in XML.
-
-NOTE: The `wfs:FeatureCollection` element deliberately goes beyond the permitted content specified in the <<GMLSF,GML Simple Features Profile>>, section 8.4.2. This is necessary to support the hypermedia controls and other relevant content for a Web Feature Service API.
-
-=== Requirement Class "Geography Markup Language (GML), Simple Features Profile, Level 2"
-
-The difference between this requirement class and the <<rc_gmlsf0,Level 0>> requirements class is that non-spatial feature properties are not restricted to atomic values (strings, numbers, etc.).
-
-include::requirements/requirements_class_gmlsf2.adoc[]
-
-include::requirements/gmlsf2/REQ_definition.adoc[]
-
-include::requirements/gmlsf2/REQ_content.adoc[]
+include::requirements/mvt/REQ_content.adoc[]
