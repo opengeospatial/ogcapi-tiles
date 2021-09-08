@@ -14,11 +14,11 @@ This conformance class can be used in conjunction to the <<rc_datasetTileSets>> 
 === General
 include::recommendations/collections-selection/REC_api-common.adoc[]
 
-This building block stays flexible and does not require implementation OGC API - Common, allowing for other API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes when used. Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
+This building block stays flexible and does not require implementation OGC API - Common, allowing for other Web API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement OGC API - Common. If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core and collections requirement classes when used. Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
 
 === Declaration of conformance classes
 
-To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the requirements classes it implements and conforms to.
+To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific Web API / server, the Web API has to declare the requirements classes it implements and conforms to.
 
 ==== Response
 
@@ -26,7 +26,7 @@ The conformance page mainly consists of a list of URIs to conformance classes.
 
 include::requirements/collections-selection/REQ_conformance-success.adoc[]
 
-If the server declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0], then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the conformance page is an array of URIs following the schema defined in the OGC API - Common or in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0]. Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
+If the server declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0], then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the conformance page is an array of URIs following the schema defined in the OGC API - Common or in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0]. Below is an example fragment of a conformance information page of an Web API conformant to OGC API - Common and OGC API - Tiles.
 
 [[ConformancePageDataSelection]]
 .Conformance Information Page fragment
@@ -54,6 +54,6 @@ comma (",") as the separator between the resource identifiers in the list. Addit
 
 ==== Error conditions
 
-If the value of the parameter `collections` contains a resource id of URI that does not exist on the API, the status code of the response is 400.
+If the value of the parameter `collections` contains a resource id of URI that does not exist on the Web API, the status code of the response is 400.
 
 If the value of the parameter `collections` has a wrong format or combines one of more geospatial data resources that are not compatible (e.g. they do not have a compatible value specified by other parameters in the request), the status code of the response is 400.

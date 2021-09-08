@@ -17,14 +17,14 @@ It defines how to specify the a link to the list of tilesets containing a repres
 include::recommendations/geodata-tilesets/REC_api-common.adoc[]
 
 This building block depends on _OGC API - Part 2: Geospatial data_, but stays flexible and does not require implementation of OGC API - Common - Part 1,
-allowing for other API architectures outside the OGC API framework to adopt it.
+allowing for other Web API architectures outside the OGC API framework to adopt it.
 However, a server under the OGC APIs is expected to implement OGC API - Common - Part 1.
 If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core requirement classes when used.
 Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
 
 === Declaration of conformance classes
 
-To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the requirements classes it implements and conforms to.
+To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific Web API / server, the Web API has to declare the requirements classes it implements and conforms to.
 
 ==== Response
 
@@ -33,7 +33,7 @@ The conformance page mainly consists of a list of URIs to conformance classes.
 include::requirements/geodata-tilesets/REQ_conformance-success.adoc[]
 
 If the server declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0], then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page. In the JSON format the conformance page is an array of URIs following the schema defined in the OGC API - Common or in http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0].
-Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
+Below is an example fragment of a conformance information page of an Web API conformant to OGC API - Common and OGC API - Tiles.
 
 [[ConformancePageGeoDataTilesets]]
 .Conformance Information Page fragment
@@ -52,7 +52,7 @@ Below is an example fragment of a conformance information page of an API conform
 =================
 
 === Geospatial data resources
-This standard does not specify how geospatial data resources are exposed in the API and if they can be retrieved as geospatial data (e.g. feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the API could also give access to geospatial data resources.
+This standard does not specify how geospatial data resources are exposed in the Web API and if they can be retrieved as geospatial data (e.g. feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
 
 NOTE: The concept of geospatial data resource path substitutes the concept of "layer" in WMTS 1.0 but it is intended to give a better integration between data visualization and data access.
 

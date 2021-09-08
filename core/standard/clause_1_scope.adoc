@@ -1,4 +1,4 @@
 == Scope
-This document specifies the behavior of Web APIs that provide access to tiles of one geospatial data resource or more than one geospatial data resource. This standard defines how to discover which resources offered by the API can be retrieved as tiles, what are the tile matrix sets supported by the geospatial data resources, which are the limits of the tiled space and how to request one tile at a time.
+This document specifies the behavior of Web APIs that provide access to tiles of one geospatial data resource (collection) or more than one geospatial data resource or from the whole dataset that the Web API offers. This standard defines how to discover which resources offered by the Web API can be retrieved as tiles, get metadata about the tile set (including the supported tile matrix sets, the limits  of the tiled set inside the tile matrix set) and how to request a tile.
 
-A web API can combine this standard with other standards to extend the scope of the API by adding functionality.
+The core conformance class is defined in a way that could be easily included in an web API that does not conform to the OGC API common. A web API can combine some requirements classes of this OGC API standard with other OGC API standards (including OGC API Common) to extend the scope of the Web API by adding functionality.

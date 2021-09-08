@@ -8,11 +8,11 @@ include::requirements/requirements_class_core.adoc[]
 
 The core conformance class is designed as a very generic conformance class that describes a HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard. It introduces the idea of URI templates and variables associated to the TileMatrix, TileRow and TileCol concepts defined in the 2D Tile Matrix Set standard but it does not prescribe a particular path or template form for the URL of those tiles.
 
-With this conformance class alone, the way the tileset as a whole will be described is left open. Having a tileset description is important so the implementer of a web API should define the tileset in conjunction with the core conformance class. This can be done by choosing  between conforming to the next conformance class (<<rc_tileSet>>) or using another mechanism such as TileJSON. (Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources).
+With this conformance class alone, the way the tileset as a whole will be described is left open. Having a tileset description is important so the implementer of a Web API should define the tileset in conjunction with the core conformance class. This can be done by choosing  between conforming to the next conformance class (<<rc_tileSet>>) or using another mechanism such as TileJSON. (Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources).
 
 === Declaration of conformance classes
-To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server,
-the API has to declare the requirements classes it implements and conforms to.
+To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific Web API / server,
+the Web API has to declare the requirements classes it implements and conforms to.
 
 ==== Response
 
@@ -20,11 +20,11 @@ The conformance page mainly consists of a list of URIs to conformance classes.
 
 include::requirements/core/REQ_conformance-success.adoc[]
 
-If the web API declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0],
+If the Web API declares also conformity to OGC API - Common or to http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0],
 then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a the conformance page.
 In the JSON format the conformance page is an array of URIs following the schema defined in the OGC API - Common or in
 http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0].
-Below is an example fragment of a conformance information page of an API conformant to OGC API - Common and OGC API - Tiles.
+Below is an example fragment of a conformance information page of an Web API conformant to OGC API - Common and OGC API - Tiles.
 
 [[ConformancePageCore]]
 .Conformance Information Page fragment
@@ -58,7 +58,7 @@ maps (specified in OGC - API Maps) or coverages (specified in OGC API - Coverage
 
 include::recommendations/core/REC_tc-op.adoc[]
 
-The supported encodings, or more precisely the media types of the supported encodings, can be determined from the API definition. The desired encoding is selected using HTTP content negotiation.
+The supported encodings, or more precisely the media types of the supported encodings, can be determined from the Web API definition. The desired encoding is selected using HTTP content negotiation.
 
 
 The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet.
@@ -93,7 +93,7 @@ include::recommendations/core/REC_tc-success-scale.adoc[]
 
 include::recommendations/core/REC_tc-deepfullempty.adoc[]
 
-To enable search engines to easily discover the content offered by an implementation of OGC API - Tiles, as well as to enable web browsers to easily display the content offered by the APIs, this standard allows for responses to operations to be encoded in HTML.
+To enable search engines to easily discover the content offered by an implementation of OGC API - Tiles, as well as to enable web browsers to easily display the content offered by the Web APIs, this standard allows for responses to operations to be encoded in HTML.
 
 include::recommendations/core/PER_tc-core-html.adoc[]
 

@@ -11,7 +11,7 @@ This class proposes the existence of a TileSets GET request for which the respon
 
 === Declaration of conformance classes
 
-To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific API / server, the API has to declare the requirements classes it implements and conforms to.
+To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific Web API / server, the Web API has to declare the requirements classes it implements and conforms to.
 
 ==== Response
 
