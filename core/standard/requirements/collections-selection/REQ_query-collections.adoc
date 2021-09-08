@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/collections-selection/query-collections*
-^|A |A operation that acts on at the dataset level SHALL support an optional parameter `collections` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
+^|A |An operation that acts at the dataset level SHALL support an optional parameter `collections` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
 [source,YAML]
 ----
   name: collections
@@ -16,6 +16,7 @@
       type: string
 ----
 ^|B |The parameter `collections` SHALL contain a comma-separated list of geospatial resource identifiers (e.g. collectionId's) or a comma-separated list of full URLs to geospatial resource identifiers.
-^|C |Only the geospatial data resource identifiers that advertise a link compatible with the type of resource to be requested (e.g. with type=`tiles` for dataset tiles and with type=`map` for dataset maps) in the geospatial data resource description SHALL be included.
-^|D |For dataset maps or dataset tiles, only geospatial data resources that support the same crs or the same TileMatrixSetId parameter value respectively SHALL be combined in the parameter value.
+^|C |Only the geospatial data resource identifiers that advertise a link compatible with the type of resource to be requested (e.g. with type=`tiles` for dataset tiles and with type=`map` for dataset maps) in the geospatial data resource description SHALL accepted as valid values in the parameter.
+^|D |For dataset maps or dataset tiles, only geospatial data resources that support the same crs or the same TileMatrixSetId parameter value respectively SHALL accepted as valid values in the parameter value.
+^|E |If there is more than one collection name and the style applied does not specify otherwise, the comma separated collections indicated are included in the encoding starting by the left most and ending by the right most. In map tiles, this will result in the first collection being portrayed first and the other applied on top of the previous ones, one by one (the right most collection will become top most in the portrayal).
 |===
