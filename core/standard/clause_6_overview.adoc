@@ -86,35 +86,38 @@ There is still a third way to approach an OGC API that consist on assuming a set
 [cols="33,66",options="header"]
 !===
 |Resource name |Common path
-|Landing page^5^ |`/`
+|Landing page^4^ |`/`
 |Conformance declaration^4^ |`/conformance`
-|Collections^6^ |`/collections`
-|Collection^6^ |`/collections/{collectionId}`
-|Tiling Schemes |`/tileMatrixSets`
-|Tiling Scheme |`/tileMatrixSets/{tileMatrixSetId}`
-2+|Tiles
-|Feature tiles^3^ description |`/collections/{collectionId}/tiles`
-|Feature tiles^3^ description in one tile matrix set^2^ |`/collections/{collectionId}/tiles/{tileMatrixSetId}`
+|Collections^5^ |`/collections`
+|Collection^5^ |`/collections/{collectionId}`
+|Tiling Schemes^6^ |`/tileMatrixSets`
+|Tiling Scheme^6^ |`/tileMatrixSets/{tileMatrixSetId}`
+2+|Dataset Tiles^3^{set:cellbgcolor:#EEEEEE}
+|Dataset tiles tileset list^2^ (geospatial resources^1^){set:cellbgcolor:#FFFFFF} |`/tiles`
+|Dataset tiles tileset metadata^2^ (geospatial resources^1^) |`/tiles/{tileMatrixSetId}`
+|Dataset tile^3^ (geospatial resources^1^) |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
+2+|Feature Tiles^3^{set:cellbgcolor:#EEEEEE}
+|Feature tiles^3^ tileset list^2^{set:cellbgcolor:#FFFFFF} |`/collections/{collectionId}/tiles`
+|Feature tiles^3^ tileset metadata^2^ |`/collections/{collectionId}/tiles/{tileMatrixSetId}`
 |Feature tile^3^ |`/collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-|Feature tiles^3^ description (geospatial resources^1^) |`/tiles`
-|Feature tile^3^ |`/collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-|Feature tile^3^ (geospatial resources^1^) |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-2+|Maps
-|Maps description^4^ |`/collections/{collectionId}/map`
-|Maps description (geospatial resources^1^)^4^ |`/map`
-2+|Map tiles
-|Map tiles description |`/collections/{collectionId}/map/tiles`
-|Map tiles description in one tile matrix set^2^ |`/collections/{collectionId}/map/tiles/{tileMatrixSetId}`
-|Map tiles description (geospatial resources^1^) |`/map/tiles`
-|Map tiles description (geospatial resources^1^) in one tile matrix set^2^ |`/map/tiles/{tileMatrixSetId}`
+2+|Map tiles{set:cellbgcolor:#EEEEEE}
+|Map tiles tileset list^2^{set:cellbgcolor:#FFFFFF} |`/collections/{collectionId}/map/tiles`
+|Map tiles tileset metadata^2^ |`/collections/{collectionId}/map/tiles/{tileMatrixSetId}`
+|Map tiles tileset list^2^ (geospatial resources^1^) |`/map/tiles`
+|Map tiles tileset metadata^2^ (geospatial resources^1^) in one tile matrix set^2^ |`/map/tiles/{tileMatrixSetId}`
 |Map tile |`/collections/{collectionId}/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |Map tile (geospatial resources^1^) |`/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
+2+|^1^ The expression "geospatial resources" means "from more than one geospatial resource or collection"
+
+^2^ Specified in an the Two Dimensional Tile Matrix Set and Tileset Metadata.
+
+^3^ Some vendors use the expression _vector tiles_
+
+^4^ Specified in the OGC API - Common Part 1, core
+
+^5^ Specified in the OGC API - Common Part 2, collections
+
+^6^ Recommended but not required in the core
 !===
-^1^: The expression "geospatial resources" means "from more than one geospatial resource or collection"
-^2^: Specified in an the Two Dimensional Tile Matrix Set and Tileset Metadata.
-^3^: Some vendors use the expression _vector tiles_
-^4^: Specified in the OGC API - Maps Part 1, core
-^5^: Specified in the OGC API - Common Part 1, core
-^6^: Specified in the OGC API - Common Part 2, collections
 
 NOTE: Despite the fact that full path and full path templates in the previous table are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT require by this standard. Other paths are possible if correctly described in by the Web API definition document and the links between resources.
