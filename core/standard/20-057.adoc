@@ -117,7 +117,7 @@ include::clause_13_encodings.adoc[]
 
 include::annex-ats.adoc[]
 
-include::annex-b.adoc[]
+//include::annex-b.adoc[]
 
 include::annex_history.adoc[]
 
