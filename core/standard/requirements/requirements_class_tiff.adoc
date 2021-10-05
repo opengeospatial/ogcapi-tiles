@@ -1,4 +1,4 @@
-[[rc_tiff]]
+[[rc_table-tiff]]
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements TIFF*

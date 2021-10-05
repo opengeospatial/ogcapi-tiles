@@ -1,4 +1,4 @@
-[[rc_mvt]]
+[[rc_table-mvt]]
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements MVT*

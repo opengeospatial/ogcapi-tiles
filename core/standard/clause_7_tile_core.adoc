@@ -1,5 +1,5 @@
 
-[[rc_core]]
+[[rc_tiles_core]]
 == Requirement Class "Core"
 
 [[core-overview]]

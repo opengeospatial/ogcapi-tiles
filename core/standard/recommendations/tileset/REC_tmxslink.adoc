@@ -2,9 +2,9 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tileset/tmxslink*
-^|A |The server SHOULD provide a way to get a full description of the TileMatrixSet. One common way is by providing a resolvable URI in the tileset metadata (there is also de posibility to define the TileMatrixSet inline but this is not recommended in this case)
+^|A |The server SHOULD provide a way to get a full description of the TileMatrixSet. One common way is by providing a resolvable URI in the tileset metadata (there is also de possibility to define the TileMatrixSet inline but this is not recommended in this case)
 ^|B |To improve interoperability, this standard recommends that the API provides tiles following the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#61[Annex D] of OGC 17-083r2. In the case of variable-width tiles, the standard recommends the use of the TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r2/17-083r2.html#104[Annex H] of OGC 17-083r2. In this case, the value of TileMatrixSetURI correspond to URIs pointing to the OGC TileMatrixSets registry is available at http://opengis.net/def/tms
 ^|C |It is also possible to use TileMatrixSet no available in a registry. In this case the API SHOULD provide a definition of the TileMatrixSet as resolvable URI in an endpoint following this template: "/tileMatrixSets/{tileMatrixSetsId}" (where {tileMatrixSetsId} is a unique identifier of the TileMatrixSet in the service)
 ^|D |When the API provides one or more definitions of TileMatrixSets as resolvable URI in "/tileMatrixSets/{tileMatrixSetsId}" the "/tileMatrixSets" endpoint SHOULD respond with the list of TileMatrixSets defined by the API
-^|E |When the API provides a "/tileMatrixSets" endpoint, this endpoint SHOULD be mention in one or more links in the landing page of the API with the `rel` type `http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes`.
+^|E |When the API provides a "/tileMatrixSets" endpoint, this endpoint SHOULD be mentioned in one or more links in the landing page of the API with the `rel` type `http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes`.
 |===

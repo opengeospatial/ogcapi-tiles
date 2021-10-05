@@ -11,7 +11,7 @@ This clause specifies five pre-defined requirements classes for encodings to be 
 * <<rc_jpeg,JPEG>>
 * <<rc_tiff,TIFF>>
 * <<rc_geojson,GeoJSON>>
-* <<rc_mvt,MapBOX Vector Tiles>>
+* <<rc_mvt,Mapbox Vector Tiles>>
 
 NOTE: None of the encodings specified here is mandatory and an implementation of this standard may implement none of them but implement other encodings instead.
 
@@ -37,7 +37,7 @@ include::requirements/jpeg/REQ_content.adoc[]
 
 === Requirement Class "TIFF"
 
-One use case for tiles is to distribute fragmented coverage gradients as regular grids. In these circumstances, selecting an encoding that is able to story grid values in their original format and eventually compress them using lossless compression is the rigth solution. The TIF is one of the older formats but still one of the most popular formats to preserve arrays of data values and defined by the TIFF v6 specification owned by Adobe Systems.
+One use case for tiles is to distribute fragmented coverage gradients as regular grids. In these circumstances, selecting an encoding that is able to story grid values in their original format and eventually compress them using lossless compression is the right solution. The TIF is one of the older formats but still one of the most popular formats to preserve arrays of data values and defined by the TIFF v6 specification owned by Adobe Systems.
 
 TIFF is a flexible, adaptable file format for handling images and data. The ability to store data in a lossless format makes a TIFF file a useful image archive, because, unlike standard JPEG files, a TIFF file using lossless compression such as PackBits or LZW compression.
 
@@ -59,10 +59,12 @@ include::requirements/geojson/REQ_content.adoc[]
 
 include::recommendations/geojson/PER_overflow.adoc[]
 
-=== Requirement Class "MapBOX"
+=== Requirement Class "Mapbox"
 
-MapBOX vector tiles is a well known format for representing features with geometries in tile. The MapBOX Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Vector Tile represents data based on a square extent within a tile matrix set. However a MapBOX Vector Tile does not contain information about its bounds and tile matrix set. The file format assumes that the client knows the bounds and tile matrix set of the file before decoding it.
+Mapbox Vector Tiles is a well known format for representing features with geometries in tile. The Mapbox Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Mapbox Vector Tile represents data based on a square extent within a tile matrix set. However a Mapbox Vector Tile does not contain information about its bounds and tile matrix set. The file format assumes that the client knows the bounds and tile matrix set of the file before decoding it.
 
 include::requirements/requirements_class_mvt.adoc[]
 
 include::requirements/mvt/REQ_content.adoc[]
+
+NOTE: The support of Mapbox Vector Tiles does not make the OGC API dependent on the Mapbox Vector Tile Specification. The support of Mapbox is completely optional in a Web API. This requirements class is completely independent of the version of Mapbox and its future evolution.

@@ -1,4 +1,4 @@
-[[rc_tilesets]]
+[[rc_table-tilesets]]
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*

@@ -87,7 +87,7 @@ NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile M
 
 NOTE: The geospatial data resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
-[[TilesetTilesLinkResponseExample]]
+[[TilesetTilesURIResponseExample]]
 .Example fragment of a tileset response for a common TileMatrixSet defined in the OGC NA
 =================
 [source,JSON]

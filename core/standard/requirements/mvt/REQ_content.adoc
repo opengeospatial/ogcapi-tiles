@@ -1,8 +1,7 @@
-[[req_geojson_content]]
+[[req_mvt_content]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/geojson/content*
-^|A |Every 200-response of the server with the media type application/vnd.mapbox-vector-tile SHALL be a MapBOS Vector Tile document representing only one tile.
-^|B |A MapBOX Vector Tile SHALL contain at least one layer. A layer SHALL contain at least one feature. An emply tile should be encoded as an empty file.
-^|C |A feature SHALL contain a geometry field. A feature SHALL contain a type field as described in the Geometry Types section.
+^|*Requirement {counter:req-id}* |*/req/mvt/content*
+^|A |Every 200-response of the server with the media type application/vnd.mapbox-vector-tile SHALL be a Mapbox Vector Tile document representing only one tile.
+^|B |A feature SHALL contain a geometry field. A feature SHALL contain a type field as described in the Geometry Types section.
 |===

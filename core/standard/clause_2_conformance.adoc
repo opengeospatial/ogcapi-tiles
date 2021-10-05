@@ -5,16 +5,16 @@ The standardization targets of all conformance classes are "Web APIs".
 
 The requirements classes are:
 
-*<<rc_core>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/core)
+*<<rc_tiles_core>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/core)
 
 The Core specifies requirements that all Web APIs have to implement if they are claiming to support tiles from a geospatial resource following the OGC API - Tiles Part 1: core standard.
 It defines the way to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.
 
 [#table_resource_core,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the core
+.Overview of resource and common direct link that corresponds to the core. Note that normally implementations will do that BUT this path is not prescribed. Other URI orders of parametres is allowed.
 [cols="33,66",options="header"]
 |===
-|Resource name |Common path
+|Resource name |**Common** path
 |Tile |`.../{tileMatrix}/{tileRow}/{tileCol}`
 |===
 
@@ -26,20 +26,21 @@ The _tileset_ conformance class defines a mechanism to describe a tileset using 
 .Overview of resource and common direct links that corresponds to the tileset
 [cols="33,66",options="header"]
 |===
-|Resource name |Common path
-|Tile |`.../{tileMatrixSet}/{tileMatrix}`
+|Resource name |**Common** path
+|Tileset |`.../tiles/{tileMatrixSetId}`
+|Tile |`.../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |===
 
 *<<rc_tileSets-list>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets)
 
 The _tilesets list_ conformance class defines a generic operation to retrieve a list of tilesets, without association to any particular type of resources.
 
-[#table_resource_tileset,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the tileset
+[#table_resource_tilesetlist,reftext='{table-caption} {counter:table-num}']
+.Overview of resource and common direct link that corresponds to the tileset list
 [cols="33,66",options="header"]
 |===
-|Resource name |Common path
-|Tile |`.../{tileMatrixSet}`
+|Resource name |**Common** path
+|Tileset list |`.../tiles`
 |===
 
 Additional requirements class are:
@@ -53,11 +54,10 @@ All Web APIs have to implement this conformance class if they are claiming to su
 .Overview of resource and common direct links that corresponds to the dataset tileset
 [cols="33,66",options="header"]
 |===
-|Resource name |Common path
-|Vector Tiles description |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-|Vector Tiles |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-|Map tiles description | `/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}`
-|Map tiles | `/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection
+|Resource name |**Common** path
+|Vector tileset list |`/tiles`
+|Map tileset list | `/map/tiles`
+|Styled Map tileset list | `/styles/{styleId}/map/tiles`
 |===
 
 *<<rc_collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
@@ -68,9 +68,11 @@ The _geodata selection_ conformance class allows to list specific geospatial dat
 .Overview of resource and common direct links that corresponds to the geodata selection
 [cols="33,66",options="header"]
 |===
-|Resource name |Common path
-|Vector Tiles |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
-|Map tiles | `/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
+|Resource name |Example of possible paths
+|Vector Tileset |`/tiles/{tileMatrixSetId}?collections={collectionId},{collectionId},...`
+|Vector Tile |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
+|Map tileset | `/map/tiles/{tileMatrixSetId}?collections={collectionId},{collectionId},...`
+|Map tile | `/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
 |===
 
 *<<rc_geoDataResourceTileSets>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-tilesets)
@@ -81,11 +83,10 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 .Overview of resource and common direct links that corresponds to the dataset tilesets
 [cols="33,66",options="header"]
 |===
-|Resource name |Common path
-|Vector Tiles description |`/collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}`
-|Vector Tiles |`/collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-|Map tiles description | /collections/{collectionId}/map/tiles/{tileMatrixSetId}/`{tileMatrix}`
-|Map tiles | `/collections/{collectionId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
+|Resource name |Example of possible paths
+|Vector tileset list |`/collections/{collectionId}/tiles`
+|Map tileset list | `/collections/{collectionId}/map/tiles`
+|Styled Map tileset list | `/collections/{collectionId}/styles/{styleId}/map/tiles`
 |===
 
 This document does not mandate a specific encoding or format for representing tiles. There are no requirements classes making considerations on specify representations.
