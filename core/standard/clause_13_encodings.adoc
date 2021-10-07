@@ -5,16 +5,18 @@ The OGC API Tiles is designed to support tiling data that can potentially be enc
 
 === Overview
 
-This clause specifies five pre-defined requirements classes for encodings to be used by the tiles of the OGC API implementation:
+This clause specifies six pre-defined requirements classes for encodings to be used by the tiles of the OGC API implementation:
 
 * <<rc_png,PNG>>
 * <<rc_jpeg,JPEG>>
 * <<rc_tiff,TIFF>>
+* <<rc_netcdf,NetCDF>>
 * <<rc_geojson,GeoJSON>>
 * <<rc_mvt,Mapbox Vector Tiles>>
 
 NOTE: None of the encodings specified here is mandatory and an implementation of this standard may implement none of them but implement other encodings instead.
 
+[[rc_png]]
 === Requirement Class "PNG"
 
 One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The PNG is one of the most popular formats in de web defined by the ISO Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E), also available by the W3C in https://www.w3.org/TR/PNG.
@@ -25,6 +27,7 @@ include::requirements/requirements_class_png.adoc[]
 
 include::requirements/png/REQ_content.adoc[]
 
+[[rc_jpeg]]
 === Requirement Class "JPEG"
 
 One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The JPEG is one of the most popular formats in de web defined by the ITU-T Recommendation T.81 and the ISO/IEC 10918-1.
@@ -35,6 +38,7 @@ include::requirements/requirements_class_jpeg.adoc[]
 
 include::requirements/jpeg/REQ_content.adoc[]
 
+[[rc_tiff]]
 === Requirement Class "TIFF"
 
 One use case for tiles is to distribute fragmented coverage gradients as regular grids. In these circumstances, selecting an encoding that is able to story grid values in their original format and eventually compress them using lossless compression is the right solution. The TIF is one of the older formats but still one of the most popular formats to preserve arrays of data values and defined by the TIFF v6 specification owned by Adobe Systems.
@@ -49,6 +53,18 @@ include::recommendations/tiff/REC_geotiff.adoc[]
 
 include::requirements/tiff/REQ_geotiff.adoc[]
 
+[[rc_netcdf]]
+=== Requirement Class "NetCDF"
+
+For a case of multidimensional regular grids there is a need for a format able to store multidimensional data in a natural way. The NetCDF is one of the most popular formats for scientific data that is able store multi-dimensional arrays of data values. It is defined by the UCAR-Unidata.
+
+include::requirements/requirements_class_netcdf.adoc[]
+
+include::requirements/netcdf/REQ_content.adoc[]
+
+include::requirements/netcdf/REQ_geo.adoc[]
+
+[[rc_geojson]]
 === Requirement Class "GeoJSON"
 
 GeoJSON is a commonly used format for representing features with geometries and other properties. It is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based formats supporting GeoJSON is recommended for vector tiles, if the feature data can be represented in GeoJSON for the intended use.
@@ -59,6 +75,7 @@ include::requirements/geojson/REQ_content.adoc[]
 
 include::recommendations/geojson/PER_overflow.adoc[]
 
+[[rc_mapbox]]
 === Requirement Class "Mapbox"
 
 Mapbox Vector Tiles is a well known format for representing features with geometries in tile. The Mapbox Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Mapbox Vector Tile represents data based on a square extent within a tile matrix set. However a Mapbox Vector Tile does not contain information about its bounds and tile matrix set. The file format assumes that the client knows the bounds and tile matrix set of the file before decoding it.

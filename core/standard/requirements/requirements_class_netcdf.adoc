@@ -1,0 +1,9 @@
+[[rc_table-netcdf]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements NetCDF*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/netcdf
+|Target type |Web API
+|Dependency |OGC 10- 090r3 OGC Network Common Data Form NetCDF Core Encoding Standard version 1.0
+|Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+|===
