@@ -8,7 +8,7 @@
 include::requirements/requirements_class_geodata-tilesets.adoc[]
 
 This conformance class assumes that data is organized into one or more geospatial data resources
-(e.g. the "collections" http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data]).
+(e.g., the "collections" http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data]).
 Geospatial data resources are referenced using URIs.
 
 It defines how to specify the a link to the list of tilesets containing a representation of this geospatial data resource (path). It is used in conjunction with <<rc_tileSets-list>> that specifies the response to this GET request.
@@ -52,7 +52,7 @@ Below is an example fragment of a conformance information page of an Web API con
 =================
 
 === Geospatial data resources
-This standard does not specify how geospatial data resources are exposed in the Web API and if they can be retrieved as geospatial data (e.g. feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
+This standard does not specify how geospatial data resources are exposed in the Web API and if they can be retrieved as geospatial data (e.g., feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
 
 NOTE: The concept of geospatial data resource path substitutes the concept of "layer" in WMTS 1.0 but it is intended to give a better integration between data visualization and data access.
 

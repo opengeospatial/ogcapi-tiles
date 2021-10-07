@@ -7,9 +7,9 @@ The OGC API -Tiles defines building blocks which can be used in an Web API to re
 
 This document does not specify any requirement for the type of _geospatial data resource_ that could be delivered as tiles.
 Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are maps, features data,
-coverages, a resource that does not represent data per-se (e.g. an annotation) and so forth.
+coverages, a resource that does not represent data per-se (e.g., an annotation) and so forth.
 
-NOTE: The geospatial data resources (e.g. collections) replace the concept of layer in WMS and WMTS. The main difference is that layers in WMS and WMTS where not defined by other OGC APIs and did not support other functionalities.
+NOTE: The geospatial data resources (e.g., collections) replace the concept of layer in WMS and WMTS. The main difference is that layers in WMS and WMTS where not defined by other OGC APIs and did not support other functionalities.
 
 These geospatial data resources can advertise one or more lists of available tilesets (see the _tilesets list_ conformance class).
 This standard also defines how two specific data resources can link to such tilesets:
@@ -18,8 +18,8 @@ Accessing the _geospatial data resource_ content (other than as tiles) or its de
 If a description of the _geospatial data resource_ is specified by another standard, and this description has a mechanism to add links to other resources, this standard indicates the need to add a link to the tile description.
 
 The _OGC API Tiles API_ standard does not specify how to get a Web API definition, the conformance class list or the collections lists.
-However, the standard assumes that the first two are defined by an OGC API standard (e.g. _OGC API - Common - Part 1: Core_) and the latter by an
-OGC API for collections (e.g. _OGC API - Common - Part 2: Geospatial data_). A similar definition is provided directly by the _OGC API - Features, Part 1_.
+However, the standard assumes that the first two are defined by an OGC API standard (e.g., _OGC API - Common - Part 1: Core_) and the latter by an
+OGC API for collections (e.g., _OGC API - Common - Part 2: Geospatial data_). A similar definition is provided directly by the _OGC API - Features, Part 1_.
 
 === Evolution from OGC Web Services
 

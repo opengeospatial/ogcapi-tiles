@@ -3,7 +3,7 @@
 ^|*Abstract Test 14* |*/ats/root/ts-op*
 ^|Test Purpose |Validate that the server supports retrieval of descriptions of the root tiles
 ^|Requirement |/req/tiles/root/ts-op
-^|Test Method |1. Validate that the first part of the URL is the URI of a resource that can be represented as tiles (e.g. /map or simply /)
+^|Test Method |1. Validate that the first part of the URL is the URI of a resource that can be represented as tiles (e.g., /map or simply /)
 
 2. Validate that the second part of the URL follows the pattern `/tiles`.
 

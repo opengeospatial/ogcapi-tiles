@@ -1,0 +1,22 @@
+[[req_collections-selection_query-collections]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/collections-selection/query-collections*
+^|A |An operation that acts at the dataset level (e.g., a root derived resource) SHALL support an optional parameter `collections` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
+[source,YAML]
+----
+  name: collections
+  in: query
+  required: false
+  style: form
+  explode: false
+  schema:
+    type: array
+    items:
+      type: string
+----
+^|B |The parameter `collections` SHALL contain a comma-separated list of geospatial resource identifiers (e.g., collectionId's) or a comma-separated list of full URLs to geospatial resource identifiers.
+^|C |Only the geospatial data resource identifiers that advertise a link compatible with the type of resource to be requested (e.g., with type=`tiles` for dataset tiles and with type=`map` for dataset maps) in the geospatial data resource description SHALL accepted as valid values in the parameter.
+^|D |Only geospatial data resources that support the same crs parameter value (or the same TileMatrixSetId for tiles) SHALL accepted as valid values in the parameter value.
+^|E |If there is more than one collection name and the style applied does not specify otherwise, the comma-separated collections are included in the result starting by the first (leftmost) and ending by the last (rightmost). In map tiles, this will result in the first collection being portrayed in the bottom and the others are rendered on top of the previous ones, one by one (the right most collection will become top most in the portrayal).
+|===

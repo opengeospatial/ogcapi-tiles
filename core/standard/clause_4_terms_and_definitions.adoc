@@ -11,7 +11,7 @@ web resource that consists in a set of geospatial data
 NOTE: Most of the resources provided by OGC API _collections_ are considered geospatial data resources. Maps and coverages are also considered geospatial data resources.
 
 === *geospatial aspect*
-web resource that represents a component of geospatial information (metadata, schemas,...) or geospatial data in a particular data model (e.g. feature items, tiles, coverages,...) of a more generic geospatial data resource (e.g. a collection)
+web resource that represents a component of geospatial information (metadata, schemas,...) or geospatial data in a particular data model (e.g., feature items, tiles, coverages,...) of a more generic geospatial data resource (e.g., a collection)
 
 NOTE: Do not confuse this with a web resource representation. While resource representations share the same path and are selected by format negotiation, geospatial aspects use different paths. Commonly a geospatial aspect is a child path of a geospatial data resource
 
