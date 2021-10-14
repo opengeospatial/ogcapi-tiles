@@ -68,7 +68,7 @@ Styled collection tilesets (vector tiles)
 - `{datasetAPI}/styles/{styleId}/map/tiles`
 Styled dataset map tilesets
 - `{datasetAPI}/collections/{collectionId}/styles/{styleId}/map/tiles`
-Collection map tilesets
+Styled collection map tilesets
 
 ## Quick links
 
