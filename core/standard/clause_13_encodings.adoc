@@ -75,7 +75,7 @@ include::requirements/geojson/REQ_content.adoc[]
 
 include::recommendations/geojson/PER_overflow.adoc[]
 
-[[rc_mapbox]]
+[[rc_mvt]]
 === Requirement Class "Mapbox"
 
 Mapbox Vector Tiles is a well known format for representing features with geometries in tile. The Mapbox Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Mapbox Vector Tile represents data based on a square extent within a tile matrix set. However a Mapbox Vector Tile does not contain information about its bounds and tile matrix set. The file format assumes that the client knows the bounds and tile matrix set of the file before decoding it.
