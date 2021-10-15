@@ -14,11 +14,13 @@ It describes the HTTP GET operation on a tileset resource and its response, but 
 The response provides metadata as per the 2D Tile Matrix Set and TileSet Metadata standard.
 
 The essential elements of this metadata are:
+
 - a link to the definition of the TileMatrixSet (either one registered in the OGC TileMatrixSet registry, or to a custom TileMatrixSet definition),
 - a templated link (URI) to individual tiles,
 - and a data type (indicating whether the tileset consists of vector, coverage or map tiles).
 
 It may optionally also provide additional information, such as:
+
 - the geospatial data resources involved in the creation of the tiles (potentially including links to OGC API collections),
 - a schema of the available properties contained within the tiles,
 - styles used to create the tiles,
