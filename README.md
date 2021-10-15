@@ -99,9 +99,9 @@ _OGC API - Tiles_ provides a standardized way for requesting such tiles through 
 
 [OGC API standards](https://ogcapi.ogc.org) define modular API building blocks to spatially enable Web APIs in a consistent way.
 
-The _OGC API - Tiles_ specification defines building blocks that can be combined with other OGC API building blocks such as [_OGC API - Maps_](https://github.com/opengeospatial/ogcapi-maps) (to retrieve map tiles) and [_OGC API - Coverages_](https://github.com/opengeospatial/ogcapi-coverages) (to retrieve coverages tiles).
+The _OGC API - Tiles_ specification defines building blocks that can be combined with other OGC API building blocks such as [_OGC API - Maps_](https://github.com/opengeospatial/ogcapi-maps) (to retrieve map tiles) and [_OGC API - Coverages_](https://github.com/opengeospatial/ogcapi-coverages) (to retrieve coverage tiles).
 
-This specification is a complete rewrite of the of the [OGC](http://opengeospatial.org)'s previous Web Map Tile Service (WMTS) standards versions, focusing on a simple reusable RESTful building blocks which can be described using the [OpenAPI](http://openapis.org) specification.
+This specification is a complete rewrite of the of the [OGC](http://opengeospatial.org)'s previous Web Map Tile Service (WMTS) standards versions, focusing on simple reusable RESTful building blocks which can be described using the [OpenAPI](http://openapis.org) specification.
 
 ## Quickstart guide for clients
 [Quickstart guide](QuickGuide/README.md)
