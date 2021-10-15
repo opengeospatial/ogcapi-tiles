@@ -58,7 +58,7 @@ set of tiles - a collection of subsets of the space being partitioned.
 
 NOTE: From OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space
 
-NOTE: For the purposes of this document, a tile set is a series of actual tiles contain data and following a common tile set scheme.
+NOTE: For the purposes of this document, a tile set is a series of actual tiles containing data and following a common tile set scheme.
 
 === *tile set scheme*
 
@@ -66,7 +66,7 @@ scheme that defines how space is partitioned into individual tiled units. A tili
 
 NOTE: From OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space
 
-NOTE: A tile set scheme ca be defined on top of a CRS as well as other spatial reference systems such as DGGS and other organizations including irregular ones. In this document, only tile set schemes based on CRSs are supported.
+NOTE: A tile set scheme can be defined on top of a CRS as well as other spatial reference systems such as DGGS and other organizations including irregular ones. In this document, only tile set schemes based on CRSs are supported.
 
 === *vector tile*
 
