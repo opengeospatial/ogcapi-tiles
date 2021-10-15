@@ -32,7 +32,7 @@ That URL template and information about the tileset can either be provided throu
 The **_TileSets List_** and **_TileSet_** conformance classes defines transportable end-points:
 
 - `GET .../tiles`
-Retrieves the list of tilesets available (links with `http://www.opengis.net/def/rel/ogc/1.0/tileset` relation type)
+Retrieves the list of tilesets available (`tilesets` array property whose elements contain `links` to the tileset with `self` relation type)
 - `GET .../tiles/{tileMatrixSetId}`
 Retrieves the [metadata](https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-set-metadata) for a specific tileset (tiled according to a particular tile matrix set).
 - `GET .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
