@@ -144,7 +144,7 @@ id-link:
       "title": "My Google Maps Compatible for the World",
       "links": [
         {
-          "href": "https://data.example.org/tileMatrixSet/MyWebMercatorQuad",
+          "href": "https://data.example.org/tileMatrixSets/MyWebMercatorQuad",
           "rel": "item",
           "type": "application/json"
         }
