@@ -42,7 +42,7 @@ This class does not specify the path for a tileSet list. Refer to the <<rc_datas
 
 ==== Response
 
-A successful GET response to a list of tilesets resource will respond with a data structure that lists the tileset URLS available (one for each Tile Matrix Set supported).
+A successful GET response to a list of tilesets resource will respond with a data structure that lists the tileset URLs available (one for each Tile Matrix Set supported).
 
 include::requirements/tilesets-list/REQ_tileset-links.adoc[]
 
@@ -57,12 +57,18 @@ include::requirements/tilesets-list/REQ_tileset-links.adoc[]
     {
       "tileMatrixSetURI" : "http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad",
       "dataType" : "vector",
-      "links" :
-      {
-        "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
-        "rel": "http://www.opengis.net/def/rel/ogc/1.0/tileset",
-        "type": "application/json"
-      }
+      "links" : [
+         {
+           "rel": "self",
+           "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
+           "type": "application/json"
+         },
+         {
+           "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme",
+           "href": "http://data.example.com/tileMatrixSets/WebMercatorQuad",
+           "type": "application/json"
+         }
+      ]
    }
    ...
   ]
