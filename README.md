@@ -103,8 +103,8 @@ The _OGC API - Tiles_ specification defines building blocks that can be combined
 
 This specification is a complete rewrite of the of the [OGC](http://opengeospatial.org)'s previous Web Map Tile Service (WMTS) standards versions, focusing on simple reusable RESTful building blocks which can be described using the [OpenAPI](http://openapis.org) specification.
 
-## Quickstart guide for clients
-[Quickstart guide](QuickGuide/README.md)
+## Quickstart guides
+[Quickstart guide for clients](QuickGuide/README.md)
 
 ## Implementations
 Several implementations of the draft standard exist:
@@ -126,7 +126,7 @@ The definition of OGC API - Tiles - Part 1: Core is the current focus of the Sta
 5. [***GeoDataTileSets***](http://docs.ogc.org/DRAFTS/20-057.html#rc_geoDataResourceTileSets) specifies how to link to a list (**3**) of tilesets (**2**) from a resource representing a collection of geospatial data (as defined by [_OGC API Common - Part 2_](https://docs.opengeospatial.org/DRAFTS/20-024.html#rc-collections-section)).
 6. [***GeoDataSelection***](http://docs.ogc.org/DRAFTS/20-057.html#rc_collections-selection) specifies the `collections=` query parameter allowing to select specific collections of geospatial data to include within a dynamically generated tileset (**2**).
 
-In addition, six pre-defined conformance classes for [encodings](http://docs.ogc.org/DRAFTS/20-057.html#rc_encodings) are defined for [_PNG_](http://docs.ogc.org/DRAFTS/20-057.html#rc_png), [_JPEG_](http://docs.ogc.org/DRAFTS/20-057.html#rc_jpeg), [_GeoTIFF_](http://docs.ogc.org/DRAFTS/20-057.html#rc_tiff), [_GeoJSON_](http://docs.ogc.org/DRAFTS/20-057.html#rc_geojson), [_Mapbox Vector Tiles_](http://docs.ogc.org/DRAFTS/20-057.html#rc_mvt) and [_netCDF_](http://docs.ogc.org/DRAFTS/20-057.html#rc_netcdf).
+Six additional [encodings](http://docs.ogc.org/DRAFTS/20-057.html#rc_encodings) conformance classes are pre-defined for [_PNG_](http://docs.ogc.org/DRAFTS/20-057.html#rc_png), [_JPEG_](http://docs.ogc.org/DRAFTS/20-057.html#rc_jpeg), [_GeoTIFF_](http://docs.ogc.org/DRAFTS/20-057.html#rc_tiff), [_GeoJSON_](http://docs.ogc.org/DRAFTS/20-057.html#rc_geojson), [_Mapbox Vector Tiles_](http://docs.ogc.org/DRAFTS/20-057.html#rc_mvt) and [_netCDF_](http://docs.ogc.org/DRAFTS/20-057.html#rc_netcdf).
 
 How to link to tilesets of [Maps](https://docs.ogc.org/DRAFTS/20-058.html#_relationship_to_ogc_api_tiles), [Coverages](https://docs.opengeospatial.org/DRAFTS/19-087.html#rc-coverage-tiles-section) and potentially other geospatial resources, is defined in the respective specification by leveraging the _OGC API - Tiles_ building blocks.
 
