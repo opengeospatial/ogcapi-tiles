@@ -103,7 +103,8 @@ The _OGC API - Tiles_ specification defines building blocks that can be combined
 
 This specification is a complete rewrite of the of the [OGC](http://opengeospatial.org)'s previous Web Map Tile Service (WMTS) standards versions, focusing on a simple reusable RESTful building blocks which can be described using the [OpenAPI](http://openapis.org) specification.
 
-(***WARNING: Outdated***) [Quick guide](QuickGuide/README.md)
+## Quickstart guide for clients
+[Quickstart guide](QuickGuide/README.md)
 
 ## Implementations
 Several implementations of the draft standard exist:
