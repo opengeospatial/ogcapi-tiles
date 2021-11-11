@@ -1,0 +1,6 @@
+[[rec_tileset-conf-link.adoc]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/tileset/conf-link*
+^|A | Include a link with 'rel' type 'conformance' to link to the conformance page
+|===

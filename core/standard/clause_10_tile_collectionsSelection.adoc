@@ -3,7 +3,7 @@ include::clause_10_collectionsSelection.adoc[]
 ==== What resources accept this parameter
 
 So far, this requirements class is defined as a building block neutral to the type of resource it applies. In this subclause, this Standard defines the resources that supports the parameter
-include::requirements/collections-selection/REQ_resources-query.adoc[]
+include::requirements/collections-selection/REQ_query-collections.adoc[]
 
 === Declaration of conformance classes for tiles
 

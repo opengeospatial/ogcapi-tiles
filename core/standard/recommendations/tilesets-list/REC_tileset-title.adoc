@@ -1,0 +1,6 @@
+[[rec_tilesets-list_tileset_title]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/tilesets-list/tileset_title*
+^|A |The tilesets array metadata (as defined by the 2D Tile Matrix Set and Metadata standard) subset SHOULD include a short human readable title
+|===
