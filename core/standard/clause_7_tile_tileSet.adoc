@@ -81,6 +81,8 @@ Alternative encodings for tileset metadata can be supported, such as TileJSON.
 
 include::recommendations/tileset/REC_tmxslink.adoc[]
 
+include::recommendations/tileset/REC_conf-link.adoc[]
+
 Clients or servers are not required to support a specific default TileMatrixSet.
 
 NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile Matrix Set standard.
@@ -100,22 +102,17 @@ NOTE: The geospatial data resource URL is expected to be the first part of the U
   "links": [
     ...
     {
-     "rel": "self",
      "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad",
+     "rel": "self",
      "type": "application/json",
     },
     {
-     "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme",
-     "href": "http://data.example.com/tileMatrixSets/WorldMercatorWGS84Quad",
-     "type": "application/json",
-    },
-    {
-     "rel": "item",
      "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/{tileMatrix}/{tileRow}/{tileCol}.png",
      "templated": true,
+     "rel": "item",
      "type": "image/png",
     }
-    ...
+   ...
   ],
   "tileMatrixSetLimits":
   [
@@ -152,19 +149,19 @@ The following table explains the meaning of the URI template variables.
   "links": [
     ...
     {
+     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad",
      "rel": "self",
-     "href": "http://data.example.com/collections/buildings/tiles/MyTilingScheme",
      "type": "application/json",
     },
     {
-     "rel": "item",
-     "href": "http://data.example.com/collections/buildings/tiles/MyTilingScheme4/{tileMatrix}/{tileRow}/{tileCol}.png",
+     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/{tileMatrix}/{tileRow}/{tileCol}.png",
      "templated": true,
+     "rel": "item",
      "type": "image/png",
     },
     {
-     "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme",
      "href": "http://data.example.com/TileMatrixSets/MyTilingScheme",
+     "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
      "type": "application/json",
     }
    ...
@@ -195,14 +192,14 @@ In the landing page, in JSON format, the links follow the link schema defined in
   "links": [
     ...
     {
+      "href": "http://data.example.org/tileMatrixSet?f=json",
       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
-      "href": "http://data.example.org/tileMatrixSets?f=json",
       "type": "application/json",
       "title": "List of tileMatrixSets implemented by this API in JSON",
     },
     {
+      "href": "http://data.example.org/tileMatrixSet?f=html",
       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
-      "href": "http://data.example.org/tileMatrixSets?f=html",
       "type": "text/html",
       "title": "List of tileMatrixSets implemented by this API in HTML",
     }

@@ -3,7 +3,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/tilesets-list/tileset-links*
 ^|A |The API SHALL support a GET operation on a `.../tiles` path returning a list of available tilesets
-^|B |Each element of that list SHALL contain a subset of the tileset metadata, as defined by the 2D Tile Matrix Set and Metadata standard
+^|B |Each element of that list SHALL contain a subset of the tileset metadata (as defined by the 2D Tile Matrix Set and Metadata standard), consisting of: dataType, a link to the tileset (with rel: self), a link to the tileMatrixSet defintion (with rel: tiling-scheme) and tileMatrixSetURI (if the TMS is available in a registry).
 ^|C |Each element of that list SHALL include a link to a resource providing the full version of the tileset metadata, using link relation
  `self`.
 ^|D |The tileset SHALL be available as a URI that will be composed by three parts: The first part is the URL of the geospatial resource (e.g., '.../map') followed by the word '/tiles', and finally followed by the id of the tile matrix set supported.

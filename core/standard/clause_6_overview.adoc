@@ -103,10 +103,10 @@ There is still a third way to approach an OGC API that consist on assuming a set
 2+|Map tiles{set:cellbgcolor:#EEEEEE}
 |Map tiles tileset list^2^{set:cellbgcolor:#FFFFFF} |`/collections/{collectionId}/map/tiles`
 |Map tiles tileset metadata^2^ |`/collections/{collectionId}/map/tiles/{tileMatrixSetId}`
+|Map tile |`/collections/{collectionId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |Map tiles tileset list^2^ (geospatial resources^1^) |`/map/tiles`
 |Map tiles tileset metadata^2^ (geospatial resources^1^) in one tile matrix set^2^ |`/map/tiles/{tileMatrixSetId}`
-|Map tile |`/collections/{collectionId}/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-|Map tile (geospatial resources^1^) |`/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
+|Map tile (geospatial resources^1^) |`/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 2+|^1^ The expression "geospatial resources" means "from more than one geospatial resource or collection"
 
 ^2^ Specified in an the Two Dimensional Tile Matrix Set and Tileset Metadata.
