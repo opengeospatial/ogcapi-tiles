@@ -7,7 +7,7 @@
 
 include::requirements/requirements_class_tileset.adoc[]
 
-The tileset conformance class provides a mechanism to retrieve the description of a single tileset, for one particular geospatial data resource and tiled according to one specific TileMatrixSet.
+The tileset conformance class provides a mechanism to retrieve tileset metadata, for a geospatial data resource or resources and tiled according to one specific TileMatrixSet.
 It also provides a mechanism to obtain a templated link to retrieve individual tiles as defined in the _core_ conformance class.
 
 It describes the HTTP GET operation on a tileset resource and its response, but does not prescribe an specific path.
@@ -32,7 +32,6 @@ However, it is recommended that the Web API always provides a link to a local de
 
 Services and clients are encouraged to support as many of the TileMatrixSets defined in the OGC TileMatrixSet registry as possible to maximize
 interoperability, but support is not required for any specific tile matrix set.
-See also annexes D and H for TileMatrixSets defined and registered at the time of publication of this specification.
 
 === Declaration of conformance classes
 To support "generic" clients wishing to access multiple OGC API standards and extensions - and not "just" a specific Web API / server,
@@ -62,7 +61,7 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 
 === Tileset resource
 A tileset consists of a set of tiles obtained by partitioning geospatial data according to a particular TileMatrixSet.
-The tileset description resource contains all the information necessary for a client application to request tiles from that tileset.
+The tileset metadata contains all the information necessary for a client application to request tiles from the tileset.
 
 ==== Tileset path
 
@@ -73,11 +72,11 @@ OGC API dataset (landing page) and to geospatial data (collection) resources res
 It is expected that a tileset can be used as a building block in other Web APIs and on top of resources such as maps, features, coverages or any other geospatial resources that can benefit from tiling.
 
 ==== Response
-A successful GET response to a tileset resource will be a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial data resource.
+A successful GET response to a tileset resource will be metadata consisting on a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial data resource.
 
 include::requirements/tileset/REQ_tileset-description.adoc[]
 
-Alternative encodings for tileset metadata can be supported, such as TileJSON.
+Support for alternative encodings for tileset metadata can be added, such as TileJSON.
 
 include::recommendations/tileset/REC_tmxslink.adoc[]
 
@@ -85,7 +84,7 @@ include::recommendations/tileset/REC_conf-link.adoc[]
 
 Clients or servers are not required to support a specific default TileMatrixSet.
 
-NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile Matrix Set standard.
+NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile Matrix Set standard. Refer to Annex D and H for commonly used TileMatrixSets
 
 //include::requirements/tileset/REQ_tile-template.adoc[]
 

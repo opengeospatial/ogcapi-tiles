@@ -21,13 +21,13 @@ Ensure that there is a conformance class for each requirements class and a test 
 
 include::abstract_tests/core/TEST001.adoc[]
 
-==== Tiles description
+==== List of Tilesets
 
-===== Tiles description path
+===== List of Tilesets path
 
 include::abstract_tests/core/TEST002.adoc[]
 
-===== Tiles description Link
+===== List of Tilesets Link
 
 include::abstract_tests/core/TEST003.adoc[]
 
@@ -85,7 +85,7 @@ include::abstract_tests/root/TEST012.adoc[]
 
 include::abstract_tests/root/TEST013.adoc[]
 
-==== Root tiles description
+==== List of Tilesets of the root resource
 
 ===== Operation
 

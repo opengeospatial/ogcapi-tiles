@@ -1,7 +1,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test 2* |*/ats/core/sct-op*
-^|Test Purpose |Validate that information about the Tiles can be retrieved from the expected location.
+^|Test Purpose |Validate that information about the available tilesets can be retrieved from the expected location.
 ^|Requirement |/req/tiles/core/sct-op
 ^|Test Method |1. Issue an HTTP GET request to the URL {geospatial resource}/tiles
 

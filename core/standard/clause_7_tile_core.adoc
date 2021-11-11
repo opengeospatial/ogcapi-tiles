@@ -7,7 +7,7 @@ include::requirements/requirements_class_core.adoc[]
 
 The core conformance class is designed as a very generic conformance class that describes a HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard. It introduces the idea of URI templates and variables associated to the TileMatrix, TileRow and TileCol concepts defined in the 2D Tile Matrix Set standard but it does not prescribe a particular path or template form for the URL of those tiles.
 
-With this conformance class alone, the way the tileset as a whole will be described is left open. Having a tileset description is important so the implementer of a Web API should define the tileset in conjunction with the core conformance class. This can be done by choosing  between conforming to the next conformance class (<<rc_tileSet>>) or using another mechanism such as TileJSON. (Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources).
+With this conformance class alone, the way the tileset as a whole will be described is left open. Having tileset metadata is important so the implementer of a Web API should define the tileset in conjunction with the core conformance class. This can be done by choosing  between conforming to the next conformance class (<<rc_tileSet>>) or using another mechanism such as TileJSON. (Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources).
 
 === Declaration of conformance classes
 To support "generic" clients that want to access multiple OGC API standards and extensions - and not "just" a specific Web API / server,
@@ -43,7 +43,7 @@ Clients or servers are not required to support a specific default TileMatrixSet.
 The OGC TileMatrixSets registry is available at http://opengis.net/def/tms.
 
 === A tile
-A tile resource is a geospatial resource of a fragment of a more bigger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
+A tile resource is a geospatial resource presenting a fragment of a more bigger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
 
 ==== Operation
 This operation allows retrieving a single tile that represents information coming from geospatial data resources.
@@ -57,10 +57,9 @@ maps (specified in OGC - API Maps) or coverages (specified in OGC API - Coverage
 
 include::recommendations/core/REC_tc-op.adoc[]
 
-The supported encodings, or more precisely the media types of the supported encodings, can be determined from the Web API definition. The desired encoding is selected using HTTP content negotiation.
+The API implementation can determine the supported encodings, or more precisely the media types of the supported encodings, the Web API definition. The desired encoding is selected using HTTP content negotiation.
 
-
-The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet.
+The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet that is agreed between the client and server. This core do not discuss the details on how the client and service agrees on which TileMatrixSet they use.
 
 ==== Parameter tileMatrix
 include::requirements/core/REQ_tc-tilematrix-definition.adoc[]
@@ -76,7 +75,7 @@ include::recommendations/core/PER_tc-tilematrixsetid-definition.adoc[]
 
 ==== Response
 
-A successful response to a tile GET operation will be consistent with the media type of resource requested. This draft specification does not impose any media type or file format. For example:
+A successful response to a tile GET operation will be consistent with the media type of resource requested. This Standard does not impose any media type or file format. Example of common media types are:
 
 * For features the media type may be GeoJSON or Mapbox Vector Tiles;
 * For coverages the response may be a GeoTIFF;
