@@ -3,7 +3,7 @@
 [[Bibliography]]
 = Bibliography
 
-This standard is deeply inspired in concepts defined in the following documents that preceeded it. This standard offers and alternative interface to fulfill similar tasks included in these references:
+This standard is deeply inspired in concepts defined in the following documents that preceded it. This standard offers and alternative interface to fulfill similar tasks included in these references:
 
 * OGC: OGC 07-057, OpenGIS Web Map Tile Service Implementation Standard (2010)
 * OGC: OGC 13-082, OGC Web Map Tile Service (WMTS) Simple Profile (2016)
@@ -11,10 +11,6 @@ This standard is deeply inspired in concepts defined in the following documents 
 
 * OGC: OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space (2020)
 
-This standard is deeply inspired in concepts and techniques defined in the following OGC API documents. Implementations of this standard can be done also following one of them:
-
-* OGC: OGC 19-072, OGC API - Common Part 1: core
-* OGC: OGC 17-069r3, OGC API - Features Part 1
 
 Many ideas standard used in this standard where tested in Testbed 15 and experiences where documented here:
 

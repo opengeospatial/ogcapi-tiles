@@ -5,6 +5,12 @@
 [NOTE]
 Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)
 
+=== Core
+
+NOTE: for the editor TODO: to test the core conformance class the user will provide a TileMatrixSet definition, a URL template (that contains the endpoint for tiles) with specific variable names, and a range of valid values for those variables and build URLs and execute the test.
+
+NOTE: for the editor TODO: Restructure the conf. classes.
+
 === Conformance Class Core
 
 [cols="1,4",width="90%"]

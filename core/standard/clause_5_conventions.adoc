@@ -25,11 +25,13 @@ The following https://www.iana.org/assignments/link-relations/link-relations.xh
 
 In addition, the following link relation types are used for which no applicable registered link relation type could be identified:
 
-* **http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector**: The target IRI points to a resource that describes how to provide tile sets of the context resource in vector format..
+* **http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector**: The target IRI points to a resource that describes how to provide tile sets of the context resource in vector format.
 
 * **http://www.opengis.net/def/rel/ogc/1.0/tilesets-map**: The target IRI points to a resource that describes how to provide tile sets of the context resource in map format.
 
 * **http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage**: The target IRI points to a resource that describes how to provide tile sets of the context resource in coverage format.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme**: The target IRI points to a resource that describes the TileMatrixSet according to the 2D-TMS standard.
 
 Used in combination with OGC API - Features Part 1: core or OGC API Common other link relation types will be used, being the most common:
 

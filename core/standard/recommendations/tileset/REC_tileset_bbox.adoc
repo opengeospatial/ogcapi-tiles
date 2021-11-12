@@ -1,0 +1,6 @@
+[[rec_tileset-bbox.adoc]]
+[width="90%",cols="2,6a"]
+|===
+^|*Recommendation {counter:rec-id}* |*/rec/tileset/bbox*
+^|A | The tileset metadata SHOULD populate the bounding box element to describe the tileset extent.
+|===
