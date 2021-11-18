@@ -63,10 +63,6 @@ This document is the first part of a series of _OGC API - Tiles_ "parts" that us
 It is foreseen that future parts will specify other extensions, such as how to get information of a point in a tile and how to retrieve multiple tiles in a single request.
 Other standards or extensions of standards may also provide mechanisms (e.g. additional query parameters) to deal with time, elevation and other dimensions.
 
-[#img_CoreAndExtension,reftext='{figure-caption} {counter:figure-num}']
-.Modular approach in the OGC API Maps and OGC API Tiles standards family
-image::images/CoreAndExtension.png[width=600,align="center"]
-
 === How to approach an OGC API
 There are at least two ways to approach an OGC API.
 
@@ -121,3 +117,5 @@ There is still a third way to approach an OGC API that consist on assuming a set
 !===
 
 NOTE: Despite the fact that full path and full path templates in the previous table are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the Web API definition document and/or the links between resources.
+
+NOTE: The {tileMatrixSetId} URI template variable is not required by this Standard. However the <<per_core_tc-tilematrixset-definition>> proposes to make all tileset paths homogeneous by using it.
