@@ -80,9 +80,9 @@ Support for alternative encodings for tileset metadata can be added, such as Til
 
 include::recommendations/tileset/REC_tmxslink.adoc[]
 
-include::recommendations/tileset/REC_bbox.adoc[]
+include::recommendations/tileset/REC_tileset_bbox.adoc[]
 
-include::recommendations/tileset/REC_conf-link.adoc[]
+include::recommendations/tileset/REC_conf_link.adoc[]
 
 Clients or servers are not required to support a specific default TileMatrixSet.
 

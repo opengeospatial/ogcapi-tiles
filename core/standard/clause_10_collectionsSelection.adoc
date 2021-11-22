@@ -31,6 +31,8 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 By default, the  geospatial data resources included in the dataset are undefined but it are supposed to represent the dataset. This class adds a mechanism to select the geospatial data resources that are going to be used to create the a derived resource (e.g., maps or tiles). In practice this give use the capability to create resources involving from more than one geospatial data resource.
 
 ==== Parameter Resources
+[[req_collections-selection_resources-query]]
+
 include::requirements/collections-selection/REQ_query-collections.adoc[]
 
 When this parameter refers to more that one geospatial data resource, this parameter will use the
