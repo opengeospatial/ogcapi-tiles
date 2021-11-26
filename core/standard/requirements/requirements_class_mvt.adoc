@@ -1,9 +1,9 @@
 [[rc_table-mvt]]
 [cols="1,4",width="90%"]
 |===
-2+|*Requirements MVT*
+2+|*Requirements Mapbox Vector Tiles*
 2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/mvt
 |Target type |Web API
-|Dependency |<<MapBOX Vector Tiles>>
+|Dependency |<<Mapbox Vector Tiles>>
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 |===
