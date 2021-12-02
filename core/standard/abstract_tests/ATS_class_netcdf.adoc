@@ -1,0 +1,14 @@
+[[ats_netcdf]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance NetCDF*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/netcdf
+|Target type |Web API
+|Requirements class |<<rc_netcdf,NetCDF>>
+|===
+
+=== NetCDF encoding
+
+include::netcdf/ATS_content.adoc[]
+
+include::netcdf/ATS_geo.adoc[]

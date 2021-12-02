@@ -2,14 +2,61 @@
 :appendix-caption: Annex
 == Conformance Class Abstract Test Suite (Normative)
 
-[NOTE]
-Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)
+A implementation of this standard must satisfy the following system characteristics to be conformant with this specification.
 
-=== Core
+=== Conformance Class Core
+
+include::abstract_tests/ATS_class_core.adoc[leveloffset=+1]
 
 NOTE: for the editor TODO: to test the core conformance class the user will provide a TileMatrixSet definition, a URL template (that contains the endpoint for tiles) with specific variable names, and a range of valid values for those variables and build URLs and execute the test.
 
 NOTE: for the editor TODO: Restructure the conf. classes.
+
+=== Conformance Class "TileSet"
+
+include::abstract_tests/ATS_class_tileset.adoc[]
+
+=== Conformance Class "TileSets List"
+
+include::abstract_tests/ATS_class_tilesets-list.adoc[]
+
+=== Conformance Class "Dataset Tile Sets"
+
+include::abstract_tests/ATS_class_dataset-tilesets.adoc[]
+
+=== Conformance Class "Geo Data Resource Selection"
+
+include::abstract_tests/ATS_class_tile_collections-selection.adoc[]
+
+=== Conformance Class "Geo Data Resource TileSets"
+
+include::abstract_tests/ATS_class_geodata-tilesets.adoc[]
+
+=== Conformance Classes for encodings
+
+==== Conformance Class "PNG"
+
+include::abstract_tests/ATS_class_png.adoc[]
+
+==== Conformance Class "JPEG"
+include::abstract_tests/ATS_class_jpeg.adoc[]
+
+==== Conformance Class "TIFF"
+
+include::abstract_tests/ATS_class_tiff.adoc[]
+
+==== Conformance Class "NetCDF"
+
+include::abstract_tests/ATS_class_netcdf.adoc[]
+
+==== Conformance Class "GeoJSON"
+
+include::abstract_tests/ATS_class_geojson.adoc[]
+
+==== Conformance Class "Mapbox Vector Tiles"
+
+include::abstract_tests/ATS_class_mvt.adoc[]
+
 
 === Conformance Class Core
 

@@ -1,0 +1,24 @@
+[[ats_geodata-tilesets]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets
+|Target type |Web API
+|Requirements class |<<rc_geoDataResourceTileSets,Geo Data Resource TileSets>>
+|===
+
+=== Declaration of conformance classes
+
+==== Response
+
+include::geodata-tilesets/ATS_conformance-success.adoc[]
+
+=== Geospatial data resources
+
+include::geodata-tilesets/ATS_desc-links.adoc[]
+
+=== Geospatial data resources tilesets list
+
+==== Tilesets path
+
+include::geodata-tilesets/ATS_operation.adoc[]

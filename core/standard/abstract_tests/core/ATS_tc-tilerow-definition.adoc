@@ -1,0 +1,19 @@
+[[req_core_tc-tilerow-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tileset/tc-tilerow-definition*
+^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileRow` with the
+following characteristics (shown as OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+  name: tileRow
+  in: path
+  description: Row index of the tile on the selected TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix
+  required: true
+  schema:
+    type: integer
+    minimum: 0
+  example: '827'
+----
+|===

@@ -1,0 +1,12 @@
+[[ats_jpeg]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance JPEG*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg
+|Target type |Web API
+|Requirements class |<<rc_jpeg,JPEG>>
+|===
+
+=== JPEG Encoding
+
+include::jpeg/ATS_content.adoc[]

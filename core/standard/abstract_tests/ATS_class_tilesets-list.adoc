@@ -1,0 +1,20 @@
+[[ats_tilesets-list]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list
+|Target type |Web API
+|Requirements class |<<rc_tileSets-list,TileSets List>>
+|===
+
+=== Declaration of conformance classes
+
+==== Response
+
+include::tilesets-list/ATS_conformance-success.adoc[]
+
+=== Tilesets list
+
+==== Response
+
+include::tilesets-list/ATS_tileset-links.adoc[]

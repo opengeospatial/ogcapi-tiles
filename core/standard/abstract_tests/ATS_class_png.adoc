@@ -1,0 +1,12 @@
+[[ats_png]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance PNG*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/png
+|Target type |Web API
+|Requirements class |<<rc_png,PNG>>
+|===
+
+=== PNG encoding
+
+include::png/ATS_content.adoc[]

@@ -1,0 +1,14 @@
+[[req_tileset-description.adoc]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tileset/description*
+^|A |The tileset endpoint SHALL support negotiating an application/json response. In this case, a successful response of a HTTP GET for a specific tileset SHALL be encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
+^|B |If the tileset endpoint also support negotiating an application/xml response, a  successful response of a HTTP GET for a specific tileset SHALL be encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
+^|C |If the tileset uses a TileMatrixSet registered in a TileMatrixSet registry (e.g. OGC NA), the `tileMatrixSetURI` property SHALL link to the registered TileMatrixSet (e.g. `http://opengis.net/def/tms/{tileMatrixSet}`).
+^|D |The links property SHALL include a link to the TileMatrixSet definition with relation type `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme` following the
+ https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileMatrixSet.json[tile matrix set schema], as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
+^|E |The tileset metadata SHALL include at least one templated link to individual tiles using the relation type `item`, and the template parameters
+`{tileMatrix}`, and `{tileRow}` and `{tileCol}`. Those variables are to be substituted by their respective valid values to obtain the URL to a tile.
+^|F |If a tiles link template is specific to a particular format, it SHALL contain the media type for that format in the `"type"` property. Otherwise, normal HTTP content type negotiation rules apply (`Accept:` header).
+^|G |A property `templated` with a boolean `true` value SHALL be part of the link properties to indicate that the link needs to be processed to substitute the templated variables with valid values before being used as a URL to a tile.
+|===

@@ -1,0 +1,40 @@
+[[ats_core]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
+|Target type |Web API
+|Requirements class |<<rc_tiles_core,Core>>
+|===
+
+=== Declaration of conformance classes
+
+==== Response
+
+include::core/ATS_conformance-success.adoc[]
+
+=== A tile
+
+==== Operation
+
+include::core/ATS_tc-op.adoc[]
+
+==== Parameter tileMatrix
+
+include::core/ATS_tc-tilematrix-definition.adoc[]
+
+==== Parameter tileRow
+
+include::core/ATS_tc-tilerow-definition.adoc[]
+
+==== Parameter tileCol
+
+include::core/ATS_tc-tilecol-definition.adoc[]
+
+==== Response
+
+include::core/ATS_tc-success.adoc[]
+
+==== Error conditions
+
+include::core/ATS_tc-error.adoc[]

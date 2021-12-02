@@ -1,0 +1,18 @@
+[[req_core_tc-tilematrix-definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/tileset/tc-tilematrix-definition*
+^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileMatrix` with the
+following characteristics (shown as OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+  name: tileMatrix
+  in: path
+  description: Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile.
+  required: true
+  schema:
+    type: string
+  example: '11'
+----
+|===

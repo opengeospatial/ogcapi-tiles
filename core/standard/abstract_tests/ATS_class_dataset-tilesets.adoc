@@ -1,0 +1,26 @@
+[[ats_dataset-tilesets]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
+|Target type |Web API
+|Requirements class |<<rc_datasetTileSets,Dataset Tile Sets>>
+|===
+
+=== Web API landing page
+
+==== Response
+
+include::dataset-tilesets/ATS_landingpage.adoc[]
+
+=== Declaration of conformance classes
+
+==== Response
+
+include::dataset-tilesets/ATS_conformance-success.adoc[]
+
+=== Dataset tilesets
+
+==== Operation
+
+include::dataset-tilesets/ATS_operation.adoc[]

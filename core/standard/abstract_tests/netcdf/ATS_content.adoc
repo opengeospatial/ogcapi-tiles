@@ -1,0 +1,7 @@
+[[req_netcdf_content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/nercdf/content*
+^|A |Every 200-response of the server with the media type application/netcdf or application/x-netcdf SHALL be a NetCDF document representing only one tile
+^|B |The NetCDF file SHALL contain only data in two or more dimensions
+|===

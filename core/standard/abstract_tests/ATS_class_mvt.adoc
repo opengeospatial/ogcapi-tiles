@@ -1,0 +1,12 @@
+[[ats_mvt]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Mapbox Vector Tiles*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
+|Target type |Web API
+|Requirements class |<<rc_mvt,Mapbox Vector Tiles>>
+|===
+
+=== Mapbox Vector Tiles Encoding
+
+include::mvt/ATS_content.adoc[]

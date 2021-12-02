@@ -1,4 +1,4 @@
-[[rc_taboe-dataset-tilesets]]
+[[rc_table-dataset-tilesets]]
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*

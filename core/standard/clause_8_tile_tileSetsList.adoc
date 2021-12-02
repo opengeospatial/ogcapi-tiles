@@ -35,7 +35,7 @@ If the server declares also conformity to OGC API - Common or to http://www.open
 }
 =================
 
-=== Tilesets
+=== Tilesets list
 A tilesets resource represents a list of sets of tiles each one belonging to a particular TileMatrixSet. The resource return the necessary metadata to enable a client application to formulate a tile request.
 
 ==== Tilesets path

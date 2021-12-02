@@ -1,0 +1,6 @@
+[[req_netcdf_geo]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/netcdf/geo*
+^|A |If the NetCDF encoding incorporates georeference, this information SHALL be consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
+|===
