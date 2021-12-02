@@ -1,8 +1,10 @@
-[[req_mvt_content]]
+[[ats_mvt_content]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/mvt/content*
-^|A |Every 200-response of the server with the media type application/vnd.mapbox-vector-tile SHALL be a Mapbox Vector Tile document representing only one tile.
+^|*Abstract Test {counter:ats-id}* |*/conf/mvt/content*
+^|Test Purpose |Validate that
+^|Requirement |/req/mvt/content
+^|Test Method |^|A |Every 200-response of the server with the media type application/vnd.mapbox-vector-tile SHALL be a Mapbox Vector Tile document representing only one tile.
 ^|B |A feature SHALL contain a geometry field. A feature SHALL contain a type field as described in the Geometry Types section.
 ^|C |The grid space for the MVT coordinates maps linearly to the coordinates in the  tile extent expressed in the Tileset CRS unless a _prior arrangement_ applies to use an alternative CRS; and in this case the linear mapping is done to the alternative CRS and not with the Tileset CRS. For example, an extension could negotiate another CRS for coordinates with a query parameter. In particular the 0,0 coordinate in the MVT maps to the top-left corner of the tile. The bottom-right corner of the tile corresponds the bottom-right corner of the MVT grid.
 |===

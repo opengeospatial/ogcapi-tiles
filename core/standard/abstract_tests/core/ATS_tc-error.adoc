@@ -1,7 +1,7 @@
-[[req_core_core_tc-error]]
+[[ats_core_core_tc-error]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/core/tc-error*
+^|*Abstract Test {counter:ats-id}* |*/conf/core/tc-error*
 ^|A |If the path parameter values `tileMatrix`, `tileRow`, `tileCol` for a tile request are out-of-range (outside the tile matrix set or tile matrix set limits of the resource), the HTTP response SHALL use a status code `404` or a `400`. The response can also contain an exception report.
 ^|B |If the tile has no content due to lack of data in the area, but is within the data resource's tile matrix sets and tile matrix sets limits, the HTTP response will use the status code either 204 (indicating an empty tile with no content) or a 200 with the content of a blank response compatible with the requested media type (which may or may not be zero bytes long, depending on the output format).
 |===

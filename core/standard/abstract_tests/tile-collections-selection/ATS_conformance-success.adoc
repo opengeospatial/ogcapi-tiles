@@ -1,8 +1,10 @@
-[[req_tile-collections-selection_conformance-success]]
+[[ats_tile-collections-selection_conformance-success]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/tile-collections-selection/conformance-success*
-2+|If the API has a mechanism to advertise conformance classes, the list of Conformance Classes advertised by the API SHALL include:
-^|A |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
-^|B |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
+^|*Abstract Test {counter:ats-id}* |*/conf/tile-collections-selection/conformance-success*
+^|Test Purpose |Validate that the Conformance Declaration response complies with the required structure and contents.
+^|Requirement |/req/tile-collections-selection/conformance-success
+^|Test Method |1. If there is a Conformance Class declaration document, validate the response document against OpenAPI 3.0 schema confClasses.yaml
+
+2. Validate that the document includes the conformance class "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core" and "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection"
 |===

@@ -1,7 +1,7 @@
 [[req_core_tc-tilecol-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/tileset/tc-tilecol-definition*
+^|*Requirement {counter:req-id}* |*/req/core/tc-tilecol-definition*
 ^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileCol` with the
 following characteristics (shown as OpenAPI Specification 3.0 fragment):
 

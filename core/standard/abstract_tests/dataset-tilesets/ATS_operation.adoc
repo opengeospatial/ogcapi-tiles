@@ -1,7 +1,9 @@
-[[req_dataset-tilesets-operation]]
+[[ats_dataset-tilesets-operation]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/dataset-tilesets/operation*
-^|A |The dataset resource (ther root resource) SHALL have at least one tileset accessible at `.../tiles` supporting an HTTP GET operation
+^|*Abstract Test {counter:ats-id}* |*/conf/dataset-tilesets/operation*
+^|Test Purpose |Validate that
+^|Requirement |/req/dataset-tilesets/operation
+^|Test Method |^|A |The dataset resource (ther root resource) SHALL have at least one tileset accessible at `.../tiles` supporting an HTTP GET operation
 ^|B |The URI shall be composed of two parts: the initial part is the URI of the dataset resource (the root resource) that can be represented as tiles and the final part follows the pattern `/tiles`
 |===

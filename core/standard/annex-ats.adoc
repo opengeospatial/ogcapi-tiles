@@ -14,65 +14,53 @@ NOTE: for the editor TODO: Restructure the conf. classes.
 
 === Conformance Class "TileSet"
 
-include::abstract_tests/ATS_class_tileset.adoc[]
+include::abstract_tests/ATS_class_tileset.adoc[leveloffset=+1]
 
 === Conformance Class "TileSets List"
 
-include::abstract_tests/ATS_class_tilesets-list.adoc[]
+include::abstract_tests/ATS_class_tilesets-list.adoc[leveloffset=+1]
 
 === Conformance Class "Dataset Tile Sets"
 
-include::abstract_tests/ATS_class_dataset-tilesets.adoc[]
+include::abstract_tests/ATS_class_dataset-tilesets.adoc[leveloffset=+1]
 
 === Conformance Class "Geo Data Resource Selection"
 
-include::abstract_tests/ATS_class_tile_collections-selection.adoc[]
+include::abstract_tests/ATS_class_tile_collections-selection.adoc[leveloffset=+1]
 
 === Conformance Class "Geo Data Resource TileSets"
 
-include::abstract_tests/ATS_class_geodata-tilesets.adoc[]
+include::abstract_tests/ATS_class_geodata-tilesets.adoc[leveloffset=+1]
 
 === Conformance Classes for encodings
 
 ==== Conformance Class "PNG"
 
-include::abstract_tests/ATS_class_png.adoc[]
+include::abstract_tests/ATS_class_png.adoc[leveloffset=+1]
 
 ==== Conformance Class "JPEG"
-include::abstract_tests/ATS_class_jpeg.adoc[]
+include::abstract_tests/ATS_class_jpeg.adoc[leveloffset=+1]
 
 ==== Conformance Class "TIFF"
 
-include::abstract_tests/ATS_class_tiff.adoc[]
+include::abstract_tests/ATS_class_tiff.adoc[leveloffset=+1]
 
 ==== Conformance Class "NetCDF"
 
-include::abstract_tests/ATS_class_netcdf.adoc[]
+include::abstract_tests/ATS_class_netcdf.adoc[leveloffset=+1]
 
 ==== Conformance Class "GeoJSON"
 
-include::abstract_tests/ATS_class_geojson.adoc[]
+include::abstract_tests/ATS_class_geojson.adoc[leveloffset=+1]
 
 ==== Conformance Class "Mapbox Vector Tiles"
 
-include::abstract_tests/ATS_class_mvt.adoc[]
+include::abstract_tests/ATS_class_mvt.adoc[leveloffset=+1]
 
 
-=== Conformance Class Core
 
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
-|Target type |Web API
-|Requirements class | http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
-|===
 
-==== Declaration of conformance classes
 
-===== Response
-
-include::abstract_tests/core/TEST001.adoc[]
 
 ==== List of Tilesets
 

@@ -1,6 +1,9 @@
-[[req_dataset-tilesets-landingpage]]
+[[ats_dataset-tilesets-landingpage]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:rec-id}* |*/req/dataset-tilesets/landingpage*
+^|*Abstract Test {counter:ats-id}* |*/conf/dataset-tilesets/landingpage*
+^|Test Purpose |Validate that
+^|Requirement |/req/dataset-tilesets/landingpage
+^|Test Method |
 ^|A | If the API has mechanism to expose root resources (e.g., a landing page), the API SHALL advertise at least one URIs to retrieve tileset lists provided by this service with a link having a `rel` value: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`,  `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` or `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
 |===

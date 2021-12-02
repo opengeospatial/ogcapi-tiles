@@ -1,7 +1,10 @@
-[[req_tile-collections-selection_query-collections]]
+[[ats_tile-collections-selection_query-collections]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/tile-collections-selection/query-collections*
+^|*Abstract Test {counter:ats-id}* |*/conf/tile-collections-selection/query-collections*
+^|Test Purpose |Validate that
+^|Requirement |/req/tile-collections-selection/query-collections
+^|Test Method |
 ^|A |An operation that acts at the dataset level (e.g., a root derived resource) SHALL support an optional parameter `collections` with the following characteristics (shown as OpenAPI Specification 3.0 fragment)
 [source,YAML]
 ----

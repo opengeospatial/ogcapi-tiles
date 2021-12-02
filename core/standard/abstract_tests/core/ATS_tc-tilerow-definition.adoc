@@ -1,7 +1,10 @@
-[[req_core_tc-tilerow-definition]]
+[[ats_core_tc-tilerow-definition]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/tileset/tc-tilerow-definition*
+^|*Abstract Test {counter:ats-id}* |*/conf/core/tc-tilerow-definition*
+^|Test Purpose |Validate that
+^|Requirement |/req/core/tc-tilerow-definition
+^|Test Method |
 ^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileRow` with the
 following characteristics (shown as OpenAPI Specification 3.0 fragment):
 

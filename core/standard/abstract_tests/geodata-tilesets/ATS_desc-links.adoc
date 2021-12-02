@@ -1,6 +1,8 @@
-[[req_geodata-tilesets_desc-links]]
+[[ats_geodata-tilesets_desc-links]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/geodata-tilesets/desc-links*
-^|A |If the API has a mechanism for their geospatial data resources to expose links to geospatial aspects (e.g., feature items, metadata...), the API SHALL include at least one of three `link` with the `href` pointing to tileset lists for geospatial data resources and with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`, `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` and `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
+^|*Abstract Test {counter:ats-id}* |*/conf/geodata-tilesets/desc-links*
+^|Test Purpose |Validate that
+^|Requirement |/req/geodata-tilesets/desc-links
+^|Test Method |^|A |If the API has a mechanism for their geospatial data resources to expose links to geospatial aspects (e.g., feature items, metadata...), the API SHALL include at least one of three `link` with the `href` pointing to tileset lists for geospatial data resources and with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`, `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` and `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
 |===
