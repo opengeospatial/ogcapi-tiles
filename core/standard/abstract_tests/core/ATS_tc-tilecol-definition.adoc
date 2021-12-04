@@ -2,21 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/tc-tilecol-definition*
-^|Test Purpose |Validate that
+^|Test Purpose |Validate that there is a tileCol definition.
 ^|Requirement |/req/core/tc-tilecol-definition
-^|Test Method |
-^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileCol` with the
-following characteristics (shown as OpenAPI Specification 3.0 fragment):
-
-[source,YAML]
-----
-  name: tileCol
-  in: path
-  description: Column index of the tile on the selected TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix.
-  required: true
-  schema:
-    type: integer
-    minimum: 0
-  example: 1231
-----
+^|Test Method |1. If the API implements _OGC API - Common - Part 1: Core_, validate that the definition of a tile operation contains an mandatory integer parameter `tileCol`.
 |===

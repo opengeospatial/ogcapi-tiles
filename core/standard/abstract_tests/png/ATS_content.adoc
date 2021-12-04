@@ -2,10 +2,13 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/png/content*
-^|Test Purpose |Validate that
+^|Test Purpose |Validate the particularities of a PNG response
 ^|Requirement |/req/png/content
-^|Test Method |^|A |Every 200-response of the server with the media type image/png SHALL be a PNG document representing only one tile
-^|B |The colors of the PNG SHALL represent the geospatial features or coverage gradients in the tile.
-^|C |The alpha channel of the PNG will be used when partial transparency is required
-^|D |All tiles representing parts of the same resource or resources and using the same style shall follow the same portrayal rules
+^|Test Method |1. Validate that every 200-response of the server with the media type image/png contains a PNG document representing only one tile
+
+2. Validate that the colors of the PNG represents the geospatial features or coverage gradients in the tile.
+
+3. Validate that the alpha channel of the PNG is used when partial transparency is required
+
+4. Validate that all tiles representing parts of the same resource or resources and using the same style are following the same portrayal rules
 |===

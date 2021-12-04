@@ -2,13 +2,16 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/tc-op*
-^|Test Purpose |Validate that
+^|Test Purpose |With a provided template, validate that  tiles are available for the right GET request.
 ^|Requirement |/req/core/tc-op
-^|Test Method |
-^|A |The tiles making up a tileset containing available data SHALL be available as an HTTP GET request to a URI that can be built from a template
+^|Test Method |1. Validate that tiles making up a tileset containing available data are available as an HTTP GET request to a URI that is built from a template
 containing three variables (such as `{tileMatrix}`, `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{z}`, `{y}` and `{x}`).
 The URI is obtained by substituting the variables by their respective valid values.
-^|B |These variables SHALL correspond to the tile matrix, tile row and tile column of a particular tile matrix set as defined by the 2D Tile Matrix Set standard.
-^|C |The API SHALL provide a mechanism to obtain this template and associate the variables to their respective meaning, for example by implementing the tileset
+
+2. Validate that the variables in the URL correspond to the tile matrix, tile row and tile column of a particular tile matrix set as defined by the 2D Tile Matrix Set standard.
+
+3. Validate that API SHALL provides a mechanism to obtain the template and associate the variables to their respective meaning, for example by implementing the tileset
 conformance class, or through an API definition.
 |===
+
+NOTE: In practice to test the core conformance class the user of the test should provide a TileMatrixSet definition, a URL template (that contains the endpoint for tiles) with specific variable names, and a range of valid values for those variables and build URLs and execute the test.

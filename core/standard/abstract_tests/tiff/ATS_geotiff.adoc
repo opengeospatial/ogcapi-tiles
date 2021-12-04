@@ -2,7 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/tiff/geotiff*
-^|Test Purpose |Validate that
+^|Test Purpose |Validate GeoTIFF consistency of the georeference
 ^|Requirement |/req/tiff/geotiff
-^|Test Method |^|A |If the TIFF encoding incorporates GeoTIFF georeference, this information SHALL be consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
+^|Test Method |1. If the TIFF encoding incorporates GeoTIFF georeference, validate that this information is consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
 |===

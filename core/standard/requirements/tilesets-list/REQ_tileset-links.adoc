@@ -3,9 +3,9 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/tilesets-list/tileset-links*
 ^|A |The API SHALL support a GET operation on a `.../tiles` path returning a list of available tilesets
-^|B |In successful response of a HTTP GET, SHALL consist of a list of available tilesets each element containing a subset of the tileset metadata (as defined by the 2D Tile Matrix Set and Metadata standard), consisting of: dataType, a link to the tileset (with rel: self), a link to the tileMatrixSet defintion (with rel: tiling-scheme) and tileMatrixSetURI (if the TMS is available in a registry).
+^|B |A successful response of a HTTP GET SHALL consist of a list of available tilesets each element containing a subset of the tileset metadata (as defined by the 2D Tile Matrix Set and Metadata standard), consisting of: dataType, a link to the tileset (with rel: self), a link to the tileMatrixSet defintion (with rel: tiling-scheme) and tileMatrixSetURI (if the TMS is available in a registry).
 ^|C |Each element of that list SHALL include a link to a resource providing the full version of the tileset metadata, using link relation `self`.
 ^|D |The tileset-list endpoint SHALL support negotiating an application/json response. In this case, each tileset in the successful response of a HTTP GET SHALL be encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 ^|E |If the tileset-list endpoint also supports negotiating an application/xml response, each tileset in the successful response of a HTTP GET SHALL be encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
-^|F |The tileset SHALL be available as a URI that will be composed by three parts: The first part is the URL of the geospatial resource (e.g., '.../map') followed by the word '/tiles', and finally followed by the id of the tile matrix set supported.
+^|F |The tileset SHALL be available as a URI that is composed by three parts: The first part is the URL of the geospatial resource (e.g., '.../map') followed by the word '/tiles', and finally followed by the id of the tile matrix set supported.
 |===

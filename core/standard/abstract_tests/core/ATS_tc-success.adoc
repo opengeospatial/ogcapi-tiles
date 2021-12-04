@@ -2,11 +2,9 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/tc-success*
-^|Test Purpose |Validate that
+^|Test Purpose |Validate that a success execution with data responds a 200, the format is consistent with the requested and the elements represented in the tile are the ones presend in the geographical area.
 ^|Requirement |/req/core/tc-success
-^|Test Method |
-^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code `200`.
-^|B |The content of that response SHALL be consistent with the format requested via HTTP content negotiation and represent elements inside or intersecting with the spatial extent of the geographical area of the tile identified by the tile matrix, tile row and tile column of the tileset's tile matrix set.
-^|C |If the requested tile is empty, either a `200` response with an empty file (e.g., a 0 byte file if valid for the requested format, or a PNG with internal headers and no "pixels") or an HTTP status code 204 with no content SHALL be returned.
-^|D |If a tile requested is outside the TileMatrixSet, or outside the TileMatrixSet limits for the particular data resource, a 404 status code SHALL be returned.
+^|Test Method |1. validate that a successful execution of the operation with content responses a HTTP status code `200`.
+
+2. Validate that the content of that response is consistent with the format requested via HTTP content negotiation and represents elements inside or intersecting with the spatial extent of the geographical area of the tile identified by the tile matrix, tile row and tile column of the tileset's tile matrix set.
 |===

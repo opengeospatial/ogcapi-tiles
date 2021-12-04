@@ -2,19 +2,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/tc-tilematrix-definition*
-^|Test Purpose |Validate that
+^|Test Purpose |Validate that there is a tileMatrix definition.
 ^|Requirement |/req/core/tc-tilematrix-definition
-^|Test Method |^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileMatrix` with the
-following characteristics (shown as OpenAPI Specification 3.0 fragment):
-
-[source,YAML]
-----
-  name: tileMatrix
-  in: path
-  description: Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile.
-  required: true
-  schema:
-    type: string
-  example: '11'
-----
+^|Test Method |1. If the API implements _OGC API - Common - Part 1: Core_, validate that the definition of a tile operation contains an mandatory string parameter `tileMatrix`.
 |===

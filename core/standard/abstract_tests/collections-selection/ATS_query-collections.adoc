@@ -1,6 +1,8 @@
-
+[[ats_core_collections-selection-resources-query]]
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/collections-selection/resources-query*
-^|A |The parameter `collections` SHALL be supported by the dataset tileset resources (e.g {datasetAPI}/tiles/WebMercatorQuad) and the dataset tiles resources (e.g {datasetAPI}/tiles/WebMercatorQuad/{TileMatrix}/{TileRow}/{TileCol})
+^|*Abstract Test {counter:ats-id}* |*/conf/collections-selection/resources-query*
+^|Test Purpose |Validate support of the parameter `collections`.
+^|Requirement |/req/collections-selection/resources-query
+^|Test Method |1. Validate that the parameter `collections` is supported by the dataset tileset resources (e.g {datasetAPI}/tiles/WebMercatorQuad) and the dataset tiles resources (e.g {datasetAPI}/tiles/WebMercatorQuad/{TileMatrix}/{TileRow}/{TileCol})
 |===

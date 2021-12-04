@@ -2,8 +2,9 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/netcdf/content*
-^|Test Purpose |Validate that
+^|Test Purpose |Validate the particularities of a NetCDF response
 ^|Requirement |/req/netcdf/content
-^|Test Method |^|A |Every 200-response of the server with the media type application/netcdf or application/x-netcdf SHALL be a NetCDF document representing only one tile
-^|B |The NetCDF file SHALL contain only data in two or more dimensions
+^|Test Method |1. Validate that every 200-response of the server with the media type application/netcdf or application/x-netcdf contains a NetCDF document representing only one tile
+
+2. Validate that the NetCDF file contains only data in two or more dimensions
 |===

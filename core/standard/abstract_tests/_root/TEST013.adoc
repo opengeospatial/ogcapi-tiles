@@ -1,7 +1,0 @@
-[width="90%",cols="2,6a"]
-|===
-^|*Abstract Test 13* |*/ats/root/conformance-success*
-^|Test Purpose |If the API has a mechanism to advertise conformance classes, validate that the API advertises the capability of generating tiles from multiple collections adding the conformance class for this capability
-^|Requirement |/req/tiles/root/conformance-success
-^|Test Method |Validate that the mechanism the API uses for advertising conformance classes includes the URI  `http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/root`.
-|===

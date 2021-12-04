@@ -8,10 +8,6 @@ A implementation of this standard must satisfy the following system characterist
 
 include::abstract_tests/ATS_class_core.adoc[leveloffset=+1]
 
-NOTE: for the editor TODO: to test the core conformance class the user will provide a TileMatrixSet definition, a URL template (that contains the endpoint for tiles) with specific variable names, and a range of valid values for those variables and build URLs and execute the test.
-
-NOTE: for the editor TODO: Restructure the conf. classes.
-
 === Conformance Class "TileSet"
 
 include::abstract_tests/ATS_class_tileset.adoc[leveloffset=+1]

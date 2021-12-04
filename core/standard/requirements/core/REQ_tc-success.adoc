@@ -2,8 +2,6 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/tc-success*
-^|A |A successful execution of the operation SHALL be reported as a response with a HTTP status code `200`.
+^|A |A successful execution of the tile operation with content SHALL be reported as a response with a HTTP status code `200`.
 ^|B |The content of that response SHALL be consistent with the format requested via HTTP content negotiation and represent elements inside or intersecting with the spatial extent of the geographical area of the tile identified by the tile matrix, tile row and tile column of the tileset's tile matrix set.
-^|C |If the requested tile is empty, either a `200` response with an empty file (e.g., a 0 byte file if valid for the requested format, or a PNG with internal headers and no "pixels") or an HTTP status code 204 with no content SHALL be returned.
-^|D |If a tile requested is outside the TileMatrixSet, or outside the TileMatrixSet limits for the particular data resource, a 404 status code SHALL be returned.
 |===
