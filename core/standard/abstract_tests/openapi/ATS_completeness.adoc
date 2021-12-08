@@ -1,0 +1,12 @@
+[[ats_openapi_completeness]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/openapi/completeness*
+^|Test Purpose |Validate OpenAPI completeness and consistency
+^|Requirement |/req/openapi/completeness
+^|Test Method |1. Validate that OpenAPI definition describes all tileset, tilesets list and tile resources provided by the API instance.
+
+2. Validate that the OpenAPI paths are consistent with the links provided by the landing page, tileset and tilesets list resources.
+
+3. Validate that the OpenAPI paths provides the description of the parameters that the tileset and tile resources need to operate that are specified in corresponding conformance classes.
+|===

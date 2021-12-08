@@ -1,0 +1,12 @@
+[[ats_openapi]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance OpenAPI encoding*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/openapi
+|Target type |Web API
+|Requirements class |<<rc_openapi,OpenAPI>>
+|===
+
+=== Web API openAPI description response
+
+include::openapi/ATS_completeness.adoc[]

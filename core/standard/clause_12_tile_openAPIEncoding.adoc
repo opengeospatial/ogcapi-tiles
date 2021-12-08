@@ -1,0 +1,18 @@
+[[rc_openapi_encodings]]
+== Requirement Class "OpenAPI Encoding"
+
+=== Overview
+
+include::requirements/requirements_class_openAPI.adoc[]
+
+This conformance class defines the OpenAPI version 3 mechanism to retrieve a description of the API in this format
+
+=== Web API openAPI description
+
+The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application will have the full picture of the resources that the API provides how to retrive them and what responses are expected for successful and unsuccessful requests. Without this API description and application wil be forced to transvers all links starting by the landing page to get an equivalent full list of resources.
+
+The OWS Common requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition an extra requirement is provided.
+
+==== Response
+
+include::requirements/openapi/REQ_completeness.adoc[]
