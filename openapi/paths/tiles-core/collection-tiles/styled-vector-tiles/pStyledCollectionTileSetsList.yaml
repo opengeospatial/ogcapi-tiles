@@ -1,0 +1,18 @@
+get:
+   tags:
+     - Vector Tiles
+   summary: Retrieve a list of vector tilesets for the specified collection intended for use with a specified style
+   operationId: .collection.style.vector.getTileSetsList
+   parameters:
+     - $ref: '../../../../parameters/common-geodata/collectionId-vectorTiles.yaml'
+     - $ref: '../../../../parameters/unspecified/f-metadata.yaml'
+     - $ref: '../../../../parameters/styles-core/styleId-collection.yaml'
+   responses:
+     '200':
+       $ref: '../../../../responses/tiles-core/rTileSetsList.yaml'
+     '404':
+       $ref: '../../../../responses/common-core/rNotFound.yaml'
+     '406':
+       $ref: '../../../../responses/common-core/rNotAcceptable.yaml'
+     '500':
+       $ref: '../../../../responses/common-core/rServerError.yaml'

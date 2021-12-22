@@ -1,0 +1,10 @@
+description: A coverage tile returned as a response.
+content:
+  application/netcdf:
+    schema:
+      type: string
+      format: binary
+  image/tiff; application=geotiff:
+    schema:
+      type: string
+      format: binary
