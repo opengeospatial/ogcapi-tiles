@@ -1,0 +1,189 @@
+openapi: 3.0.0
+info:
+   version: '1.0'
+   title: OGC API - Tiles
+   description: |-
+      Example API Definition for OGC API - Tiles - Part 1: Core
+   contact:
+      name: Open Geospatial Consortium
+      email: info@ogc.org
+   license:
+      name: OGC License
+      url: http://www.opengeospatial.org/legal/
+servers:
+  - description: Example OGC API - Tiles server
+    url: https://maps.ecere.com/ogcapi
+paths:
+   # OGC API - Common - Part 1: Core
+   /:
+      $ref: 'paths/common-core/pLandingPage.yaml'
+   /conformance:
+      $ref: 'paths/common-core/pConformance.yaml'
+   /api:
+      $ref: 'paths/common-core/pAPI.yaml'
+
+   # Dynamic enumeration of resources specific to this implementation
+   /api/all-collections:
+      $ref: 'paths/dynamic/pAllCollections.yaml'
+   /api/coverages-collections:
+      $ref: 'paths/dynamic/pCoverageCollections.yaml'
+   /api/vectorTiles-collections:
+      $ref: 'paths/dynamic/pVectorTilesCollections.yaml'
+   /api/tileMatrixSets:
+      $ref: 'paths/dynamic/pTileMatrixSets.yaml'
+   /api/styles:
+      $ref: 'paths/dynamic/pStyles.yaml'
+
+   # OGC API - Common - Part 2: Geospatial data
+   /collections:
+      $ref: 'paths/common-geodata/pCollectionsList.yaml'
+   /collections/{collectionId}:
+      $ref: 'paths/common-geodata/pCollection.yaml'
+
+   # Shared Tile Matrix Set definitions
+   /tileMatrixSets:
+      $ref: 'paths/tiles-core/tileMatrixSets/pTileMatrixSetsList.yaml'
+   /tileMatrixSets/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/tileMatrixSets/pTileMatrixSet.yaml'
+
+   # Vector Tiles: Data Set Tile Sets
+   /tiles:
+      $ref: 'paths/tiles-core/dataset-tiles/vector-tiles/pDataSetTileSetsList.yaml'
+   /tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/dataset-tiles/vector-tiles/pDataSetTileSet.yaml'
+   /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/dataset-tiles/vector-tiles/pDataSetTile.yaml'
+
+   # Vector Tiles: Data Set Tile Sets (styled)
+   /styles/{styleId}/tiles:
+      $ref: 'paths/tiles-core/dataset-tiles/styled-vector-tiles/pStyledDataSetTileSetsList.yaml'
+   /styles/{styleId}/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/dataset-tiles/styled-vector-tiles/pStyledDataSetTileSet.yaml'
+   /styles/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/dataset-tiles/styled-vector-tiles/pStyledDataSetTile.yaml'
+
+   # Vector Tiles: Collection Tile Sets
+   /collections/{collectionId}/tiles:
+      $ref: 'paths/tiles-core/collection-tiles/vector-tiles/pCollectionTileSetsList.yaml'
+   /collections/{collectionId}/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/collection-tiles/vector-tiles/pCollectionTileSet.yaml'
+   /collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/collection-tiles/vector-tiles/pCollectionTile.yaml'
+
+   # Vector Tiles: Collection Tile Sets (styled)
+   /collections/{collectionId}/styles/{styleId}/tiles:
+      $ref: 'paths/tiles-core/collection-tiles/styled-vector-tiles/pStyledCollectionTileSetsList.yaml'
+   /collections/{collectionId}/styles/{styleId}/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/collection-tiles/styled-vector-tiles/pStyledCollectionTileSet.yaml'
+   /collections/{collectionId}/styles/{styleId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/collection-tiles/styled-vector-tiles/pStyledCollectionTile.yaml'
+
+   # Coverage Tiles
+   /collections/{collectionId}/coverage/tiles:
+      $ref: 'paths/tiles-core/collection-tiles/coverage-tiles/pCollectionCoverageTileSetsList.yaml'
+   /collections/{collectionId}/coverage/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/collection-tiles/coverage-tiles/pCollectionCoverageTileSet.yaml'
+   /collections/{collectionId}/coverage/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/collection-tiles/coverage-tiles/pCollectionCoverageTile.yaml'
+
+   # Map Tiles: Data Set Tile Sets
+   /map/tiles:
+      $ref: 'paths/tiles-core/dataset-tiles/map-tiles/pDataSetMapTileSetsList.yaml'
+   /map/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/dataset-tiles/map-tiles/pDataSetMapTileSet.yaml'
+   /map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/dataset-tiles/map-tiles/pDataSetMapTile.yaml'
+
+   # Map Tiles: Data Set Tile Sets (styled)
+   /styles/{styleId}/map/tiles:
+      $ref: 'paths/tiles-core/dataset-tiles/styled-map-tiles/pStyledDataSetMapTileSetsList.yaml'
+   /styles/{styleId}/map/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/dataset-tiles/styled-map-tiles/pStyledDataSetMapTileSet.yaml'
+   /styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/dataset-tiles/styled-map-tiles/pStyledDataSetMapTile.yaml'
+
+   # Map Tiles: Collection Tile Sets
+   /collections/{collectionId}/map/tiles:
+      $ref: 'paths/tiles-core/collection-tiles/map-tiles/pCollectionMapTileSetsList.yaml'
+   /collections/{collectionId}/map/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/collection-tiles/map-tiles/pCollectionMapTileSet.yaml'
+   /collections/{collectionId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/collection-tiles/map-tiles/pCollectionMapTile.yaml'
+
+   # Map Tiles: Collection Tile Sets (styled)
+   /collections/{collectionId}/styles/{styleId}/map/tiles:
+      $ref: 'paths/tiles-core/collection-tiles/styled-map-tiles/pStyledCollectionMapTileSetsList.yaml'
+   /collections/{collectionId}/styles/{styleId}/map/tiles/{tileMatrixSetId}:
+      $ref: 'paths/tiles-core/collection-tiles/styled-map-tiles/pStyledCollectionMapTileSet.yaml'
+   /collections/{collectionId}/styles/{styleId}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}:
+      $ref: 'paths/tiles-core/collection-tiles/styled-map-tiles/pStyledCollectionMapTile.yaml'
+
+components:
+   schemas:
+      # $ref: './schemas/index.yaml' # Not supported?
+      # https://davidgarcia.dev/posts/how-to-split-open-api-spec-into-multiple-files/ vs.
+      # https://stackoverflow.com/questions/64940379/ref-ing-multiple-files-at-the-components-schemas-top-level-in-openapi-3
+
+      # Common - Core
+      confClasses:
+         $ref: 'schemas/common-core/confClasses.yaml'
+      link:
+         $ref: 'schemas/common-core/link.yaml'
+      landingPage:
+         $ref: 'schemas/common-core/landingPage.yaml'
+      exception:
+         $ref: 'schemas/common-core/exception.yaml'
+
+      # Common - Geospatial Data
+      collections:
+         $ref: 'schemas/common-geodata/collections.yaml'
+      collectionInfo:
+         $ref: 'schemas/common-geodata/collectionInfo.yaml'
+      extent:
+         $ref: 'schemas/common-geodata/extent.yaml'
+      extent-uad:
+         $ref: 'schemas/common-geodata/extent-uad.yaml'
+      crs:
+         $ref: 'schemas/common-geodata/crs.yaml'
+      dataType:
+         $ref: 'schemas/common-geodata/dataType.yaml'
+      timeStamp:
+         $ref: 'schemas/common-geodata/timeStamp.yaml'
+      # projJSON:
+      #   $ref: 'schemas/common-geodata/projJSON.yaml'
+      numberReturned:
+         $ref: 'schemas/common-geodata/numberReturned.yaml'
+      numberMatched:
+         $ref: 'schemas/common-geodata/numberMatched.yaml'
+
+      # 2D Tile Matrix Set & Tile Set Metadata
+      tileSet:
+         $ref: 'schemas/tms/tileSet.yaml'
+      tileSet-item:
+         $ref: 'schemas/tms/tileSet-item.yaml'
+      tileMatrixSet:
+         $ref: 'schemas/tms/tileMatrixSet.yaml'
+      tileMatrixSet-item:
+         $ref: 'schemas/tms/tileMatrixSet-item.yaml'
+      tileMatrixLimits:
+         $ref: 'schemas/tms/tileMatrixLimits.yaml'
+      2DPoint:
+         $ref: 'schemas/tms/2DPoint.yaml'
+      2DBoundingBox:
+         $ref: 'schemas/tms/2DBoundingBox.yaml'
+
+      # GeoJSON
+      FeatureCollection:
+         $ref: 'schemas/geojson/FeatureCollection.yaml'
+
+      # Dynamic (or implementation-specific)
+      all-collections:
+         $ref: 'schemas/dynamic/all-collections.yaml'
+      vectorTiles-collections:
+         $ref: 'schemas/dynamic/vectorTiles-collections.yaml'
+      coverage-collections:
+         $ref: 'schemas/dynamic/coverage-collections.yaml'
+      styles:
+         $ref: 'schemas/dynamic/styles.yaml'
+      tileMatrixSets:
+         $ref: 'schemas/dynamic/tileMatrixSets.yaml'

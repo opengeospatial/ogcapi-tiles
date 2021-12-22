@@ -1,0 +1,19 @@
+get:
+   tags:
+     - Vector Tiles
+   summary: Retrieve the vector tileset metadata for the specified collection and tiling scheme (tile matrix set)
+   operationId: .collection.vector.getTileSet
+   parameters:
+     - $ref: '../../../../parameters/common-geodata/collectionId-vectorTiles.yaml'
+     - $ref: '../../../../parameters/common-geodata/collections-vectorTiles.yaml'
+     - $ref: '../../../../parameters/unspecified/tileMatrixSetId.yaml'
+     - $ref: '../../../../parameters/unspecified/f-metadata.yaml'
+   responses:
+     '200':
+       $ref: '../../../../responses/tiles-core/rTileSet.yaml'
+     '404':
+       $ref: '../../../../responses/common-core/rNotFound.yaml'
+     '406':
+       $ref: '../../../../responses/common-core/rNotAcceptable.yaml'
+     '500':
+       $ref: '../../../../responses/common-core/rServerError.yaml'

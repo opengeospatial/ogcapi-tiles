@@ -1,0 +1,27 @@
+get:
+   tags:
+     - Vector Tiles
+   summary: Retrieve a vector tile including one or more collections from the dataset.
+   operationId: .dataset.vector.getTile
+   parameters:
+     - $ref: '../../../../parameters/tiles-core/tileMatrix.yaml'
+     - $ref: '../../../../parameters/tiles-core/tileRow.yaml'
+     - $ref: '../../../../parameters/tiles-core/tileCol.yaml'
+     - $ref: '../../../../parameters/common-geodata/datetime.yaml'
+     - $ref: '../../../../parameters/common-geodata/collections-vectorTiles.yaml'
+     - $ref: '../../../../parameters/common-geodata/subset.yaml'
+     - $ref: '../../../../parameters/common-crs/crs.yaml'
+     - $ref: '../../../../parameters/common-crs/subset-crs.yaml'
+     - $ref: '../../../../parameters/unspecified/tileMatrixSetId.yaml'
+     - $ref: '../../../../parameters/unspecified/f-vectorTile.yaml'
+   responses:
+     '200':
+       $ref: '../../../../responses/tiles-core/rVectorTile.yaml'
+     '204':
+       $ref: '../../../../responses/tiles-core/rEmptyTile.yaml'
+     '404':
+       $ref: '../../../../responses/common-core/rNotFound.yaml'
+     '406':
+       $ref: '../../../../responses/common-core/rNotAcceptable.yaml'
+     '500':
+       $ref: '../../../../responses/common-core/rServerError.yaml'

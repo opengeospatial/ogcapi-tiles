@@ -1,0 +1,6 @@
+description: A 2DPoint in the CRS indicated elsewere
+type: array
+minItems: 2
+maxItems: 2
+items:
+  type: number

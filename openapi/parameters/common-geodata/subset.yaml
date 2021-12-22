@@ -1,0 +1,13 @@
+name: subset
+in: query
+description: |
+   Retrieve only part of the data by slicing or trimming along one or more axis
+   For trimming: {axisAbbrev}({low}:{high}) (preserves dimensionality)
+   For slicing:  {axisAbbrev}({value})      (reduces dimensionality)
+style: form
+explode: false
+required: false
+schema:
+  type: array
+  items:
+    type: string

@@ -1,0 +1,12 @@
+name: f
+in: query
+description: The format of the coverage tile response (e.g. tiff). Accepted values are 'tiff' (GeoTIFF), 'netcdf', or 'png'.
+required: false
+schema:
+  type: string
+  enum:
+    - tiff
+    - netcdf
+    - png
+style: form
+explode: false
