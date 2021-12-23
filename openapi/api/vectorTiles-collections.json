@@ -1,7 +1,7 @@
 {
    "type" : "string",
    "enum" : [
-      "NaturalEarth:cultural:countries",
+      "NaturalEarth:cultural:ne_10m_admin_0_countries",
       "NaturalEarth:physical:bathymetry"
    ]
 }
