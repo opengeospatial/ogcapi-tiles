@@ -1,6 +1,6 @@
 name: crs
 in: query
-description: reproject the output coverage to the given crs
+description: reproject the output to the given crs
 required: false
 style: form
 explode: true
