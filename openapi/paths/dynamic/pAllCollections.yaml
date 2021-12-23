@@ -3,7 +3,7 @@ get:
    tags:
      - API
    operationId: getAPICollections
-   summary: Retrieve the list of shared TileMatrixSets available from this API implementation & deployment.
+   summary: Retrieve the list of collections available from this API implementation & deployment.
    parameters:
      - $ref: '../../parameters/unspecified/f-metadata.yaml'
    responses:

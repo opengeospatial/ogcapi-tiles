@@ -1,9 +1,9 @@
-# API Styles
+# API Coverage Collections
 get:
    tags:
      - API
-   operationId: getAPIStyles
-   summary: Retrieve the list of styles available from this API implementation & deployment.
+   operationId: getAPICoverageCollections
+   summary: Retrieve the list of coverages collections available from this API implementation & deployment.
    parameters:
      - $ref: '../../parameters/unspecified/f-metadata.yaml'
    responses:
