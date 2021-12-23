@@ -6,7 +6,7 @@ This is the **current** working version of this initiative, written using many A
 
 Please see the latest compiled draft specification available in [HTML](http://docs.ogc.org/DRAFTS/20-057.html) and [PDF](http://docs.ogc.org/DRAFTS/20-057.pdf) which are easier to read.
 
-This specification relies on the [_Tile Matrix Set and Tile Set Metadata_ standard](https://github.com/opengeospatial/2D-Tile-Matrix-Set/) (draft version 2.0: [HTML](https://docs.opengeospatial.org/DRAFTS/17-083r3.html) or [PDF](https://docs.opengeospatial.org/DRAFTS/17-083r3.pdf)).
+This specification relies on the [_Tile Matrix Set and Tile Set Metadata_ standard](https://github.com/opengeospatial/2D-Tile-Matrix-Set/) (draft version 2.0: [HTML](https://docs.opengeospatial.org/DRAFTS/17-083r4.html) or [PDF](https://docs.opengeospatial.org/DRAFTS/17-083r4.pdf)).
 
 See the latest [OpenAPI definition](https://github.com/opengeospatial/ogcapi-tiles/tree/master/openapi) with [SwaggerUI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/opengeospatial/ogcapi-tiles/master/openapi/ogcapi-tiles-1.yaml).
 
@@ -22,7 +22,7 @@ In this context, a map is essentially an image representing at least one type of
 
 ### Core
 
-The **_Core_** conformance class of _OGC API - Tiles_ simply requires that tiles can be retrieved according to a [tile matrix set](https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-matrix-set-concept), using some template URL made up of:
+The **_Core_** conformance class of _OGC API - Tiles_ simply requires that tiles can be retrieved according to a [tile matrix set](https://docs.opengeospatial.org/DRAFTS/17-083r4.html#tile-matrix-set-concept), using some template URL made up of:
 - a tile matrix,
 - a tile row, and
 - a tile column.
@@ -36,7 +36,7 @@ The **_TileSets List_** and **_TileSet_** conformance classes defines transporta
 - `GET .../tiles`
 Retrieves the list of tilesets available (`tilesets` array property whose elements contain `links` to the tileset with `self` relation type)
 - `GET .../tiles/{tileMatrixSetId}`
-Retrieves the [metadata](https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-set-metadata) for a specific tileset (tiled according to a particular tile matrix set).
+Retrieves the [metadata](https://docs.opengeospatial.org/DRAFTS/17-083r4.html#tile-set-metadata) for a specific tileset (tiled according to a particular tile matrix set).
 - `GET .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 Retrieves a tile from a specific tileset (tiled according to a particular tile matrix set) in the requested tile matrix set, on the requested tile matrix (e.g. zoom level) with the requested row and column.
 
@@ -118,11 +118,11 @@ Several implementations of the draft standard exist:
 ### OGC API - Tiles - Part 1: Core
 The definition of OGC API - Tiles - Part 1: Core is the current focus of the Standards Working Group (SWG). As agreed by the SWG, the draft specification is organized into the following main conformance classes:
 
-1. [***Core***](http://docs.ogc.org/DRAFTS/20-057.html#rc_tiles_core) specifies that tiles are retrievable according to a [tile matrix set](https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-matrix-set-concept), using some template URL made up of a tile matrix, a tile row, and a tile column.
+1. [***Core***](http://docs.ogc.org/DRAFTS/20-057.html#rc_tiles_core) specifies that tiles are retrievable according to a [tile matrix set](https://docs.opengeospatial.org/DRAFTS/17-083r4.html#tile-matrix-set-concept), using some template URL made up of a tile matrix, a tile row, and a tile column.
 2. [***TileSet***](http://docs.ogc.org/DRAFTS/20-057.html#rc_tileSet) specifies a tileset resource (tiles in a single Tile Matrix Set), including
    - a templated URL to access individual tiles (**1**),
    - a link to the definition of the TileMatrixSet (see the [TileMatrixSet schema](https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileMatrixSet.json) and [examples](https://github.com/opengeospatial/2D-Tile-Matrix-Set/tree/master/schemas/tms/2.0/json/examples/tilematrixset)), as well as a URI for it if applicable (e.g. if registered on a [register such as the OGC NA's](http://www.opengis.net/def/tms)), as well as
-   - additional [metadata](https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-set-metadata) (see the full [TileSet schema](https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileSet.json) and [examples](https://github.com/opengeospatial/2D-Tile-Matrix-Set/tree/master/schemas/tms/2.0/json/examples/tileset))
+   - additional [metadata](https://docs.opengeospatial.org/DRAFTS/17-083r4.html#tile-set-metadata) (see the full [TileSet schema](https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileSet.json) and [examples](https://github.com/opengeospatial/2D-Tile-Matrix-Set/tree/master/schemas/tms/2.0/json/examples/tileset))
 3. [***TileSets List***](http://docs.ogc.org/DRAFTS/20-057.html#rc_tileSets-list) specifies a tilesets resource describing multiple tilesets (**2**).
 4. [***DatasetTileSets***](http://docs.ogc.org/DRAFTS/20-057.html#rc_datasetTileSets) specifies how to link to a list (**3**) of tilesets (**2**) for the whole dataset distributed by an API from its landing page (as defined by [_OGC API Common - Part 1_](https://docs.opengeospatial.org/DRAFTS/19-072.html#rc_landing-page-section)).
 5. [***GeoDataTileSets***](http://docs.ogc.org/DRAFTS/20-057.html#rc_geoDataResourceTileSets) specifies how to link to a list (**3**) of tilesets (**2**) from a resource representing a collection of geospatial data (as defined by [_OGC API Common - Part 2_](https://docs.opengeospatial.org/DRAFTS/20-024.html#rc-collections-section)).
