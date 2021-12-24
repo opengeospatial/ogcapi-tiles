@@ -177,6 +177,9 @@ components:
          $ref: 'schemas/geojson/FeatureCollection.yaml'
 
       # Dynamic (or implementation-specific)
+      enumeration:
+         $ref: 'schemas/dynamic/enumeration.yaml'
+
       all-collections:
          $ref: 'schemas/dynamic/all-collections.yaml'
       vectorTiles-collections:
@@ -187,3 +190,111 @@ components:
          $ref: 'schemas/dynamic/styles.yaml'
       tileMatrixSets:
          $ref: 'schemas/dynamic/tileMatrixSets.yaml'
+
+   parameters:
+      # Common - Core
+      f-metadata:
+         $ref: 'parameters/unspecified/f-metadata.yaml'
+
+      # Common - Geospatial data
+      collectionId-all:
+         $ref: 'parameters/common-geodata/collectionId-all.yaml'
+      collectionId-coverage:
+         $ref: 'parameters/common-geodata/collectionId-coverage.yaml'
+      collectionId-vectorTiles:
+         $ref: 'parameters/common-geodata/collectionId-vectorTiles.yaml'
+      collections:
+         $ref: 'parameters/common-geodata/collections.yaml'
+      collections-coverage:
+         $ref: 'parameters/common-geodata/collections-coverage.yaml'
+      collections-vectorTiles:
+         $ref: 'parameters/common-geodata/collections-vectorTiles.yaml'
+      datetime:
+         $ref: 'parameters/common-geodata/datetime.yaml'
+      subset:
+         $ref: 'parameters/common-geodata/subset.yaml'
+
+      # Common - CRS
+      crs:
+         $ref: 'parameters/common-crs/crs.yaml'
+      subset-crs:
+         $ref: 'parameters/common-crs/subset-crs.yaml'
+
+      # Tiles - Core
+      tileMatrix:
+         $ref: 'parameters/tiles-core/tileMatrix.yaml'
+      tileRow:
+         $ref: 'parameters/tiles-core/tileRow.yaml'
+      tileCol:
+         $ref: 'parameters/tiles-core/tileCol.yaml'
+
+      # Tiles - Core (unspecified)
+      tileMatrixSetId:
+         $ref: 'parameters/unspecified/tileMatrixSetId.yaml'
+      f-mapTile:
+         $ref: 'parameters/unspecified/f-mapTile.yaml'
+      f-vectorTile:
+         $ref: 'parameters/unspecified/f-vectorTile.yaml'
+      f-coverageTile:
+         $ref: 'parameters/unspecified/f-coverageTile.yaml'
+
+      # Maps - Core
+      bgcolor:
+         $ref: 'parameters/maps-core/bgcolor.yaml'
+      transparent:
+         $ref: 'parameters/maps-core/transparent.yaml'
+
+      # Styles - Core
+      styleId:
+         $ref: 'parameters/styles-core/styleId.yaml'
+      styleId-collection:
+         $ref: 'parameters/styles-core/styleId-collection.yaml'
+
+   responses:
+      # Generic Errors
+      NotFound:
+         $ref: 'responses/common-core/rNotFound.yaml'
+      NotAcceptable:
+         $ref: 'responses/common-core/rNotAcceptable.yaml'
+      ServerError:
+         $ref: 'responses/common-core/rServerError.yaml'
+      InvalidParameter:
+         $ref: 'responses/common-core/rInvalidParameter.yaml'
+      Exception:
+         $ref: 'responses/common-core/rException.yaml'
+
+      # Common - Core
+      LandingPage:
+         $ref: 'responses/common-core/rLandingPage.yaml'
+      Conformance:
+         $ref: 'responses/common-core/rConformance.yaml'
+      API:
+         $ref: 'responses/common-core/rAPI.yaml'
+
+      # Dynamic enumeration of resources specific to this implementation
+      Enumeration:
+         $ref: 'responses/dynamic/rEnumeration.yaml'
+
+      # Common - Geospatial Data
+      CollectionsList:
+         $ref: 'responses/common-geodata/rCollectionsList.yaml'
+      Collection:
+         $ref: 'responses/common-geodata/rCollection.yaml'
+
+      # Tiles - Core
+      TileSetsList:
+         $ref: 'responses/tiles-core/rTileSetsList.yaml'
+      TileSet:
+         $ref: 'responses/tiles-core/rTileSet.yaml'
+      MapTile:
+         $ref: 'responses/tiles-core/rMapTile.yaml'
+      CoverageTile:
+         $ref: 'responses/tiles-core/rCoverageTile.yaml'
+      VectorTile:
+         $ref: 'responses/tiles-core/rVectorTile.yaml'
+      EmptyTile:
+         $ref: 'responses/tiles-core/rEmptyTile.yaml'
+      TileMatrixSetsList:
+         $ref: 'responses/tiles-core/rTileMatrixSetsList.yaml'
+      TileMatrixSet:
+         $ref: 'responses/tiles-core/rTileMatrixSet.yaml'

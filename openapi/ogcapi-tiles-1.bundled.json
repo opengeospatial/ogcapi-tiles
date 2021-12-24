@@ -29,102 +29,18 @@
         "summary": "Retrieve the OGC API landing page for this service.",
         "parameters": [
           {
-            "name": "f",
-            "in": "query",
-            "description": "The format of the response. If no value is provided, the accept header is used to determine the format. Accepted values are 'json' or 'html'.",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "json",
-                "html"
-              ]
-            },
-            "style": "form",
-            "explode": false
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "The landing page provides links to the API definition (link relation `service-desc`, in this case path `/api`),\nto the Conformance declaration (path `/conformance`, link relation `conformance`), and to the Collections of geospatial data (path `/collections`, link relation `data`).",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/landingPage"
-                },
-                "example": {
-                  "title": "Buildings in Bonn",
-                  "description": "Access to data about buildings in the city of Bonn via a Web API that conforms to the OGC API Tiles specification.",
-                  "links": [
-                    {
-                      "href": "http://data.example.org/",
-                      "rel": "self",
-                      "type": "application/json",
-                      "title": "this document"
-                    },
-                    {
-                      "href": "http://data.example.org/api",
-                      "rel": "service-desc",
-                      "type": "application/vnd.oai.openapi+json;version=3.0",
-                      "title": "the API definition"
-                    },
-                    {
-                      "href": "http://data.example.org/api.html",
-                      "rel": "service-doc",
-                      "type": "text/html",
-                      "title": "the API documentation"
-                    },
-                    {
-                      "href": "http://data.example.org/conformance",
-                      "rel": "conformance",
-                      "type": "application/json",
-                      "title": "OGC API conformance classes implemented by this service"
-                    },
-                    {
-                      "href": "http://data.example.org/collections",
-                      "rel": "data",
-                      "type": "application/json",
-                      "title": "Information about the collections"
-                    }
-                  ]
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/LandingPage"
           },
           "406": {
-            "description": "Content negotiation failed. For example, the `Accept` header submitted in the request did not support any of the media types supported by the server for the requested resource.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/exception"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "description": "A server error occurred.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/exception"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -138,50 +54,18 @@
         "summary": "Retrieve the set of OGC API conformance classes that are supported by this service.",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "The URIs of all conformance classes supported by the server",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "allOf": [
-                    {
-                      "$ref": "#/components/schemas/confClasses"
-                    }
-                  ],
-                  "example": {
-                    "conformsTo": [
-                      "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
-                      "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json",
-                      "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/html",
-                      "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/oas30",
-                      "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/geodata",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-selection",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/png",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geojson",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tiff",
-                      "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/netcdf"
-                    ]
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/responses/Conformance"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -195,30 +79,18 @@
         "summary": "Retrieve this API definition.",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "API definition.",
-            "content": {
-              "application/vnd.oai.openapi;version=3.0": {
-                "schema": {
-                  "type": "object"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/API"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -232,21 +104,21 @@
         "summary": "Retrieve the list of collections available from this API implementation & deployment.",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1api~1styles/get/responses/200"
+            "$ref": "#/components/responses/Enumeration"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -260,21 +132,21 @@
         "summary": "Retrieve the list of coverages collections available from this API implementation & deployment.",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1api~1styles/get/responses/200"
+            "$ref": "#/components/responses/Enumeration"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -288,21 +160,21 @@
         "summary": "Retrieve the list of collections supporting vector tiles available from this API implementation & deployment.",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1api~1styles/get/responses/200"
+            "$ref": "#/components/responses/Enumeration"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -316,21 +188,21 @@
         "summary": "Retrieve the list of shared TileMatrixSets available from this API implementation & deployment.",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1api~1styles/get/responses/200"
+            "$ref": "#/components/responses/Enumeration"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -344,51 +216,21 @@
         "summary": "Retrieve the list of dataset styles available from this API implementation & deployment.",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "An enumerated list of valid string values for API parameters.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "enum"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "enum"
-                      ]
-                    },
-                    "enum": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/Enumeration"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -402,15 +244,7 @@
         "summary": "Retrieve the list of geospatial data collections available from this service.",
         "parameters": [
           {
-            "name": "datetime",
-            "in": "query",
-            "description": "Either a date-time or an interval, half-bounded or bounded. Date and time expressions\nadhere to RFC 3339. Half-bounded intervals are expressed using double-dots.\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n* A bounded interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Half-bounded intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\nOnly features that have a temporal property that intersects the value of\n`datetime` are selected.\n\nIf a feature has multiple temporal properties, it is the decision of the\nserver whether only a single temporal property is used to determine\nthe extent or all relevant temporal properties.",
-            "required": false,
-            "schema": {
-              "type": "string"
-            },
-            "style": "form",
-            "explode": false
+            "$ref": "#/components/parameters/datetime"
           },
           {
             "name": "bbox",
@@ -452,106 +286,12 @@
             "explode": false
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "The collections of (mostly geospatial) data available from this API. The dataset contains one or more collections. This resource provides information about and access to the collections. The response contains the list of collections. Each collection is accessible via one or more OGC API set of specifications, for which a link to relevant accessible resources, e.g. /collections/{collectionId}/(items, coverage, map, tiles...) is provided, with the corresponding relation type, as well as key information about the collection. This information includes:\n* a local identifier for the collection that is unique for the dataset;\n* a list of coordinate reference systems (CRS) in which data may be returned by the server. The first CRS is the default coordinate reference system (the default is always WGS 84 with axis order longitude/latitude);\n* an optional title and description for the collection;\n* an optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;\n* for collections accessible via the Features or Records API, an optional indicator about the type of the items in the collection (the default value, if the indicator is not provided, is 'feature').",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/collections"
-                },
-                "example": {
-                  "links": [
-                    {
-                      "href": "http://data.example.org/collections.json",
-                      "rel": "self",
-                      "type": "application/json",
-                      "title": "this document"
-                    },
-                    {
-                      "href": "http://data.example.org/collections.html",
-                      "rel": "alternate",
-                      "type": "text/html",
-                      "title": "this document as HTML"
-                    },
-                    {
-                      "href": "http://schemas.example.org/1.0/buildings.xsd",
-                      "rel": "describedby",
-                      "type": "application/xml",
-                      "title": "GML application schema for Acme Corporation building data"
-                    },
-                    {
-                      "href": "http://download.example.org/buildings.gpkg",
-                      "rel": "enclosure",
-                      "type": "application/geopackage+sqlite3",
-                      "title": "Bulk download (GeoPackage)",
-                      "length": 472546
-                    }
-                  ],
-                  "collections": [
-                    {
-                      "id": "buildings",
-                      "title": "Buildings",
-                      "description": "Buildings in the city of Bonn.",
-                      "extent": {
-                        "spatial": {
-                          "bbox": [
-                            [
-                              7.01,
-                              50.63,
-                              7.22,
-                              50.78
-                            ]
-                          ]
-                        },
-                        "temporal": {
-                          "interval": [
-                            [
-                              "2010-02-15T12:34:56Z",
-                              null
-                            ]
-                          ]
-                        }
-                      },
-                      "links": [
-                        {
-                          "href": "http://data.example.org/collections/buildings/items",
-                          "rel": "items",
-                          "type": "application/geo+json",
-                          "title": "Buildings"
-                        },
-                        {
-                          "href": "http://data.example.org/collections/buildings/items.html",
-                          "rel": "items",
-                          "type": "text/html",
-                          "title": "Buildings"
-                        },
-                        {
-                          "href": "https://creativecommons.org/publicdomain/zero/1.0/",
-                          "rel": "license",
-                          "type": "text/html",
-                          "title": "CC0-1.0"
-                        },
-                        {
-                          "href": "https://creativecommons.org/publicdomain/zero/1.0/rdf",
-                          "rel": "license",
-                          "type": "application/rdf+xml",
-                          "title": "CC0-1.0"
-                        }
-                      ]
-                    }
-                  ]
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/CollectionsList"
           }
         }
       }
@@ -565,84 +305,15 @@
         "summary": "Retrieve the description of a collection available from this service.",
         "parameters": [
           {
-            "name": "collectionId",
-            "in": "path",
-            "description": "Local identifier of a collection",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/all-collections"
-            }
+            "$ref": "#/components/parameters/collectionId-all"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "Information about a particular collection of (mostly geospatial) data available from this API. The collection is accessible via one or more OGC API set of specifications, for which a link to relevant accessible resources, e.g. /collections/{collectionId}/(items, coverage, map, tiles...) is contained in the response, with the corresponding relation type, as well as key information about the collection. This information includes:\n* a local identifier for the collection that is unique for the dataset;\n* a list of coordinate reference systems (CRS) in which data may be returned by the server. The first CRS is the default coordinate reference system (the default is always WGS 84 with axis order longitude/latitude);\n* an optional title and description for the collection;\n* an optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;\n* for collections accessible via the Features or Records API, an optional indicator about the type of the items in the collection (the default value, if the indicator is not provided, is 'feature').",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/collectionInfo"
-                },
-                "example": {
-                  "id": "buildings",
-                  "title": "Buildings",
-                  "description": "Buildings in the city of Bonn.",
-                  "extent": {
-                    "spatial": {
-                      "bbox": [
-                        [
-                          7.01,
-                          50.63,
-                          7.22,
-                          50.78
-                        ]
-                      ]
-                    },
-                    "temporal": {
-                      "interval": [
-                        [
-                          "2010-02-15T12:34:56Z",
-                          null
-                        ]
-                      ]
-                    }
-                  },
-                  "links": [
-                    {
-                      "href": "http://data.example.org/collections/buildings/items",
-                      "rel": "items",
-                      "type": "application/geo+json",
-                      "title": "Buildings"
-                    },
-                    {
-                      "href": "http://data.example.org/collections/buildings/items.html",
-                      "rel": "items",
-                      "type": "text/html",
-                      "title": "Buildings"
-                    },
-                    {
-                      "href": "https://creativecommons.org/publicdomain/zero/1.0/",
-                      "rel": "license",
-                      "type": "text/html",
-                      "title": "CC0-1.0"
-                    },
-                    {
-                      "href": "https://creativecommons.org/publicdomain/zero/1.0/rdf",
-                      "rel": "license",
-                      "type": "application/rdf+xml",
-                      "title": "CC0-1.0"
-                    }
-                  ]
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/Collection"
           }
         }
       }
@@ -656,38 +327,18 @@
         "operationId": "getTileMatrixSetsList",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "List of tile matrix sets (tiling schemes).",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "tileMatrixSets": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/tileMatrixSet-item"
-                      }
-                    }
-                  }
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/TileMatrixSetsList"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -701,22 +352,15 @@
         "operationId": "getTileMatrixSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "tile matrix set",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/tileMatrixSet"
-                }
-              }
-            }
+            "$ref": "#/components/responses/TileMatrixSet"
           },
           "404": {
             "description": "The requested tile matrix set id was not found",
@@ -729,10 +373,10 @@
             }
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -746,62 +390,21 @@
         "operationId": ".dataset.vector.getTileSetsList",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "List of available tilesets.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "required": [
-                    "tilesets"
-                  ],
-                  "properties": {
-                    "links": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/link"
-                      }
-                    },
-                    "tilesets": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/tileSet-item"
-                      }
-                    }
-                  }
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "description": "The requested resource does not exist on the server. For example, a path parameter had an incorrect value.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/exception"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -815,57 +418,27 @@
         "operationId": ".dataset.vector.getTileSet",
         "parameters": [
           {
-            "name": "collections",
-            "in": "query",
-            "style": "form",
-            "description": "The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included. The collection will be rendered in the order specified, with the last one showing on top, unless the priority is overridden by styling rules.",
-            "required": false,
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/all-collections"
-              }
-            }
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "name": "tileMatrixSetId",
-            "in": "path",
-            "description": "Identifier for a supported TileMatrixSet",
-            "required": true,
-            "allowEmptyValue": false,
-            "schema": {
-              "$ref": "#/components/schemas/tileMatrixSets"
-            }
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "description": "Description of the tileset",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/tileSet"
-                }
-              },
-              "text/html": {
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -879,133 +452,51 @@
         "operationId": ".dataset.vector.getTile",
         "parameters": [
           {
-            "name": "tileMatrix",
-            "in": "path",
-            "description": "Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile. For example,\nIreland is fully within the Tile at WebMercatorQuad tileMatrix=5, tileRow=10 and tileCol=15.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "example": "5"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "name": "tileRow",
-            "in": "path",
-            "description": "Row index of the tile on the selected TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at WebMercatorQuad tileMatrix=5, tileRow=10 and tileCol=15.",
-            "required": true,
-            "schema": {
-              "minimum": 0,
-              "type": "integer"
-            },
-            "example": 10
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "name": "tileCol",
-            "in": "path",
-            "description": "Column index of the tile on the selected TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at WebMercatorQuad tileMatrix=5, tileRow=10 and tileCol=15.",
-            "required": true,
-            "schema": {
-              "minimum": 0,
-              "type": "integer"
-            },
-            "example": 15
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/collections-vectorTiles"
           },
           {
-            "name": "subset",
-            "in": "query",
-            "description": "Retrieve only part of the data by slicing or trimming along one or more axis\nFor trimming: {axisAbbrev}({low}:{high}) (preserves dimensionality)\nFor slicing:  {axisAbbrev}({value})      (reduces dimensionality)\n",
-            "style": "form",
-            "explode": false,
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "name": "crs",
-            "in": "query",
-            "description": "reproject the output to the given crs",
-            "required": false,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "name": "subset-crs",
-            "in": "query",
-            "description": "crs for the specified subset",
-            "required": false,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "name": "f",
-            "in": "query",
-            "description": "The format of the vector tile response (e.g. json). Accepted values are 'mvt' (Mapbox Vector Tiles) or 'json' (GeoJSON).",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "mvt",
-                "json"
-              ]
-            },
-            "style": "form",
-            "explode": false
+            "$ref": "#/components/parameters/f-vectorTile"
           }
         ],
         "responses": {
           "200": {
-            "description": "A vector tile returned as a response.",
-            "content": {
-              "application/vnd.mapbox-vector-tile": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              },
-              "application/geo+json": {
-                "schema": {
-                  "allOf": [
-                    {
-                      "format": "geojson-feature-collection"
-                    },
-                    {
-                      "$ref": "#/components/schemas/FeatureCollection"
-                    }
-                  ]
-                }
-              }
-            }
+            "$ref": "#/components/responses/VectorTile"
           },
           "204": {
-            "description": "No data available for this tile."
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1019,31 +510,24 @@
         "operationId": ".dataset.style.vector.getTileSetsList",
         "parameters": [
           {
-            "name": "styleId",
-            "in": "path",
-            "description": "An identifier representing a specific style.",
-            "required": true,
-            "allowEmptyValue": false,
-            "schema": {
-              "$ref": "#/components/schemas/styles"
-            }
+            "$ref": "#/components/parameters/styleId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1057,30 +541,30 @@
         "operationId": ".dataset.style.vector.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1styles~1%7BstyleId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/styleId"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1094,54 +578,54 @@
         "operationId": ".dataset.style.vector.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/collections-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1styles~1%7BstyleId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/styleId"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/9"
+            "$ref": "#/components/parameters/f-vectorTile"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/200"
+            "$ref": "#/components/responses/VectorTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1155,31 +639,24 @@
         "operationId": ".collection.vector.getTileSetsList",
         "parameters": [
           {
-            "name": "collectionId",
-            "in": "path",
-            "description": "Local identifier of a vector tile collection",
-            "required": true,
-            "allowEmptyValue": false,
-            "schema": {
-              "$ref": "#/components/schemas/vectorTiles-collections"
-            }
+            "$ref": "#/components/parameters/collectionId-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1193,41 +670,30 @@
         "operationId": ".collection.vector.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-vectorTiles"
           },
           {
-            "name": "collections",
-            "in": "query",
-            "style": "form",
-            "description": "The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included. The collection will be rendered in the order specified, with the last one showing on top, unless the priority is overridden by styling rules.",
-            "required": false,
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/vectorTiles-collections"
-              }
-            }
+            "$ref": "#/components/parameters/collections-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1241,54 +707,54 @@
         "operationId": ".collection.vector.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/collections-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/9"
+            "$ref": "#/components/parameters/f-vectorTile"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/200"
+            "$ref": "#/components/responses/MapTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1302,34 +768,27 @@
         "operationId": ".collection.style.vector.getTileSetsList",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           },
           {
-            "name": "styleId",
-            "in": "path",
-            "description": "An identifier representing a specific style.",
-            "required": true,
-            "allowEmptyValue": false,
-            "schema": {
-              "type": "string"
-            }
+            "$ref": "#/components/parameters/styleId-collection"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1343,33 +802,33 @@
         "operationId": ".collection.style.vector.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/collections-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1styles~1%7BstyleId%7D~1tiles/get/parameters/2"
+            "$ref": "#/components/parameters/styleId-collection"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1383,63 +842,63 @@
         "operationId": ".collection.style.vector.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/collections-vectorTiles"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/8"
+            "$ref": "#/components/parameters/bgcolor"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/9"
+            "$ref": "#/components/parameters/transparent"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1styles~1%7BstyleId%7D~1tiles/get/parameters/2"
+            "$ref": "#/components/parameters/styleId-collection"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/9"
+            "$ref": "#/components/parameters/f-vectorTile"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/200"
+            "$ref": "#/components/responses/VectorTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1453,33 +912,24 @@
         "operationId": ".collection.coverage.getTileSetsList",
         "parameters": [
           {
-            "name": "collectionId",
-            "in": "path",
-            "description": "Local identifier of a coverage collection",
-            "required": true,
-            "allowEmptyValue": false,
-            "schema": {
-              "$ref": "#/components/schemas/coverage-collections"
-            },
-            "style": "simple",
-            "explode": false
+            "$ref": "#/components/parameters/collectionId-coverage"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1493,41 +943,30 @@
         "operationId": ".collection.coverage.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1coverage~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-coverage"
           },
           {
-            "name": "collections",
-            "in": "query",
-            "style": "form",
-            "description": "The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included. The collection will be rendered in the order specified, with the last one showing on top, unless the priority is overridden by styling rules.",
-            "required": false,
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/coverage-collections"
-              }
-            }
+            "$ref": "#/components/parameters/collections-coverage"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1541,81 +980,54 @@
         "operationId": ".collection.coverage.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1coverage~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-coverage"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1coverage~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/collections-coverage"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "name": "f",
-            "in": "query",
-            "description": "The format of the coverage tile response (e.g. tiff). Accepted values are 'tiff' (GeoTIFF), 'netcdf', or 'png'.",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "tiff",
-                "netcdf",
-                "png"
-              ]
-            },
-            "style": "form",
-            "explode": false
+            "$ref": "#/components/parameters/f-coverageTile"
           }
         ],
         "responses": {
           "200": {
-            "description": "A coverage tile returned as a response.",
-            "content": {
-              "application/netcdf": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              },
-              "image/tiff; application=geotiff": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
+            "$ref": "#/components/responses/CoverageTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1629,21 +1041,21 @@
         "operationId": ".dataset.map.getTileSetsList",
         "parameters": [
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1657,27 +1069,27 @@
         "operationId": ".dataset.map.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1691,108 +1103,57 @@
         "operationId": ".dataset.map.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "name": "bgcolor",
-            "in": "query",
-            "description": "Web color name or hexadecimal 0x[AA]RRGGBB color value for the background color (default to 0x9C9C9C gray). If alpha is not specified, full opacity is assumed.",
-            "required": false,
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "default": "0xFFFFFF"
-            }
+            "$ref": "#/components/parameters/bgcolor"
           },
           {
-            "name": "transparent",
-            "in": "query",
-            "description": "Background transparency of map (default=true).",
-            "required": false,
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "boolean",
-              "default": true
-            }
+            "$ref": "#/components/parameters/transparent"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "name": "f",
-            "in": "query",
-            "description": "The format of the map tile response (e.g. png). Accepted values are 'png', 'jpg' or 'tiff' (GeoTIFF).",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "png",
-                "jpg",
-                "tiff"
-              ]
-            },
-            "style": "form",
-            "explode": false
+            "$ref": "#/components/parameters/f-mapTile"
           }
         ],
         "responses": {
           "200": {
-            "description": "A map tile image returned as a response.",
-            "content": {
-              "image/png": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              },
-              "image/jpeg": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              },
-              "image/tiff; application=geotiff": {
-                "schema": {
-                  "type": "string",
-                  "format": "binary"
-                }
-              }
-            }
+            "$ref": "#/components/responses/MapTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1806,24 +1167,24 @@
         "operationId": ".dataset.style.map.getTileSetsList",
         "parameters": [
           {
-            "$ref": "#/paths/~1styles~1%7BstyleId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/styleId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1837,30 +1198,30 @@
         "operationId": ".dataset.style.map.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1styles~1%7BstyleId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/styleId"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1874,60 +1235,60 @@
         "operationId": ".dataset.style.map.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/8"
+            "$ref": "#/components/parameters/bgcolor"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/9"
+            "$ref": "#/components/parameters/transparent"
           },
           {
-            "$ref": "#/paths/~1styles~1%7BstyleId%7D~1tiles/get/parameters/0"
+            "$ref": "#/components/parameters/styleId"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/11"
+            "$ref": "#/components/parameters/f-mapTile"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/200"
+            "$ref": "#/components/responses/MapTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1941,24 +1302,24 @@
         "operationId": ".collection.map.getTileSetsList",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-all"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -1972,30 +1333,30 @@
         "operationId": ".collection.map.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-all"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -2009,60 +1370,60 @@
         "operationId": ".collection.map.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-all"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/8"
+            "$ref": "#/components/parameters/bgcolor"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/9"
+            "$ref": "#/components/parameters/transparent"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/11"
+            "$ref": "#/components/parameters/f-mapTile"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/200"
+            "$ref": "#/components/responses/MapTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -2076,27 +1437,27 @@
         "operationId": ".collection.style.map.getTileSetsList",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-all"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1styles~1%7BstyleId%7D~1tiles/get/parameters/2"
+            "$ref": "#/components/parameters/styleId-collection"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles/get/responses/200"
+            "$ref": "#/components/responses/TileSetsList"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -2110,33 +1471,33 @@
         "operationId": ".collection.style.map.getTileSet",
         "parameters": [
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-all"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1styles~1%7BstyleId%7D~1tiles/get/parameters/2"
+            "$ref": "#/components/parameters/styleId-collection"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1/get/parameters/0"
+            "$ref": "#/components/parameters/f-metadata"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/responses/200"
+            "$ref": "#/components/responses/TileSet"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -2150,63 +1511,63 @@
         "operationId": ".collection.style.map.getTile",
         "parameters": [
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/0"
+            "$ref": "#/components/parameters/tileMatrix"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileRow"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/2"
+            "$ref": "#/components/parameters/tileCol"
           },
           {
-            "$ref": "#/paths/~1collections/get/parameters/0"
+            "$ref": "#/components/parameters/datetime"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collectionId-all"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/0"
+            "$ref": "#/components/parameters/collections"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/5"
+            "$ref": "#/components/parameters/subset"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/6"
+            "$ref": "#/components/parameters/crs"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/7"
+            "$ref": "#/components/parameters/subset-crs"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/8"
+            "$ref": "#/components/parameters/bgcolor"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/9"
+            "$ref": "#/components/parameters/transparent"
           },
           {
-            "$ref": "#/paths/~1collections~1%7BcollectionId%7D~1styles~1%7BstyleId%7D~1tiles/get/parameters/2"
+            "$ref": "#/components/parameters/styleId-collection"
           },
           {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D/get/parameters/1"
+            "$ref": "#/components/parameters/tileMatrixSetId"
           },
           {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/parameters/11"
+            "$ref": "#/components/parameters/f-mapTile"
           }
         ],
         "responses": {
           "200": {
-            "$ref": "#/paths/~1map~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/200"
+            "$ref": "#/components/responses/MapTile"
           },
           "204": {
-            "$ref": "#/paths/~1tiles~1%7BtileMatrixSetId%7D~1%7BtileMatrix%7D~1%7BtileRow%7D~1%7BtileCol%7D/get/responses/204"
+            "$ref": "#/components/responses/EmptyTile"
           },
           "404": {
-            "$ref": "#/paths/~1tiles/get/responses/404"
+            "$ref": "#/components/responses/NotFound"
           },
           "406": {
-            "$ref": "#/paths/~1/get/responses/406"
+            "$ref": "#/components/responses/NotAcceptable"
           },
           "500": {
-            "$ref": "#/paths/~1/get/responses/500"
+            "$ref": "#/components/responses/ServerError"
           }
         }
       }
@@ -3712,6 +3073,27 @@
           }
         }
       },
+      "enumeration": {
+        "type": "object",
+        "required": [
+          "type",
+          "enum"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "enum"
+            ]
+          },
+          "enum": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "all-collections": {
         "type": "string",
         "enum": [
@@ -3753,6 +3135,778 @@
           "GNOSISGlobalGrid",
           "WorldMercatorWGS84Quad"
         ]
+      }
+    },
+    "parameters": {
+      "f-metadata": {
+        "name": "f",
+        "in": "query",
+        "description": "The format of the response. If no value is provided, the accept header is used to determine the format. Accepted values are 'json' or 'html'.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "json",
+            "html"
+          ]
+        },
+        "style": "form",
+        "explode": false
+      },
+      "collectionId-all": {
+        "name": "collectionId",
+        "in": "path",
+        "description": "Local identifier of a collection",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/all-collections"
+        }
+      },
+      "collectionId-coverage": {
+        "name": "collectionId",
+        "in": "path",
+        "description": "Local identifier of a coverage collection",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "$ref": "#/components/schemas/coverage-collections"
+        },
+        "style": "simple",
+        "explode": false
+      },
+      "collectionId-vectorTiles": {
+        "name": "collectionId",
+        "in": "path",
+        "description": "Local identifier of a vector tile collection",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "$ref": "#/components/schemas/vectorTiles-collections"
+        }
+      },
+      "collections": {
+        "name": "collections",
+        "in": "query",
+        "style": "form",
+        "description": "The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included. The collection will be rendered in the order specified, with the last one showing on top, unless the priority is overridden by styling rules.",
+        "required": false,
+        "explode": false,
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/all-collections"
+          }
+        }
+      },
+      "collections-coverage": {
+        "name": "collections",
+        "in": "query",
+        "style": "form",
+        "description": "The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included. The collection will be rendered in the order specified, with the last one showing on top, unless the priority is overridden by styling rules.",
+        "required": false,
+        "explode": false,
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/coverage-collections"
+          }
+        }
+      },
+      "collections-vectorTiles": {
+        "name": "collections",
+        "in": "query",
+        "style": "form",
+        "description": "The collections that should be included in the response. The parameter value is a comma-separated list of collection identifiers. If the parameters is missing, some or all collections will be included. The collection will be rendered in the order specified, with the last one showing on top, unless the priority is overridden by styling rules.",
+        "required": false,
+        "explode": false,
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/vectorTiles-collections"
+          }
+        }
+      },
+      "datetime": {
+        "name": "datetime",
+        "in": "query",
+        "description": "Either a date-time or an interval, half-bounded or bounded. Date and time expressions\nadhere to RFC 3339. Half-bounded intervals are expressed using double-dots.\n\nExamples:\n\n* A date-time: \"2018-02-12T23:20:50Z\"\n* A bounded interval: \"2018-02-12T00:00:00Z/2018-03-18T12:31:12Z\"\n* Half-bounded intervals: \"2018-02-12T00:00:00Z/..\" or \"../2018-03-18T12:31:12Z\"\n\nOnly features that have a temporal property that intersects the value of\n`datetime` are selected.\n\nIf a feature has multiple temporal properties, it is the decision of the\nserver whether only a single temporal property is used to determine\nthe extent or all relevant temporal properties.",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "style": "form",
+        "explode": false
+      },
+      "subset": {
+        "name": "subset",
+        "in": "query",
+        "description": "Retrieve only part of the data by slicing or trimming along one or more axis\nFor trimming: {axisAbbrev}({low}:{high}) (preserves dimensionality)\nFor slicing:  {axisAbbrev}({value})      (reduces dimensionality)\n",
+        "style": "form",
+        "explode": false,
+        "required": false,
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "crs": {
+        "name": "crs",
+        "in": "query",
+        "description": "reproject the output to the given crs",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "subset-crs": {
+        "name": "subset-crs",
+        "in": "query",
+        "description": "crs for the specified subset",
+        "required": false,
+        "style": "form",
+        "explode": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tileMatrix": {
+        "name": "tileMatrix",
+        "in": "path",
+        "description": "Identifier selecting one of the scales defined in the TileMatrixSet and representing the scaleDenominator the tile. For example,\nIreland is fully within the Tile at WebMercatorQuad tileMatrix=5, tileRow=10 and tileCol=15.",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "example": "5"
+      },
+      "tileRow": {
+        "name": "tileRow",
+        "in": "path",
+        "description": "Row index of the tile on the selected TileMatrix. It cannot exceed the MatrixWidth-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at WebMercatorQuad tileMatrix=5, tileRow=10 and tileCol=15.",
+        "required": true,
+        "schema": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "example": 10
+      },
+      "tileCol": {
+        "name": "tileCol",
+        "in": "path",
+        "description": "Column index of the tile on the selected TileMatrix. It cannot exceed the MatrixHeight-1 for the selected TileMatrix. For example, Ireland is fully within the Tile at WebMercatorQuad tileMatrix=5, tileRow=10 and tileCol=15.",
+        "required": true,
+        "schema": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "example": 15
+      },
+      "tileMatrixSetId": {
+        "name": "tileMatrixSetId",
+        "in": "path",
+        "description": "Identifier for a supported TileMatrixSet",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "$ref": "#/components/schemas/tileMatrixSets"
+        }
+      },
+      "f-mapTile": {
+        "name": "f",
+        "in": "query",
+        "description": "The format of the map tile response (e.g. png). Accepted values are 'png', 'jpg' or 'tiff' (GeoTIFF).",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "png",
+            "jpg",
+            "tiff"
+          ]
+        },
+        "style": "form",
+        "explode": false
+      },
+      "f-vectorTile": {
+        "name": "f",
+        "in": "query",
+        "description": "The format of the vector tile response (e.g. json). Accepted values are 'mvt' (Mapbox Vector Tiles) or 'json' (GeoJSON).",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "mvt",
+            "json"
+          ]
+        },
+        "style": "form",
+        "explode": false
+      },
+      "f-coverageTile": {
+        "name": "f",
+        "in": "query",
+        "description": "The format of the coverage tile response (e.g. tiff). Accepted values are 'tiff' (GeoTIFF), 'netcdf', or 'png'.",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "enum": [
+            "tiff",
+            "netcdf",
+            "png"
+          ]
+        },
+        "style": "form",
+        "explode": false
+      },
+      "bgcolor": {
+        "name": "bgcolor",
+        "in": "query",
+        "description": "Web color name or hexadecimal 0x[AA]RRGGBB color value for the background color (default to 0x9C9C9C gray). If alpha is not specified, full opacity is assumed.",
+        "required": false,
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "type": "string",
+          "default": "0xFFFFFF"
+        }
+      },
+      "transparent": {
+        "name": "transparent",
+        "in": "query",
+        "description": "Background transparency of map (default=true).",
+        "required": false,
+        "style": "form",
+        "explode": false,
+        "schema": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "styleId": {
+        "name": "styleId",
+        "in": "path",
+        "description": "An identifier representing a specific style.",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "$ref": "#/components/schemas/styles"
+        }
+      },
+      "styleId-collection": {
+        "name": "styleId",
+        "in": "path",
+        "description": "An identifier representing a specific style.",
+        "required": true,
+        "allowEmptyValue": false,
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    "responses": {
+      "NotFound": {
+        "description": "The requested resource does not exist on the server. For example, a path parameter had an incorrect value.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/exception"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "NotAcceptable": {
+        "description": "Content negotiation failed. For example, the `Accept` header submitted in the request did not support any of the media types supported by the server for the requested resource.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/exception"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ServerError": {
+        "description": "A server error occurred.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/exception"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "InvalidParameter": {
+        "description": "A query parameter has an invalid value.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/exception"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Exception": {
+        "description": "An error occured.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/exception"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "LandingPage": {
+        "description": "The landing page provides links to the API definition (link relation `service-desc`, in this case path `/api`),\nto the Conformance declaration (path `/conformance`, link relation `conformance`), and to the Collections of geospatial data (path `/collections`, link relation `data`).",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/landingPage"
+            },
+            "example": {
+              "title": "Buildings in Bonn",
+              "description": "Access to data about buildings in the city of Bonn via a Web API that conforms to the OGC API Tiles specification.",
+              "links": [
+                {
+                  "href": "http://data.example.org/",
+                  "rel": "self",
+                  "type": "application/json",
+                  "title": "this document"
+                },
+                {
+                  "href": "http://data.example.org/api",
+                  "rel": "service-desc",
+                  "type": "application/vnd.oai.openapi+json;version=3.0",
+                  "title": "the API definition"
+                },
+                {
+                  "href": "http://data.example.org/api.html",
+                  "rel": "service-doc",
+                  "type": "text/html",
+                  "title": "the API documentation"
+                },
+                {
+                  "href": "http://data.example.org/conformance",
+                  "rel": "conformance",
+                  "type": "application/json",
+                  "title": "OGC API conformance classes implemented by this service"
+                },
+                {
+                  "href": "http://data.example.org/collections",
+                  "rel": "data",
+                  "type": "application/json",
+                  "title": "Information about the collections"
+                }
+              ]
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Conformance": {
+        "description": "The URIs of all conformance classes supported by the server",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/confClasses"
+                }
+              ],
+              "example": {
+                "conformsTo": [
+                  "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
+                  "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json",
+                  "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/html",
+                  "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/oas30",
+                  "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/geodata",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-selection",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/png",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geojson",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tiff",
+                  "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/netcdf"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "API": {
+        "description": "API definition.",
+        "content": {
+          "application/vnd.oai.openapi;version=3.0": {
+            "schema": {
+              "type": "object"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Enumeration": {
+        "description": "An enumerated list of valid string values for API parameters.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/enumeration"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CollectionsList": {
+        "description": "The collections of (mostly geospatial) data available from this API. The dataset contains one or more collections. This resource provides information about and access to the collections. The response contains the list of collections. Each collection is accessible via one or more OGC API set of specifications, for which a link to relevant accessible resources, e.g. /collections/{collectionId}/(items, coverage, map, tiles...) is provided, with the corresponding relation type, as well as key information about the collection. This information includes:\n* a local identifier for the collection that is unique for the dataset;\n* a list of coordinate reference systems (CRS) in which data may be returned by the server. The first CRS is the default coordinate reference system (the default is always WGS 84 with axis order longitude/latitude);\n* an optional title and description for the collection;\n* an optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;\n* for collections accessible via the Features or Records API, an optional indicator about the type of the items in the collection (the default value, if the indicator is not provided, is 'feature').",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/collections"
+            },
+            "example": {
+              "links": [
+                {
+                  "href": "http://data.example.org/collections.json",
+                  "rel": "self",
+                  "type": "application/json",
+                  "title": "this document"
+                },
+                {
+                  "href": "http://data.example.org/collections.html",
+                  "rel": "alternate",
+                  "type": "text/html",
+                  "title": "this document as HTML"
+                },
+                {
+                  "href": "http://schemas.example.org/1.0/buildings.xsd",
+                  "rel": "describedby",
+                  "type": "application/xml",
+                  "title": "GML application schema for Acme Corporation building data"
+                },
+                {
+                  "href": "http://download.example.org/buildings.gpkg",
+                  "rel": "enclosure",
+                  "type": "application/geopackage+sqlite3",
+                  "title": "Bulk download (GeoPackage)",
+                  "length": 472546
+                }
+              ],
+              "collections": [
+                {
+                  "id": "buildings",
+                  "title": "Buildings",
+                  "description": "Buildings in the city of Bonn.",
+                  "extent": {
+                    "spatial": {
+                      "bbox": [
+                        [
+                          7.01,
+                          50.63,
+                          7.22,
+                          50.78
+                        ]
+                      ]
+                    },
+                    "temporal": {
+                      "interval": [
+                        [
+                          "2010-02-15T12:34:56Z",
+                          null
+                        ]
+                      ]
+                    }
+                  },
+                  "links": [
+                    {
+                      "href": "http://data.example.org/collections/buildings/items",
+                      "rel": "items",
+                      "type": "application/geo+json",
+                      "title": "Buildings"
+                    },
+                    {
+                      "href": "http://data.example.org/collections/buildings/items.html",
+                      "rel": "items",
+                      "type": "text/html",
+                      "title": "Buildings"
+                    },
+                    {
+                      "href": "https://creativecommons.org/publicdomain/zero/1.0/",
+                      "rel": "license",
+                      "type": "text/html",
+                      "title": "CC0-1.0"
+                    },
+                    {
+                      "href": "https://creativecommons.org/publicdomain/zero/1.0/rdf",
+                      "rel": "license",
+                      "type": "application/rdf+xml",
+                      "title": "CC0-1.0"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "Collection": {
+        "description": "Information about a particular collection of (mostly geospatial) data available from this API. The collection is accessible via one or more OGC API set of specifications, for which a link to relevant accessible resources, e.g. /collections/{collectionId}/(items, coverage, map, tiles...) is contained in the response, with the corresponding relation type, as well as key information about the collection. This information includes:\n* a local identifier for the collection that is unique for the dataset;\n* a list of coordinate reference systems (CRS) in which data may be returned by the server. The first CRS is the default coordinate reference system (the default is always WGS 84 with axis order longitude/latitude);\n* an optional title and description for the collection;\n* an optional extent that can be used to provide an indication of the spatial and temporal extent of the collection - typically derived from the data;\n* for collections accessible via the Features or Records API, an optional indicator about the type of the items in the collection (the default value, if the indicator is not provided, is 'feature').",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/collectionInfo"
+            },
+            "example": {
+              "id": "buildings",
+              "title": "Buildings",
+              "description": "Buildings in the city of Bonn.",
+              "extent": {
+                "spatial": {
+                  "bbox": [
+                    [
+                      7.01,
+                      50.63,
+                      7.22,
+                      50.78
+                    ]
+                  ]
+                },
+                "temporal": {
+                  "interval": [
+                    [
+                      "2010-02-15T12:34:56Z",
+                      null
+                    ]
+                  ]
+                }
+              },
+              "links": [
+                {
+                  "href": "http://data.example.org/collections/buildings/items",
+                  "rel": "items",
+                  "type": "application/geo+json",
+                  "title": "Buildings"
+                },
+                {
+                  "href": "http://data.example.org/collections/buildings/items.html",
+                  "rel": "items",
+                  "type": "text/html",
+                  "title": "Buildings"
+                },
+                {
+                  "href": "https://creativecommons.org/publicdomain/zero/1.0/",
+                  "rel": "license",
+                  "type": "text/html",
+                  "title": "CC0-1.0"
+                },
+                {
+                  "href": "https://creativecommons.org/publicdomain/zero/1.0/rdf",
+                  "rel": "license",
+                  "type": "application/rdf+xml",
+                  "title": "CC0-1.0"
+                }
+              ]
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TileSetsList": {
+        "description": "List of available tilesets.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "required": [
+                "tilesets"
+              ],
+              "properties": {
+                "links": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/link"
+                  }
+                },
+                "tilesets": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/tileSet-item"
+                  }
+                }
+              }
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TileSet": {
+        "description": "Description of the tileset",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/tileSet"
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "MapTile": {
+        "description": "A map tile image returned as a response.",
+        "content": {
+          "image/png": {
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          "image/jpeg": {
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          "image/tiff; application=geotiff": {
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        }
+      },
+      "CoverageTile": {
+        "description": "A coverage tile returned as a response.",
+        "content": {
+          "application/netcdf": {
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          "image/tiff; application=geotiff": {
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        }
+      },
+      "VectorTile": {
+        "description": "A vector tile returned as a response.",
+        "content": {
+          "application/vnd.mapbox-vector-tile": {
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          },
+          "application/geo+json": {
+            "schema": {
+              "allOf": [
+                {
+                  "format": "geojson-feature-collection"
+                },
+                {
+                  "$ref": "#/components/schemas/FeatureCollection"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "EmptyTile": {
+        "description": "No data available for this tile."
+      },
+      "TileMatrixSetsList": {
+        "description": "List of tile matrix sets (tiling schemes).",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tileMatrixSets": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/tileMatrixSet-item"
+                  }
+                }
+              }
+            }
+          },
+          "text/html": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "TileMatrixSet": {
+        "description": "tile matrix set",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/tileMatrixSet"
+            }
+          }
+        }
       }
     }
   }
