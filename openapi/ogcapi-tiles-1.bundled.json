@@ -2087,7 +2087,8 @@
         "type": "object",
         "required": [
           "dataType",
-          "crs"
+          "crs",
+          "links"
         ],
         "properties": {
           "title": {
@@ -2097,44 +2098,6 @@
           "description": {
             "description": "Brief narrative description of this tile set",
             "type": "string"
-          },
-          "keywords": {
-            "description": "keywords about this tileset",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "version": {
-            "description": "Version of the Tile Set. Changes if the data behind the tiles has been changed",
-            "type": "string"
-          },
-          "pointOfContact": {
-            "description": "Useful information to contact the authors or custodians for the Tile Set",
-            "type": "string"
-          },
-          "accessConstraints": {
-            "description": "Restrictions on the availability of the Tile Set that the user needs to be aware of before using or redistributing the Tile Set",
-            "type": "string",
-            "default": "unclassified",
-            "enum": [
-              "unclassified",
-              "restricted",
-              "confidential",
-              "secret",
-              "topSecret"
-            ]
-          },
-          "license": {
-            "description": "License applicable to the tiles",
-            "type": "string"
-          },
-          "mediaTypes": {
-            "description": "Media types available for the tiles",
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "dataType": {
             "allOf": [
@@ -2146,13 +2109,6 @@
               }
             ]
           },
-          "tileMatrixSetLimits": {
-            "description": "Limits for the TileRow and TileCol values for each TileMatrix in the tileMatrixSet. If missing, there are no limits other that the ones imposed by the TileMatrixSet. If present the TileMatrices listed are limited and the rest not available at all",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/tileMatrixLimits"
-            }
-          },
           "crs": {
             "allOf": [
               {
@@ -2163,39 +2119,28 @@
               }
             ]
           },
+          "tileMatrixSetURI": {
+            "description": "Reference to a Tile Matrix Set on an offical source for Tile Matrix Sets such as the OGC NA definition server (http://www.opengis.net/def/tms/). Required if the tile matrix set is registered on an open official source.",
+            "type": "string",
+            "format": "uri"
+          },
+          "links": {
+            "description": "Links to related resources. Possible link 'rel' values are: 'http://www.opengis.net/def/rel/ogc/1.0/dataset' for a URL pointing to the dataset, 'item' for a URL template to get a tile; 'alternate' for a URL pointing to another representation of the TileSetMetadata (e.g a TileJSON file); 'http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme' for a definition of the TileMatrixSet; 'http://www.opengis.net/def/rel/ogc/1.0/geodata' for pointing to a single collection (if the tileset represents a single collection)",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/link"
+            }
+          },
+          "tileMatrixSetLimits": {
+            "description": "Limits for the TileRow and TileCol values for each TileMatrix in the tileMatrixSet. If missing, there are no limits other that the ones imposed by the TileMatrixSet. If present the TileMatrices listed are limited and the rest not available at all",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/tileMatrixLimits"
+            }
+          },
           "epoch": {
             "description": "Epoch of the Coordinate Reference System (CRS)",
             "type": "number"
-          },
-          "boundingBox": {
-            "allOf": [
-              {
-                "description": "Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS"
-              },
-              {
-                "$ref": "#/components/schemas/2DBoundingBox"
-              }
-            ]
-          },
-          "created": {
-            "allOf": [
-              {
-                "description": "When the Tile Set was first produced"
-              },
-              {
-                "$ref": "#/components/schemas/timeStamp"
-              }
-            ]
-          },
-          "updated": {
-            "allOf": [
-              {
-                "description": "Last Tile Set change/revision"
-              },
-              {
-                "$ref": "#/components/schemas/timeStamp"
-              }
-            ]
           },
           "layers": {
             "minItems": 1,
@@ -2346,7 +2291,7 @@
                       "description": "Properties represented by the features in this layer. Can be the attributes of a feature dataset (datatype=geometries) or the rangeType of a coverage (datatype=coverage)"
                     },
                     {
-                      "description": "Attributes of the features or rangetypes of a coverage. Defined by\na subset of the JSON Schema for the properties of a feature\n",
+                      "description": "Attributes of the features or rangetypes of a coverage. Defined by a subset of the JSON Schema for the properties of a feature",
                       "type": "object",
                       "required": [
                         "type",
@@ -2371,7 +2316,7 @@
                           "type": "object",
                           "default": {},
                           "additionalProperties": {
-                            "description": "No property names are defined but any property name they should be described by JSON Schema. So 'additionalProperties' implements 'name' ",
+                            "description": "No property names are defined but any property name they should be described by JSON Schema. So 'additionalProperties' implements 'name'.",
                             "type": "object",
                             "properties": {
                               "title": {
@@ -2397,29 +2342,7 @@
                                 "description": "Implements 'acceptedValues'",
                                 "type": "array",
                                 "minItems": 1,
-                                "items": {
-                                  "oneOf": [
-                                    {
-                                      "type": "array"
-                                    },
-                                    {
-                                      "type": "boolean"
-                                    },
-                                    {
-                                      "type": "integer"
-                                    },
-                                    {
-                                      "type": "number"
-                                    },
-                                    {
-                                      "type": "object",
-                                      "nullable": true
-                                    },
-                                    {
-                                      "type": "string"
-                                    }
-                                  ]
-                                },
+                                "items": {},
                                 "uniqueItems": true
                               },
                               "format": {
@@ -2458,8 +2381,8 @@
                               "minItems": {
                                 "description": "Implements 'lowerMultiplicity'",
                                 "type": "integer",
-                                "minimum": 0,
-                                "default": 0
+                                "default": 0,
+                                "minimum": 0
                               },
                               "observedProperty": {
                                 "type": "string"
@@ -2493,45 +2416,13 @@
               }
             }
           },
-          "style": {
+          "boundingBox": {
             "allOf": [
               {
-                "description": "Style involving all layers used to generate the tileset"
+                "description": "Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS"
               },
               {
-                "type": "object",
-                "required": [
-                  "id"
-                ],
-                "properties": {
-                  "id": {
-                    "description": "An identifier for this style. Implementation of 'identifier'",
-                    "type": "string"
-                  },
-                  "title": {
-                    "description": "A title for this style",
-                    "type": "string"
-                  },
-                  "description": {
-                    "description": "Brief narrative description of this style",
-                    "type": "string"
-                  },
-                  "keywords": {
-                    "description": "keywords about this style",
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
-                  },
-                  "links": {
-                    "description": "Links to style related resources. Possible link 'rel' values are: 'style' for a URL pointing to the style description, 'styleSpec' for a URL pointing to the specification or standard used to define the style.",
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/components/schemas/link"
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/2DBoundingBox"
               }
             ]
           },
@@ -2580,16 +2471,104 @@
               }
             ]
           },
-          "tileMatrixSetURI": {
-            "description": "Reference to a Tile Matrix Set on an offical source for Tile Matrix Sets such as the OGC NA definition server (http://www.opengis.net/def/tms/). Required if the tile matrix set is registered on an open official source.",
-            "type": "string",
-            "format": "uri"
+          "style": {
+            "allOf": [
+              {
+                "description": "Style involving all layers used to generate the tileset"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "description": "An identifier for this style. Implementation of 'identifier'",
+                    "type": "string"
+                  },
+                  "title": {
+                    "description": "A title for this style",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "Brief narrative description of this style",
+                    "type": "string"
+                  },
+                  "keywords": {
+                    "description": "keywords about this style",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "links": {
+                    "description": "Links to style related resources. Possible link 'rel' values are: 'style' for a URL pointing to the style description, 'styleSpec' for a URL pointing to the specification or standard used to define the style.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/link"
+                    }
+                  }
+                }
+              }
+            ]
           },
-          "links": {
-            "description": "Links to related resources. Possible link 'rel' values are: 'http://www.opengis.net/def/rel/ogc/1.0/dataset' for a URL pointing to the dataset, 'item' for a URL template to get a tile; 'alternate' for a URL pointing to another representation of the TileSetMetadata (e.g a TileJSON file); 'http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme' for a definition of the TileMatrixSet; 'http://www.opengis.net/def/rel/ogc/1.0/geodata' for pointing to a single collection (if the tileset represents a single collection)",
+          "license": {
+            "description": "License applicable to the tiles",
+            "type": "string"
+          },
+          "accessConstraints": {
+            "description": "Restrictions on the availability of the Tile Set that the user needs to be aware of before using or redistributing the Tile Set",
+            "type": "string",
+            "default": "unclassified",
+            "enum": [
+              "unclassified",
+              "restricted",
+              "confidential",
+              "secret",
+              "topSecret"
+            ]
+          },
+          "keywords": {
+            "description": "keywords about this tileset",
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/link"
+              "type": "string"
+            }
+          },
+          "version": {
+            "description": "Version of the Tile Set. Changes if the data behind the tiles has been changed",
+            "type": "string"
+          },
+          "created": {
+            "allOf": [
+              {
+                "description": "When the Tile Set was first produced"
+              },
+              {
+                "$ref": "#/components/schemas/timeStamp"
+              }
+            ]
+          },
+          "updated": {
+            "allOf": [
+              {
+                "description": "Last Tile Set change/revision"
+              },
+              {
+                "$ref": "#/components/schemas/timeStamp"
+              }
+            ]
+          },
+          "pointOfContact": {
+            "description": "Useful information to contact the authors or custodians for the Tile Set",
+            "type": "string"
+          },
+          "mediaTypes": {
+            "description": "Media types available for the tiles",
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
         }

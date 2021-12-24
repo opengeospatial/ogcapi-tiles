@@ -1,5 +1,4 @@
-description: |
-   Attributes of the features or rangetypes of a coverage. Defined by
+description: Attributes of the features or rangetypes of a coverage. Defined by
    a subset of the JSON Schema for the properties of a feature
 type: object
 required:
@@ -11,8 +10,7 @@ properties:
      enum:
      - object
    required:
-     description: Implements 'multiplicity' by citing property 'name' defined as
-       'additionalProperties'
+     description: "Implements 'multiplicity' by citing property 'name' defined as 'additionalProperties'"
      type: array
      minItems: 1
      items:
@@ -21,14 +19,13 @@ properties:
      type: object
      default: {}
      additionalProperties:
-       description: 'No property names are defined but any property name they should
-         be described by JSON Schema. So ''additionalProperties'' implements ''name'' '
+       description: "No property names are defined but any property name they should be described by JSON Schema. So 'additionalProperties' implements 'name'."
        type: object
        properties:
          title:
            type: string
          description:
-           description: Implements 'description'
+           description: "Implements 'description'"
            type: string
          type:
            type: string
@@ -41,49 +38,41 @@ properties:
            - object
            - string
          enum:
-           description: Implements 'acceptedValues'
+           description: "Implements 'acceptedValues'"
            type: array
            minItems: 1
-           items:
-              oneOf:
-                - type: array
-                - type: boolean
-                - type: integer
-                - type: number
-                - type: object
-                  nullable: true
-                - type: string
+           items: {}
            uniqueItems: true
          format:
-           description: Complements implementation of 'type'
+           description: "Complements implementation of 'type'"
            type: string
          contentMediaType:
-           description: Implements 'mediaType'
+           description: "Implements 'mediaType'"
            type: string
          maximum:
-           description: Implements 'range'
+           description: "Implements 'range'"
            type: number
          exclusiveMaximum:
-           description: Implements 'range'
+           description: "Implements 'range'"
            type: number
          minimum:
-           description: Implements 'range'
+           description: "Implements 'range'"
            type: number
          exclusiveMinimum:
-           description: Implements 'range'
+           description: "Implements 'range'"
            type: number
          pattern:
            type: string
            format: regex
          maxItems:
-           description: Implements 'upperMultiplicity'
+           description: "Implements 'upperMultiplicity'"
            type: integer
            minimum: 0
          minItems:
-           description: Implements 'lowerMultiplicity'
+           description: "Implements 'lowerMultiplicity'"
            type: integer
-           minimum: 0
            default: 0
+           minimum: 0
          observedProperty:
            type: string
          observedPropertyURI:

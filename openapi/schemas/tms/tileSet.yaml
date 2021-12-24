@@ -2,9 +2,7 @@ title: Tile Set Metadata
 description: A resource describing a tileset based on the OGC TileSet Metadata Standard.
   At least one of the 'TileMatrixSet',  or a link with 'rel' http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme
 type: object
-required:
-- dataType
-- crs
+required: [ dataType, crs, links ]
 properties:
   title:
     description: A title for this tileset
@@ -12,84 +10,14 @@ properties:
   description:
     description: Brief narrative description of this tile set
     type: string
-  keywords:
-    description: keywords about this tileset
-    type: array
-    items:
-      type: string
-  version:
-    description: Version of the Tile Set. Changes if the data behind the tiles has
-      been changed
-    type: string
-  pointOfContact:
-    description: Useful information to contact the authors or custodians for the Tile
-      Set
-    type: string
-  accessConstraints:
-    description: Restrictions on the availability of the Tile Set that the user needs
-      to be aware of before using or redistributing the Tile Set
-    type: string
-    default: unclassified
-    enum:
-    - unclassified
-    - restricted
-    - confidential
-    - secret
-    - topSecret
-  license:
-    description: License applicable to the tiles
-    type: string
-  mediaTypes:
-    description: Media types available for the tiles
-    type: array
-    items:
-      type: string
   dataType:
     allOf:
       - description: Type of data represented in the tileset
       - $ref: '../common-geodata/dataType.yaml'
-  tileMatrixSetLimits:
-    description: Limits for the TileRow and TileCol values for each TileMatrix in
-      the tileMatrixSet. If missing, there are no limits other that the ones imposed
-      by the TileMatrixSet. If present the TileMatrices listed are limited and the
-      rest not available at all
-    type: array
-    items:
-      $ref: 'tileMatrixLimits.yaml'
   crs:
     allOf:
       - description: Coordinate Reference System (CRS)
       - $ref: '../common-geodata/crs.yaml'
-  epoch:
-    description: Epoch of the Coordinate Reference System (CRS)
-    type: number
-  boundingBox:
-    allOf:
-      - description: Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS
-      - $ref: '2DBoundingBox.yaml'
-  created:
-    allOf:
-      - description: When the Tile Set was first produced
-      - $ref: '../common-geodata/timeStamp.yaml'
-  updated:
-    allOf:
-      - description: Last Tile Set change/revision
-      - $ref: '../common-geodata/timeStamp.yaml'
-  layers:
-    minItems: 1
-    type: array
-    items:
-      $ref: 'geospatialData.yaml'
-  style:
-    allOf:
-      - description: Style involving all layers used to generate the tileset
-      - $ref: 'style.yaml'
-  centerPoint:
-    allOf:
-      - description: Location of a tile that nicely represents the tileset. Implementations
-          may use this center value to set the default location or to present a representative
-          tile in a user interface
-      - $ref: 'tilePoint.yaml'
   tileMatrixSetURI:
     description: Reference to a Tile Matrix Set on an offical source for Tile Matrix
       Sets such as the OGC NA definition server (http://www.opengis.net/def/tms/).
@@ -106,3 +34,73 @@ properties:
     type: array
     items:
       $ref: '../common-core/link.yaml'
+  tileMatrixSetLimits:
+    description: Limits for the TileRow and TileCol values for each TileMatrix in
+      the tileMatrixSet. If missing, there are no limits other that the ones imposed
+      by the TileMatrixSet. If present the TileMatrices listed are limited and the
+      rest not available at all
+    type: array
+    items:
+      $ref: 'tileMatrixLimits.yaml'
+  epoch:
+    description: Epoch of the Coordinate Reference System (CRS)
+    type: number
+  layers:
+    minItems: 1
+    type: array
+    items:
+      $ref: 'geospatialData.yaml'
+  boundingBox:
+    allOf:
+      - description: Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS
+      - $ref: '2DBoundingBox.yaml'
+  centerPoint:
+    allOf:
+      - description: Location of a tile that nicely represents the tileset. Implementations
+          may use this center value to set the default location or to present a representative
+          tile in a user interface
+      - $ref: 'tilePoint.yaml'
+  style:
+    allOf:
+      - description: Style involving all layers used to generate the tileset
+      - $ref: 'style.yaml'
+  license:
+    description: License applicable to the tiles
+    type: string
+  accessConstraints:
+    description: Restrictions on the availability of the Tile Set that the user needs
+      to be aware of before using or redistributing the Tile Set
+    type: string
+    default: unclassified
+    enum:
+    - unclassified
+    - restricted
+    - confidential
+    - secret
+    - topSecret
+  keywords:
+    description: keywords about this tileset
+    type: array
+    items:
+      type: string
+  version:
+    description: Version of the Tile Set. Changes if the data behind the tiles has
+      been changed
+    type: string
+  created:
+    allOf:
+      - description: When the Tile Set was first produced
+      - $ref: '../common-geodata/timeStamp.yaml'
+  updated:
+    allOf:
+      - description: Last Tile Set change/revision
+      - $ref: '../common-geodata/timeStamp.yaml'
+  pointOfContact:
+    description: Useful information to contact the authors or custodians for the Tile
+      Set
+    type: string
+  mediaTypes:
+    description: Media types available for the tiles
+    type: array
+    items:
+      type: string
