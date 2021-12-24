@@ -45,8 +45,9 @@ properties:
     items:
       type: string
   dataType:
-    description: Type of data represented in the tileset
-    $ref: '../common-geodata/dataType.yaml'
+    allOf:
+      - description: Type of data represented in the tileset
+      - $ref: '../common-geodata/dataType.yaml'
   tileMatrixSetLimits:
     description: Limits for the TileRow and TileCol values for each TileMatrix in
       the tileMatrixSet. If missing, there are no limits other that the ones imposed
@@ -56,34 +57,39 @@ properties:
     items:
       $ref: 'tileMatrixLimits.yaml'
   crs:
-    description: Coordinate Reference System (CRS)
-    $ref: '../common-geodata/crs.yaml'
+    allOf:
+      - description: Coordinate Reference System (CRS)
+      - $ref: '../common-geodata/crs.yaml'
   epoch:
     description: Epoch of the Coordinate Reference System (CRS)
     type: number
   boundingBox:
-    description: Minimum bounding rectangle surrounding the tile matrix set, in the
-      supported CRS
-    $ref: '2DBoundingBox.yaml'
+    allOf:
+      - description: Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS
+      - $ref: '2DBoundingBox.yaml'
   created:
-    description: When the Tile Set was first produced
-    $ref: '../common-geodata/timeStamp.yaml'
+    allOf:
+      - description: When the Tile Set was first produced
+      - $ref: '../common-geodata/timeStamp.yaml'
   updated:
-    description: Last Tile Set change/revision
-    $ref: '../common-geodata/timeStamp.yaml'
+    allOf:
+      - description: Last Tile Set change/revision
+      - $ref: '../common-geodata/timeStamp.yaml'
   layers:
     minItems: 1
     type: array
     items:
       $ref: 'geospatialData.yaml'
   style:
-    description: Style involving all layers used to generate the tileset
-    $ref: 'style.yaml'
+    allOf:
+      - description: Style involving all layers used to generate the tileset
+      - $ref: 'style.yaml'
   centerPoint:
-    description: Location of a tile that nicely represents the tileset. Implementations
-      may use this center value to set the default location or to present a representative
-      tile in a user interface
-    $ref: 'tilePoint.yaml'
+    allOf:
+      - description: Location of a tile that nicely represents the tileset. Implementations
+          may use this center value to set the default location or to present a representative
+          tile in a user interface
+      - $ref: 'tilePoint.yaml'
   tileMatrixSetURI:
     description: Reference to a Tile Matrix Set on an offical source for Tile Matrix
       Sets such as the OGC NA definition server (http://www.opengis.net/def/tms/).

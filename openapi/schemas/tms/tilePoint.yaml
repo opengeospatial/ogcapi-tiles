@@ -9,8 +9,9 @@ properties:
      items:
        type: number
    crs:
-     description: Coordinate Reference System (CRS) of the coordinates
-     $ref: '../common-geodata/crs.yaml'
+     allOf:
+       - description: Coordinate Reference System (CRS) of the coordinates
+       - $ref: '../common-geodata/crs.yaml'
    tileMatrix:
      description: TileMatrix identifier associated with the scaleDenominator
      type: string

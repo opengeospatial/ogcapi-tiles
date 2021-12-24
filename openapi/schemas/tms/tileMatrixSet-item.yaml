@@ -15,8 +15,9 @@ properties:
     type: string
     format: uri
   crs:
-    description: Coordinate Reference System (CRS)
-    $ref: '../../schemas/common-geodata/crs.yaml'
+    allOf:
+      - description: Coordinate Reference System (CRS)
+      - $ref: '../../schemas/common-geodata/crs.yaml'
   links:
     description: Links to related resources. A 'self' link to the tile matrix set definition is required.
     type: array

@@ -44,11 +44,12 @@ properties:
      - bottomLeft
      default: topLeft
    pointOfOrigin:
-     description: Precise position in CRS coordinates of the corner of origin (e.g.
-       the top-left corner) for this tile matrix. This position is also a corner
-       of the (0, 0) tile. In previous version, this was 'topLeftCorner' and 'cornerOfOrigin'
-       did not exist.
-     $ref: '2DPoint.yaml'
+     allOf:
+      - description: Precise position in CRS coordinates of the corner of origin (e.g.
+         the top-left corner) for this tile matrix. This position is also a corner
+         of the (0, 0) tile. In previous version, this was 'topLeftCorner' and 'cornerOfOrigin'
+         did not exist.
+      - $ref: '2DPoint.yaml'
    tileWidth:
      type: number
      description: Width of each tile of this tile matrix in pixels

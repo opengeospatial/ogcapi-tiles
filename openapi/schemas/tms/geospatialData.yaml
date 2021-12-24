@@ -19,8 +19,9 @@ properties:
      description: Unique identifier of the Layer. Implementation of 'identifier'
      type: string
    dataType:
-     description: Type of data represented in the layer
-     $ref: '../common-geodata/dataType.yaml'
+     allOf:
+      - description: Type of data represented in the layer
+      - $ref: '../common-geodata/dataType.yaml'
    geometryDimension:
      description: 'The geometry dimension of the features shown in this layer (0: points, 1: curves, 2: surfaces, 3: solids), unspecified: mixed or unknown'
      type: integer
@@ -40,8 +41,9 @@ properties:
      description: Category where the layer can be grouped
      type: string
    crs:
-     description: Coordinate Reference System (CRS)
-     $ref: '../common-geodata/crs.yaml'
+     allOf:
+      - description: Coordinate Reference System (CRS)
+      - $ref: '../common-geodata/crs.yaml'
    epoch:
      description: Epoch of the Coordinate Reference System (CRS)
      type: number
@@ -64,17 +66,21 @@ properties:
      description: TileMatrix identifier associated with the maxScaleDenominator
      type: string
    boundingBox:
-     description: Minimum bounding rectangle surrounding the layer
-     $ref: '2DBoundingBox.yaml'
+     allOf:
+      - description: Minimum bounding rectangle surrounding the layer
+      - $ref: '2DBoundingBox.yaml'
    created:
-     description: When the layer was first produced
-     $ref: '../common-geodata/timeStamp.yaml'
+     allOf:
+      - description: When the layer was first produced
+      - $ref: '../common-geodata/timeStamp.yaml'
    updated:
-     description: Last layer change/revision
-     $ref: '../common-geodata/timeStamp.yaml'
+     allOf:
+      - description: Last layer change/revision
+      - $ref: '../common-geodata/timeStamp.yaml'
    style:
-     description: Style used to generate the layer in the tileset
-     $ref: 'style.yaml'
+     allOf:
+      - description: Style used to generate the layer in the tileset
+      - $ref: 'style.yaml'
    geoDataClasses:
      description: URI identifying a class of data contained in this layer (useful
        to determine compatibility with styles or processes)
@@ -82,10 +88,11 @@ properties:
      items:
        type: string
    propertiesSchema:
-     description: Properties represented by the features in this layer. Can be
-       the attributes of a feature dataset (datatype=geometries) or the rangeType
-       of a coverage (datatype=coverage)
-     $ref: 'propertiesSchema.yaml'
+     allOf:
+      - description: Properties represented by the features in this layer. Can be
+         the attributes of a feature dataset (datatype=geometries) or the rangeType
+         of a coverage (datatype=coverage)
+      - $ref: 'propertiesSchema.yaml'
    links:
      description: 'Links related to this layer. Possible link ''rel'' values are:
        ''geodata'' for a URL pointing to the collection of geospatial data.'

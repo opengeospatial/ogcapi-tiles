@@ -34,16 +34,17 @@ properties:
     items:
       type: string
   crs:
-    description: Coordinate Reference System (CRS)
-    $ref: '../common-geodata/crs.yaml'
+    allOf:
+      - description: Coordinate Reference System (CRS)
+      - $ref: '../common-geodata/crs.yaml'
   wellKnownScaleSet:
     description: Reference to a well-known scale set
     type: string
     format: uri
   boundingBox:
-    description: Minimum bounding rectangle surrounding the tile matrix set, in the
-      supported CRS
-    $ref: '2DBoundingBox.yaml'
+    allOf:
+      - description: Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS
+      - $ref: '2DBoundingBox.yaml'
   tileMatrices:
     type: array
     description: Describes scale levels and its tile matrices

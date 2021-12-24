@@ -1808,8 +1808,14 @@
             ]
           },
           "dataType": {
-            "description": "Type of data represented in the collection",
-            "$ref": "#/components/schemas/dataType"
+            "allOf": [
+              {
+                "description": "Type of data represented in the collection"
+              },
+              {
+                "$ref": "#/components/schemas/dataType"
+              }
+            ]
           },
           "geometryDimension": {
             "description": "The geometry dimension of the features shown in this layer (0: points, 1: curves, 2: surfaces, 3: solids), unspecified: mixed or unknown",
@@ -2131,8 +2137,14 @@
             }
           },
           "dataType": {
-            "description": "Type of data represented in the tileset",
-            "$ref": "#/components/schemas/dataType"
+            "allOf": [
+              {
+                "description": "Type of data represented in the tileset"
+              },
+              {
+                "$ref": "#/components/schemas/dataType"
+              }
+            ]
           },
           "tileMatrixSetLimits": {
             "description": "Limits for the TileRow and TileCol values for each TileMatrix in the tileMatrixSet. If missing, there are no limits other that the ones imposed by the TileMatrixSet. If present the TileMatrices listed are limited and the rest not available at all",
@@ -2142,24 +2154,48 @@
             }
           },
           "crs": {
-            "description": "Coordinate Reference System (CRS)",
-            "$ref": "#/components/schemas/crs"
+            "allOf": [
+              {
+                "description": "Coordinate Reference System (CRS)"
+              },
+              {
+                "$ref": "#/components/schemas/crs"
+              }
+            ]
           },
           "epoch": {
             "description": "Epoch of the Coordinate Reference System (CRS)",
             "type": "number"
           },
           "boundingBox": {
-            "description": "Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS",
-            "$ref": "#/components/schemas/2DBoundingBox"
+            "allOf": [
+              {
+                "description": "Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS"
+              },
+              {
+                "$ref": "#/components/schemas/2DBoundingBox"
+              }
+            ]
           },
           "created": {
-            "description": "When the Tile Set was first produced",
-            "$ref": "#/components/schemas/timeStamp"
+            "allOf": [
+              {
+                "description": "When the Tile Set was first produced"
+              },
+              {
+                "$ref": "#/components/schemas/timeStamp"
+              }
+            ]
           },
           "updated": {
-            "description": "Last Tile Set change/revision",
-            "$ref": "#/components/schemas/timeStamp"
+            "allOf": [
+              {
+                "description": "Last Tile Set change/revision"
+              },
+              {
+                "$ref": "#/components/schemas/timeStamp"
+              }
+            ]
           },
           "layers": {
             "minItems": 1,
@@ -2188,8 +2224,14 @@
                   "type": "string"
                 },
                 "dataType": {
-                  "description": "Type of data represented in the layer",
-                  "$ref": "#/components/schemas/dataType"
+                  "allOf": [
+                    {
+                      "description": "Type of data represented in the layer"
+                    },
+                    {
+                      "$ref": "#/components/schemas/dataType"
+                    }
+                  ]
                 },
                 "geometryDimension": {
                   "description": "The geometry dimension of the features shown in this layer (0: points, 1: curves, 2: surfaces, 3: solids), unspecified: mixed or unknown",
@@ -2214,8 +2256,14 @@
                   "type": "string"
                 },
                 "crs": {
-                  "description": "Coordinate Reference System (CRS)",
-                  "$ref": "#/components/schemas/crs"
+                  "allOf": [
+                    {
+                      "description": "Coordinate Reference System (CRS)"
+                    },
+                    {
+                      "$ref": "#/components/schemas/crs"
+                    }
+                  ]
                 },
                 "epoch": {
                   "description": "Epoch of the Coordinate Reference System (CRS)",
@@ -2246,20 +2294,44 @@
                   "type": "string"
                 },
                 "boundingBox": {
-                  "description": "Minimum bounding rectangle surrounding the layer",
-                  "$ref": "#/components/schemas/2DBoundingBox"
+                  "allOf": [
+                    {
+                      "description": "Minimum bounding rectangle surrounding the layer"
+                    },
+                    {
+                      "$ref": "#/components/schemas/2DBoundingBox"
+                    }
+                  ]
                 },
                 "created": {
-                  "description": "When the layer was first produced",
-                  "$ref": "#/components/schemas/timeStamp"
+                  "allOf": [
+                    {
+                      "description": "When the layer was first produced"
+                    },
+                    {
+                      "$ref": "#/components/schemas/timeStamp"
+                    }
+                  ]
                 },
                 "updated": {
-                  "description": "Last layer change/revision",
-                  "$ref": "#/components/schemas/timeStamp"
+                  "allOf": [
+                    {
+                      "description": "Last layer change/revision"
+                    },
+                    {
+                      "$ref": "#/components/schemas/timeStamp"
+                    }
+                  ]
                 },
                 "style": {
-                  "description": "Style used to generate the layer in the tileset",
-                  "$ref": "#/components/schemas/tileSet/properties/style"
+                  "allOf": [
+                    {
+                      "description": "Style used to generate the layer in the tileset"
+                    },
+                    {
+                      "$ref": "#/components/schemas/tileSet/properties/style/allOf/1"
+                    }
+                  ]
                 },
                 "geoDataClasses": {
                   "description": "URI identifying a class of data contained in this layer (useful to determine compatibility with styles or processes)",
@@ -2269,139 +2341,146 @@
                   }
                 },
                 "propertiesSchema": {
-                  "description": "Properties represented by the features in this layer. Can be the attributes of a feature dataset (datatype=geometries) or the rangeType of a coverage (datatype=coverage)",
-                  "type": "object",
-                  "required": [
-                    "type",
-                    "properties"
-                  ],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "enum": [
-                        "object"
-                      ]
+                  "allOf": [
+                    {
+                      "description": "Properties represented by the features in this layer. Can be the attributes of a feature dataset (datatype=geometries) or the rangeType of a coverage (datatype=coverage)"
                     },
-                    "required": {
-                      "description": "Implements 'multiplicity' by citing property 'name' defined as 'additionalProperties'",
-                      "type": "array",
-                      "minItems": 1,
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "properties": {
+                    {
+                      "description": "Attributes of the features or rangetypes of a coverage. Defined by\na subset of the JSON Schema for the properties of a feature\n",
                       "type": "object",
-                      "default": {},
-                      "additionalProperties": {
-                        "description": "No property names are defined but any property name they should be described by JSON Schema. So 'additionalProperties' implements 'name' ",
-                        "type": "object",
+                      "required": [
+                        "type",
+                        "properties"
+                      ],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "object"
+                          ]
+                        },
+                        "required": {
+                          "description": "Implements 'multiplicity' by citing property 'name' defined as 'additionalProperties'",
+                          "type": "array",
+                          "minItems": 1,
+                          "items": {
+                            "type": "string"
+                          }
+                        },
                         "properties": {
-                          "title": {
-                            "type": "string"
-                          },
-                          "description": {
-                            "description": "Implements 'description'",
-                            "type": "string"
-                          },
-                          "type": {
-                            "type": "string",
-                            "enum": [
-                              "array",
-                              "boolean",
-                              "integer",
-                              "null",
-                              "number",
-                              "object",
-                              "string"
-                            ]
-                          },
-                          "enum": {
-                            "description": "Implements 'acceptedValues'",
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                              "oneOf": [
-                                {
-                                  "type": "array"
+                          "type": "object",
+                          "default": {},
+                          "additionalProperties": {
+                            "description": "No property names are defined but any property name they should be described by JSON Schema. So 'additionalProperties' implements 'name' ",
+                            "type": "object",
+                            "properties": {
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "description": "Implements 'description'",
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "array",
+                                  "boolean",
+                                  "integer",
+                                  "null",
+                                  "number",
+                                  "object",
+                                  "string"
+                                ]
+                              },
+                              "enum": {
+                                "description": "Implements 'acceptedValues'",
+                                "type": "array",
+                                "minItems": 1,
+                                "items": {
+                                  "oneOf": [
+                                    {
+                                      "type": "array"
+                                    },
+                                    {
+                                      "type": "boolean"
+                                    },
+                                    {
+                                      "type": "integer"
+                                    },
+                                    {
+                                      "type": "number"
+                                    },
+                                    {
+                                      "type": "object",
+                                      "nullable": true
+                                    },
+                                    {
+                                      "type": "string"
+                                    }
+                                  ]
                                 },
-                                {
-                                  "type": "boolean"
-                                },
-                                {
-                                  "type": "integer"
-                                },
-                                {
-                                  "type": "number"
-                                },
-                                {
-                                  "type": "object",
-                                  "nullable": true
-                                },
-                                {
-                                  "type": "string"
-                                }
-                              ]
-                            },
-                            "uniqueItems": true
-                          },
-                          "format": {
-                            "description": "Complements implementation of 'type'",
-                            "type": "string"
-                          },
-                          "contentMediaType": {
-                            "description": "Implements 'mediaType'",
-                            "type": "string"
-                          },
-                          "maximum": {
-                            "description": "Implements 'range'",
-                            "type": "number"
-                          },
-                          "exclusiveMaximum": {
-                            "description": "Implements 'range'",
-                            "type": "number"
-                          },
-                          "minimum": {
-                            "description": "Implements 'range'",
-                            "type": "number"
-                          },
-                          "exclusiveMinimum": {
-                            "description": "Implements 'range'",
-                            "type": "number"
-                          },
-                          "pattern": {
-                            "type": "string",
-                            "format": "regex"
-                          },
-                          "maxItems": {
-                            "description": "Implements 'upperMultiplicity'",
-                            "type": "integer",
-                            "minimum": 0
-                          },
-                          "minItems": {
-                            "description": "Implements 'lowerMultiplicity'",
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                          },
-                          "observedProperty": {
-                            "type": "string"
-                          },
-                          "observedPropertyURI": {
-                            "type": "string",
-                            "format": "uri"
-                          },
-                          "uom": {
-                            "type": "string"
-                          },
-                          "uomURI": {
-                            "type": "string",
-                            "format": "uri"
+                                "uniqueItems": true
+                              },
+                              "format": {
+                                "description": "Complements implementation of 'type'",
+                                "type": "string"
+                              },
+                              "contentMediaType": {
+                                "description": "Implements 'mediaType'",
+                                "type": "string"
+                              },
+                              "maximum": {
+                                "description": "Implements 'range'",
+                                "type": "number"
+                              },
+                              "exclusiveMaximum": {
+                                "description": "Implements 'range'",
+                                "type": "number"
+                              },
+                              "minimum": {
+                                "description": "Implements 'range'",
+                                "type": "number"
+                              },
+                              "exclusiveMinimum": {
+                                "description": "Implements 'range'",
+                                "type": "number"
+                              },
+                              "pattern": {
+                                "type": "string",
+                                "format": "regex"
+                              },
+                              "maxItems": {
+                                "description": "Implements 'upperMultiplicity'",
+                                "type": "integer",
+                                "minimum": 0
+                              },
+                              "minItems": {
+                                "description": "Implements 'lowerMultiplicity'",
+                                "type": "integer",
+                                "minimum": 0,
+                                "default": 0
+                              },
+                              "observedProperty": {
+                                "type": "string"
+                              },
+                              "observedPropertyURI": {
+                                "type": "string",
+                                "format": "uri"
+                              },
+                              "uom": {
+                                "type": "string"
+                              },
+                              "uomURI": {
+                                "type": "string",
+                                "format": "uri"
+                              }
+                            }
                           }
                         }
                       }
                     }
-                  }
+                  ]
                 },
                 "links": {
                   "description": "Links related to this layer. Possible link 'rel' values are: 'geodata' for a URL pointing to the collection of geospatial data.",
@@ -2415,73 +2494,91 @@
             }
           },
           "style": {
-            "description": "Style involving all layers used to generate the tileset",
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "description": "An identifier for this style. Implementation of 'identifier'",
-                "type": "string"
+            "allOf": [
+              {
+                "description": "Style involving all layers used to generate the tileset"
               },
-              "title": {
-                "description": "A title for this style",
-                "type": "string"
-              },
-              "description": {
-                "description": "Brief narrative description of this style",
-                "type": "string"
-              },
-              "keywords": {
-                "description": "keywords about this style",
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "links": {
-                "description": "Links to style related resources. Possible link 'rel' values are: 'style' for a URL pointing to the style description, 'styleSpec' for a URL pointing to the specification or standard used to define the style.",
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/components/schemas/link"
+              {
+                "type": "object",
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "description": "An identifier for this style. Implementation of 'identifier'",
+                    "type": "string"
+                  },
+                  "title": {
+                    "description": "A title for this style",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "Brief narrative description of this style",
+                    "type": "string"
+                  },
+                  "keywords": {
+                    "description": "keywords about this style",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "links": {
+                    "description": "Links to style related resources. Possible link 'rel' values are: 'style' for a URL pointing to the style description, 'styleSpec' for a URL pointing to the specification or standard used to define the style.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/link"
+                    }
+                  }
                 }
               }
-            }
+            ]
           },
           "centerPoint": {
-            "description": "Location of a tile that nicely represents the tileset. Implementations may use this center value to set the default location or to present a representative tile in a user interface",
-            "type": "object",
-            "required": [
-              "coordinates"
-            ],
-            "properties": {
-              "coordinates": {
-                "type": "array",
-                "minItems": 2,
-                "maxItems": 2,
-                "items": {
-                  "type": "number"
+            "allOf": [
+              {
+                "description": "Location of a tile that nicely represents the tileset. Implementations may use this center value to set the default location or to present a representative tile in a user interface"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "coordinates"
+                ],
+                "properties": {
+                  "coordinates": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "crs": {
+                    "allOf": [
+                      {
+                        "description": "Coordinate Reference System (CRS) of the coordinates"
+                      },
+                      {
+                        "$ref": "#/components/schemas/crs"
+                      }
+                    ]
+                  },
+                  "tileMatrix": {
+                    "description": "TileMatrix identifier associated with the scaleDenominator",
+                    "type": "string"
+                  },
+                  "scaleDenominator": {
+                    "description": "Scale denominator of the tile matrix selected",
+                    "type": "number"
+                  },
+                  "cellSize": {
+                    "description": "Cell size of the tile matrix selected",
+                    "type": "number"
+                  }
                 }
-              },
-              "crs": {
-                "description": "Coordinate Reference System (CRS) of the coordinates",
-                "$ref": "#/components/schemas/crs"
-              },
-              "tileMatrix": {
-                "description": "TileMatrix identifier associated with the scaleDenominator",
-                "type": "string"
-              },
-              "scaleDenominator": {
-                "description": "Scale denominator of the tile matrix selected",
-                "type": "number"
-              },
-              "cellSize": {
-                "description": "Cell size of the tile matrix selected",
-                "type": "number"
               }
-            }
+            ]
           },
           "tileMatrixSetURI": {
             "description": "Reference to a Tile Matrix Set on an offical source for Tile Matrix Sets such as the OGC NA definition server (http://www.opengis.net/def/tms/). Required if the tile matrix set is registered on an open official source.",
@@ -2512,12 +2609,24 @@
             "type": "string"
           },
           "dataType": {
-            "description": "Type of data represented in the tileset",
-            "$ref": "#/components/schemas/dataType"
+            "allOf": [
+              {
+                "description": "Type of data represented in the tileset"
+              },
+              {
+                "$ref": "#/components/schemas/dataType"
+              }
+            ]
           },
           "crs": {
-            "description": "Coordinate Reference System (CRS)",
-            "$ref": "#/components/schemas/crs"
+            "allOf": [
+              {
+                "description": "Coordinate Reference System (CRS)"
+              },
+              {
+                "$ref": "#/components/schemas/crs"
+              }
+            ]
           },
           "tileMatrixSetURI": {
             "description": "Reference to a Tile Matrix Set on an offical source for Tile Matrix Sets such as the OGC NA definition server (http://www.opengis.net/def/tms/). Required if the tile matrix set is registered on an open official source.",
@@ -2525,7 +2634,7 @@
             "format": "uri"
           },
           "links": {
-            "description": "Links to related resources. A 'self' link to the tileset\nas well as a 'http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme' link\nto a definition of the TileMatrixSet are required.\n",
+            "description": "Links to related resources. A 'self' link to the tileset as well as a 'http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme' link to a definition of the TileMatrixSet are required.",
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/link"
@@ -2574,8 +2683,14 @@
             }
           },
           "crs": {
-            "description": "Coordinate Reference System (CRS)",
-            "$ref": "#/components/schemas/crs"
+            "allOf": [
+              {
+                "description": "Coordinate Reference System (CRS)"
+              },
+              {
+                "$ref": "#/components/schemas/crs"
+              }
+            ]
           },
           "wellKnownScaleSet": {
             "description": "Reference to a well-known scale set",
@@ -2583,8 +2698,14 @@
             "format": "uri"
           },
           "boundingBox": {
-            "description": "Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS",
-            "$ref": "#/components/schemas/2DBoundingBox"
+            "allOf": [
+              {
+                "description": "Minimum bounding rectangle surrounding the tile matrix set, in the supported CRS"
+              },
+              {
+                "$ref": "#/components/schemas/2DBoundingBox"
+              }
+            ]
           },
           "tileMatrices": {
             "type": "array",
@@ -2640,8 +2761,14 @@
                   "default": "topLeft"
                 },
                 "pointOfOrigin": {
-                  "description": "Precise position in CRS coordinates of the corner of origin (e.g. the top-left corner) for this tile matrix. This position is also a corner of the (0, 0) tile. In previous version, this was 'topLeftCorner' and 'cornerOfOrigin' did not exist.",
-                  "$ref": "#/components/schemas/2DPoint"
+                  "allOf": [
+                    {
+                      "description": "Precise position in CRS coordinates of the corner of origin (e.g. the top-left corner) for this tile matrix. This position is also a corner of the (0, 0) tile. In previous version, this was 'topLeftCorner' and 'cornerOfOrigin' did not exist."
+                    },
+                    {
+                      "$ref": "#/components/schemas/2DPoint"
+                    }
+                  ]
                 },
                 "tileWidth": {
                   "type": "number",
@@ -2734,8 +2861,14 @@
             "format": "uri"
           },
           "crs": {
-            "description": "Coordinate Reference System (CRS)",
-            "$ref": "#/components/schemas/crs"
+            "allOf": [
+              {
+                "description": "Coordinate Reference System (CRS)"
+              },
+              {
+                "$ref": "#/components/schemas/crs"
+              }
+            ]
           },
           "links": {
             "description": "Links to related resources. A 'self' link to the tile matrix set definition is required.",
