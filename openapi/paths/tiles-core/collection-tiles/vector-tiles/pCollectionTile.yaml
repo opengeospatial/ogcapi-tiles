@@ -17,7 +17,7 @@ get:
      - $ref: '../../../../parameters/unspecified/f-vectorTile.yaml'
    responses:
      '200':
-       $ref: '../../../../responses/tiles-core/rMapTile.yaml'
+       $ref: '../../../../responses/tiles-core/rVectorTile.yaml'
      '204':
        $ref: '../../../../responses/tiles-core/rEmptyTile.yaml'
      '404':

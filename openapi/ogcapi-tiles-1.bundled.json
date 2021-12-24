@@ -742,7 +742,7 @@
         ],
         "responses": {
           "200": {
-            "$ref": "#/components/responses/MapTile"
+            "$ref": "#/components/responses/VectorTile"
           },
           "204": {
             "$ref": "#/components/responses/EmptyTile"
