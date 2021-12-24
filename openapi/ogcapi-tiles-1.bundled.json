@@ -2285,7 +2285,10 @@
                     "required": {
                       "description": "Implements 'multiplicity' by citing property 'name' defined as 'additionalProperties'",
                       "type": "array",
-                      "minItems": 1
+                      "minItems": 1,
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "properties": {
                       "type": "object",
@@ -2317,6 +2320,29 @@
                             "description": "Implements 'acceptedValues'",
                             "type": "array",
                             "minItems": 1,
+                            "items": {
+                              "oneOf": [
+                                {
+                                  "type": "array"
+                                },
+                                {
+                                  "type": "boolean"
+                                },
+                                {
+                                  "type": "integer"
+                                },
+                                {
+                                  "type": "number"
+                                },
+                                {
+                                  "type": "object",
+                                  "nullable": true
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            },
                             "uniqueItems": true
                           },
                           "format": {
