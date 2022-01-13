@@ -9,10 +9,88 @@ This conformance class defines the OpenAPI version 3 mechanism to retrieve a des
 
 === Web API openAPI description
 
-The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application will have the full picture of the resources that the API provides how to retrive them and what responses are expected for successful and unsuccessful requests. Without this API description and application wil be forced to transvers all links starting by the landing page to get an equivalent full list of resources.
+The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application will have the full picture of the resources that the API provides, how to retrieve them, and what responses are expected for successful and unsuccessful requests. Without this API description and application will be forced to transvers all links starting by the landing page to get an equivalent full list of resources.
 
-The OWS Common requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition an extra requirement is provided.
+The OWS Common requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition extra requirements are provided.
 
 ==== Response
+The OWS Common requirement class provides details on how to request an API definition. The OpenAPI definition resulting as a response of this request need to take into consideration the relevant resources specified in this standard.
 
 include::requirements/openapi/REQ_completeness.adoc[]
+
+The OpenAPI definition provides to a client application a set of paths that the client can use to interact with the API and get new resources. The OpenAPI description of each path provides a description of some parameters to use in the request and what to expect in the response. However this standards is not proposing a fixed set of path so there is an issue identifying the requirements classes that affect each path in an API instance. In other words, the OpenAPI description alone does not provide enough information and there is a need to identify the requirements classes that affect a resource (a path) and complete the information necessary for the client to implement the necessary logic to generate the request and understand the response. This standard proposes a suffix mechanism to be applied to the `operationId` property of the path to list the requirement classes affecting each path. Each path should have a unique operationId suffix, so it is expected that the OpenAPI instance provides a prefix to the proposed suffixes that make each operationId unique.
+
+include::requirements/openapi/REQ_operation-id.adoc[]
+
+[#openapi-operation-id-suffixes,reftext='{table-caption} {counter:table-num}']
+.OpenAPI operationId suffixes
+[width = "100%",options="header",cols="4,4,4,4,12,^1,^1,^1,^1,^1,^1,^1,^1,^1"]
+|===
+|Origin |DataType |Styled |Resource |operationId suffixes^1^ |TileCore |TileSet |TileSetsList |DataSetTileSets |GeoDataTileSets |Collections |Styles^2^ |Coverages^2^ |Maps^2^
+14+|With the resource types and origins described in this document
+|DataSet |Vector |No |TileSetsList |.dataset.vector.getTileSetsList | | |X |X | | | | |
+|DataSet |Vector |No |TileSet |.dataset.vector.getTileSet | | X | | X | | | | |
+|DataSet |Vector |No |Tile |.dataset.vector.getTile |X | | |X | | | | |
+|DataSet |Vector |Yes |TileSetsList |.dataset.style.vector.getTileSetsList | | |X |X | | |X | |
+|DataSet |Vector |Yes |TileSet |.dataset.style.vector.getTileSet | |X | |X | | |X | |
+|DataSet |Vector |Yes |Tile |.dataset.style.vector.getTile |X | | |X | | |X | |
+|DataSet |Map |No |TileSetsList |.dataset.map.getTileSetsList | | |X |X | | | | |X
+|DataSet |Map |No |TileSet |.dataset.map.getTileSet | |X | |X | | | | |X
+|DataSet |Map |No |Tile |.dataset.map.getTile |X | | |X | | | | |X
+|DataSet |Map |Yes |TileSetsList |.dataset.style.map.getTileSetsList | | |X |X | | | | |X
+|DataSet |Map |Yes |TileSet |.dataset.style.map.getTileSet | |X | |X | | | | |X
+|DataSet |Map |Yes |Tile |.dataset.style.map.getTile |X | | |X | | | | |X
+|Collection |Vector |No |TileSetsList |.collection.vector.getTileSetsList | | |X | |X |X | | |
+|Collection |Vector |No |TileSet |.collection.vector.getTileSet | |X | | |X |X | | |
+|Collection |Vector |No |Tile |.collection.vector.getTile |X | | | |X |X | | |
+|Collection |Vector |Yes |TileSetsList |.collection.style.vector.getTileSetsList | | |X | |X |X |X | |
+|Collection |Vector |Yes |TileSet |.collection.style.vector.getTileSet | |X | | |X |X |X | |
+|Collection |Vector |Yes |Tile |.collection.style.vector.getTile |X | | | |X |X |X | |
+|Collection |Coverage |No |TileSetsList |.collection.coverage.getTileSetsList | | |X | |X |X | |X |
+|Collection |Coverage |No |TileSet |.collection.coverage.getTileSet | |X | | |X |X | |X |
+|Collection |Coverage |No |Tile |.collection.coverage.getTile |X | | | |X |X | |X |
+|Collection |Map |No |TileSetsList |.collection.map.getTileSetsList | | |X | |X |X | | |X
+|Collection |Map |No |TileSet |.collection.map.getTileSet | |X | | |X |X | | |X
+|Collection |Map |No |Tile |.collection.map.getTile |X | | | |X |X | | |X
+|Collection |Map |Yes |TileSetsList |.collection.style.map.getTileSetsList | | |X | |X |X |X | |X
+|Collection |Map |Yes |TileSet |.collection.style.map.getTileSet | |X | | |X |X |X | |X
+|Collection |Map |Yes |Tile |.collection.style.map.getTile |X | | | |X |X |X | |X
+14+|With other potential resource types
+|DataSet |other |No |TileSetsList |.dataset.*.getTileSetsList | | |X |X | | | | |
+|DataSet |other |No |TileSet |.dataset.*.getTileSet | |X | |X | | | | |
+|DataSet |other |No |Tile |.dataset.*.getTile |X | | |X | | | | |
+|DataSet |other |Yes |TileSetsList |.dataset.style.*.getTileSetsList | | |X |X | | |X | |
+|DataSet |other |Yes |TileSet |.dataset.style.*.getTileSet | |X | |X | | |X | |
+|DataSet |other |Yes |Tile |.dataset.style.*.getTile |X | | |X | | |X | |
+|Collection |other |No |TileSetsList |.collection.*.getTileSetsList | | |X | |X |X | | |
+|Collection |other |No |TileSet |.collection.*.getTileSet | |X | | |X |X | | |
+|Collection |other |No |Tile |.collection.*.getTile |X | | | |X |X | | |
+|Collection |other |Yes |TileSetsList |.collection.style.*.getTileSetsList | | |X | |X |X |X | |
+|Collection |other |Yes |TileSet |.collection.style.*.getTileSet | |X | | |X |X |X | |
+|Collection |other |Yes |Tile |.collection.style.*.getTile |X | | | |X |X |X | |
+14+|With other potential origins
+|other |Vector |No |TileSetsList |#.vector.getTileSetsList | | |X | | | | | |
+|other |Vector |No |TileSet |#.vector.getTileSet | |X | | | | | | |
+|other |Vector |No |Tile |#.vector.getTile |X | | | | | | | |
+|other |Vector |Yes |TileSetsList |#.style.vector.getTileSetsList | | |X | | | |X | |
+|other |Vector |Yes |TileSet |#.style.vector.getTileSet | |X | | | | |X | |
+|other |Vector |Yes |Tile |#.style.vector.getTile |X | | | | | |X | |
+|other |Coverage |No |TileSetsList |#.coverage.getTileSetsList | | |X | | | | |X |
+|other |Coverage |No |TileSet |#.coverage.getTileSet | |X | | | | | |X |
+|other |Coverage |No |Tile |#.coverage.getTile |X | | | | | | |X |
+|other |Map |No |TileSetsList |#.map.getTileSetsList | | |X | | | | | |X
+|other |Map |No |TileSet |#.map.getTileSet | |X | | | | | | |X
+|other |Map |No |Tile |#.map.getTile |X | | | | | | | |X
+|other |Map |Yes |TileSetsList |#.style.map.getTileSetsList | | |X | | | |X | |X
+|other |Map |Yes |TileSet |#.style.map.getTileSet | |X | | | | |X | |X
+|other |Map |Yes |Tile |#.style.map.getTile |X | | | | | |X | |X
+|other |other |No |TileSetsList |#.*.getTileSetsList | | |X | | | | | |
+|other |other |No |TileSet |#.*.getTileSet | |X | | | | | | |
+|other |other |No |Tile |#.*.getTile |X | | | | | | | |
+|other |other |Yes |TileSetsList |#.style.*.getTileSetsList | | |X | | | |X | |
+|other |other |Yes |TileSet |#.style.*.getTileSet | |X | | | | |X | |
+|other |other |Yes |Tile |#.style.*.getTile |X | | | | | |X | |
+14+|^1^ '*' represents a _resource type_ to be defined in another relevant standard. '#' represents an _origin_ type to be defined in another relevant standard.
+
+^2^ The suffixes derived from these column characteristics are not required by this standard and will be defined by the relevant standard defining the resource type.
+|===
