@@ -14,11 +14,16 @@ The OpenAPI definition provides a description of the complete list of API resour
 The OWS Common requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition extra requirements are provided.
 
 ==== Response
-The OWS Common requirement class provides details on how to request an API definition. The OpenAPI definition resulting as a response of this request need to take into consideration the relevant resources specified in this standard.
+The OWS Common requirement class provides details on how to request an API definition.
+
+===== Completeness
+The OpenAPI definition resulting as a response of this request need to take into consideration the relevant resources specified in this standard.
 
 include::requirements/openapi/REQ_completeness.adoc[]
 
-The OpenAPI definition provides to a client application a set of paths that the client can use to interact with the API and get new resources. The OpenAPI description of each path provides a description of some parameters to use in the request and what to expect in the response. However this standards is not proposing a fixed set of path so there is an issue identifying the requirements classes that affect each path in an API instance. In other words, the OpenAPI description alone does not provide enough information and there is a need to identify the requirements classes that affect a resource (a path) and complete the information necessary for the client to implement the necessary logic to generate the request and understand the response. This standard proposes a suffix mechanism to be applied to the `operationId` property of the path to list the requirement classes affecting each path. Each path should have a unique operationId suffix, so it is expected that the OpenAPI instance provides a prefix to the proposed suffixes that make each operationId unique.
+===== Path Operation Ids
+
+The OpenAPI definition provides to a client application a set of paths that the client can use to interact with the API and get new resources. The OpenAPI description of each path provides a description of some parameters to use in the request and what to expect in the response. However this standard is not proposing a fixed set of path so there is an issue identifying the requirements classes pertaining to each path in an API instance. In other words, the OpenAPI description alone does not provide enough information and there is a need to identify the requirements classes pertaining to a resource (a path) and complete the information necessary for the client to implement the necessary logic to generate the request and understand the response. This standard proposes a suffix mechanism to be applied to the `operationId` property of the path to list the requirement classes pertaining to each path. Each path should have a unique operationId suffix, so it is expected that the OpenAPI instance provides a prefix to the proposed suffixes that make each operationId unique.
 
 include::requirements/openapi/REQ_operation-id.adoc[]
 
@@ -26,7 +31,7 @@ include::requirements/openapi/REQ_operation-id.adoc[]
 .OpenAPI operationId suffixes
 [width = "100%",options="header",cols="4,4,4,4,12,^1,^1,^1,^1,^1,^1,^1,^1,^1"]
 |===
-|Origin |DataType |Styled |Resource |operationId suffixes^1^ |TileCore |TileSet |TileSetsList |DataSetTileSets |GeoDataTileSets |Collections |Styles^2^ |Coverages^2^ |Maps^2^
+|Origin |DataType |Styled |Resource |operationId suffixes^1^ |Core |TileSet |TileSetsList |DataSetTileSets |GeoDataTileSets | Collections (Commmon - Part 2) |Styles^2^ |Coverages^2^ |Maps^2^
 14+|With the resource types and origins described in this document
 |DataSet |Vector |No |TileSetsList |.dataset.vector.getTileSetsList | | |X |X | | | | |
 |DataSet |Vector |No |TileSet |.dataset.vector.getTileSet | | X | | X | | | | |
@@ -90,7 +95,7 @@ include::requirements/openapi/REQ_operation-id.adoc[]
 |other |other |Yes |TileSetsList |#.style.*.getTileSetsList | | |X | | | |X | |
 |other |other |Yes |TileSet |#.style.*.getTileSet | |X | | | | |X | |
 |other |other |Yes |Tile |#.style.*.getTile |X | | | | | |X | |
-14+|^1^ '*' represents a _resource type_ to be defined in another relevant standard. '#' represents an _origin_ type to be defined in another relevant standard.
+14+|^1^ '*' represents a _resource type_ to be defined in another relevant standard. '#' represents an optional _origin_ that could be defined in another relevant standard.
 
-^2^ The suffixes derived from these column characteristics are not required by this standard and will be defined by the relevant standard defining the resource type.
+^2^ The suffixes derived from these resource types are not required by this standard and will be proposed by the relevant standard defining them.
 |===

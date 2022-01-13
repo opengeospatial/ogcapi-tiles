@@ -11,5 +11,4 @@
 |Dependency |http://www.opengis.net/spec/tilematrixset/1.0/req/tilematrixset2d
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
-|Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/json
 |===

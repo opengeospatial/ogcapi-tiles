@@ -6,27 +6,11 @@ The OGC API Tiles provides several resources that describe the service (landing 
 === Overview
 Please refer to OGC API - Common Part 1, for conformance classes related to encodings for the landing page and the conformance page.
 
-This clause specifies two requirements classes for encodings that may be used by an OGC Web API implementation for the description of a tilesets list an a tileset:
+This clause specifies an XML requirements class for encodings that may be used by an OGC Web API implementation for the description of a tilesets list an a tileset in addition to the already required JSON.
 
-* <<rc_json-description,JSON>>
-* <<rc_xml-description,XML>>
+=== Requirement Class "XML"
 
-The support of JSON is required. XML support is optional. Other encodings are possible.
-
-[[rc_json-description]]
-=== Requirement Class "JSON"
-
-JSON is a lightweight data-interchange format designed to facilitate structured data interchange between applications. JSON is commonly used for Web-based software-to-software interchanges. Most Web developers are comfortable with using a JSON-based format. Therefore support for JSON is recommended for machine-to-machine interactions.
-
-include::requirements/requirements_class_json.adoc[]
-
-include::requirements/json/REQ_definition.adoc[]
-
-include::requirements/json/REQ_content.adoc[]
-
-=== Requirement Class "JSON"
-
-XML is a data-interchange format designed to facilitate structured data interchange between applications. XML is commonly used for software-to-software interchanges. Therefore support for XML is recommended for machine-to-machine interactions.
+XML is a data-interchange format designed to facilitate structured data interchange between applications.
 
 include::requirements/requirements_class_xml.adoc[]
 
