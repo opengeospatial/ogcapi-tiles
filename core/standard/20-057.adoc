@@ -111,6 +111,8 @@ include::clause_11_tile_geoDataTileSets.adoc[]
 
 include::clause_12_tile_openAPIEncoding.adoc[]
 
+include::clause_13_tile_descriptionEncodings.adoc[]
+
 include::clause_13_tile_dataEncodings.adoc[]
 
 //include::clause_14_oas.adoc[]
