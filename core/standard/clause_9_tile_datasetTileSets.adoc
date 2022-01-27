@@ -70,8 +70,9 @@ On the conformance page (typically in JSON format) the list of URIs follows the 
 {
   "conformsTo": [
     "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset"
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list"
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list",
     "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets"
   ]
 }

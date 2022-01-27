@@ -1,0 +1,8 @@
+[[req_tiles_datetime_conformance-success]]
+[width="90%",cols="2,6a"]
+|===
+^|*Requirement {counter:req-id}* |*/req/datetime/conformance-success*
+2+|If the API has a mechanism to advertise conformance classes, the list of Conformance Classes advertised by the API SHALL include:
+^|A |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
+^|B |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
+|===

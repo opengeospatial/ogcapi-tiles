@@ -1,0 +1,63 @@
+[[rc_datatime]]
+== Requirement Class "datetime"
+
+=== Overview
+
+[[tiles-datetime-overview]]
+
+include::requirements/requirements_class_tiles_datetime.adoc[]
+
+This conformance class defines the way date and time can be used as a paremeter to filter the content in the tile resource. This conformance class is importing most of the functionality from OGC API - Commons.
+
+=== Describing the temporal extent
+
+Depending on the type of resource, the way the temporal extent and the resolution of the datetime values available for the client to request may be different:
+
+* For Geodata Tilesets, the collection description should specify the temporal extent of the resources. Tiles can be resquested inside this extent. If the extent is specified in a way that intant values are provided (e.g. by listing them or by including a resolution) then it be possible to request tiles for these instants.
+* If a tileset metadata is available, a future revision of 2D tile matrix set standard could take precedence providing more details on the available values for datetime.
+
+There are too approaches for requesting datetime that are made available by clients that the server must support.
+
+=== Declaration of conformance classes
+
+==== Response
+
+The conformance page mainly consists of a list of URIs to conformance classes.
+
+include::requirements/tiles-datetime/REQ_conformance-success.adoc[]
+
+On the conformance page (typically in JSON format) the list of URIs follows the schema defined in the OGC API - Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for dataset tilesets
+
+
+[[ConformancePageTilesDatetime]]
+.Conformance Information Page fragment
+
+=================
+[source,JSON]
+{
+  "conformsTo": [
+    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
+    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime"
+  ]
+}
+=================
+
+=== `datetime` query parameter request and response
+
+This section is based on the OGC API common datetime module that is enterely reproduced here.
+
+include::api_modules/datetime/requirements_module_datetime.adoc[]
+
+=== `subset=datetime` query parameter request and response
+
+The behaviour of the subset parameter is imported from the OGC API - Common subset module. The entere module is reproduced here.
+However some consideration may not apply for datetime and the generic behavious is limited by predetermining the axis name of the generic datetime in an additional requirement, a permision and a recomendation at the end of this subsection.
+
+include::api_modules/subset/requirements_module_subset.adoc[]
+
+include::requirements/tiles-datetime/REQ_datetime-axis.adoc[]
+
+include::recommendations/tiles-datetime/REC_actual-datetime.adoc[]
+
+include::recommendations/tiles-datetime/PER_datetime-axis.adoc[]

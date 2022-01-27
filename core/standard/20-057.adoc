@@ -109,15 +109,15 @@ include::clause_10_tile_collectionsSelection.adoc[]
 
 include::clause_11_tile_geoDataTileSets.adoc[]
 
+include::clause_11b_tile_datetime.adoc[]
+
 include::clause_12_tile_openAPIEncoding.adoc[]
 
 include::clause_13_tile_descriptionEncodings.adoc[]
 
-include::clause_13_tile_dataEncodings.adoc[]
+include::clause_14_tile_dataEncodings.adoc[]
 
-//include::clause_14_oas.adoc[]
-
-include::annex-ats.adoc[]
+//include::annex-ats.adoc[]
 
 //include::annex-b.adoc[]
 

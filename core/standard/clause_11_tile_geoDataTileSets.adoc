@@ -3,7 +3,7 @@
 
 === Overview
 
-[[tiles-core-overview]]
+[[tiles-geoDataResourceTileSets-overview]]
 
 include::requirements/requirements_class_geodata-tilesets.adoc[]
 
