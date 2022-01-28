@@ -1,0 +1,10 @@
+[[ats_xml_content]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/xml/content*
+^|Test Purpose |Validate the particularities of a XML response
+^|Requirement |/req/xml/content
+^|Test Method |1. Validate that every request to a TileSets list or TileSet resource which: Receives a `200`-response and with the `Content-Type` header set to `application/xml` includes, or links to, a payload encoded according to the  link:https://www.w3.org/TR/xml/[Extensible Markup Language (XML) 1.0]
+
+2. Validate that the payload for these responses conforms with the XML Schema specified for the resource in the OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata
+|===

@@ -1,0 +1,32 @@
+[[ats_datetime]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
+|Target type |Web API
+|Requirements class |<<rc_datatime,datetime>>
+|===
+
+=== Declaration of conformance classes
+
+==== Response
+
+include::datetime/ATS_conformance-success.adoc[]
+
+=== `datetime` query parameter request and response
+
+include::../api_modules/datetime/ATS/ATS_rc-op-datetime.adoc[]
+
+include::../api_modules/datetime/ATS/ATS_rc-datetime-definition.adoc[]
+
+include::../api_modules/datetime/ATS/ATS_rc-datetime-response.adoc[]
+
+=== `subset=datetime` query parameter request and response
+
+include::../api_modules/subset/ATS/ATS_op-subset.adoc[]
+
+include::../api_modules/subset/ATS/ATS_subset-definition.adoc[]
+
+include::../api_modules/subset/ATS/ATS_subset-response.adoc[]
+
+include::datetime/ATS_datetime-axis.adoc[]

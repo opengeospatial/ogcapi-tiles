@@ -1,0 +1,8 @@
+[[ats_xml_definition]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/xml/definition*
+^|Test Purpose |Validate the support of the required media type
+^|Requirement |/req/xml/definition
+^|Test Method |1. Valitate that `200`-responses of the server  supports the `application/xml` media type for the Tilesets list and TileSet resources.
+|===

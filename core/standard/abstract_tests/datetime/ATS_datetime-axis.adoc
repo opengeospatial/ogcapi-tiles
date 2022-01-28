@@ -1,0 +1,8 @@
+[[ats_tiles-datetime-axis.adoc]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/datetime/axis*
+^|Test Purpose |Validate that a request of a subset of a datetime dimension is supported by the server
+^|Requirement |/req/datetime/axis
+^|Test Method |1. Validate the server support "datetime" as axisname in the subset parameter to subset the generic datetime dimension.
+|===

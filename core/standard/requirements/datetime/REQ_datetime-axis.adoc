@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/datetime/axis*
-^|A |To subset a generic time dimension the server SHALL support "datetime" as axisname in the subset parameter
+^|A |To subset a generic time dimension, the server SHALL support "datetime" as axisname in the subset parameter
 |===

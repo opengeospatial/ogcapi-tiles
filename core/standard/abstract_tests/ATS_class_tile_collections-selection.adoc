@@ -7,15 +7,11 @@
 |Requirements class |<<rc_tiles-collections-selection,Tile Geo Data Resource Selection>>
 |===
 
-==== Operation
-
-==== Parameter Resources
-
-include::collections-selection/ATS_query-collections.adoc[]
+=== Operation
 
 ==== What resources accept this parameter
 
-include::tile-collections-selection/ATS_query-collections.adoc[]
+include::tile-collections-selection/ATS_resources-query.adoc[]
 
 === Declaration of conformance classes for tiles
 

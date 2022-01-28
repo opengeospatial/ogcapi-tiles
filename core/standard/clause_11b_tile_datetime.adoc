@@ -5,7 +5,7 @@
 
 [[tiles-datetime-overview]]
 
-include::requirements/requirements_class_tiles_datetime.adoc[]
+include::requirements/requirements_class_datetime.adoc[]
 
 This conformance class defines the way date and time can be used as a paremeter to filter the content in the tile resource. This conformance class is importing most of the functionality from OGC API - Commons.
 
@@ -24,7 +24,7 @@ There are too approaches for requesting datetime that are made available by clie
 
 The conformance page mainly consists of a list of URIs to conformance classes.
 
-include::requirements/tiles-datetime/REQ_conformance-success.adoc[]
+include::requirements/datetime/REQ_conformance-success.adoc[]
 
 On the conformance page (typically in JSON format) the list of URIs follows the schema defined in the OGC API - Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for dataset tilesets
 
@@ -56,8 +56,8 @@ However some consideration may not apply for datetime and the generic behavious 
 
 include::api_modules/subset/requirements_module_subset.adoc[]
 
-include::requirements/tiles-datetime/REQ_datetime-axis.adoc[]
+include::requirements/datetime/REQ_datetime-axis.adoc[]
 
-include::recommendations/tiles-datetime/REC_actual-datetime.adoc[]
+include::recommendations/datetime/REC_actual-datetime.adoc[]
 
-include::recommendations/tiles-datetime/PER_datetime-axis.adoc[]
+include::recommendations/datetime/PER_datetime-axis.adoc[]

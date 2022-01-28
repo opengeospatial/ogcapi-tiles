@@ -28,136 +28,37 @@ include::abstract_tests/ATS_class_tile_collections-selection.adoc[leveloffset=+1
 
 include::abstract_tests/ATS_class_geodata-tilesets.adoc[leveloffset=+1]
 
+=== Conformance Class Datetime
+
+include::abstract_tests/ATS_class_datetime.adoc[leveloffset=+1]
+
 === Conformance Classes for encodings
 
-==== Conformance Class "PNG"
+==== Conformance Classes for OpenAPI encoding
 
+include::abstract_tests/ATS_class_openapi.adoc[leveloffset=+1]
+
+==== Conformance Classes for resource description encodings
+
+===== Conformance Class "XML"
+include::abstract_tests/ATS_class_xml.adoc[leveloffset=+1]
+
+==== Conformance Classes for data encodings
+
+===== Conformance Class "PNG"
 include::abstract_tests/ATS_class_png.adoc[leveloffset=+1]
 
-==== Conformance Class "JPEG"
+===== Conformance Class "JPEG"
 include::abstract_tests/ATS_class_jpeg.adoc[leveloffset=+1]
 
-==== Conformance Class "TIFF"
-
+===== Conformance Class "TIFF"
 include::abstract_tests/ATS_class_tiff.adoc[leveloffset=+1]
 
-==== Conformance Class "NetCDF"
-
+===== Conformance Class "NetCDF"
 include::abstract_tests/ATS_class_netcdf.adoc[leveloffset=+1]
 
-==== Conformance Class "GeoJSON"
-
+===== Conformance Class "GeoJSON"
 include::abstract_tests/ATS_class_geojson.adoc[leveloffset=+1]
 
-==== Conformance Class "Mapbox Vector Tiles"
-
+===== Conformance Class "Mapbox Vector Tiles"
 include::abstract_tests/ATS_class_mvt.adoc[leveloffset=+1]
-
-
-
-
-
-
-==== List of Tilesets
-
-===== List of Tilesets path
-
-include::abstract_tests/core/TEST002.adoc[]
-
-===== List of Tilesets Link
-
-include::abstract_tests/core/TEST003.adoc[]
-
-===== Response
-
-include::abstract_tests/core/TEST004.adoc[]
-
-include::abstract_tests/core/TEST005.adoc[]
-
-==== A tile from a geospatial resource
-
-===== Operation
-
-include::abstract_tests/core/TEST006.adoc[]
-
-===== Parameter tileMatrixSetId
-
-include::abstract_tests/core/TEST007.adoc[]
-
-===== Parameter tileMatrix
-
-include::abstract_tests/core/TEST008.adoc[]
-
-===== Parameter tileRow
-
-include::abstract_tests/core/TEST009.adoc[]
-
-===== Parameter tileCol
-
-include::abstract_tests/core/TEST010.adoc[]
-
-===== Response
-
-include::abstract_tests/core/TEST011.adoc[]
-
-=== Conformance Class Root
-
-[cols="1,4",width="90%"]
-|===
-2+|*Conformance Class*
-2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/root
-|Target type |Web API
-|Requirements class | http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/root
-|===
-
-==== API landing page
-
-===== Response
-
-include::abstract_tests/root/TEST012.adoc[]
-
-==== Declaration of conformance classes
-
-===== Response
-
-include::abstract_tests/root/TEST013.adoc[]
-
-==== List of Tilesets of the root resource
-
-===== Operation
-
-include::abstract_tests/root/TEST014.adoc[]
-
-===== Response
-
-include::abstract_tests/root/TEST015.adoc[]
-
-==== Tiles
-
-===== Operation
-
-include::abstract_tests/root/TEST016.adoc[]
-
-===== Parameter tileMatrixSetId
-
-include::abstract_tests/root/TEST017.adoc[]
-
-===== Parameter tileMatrix
-
-include::abstract_tests/root/TEST018.adoc[]
-
-===== Parameter tileRow
-
-include::abstract_tests/root/TEST019.adoc[]
-
-===== Parameter tileCol
-
-include::abstract_tests/root/TEST020.adoc[]
-
-===== Parameter Resources
-
-include::abstract_tests/root/TEST021.adoc[]
-
-===== Response
-
-include::abstract_tests/root/TEST022.adoc[]

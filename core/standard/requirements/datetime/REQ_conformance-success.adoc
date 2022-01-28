@@ -1,4 +1,4 @@
-[[req_tiles_datetime_conformance-success]]
+[[req_datetime_conformance-success]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/datetime/conformance-success*

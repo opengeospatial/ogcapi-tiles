@@ -117,7 +117,7 @@ include::clause_13_tile_descriptionEncodings.adoc[]
 
 include::clause_14_tile_dataEncodings.adoc[]
 
-//include::annex-ats.adoc[]
+include::annex-ats.adoc[]
 
 //include::annex-b.adoc[]
 
