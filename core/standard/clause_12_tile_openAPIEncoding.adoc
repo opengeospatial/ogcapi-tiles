@@ -3,7 +3,7 @@
 
 === Overview
 
-include::requirements/requirements_class_openAPI.adoc[]
+include::requirements/requirements_class_openapi.adoc[]
 
 This conformance class defines the OpenAPI version 3 mechanism to retrieve a description of the API in this format
 
