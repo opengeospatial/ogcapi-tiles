@@ -19,7 +19,7 @@ NOTE: Do not confuse this with a web resource representation. While resource rep
 
 tile that contains information in a gridded form. Commonly the values of the grid represent colors of each cell in the grid for immediate pictorial representation on rendering devices, but can also be coverage subsets.
 
-NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 NOTE: Map tiles are generated in combination with the OGC API - Maps. This tiles are sometimes refered as _raster tiles_
 
@@ -31,13 +31,13 @@ NOTE: From OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclid
 
 small rectangular representation of geographic data, often part of a set of such elements, covering a tiling scheme and sharing similar information content and graphical styling. A tile can be uniquely defined in a tile matrix by one integer index in each dimension. Tiles are mainly used for fast transfer (particularly in the web) and easy display at the resolution of a rendering device. Tiles can be grid based pictorial representations, coverage subsets, or feature based representations (e.g., vector tiles).
 
-NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 === *tile matrix*
 
 grid tile set scheme defining how space is partitioned into a set of regular conterminous tiles at a fixed scale giving tile scheme to each tile.
 
-NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set (modified).
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set (modified).
 
 NOTE: For the purposes of this document a tile matrix is restricted to a tessellation of the space that resembles a matrix in a 2D space characterized by a matrix width (columns) and a matrix height (rows).
 
@@ -45,7 +45,7 @@ NOTE: For the purposes of this document a tile matrix is restricted to a tessell
 
 tile set scheme composed by collection of tile matrices defined at different scales covering approximately the same area and having a common coordinate reference system.
 
-NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set but modified.
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set but modified.
 
 === *tile scheme*
 scheme  that  defines  the  unique  properties  of  each  individual  tile  in  a  tile  set.  These  properties include a unique identifier for each tile, the tile origin, and the extent of the tile.
@@ -72,7 +72,7 @@ NOTE: A tile set scheme can be defined on top of a CRS as well as other spatial 
 
 tile that contains vector information that has been simplified at the tile scale resolution and clipped by the tile boundaries.
 
-NOTE: From OGC 17-083r2: OGC Two Dimensional Tile Matrix Set but modified.
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set but modified.
 
 === *Web API*
 

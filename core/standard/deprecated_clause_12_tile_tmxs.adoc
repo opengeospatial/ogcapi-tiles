@@ -18,7 +18,7 @@ The _tmxs_ conformance class allows retrieving tiling schemes (tile matrix set d
 
 include::requirements/requirements_class_tmxs.adoc[]
 
-The 2DTMS standard defines common TileMatrixSets in the Annex D and Annex G of the OGC 17-083r2 standard. These and other Tiling schemes will be registered in the OGC NA. Web SPIS will be able to use them directly by mentioning the URI in the TileSet metadata without the need to describe them explicitelly in the API. This requirement class acts as and extension to this mechanism and adds the necessary elements to support other TileMatrixSets. It adds a mechanism to fully describe TileMatrixSets that are specific by the Web API instance.
+The 2DTMS standard defines common TileMatrixSets in the Annex D and Annex E of the OGC 17-083r4 standard. These and other Tiling schemes will be registered in the OGC NA. Web APIs will be able to use them directly by mentioning the URI in the TileSet metadata without the need to describe them explicitelly in the API. This requirement class acts as and extension to this mechanism and adds the necessary elements to support other TileMatrixSets. It adds a mechanism to fully describe TileMatrixSets that are specific by the Web API instance.
 
 === API landing page
 
@@ -83,7 +83,7 @@ In the conformance page (typically in JSON format) the list of URLs follows the 
 
 === TileMatrixSets
 
-The TileMatrixSets operation retrieves links to the descriptions of the tile matrix sets supported by the API instance in addition to the TileMatrixSets defined in the Annex D and the Annex G of the OGC 17-083r2 standard.
+The TileMatrixSets operation retrieves links to the descriptions of the tile matrix sets supported by the API instance in addition to the TileMatrixSets defined in the Annex D and the Annex E of the OGC 17-083r4 standard.
 
 ==== Operation
 include::requirements/tmxs/REQ_tilematrixsets-op.adoc[]
@@ -156,7 +156,7 @@ id-link:
 
 === TileMatrixSet
 
-The TileMatrixSet operation retrieves the full description of a tile matrix set supported by the API instance following the schema described in the OGC 17-083r2 standard.
+The TileMatrixSet operation retrieves the full description of a tile matrix set supported by the API instance following the schema described in the OGC 17-083r4 standard.
 
 ==== Operation
 include::requirements/tmxs/REQ_tilematrixset-op.adoc[]

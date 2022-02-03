@@ -211,7 +211,7 @@ In the landing page, in JSON format, the links follow the link schema defined in
 
 ====== TileMatrixSets
 
-The TileMatrixSets endpoint retrieves links to the descriptions of the tile matrix sets supported by the Web API in addition to the TileMatrixSets defined in the Annex D and the Annex G of the OGC 17-083r2 standard. The response follows the schema below.
+The TileMatrixSets endpoint retrieves links to the descriptions of the tile matrix sets supported by the Web API in addition to the TileMatrixSets defined in the Annex D and the Annex E of the OGC 17-083r4 standard. The response follows the schema below.
 
 [[TileMatrixSetsResponseSchema]]
 .Schema for the TileMatrixSets resource
@@ -279,7 +279,7 @@ id-link:
 
 ====== TileMatrixSet
 
-The TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by the Web API following the schema described in the OGC 17-083r2 standard. The response follows the TileMatrixSet schema.
+The TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by the Web API following the schema described in the OGC 17-083r4 standard. The response follows the TileMatrixSet schema.
 
 [[TileMatrixSetResponseExample]]
 .Fragment of a TileMatrixSet resource example
