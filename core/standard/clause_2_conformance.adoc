@@ -90,6 +90,15 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 |Styled Map tileset list | `/collections/{collectionId}/styles/{styleId}/map/tiles`
 |===
 
+*<<rc_datetime>>*
+This document specifies how to provide tiles in a domain that has a generic time dimension.
+
+*<<rc_openapi_definition>>*
+This document specifies how to use OpenAPI as a way to define your API.
+
+*<<rc_description_encodings>>*
+This document specifies how to use XML as an alternative encoding for describing tilesets.
+
 *<<rc_data_encodings>>*
 This document does not mandate a specific encoding or format for representing tiles and want to be flexible and open to other format that users and providers might need. However requirements classes are provided for the following common tile formats.
 

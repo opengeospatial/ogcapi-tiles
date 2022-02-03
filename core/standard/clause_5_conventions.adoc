@@ -33,11 +33,9 @@ In addition, the following link relation types are used for which no applicable 
 
 * **http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme**: The target IRI points to a resource that describes the TileMatrixSet according to the 2D-TMS standard.
 
-Used in combination with OGC API - Features Part 1: core or OGC API Common other link relation types will be used, being the most common:
+Used in combination with OGC API - Features Part 1: core or OGC API - Common Part 1:core other link relation types will be used, starting by:
 
 * **http://www.opengis.net/def/rel/ogc/1.0/conformance**: Refers to a resource that identifies the specifications that the link's context conforms to.
-
-* **http://www.opengis.net/def/rel/ogc/1.0/items**: Refers to a resource that is comprised of members of the collection represented by the link's context.
 
 Each resource representation includes an array of links. Implementations are free to add additional links for all resources provided by the Web API.
 

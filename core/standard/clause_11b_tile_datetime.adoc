@@ -1,4 +1,4 @@
-[[rc_datatime]]
+[[rc_datetime]]
 == Requirement Class "datetime"
 
 === Overview
@@ -16,7 +16,6 @@ Depending on the type of resource, the way the temporal extent and the resolutio
 * For Geodata Tilesets, the collection description should specify the temporal extent of the resources. Tiles can be resquested inside this extent. If the extent is specified in a way that intant values are provided (e.g. by listing them or by including a resolution) then it be possible to request tiles for these instants.
 * If a tileset metadata is available, a future revision of 2D tile matrix set standard could take precedence providing more details on the available values for datetime.
 
-There are too approaches for requesting datetime that are made available by clients that the server must support.
 
 === Declaration of conformance classes
 

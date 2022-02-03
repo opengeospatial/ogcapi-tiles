@@ -33,6 +33,5 @@ All questions regarding this submission should be directed to the editor or the 
 |Chuck Heazel | Heazel Tech
 |Jeff Harrison | AGC
 |Jérôme Jacovella-St-Louis| Ecere Corporation
-|TBA | TBA
-|TBA | TBA
+|Satish Sankaran | ESRI
 |===

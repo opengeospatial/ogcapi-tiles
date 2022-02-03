@@ -4,7 +4,7 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
 |Target type |Web API
-|Requirements class |<<rc_datatime,datetime>>
+|Requirements class |<<rc_datetime,datetime>>
 |===
 
 === Declaration of conformance classes

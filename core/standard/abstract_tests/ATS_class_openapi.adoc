@@ -4,7 +4,7 @@
 2+|*Conformance OpenAPI encoding*
 2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/openapi
 |Target type |Web API
-|Requirements class |<<rc_openapi,OpenAPI>>
+|Requirements class |<<rc_openapi_definition,OpenAPI>>
 |===
 
 === Web API openAPI description response
