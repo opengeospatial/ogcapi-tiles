@@ -26,7 +26,7 @@ include::recommendations/core/REC_tc-op.adoc[]
 
 The API implementation can determine the supported encodings, or more precisely the media types of the supported encodings, the Web API definition. The desired encoding is selected using HTTP content negotiation.
 
-The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet that is agreed between the client and server. This core do not discuss the details on how the client and service agrees on which TileMatrixSet they use.
+The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet that is agreed between the client and server. This core conformance class does not discuss the details on how the client and service agrees on which TileMatrixSet they use.
 
 ==== Parameter tileMatrix
 include::requirements/core/REQ_tc-tilematrix-definition.adoc[]
