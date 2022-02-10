@@ -7,12 +7,6 @@
 |Requirements class |<<rc_tileSets-list,TileSets List>>
 |===
 
-=== Declaration of conformance classes
-
-==== Response
-
-include::tilesets-list/ATS_conformance-success.adoc[]
-
 === Tilesets list
 
 ==== Response

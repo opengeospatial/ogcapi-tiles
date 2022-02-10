@@ -7,12 +7,6 @@
 |Requirements class |<<rc_geoDataResourceTileSets,Geo Data Resource TileSets>>
 |===
 
-=== Declaration of conformance classes
-
-==== Response
-
-include::geodata-tilesets/ATS_conformance-success.adoc[]
-
 === Geospatial data resources
 
 include::geodata-tilesets/ATS_desc-links.adoc[]

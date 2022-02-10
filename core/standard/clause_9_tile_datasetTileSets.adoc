@@ -53,31 +53,6 @@ In the landing page, in JSON format, the links follow the link schema defined in
 
 include::recommendations/dataset-tilesets/REC_landingpage.adoc[]
 
-=== Declaration of conformance classes
-
-==== Response
-
-The conformance page mainly consists of a list of URIs to conformance classes.
-
-include::requirements/dataset-tilesets/REQ_conformance-success.adoc[]
-
-On the conformance page (typically in JSON format) the list of URIs follows the schema defined in the OGC API - Common draft specification. The following is an example fragment from the response to an OGC API - Tiles conformance information page showing the support for dataset tilesets
-
-[[ConformancePageDatasetTilesets]]
-.Conformance Information Page fragment
-=================
-[source,JSON]
-{
-  "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets"
-  ]
-}
-=================
-
 === Dataset tilesets
 The dataset tilesets operation provides essential tileset metadata and links to tilesets resources allowing to request tiles from the dataset.
 

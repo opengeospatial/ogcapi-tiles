@@ -1,13 +1,13 @@
 [[rc_openapi_definition]]
-== Requirement Class "OpenAPI" API definition
+== Requirement Class "OpenAPI Specification 3.0" API definition
 
 === Overview
 
-include::requirements/requirements_class_openapi.adoc[]
+include::requirements/requirements_class_oas30.adoc[]
 
-This conformance class defines the OpenAPI version 3 mechanism to retrieve a description of the API in this format
+This conformance class defines the OpenAPI Specification version 3.0 mechanism to retrieve a description of the API in this format
 
-=== Web API openAPI description
+=== Web API OpenAPI description
 
 The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application will have the full picture of the resources that the API provides, how to retrieve them, and what responses are expected for successful and unsuccessful requests. Without this API description an application will be forced to traverse all links starting by the landing page to get an equivalent full list of resources.
 
@@ -18,7 +18,7 @@ The OWS Common requirement class provides many details on general requirements t
 ===== Completeness
 The OpenAPI definition resulting as a response of this request need to take into consideration the relevant resources specified in this standard.
 
-include::requirements/openapi/REQ_completeness.adoc[]
+include::requirements/oas30/REQ_completeness.adoc[]
 
 ===== Reusable API components
 
@@ -32,7 +32,7 @@ To improve performance, the whole content of this folder can be bundled in a sin
 
 The OpenAPI definition provides to a client application a set of paths that the client can use to interact with the API and get new resources. The OpenAPI description of each path provides a description of some parameters to use in the request and what to expect in the response. However this standard is not proposing a fixed set of path so there is an issue identifying the requirements classes pertaining to each path in an API instance. In other words, the OpenAPI description alone does not provide enough information and there is a need to identify the requirements classes pertaining to a resource (a path) and complete the information necessary for the client to implement the necessary logic to generate the request and understand the response. This standard proposes a suffix mechanism to be applied to the `operationId` property of the path to list the requirement classes pertaining to each path. Each path should have a unique operationId suffix, so it is expected that the OpenAPI instance provides a prefix to the proposed suffixes that make each operationId unique.
 
-include::requirements/openapi/REQ_operation-id.adoc[]
+include::requirements/oas30/REQ_operation-id.adoc[]
 
 [#openapi-operation-id-suffixes,reftext='{table-caption} {counter:table-num}']
 .OpenAPI operationId suffixes

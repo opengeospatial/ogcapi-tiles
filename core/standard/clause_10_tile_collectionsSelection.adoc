@@ -14,21 +14,6 @@ So far, this requirements class is defined as a building block neutral to the ty
 [[req_collections-selection_resources-tile-query]]
 include::requirements/tile-collections-selection/REQ_resources-query.adoc[]
 
-=== Declaration of conformance classes for tiles
-
-==== Response
-
-include::requirements/tile-collections-selection/REQ_conformance-success.adoc[]
-
-[[ConformancePageDataSelection]]
-.Conformance Information Page fragment
-=================
-[source,JSON]
-{
-  "conformsTo": [
-    "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
-    "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/dataset",
-    "http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection"
   ]
 }
 =================

@@ -7,12 +7,6 @@
 |Requirements class |<<rc_datetime,datetime>>
 |===
 
-=== Declaration of conformance classes
-
-==== Response
-
-include::datetime/ATS_conformance-success.adoc[]
-
 === `datetime` query parameter request and response
 
 include::../api_modules/datetime/ATS/ATS_rc-op-datetime.adoc[]

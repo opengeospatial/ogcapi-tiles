@@ -12,9 +12,3 @@
 ==== What resources accept this parameter
 
 include::tile-collections-selection/ATS_resources-query.adoc[]
-
-=== Declaration of conformance classes for tiles
-
-==== Response
-
-include::tile-collections-selection/ATS_conformance-success.adoc[]

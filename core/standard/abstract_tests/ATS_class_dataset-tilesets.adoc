@@ -13,12 +13,6 @@
 
 include::dataset-tilesets/ATS_landingpage.adoc[]
 
-=== Declaration of conformance classes
-
-==== Response
-
-include::dataset-tilesets/ATS_conformance-success.adoc[]
-
 === Dataset tilesets
 
 ==== Operation

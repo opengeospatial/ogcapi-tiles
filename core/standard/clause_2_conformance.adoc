@@ -93,7 +93,7 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 *<<rc_datetime>>*
 This document specifies how to provide tiles in a domain that has a generic time dimension.
 
-*<<rc_openapi_definition>>*
+*<<rc_oas30_definition>>*
 This document specifies how to use OpenAPI as a way to define your API.
 
 *<<rc_description_encodings>>*
@@ -111,8 +111,34 @@ This document does not mandate a specific encoding or format for representing ti
 
 All these conformance classes act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for Web API discovery, conformity and Web API formal definition (e.g., OpenAPI). Possible alternatives for these fundamental conformance classes are OGC API - Common Part 1: core, OGC API - Features Part 1: core or any other non-OGC classes that provide this functionality.
 
-Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
-
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
 NOTE: Despite the fact that full path and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the Web API definition document and the links between resources.
+
+=== Declaration of conformance
+
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document if the respective conformance URLs listed in <<table_conformance_urls>> is present in the conformance response. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+
+[#table_conformance_urls,reftext='{table-caption} {counter:table-num}']
+.Conformance class URIs
+[cols="30,70",options="header"]
+|===
+| Conformance class | URI
+|<<rc_tiles_core,Core>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
+|<<rc_tileSet,TileSet>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
+|<<rc_tileSets-list,Tilesets list>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list
+|<<rc_datasetTileSets,Dataset Tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
+|<<rc_tiles-collections-selection,Collections selection>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
+|<<rc_geoDataResourceTileSets,Geodata tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets
+|<<rc_datetime,DateTime>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
+|<<rc_oas30_definition, OpenAPI Specification 3.0>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
+|<<rc_xml, XML>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
+|<<rc_png,PNG>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/png
+|<<rc_jpeg,JPEG>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg
+|<<rc_tiff,TIFF>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tiff
+|<<rc_netcdf,NetCDF>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/netcdf
+|<<rc_geojson,GeoJSON>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geojson
+|<<rc_mvt,Mapbox Vector Tiles>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
+|===
+
+Conformance class	URI
