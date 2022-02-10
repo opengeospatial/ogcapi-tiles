@@ -44,13 +44,13 @@ On the conformance page (typically in JSON format) the list of URIs follows the 
 
 === `datetime` query parameter request and response
 
-This section is based on the OGC API common datetime module that is enterely reproduced here.
+This section is based on the OGC API common datetime module that is entirely reproduced here.
 
 include::api_modules/datetime/requirements_module_datetime.adoc[]
 
 === `subset=datetime` query parameter request and response
 
-The behaviour of the subset parameter is imported from the OGC API - Common subset module. The entere module is reproduced here.
+The behaviour of the subset parameter is imported from the OGC API - Common subset module. The entire module is reproduced here.
 However some consideration may not apply for datetime and the generic behavious is limited by predetermining the axis name of the generic datetime in an additional requirement, a permision and a recomendation at the end of this subsection.
 
 include::api_modules/subset/requirements_module_subset.adoc[]
