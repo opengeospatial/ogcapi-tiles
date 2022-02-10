@@ -9,7 +9,7 @@ This document does not specify any requirement for the type of _geospatial data 
 Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are maps, features data,
 coverages, a resource that does not represent data per-se (e.g., an annotation) and so forth.
 
-NOTE: The geospatial data resources (e.g., collections) replace the concept of layer in WMS and WMTS. The main difference is that layers in WMS and WMTS where not defined by other OGC APIs and did not support other functionalities.
+NOTE: The geospatial data resources (e.g., collections) replace the concept of layer in WMS and WMTS. The main difference is that layers in WMS and WMTS were not defined by other OGC APIs and did not support other functionalities.
 
 These geospatial data resources can advertise one or more lists of available tilesets (see the _tilesets list_ conformance class).
 This standard also defines how two specific data resources can link to such tilesets:
@@ -75,7 +75,7 @@ For the first approach, many resources in the Web API include links with _rel_ p
 .Resources and relations to them via links
 image::images/relMapTiles.png[width=600,align="center"]
 
-There is still a third way to approach an OGC API that consist on assuming a set of predefined paths and path templates. This set of predefined path are used in many examples in this document and are presented together in <<table_resources>>.  It is expected that many implementation of this Standard are will provide an Web API definition document (e.g. OpenAPI) using the these set of predefined paths and path templates to get necessary resources directly. All this could mislead the reader into getting the false impression that the predefined paths are enforced. So, building a client that is assuming a predefined set of path is risky. However, it is expected that many API implementations will actually follow the predefined set of paths and the client using this approach could be successful in many occasions. Again, be aware that these paths are not required by this Standard.
+There is still a third way to approach an OGC API that relies on assuming a set of predefined paths and path templates. This set of predefined path are used in many examples in this document and are presented together in <<table_resources>>.  It is expected that many implementation of this Standard are will provide an Web API definition document (e.g. OpenAPI) using the these set of predefined paths and path templates to get necessary resources directly. All this could mislead the reader into getting the false impression that the predefined paths are enforced. So, building a client that is assuming a predefined set of path is risky. However, it is expected that many API implementations will actually follow the predefined set of paths and the client using this approach could be successful in many occasions. Again, be aware that these paths are not required by this Standard.
 
 [#table_resources,reftext='{table-caption} {counter:table-num}']
 .Overview of resources and common direct links that can be used to define an OGC API - Tiles implementation
@@ -125,4 +125,4 @@ There is still a third way to approach an OGC API that consist on assuming a set
 
 NOTE: Despite the fact that full path and full path templates in the previous table are used in many implementations of the OGC API - Tiles standard, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the Web API definition document and/or the links between resources. However, the _TileSets list_ conformance class does require that paths listing tilesets end with `.../tiles`.
 
-NOTE: The {tileMatrixSetId} URI template variable is not required by this Standard. However the <<per_core_tc-tilematrixset-definition>> proposes to make all tileset paths homogeneous by using it.
+NOTE: The `{tileMatrixSetId}` URI template variable is not required by this Standard. However, the <<per_core_tc-tilematrixset-definition,_TileMatrixSet definition_ permission>> proposes to make all tileset paths homogeneous by using it.
