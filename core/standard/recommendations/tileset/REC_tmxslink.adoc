@@ -8,4 +8,4 @@
 ^|D |When the API provides a "/tileMatrixSets" endpoint, this endpoint SHOULD be mentioned in one or more links in the landing page of the API with the `rel` type `http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes`.
 |===
 
-NOTE: The TileMatrixSet defined in http://docs.opengeospatial.org/is/17-083r4/17-083r4.html#61[Annex D] of OGC 17-083r4 and the variable-width defined in http://docs.opengeospatial.org/is/17-083r4/17-083r4.html#104[Annex E] of OGC 17-083r4 are registered in the OGC TileMatrixSets registry is available at http://opengis.net/def/tms
+NOTE: The common TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r4/17-083r4.html#61[Annex D] of OGC 17-083r4 and the variable-width TileMatrixSets defined in http://docs.opengeospatial.org/is/17-083r4/17-083r4.html#104[Annex E] of OGC 17-083r4 are registered in the OGC TileMatrixSets registry available at http://opengis.net/def/tms.
