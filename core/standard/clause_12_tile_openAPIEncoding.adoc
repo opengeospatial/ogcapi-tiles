@@ -1,4 +1,4 @@
-[[rc_openapi_definition]]
+[[rc_oas30_definition]]
 == Requirement Class "OpenAPI Specification 3.0" API definition
 
 === Overview
