@@ -34,7 +34,7 @@ include::abstract_tests/ATS_class_datetime.adoc[leveloffset=+1]
 
 === Conformance Classes for encodings
 
-==== Conformance Classes for OpenAPI encoding
+==== Conformance Classes for OpenAPI definition
 
 include::abstract_tests/ATS_class_openapi.adoc[leveloffset=+1]
 
