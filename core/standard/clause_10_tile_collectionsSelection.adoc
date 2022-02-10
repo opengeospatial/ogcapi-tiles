@@ -1,15 +1,15 @@
-[[rc_tiles-collections-selection]]
+[[rc_collections-selection]]
 
 == Requirement Class "Tile Geo Data Resource Selection"
 
 === Overview
 
-include::requirements/requirements_class_tile_collections-selection.adoc[]
+include::requirements/requirements_class_collections-selection.adoc[]
 
-include::clause_10_collectionsSelection.adoc[]
+include::reqModule_collectionsSelection.adoc[]
 
 ==== What resources accept this parameter
 
 So far, this requirements class is defined as a building block neutral to the type of resource it applies. In this subclause, this Standard defines the resources that supports the parameter
 [[req_collections-selection_resources-tile-query]]
-include::requirements/tile-collections-selection/REQ_resources-query.adoc[]
+include::requirements/collections-selection/REQ_resources-query.adoc[]

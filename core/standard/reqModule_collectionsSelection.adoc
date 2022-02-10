@@ -1,4 +1,4 @@
-[[rc_collections-selection]]
+[[rm_collections-selection]]
 
 In a Web API providing access to a complex dataset formed by several geospatial data resources, there are reasons for being selective in the amount of information included when requesting an operation affecting the dataset. This requirements class defines how to include a query parameter to a resource that depends on the root (e.g., a dataset tile) to filter the amount of information provided by the dataset (a.k.a,. by specifying which geospatial data resources (a.k.a., collections) are involved in the creation of some root derived resource).
 

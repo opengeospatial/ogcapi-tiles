@@ -61,7 +61,7 @@ DataSet tiles may combine content from multiple geospatial resources, regardless
 |Styled Map tileset list | `/styles/{styleId}/map/tiles`
 |===
 
-*<<rc_tiles-collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tiles-collections-selection)
+*<<rc_collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
 
 The _tiles geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve dataset tiles.
 
@@ -128,7 +128,7 @@ Conformance with this standard shall be checked using all the relevant tests spe
 |<<rc_tileSet,TileSet>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
 |<<rc_tileSets-list,Tilesets list>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list
 |<<rc_datasetTileSets,Dataset Tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
-|<<rc_tiles-collections-selection,Collections selection>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
+|<<rc_collections-selection,Collections selection>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
 |<<rc_geoDataResourceTileSets,Geodata tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets
 |<<rc_datetime,DateTime>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
 |<<rc_oas30_definition, OpenAPI Specification 3.0>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
