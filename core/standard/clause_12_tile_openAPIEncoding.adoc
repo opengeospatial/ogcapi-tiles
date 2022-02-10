@@ -11,7 +11,7 @@ This conformance class defines the OpenAPI Specification version 3.0 mechanism t
 
 The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application will have the full picture of the resources that the API provides, how to retrieve them, and what responses are expected for successful and unsuccessful requests. Without this API description an application will be forced to traverse all links starting by the landing page to get an equivalent full list of resources.
 
-The OWS Common requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition extra requirements are provided. Also, the OWS Common requirement class provides details on how to request an API definition.
+The _OGC API - Common - Part 1: Core_ (_oas30_) requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition extra requirements are provided. Also, the _OGC API - Common_ requirement class provides details on how to request an API definition.
 
 ==== Response
 
