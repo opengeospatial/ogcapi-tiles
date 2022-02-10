@@ -21,6 +21,9 @@ Recipients of this document are requested to submit, with their comments, notifi
 The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
 
 UAB-CREAF
+AGC
+Ecere Corporation
+ESRI
 
 [big]*v.     Submitters*
 
