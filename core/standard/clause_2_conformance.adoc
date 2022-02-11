@@ -140,5 +140,3 @@ Conformance with this standard shall be checked using all the relevant tests spe
 |<<rc_geojson,GeoJSON>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geojson
 |<<rc_mvt,Mapbox Vector Tiles>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
 |===
-
-Conformance class	URI
