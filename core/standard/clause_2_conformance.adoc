@@ -1,5 +1,5 @@
 == Conformance
-This standard defines seven requirements / conformance classes.
+This standard defines fifteen requirements conformance classes.
 
 The standardization targets of all conformance classes are "Web APIs".
 
