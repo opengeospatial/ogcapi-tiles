@@ -7,6 +7,6 @@
 |Date |Release |Editor | Primary clauses modified |Description
 |2019-03-21 |Template |C. Heazel |all |initial template
 |2020-04-15 |0.0.1 |J. Maso |all |Several
-|2019-04-21 |0.0.2 |J. Maso |all |Several
-|2019-05-21 |0.0.3 |G. Hobona |Annex A |Fixed Conformance Class URI and added abstract tests
+|2020-04-21 |0.0.2 |J. Maso |all |Several
+|2020-05-21 |0.0.3 |G. Hobona |Annex A |Fixed Conformance Class URI and added abstract tests
 |===
