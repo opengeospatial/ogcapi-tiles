@@ -36,72 +36,72 @@ include::requirements/oas30/REQ_operation-id.adoc[]
 
 [#openapi-operation-id-suffixes,reftext='{table-caption} {counter:table-num}']
 .OpenAPI operationId suffixes
-[width = "100%",options="header",cols="12%,12%,8%,15%,53%"]
+[width = "100%",options="header",cols="12%,8%,12%,15%,53%"]
 |===
-|Origin     |Data Type|Styled |Resource     |_operationId_ suffixes^1^
+|Origin          |Styled   |Data Type    |Resource       |_operationId_ suffixes^1^
 5+|_With the resource types and origins described in this document_
-|DataSet^6^      |Vector       |No     |TileSetsList^5^|`.dataset.vector.getTileSetsList`
-|DataSet^6^      |Vector       |No     |TileSet^4^     |`.dataset.vector.getTileSet`
-|DataSet^6^      |Vector       |No     |Tile^3^        |`.dataset.vector.getTile`
-|DataSet^6^      |Vector       |Yes^8^ |TileSetsList^5^|`.dataset.style.vector.getTileSetsList`
-|DataSet^6^      |Vector       |Yes^8^ |TileSet^4^     |`.dataset.style.vector.getTileSet`
-|DataSet^6^      |Vector       |Yes^8^ |Tile^3^        |`.dataset.style.vector.getTile`
-|DataSet^6^      |Map^10^      |No     |TileSetsList^5^|`.dataset.map.getTileSetsList`
-|DataSet^6^      |Map^10^      |No     |TileSet^4^     |`.dataset.map.getTileSet`
-|DataSet^6^      |Map^10^      |No     |Tile^3^        |`.dataset.map.getTile`
-|DataSet^6^      |Map^10^      |Yes^8^ |TileSetsList^5^|`.dataset.style.map.getTileSetsList`
-|DataSet^6^      |Map^10^      |Yes^8^ |TileSet^4^     |`.dataset.style.map.getTileSet`
-|DataSet^6^      |Map^10^      |Yes^8^ |Tile^3^        |`.dataset.style.map.getTile`
-|Collection^7^   |Vector       |No     |TileSetsList^5^|`.collection.vector.getTileSetsList`
-|Collection^7^   |Vector       |No     |TileSet^4^     |`.collection.vector.getTileSet`
-|Collection^7^   |Vector       |No     |Tile^3^        |`.collection.vector.getTile`
-|Collection^7^   |Vector       |Yes^8^ |TileSetsList^5^|`.collection.style.vector.getTileSetsList`
-|Collection^7^   |Vector       |Yes^8^ |TileSet^4^     |`.collection.style.vector.getTileSet`
-|Collection^7^   |Vector       |Yes^8^ |Tile^3^        |`.collection.style.vector.getTile`
-|Collection^7^   |Coverage^9^  |No     |TileSetsList^5^|`.collection.coverage.getTileSetsList`
-|Collection^7^   |Coverage^9^  |No     |TileSet^4^     |`.collection.coverage.getTileSet`
-|Collection^7^   |Coverage^9^  |No     |Tile^3^        |`.collection.coverage.getTile`
-|Collection^7^   |Map^10^      |No     |TileSetsList^5^|`.collection.map.getTileSetsList`
-|Collection^7^   |Map^10^      |No     |TileSet^4^     |`.collection.map.getTileSet`
-|Collection^7^   |Map^10^      |No     |Tile^3^        |`.collection.map.getTile`
-|Collection^7^   |Map^10^      |Yes^8^ |TileSetsList^5^|`.collection.style.map.getTileSetsList`
-|Collection^7^   |Map^10^      |Yes^8^ |TileSet^4^     |`.collection.style.map.getTileSet`
-|Collection^7^   |Map^10^      |Yes^8^ |Tile^3^        |`.collection.style.map.getTile`
+|DataSet^6^      |         |Vector       |TileSetsList^5^|`.dataset.vector.getTileSetsList`
+|DataSet^6^      |         |Vector       |TileSet^4^     |`.dataset.vector.getTileSet`
+|DataSet^6^      |         |Vector       |Tile^3^        |`.dataset.vector.getTile`
+|DataSet^6^      |Styled^8^|Vector       |TileSetsList^5^|`.dataset.style.vector.getTileSetsList`
+|DataSet^6^      |Styled^8^|Vector       |TileSet^4^     |`.dataset.style.vector.getTileSet`
+|DataSet^6^      |Styled^8^|Vector       |Tile^3^        |`.dataset.style.vector.getTile`
+|DataSet^6^      |         |Map^10^      |TileSetsList^5^|`.dataset.map.getTileSetsList`
+|DataSet^6^      |         |Map^10^      |TileSet^4^     |`.dataset.map.getTileSet`
+|DataSet^6^      |         |Map^10^      |Tile^3^        |`.dataset.map.getTile`
+|DataSet^6^      |Styled^8^|Map^10^      |TileSetsList^5^|`.dataset.style.map.getTileSetsList`
+|DataSet^6^      |Styled^8^|Map^10^      |TileSet^4^     |`.dataset.style.map.getTileSet`
+|DataSet^6^      |Styled^8^|Map^10^      |Tile^3^        |`.dataset.style.map.getTile`
+|Collection^7^   |         |Vector       |TileSetsList^5^|`.collection.vector.getTileSetsList`
+|Collection^7^   |         |Vector       |TileSet^4^     |`.collection.vector.getTileSet`
+|Collection^7^   |         |Vector       |Tile^3^        |`.collection.vector.getTile`
+|Collection^7^   |Styled^8^|Vector       |TileSetsList^5^|`.collection.style.vector.getTileSetsList`
+|Collection^7^   |Styled^8^|Vector       |TileSet^4^     |`.collection.style.vector.getTileSet`
+|Collection^7^   |Styled^8^|Vector       |Tile^3^        |`.collection.style.vector.getTile`
+|Collection^7^   |         |Coverage^9^  |TileSetsList^5^|`.collection.coverage.getTileSetsList`
+|Collection^7^   |         |Coverage^9^  |TileSet^4^     |`.collection.coverage.getTileSet`
+|Collection^7^   |         |Coverage^9^  |Tile^3^        |`.collection.coverage.getTile`
+|Collection^7^   |         |Map^10^      |TileSetsList^5^|`.collection.map.getTileSetsList`
+|Collection^7^   |         |Map^10^      |TileSet^4^     |`.collection.map.getTileSet`
+|Collection^7^   |         |Map^10^      |Tile^3^        |`.collection.map.getTile`
+|Collection^7^   |Styled^8^|Map^10^      |TileSetsList^5^|`.collection.style.map.getTileSetsList`
+|Collection^7^   |Styled^8^|Map^10^      |TileSet^4^     |`.collection.style.map.getTileSet`
+|Collection^7^   |Styled^8^|Map^10^      |Tile^3^        |`.collection.style.map.getTile`
 5+|_With other potential resource types_
-|DataSet^6^      |_other_      |No     |TileSetsList^5^|`.dataset.*.getTileSetsList`
-|DataSet^6^      |_other_      |No     |TileSet^4^     |`.dataset.*.getTileSet`
-|DataSet^6^      |_other_      |No     |Tile^3^        |`.dataset.*.getTile`
-|DataSet^6^      |_other_      |Yes^8^ |TileSetsList^5^|`.dataset.style.*.getTileSetsList`
-|DataSet^6^      |_other_      |Yes^8^ |TileSet^4^     |`.dataset.style.*.getTileSet`
-|DataSet^6^      |_other_      |Yes^8^ |Tile^3^        |`.dataset.style.*.getTile`
-|Collection^7^   |_other_      |No     |TileSetsList^5^|`.collection.*.getTileSetsList`
-|Collection^7^   |_other_      |No     |TileSet^4^     |`.collection.*.getTileSet`
-|Collection^7^   |_other_      |No     |Tile^3^        |`.collection.*.getTile`
-|Collection^7^   |_other_      |Yes^8^ |TileSetsList^5^|`.collection.style.*.getTileSetsList`
-|Collection^7^   |_other_      |Yes^8^ |TileSet^4^     |`.collection.style.*.getTileSet`
-|Collection^7^   |_other_      |Yes^8^ |Tile^3^        |`.collection.style.*.getTile`
+|DataSet^6^      |         |_other_      |TileSetsList^5^|`.dataset.*.getTileSetsList`
+|DataSet^6^      |         |_other_      |TileSet^4^     |`.dataset.*.getTileSet`
+|DataSet^6^      |         |_other_      |Tile^3^        |`.dataset.*.getTile`
+|DataSet^6^      |Styled^8^|_other_      |TileSetsList^5^|`.dataset.style.*.getTileSetsList`
+|DataSet^6^      |Styled^8^|_other_      |TileSet^4^     |`.dataset.style.*.getTileSet`
+|DataSet^6^      |Styled^8^|_other_      |Tile^3^        |`.dataset.style.*.getTile`
+|Collection^7^   |         |_other_      |TileSetsList^5^|`.collection.*.getTileSetsList`
+|Collection^7^   |         |_other_      |TileSet^4^     |`.collection.*.getTileSet`
+|Collection^7^   |         |_other_      |Tile^3^        |`.collection.*.getTile`
+|Collection^7^   |Styled^8^|_other_      |TileSetsList^5^|`.collection.style.*.getTileSetsList`
+|Collection^7^   |Styled^8^|_other_      |TileSet^4^     |`.collection.style.*.getTileSet`
+|Collection^7^   |Styled^8^|_other_      |Tile^3^        |`.collection.style.*.getTile`
 5+|_With other potential origins_
-|_other_         |Vector       |No     |TileSetsList^5^|`#.vector.getTileSetsList`
-|_other_         |Vector       |No     |TileSet^4^     |`#.vector.getTileSet`
-|_other_         |Vector       |No     |Tile^3^        |`#.vector.getTile`
-|_other_         |Vector       |Yes^8^ |TileSetsList^5^|`#.style.vector.getTileSetsList`
-|_other_         |Vector       |Yes^8^ |TileSet^4^     |`#.style.vector.getTileSet`
-|_other_         |Vector       |Yes^8^ |Tile^3^        |`#.style.vector.getTile`
-|_other_         |Coverage^9^  |No     |TileSetsList^5^|`#.coverage.getTileSetsList`
-|_other_         |Coverage^9^  |No     |TileSet^4^     |`#.coverage.getTileSet`
-|_other_         |Coverage^9^  |No     |Tile^3^        |`#.coverage.getTile`
-|_other_         |Map^10^      |No     |TileSetsList^5^|`#.map.getTileSetsList`
-|_other_         |Map^10^      |No     |TileSet^4^     |`#.map.getTileSet`
-|_other_         |Map^10^      |No     |Tile^3^        |`#.map.getTile`
-|_other_         |Map^10^      |Yes^8^ |TileSetsList^5^|`#.style.map.getTileSetsList`
-|_other_         |Map^10^      |Yes^8^ |TileSet^4^     |`#.style.map.getTileSet`
-|_other_         |Map^10^      |Yes^8^ |Tile^3^        |`#.style.map.getTile`
-|_other_         |_other_      |No     |TileSetsList^5^|`#.*.getTileSetsList`
-|_other_         |_other_      |No     |TileSet^4^     |`#.*.getTileSet`
-|_other_         |_other_      |No     |Tile^3^        |`#.*.getTile`
-|_other_         |_other_      |Yes^8^ |TileSetsList^5^|`#.style.*.getTileSetsList`
-|_other_         |_other_      |Yes^8^ |TileSet^4^     |`#.style.*.getTileSet`
-|_other_         |_other_      |Yes^8^ |Tile^3^        |`#.style.*.getTile``
+|_other_         |         |Vector       |TileSetsList^5^|`#.vector.getTileSetsList`
+|_other_         |         |Vector       |TileSet^4^     |`#.vector.getTileSet`
+|_other_         |         |Vector       |Tile^3^        |`#.vector.getTile`
+|_other_         |Styled^8^|Vector       |TileSetsList^5^|`#.style.vector.getTileSetsList`
+|_other_         |Styled^8^|Vector       |TileSet^4^     |`#.style.vector.getTileSet`
+|_other_         |Styled^8^|Vector       |Tile^3^        |`#.style.vector.getTile`
+|_other_         |         |Coverage^9^  |TileSetsList^5^|`#.coverage.getTileSetsList`
+|_other_         |         |Coverage^9^  |TileSet^4^     |`#.coverage.getTileSet`
+|_other_         |         |Coverage^9^  |Tile^3^        |`#.coverage.getTile`
+|_other_         |         |Map^10^      |TileSetsList^5^|`#.map.getTileSetsList`
+|_other_         |         |Map^10^      |TileSet^4^     |`#.map.getTileSet`
+|_other_         |         |Map^10^      |Tile^3^        |`#.map.getTile`
+|_other_         |Styled^8^|Map^10^      |TileSetsList^5^|`#.style.map.getTileSetsList`
+|_other_         |Styled^8^|Map^10^      |TileSet^4^     |`#.style.map.getTileSet`
+|_other_         |Styled^8^|Map^10^      |Tile^3^        |`#.style.map.getTile`
+|_other_         |         |_other_      |TileSetsList^5^|`#.*.getTileSetsList`
+|_other_         |         |_other_      |TileSet^4^     |`#.*.getTileSet`
+|_other_         |         |_other_      |Tile^3^        |`#.*.getTile`
+|_other_         |Styled^8^|_other_      |TileSetsList^5^|`#.style.*.getTileSetsList`
+|_other_         |Styled^8^|_other_      |TileSet^4^     |`#.style.*.getTileSet`
+|_other_         |Styled^8^|_other_      |Tile^3^        |`#.style.*.getTile``
 5+|^1^ '*' represents a _resource type_ to be defined in another relevant standard. '#' represents an optional _origin_ that could be defined in another relevant standard.
 
 ^2^ The suffixes derived from these resource types are not required by this standard and will be proposed by the relevant standard defining them.
