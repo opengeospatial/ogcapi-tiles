@@ -2,5 +2,5 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/collections-selection/resources-query*
-^|A |The parameter `collections` SHALL be supported by the dataset tileset resources (e.g {datasetAPI}/tiles/WebMercatorQuad) and the dataset tiles resources (e.g {datasetAPI}/tiles/WebMercatorQuad/{TileMatrix}/{TileRow}/{TileCol})
+^|A |The parameter `collections` SHALL be supported by the dataset tileset resources (e.g `{datasetAPI}/tiles/WebMercatorQuad`) and the dataset tiles resources (e.g `{datasetAPI}/tiles/WebMercatorQuad/{tileMatrix}/{tileRow}/{tileCol}`)
 |===
