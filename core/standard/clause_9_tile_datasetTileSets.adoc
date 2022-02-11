@@ -11,7 +11,7 @@ This conformance class defines a mechanism to retrieve a list of tilesets for a 
 
 Combined with the <<rc_collections-selection>> conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrieved as tiles. For retrieving the list of tilesets for only one collection use the <<rc_geoDataResourceTileSets>>
 
-If an Web API offers several geospatial data resources for a dataset, it may limit the number of collections that can be retrieved together, and/or provide a limited subset of the collections by default.
+If a Web API offers several geospatial data resources for a dataset, it may limit the number of collections that can be retrieved together, and/or provide a limited subset of the collections by default.
 
 === General
 include::recommendations/dataset-tilesets/REC_api-common.adoc[]
