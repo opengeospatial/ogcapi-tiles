@@ -3,7 +3,7 @@
 
 === Introduction
 
-The OGC API -Tiles defines building blocks which can be used in a Web API to retrieve geospatial data as tiles that follow the structure defined in _2D Tile Matrix Set_ standard.
+The _OGC API - Tiles_ standard defines building blocks which can be used in a Web API to retrieve geospatial data as tiles that follow the structure defined in _2D Tile Matrix Set_ standard.
 
 This document does not specify any requirement for the type of _geospatial data resource_ that could be delivered as tiles.
 Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are maps, features data,
@@ -31,7 +31,7 @@ Beside the general alignment with the architecture of the Web (e.g., consistency
 
 * Clear separation between core requirements and more advanced capabilities. This OGC API - Tiles - Core standard presents the requirements that are relevant for almost everyone who wants to share or use Tiled Data on a fine-grained level. Additional capabilities that several communities are using today will be specified as extensions to the Core API.
 * Technologies that change more frequently are decoupled and specified in separate modules ("requirements classes" in OGC terminology). This enables, for example, the use/re-use of new encodings for spatial data or Web API definition (such as new version of the OpenAPI description document).
-* Modularization is not just about a single "service". OGC APIs will provide building blocks that can be reused in Web APIs in general. In other words, a server supporting the OGC API - Tiles should not be seen as a standalone service. Rather it should be viewed as a collection of Web API building blocks which together implement Tile capabilities. A corollary for this is that it should be possible to implement a Web API that simultaneously conforms to conformance classes from the Feature, Coverage, Map, Tiles, and other future OGC API standards.
+* Modularization is not just about a single "service". OGC APIs will provide building blocks that can be reused in Web APIs in general. In other words, a server supporting the OGC API - Tiles should not be seen as a standalone service. Rather it should be viewed as a collection of Web API building blocks which together implement Tile capabilities. A corollary for this is that it should be possible to implement a Web API that simultaneously conforms to conformance classes from the Features, Coverages, Maps, Tiles, and other future OGC API standards.
 
 This approach intends to support two types of client developers:
 
