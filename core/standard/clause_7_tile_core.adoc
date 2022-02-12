@@ -37,6 +37,7 @@ include::requirements/core/REQ_tc-tilerow-definition.adoc[]
 ==== Parameter tileCol
 include::requirements/core/REQ_tc-tilecol-definition.adoc[]
 
+==== Parameter tileMatrixSetId (optional)
 include::recommendations/core/PER_tc-tilematrixsetid-definition.adoc[]
 
 
