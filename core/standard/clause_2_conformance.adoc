@@ -96,7 +96,7 @@ This document specifies how to provide tiles in a domain that has a generic time
 *<<rc_oas30_definition>>*
 This document specifies how to use OpenAPI as a way to define your API.
 
-*<<rc_description_encodings>>*
+*<<rc_xml>>*
 This document specifies how to use XML as an alternative encoding for describing tilesets.
 
 *<<rc_data_encodings>>*
@@ -132,7 +132,7 @@ Conformance with this standard shall be checked using all the relevant tests spe
 |<<rc_geoDataResourceTileSets,Geodata tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets
 |<<rc_datetime,DateTime>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
 |<<rc_oas30_definition, OpenAPI Specification 3.0>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
-|<<rc_xml, XML>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
+|<<rc_xml,XML>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
 |<<rc_png,PNG>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/png
 |<<rc_jpeg,JPEG>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg
 |<<rc_tiff,TIFF>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tiff
