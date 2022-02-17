@@ -1,7 +1,7 @@
 [[rc_data_encodings]]
 == Requirements classes for tile encodings
 
-The OGC API Tiles is designed to support tiling data that can potentially be encoded and provided in many of the existing geospatial formats or new ones that could be invented in the future.  Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The intention of this section is NOT to limit the number of encodings offered by a Tiles Web API but to provided a minimum set of encodings that could be implemented by many Tiles Web APIs as well as to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs are free to support other encodings and data formats that can be convenient in each case, and use them despite the fact that they may not be listed as supported conformance classes by the Web API. In addition, the declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API should support all of them. Partial support could be conditioned by the different the nature of the data behind each collection.
+The OGC API Tiles is designed to support tiling data that can potentially be encoded and provided in many of the existing geospatial formats or new ones that could be invented in the future.  Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The intention of this section is NOT to limit the number of encodings offered by a Tiles Web API but to provide a minimum set of encodings that could be implemented by many Tiles Web APIs as well as to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs are free to support other encodings and data formats that can be convenient in each case, and use them despite the fact that they may not be listed as supported conformance classes by the Web API. In addition, the declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API should support all of them. Partial support could be conditioned by the different the nature of the data behind each collection.
 
 === Overview
 
@@ -56,7 +56,7 @@ include::requirements/tiff/REQ_geotiff.adoc[]
 [[rc_netcdf]]
 === Requirement Class "NetCDF"
 
-For a case of multidimensional regular grid tiles, as defined in Annex J of the 2D-TMS Standards [OGC 17-083r3], there is a need for a format able to store multidimensional data in a natural way. The NetCDF is one of the most popular formats for scientific data that is able store multi-dimensional arrays of data values. It is defined by the UCAR-Unidata.
+For a case of multidimensional regular grid tiles, as defined in Annex J of the 2D-TMS Standards [OGC 17-083r4], there is a need for a format able to store multidimensional data in a natural way. The NetCDF is one of the most popular formats for scientific data that is able store multi-dimensional arrays of data values. It is defined by the UCAR-Unidata.
 
 include::requirements/requirements_class_netcdf.adoc[]
 

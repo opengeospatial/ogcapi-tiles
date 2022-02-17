@@ -1,5 +1,5 @@
 == Conformance
-This standard defines seven requirements / conformance classes.
+This standard defines fifteen requirements conformance classes.
 
 The standardization targets of all conformance classes are "Web APIs".
 
@@ -61,7 +61,7 @@ DataSet tiles may combine content from multiple geospatial resources, regardless
 |Styled Map tileset list | `/styles/{styleId}/map/tiles`
 |===
 
-*<<rc_tiles-collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tiles-collections-selection)
+*<<rc_collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
 
 The _tiles geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve dataset tiles.
 
@@ -96,7 +96,7 @@ This document specifies how to provide tiles in a domain that has a generic time
 *<<rc_oas30_definition>>*
 This document specifies how to use OpenAPI as a way to define your API.
 
-*<<rc_description_encodings>>*
+*<<rc_xml>>*
 This document specifies how to use XML as an alternative encoding for describing tilesets.
 
 *<<rc_data_encodings>>*
@@ -128,11 +128,11 @@ Conformance with this standard shall be checked using all the relevant tests spe
 |<<rc_tileSet,TileSet>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
 |<<rc_tileSets-list,Tilesets list>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list
 |<<rc_datasetTileSets,Dataset Tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
-|<<rc_tiles-collections-selection,Collections selection>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
+|<<rc_collections-selection,Collections selection>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
 |<<rc_geoDataResourceTileSets,Geodata tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets
 |<<rc_datetime,DateTime>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
 |<<rc_oas30_definition, OpenAPI Specification 3.0>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
-|<<rc_xml, XML>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
+|<<rc_xml,XML>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
 |<<rc_png,PNG>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/png
 |<<rc_jpeg,JPEG>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg
 |<<rc_tiff,TIFF>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tiff
@@ -140,5 +140,3 @@ Conformance with this standard shall be checked using all the relevant tests spe
 |<<rc_geojson,GeoJSON>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geojson
 |<<rc_mvt,Mapbox Vector Tiles>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
 |===
-
-Conformance class	URI

@@ -2,8 +2,8 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/core/tc-tilematrixset-definition*
-^|A |An extra {tileMatrixSetId} variable may be used by the API definition for simplification purposes and, this way, and make all tileset paths homogeneous.
-^|B |The {tileMatrixSetId} variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represent all the TileMatrixSet supported by the resource.
+^|A |An extra `{tileMatrixSetId}` variable may be used by the API definition for simplification purposes and, this way, make all tileset paths homogeneous.
+^|B |The `{tileMatrixSetId}` variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represents all the TileMatrixSets supported by the resource.
 ^|C |The following OpenAPI Specification 3.0 fragment) can be used in this case:
 
 [source,YAML]

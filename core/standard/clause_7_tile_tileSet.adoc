@@ -115,7 +115,7 @@ The following table explains the meaning of the URI template variables.
 !===
 
 [[TilesetTilesLinkResponseExample]]
-.Example fragment of a tileset response for a Web API defined TileMatrixSet
+.Example fragment of a tileset response for a Web API-defined TileMatrixSet
 =================
 [source,JSON]
 {
@@ -148,9 +148,9 @@ The following table explains the meaning of the URI template variables.
 }
 =================
 
-===== Web API defined TileMatrixSets
+===== Web API-defined TileMatrixSets
 
-This section provides more details on the recommendations for Web API defined TileMatrixSets. In the future, an extension of this standard could described mechanism to manage (create, update...) tiling schemes for an Web API and make some of the recommendations expressed in the section mandatory.
+This section provides more details on the recommendations for Web API-defined TileMatrixSets. In the future, an extension of this standard could described mechanism to manage (create, update...) tiling schemes for a Web API and make some of the recommendations expressed in the section mandatory.
 
 ====== Web API landing page
 

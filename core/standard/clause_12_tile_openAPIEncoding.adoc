@@ -1,4 +1,4 @@
-[[rc_openapi_definition]]
+[[rc_oas30_definition]]
 == Requirement Class "OpenAPI Specification 3.0" API definition
 
 === Overview
@@ -11,7 +11,7 @@ This conformance class defines the OpenAPI Specification version 3.0 mechanism t
 
 The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application will have the full picture of the resources that the API provides, how to retrieve them, and what responses are expected for successful and unsuccessful requests. Without this API description an application will be forced to traverse all links starting by the landing page to get an equivalent full list of resources.
 
-The OWS Common requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition extra requirements are provided. Also, the OWS Common requirement class provides details on how to request an API definition.
+The _OGC API - Common - Part 1: Core_ (_oas30_) requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition extra requirements are provided. Also, the _OGC API - Common_ requirement class provides details on how to request an API definition.
 
 ==== Response
 
@@ -22,11 +22,11 @@ include::requirements/oas30/REQ_completeness.adoc[]
 
 ===== Reusable API components
 
-Reusable components for creating OpenAPI definitions for implementations of this OGC API can be found in http://schemas.opengis.net/ogcapi/tiles/part1/1.0/openapi
+Reusable components for creating OpenAPI definitions for implementations of this OGC API can be found in http://schemas.opengis.net/ogcapi/tiles/part1/1.0/openapi.
 
-A server implementations of this OGC API can use the content in the openapi folder to generate a response for the openapi description. The opgapi-tiles-1.yaml includes paths and components. An implementation should only include the path that are implemented and remove the references to the rest. The components part includes parameters, responses and schemas that can be reused as-is. The `api` folder contains json files that are templates with enumerated values for collections (all, coverages or vector), styles, tileMatrixSets. A particular implementation of this API should enumerate the actual resources exposed by the API in the same way. The server can select to dynamically implement responses to /api/* (where * is replaced by all-collections, styles,... ) or hardcode the /api/* files with the actual list of resource identifiers in the enumerations.
+A server implementations of this OGC API can use the content in the openapi folder to generate a response for the openapi description. The _ogcapi-tiles-1.yaml_ includes paths and components. An implementation should only include the paths that are implemented and remove the references to the rest. The components part includes parameters, responses and schemas that can be reused as-is. The `api` folder contains JSON files that are templates with enumerated values for collections (all, coverages or vector), styles, tileMatrixSets. A particular implementation of this API should enumerate the actual resources exposed by the API in the same way. The server can select to dynamically implement responses to /api/* (where * is replaced by all-collections, styles,... ) or hardcode the /api/* files with the actual list of resource identifiers in the enumerations.
 
-To improve performance, the whole content of this folder can be bundled in a single document by executing a tool such as swagger-cli. This can be served for the OGC API - Common - Part 1 `service-desc` link from the landing page.
+To improve performance, the whole content of this folder can be bundled in a single document by executing a tool such as _swagger-cli_. This can be served for the OGC API - Common - Part 1 `service-desc` link from the landing page.
 
 ===== Path Operation Ids
 
@@ -36,91 +36,89 @@ include::requirements/oas30/REQ_operation-id.adoc[]
 
 [#openapi-operation-id-suffixes,reftext='{table-caption} {counter:table-num}']
 .OpenAPI operationId suffixes
-[width = "100%",options="header",cols="11%,11%,8%,13%,21%,^4%,^4%,^4%,^4%,^4%,^4%,^4%,^4%,^4%"]
+[width = "100%",options="header",cols="12%,8%,12%,15%,53%"]
 |===
-|Origin     |Data Type|Styled |Resource     |operationId suffixes^1^                  |T^3^ |S^4^ |L^5^ |D^6^ |G^7^ |C^8^ |Y^9^ |V^10^ |M^11^
-14+|_With the resource types and origins described in this document_
-|DataSet    |Vector   |No     |TileSetsList |.dataset.vector.getTileSetsList          |     |     |L    |D    |     |     |     |     |
-|DataSet    |Vector   |No     |TileSet      |.dataset.vector.getTileSet               |     |S    |     |D    |     |     |     |     |
-|DataSet    |Vector   |No     |Tile         |.dataset.vector.getTile                  |T    |     |     |D    |     |     |     |     |
-|DataSet    |Vector   |Yes    |TileSetsList |.dataset.style.vector.getTileSetsList    |     |     |L    |D    |     |     |Y    |     |
-|DataSet    |Vector   |Yes    |TileSet      |.dataset.style.vector.getTileSet         |     |S    |     |D    |     |     |Y    |     |
-|DataSet    |Vector   |Yes    |Tile         |.dataset.style.vector.getTile            |T    |     |     |D    |     |     |Y    |     |
-|DataSet    |Map      |No     |TileSetsList |.dataset.map.getTileSetsList             |     |     |L    |D    |     |     |     |     |M
-|DataSet    |Map      |No     |TileSet      |.dataset.map.getTileSet                  |     |S    |     |D    |     |     |     |     |M
-|DataSet    |Map      |No     |Tile         |.dataset.map.getTile                     |T    |     |     |D    |     |     |     |     |M
-|DataSet    |Map      |Yes    |TileSetsList |.dataset.style.map.getTileSetsList       |     |     |L    |D    |     |     |     |     |M
-|DataSet    |Map      |Yes    |TileSet      |.dataset.style.map.getTileSet            |     |S    |     |D    |     |     |     |     |M
-|DataSet    |Map      |Yes    |Tile         |.dataset.style.map.getTile               |T    |     |     |D    |     |     |     |     |M
-|Collection |Vector   |No     |TileSetsList |.collection.vector.getTileSetsList       |     |     |L    |     |G    |C    |     |     |
-|Collection |Vector   |No     |TileSet      |.collection.vector.getTileSet            |     |S    |     |     |G    |C    |     |     |
-|Collection |Vector   |No     |Tile         |.collection.vector.getTile               |T    |     |     |     |G    |C    |     |     |
-|Collection |Vector   |Yes    |TileSetsList |.collection.style.vector.getTileSetsList |     |     |L    |     |G    |C    |Y    |     |
-|Collection |Vector   |Yes    |TileSet      |.collection.style.vector.getTileSet      |     |S    |     |     |G    |C    |Y    |     |
-|Collection |Vector   |Yes    |Tile         |.collection.style.vector.getTile         |T    |     |     |     |G    |C    |Y    |     |
-|Collection |Coverage |No     |TileSetsList |.collection.coverage.getTileSetsList     |     |     |L    |     |G    |C    |     |V    |
-|Collection |Coverage |No     |TileSet      |.collection.coverage.getTileSet          |     |S    |     |     |G    |C    |     |V    |
-|Collection |Coverage |No     |Tile         |.collection.coverage.getTile             |T    |     |     |     |G    |C    |     |V    |
-|Collection |Map      |No     |TileSetsList |.collection.map.getTileSetsList          |     |     |L    |     |G    |C    |     |     |M
-|Collection |Map      |No     |TileSet      |.collection.map.getTileSet               |     |S    |     |     |G    |C    |     |     |M
-|Collection |Map      |No     |Tile         |.collection.map.getTile                  |T    |     |     |     |G    |C    |     |     |M
-|Collection |Map      |Yes    |TileSetsList |.collection.style.map.getTileSetsList    |     |     |L    |     |G    |C    |Y    |     |M
-|Collection |Map      |Yes    |TileSet      |.collection.style.map.getTileSet         |     |S    |     |     |G    |C    |Y    |     |M
-|Collection |Map      |Yes    |Tile         |.collection.style.map.getTile            |T    |     |     |     |G    |C    |Y    |     |M
-14+|_With other potential resource types_
-|DataSet    |other    |No     |TileSetsList |.dataset.*.getTileSetsList               |     |     |L    |D    |     |     |     |     |
-|DataSet    |other    |No     |TileSet      |.dataset.*.getTileSet                    |     |S    |     |D    |     |     |     |     |
-|DataSet    |other    |No     |Tile         |.dataset.*.getTile                       |T    |     |     |D    |     |     |     |     |
-|DataSet    |other    |Yes    |TileSetsList |.dataset.style.*.getTileSetsList         |     |     |L    |D    |     |     |Y    |     |
-|DataSet    |other    |Yes    |TileSet      |.dataset.style.*.getTileSet              |     |S    |     |D    |     |     |Y    |     |
-|DataSet    |other    |Yes    |Tile         |.dataset.style.*.getTile                 |T    |     |     |D    |     |     |Y    |     |
-|Collection |other    |No     |TileSetsList |.collection.*.getTileSetsList            |     |     |L    |     |G    |C    |     |     |
-|Collection |other    |No     |TileSet      |.collection.*.getTileSet                 |     |S    |     |     |G    |C    |     |     |
-|Collection |other    |No     |Tile         |.collection.*.getTile                    |T    |     |     |     |G    |C    |     |     |
-|Collection |other    |Yes    |TileSetsList |.collection.style.*.getTileSetsList      |     |     |L    |     |G    |C    |Y    |     |
-|Collection |other    |Yes    |TileSet      |.collection.style.*.getTileSet           |     |S    |     |     |G    |C    |Y    |     |
-|Collection |other    |Yes    |Tile         |.collection.style.*.getTile              |T    |     |     |     |G    |C    |Y    |     |
-14+|_With other potential origins_
-|other      |Vector   |No     |TileSetsList |#.vector.getTileSetsList                 |     |     |L    |     |     |     |     |     |
-|other      |Vector   |No     |TileSet      |#.vector.getTileSet                      |     |S    |     |     |     |     |     |     |
-|other      |Vector   |No     |Tile         |#.vector.getTile                         |T    |     |     |     |     |     |     |     |
-|other      |Vector   |Yes    |TileSetsList |#.style.vector.getTileSetsList           |     |     |L    |     |     |     |Y    |     |
-|other      |Vector   |Yes    |TileSet      |#.style.vector.getTileSet                |     |S    |     |     |     |     |Y    |     |
-|other      |Vector   |Yes    |Tile         |#.style.vector.getTile                   |T    |     |     |     |     |     |Y    |     |
-|other      |Coverage |No     |TileSetsList |#.coverage.getTileSetsList               |     |     |L    |     |     |     |     |V    |
-|other      |Coverage |No     |TileSet      |#.coverage.getTileSet                    |     |S    |     |     |     |     |     |V    |
-|other      |Coverage |No     |Tile         |#.coverage.getTile                       |T    |     |     |     |     |     |     |V    |
-|other      |Map      |No     |TileSetsList |#.map.getTileSetsList                    |     |     |L    |     |     |     |     |     |M
-|other      |Map      |No     |TileSet      |#.map.getTileSet                         |     |S    |     |     |     |     |     |     |M
-|other      |Map      |No     |Tile         |#.map.getTile                            |T    |     |     |     |     |     |     |     |M
-|other      |Map      |Yes    |TileSetsList |#.style.map.getTileSetsList              |     |     |L    |     |     |     |Y    |     |M
-|other      |Map      |Yes    |TileSet      |#.style.map.getTileSet                   |     |S    |     |     |     |     |Y    |     |M
-|other      |Map      |Yes    |Tile         |#.style.map.getTile                      |T    |     |     |     |     |     |Y    |     |M
-|other      |other    |No     |TileSetsList |#.*.getTileSetsList                      |     |     |L    |     |     |     |     |     |
-|other      |other    |No     |TileSet      |#.*.getTileSet                           |     |S    |     |     |     |     |     |     |
-|other      |other    |No     |Tile         |#.*.getTile                              |T    |     |     |     |     |     |     |     |
-|other      |other    |Yes    |TileSetsList |#.style.*.getTileSetsList                |     |     |L    |     |     |     |Y    |     |
-|other      |other    |Yes    |TileSet      |#.style.*.getTileSet                     |     |S    |     |     |     |     |Y    |     |
-|other      |other    |Yes    |Tile         |#.style.*.getTile                        |T    |     |     |     |     |     |Y    |     |
-14+|^1^ '*' represents a _resource type_ to be defined in another relevant standard. '#' represents an optional _origin_ that could be defined in another relevant standard.
+|Origin          |Styled   |Data Type    |Resource       |_operationId_ suffixes^1^
+5+|_With the resource types and origins described in this document_
+|DataSet^6^      |         |Vector       |TileSetsList^5^|`.dataset.vector.getTileSetsList`
+|DataSet^6^      |         |Vector       |TileSet^4^     |`.dataset.vector.getTileSet`
+|DataSet^6^      |         |Vector       |Tile^3^        |`.dataset.vector.getTile`
+|DataSet^6^      |Styled^8^|Vector       |TileSetsList^5^|`.dataset.style.vector.getTileSetsList`
+|DataSet^6^      |Styled^8^|Vector       |TileSet^4^     |`.dataset.style.vector.getTileSet`
+|DataSet^6^      |Styled^8^|Vector       |Tile^3^        |`.dataset.style.vector.getTile`
+|DataSet^6^      |         |Map^10^      |TileSetsList^5^|`.dataset.map.getTileSetsList`
+|DataSet^6^      |         |Map^10^      |TileSet^4^     |`.dataset.map.getTileSet`
+|DataSet^6^      |         |Map^10^      |Tile^3^        |`.dataset.map.getTile`
+|DataSet^6^      |Styled^8^|Map^10^      |TileSetsList^5^|`.dataset.style.map.getTileSetsList`
+|DataSet^6^      |Styled^8^|Map^10^      |TileSet^4^     |`.dataset.style.map.getTileSet`
+|DataSet^6^      |Styled^8^|Map^10^      |Tile^3^        |`.dataset.style.map.getTile`
+|Collection^7^   |         |Vector       |TileSetsList^5^|`.collection.vector.getTileSetsList`
+|Collection^7^   |         |Vector       |TileSet^4^     |`.collection.vector.getTileSet`
+|Collection^7^   |         |Vector       |Tile^3^        |`.collection.vector.getTile`
+|Collection^7^   |Styled^8^|Vector       |TileSetsList^5^|`.collection.style.vector.getTileSetsList`
+|Collection^7^   |Styled^8^|Vector       |TileSet^4^     |`.collection.style.vector.getTileSet`
+|Collection^7^   |Styled^8^|Vector       |Tile^3^        |`.collection.style.vector.getTile`
+|Collection^7^   |         |Coverage^9^  |TileSetsList^5^|`.collection.coverage.getTileSetsList`
+|Collection^7^   |         |Coverage^9^  |TileSet^4^     |`.collection.coverage.getTileSet`
+|Collection^7^   |         |Coverage^9^  |Tile^3^        |`.collection.coverage.getTile`
+|Collection^7^   |         |Map^10^      |TileSetsList^5^|`.collection.map.getTileSetsList`
+|Collection^7^   |         |Map^10^      |TileSet^4^     |`.collection.map.getTileSet`
+|Collection^7^   |         |Map^10^      |Tile^3^        |`.collection.map.getTile`
+|Collection^7^   |Styled^8^|Map^10^      |TileSetsList^5^|`.collection.style.map.getTileSetsList`
+|Collection^7^   |Styled^8^|Map^10^      |TileSet^4^     |`.collection.style.map.getTileSet`
+|Collection^7^   |Styled^8^|Map^10^      |Tile^3^        |`.collection.style.map.getTile`
+5+|_With other potential resource types_
+|DataSet^6^      |         |_other_      |TileSetsList^5^|`.dataset.*.getTileSetsList`
+|DataSet^6^      |         |_other_      |TileSet^4^     |`.dataset.*.getTileSet`
+|DataSet^6^      |         |_other_      |Tile^3^        |`.dataset.*.getTile`
+|DataSet^6^      |Styled^8^|_other_      |TileSetsList^5^|`.dataset.style.*.getTileSetsList`
+|DataSet^6^      |Styled^8^|_other_      |TileSet^4^     |`.dataset.style.*.getTileSet`
+|DataSet^6^      |Styled^8^|_other_      |Tile^3^        |`.dataset.style.*.getTile`
+|Collection^7^   |         |_other_      |TileSetsList^5^|`.collection.*.getTileSetsList`
+|Collection^7^   |         |_other_      |TileSet^4^     |`.collection.*.getTileSet`
+|Collection^7^   |         |_other_      |Tile^3^        |`.collection.*.getTile`
+|Collection^7^   |Styled^8^|_other_      |TileSetsList^5^|`.collection.style.*.getTileSetsList`
+|Collection^7^   |Styled^8^|_other_      |TileSet^4^     |`.collection.style.*.getTileSet`
+|Collection^7^   |Styled^8^|_other_      |Tile^3^        |`.collection.style.*.getTile`
+5+|_With other potential origins_
+|_other_         |         |Vector       |TileSetsList^5^|`#.vector.getTileSetsList`
+|_other_         |         |Vector       |TileSet^4^     |`#.vector.getTileSet`
+|_other_         |         |Vector       |Tile^3^        |`#.vector.getTile`
+|_other_         |Styled^8^|Vector       |TileSetsList^5^|`#.style.vector.getTileSetsList`
+|_other_         |Styled^8^|Vector       |TileSet^4^     |`#.style.vector.getTileSet`
+|_other_         |Styled^8^|Vector       |Tile^3^        |`#.style.vector.getTile`
+|_other_         |         |Coverage^9^  |TileSetsList^5^|`#.coverage.getTileSetsList`
+|_other_         |         |Coverage^9^  |TileSet^4^     |`#.coverage.getTileSet`
+|_other_         |         |Coverage^9^  |Tile^3^        |`#.coverage.getTile`
+|_other_         |         |Map^10^      |TileSetsList^5^|`#.map.getTileSetsList`
+|_other_         |         |Map^10^      |TileSet^4^     |`#.map.getTileSet`
+|_other_         |         |Map^10^      |Tile^3^        |`#.map.getTile`
+|_other_         |Styled^8^|Map^10^      |TileSetsList^5^|`#.style.map.getTileSetsList`
+|_other_         |Styled^8^|Map^10^      |TileSet^4^     |`#.style.map.getTileSet`
+|_other_         |Styled^8^|Map^10^      |Tile^3^        |`#.style.map.getTile`
+|_other_         |         |_other_      |TileSetsList^5^|`#.*.getTileSetsList`
+|_other_         |         |_other_      |TileSet^4^     |`#.*.getTileSet`
+|_other_         |         |_other_      |Tile^3^        |`#.*.getTile`
+|_other_         |Styled^8^|_other_      |TileSetsList^5^|`#.style.*.getTileSetsList`
+|_other_         |Styled^8^|_other_      |TileSet^4^     |`#.style.*.getTileSet`
+|_other_         |Styled^8^|_other_      |Tile^3^        |`#.style.*.getTile``
+5+|^1^ '*' represents a _resource type_ to be defined in another relevant standard. '#' represents an optional _origin_ that could be defined in another relevant standard.
 
 ^2^ The suffixes derived from these resource types are not required by this standard and will be proposed by the relevant standard defining them.
 
-^3^ T meaning 'Core'
+^3^ The _Tile_ resource is defined in <<rc_tiles_core>>.
 
-^4^ S meaning 'Tile Set'
+^4^ The _TileSet_ resource is defined in <<rc_tileSet>>.
 
-^5^ L meaning 'Tile Sets List'
+^5^ The _TileSetsList_ resource is defined in <<rc_tileSets-list>>.
 
-^6^ D meaning 'Data Set Tile Sets'
+^6^ The _DataSet_ origin is defined in <<rc_datasetTileSets>> and depends on _OGC API - Common - Part 1: Core_.
 
-^7^ G meaning 'Geo Data Tile Sets'
+^7^ The _Collection_ origin is defined in <<rc_geoDataResourceTileSets>> conformance class and depends on the _Collections_ conformance class defined in _OGC API - Commmon - Part 2: Geospatial data_
 
-^8^ C meaning 'Collections (Commmon - Part 2)'
+^8^ Styled tilesets rely on the ability to list styles defined in _OGC API - Styles_^2^.
 
-^9^ Y meaning 'Styles^2^'
+^9^ Coverage tilesets rely on the _Coverage tiles_ conformance class defined in _OGC API - Coverages - Part 1: Core_^2^.
 
-^10^ V meaning 'Coverages^2^'
-
-^11^ M meaning 'Maps^2^'
+^10^ Map tilesets rely on the _Map tiles_ conformance class defined in _OGC API - Maps - Part 1: Core_^2^.
 |===

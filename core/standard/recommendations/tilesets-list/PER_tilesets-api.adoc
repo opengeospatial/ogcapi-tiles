@@ -3,5 +3,5 @@
 |===
 ^|*Permission {counter:per-id}* |*/per/tilesets/tilesets-api*
 ^|A |An API document can advertise a single resource path (expressed as a URI template) to get multiple tilesets.
-^|B |This URI template will use the {tileMatrixSetId} variable. The {tileMatrixSetId} variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represent all the TileMatrixSet supported by the resource.
+^|B |This URI template will use the `{tileMatrixSetId}` variable. The `{tileMatrixSetId}` variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represents all the TileMatrixSets supported by the resource. Note that a `{tileMatrixSetId}` variable must NOT be used in the templated links of the tileset metadata.
 |===

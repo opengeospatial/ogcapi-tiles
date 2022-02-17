@@ -1,7 +1,7 @@
-[[rc_description_encodings]]
+[[rc_xml]]
 == Requirements class for XML encoding to describe tileset metadata
 
-The OGC API Tiles provides several resources that describe the service (landing page) the tileset lists and the tilesets the inform the client on ho to get tiled data. The intention of this section is NOT to limit the number of encodings offered by a Tiles Web API but to provided a minimum set of encodings that could be implemented by many Tiles Web APIs and to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API are always described in all of them but a general support to them is expected.
+The OGC API Tiles provides several resources that describe the service (landing page) the tileset lists and the tilesets the inform the client on ho to get tiled data. The intention of this section is NOT to limit the number of encodings offered by a Tiles Web API but to provide a minimum set of encodings that could be implemented by many Tiles Web APIs and to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API are always described in all of them but a general support of them is expected.
 
 === Overview
 Please refer to OGC API - Common Part 1, for conformance classes related to encodings for the landing page and the conformance page.

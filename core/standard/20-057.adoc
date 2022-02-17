@@ -26,12 +26,12 @@
 |[big]*Open Geospatial Consortium*
 |Submission Date: <yyyy-mm-dd>
 |Approval Date:   <yyyy-mm-dd>
-|Publication Date:   2019-03-06
+|Publication Date:   2022-mm-dd
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
 |Internal reference number of this OGC(R) document:    20-057
-|Version: 0.0.1
+|Version: 0.0.4
 |Category: OGC(R) Implementation Specification
-|Editor: Joan Masó, Jérôme St-Louis
+|Editors: Joan Masó, Jérôme St-Louis
 |===
 
 [cols = "^", frame = "none"]
@@ -42,7 +42,7 @@
 [cols = "^", frame = "none", grid = "none"]
 |===
 |*Copyright notice*
-|Copyright (C) 2019 Open Geospatial Consortium
+|Copyright (C) 2019-2022 Open Geospatial Consortium
 |To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
 |===
 

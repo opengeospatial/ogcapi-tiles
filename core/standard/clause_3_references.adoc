@@ -6,9 +6,9 @@ https://docs.ogc.org/as/19-014r3/19-014r3.html
 
 [2] OGC: OGC 17-083r4, OGC Two Dimensional Tile Matrix Set Standard (2022)
 
-[3] OGC API - Common Part 1: core (2022)
+[3] OGC API - Common - Part 1: Core (2022)
 
-[4] OGC API - Common Part 2: geospatial data (2022)
+[4] OGC API - Common - Part 2: Geospatial data (2022)
 
-NOTE: Certain conformance classes have a dependency on OGC API - Common Part 1: core
-or OGC API - Common Part 2: geospatial data. In some cases, it is possible to replace these dependencies with OGC API - Features Part 1: core (http://docs.ogc.org/is/17-069r3/17-069r3.html) could be used instead.
+NOTE: Certain conformance classes have a dependency on OGC API - Common - Part 1: Core
+or OGC API - Common - Part 2: Geospatial data. In some cases, it is possible to replace these dependencies with OGC API - Features - Part 1: Core (http://docs.ogc.org/is/17-069r3/17-069r3.html).
