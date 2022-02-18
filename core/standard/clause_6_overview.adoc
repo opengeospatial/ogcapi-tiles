@@ -92,11 +92,11 @@ There is still a third way to approach an OGC API that relies on assuming a set 
 |Dataset tileset metadata^1,2^ (in one tile matrix set^2^) |`{datasetRoot}/tiles/{tileMatrixSetId}`
 |Dataset tile^1,3^                                         |`{datasetRoot}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 2+|_Dataset Map tiles_{set:cellbgcolor:#EEEEEE}
-|Map tileset list^2^ (geospatial resources^1^)             |`{datasetRoot}/map/tiles`
+|Map tileset list^2^ (geospatial resources^1^){set:cellbgcolor:#FFFFFF}             |`{datasetRoot}/map/tiles`
 |Map tileset metadata^2^ (geospatial resources^1^)         |`{datasetRoot}/map/tiles/{tileMatrixSetId}`
 |Map tile^1^                                               |`{datasetRoot}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 2+|*_Geospatial data collections_*^3^{set:cellbgcolor:#EEEEEE}
-|Collections^5^                                            |`{datasetRoot}/collections`
+|Collections^5^{set:cellbgcolor:#FFFFFF}                   |`{datasetRoot}/collections`
 |Collection^5^                                             |`{datasetRoot}/collections/{collectionId}`
 2+|_Collection Feature Tiles_^3^{set:cellbgcolor:#EEEEEE}
 |Feature tileset list^2^{set:cellbgcolor:#FFFFFF}          |`{datasetRoot}/collections/{collectionId}/tiles`
