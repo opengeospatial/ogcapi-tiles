@@ -73,7 +73,7 @@ For the first approach, many resources in the Web API include links with _rel_ p
 
 [#img_relMapTiles,reftext='{figure-caption} {counter:figure-num}']
 .Resources and relations to them via links
-image::images/relMapTiles.png[width=600,align="center"]
+image::images/relMapTiles.png[width=800,align="center"]
 
 There is still a third way to approach an OGC API that relies on assuming a set of predefined paths and path templates. This set of predefined path are used in many examples in this document and are presented together in <<table_resources>>.  It is expected that many implementations of this Standard are will provide a Web API definition document (e.g. OpenAPI) using the these set of predefined paths and path templates to get necessary resources directly. All this could mislead the reader into getting the false impression that the predefined paths are enforced. So, building a client that is assuming a predefined set of path is risky. However, it is expected that many API implementations will actually follow the predefined set of paths and the client using this approach could be successful in many occasions. Again, be aware that these paths are not required by this Standard.
 
