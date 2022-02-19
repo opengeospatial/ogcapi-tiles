@@ -73,7 +73,7 @@ For the first approach, many resources in the Web API include links with _rel_ p
 
 [#img_relMapTiles,reftext='{figure-caption} {counter:figure-num}']
 .Resources and relations to them via links
-image::images/relMapTiles.png[width=800,align="center"]
+image::images/relMapTiles.png[width=100%,align="center"]
 
 For the second approach, implementations should consider the <<rc_oas30_definition>> which specifies the use of _operationID_ suffixes, providing a mechanism to associate API paths with the requirements class that they implement.
 
