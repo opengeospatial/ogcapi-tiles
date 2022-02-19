@@ -94,16 +94,16 @@ Again, be aware that these paths are not required by this Standard.
 |Conformance declaration^4^                                |`{datasetRoot}/conformance`
 |Tiling Schemes^6^                                         |`{datasetRoot}/tileMatrixSets`
 |Tiling Scheme^6^ (tile matrix set^2^)                     |`{datasetRoot}/tileMatrixSets/{tileMatrixSetId}`
-2+|*_Dataset Tiles_*^3^{set:cellbgcolor:#EEEEEE}
+2+|*_Dataset Tiles_*{set:cellbgcolor:#EEEEEE}
 2+|_Dataset Feature Tiles_^3^{set:cellbgcolor:#EEEEEE}
 |Dataset tileset list^1,2^ {set:cellbgcolor:#FFFFFF}       |`{datasetRoot}/tiles`
 |Dataset tileset metadata^1,2^ (in one tile matrix set^2^) |`{datasetRoot}/tiles/{tileMatrixSetId}`
-|Dataset tile^1,3^                                         |`{datasetRoot}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
+|Dataset feature tile^1,3^                                 |`{datasetRoot}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 2+|_Dataset Map tiles_{set:cellbgcolor:#EEEEEE}
 |Map tileset list^2^ (geospatial resources^1^){set:cellbgcolor:#FFFFFF}             |`{datasetRoot}/map/tiles`
 |Map tileset metadata^2^ (geospatial resources^1^)         |`{datasetRoot}/map/tiles/{tileMatrixSetId}`
 |Map tile^1^                                               |`{datasetRoot}/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
-2+|*_Geospatial data collections_*^3^{set:cellbgcolor:#EEEEEE}
+2+|*_Geospatial data collections_*^5^{set:cellbgcolor:#EEEEEE}
 |Collections^5^{set:cellbgcolor:#FFFFFF}                   |`{datasetRoot}/collections`
 |Collection^5^                                             |`{datasetRoot}/collections/{collectionId}`
 2+|_Collection Feature Tiles_^3^{set:cellbgcolor:#EEEEEE}
