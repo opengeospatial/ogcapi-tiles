@@ -57,7 +57,7 @@ include::requirements/tileset/REQ_tileset-description.adoc[]
 
 Support for alternative encodings for tileset metadata can be added, such as TileJSON.
 
-Currently, use of the TileJSON specification usually implies a WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources.
+Currently, use of the TileJSON specification usually implies a WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides an additional mechanism to cite data sources.
 
 include::recommendations/tileset/REC_tmxslink.adoc[]
 
