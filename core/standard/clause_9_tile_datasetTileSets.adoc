@@ -16,15 +16,15 @@ If a Web API offers several geospatial data resources for a dataset, it may limi
 === General
 include::recommendations/dataset-tilesets/REC_api-common.adoc[]
 
-This building block stays flexible and does not require implementation OGC API - Common - Part 1,
+This building block stays flexible and does not require implementation of OGC API - Common - Part 1,
 allowing for other Web API architectures outside the OGC API framework to adopt it.
-However, a server under the OGC APIs is expected to implement OGC API - Common - Part 1.
-If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core requirement classes when used.
+However, a server implementing other OGC APIs is expected to implement OGC API - Common - Part 1.
+In practice, this means that the landing page and the conformance page follow OGC API - Common core requirement classes when used.
 Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
 
 === Web API landing page
 
-The landing page provides links to start exploring the resources offered by the Web API. It mainly consists of a list of links to root resources. This standard extension requires a new link in the landing page for getting a description of the URL that allows for retrieving tiles of the resources in the dataset
+The landing page provides links to start exploring the resources offered by the Web API. It mainly consists of a list of links to root resources. This conformance class requires including in the landing page one or more link(s) to list(s) of tilesets available for the dataset.
 
 ==== Response
 

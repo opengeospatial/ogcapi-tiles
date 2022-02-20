@@ -8,7 +8,9 @@ This conformance class can be used e.g. in conjunction with the <<rc_datasetTile
 === General
 include::recommendations/collections-selection/REC_api-common.adoc[]
 
-This building block stays flexible and does not strictly require implementing _OGC API - Common_, allowing for other Web API architectures outside the OGC API framework to adopt it. However, a server under the OGC APIs is expected to implement _OGC API - Common_. If so, in practice, this means that the landing page and the conformance page follow _OGC API - Common_ _core_ and _collections_ requirement classes when used. Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to _OGC API - Common_.
+This building block stays flexible and does not strictly require implementing _OGC API - Common_, allowing for other Web API architectures outside the OGC API framework to adopt it.
+However, a server implementing other OGC APIs is expected to implement _OGC API - Common_.
+In practice, this means that the landing page and the conformance page follow _OGC API - Common_ _core_ and _collections_ requirement classes when used. Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to _OGC API - Common_.
 
 === Selection of collections
 

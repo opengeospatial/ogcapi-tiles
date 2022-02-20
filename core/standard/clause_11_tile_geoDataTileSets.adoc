@@ -18,8 +18,8 @@ include::recommendations/geodata-tilesets/REC_api-common.adoc[]
 
 This building block depends on _OGC API - Part 2: Geospatial data_, but stays flexible and does not require implementation of OGC API - Common - Part 1,
 allowing for other Web API architectures outside the OGC API framework to adopt it.
-However, a server under the OGC APIs is expected to implement OGC API - Common - Part 1.
-If so, in practice, this means that the landing page and the conformance page follow OGC API - Common core requirement classes when used.
+However, a server implementing other OGC APIs is expected to implement OGC API - Common - Part 1.
+In practice, this means that the landing page and the conformance page follow OGC API - Common core requirement classes when used.
 Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
 
 === Geospatial data resources
