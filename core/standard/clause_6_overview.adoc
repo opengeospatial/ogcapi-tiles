@@ -3,7 +3,7 @@
 
 === Introduction
 
-The _OGC API - Tiles_ standard defines building blocks which can be used in a Web API to retrieve geospatial data as tiles that follow the structure defined in _2D Tile Matrix Set_ standard.
+The _OGC API - Tiles_ standard defines building blocks which can be used in a Web API to retrieve geospatial data as tiles that follow the structure defined in _2D Tile Matrix Set_ standard (see <<rc_tiles_core>>).
 
 This document does not specify any requirement for the type of _geospatial data resource_ that could be delivered as tiles.
 Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are maps, features data,
@@ -11,9 +11,9 @@ coverages, a resource that does not represent data per-se (e.g., an annotation) 
 
 NOTE: The geospatial data resources (e.g., collections) replace the concept of layer in WMS and WMTS. The main difference is that layers in WMS and WMTS were not defined by other OGC APIs and did not support other functionalities.
 
-These geospatial data resources can advertise one or more lists of available tilesets (see the _tilesets list_ conformance class).
+These geospatial data resources can advertise one or more lists of available tilesets (see <<rc_tileSet>> and <<rc_tileSets-list>>).
 This standard also defines how two specific data resources can link to such tilesets:
-OGC API datasets (see _dataset tilesets_ conformance class) and collections (see _geodata tilesets_ conformance class) but other OGC APIs can provide other possibilities.
+OGC API datasets (see <<rc_datasetTileSets>>) and collections (see <<rc_geoDataResourceTileSets>>) but other OGC APIs can provide other possibilities.
 Accessing the _geospatial data resource_ content (other than as tiles) or its descriptions is possible out of the scope of this standard.
 If a description of the _geospatial data resource_ is specified by another standard, and this description has a mechanism to add links to other resources, this standard indicates the need to add a link to the list of available tilesets.
 
