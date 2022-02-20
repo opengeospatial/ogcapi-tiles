@@ -25,7 +25,7 @@ Temporarily, it is also possible to combine this building block with http://www.
 === Geospatial data resources
 This standard does not specify how geospatial data resources are exposed in the Web API and if they can be retrieved as geospatial data (e.g., feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
 
-NOTE: The concept of geospatial data resource path substitutes the concept of "layer" in WMTS 1.0 but it is intended to give a better integration between data visualization and data access.
+NOTE: The concept of geospatial data resource path replaces the concept of "layer" found in WMTS 1.0, but is intended to result in a better integration between data visualization and data access.
 
 include::requirements/geodata-tilesets/REQ_desc-links.adoc[]
 
