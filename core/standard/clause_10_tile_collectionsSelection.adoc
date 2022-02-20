@@ -8,7 +8,7 @@ include::requirements/requirements_class_collections-selection.adoc[]
 
 include::reqModule_collectionsSelection.adoc[]
 
-==== What resources accept this parameter
+==== Resources accepting this parameter
 
 So far, this requirements class is defined as a building block neutral to the type of resource it applies. In this subclause, this Standard defines the resources that supports the parameter
 [[req_collections-selection_resources-tile-query]]
