@@ -99,23 +99,23 @@ include::clause_6_overview.adoc[]
 
 include::clause_7_tile_core.adoc[]
 
-include::clause_7_tile_tileSet.adoc[]
+include::clause_8_tile_tileSet.adoc[]
 
-include::clause_8_tile_tileSetsList.adoc[]
+include::clause_9_tile_tileSetsList.adoc[]
 
-include::clause_9_tile_datasetTileSets.adoc[]
-
-include::clause_10_tile_collectionsSelection.adoc[]
+include::clause_10_tile_datasetTileSets.adoc[]
 
 include::clause_11_tile_geoDataTileSets.adoc[]
 
-include::clause_11b_tile_datetime.adoc[]
+include::clause_12_tile_collectionsSelection.adoc[]
 
-include::clause_12_tile_openAPIEncoding.adoc[]
+include::clause_13_tile_datetime.adoc[]
 
-include::clause_13_tile_descriptionEncodings.adoc[]
+include::clause_14_tile_openAPIEncoding.adoc[]
 
-include::clause_14_tile_dataEncodings.adoc[]
+include::clause_15_tile_XML_description.adoc[]
+
+include::clause_16_tile_dataEncodings.adoc[]
 
 include::annex-ats.adoc[]
 
