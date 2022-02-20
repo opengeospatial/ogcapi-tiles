@@ -23,6 +23,14 @@ The following https://www.iana.org/assignments/link-relations/link-relations.xh
 
 * **service-doc**: Identifies service documentation for the context that is primarily intended for human consumption.
 
+The following link relation types specified in the _Two Dimensional Tile Matrix Set and Tileset Metadata_ standard are used:
+
+* **http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme**: The target IRI points to a resource that describes the TileMatrixSet according to the 2D-TMS standard.
+
+* **http://www.opengis.net/def/rel/ogc/1.0/dataset**: The target IRI points to a resource representing the dataset (e.g., the root of an OGC Web API).
+
+* **http://www.opengis.net/def/rel/ogc/1.0/geodata**: The target IRI points to a resource representing a collection of geospatial data.
+
 In addition, the following link relation types are used for which no applicable registered link relation type could be identified:
 
 * **http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector**: The target IRI points to a resource that describes how to provide tile sets of the context resource in vector format.
@@ -31,9 +39,10 @@ In addition, the following link relation types are used for which no applicable 
 
 * **http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage**: The target IRI points to a resource that describes how to provide tile sets of the context resource in coverage format.
 
-* **http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme**: The target IRI points to a resource that describes the TileMatrixSet according to the 2D-TMS standard.
+* **http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes**: The target IRI points to a resource that lists one or more TileMatrixSets according to the 2D-TMS standard.
 
-Used in combination with OGC API - Features Part 1: core or OGC API - Common Part 1:core other link relation types will be used, starting by:
+
+Used in combination with OGC API - Features Part 1: Core or OGC API - Common Part 1: Core other link relation types will be used, including:
 
 * **http://www.opengis.net/def/rel/ogc/1.0/conformance**: Refers to a resource that identifies the specifications that the link's context conforms to.
 
