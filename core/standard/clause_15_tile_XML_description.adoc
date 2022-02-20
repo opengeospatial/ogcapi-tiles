@@ -1,19 +1,28 @@
 [[rc_xml]]
-== Requirements class for XML encoding to describe tileset metadata
-
-The OGC API Tiles provides several resources that describe the service (landing page) the tileset lists and the tilesets the inform the client on ho to get tiled data. The intention of this section is NOT to limit the number of encodings offered by a Tiles Web API but to provide a minimum set of encodings that could be implemented by many Tiles Web APIs and to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API are always described in all of them but a general support of them is expected.
+== Requirements class "XML" Tileset Metadata
 
 === Overview
-Please refer to OGC API - Common Part 1, for conformance classes related to encodings for the landing page and the conformance page.
 
-This clause specifies a requirements class for an XML encoding that may be used by an OGC Web API implementation for the description of a tilesets list an a tileset in addition to the already required JSON.
-
-=== Requirement Class "XML"
-
+This standard provides several resources describing the service (landing page), the geospatial data resources, the tileset lists and the tilesets informing the client on how to retrieve tiled data.
 XML is a data-interchange format designed to facilitate structured data interchange between applications.
+The intention of this section is to define an XML encoding that could be implemented by Tiles Web APIs, but not to exclude the possibility of defining additional metadata encodings that may be offered by a Tiles Web API.
+Web APIs may adopt this XML conformance class and declare conformance to it in the list of conformance classes supported by the Web API.
+The declaration of XML in the conformance classes supported does not mean that all the resources provided by the Web API support an XML representaiton, but a general support of XML is expected.
+
+This clause specifies a requirements class for an XML representation that may be implemented by an OGC Web API for the tilesets list and a tileset resources in addition to the JSON representation required by <<rc_tileSet>> and <<rc_tileSets-list>>.
+
+If the service provides local TileMatrixSet definitions, it is recommended that those resources also support an XML representation conforming to the XML schema specified in the _Two Dimensional Tile Matrix Set and Tileset Metadata_ standard.
+
+Please refer to _OGC API - Common_ conformance classes defining the XML representation of common resources such as the landing page, conformance and collections.
+
+=== TileSet and TileSets List XML representation
 
 include::requirements/requirements_class_xml.adoc[]
 
+==== Operation
+
 include::requirements/xml/REQ_definition.adoc[]
+
+==== Response
 
 include::requirements/xml/REQ_content.adoc[]

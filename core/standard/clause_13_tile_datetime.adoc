@@ -1,5 +1,5 @@
 [[rc_datetime]]
-== Requirement Class "datetime"
+== Requirement Class "DateTime"
 
 === Overview
 
