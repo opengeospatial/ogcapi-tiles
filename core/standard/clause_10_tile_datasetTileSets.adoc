@@ -9,7 +9,7 @@ include::requirements/requirements_class_dataset-tilesets.adoc[]
 
 This conformance class defines a mechanism to retrieve a list of tilesets for a dataset (a.k.a., a root resource) which may contain multiple geospatial data resources. It is used in conjunction with <<rc_tileSets-list>> that specifies the response to this GET request.
 
-Combined with the <<rc_collections-selection>> conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrieved as tiles. For retrieving the list of tilesets for only one collection, use the <<rc_geoDataResourceTileSets>>.
+Combined with the <<rc_collections-selection>> conformance class, it is also possible to select specific geospatial data resources (collections) to be combined and retrieved as tiles. For retrieving the list of tilesets for only one collection, the <<rc_geoDataResourceTileSets>> can also be used if it is implemented.
 
 If a Web API offers several geospatial data resources for a dataset, it may limit the number of collections that can be retrieved together, and/or provide a limited subset of the collections by default.
 
@@ -30,7 +30,8 @@ The landing page provides links to start exploring the resources offered by the 
 
 include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
 
-In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common or in OGC API - Features v1. Below you can find an example fragment of the response to an OGC API - Tiles landing page showing the link to dataset tilesets.
+In the landing page, in JSON format, the links follow the link schema defined in the _OGC API - Common - Part 1: Core_ or in _OGC API - Features - Part 1: Core_ 1.0.
+Below you can find an example fragment of the response to an _OGC API - Tiles_ landing page showing links to dataset tilesets.
 
 [[landingPageTilesRoot]]
 .Web API Landing Page fragment that advertises dataset tilesets

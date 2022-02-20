@@ -11,7 +11,7 @@ This conformance class assumes that data is organized into one or more geospatia
 (e.g., the "collections" http://docs.opengeospatial.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data]).
 Geospatial data resources are referenced using URIs.
 
-It defines how to specify the a link to the list of tilesets containing a representation of this geospatial data resource (path). It is used in conjunction with <<rc_tileSets-list>> that specifies the response to this GET request.
+It defines how to specify link(s) to one or more list(s) of tilesets containing a representation of this geospatial data resource (path). It is used in conjunction with <<rc_tileSets-list>> that specifies the response to this GET request.
 
 === General
 include::recommendations/geodata-tilesets/REC_api-common.adoc[]
@@ -23,15 +23,17 @@ In practice, this means that the landing page and the conformance page follow OG
 Temporarily, it is also possible to combine this building block with http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] that is not tied to OGC API - Common.
 
 === Geospatial data resources
-This standard does not specify how geospatial data resources are exposed in the Web API and if they can be retrieved as geospatial data (e.g., feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the /collections/{collectionId} path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
+This standard does not specify how geospatial data resources are exposed in the Web API and if they can be retrieved as geospatial data (e.g., feature items). For example http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the `/collections/{collectionId}` path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
 
 NOTE: The concept of geospatial data resource path replaces the concept of "layer" found in WMTS 1.0, but is intended to result in a better integration between data visualization and data access.
 
 include::requirements/geodata-tilesets/REQ_desc-links.adoc[]
 
-For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] returns a list of links that include geospatial aspects for each geospatial data resource in the /collections/{collectionId} path. OGC API  - Common is expected to provide a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
+For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] returns a list of links that include geospatial aspects for each geospatial data resource in the `/collections/{collectionId}` path.
+_OGC API - Common - Part 2: Geospatial data_ provides a similar mechanism.
+In the JSON response, the `links` array is where links to lists of tilesets must be added.
 
-.Fragment of a collection with a links array with one item of the array pointing to a list of tilesets.
+.Fragment of a collection with a links array including two items pointing to lists of tilesets (one for vector tiles and one for map tiles)
 =================
 [source,JSON]
 [

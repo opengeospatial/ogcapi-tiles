@@ -52,8 +52,8 @@ The _tilesets list_ conformance class defines a generic operation to retrieve a 
 *<<rc_datasetTileSets>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets)
 
 The _dataset tilesets_ conformance class allows retrieving tiles for a whole dataset potentially made up of multiple geospatial data resources.
-All Web APIs have to implement this conformance class if they are claiming to support *data set* tiles following this _OGC API - Tiles Part 1: Core_ standard.
-DataSet tiles may combine content from multiple geospatial resources, regardless of whether those are available separately (as tiles or otherwise).
+All Web APIs have to implement this conformance class if they are claiming to support *dataset* tiles following this _OGC API - Tiles Part 1: Core_ standard.
+Dataset tiles may combine content from multiple geospatial resources, regardless of whether those are available separately (as tiles or otherwise).
 
 [#table_resource_dataset_tileset,reftext='{table-caption} {counter:table-num}']
 .Overview of resource and common direct links that corresponds to the dataset tileset
