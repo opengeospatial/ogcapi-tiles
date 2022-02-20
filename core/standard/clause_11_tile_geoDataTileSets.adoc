@@ -31,7 +31,7 @@ include::requirements/geodata-tilesets/REQ_desc-links.adoc[]
 
 For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-features-1/1.0[OGC API - Features - Part 1: Core] returns a list of links that include geospatial aspects for each geospatial data resource in the /collections/{collectionId} path. OGC API  - Common is expected to provide a similar mechanism. In the JSON response, the array `links` is the place for adding a resource reference to the 'tiles' description.
 
-.Fragment of a collection with a links array with one item of the array pointing to a tilesets.
+.Fragment of a collection with a links array with one item of the array pointing to a list of tilesets.
 =================
 [source,JSON]
 [
@@ -47,9 +47,16 @@ For example, an implementation of the http://www.opengis.net/doc/IS/ogcapi-featu
     "links": [
       ...
       {
-        "href": "http://data.example.com/collections/buildings/tiles/WebMercatorQuad",
-        "rel": "self",
+        "href": "http://data.example.com/collections/buildings/tiles",
+        "rel": "http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector",
         "type": "application/json",
+        "title": "List of available vector tilesets for the collection of Bonn buildings"
+      },
+      {
+        "href": "http://data.example.com/collections/buildings/tiles",
+        "rel": "http://www.opengis.net/def/rel/ogc/1.0/tilesets-map",
+        "type": "application/json",
+        "title": "List of available map tilesets for the collection of Bonn buildings"
       }
     ]
   }
@@ -62,7 +69,7 @@ include::recommendations/geodata-tilesets/REC_desc-links.adoc[]
 === Geospatial data resources tilesets list
 The geospatial data resource tilesets operation provides essential tileset metadata and links to tilesets resources allowing to request tiles from the resource.
 
-==== Tilesets path
+==== Operation
 
 include::requirements/geodata-tilesets/REQ_operation.adoc[]
 

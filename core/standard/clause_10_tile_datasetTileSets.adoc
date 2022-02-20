@@ -39,12 +39,18 @@ In the landing page, in JSON format, the links follow the link schema defined in
 ----
 {
   "links": [
-    ...,
+    ...
     {
        "href": "http://data.example.org/tiles",
        "rel": "http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector",
        "type": "application/json",
-       "title": "List of available vector features tilesets for the dataset",
+       "title": "List of available vector features tilesets for the dataset"
+    },
+    {
+       "href": "http://data.example.org/tiles",
+       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tilesets-map",
+       "type": "application/json",
+       "title": "List of available map tilesets for the dataset"
     }
   ]
 }
