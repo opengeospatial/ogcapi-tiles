@@ -31,6 +31,10 @@ include::api_modules/subset/requirements_module_subset.adoc[]
 
 include::requirements/datetime/REQ_datetime-axis.adoc[]
 
+=== Actual date & time response header
+
 include::recommendations/datetime/REC_actual-datetime.adoc[]
+
+=== Closest date & time permission
 
 include::recommendations/datetime/PER_datetime-axis.adoc[]
