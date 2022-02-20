@@ -67,18 +67,24 @@ NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile M
 NOTE: The geospatial data resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
 
 [[TilesetTilesURIResponseExample]]
-.Example fragment of a tileset response for a common TileMatrixSet defined in the OGC NA
+.Example fragment of a tileset response for a common TileMatrixSet defined in the OGC NA registry
 =================
 [source,JSON]
 {
   ...
   "tileMatrixSetURI": "http://www.opengis.net/def/tilematrixset/OGC/1.0/WorldMercatorWGS84Quad",
   "dataType": "map",
+  "crs": "http://www.opengis.net/def/crs/EPSG/0/3395",
   "links": [
     ...
     {
      "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad",
      "rel": "self",
+     "type": "application/json",
+    },
+    {
+     "href": "http://schemas.opengis.net/tms/2.0/json/examples/WorldMercatorWGS84Quad.json",
+     "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme",
      "type": "application/json",
     },
     {
@@ -121,22 +127,23 @@ The following table explains the meaning of the URI template variables.
 {
   ...
   "dataType": "map",
+  "crs": "http://www.opengis.net/def/crs/EPSG/0/2001",
   "links": [
     ...
     {
-     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad",
+     "href": "http://data.example.com/collections/buildings/tiles/CustomAntiguaTMS",
      "rel": "self",
      "type": "application/json",
     },
     {
-     "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/{tileMatrix}/{tileRow}/{tileCol}.png",
+     "href": "http://data.example.com/collections/buildings/tiles/CustomAntiguaTMS/{tileMatrix}/{tileRow}/{tileCol}.png",
      "templated": true,
      "rel": "item",
      "type": "image/png",
     },
     {
-     "href": "http://data.example.com/TileMatrixSets/MyTilingScheme",
-     "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
+     "href": "http://data.example.com/tileMatrixSets/CustomAntiguaTMS",
+     "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme",
      "type": "application/json",
     }
    ...
@@ -148,11 +155,11 @@ The following table explains the meaning of the URI template variables.
 }
 =================
 
-===== Web API-defined TileMatrixSets
+=== Web API-defined TileMatrixSets
 
 This section provides more details on the recommendations for Web API-defined TileMatrixSets. In the future, an extension of this standard could described mechanism to manage (create, update...) tiling schemes for a Web API and make some of the recommendations expressed in the section mandatory.
 
-====== Web API landing page
+==== Web API landing page
 
 The landing page provides links to start exploring the resources offered by the Web API. It mainly consists in a list of links. New links for TileMatrixSets on top of the common ones are introduced.
 
@@ -167,13 +174,13 @@ In the landing page, in JSON format, the links follow the link schema defined in
   "links": [
     ...
     {
-      "href": "http://data.example.org/tileMatrixSet?f=json",
+      "href": "http://data.example.org/tileMatrixSets?f=json",
       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
       "type": "application/json",
       "title": "List of tileMatrixSets implemented by this API in JSON",
     },
     {
-      "href": "http://data.example.org/tileMatrixSet?f=html",
+      "href": "http://data.example.org/tileMatrixSets?f=html",
       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
       "type": "text/html",
       "title": "List of tileMatrixSets implemented by this API in HTML",
@@ -183,7 +190,7 @@ In the landing page, in JSON format, the links follow the link schema defined in
 ----
 =================
 
-====== TileMatrixSets
+==== TileMatrixSets
 
 The TileMatrixSets endpoint retrieves links to the descriptions of the tile matrix sets supported by the Web API in addition to the TileMatrixSets defined in the Annex D and the Annex E of the OGC 17-083r4 standard. The response follows the schema below.
 
@@ -251,7 +258,7 @@ id-link:
 }
 =================
 
-====== TileMatrixSet
+==== TileMatrixSet
 
 The TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by the Web API following the schema described in the OGC 17-083r4 standard. The response follows the TileMatrixSet schema.
 
