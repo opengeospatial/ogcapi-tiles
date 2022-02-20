@@ -7,7 +7,7 @@ include::requirements/requirements_class_core.adoc[]
 
 The core conformance class is designed as a very generic conformance class that describes a HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard. It introduces the idea of URI templates and variables associated to the TileMatrix, TileRow and TileCol concepts defined in the 2D Tile Matrix Set standard but it does not prescribe a particular path or template form for the URL of those tiles.
 
-With this conformance class alone, the way the tileset as a whole will be described is left open. Having tileset metadata is important so the implementer of a Web API should define the tileset in conjunction with the core conformance class. This can be done by choosing  between conforming to the next conformance class (<<rc_tileSet>>) or using another mechanism such as TileJSON. (Currently TileJSON specification only supports WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides a additional mechanism to cite data sources).
+This conformance class by itself only concerns the individual tiles and does not describe the tileset as a whole. It is highly recommended that the implementer of a Web API provides tileset metadata in conjunction with the core conformance class as it provides important information to clients. This can be done by also implementing the <<rc_tileSet>> or integrating within another API providing this capability through another mechanism.
 
 === A tile
 A tile resource is a geospatial resource presenting a fragment of a more bigger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
