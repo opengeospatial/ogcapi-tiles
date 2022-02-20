@@ -7,6 +7,8 @@
 |Requirements class |<<rc_oas30_definition,OpenAPI Specification 3.0>>
 |===
 
-=== Web API openAPI description response
+=== Web API OpenAPI definition response
 
 include::openapi/ATS_completeness.adoc[]
+
+include::openapi/ATS_operationids.adoc[]

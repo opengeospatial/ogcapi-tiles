@@ -1,0 +1,8 @@
+[[ats_oas30_operationids]]
+[width="90%",cols="2,6a"]
+|===
+^|*Abstract Test {counter:ats-id}* |*/conf/oas30/completeness*
+^|Test Purpose |Validate use of operationID suffixes in OpenAPI definition
+^|Requirement |/req/oas30/operationids
+^|Test Method |1. Validate that at least one instance of all path operations defined in the supported conformance classes can be discovered in the API definition by identifying them based on the operationIDs suffixes specified in <<openapi-operation-id-suffixes>>.
+|===

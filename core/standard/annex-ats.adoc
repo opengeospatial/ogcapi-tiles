@@ -20,45 +20,41 @@ include::abstract_tests/ATS_class_tilesets-list.adoc[leveloffset=+1]
 
 include::abstract_tests/ATS_class_dataset-tilesets.adoc[leveloffset=+1]
 
-=== Conformance Class "Geo Data Resource Selection"
-
-include::abstract_tests/ATS_class_collections-selection.adoc[leveloffset=+1]
-
 === Conformance Class "Geo Data Resource TileSets"
 
 include::abstract_tests/ATS_class_geodata-tilesets.adoc[leveloffset=+1]
 
-=== Conformance Class Datetime
+=== Conformance Class "Geo Data Resource Selection"
+
+include::abstract_tests/ATS_class_collections-selection.adoc[leveloffset=+1]
+
+=== Conformance Class DateTime
 
 include::abstract_tests/ATS_class_datetime.adoc[leveloffset=+1]
 
-=== Conformance Classes for encodings
-
-==== Conformance Classes for OpenAPI definition
+=== Conformance Class OpenAPI 3.0 Specification
 
 include::abstract_tests/ATS_class_openapi.adoc[leveloffset=+1]
 
-==== Conformance Classes for resource description encodings
-
-===== Conformance Class "XML"
+=== Conformance Class "XML" Tileset Metadata
 include::abstract_tests/ATS_class_xml.adoc[leveloffset=+1]
 
-==== Conformance Classes for data encodings
+=== Conformance Classes for tile encodings
 
-===== Conformance Class "PNG"
-include::abstract_tests/ATS_class_png.adoc[leveloffset=+1]
+==== Conformance Class "PNG"
+include::abstract_tests/ATS_class_png.adoc[leveloffset=+2]
 
-===== Conformance Class "JPEG"
-include::abstract_tests/ATS_class_jpeg.adoc[leveloffset=+1]
+==== Conformance Class "JPEG"
+include::abstract_tests/ATS_class_jpeg.adoc[leveloffset=+2]
 
-===== Conformance Class "TIFF"
-include::abstract_tests/ATS_class_tiff.adoc[leveloffset=+1]
+==== Conformance Class "TIFF"
+include::abstract_tests/ATS_class_tiff.adoc[leveloffset=+2]
 
-===== Conformance Class "NetCDF"
-include::abstract_tests/ATS_class_netcdf.adoc[leveloffset=+1]
+==== Conformance Class "NetCDF"
+include::abstract_tests/ATS_class_netcdf.adoc[leveloffset=+2]
 
-===== Conformance Class "GeoJSON"
-include::abstract_tests/ATS_class_geojson.adoc[leveloffset=+1]
+==== Conformance Class "GeoJSON"
+include::abstract_tests/ATS_class_geojson.adoc[leveloffset=+2]
 
-===== Conformance Class "Mapbox Vector Tiles"
-include::abstract_tests/ATS_class_mvt.adoc[leveloffset=+1]
+==== Conformance Class "Mapbox Vector Tiles"
+include::abstract_tests/ATS_class_mvt.adoc[leveloffset=+2]
