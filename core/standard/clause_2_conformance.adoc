@@ -5,25 +5,29 @@ The standardization targets of all conformance classes are "Web APIs".
 
 The requirements classes are:
 
+=== Requirements classes defining resources
+
 *<<rc_tiles_core>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/core)
 
-The Core specifies requirements that all Web APIs have to implement if they are claiming to support tiles from a geospatial resource following the OGC API - Tiles Part 1: core standard.
-It defines the way to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.
+The Core specifies requirements that all Web APIs have to implement if they are claiming to support tiles from a geospatial resource following this _OGC API - Tiles Part 1: Core_ standard.
+It defines how to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.
 
 [#table_resource_core,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct link that corresponds to the core. Note that normally implementations will do that BUT this path is not prescribed. Other URI orders of parametres is allowed.
+.Overview of resource and common direct link that corresponds to tiles defined in core conformance class
 [cols="33,66",options="header"]
 |===
 |Resource name |**Common** path
 |Tile |`.../{tileMatrix}/{tileRow}/{tileCol}`
 |===
 
+NOTE: This path template is recommended, but not prescribed. Ordering the parameters differently within the URI is allowed.
+
 *<<rc_tileSet>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset)
 
 The _tileset_ conformance class defines a mechanism to describe a tileset using a specific tile matrix set and obtain a templated link to individual tiles.
 
 [#table_resource_tileset,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the tileset
+.Overview of resources and common direct links that corresponds to the tileset
 [cols="33,66",options="header"]
 |===
 |Resource name |**Common** path
@@ -43,12 +47,12 @@ The _tilesets list_ conformance class defines a generic operation to retrieve a 
 |Tileset list |`.../tiles`
 |===
 
-Additional requirements class are:
+=== Requirements classes defining data origins
 
 *<<rc_datasetTileSets>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets)
 
 The _dataset tilesets_ conformance class allows retrieving tiles for a whole dataset potentially made up of multiple geospatial data resources.
-All Web APIs have to implement this conformance class if they are claiming to support data set tiles following the OGC API - Tiles Part 1: core standard.
+All Web APIs have to implement this conformance class if they are claiming to support *data set* tiles following this _OGC API - Tiles Part 1: Core_ standard.
 DataSet tiles may combine content from multiple geospatial resources, regardless of whether those are available separately (as tiles or otherwise).
 
 [#table_resource_dataset_tileset,reftext='{table-caption} {counter:table-num}']
@@ -59,21 +63,6 @@ DataSet tiles may combine content from multiple geospatial resources, regardless
 |Vector tileset list |`/tiles`
 |Map tileset list | `/map/tiles`
 |Styled Map tileset list | `/styles/{styleId}/map/tiles`
-|===
-
-*<<rc_collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
-
-The _tiles geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve dataset tiles.
-
-[#table_resource_geodata_selection,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the geodata selection
-[cols="33,66",options="header"]
-|===
-|Resource name |Example of possible paths
-|Vector Tileset |`/tiles/{tileMatrixSetId}?collections={collectionId},{collectionId},...`
-|Vector Tile |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
-|Map tileset | `/map/tiles/{tileMatrixSetId}?collections={collectionId},{collectionId},...`
-|Map tile | `/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
 |===
 
 *<<rc_geoDataResourceTileSets>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-tilesets)
@@ -90,17 +79,40 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 |Styled Map tileset list | `/collections/{collectionId}/styles/{styleId}/map/tiles`
 |===
 
-*<<rc_datetime>>*
-This document specifies how to provide tiles in a domain that has a generic time dimension.
+=== Requirements classes defining query parameters
 
-*<<rc_oas30_definition>>*
-This document specifies how to use OpenAPI as a way to define your API.
+*<<rc_collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
 
-*<<rc_xml>>*
-This document specifies how to use XML as an alternative encoding for describing tilesets.
+The _tiles geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve tiles, e.g. for use with data set tiles.
+
+[#table_resource_geodata_selection,reftext='{table-caption} {counter:table-num}']
+.Overview of resource and common direct links that corresponds to the geodata selection
+[cols="33,66",options="header"]
+|===
+|Resource name |Example of possible paths
+|Vector Tileset |`/tiles/{tileMatrixSetId}?collections={collectionId},{collectionId},...`
+|Vector Tile |`/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
+|Map tileset | `/map/tiles/{tileMatrixSetId}?collections={collectionId},{collectionId},...`
+|Map tile | `/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
+|===
+
+*<<rc_datetime>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/datetime)
+
+The _datetime_ conformance class specifies how to provide tiles in a domain that has a generic time dimension.
+
+=== Requirements classes for specific resource representations
+
+*<<rc_oas30_definition>>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/oas30)
+
+The _OpenAPI Specification 3.0_ conformance class specifies requirements for an OpenAPI 3.0 definition in addition to those defined in _OGC API - Common - Part 1: Core_.
+
+*<<rc_xml>>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml)
+
+The _XML_ conformance class specifies how to use XML as an alternative encoding for describing tilesets.
 
 *<<rc_data_encodings>>*
-This document does not mandate a specific encoding or format for representing tiles and want to be flexible and open to other format that users and providers might need. However requirements classes are provided for the following common tile formats.
+
+This standard does not mandate a specific encoding or format for representing tiles and remains flexible and extensible to other formats that users and providers might need. However, requirements classes are provided for the following common tile formats:
 
 * <<rc_png,PNG>> (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/png)
 * <<rc_jpeg,JPEG>> (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/jpeg)
@@ -109,11 +121,11 @@ This document does not mandate a specific encoding or format for representing ti
 * <<rc_geojson,GeoJSON>> (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geojson)
 * <<rc_mvt,Mapbox Vector Tiles>> (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/mvt)
 
-All these conformance classes act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for Web API discovery, conformity and Web API formal definition (e.g., OpenAPI). Possible alternatives for these fundamental conformance classes are OGC API - Common Part 1: core, OGC API - Features Part 1: core or any other non-OGC classes that provide this functionality.
+All these conformance classes act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for Web API discovery, conformity and Web API formal definition (e.g., OpenAPI). Possible alternatives for these fundamental conformance classes are _OGC API - Common Part 1: Core_, _OGC API - Features Part 1: Core_ or any other non-OGC classes that provide this functionality.
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
-NOTE: Despite the fact that full path and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the Web API definition document and the links between resources.
+NOTE: Despite the fact that full paths and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the Web API definition document and the links between resources.
 
 === Declaration of conformance
 
@@ -127,9 +139,9 @@ Conformance with this standard shall be checked using all the relevant tests spe
 |<<rc_tiles_core,Core>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
 |<<rc_tileSet,TileSet>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tileset
 |<<rc_tileSets-list,Tilesets list>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list
-|<<rc_datasetTileSets,Dataset Tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
-|<<rc_collections-selection,Collections selection>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
+|<<rc_datasetTileSets,Dataset tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
 |<<rc_geoDataResourceTileSets,Geodata tilesets>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets
+|<<rc_collections-selection,Collections selection>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
 |<<rc_datetime,DateTime>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
 |<<rc_oas30_definition, OpenAPI Specification 3.0>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
 |<<rc_xml,XML>> |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
