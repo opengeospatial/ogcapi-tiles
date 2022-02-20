@@ -4,5 +4,5 @@
 ^|*Abstract Test {counter:ats-id}* |*/conf/collections-selection/resources-query*
 ^|Test Purpose |Validate support of the parameter `collections`.
 ^|Requirement |/req/collections-selection/resources-query
-^|Test Method |1. Validate that the parameter `collections` is supported by the dataset tileset resources (e.g `{datasetAPI}/tiles/WebMercatorQuad`) and the dataset tiles resources (e.g `{datasetAPI}/tiles/WebMercatorQuad/{tileMatrix}/{tileRow}/{tileCol}`)
+^|Test Method |1. Validate that the parameter `collections` is supported by the tileset and tiles resources for origins consisting of multiple geospatial data sub-resources (e.g, dataset tileset at `{datasetAPI}/tiles/WebMercatorQuad` and dataset tiles at `{datasetAPI}/tiles/WebMercatorQuad/{tileMatrix}/{tileRow}/{tileCol}`).
 |===
