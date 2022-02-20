@@ -16,19 +16,24 @@ The response provides metadata as per the 2D Tile Matrix Set and TileSet Metadat
 The essential elements of this metadata are:
 
 - a link to the definition of the TileMatrixSet (either one registered in the OGC TileMatrixSet registry, or to a custom TileMatrixSet definition),
+- a TileMatrixSet URI in the case of a TileMatrixSet registered with an authority (e.g. the OGC NA TileMatrixSet registry),
+- a Coordinate Reference System (e.g. provided as a URI),
 - a templated link (URI) to individual tiles,
 - and a data type (indicating whether the tileset consists of vector, coverage or map tiles).
 
 It may optionally also provide additional information, such as:
 
+- a title,
+- a description,
+- the limits of the tileset if it does not span the full extent of the TileMatrixSet,
 - the geospatial data resources involved in the creation of the tiles (potentially including links to OGC API collections),
 - a schema of the available properties contained within the tiles,
 - styles used to create the tiles,
 - a central point on which a viewer may initially focus,
 - attribution.
 
-The explicit definition of a TileMatrixSet is only required for custom TileMatrixSet not registered in the OGC TileMatrixSet registry.
-However, it is recommended that the Web API always provides a link to a local definition of the TileMatrixSets used.
+A link to a definition of a TileMatrixSet is always required whether a custom TileMatrixSet or a registered TileMatrixSet is used.
+It is recommended that the Web API hosts a local definition of each supported TileMatrixSet to ensure availability.
 
 Services and clients are encouraged to support as many of the TileMatrixSets defined in the OGC TileMatrixSet registry as possible to maximize
 interoperability, but support is not required for any specific tile matrix set.
