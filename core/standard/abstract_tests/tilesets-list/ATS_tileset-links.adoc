@@ -6,7 +6,7 @@
 ^|Requirement |/req/tilesets-list/tileset-links
 ^|Test Method |1. Validate that the API SHALL supports a GET operation on a `.../tiles` path returning a list of available tilesets
 
-2. Validate that a successful response of a HTTP GET consists of a list of available tilesets each element containing a subset of the tileset metadata (as defined by the 2D Tile Matrix Set and Metadata standard), consisting of: dataType, a link to the tileset (with rel: self), a link to the tileMatrixSet defintion (with rel: tiling-scheme) and tileMatrixSetURI (if the TMS is available in a registry).
+2. Validate that a successful response of a HTTP GET consists of a list of available tilesets each element containing a subset of the tileset metadata (as defined by the 2D Tile Matrix Set and Metadata standard), consisting of: `dataType, `crs`, a link to the tileset (with rel: self), a link to the TileMatrixSet defintion (with rel: `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme`) and `tileMatrixSetURI` (if the TMS is available in a registry).
 
 3. Validate that each element of that list includes a link to a resource providing the full version of the tileset metadata, using link relation `self`.
 

@@ -86,17 +86,20 @@ NOTE: The geospatial data resource URL is expected to be the first part of the U
      "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad",
      "rel": "self",
      "type": "application/json",
+     "title": "Buildings tileset tiled using World Mercator TileMatrixSet"
     },
     {
      "href": "http://schemas.opengis.net/tms/2.0/json/examples/WorldMercatorWGS84Quad.json",
      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme",
      "type": "application/json",
+     "title": "Definition of WorldMercatorQuad TileMatrixSet"
     },
     {
      "href": "http://data.example.com/collections/buildings/tiles/WorldMercatorWGS84Quad/{tileMatrix}/{tileRow}/{tileCol}.png",
      "templated": true,
      "rel": "item",
      "type": "image/png",
+     "title": "Templated link for retrieving PNG tiles"
     }
    ...
   ],
@@ -139,17 +142,20 @@ The following table explains the meaning of the URI template variables.
      "href": "http://data.example.com/collections/buildings/tiles/CustomAntiguaTMS",
      "rel": "self",
      "type": "application/json",
+     "title": "Buildings tileset tiled using custom Antigua TileMatrixSet"
     },
     {
      "href": "http://data.example.com/collections/buildings/tiles/CustomAntiguaTMS/{tileMatrix}/{tileRow}/{tileCol}.png",
      "templated": true,
      "rel": "item",
      "type": "image/png",
+     "title": "Templated link for retrieving PNG tiles"
     },
     {
      "href": "http://data.example.com/tileMatrixSets/CustomAntiguaTMS",
      "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme",
      "type": "application/json",
+     "title": "Definition of custom Antigua TileMatrixSet"
     }
    ...
   ],
@@ -182,13 +188,13 @@ In the landing page, in JSON format, the links follow the link schema defined in
       "href": "http://data.example.org/tileMatrixSets?f=json",
       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
       "type": "application/json",
-      "title": "List of tileMatrixSets implemented by this API in JSON",
+      "title": "List of tileMatrixSets implemented by this API in JSON"
     },
     {
       "href": "http://data.example.org/tileMatrixSets?f=html",
       "rel": "http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes",
       "type": "text/html",
-      "title": "List of tileMatrixSets implemented by this API in HTML",
+      "title": "List of tileMatrixSets implemented by this API in HTML"
     }
   ]
 }
@@ -255,7 +261,8 @@ id-link:
         {
           "rel": "self",
           "href": "https://data.example.org/tileMatrixSets/MyWebMercatorQuad",
-          "type": "application/json"
+          "type": "application/json",
+          "title": "Local definition of WebMercatorQuad TileMatrixSet"
         }
       ]
     }
