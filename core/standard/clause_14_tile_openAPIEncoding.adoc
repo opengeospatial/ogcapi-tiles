@@ -5,7 +5,7 @@
 
 include::requirements/requirements_class_oas30.adoc[]
 
-This conformance class defines the OpenAPI Specification version 3.0 mechanism to retrieve a description of the API in this format
+This conformance class defines particularities of providing a definition of a Web API implementing this standard using OpenAPI Specification version 3.0.
 
 === Web API OpenAPI description
 
