@@ -7,7 +7,7 @@
 
 include::requirements/requirements_class_tileset.adoc[]
 
-The tileset conformance class provides a mechanism to retrieve tileset metadata, for a geospatial data resource or resources and tiled according to one specific TileMatrixSet.
+The tileset conformance class provides a mechanism to retrieve metadata for a set of tiles of geospatial data tiled according to one specific TileMatrixSet.
 It also provides a mechanism to obtain a templated link to retrieve individual tiles as defined in the _core_ conformance class.
 
 It describes the HTTP GET operation on a tileset resource and its response, but does not prescribe an specific path.
