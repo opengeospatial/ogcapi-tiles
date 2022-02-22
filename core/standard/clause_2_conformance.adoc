@@ -70,7 +70,7 @@ Dataset tiles may combine content from multiple geospatial resources, regardless
 The _geodata tilesets_ conformance class allows retrieving tiles from a specific geospatial data resource.
 
 [#table_resource_geodata_tilesets,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the dataset tilesets
+.Overview of resource and common direct links that corresponds to the geospatial data resources tilesets
 [cols="33,66",options="header"]
 |===
 |Resource name |Example of possible paths
