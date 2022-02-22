@@ -5,23 +5,30 @@ This document also uses terms defined in Sub-clause "Terms and Definitions" of O
 
 For the purposes of this document, the following additional terms and definitions apply.
 
+=== *coverage tile*
+
+tile that contains information, often in a gridded form, where the values represent observations or measurements as a count, or quantity using some unit of measure
+
+NOTE: Coverage tiles are generated in combination with _OGC API - Coverages_, and can also be generated with a combined subset (trim) and resampling operation. When stored in gridded form, these tiles are a type of _raster tiles_.
+Usually, visualizing a coverage tile on a rendering device implies mapping those values to colors.
+
 === *geospatial data resource*
 web resource that consists in a set of geospatial data
 
-NOTE: Most of the resources provided by OGC API _collections_ are considered geospatial data resources. Maps and coverages are also considered geospatial data resources.
+NOTE: In Web APIs implementing _OGC API - Common - Part 2: Geospatial data_, geospatial data resources are referred to as collections and are defined in the _collections_ conformance class.
 
 === *geospatial aspect*
-web resource that represents a component of geospatial information (metadata, schemas,...) or geospatial data in a particular data model (e.g., feature items, tiles, coverages,...) of a more generic geospatial data resource (e.g., a collection)
+web resource that represents a component of geospatial information (metadata, schemas,...) or geospatial data accessed using a particular mechanism and data model (e.g., feature items, tiles, maps, coverages,...) of a more generic geospatial data resource (e.g., a collection)
 
-NOTE: Do not confuse this with a web resource representation. While resource representations share the same path and are selected by format negotiation, geospatial aspects use different paths. Commonly a geospatial aspect is a child path of a geospatial data resource
+NOTE: Do not confuse this with a web resource representation. While resource representations share the same path and are selected by format negotiation, geospatial aspects use different paths. Commonly a geospatial aspect is a child path of a geospatial data resource.
 
 === *map tile*
 
-tile that contains information in a gridded form. Commonly the values of the grid represent colors of each cell in the grid for immediate pictorial representation on rendering devices, but can also be coverage subsets.
+tile that contains information in a gridded form where the values of the grid represent colors of each cell in the grid for immediate pictorial representation on rendering devices
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
-NOTE: Map tiles are generated in combination with the OGC API - Maps. This tiles are sometimes refered as _raster tiles_
+NOTE: Map tiles are generated in combination with _OGC API - Maps_. These tiles are a type of _raster tiles_.
 
 === *tile*
 
@@ -29,13 +36,13 @@ geometric shape with known properties that may or may not be the result of a til
 
 NOTE: From OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space
 
-small rectangular representation of geographic data, often part of a set of such elements, covering a tiling scheme and sharing similar information content and graphical styling. A tile can be uniquely defined in a tile matrix by one integer index in each dimension. Tiles are mainly used for fast transfer (particularly in the web) and easy display at the resolution of a rendering device. Tiles can be grid based pictorial representations, coverage subsets, or feature based representations (e.g., vector tiles).
+small rectangular representation of geographic data, often part of a set of such elements, covering a tiling scheme and sharing similar information content and graphical styling. A tile can be uniquely defined in a tile matrix by one integer index in each dimension. Tiles are mainly used for fast transfer (particularly in the web) and easy display at the resolution of a rendering device. Tiles can be grid-based pictorial representations, coverage subsets, or feature-based representations (e.g., vector tiles).
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 === *tile matrix*
 
-grid tile set scheme defining how space is partitioned into a set of regular conterminous tiles at a fixed scale giving tile scheme to each tile.
+grid tile set scheme defining how space is partitioned into a set of regular conterminous tiles at a fixed scale associating a tile scheme to each tile.
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set (modified).
 
@@ -43,7 +50,7 @@ NOTE: For the purposes of this document a tile matrix is restricted to a tessell
 
 === *tile matrix set*
 
-tile set scheme composed by collection of tile matrices defined at different scales covering approximately the same area and having a common coordinate reference system.
+tile set scheme consisting of a set of tile matrices defined at different scales covering approximately the same area and having a common coordinate reference system.
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set but modified.
 
