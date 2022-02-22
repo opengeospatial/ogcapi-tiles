@@ -7,13 +7,15 @@
 
 include::requirements/requirements_class_tilesets-list.adoc[]
 
-This class defines a resource called TileSets that provided access to the available tilesets for a resource. It also defines a relation type to link to tileset resources. This class does not specify the path for a tileSet list. Refer to the <<rc_datasetTileSets>> and <<rc_geoDataResourceTileSets>> classes that describes two complementary mechanisms to associate tileSets to datasets and to geospatial data resources respectively.
+This class defines a resource called _tilesets list_ that provides a list of available tilesets for a resource. It also defines a how to link to individual tileset resources, which are defined in the <<rc_tileSet>>.
+Refer to the <<rc_datasetTileSets>> and <<rc_geoDataResourceTileSets>> classes that describes two complementary mechanisms to associate tilesets to datasets and to geospatial data resources, respectively.
 
 === Tilesets list
-A tilesets resource represents a list of sets of tiles each one belonging to a particular TileMatrixSet. The resource return the necessary metadata to enable a client application to formulate a tile request.
+A _tilesets list_ resource represents a list of sets of tiles, each one belonging to a particular TileMatrixSet.
+Each _tileset_ resource returns the necessary metadata to enable a client application to formulate a tile request.
 
 ==== Tilesets path
-This class does not specify the full path to a tileSet list but requires that it ends with `/tiles`. Refer to the <<rc_datasetTileSets>> and <<rc_geoDataResourceTileSets>> classes that describes two complementary mechanisms to associate tileSets to datasets and to geospatial data resources respectively.
+This class does not specify the full path to a tileset list but requires that it ends with `/tiles`.
 
 include::requirements/tilesets-list/REQ_tileset-path.adoc[]
 

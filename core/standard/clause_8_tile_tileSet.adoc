@@ -44,16 +44,18 @@ The tileset metadata contains all the information necessary for a client applica
 
 ==== Tileset path
 
-This class does not specify a full path to a tileSet. Generally, TileSet resources are linked from a Tilesetslist resource (see <<rc_tileSets-list>>).
-Refer to the _tilesets list_ conformance class to know how to list available TileSets and link to individual TileSet resources.
-Refer to the _dataset tilesets_ and _geodata tilesets_ conformance classes describing two mechanisms to associate list of tilesets to
-OGC API dataset (landing page) and to geospatial data (collection) resources respectively.
-It is expected that a tileset can be used as a building block in other Web APIs and on top of resources such as maps, features, coverages or any other geospatial resources that can benefit from tiling.
+This class does not specify a full path to a tileset. Generally, _tileset_ resources are linked from a _tilesets list_ resource
+(refer to the <<rc_tileSets-list>> for how to list available tilesets and link to individual tileset resources).
+Refer to the <<rc_datasetTileSets>> and <<rc_geoDataResourceTileSets>> describing two mechanisms to associate lists of tilesets to
+an OGC API dataset (landing page) and to geospatial data (collection) resources respectively.
+It is expected that a tileset can be used as a building block in other Web APIs and can be used to provide tiles of different types of data such as maps, features, coverages or other types of geospatial data that can benefit from tiling.
 
 ==== Response
-A successful GET response to a tileset resource will be metadata consisting on a data structure with the specific information necessary to build a complete GET request to the tiles representing the geospatial data resource.
+A successful GET response to a tileset resource will be metadata consisting of a data structure with the specific information necessary to build a complete GET request of the tiles representing the geospatial data resource.
 
 include::requirements/tileset/REQ_tileset-description.adoc[]
+
+See the <<rc_xml>> for providing an XML representation of the tileset metadata.
 
 Support for alternative encodings for tileset metadata can be added, such as TileJSON.
 
