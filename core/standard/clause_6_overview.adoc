@@ -69,7 +69,7 @@ There are at least two ways to approach an OGC API.
 * Read the landing page, look for links, follow them and discover new links until the desired resource is found
 * Read a Web API definition document that will specify a list of paths and path templates to resources.
 
-For the first approach, many resources in the Web API include links with _rel_ properties to know the reason and purpose for this relation. The following figure illustrates the resources as ellipses and the links as arrows with the link _rel_ as a label .
+For the first approach, many resources in the Web API include links with _rel_ properties to know the reason and purpose for this relation. The following figure illustrates the resources as ellipses and the links as arrows with the link _rel_ as a label.
 
 [#img_relMapTiles,reftext='{figure-caption} {counter:figure-num}']
 .Resources and relations to them via links
