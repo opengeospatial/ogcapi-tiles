@@ -26,8 +26,6 @@ NOTE: Not to be confused with a web resource representation. While resource repr
 
 _tile_ that contains information in a gridded form where the values of cells are colors which can be readily displayed on rendering devices
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set (modified)
-
 NOTE: Map tiles are generated in combination with _OGC API - Maps_. These tiles are a type of _raster tiles_.
 
 === *tile*
@@ -36,11 +34,11 @@ geometric shape with known properties that may or may not be the result of a til
 
 NOTE: From OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space
 
-In the context of a 2D _tile matrix_, a _tile_ is one of the rectangular regions of space, which can be uniquely identified by an integer row and column, making up the tile matrix.
+In the context of a 2D _tile matrix_, a _tile_ is one of the rectangular regions of space, which can be uniquely identified by a row and a column integer indices, making up the tile matrix.
 
 In the context of a geospatial data _tile set_, a _tile_ contains data for such a partition of space as part of an overall set of tiles for that tiled geospatial data.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set (modified)
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 NOTE: Tiles are useful to efficiently request, transfer, cache, display, store and process geospatial data for a specific resolution and area of interest, providing deterministic performance and scalability
 for arbitrarily large datasets.
@@ -51,22 +49,22 @@ NOTE: Tiles can contain a variety of data types, such as grid-based pictorial re
 
 tiling grid in a given 2D coordinate reference system, associated to a specific scale and partitioning space into regular conterminous _tiles_, each of which being assigned a unique identifier
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set (modified).
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set.
 
-NOTE: Each tile of a tile matrix is uniquely identifiable by a row and a column index. The number of rows is referred to as the _matrix height_, while the maximum number of columns is referred to
+NOTE: Each tile of a tile matrix is uniquely identifiable by a row and a column integer indices. The number of rows is referred to as the _matrix height_, while the maximum number of columns is referred to
 as the _matrix width_ (the number of columns can vary for different rows in _variable width tile matrices_).
 
 === *tile matrix set*
 
 _tiling scheme_ consisting of a set of _tile matrices_ defined at different scales covering approximately the same area and having a common coordinate reference system.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set (modified).
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set.
 
 === *tile indexing scheme*
 scheme allowing to uniquely reference a _tile_ in a _tiling scheme_ by the use of a unique identifier (or set of identifiers), and reversely, which unique identifier (or unique set of identifiers) corresponds
 to a space satisfying the geometric properties of a specific tile
 
-NOTE: Adapted from the indexing aspect of the _tile scheme_ definition of the OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 === *tile set*
 
@@ -85,14 +83,21 @@ Those properties include which space each tile occupies, i.e. its extent, as wel
 NOTE: A tiling scheme can be defined on top of a CRS as well as other spatial reference systems such as DGGS and other organizations including irregular ones.
 In this document, only tiling schemes based on CRSs are supported.
 
-NOTE: From the _tile set scheme_ and _tile scheme_ definitions of OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space, adapted to reflect the fact that a _tiling scheme_ already
-imparts individual tiles with an origin and an extent
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
+
+=== *tile set metadata*
+
+additional metadata beyond the common properties defining the _tile set_. Such metadata could be an abstract, the owner, the author, or other common metadata. [OGC 19-014r3]
+
+metadata describing common properties defining a _tile set_, layers and styles used to produce the tile set, the limits of the time matrix with actual data and common metadata such as abstract, owner, author, etc.
+
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 === *vector tile*
 
 tile that contains vector information that has been generalized (simplified) at the tile scale resolution and clipped by the tile boundaries.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set (modified)
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 === *Web API*
 
