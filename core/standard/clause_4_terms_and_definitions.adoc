@@ -89,7 +89,7 @@ NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
 additional metadata beyond the common properties defining the _tile set_. Such metadata could be an abstract, the owner, the author, or other common metadata. [OGC 19-014r3]
 
-metadata describing common properties defining a _tile set_, layers and styles used to produce the tile set, the limits of the time matrix with actual data and common metadata such as abstract, owner, author, etc.
+metadata describing common properties defining a _tile set_, layers and styles used to produce the tile set, the limits of the tile matrix with actual data and common metadata such as abstract, owner, author, etc.
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
 
