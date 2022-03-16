@@ -3378,7 +3378,7 @@
       "subset": {
         "name": "subset",
         "in": "query",
-        "description": "Retrieve only part of the data by slicing or trimming along one or more axis\nFor trimming: {axisAbbrev}({low}:{high}) (preserves dimensionality)\nFor slicing:  {axisAbbrev}({value})      (reduces dimensionality)\n",
+        "description": "Retrieve only part of the data by slicing or trimming along one or more axis\nFor trimming: {axisAbbrev}({low}:{high}) (preserves dimensionality)\n   An asterisk (`*`) can be used instead of {low} or {high} to indicate the minimum/maximum value.\nFor slicing:  {axisAbbrev}({value})      (reduces dimensionality)\n",
         "style": "form",
         "explode": false,
         "required": false,
@@ -3708,9 +3708,9 @@
         }
       },
       "API": {
-        "description": "API definition.",
+        "description": "The OpenAPI definition of the API.",
         "content": {
-          "application/vnd.oai.openapi;version=3.0": {
+          "application/vnd.oai.openapi+json;version=3.0": {
             "schema": {
               "type": "object"
             }

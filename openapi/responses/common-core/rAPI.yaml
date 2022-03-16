@@ -1,6 +1,6 @@
-description: API definition.
+description: The OpenAPI definition of the API.
 content:
-  application/vnd.oai.openapi;version=3.0:
+  application/vnd.oai.openapi+json;version=3.0:
     schema:
       type: object
   text/html:
