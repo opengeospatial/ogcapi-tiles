@@ -43,7 +43,7 @@ properties:
         type: application/json
         title: Digital Elevation Model
     items:
-      $ref: '../../schemas/common-core/link.yaml'
+      $ref: '../common-core/link.yaml'
   extent:
     $ref: '../../schemas/common-geodata/extent-uad.yaml'
   itemType:
