@@ -1,4 +1,4 @@
-description: A 2DPoint in the CRS indicated elsewere
+description: A 2D Point in the CRS indicated elsewhere
 type: array
 minItems: 2
 maxItems: 2
