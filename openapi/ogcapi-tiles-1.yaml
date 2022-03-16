@@ -25,7 +25,7 @@ paths:
    # Dynamic enumeration of resources specific to this implementation
    /api/all-collections:
       $ref: 'paths/dynamic/pAllCollections.yaml'
-   /api/coverages-collections:
+   /api/coverage-collections:
       $ref: 'paths/dynamic/pCoverageCollections.yaml'
    /api/vectorTiles-collections:
       $ref: 'paths/dynamic/pVectorTilesCollections.yaml'
