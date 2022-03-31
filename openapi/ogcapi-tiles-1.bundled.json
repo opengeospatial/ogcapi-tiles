@@ -2874,23 +2874,19 @@
             "type": "string"
           },
           "minTileRow": {
-            "type": "number",
-            "format": "integer",
+            "type": "integer",
             "minimum": 0
           },
           "maxTileRow": {
-            "type": "number",
-            "format": "integer",
+            "type": "integer",
             "minimum": 0
           },
           "minTileCol": {
-            "type": "number",
-            "format": "integer",
+            "type": "integer",
             "minimum": 0
           },
           "maxTileCol": {
-            "type": "number",
-            "format": "integer",
+            "type": "integer",
             "minimum": 0
           }
         }
@@ -4049,4 +4045,3 @@
     }
   }
 }
-
