@@ -14,7 +14,7 @@ NOTE: The geospatial data resources (e.g., collections) replace the concept of l
 These geospatial data resources can advertise one or more lists of available tilesets (see <<rc_tileSet>> and <<rc_tileSets-list>>).
 This standard also defines how to link to tilesets originating from two specific data resources:
 OGC API datasets (see <<rc_datasetTileSets>>) and collections (see <<rc_geoDataResourceTileSets>>), but other OGC APIs can provide other possibilities.
-Accessing the _geospatial data resource_ content (other than as tiles) or its descriptions is possible out of the scope of this standard.
+Accessing the _geospatial data resource_ content (other than as tiles) or its descriptions is out of the scope of this standard.
 If a description of the _geospatial data resource_ is specified by another standard, and this description has a mechanism to add links to other resources, this standard indicates the need to add a link to the list of available tilesets.
 
 The _OGC API Tiles API_ standard does not specify how to get a Web API definition, the conformance class list or the collections lists.
