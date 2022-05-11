@@ -35,9 +35,6 @@ It may optionally also provide additional information, such as:
 A link to a definition of a TileMatrixSet is always required whether a custom TileMatrixSet or a registered TileMatrixSet is used.
 It is recommended that the Web API hosts a local definition of each supported TileMatrixSet to ensure availability.
 
-Services and clients are encouraged to support as many of the TileMatrixSets defined in the OGC TileMatrixSet registry as possible to maximize
-interoperability, but support is not required for any specific tile matrix set.
-
 === Tileset resource
 A tileset consists of a set of tiles obtained by partitioning geospatial data according to a particular TileMatrixSet.
 The tileset metadata contains all the information necessary for a client application to request tiles from the tileset.
