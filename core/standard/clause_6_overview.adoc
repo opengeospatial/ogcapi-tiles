@@ -5,6 +5,9 @@
 
 The _OGC API - Tiles_ standard defines building blocks which can be used in a Web API to retrieve geospatial data as tiles that follow the structure defined in _2D Tile Matrix Set and Tileset Metadata_ standard (see <<rc_tiles_core>>).
 
+Services and clients are encouraged to support as many of the TileMatrixSets defined in the OGC TileMatrixSet registry as possible to maximize
+interoperability, but support is not required for any specific tile matrix set.
+
 This document does not specify any requirement for the type of _geospatial data resource_ that could be delivered as tiles.
 Provided that the geospatial data resources can be organized into tiles, they can be supported regardless of whether they are maps, features data,
 coverages, a resource that does not represent data per se (e.g., an annotation) and so forth.
