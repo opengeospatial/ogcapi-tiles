@@ -25,7 +25,7 @@ include::api_modules/datetime/requirements_module_datetime.adoc[]
 === `subset=datetime` query parameter request and response
 
 The behavior of the subset parameter is imported from the OGC API - Common subset module. The entire module is reproduced here.
-However some consideration may not apply for datetime and the generic behavior is limited by predetermining the axis name of the generic datetime in an additional requirement, a permission and a recommendation at the end of this subsection.
+However, some considerations may not apply for datetime and the generic behavior is limited by predetermining the axis name of the generic datetime in an additional requirement, a permission and a recommendation at the end of this subsection.
 
 include::api_modules/subset/requirements_module_subset.adoc[]
 

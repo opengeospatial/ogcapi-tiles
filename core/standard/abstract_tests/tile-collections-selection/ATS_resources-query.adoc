@@ -12,5 +12,5 @@
 
 4. Validate that only geospatial data resources that support the same `crs` parameter value (or the same TileMatrixSetId for tiles) are accepted as valid values in the parameter value.
 
-5. If there is more than one collection name and the style applied does not specify otherwise, validate that the comma-separated collections are included in the result starting by the first (leftmost) and ending by the last (rightmost). In map tiles, this will result in the first collection being portrayed in the bottom and the others are rendered on top of the previous ones, one by one (the right most collection will become top most in the portrayal).
+5. If there is more than one collection name and the style applied does not specify otherwise, validate that the comma-separated collections are included in the result starting by the first (leftmost) and ending by the last (rightmost). In map tiles, this will result in the first collection being portrayed in the bottom and the others are rendered on top of the previous ones, one by one (the rightmost collection will become topmost in the portrayal).
 |===

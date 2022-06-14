@@ -10,7 +10,7 @@ ogcdoc, OGC document, tiling, tiles, WMTS, map tiles, vector tiles, tiled featur
 
 [big]*iii.   Preface*
 
-This document defines the OGC API - Tiles standard. A web API conforming to this standard can serve tiles of spatially referenced data or maps with predefined content, extent, and resolution. Suggested additions, changes and comments on this standard are welcome and encouraged. Such suggestions may be submitted using the online change request form on OGC web site: http://portal.opengeospatial.org/public_ogc/change_request.php
+This document defines the OGC API - Tiles standard. A web API conforming to this standard can serve tiles of spatially referenced data or maps with predefined content, extent, and resolution. Suggested additions, changes and comments on this standard are welcome and encouraged. Such suggestions may be submitted using the GitHub repository issues: https://github.com/opengeospatial/ogcapi-tiles .
 
 Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
 

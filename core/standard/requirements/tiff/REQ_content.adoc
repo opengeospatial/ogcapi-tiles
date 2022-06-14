@@ -7,4 +7,4 @@
 ^|C |All tiles representing parts of the same resource or resources and using the same style SHALL follow the same portrayal rules or represent data with the same reference and units of measure.
 |===
 
-NOTE: TIFF is an ideal support for geospatial grid data in its original format. However it also can be used for image palette or RGB imagery.
+NOTE: TIFF is an ideal support for geospatial grid data in its original format. However, it also can be used for image palette or RGB imagery.

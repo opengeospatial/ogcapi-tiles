@@ -4,7 +4,7 @@
 2+|*Requirements XML*
 2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml
 |Target type |Web API
-|Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list
+|Dependency |http://www.opengis.net/spec/tms/2.0/req/xml-tilesetmetadata
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
-|Dependency |https://www.w3.org/TR/xml/: Extensible Markup Language (XML) 1.0
+|Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list (optional)
 |===

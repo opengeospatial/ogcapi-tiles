@@ -8,7 +8,7 @@
 
 2. If the tileset endpoint also support negotiating an application/xml response,  validate that a successful response of a HTTP GET for a specific tileset is encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 
-3. If the tileset uses a TileMatrixSet registered in a TileMatrixSet registry (e.g. OGC NA), validate that the `tileMatrixSetURI` property links to the registered TileMatrixSet (e.g. `http://opengis.net/def/tms/{tileMatrixSet}`).
+3. If the tileset uses a TileMatrixSet registered in a TileMatrixSet registry (e.g. OGC NA), validate that the `tileMatrixSetURI` property links to the registered TileMatrixSet (e.g. `http://www.opengis.net/def/tilematrixset/{tileMatrixSet}`).
 
 4. Validate that the links property includes a link to the TileMatrixSet definition with relation type `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme` following the
 https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileMatrixSet.json[tile matrix set schema], as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.

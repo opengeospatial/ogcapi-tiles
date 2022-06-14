@@ -7,7 +7,7 @@ The requirements classes are:
 
 === Requirements classes defining resources
 
-*<<rc_tiles_core>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/core)
+*<<rc_tiles_core>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core)
 
 The Core specifies requirements that all Web APIs have to implement if they are claiming to support tiles from a geospatial resource following this _OGC API - Tiles Part 1: Core_ standard.
 It defines how to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.

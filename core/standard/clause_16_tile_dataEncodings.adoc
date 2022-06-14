@@ -41,7 +41,7 @@ include::requirements/jpeg/REQ_content.adoc[]
 [[rc_tiff]]
 === Requirement Class "TIFF"
 
-One use case for tiles is to distribute fragmented coverage gradients as regular grids. In these circumstances, selecting an encoding that is able to story grid values in their original format and eventually compress them using lossless compression is the right solution. The TIF is one of the older formats but still one of the most popular formats to preserve arrays of data values and defined by the TIFF v6 specification owned by Adobe Systems.
+One use case for tiles is to distribute fragmented coverage values as regular grids. In these circumstances, selecting an encoding that is able to story grid values in their original format and eventually compress them using lossless compression is the right solution. The TIF is one of the older formats but still one of the most popular formats to preserve arrays of data values and defined by the TIFF v6 specification owned by Adobe Systems.
 
 TIFF is a flexible, adaptable file format for handling images and data. The ability to store data in a lossless format makes a TIFF file a useful image archive, because, unlike standard JPEG files, a TIFF file using lossless compression such as PackBits or LZW compression.
 
@@ -78,7 +78,7 @@ include::recommendations/geojson/PER_overflow.adoc[]
 [[rc_mvt]]
 === Requirement Class "Mapbox Vector Tiles"
 
-Mapbox Vector Tiles is a well known format for representing features with geometries in tile. The Mapbox Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Mapbox Vector Tile represents data based on a square extent within a tile matrix set. However a Mapbox Vector Tile does not contain information about its bounds and TileMatrixSet. The file format assumes that the client knows the bounds and TileMatrixSet of the file before decoding it.
+Mapbox Vector Tiles is a well known format for representing features with geometries in tile. The Mapbox Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Mapbox Vector Tile represents data based on a square extent within a tile matrix set. However, a Mapbox Vector Tile does not contain information about its bounds and TileMatrixSet. The file format assumes that the client knows the bounds and TileMatrixSet of the file before decoding it.
 
 include::requirements/requirements_class_mvt.adoc[]
 

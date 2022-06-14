@@ -5,7 +5,6 @@
 2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 |Target type |Web API
 |Dependency |<<rfc2616,RFC 2616 (HTTP/1.1)>>
-|Dependency |<<rfc2818,RFC 2818 (HTTP over TLS)>>
-|Dependency |<<rfc8288,RFC 8288 (Web Linking)>>
-|Dependency |http://www.opengis.net/spec/tilematrixset/1.0/req/tilematrixset2d
+|Dependency |<<rfc2818,RFC 2818 (HTTP over TLS)>> (optional)
+|Dependency |http://www.opengis.net/spec/tms/2.0/req/tilematrixset
 |===

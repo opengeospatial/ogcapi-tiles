@@ -2,7 +2,7 @@
 :appendix-caption: Annex
 == Conformance Class Abstract Test Suite (Normative)
 
-A implementation of this standard must satisfy the following system characteristics to be conformant with this specification.
+An implementation of this standard must satisfy the following system characteristics to be conformant with this specification.
 
 === Conformance Class Core
 

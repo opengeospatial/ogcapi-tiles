@@ -7,7 +7,7 @@ This standard is deeply inspired in concepts defined in the following documents 
 
 [1] Cavazzi S.: OGC Testbed-13: Vector Tiles Engineering Report (OGC 17-041), https://docs.ogc.org/per/17-041.html
 
-[2] de la Beaujardiere J.: Web Map Service (WMS), version 1.3.0 (OGC 06-042), http://portal.opengeospatial.org/files/?artifact_id=14416
+[2] de la Beaujardiere J.: Web Map Service (WMS), version 1.3.0 (OGC 06-042), http://portal.ogc.org/files/?artifact_id=14416
 
 [3] DGIWG 124 Defence Profile of OGC Web Map Tile Service 1.0, 17 October 2017. https://portal.dgiwg.org/files/?artifact_id=68271&format=pdf
 
@@ -17,27 +17,27 @@ This standard is deeply inspired in concepts defined in the following documents 
 
 [6] IANA: Link Relation Types, https://www.iana.org/assignments/link-relations/link-relations.xml
 
-[7] Ingensand J. and Maia K.: OGC Vector Tiles Pilot: Tiled Feature Data Conceptual Model Engineering Report (OGC 18-076), https://docs.opengeospatial.org/per/18-076.html
+[7] Ingensand J. and Maia K.: OGC Vector Tiles Pilot: Tiled Feature Data Conceptual Model Engineering Report (OGC 18-076), https://docs.ogc.org/per/18-076.html
 
 [8] MapBox: MBTiles Specification. https://github.com/mapbox/mbtiles-spec
 
 [9] Masó J.: OGC Testbed-15: Maps and Tiles API Engineering Report (OGC 19-069), https://docs.ogc.org/per/19-069.html
 
-[10] Masó J., Pomakis K. and Julià N.: Web Map Tile Service (WMTS), version 1.0. (OGC 07-057r7) http://portal.opengeospatial.org/files/?artifact_id=35326
+[10] Masó J., Pomakis K. and Julià N.: Web Map Tile Service (WMTS), version 1.0. (OGC 07-057r7) http://portal.ogc.org/files/?artifact_id=35326
 
-[11] Masó J.: Map Tile Service (WMTS) Simple Profile, version 1.0 (OGC 13-082r2), http://docs.opengeospatial.org/is/13-082r2/13-082r2.html
+[11] Masó J.: Map Tile Service (WMTS) Simple Profile, version 1.0 (OGC 13-082r2), http://docs.ogc.org/is/13-082r2/13-082r2.html
 
-[12] Meek S.: OGC Vector Tiles Pilot: Summary Engineering Report (OGC 18-086r1), https://docs.opengeospatial.org/per/18-086r1.html
+[12] Meek S.: OGC Vector Tiles Pilot: Summary Engineering Report (OGC 18-086r1), https://docs.ogc.org/per/18-086r1.html
 
 [13] NGA, National System for Geospatial-Intelligence (NSG) Web Map Tile Service 1.0.0 Interoperability Standard NGA.STND.0063_1.1_WMTS, 2018-04-27
 
-[14] Taleisnik S.: OGC Vector Tiles Pilot 2: Tile Set Metadata Engineering Report (OGC 19-082r1), http://docs.opengeospatial.org/per/19-082r1.html#_metadatadate
+[14] Taleisnik S.: OGC Vector Tiles Pilot 2: Tile Set Metadata Engineering Report (OGC 19-082r1), http://docs.ogc.org/per/19-082r1.html#_metadatadate
 
-[15] Vretanos P.A.: OGC Vector Tiles Pilot: WFS 3.0 Vector Tiles Extension Engineering Report (OGC 18-078), https://docs.opengeospatial.org/per/18-078.html
+[15] Vretanos P.A.: OGC Vector Tiles Pilot: WFS 3.0 Vector Tiles Extension Engineering Report (OGC 18-078), https://docs.ogc.org/per/18-078.html
 
-[16] Vretanos P.A.: OGC Vector Tiles Pilot: WMTS Vector Tiles Extension Engineering Report (OGC 18-083), https://docs.opengeospatial.org/per/18-083.html
+[16] Vretanos P.A.: OGC Vector Tiles Pilot: WMTS Vector Tiles Extension Engineering Report (OGC 18-083), https://docs.ogc.org/per/18-083.html
 
-[17] Yutzler J.: Vector Tiles Pilot Extension Engineering Report (OGC 18-101), http://docs.opengeospatial.org/per/18-101.html
+[17] Yutzler J.: Vector Tiles Pilot Extension Engineering Report (OGC 18-101), http://docs.ogc.org/per/18-101.html
 
 [18] W3C/OGC: Spatial Data on the Web Best Practices, W3C Working Group Note 28 September 2017, https://www.w3.org/TR/sdw-bp/
 
