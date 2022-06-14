@@ -52,6 +52,14 @@ A successful GET response to a tileset resource will be metadata consisting of a
 
 include::requirements/tileset/REQ_tileset-description.adoc[]
 
+
+In addition to the recommendation to include links in the HTTP response headers as specified in OGC API - Common - Part 1,
+this standard recommends following the https://www.ietf.org/archive/id/draft-ietf-httpapi-link-template-00.html[Link-Template HTTP Header Field] draft specification,
+to include `Link-Template` for templated links, such as the URI for individual tiles.
+
+include::recommendations/tileset/REC_header_linktemplates.adoc[]
+
+
 See the <<rc_xml>> for providing an XML representation of the tileset metadata.
 
 Support for alternative encodings for tileset metadata can be added, such as TileJSON.
