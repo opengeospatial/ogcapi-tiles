@@ -80,7 +80,7 @@ As informative guidance on how this can be achieved, implementations should cons
 Three different mechanisms are defined by this standard to describe the domain of the tiles, including spatiotemporal axes as well as additional dimensions.
 
 With the _Geodata Tilesets List_ conformance class, the collection description inherited from _OGC API - Common - Part 2_ contains an `extent` property that can
-describe both the spatial and temporal domain of the data. In addition, the _Unified Additional Dimension_ common building block, used in the
+describe both the spatial and temporal domain of the data. In addition, the _Unified Additional Dimensions_ common building block, used in the
 example OpenAPI definition, further specifies that additional dimensions shall be described in a similar way to the temporal dimension.
 An extra `values` property in the example OpenAPI definition also allows to specify the limited availability of data for specific values along each dimension,
 either as a list of values, or as a number of repetitions, minimum and interval.
