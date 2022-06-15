@@ -66,6 +66,57 @@ This document is the first part of a series of _OGC API - Tiles_ "parts" that us
 It is foreseen that future parts will specify other extensions, such as how to get information of a point in a tile and how to retrieve multiple tiles in a single request.
 Other standards or extensions of standards may also provide mechanisms (e.g. additional query parameters) to deal with additional dimensions such as elevation, or more advanced temporal capabilities than what is defined in this standard's _datetime_ conformance class.
 
+=== Using this standard independently
+
+Although this standard is designed as a building block that can be leveraged by other standards adding precisions about specific types of data available as tiles
+(e.g., _OGC API - Maps_ and _OGC API - Coverages_), the conformance classes defined in this document are still concrete enough to make it possible to distribute
+and request various types of tiled data, including coverages, vector features and maps, by relying strictly on the content herein and in the
+2D Tile Matrix Set and Tileset metadata 2.0 standard.
+
+As informative guidance on how this can be achieved, implementations should consider the following aspects.
+
+==== Description of the domain
+
+Three different mechanisms are defined by this standard to describe the domain of the tiles, including spatiotemporal axes as well as additional dimensions.
+
+With the _Geodata Tilesets List_ conformance class, the collection description inherited from _OGC API - Common - Part 2_ contains an `extent` property that can
+describe both the spatial and temporal domain of the data. In addition, the _Unified Additional Dimension_ common building block, used in the
+example OpenAPI definition, further specifies that additional dimensions shall be described in a similar way to the temporal dimension.
+An extra `values` property in the example OpenAPI definition also allows to specify the limited availability of data for specific values along each dimension,
+either as a list of values, or as a number of repetitions, minimum and interval.
+
+With the _TileSet_ conformance class, the tile set metadata allows to specify a spatial bounding box for tiles as a whole, as well as for each individual
+collections of geospatial data represented or contained within the tiles (the _layers_). The resolution of these layers can also be specified by including
+the minimum and maximum cell size and equivalent scale denominators. The informative Annex J of the 2D Tile Matrix Set and Tileset metadata 2.0 standard
+further extends this capability to describe the domainset by enhancing the schema to include bounds and resolution for additional dimensions, also able
+the particularity of unequal temporal units. The annex also includes provisions to describe tile matrix sets featuring additional dimensions which not only
+extend in other dimensions, but can also define divisions and downsampling of these additional dimensions for lower resolution tile matrices.
+
+In addition to describing the bounds of the tileset dimensions, the _TileSet_ conformance class also allows to specify limits in terms of identifiers for
+the minimum and maximum tile matrices, tile rows, and tile columns for which data is available.
+
+==== Description of the observed or measured properties
+
+With the _TileSet_ conformance class, the tile set metadata allows to specify a the measured or observed properties for each
+collections of geospatial data represented or contained within the tiles (the _layers_). For each of these properties, a JSON schema and semantic information
+can be described. This can be used to describe properties for feature collections or the range of coverages.
+
+==== Available formats and tile response expectations
+
+This standard defines six conformance classes for specific encodings to encode different types of tiled data.
+Additional encodings can be supported using HTTP content negotiation, following conventions specific to those encodings while falling back to the closest
+encoding defined in these conformance classes (e.g., using the GeoTIFF and netCDF conformance class as a model for other coverage data, the JPG and PNG classes
+for other map tiles encoding, and the Mapbox Vector Tiles or GeoJSON for other vector tiles encodings).
+The informative Annex J of the 2D Tile Matrix Set and Tileset metadata standard also describes a mechanism that can be used to deliver and access 3D content
+using this standard, including 3D models either batched as a single mesh, or as points vector tiles referencing 3D shared models.
+
+==== Limitations
+
+Although this standard can be used by itself, other OGC API standards or draft specifications may provide additional capabilities and specify additional
+normative requirements describing how to retrieve specific types of tiled content, or allowing to describe in greater detail the domain or the observed or
+measured properties within the tiled data. Conforming to these standards as well may enable greater interoperability.
+For example, for map tiles, this standard does not define how a client requests a specific background color or whether tiles should be opaque or transparent.
+
 === How to approach an OGC API
 There are at least two ways to approach an OGC API.
 

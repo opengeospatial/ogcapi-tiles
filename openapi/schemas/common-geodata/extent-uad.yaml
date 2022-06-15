@@ -49,3 +49,21 @@ allOf:
          vrs:
            type: string
            description: vertical coordinate reference system (e.g. as defined in EDR for 'vertical')
+         values:
+           description: |-
+             Provides information about the limited availability of values along the dimension in the collection
+             defined as follows:
+             min value / max value (e.g., "2/100") or
+             as number of repetitions / min value / interval (e.g., "R5/100/50")
+             or as a list of values (e.g. 2, 10, 80, 100).
+           type: array
+           minItems: 1
+           items:
+             oneOf:
+               - type: string
+                 nullable: true
+               - type: number
+           example:
+             - ["2/100"]
+             - ["R50/1000/-50"]
+             - [2, 10, 80, 100]
