@@ -1,6 +1,6 @@
 [big]*i.     Abstract*
 
-_OGC API - Tiles_ defines a standard API to retrieve geospatial information as tiles.
+_OGC API - Tiles_ is a standard defining building blocks to create Web APIs allowing to retrieve geospatial information as tiles.
 Different forms of geospatial information are supported, such as tiles of vector features ("vector tiles"), coverages, maps (or imagery) and other types of geospatial information.
 Although it can be used independently, the _OGC API - Tiles_ building blocks can be combined with other OGC API standards and draft specifications for additional
 capabilities or increasing interoperability for specific types of data.
