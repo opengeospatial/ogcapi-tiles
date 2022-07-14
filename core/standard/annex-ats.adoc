@@ -24,7 +24,7 @@ include::abstract_tests/ATS_class_dataset-tilesets.adoc[leveloffset=+1]
 
 include::abstract_tests/ATS_class_geodata-tilesets.adoc[leveloffset=+1]
 
-=== Conformance Class "Geo Data Resource Selection"
+=== Conformance Class "Collections Selection"
 
 include::abstract_tests/ATS_class_collections-selection.adoc[leveloffset=+1]
 
