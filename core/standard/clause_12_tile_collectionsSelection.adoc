@@ -1,6 +1,6 @@
 [[rc_collections-selection]]
 
-== Requirement Class "Tile Geo Data Resource Selection"
+== Requirement Class "Collections Selection"
 
 === Overview
 

@@ -4,11 +4,15 @@
 2+|*Conformance Class*
 2+|http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
 |Target type |Web API
-|Requirements class |<<rc_collections-selection,Tile Geo Data Resource Selection>>
+|Requirements class |<<rc_collections-selection,Collections Selection>>
 |===
 
 === Operation
 
-==== What resources accept this parameter
+==== Parameter `collections`
 
-include::tile-collections-selection/ATS_resources-query.adoc[]
+include::collections-selection/ATS_collections-query.adoc[]
+
+==== Response
+
+include::collections-selection/ATS_collections-response.adoc[]
