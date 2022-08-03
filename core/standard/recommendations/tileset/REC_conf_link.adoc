@@ -1,4 +1,4 @@
-[[rec_tileset-conf-link.adoc]]
+[[rec_tileset-conf-link]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tileset/conf-link*

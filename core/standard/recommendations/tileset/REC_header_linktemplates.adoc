@@ -1,4 +1,4 @@
-[[rec_tileset-header-linktemplates.adoc]]
+[[rec_tileset_header-linktemplates]]
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tileset/header-linktemplates*
