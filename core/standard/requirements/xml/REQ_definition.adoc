@@ -1,6 +1,15 @@
 [[req_xml_definition]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/xml/definition*
 ^|A|`200`-responses of the server SHALL support the `application/xml` media type for the Tilesets list and TileSet resources.
 |===
+////
+
+[requirement]
+====
+[%metadata]
+label:: /req/xml/definition
+part:: `200`-responses of the server SHALL support the `application/xml` media type for the Tilesets list and TileSet resources.
+====
