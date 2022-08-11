@@ -1,4 +1,5 @@
 [[rc_table-datetime]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*
@@ -6,3 +7,13 @@
 |Target type |Web API
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 |===
+////
+
+[requirements_class]
+.Requirements Class Datetime
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/datetime
+subject:: Web API
+inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+====

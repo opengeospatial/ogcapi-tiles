@@ -1,4 +1,5 @@
 [[rc_table-mvt]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Mapbox Vector Tiles*
@@ -7,3 +8,14 @@
 |Dependency |<<Mapbox Vector Tiles>>
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 |===
+////
+
+[requirements_class]
+.Requirements Class MVT
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/mvt
+subject:: Web API
+inherit:: <<Mapbox Vector Tiles>>
+inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+====
