@@ -1,4 +1,5 @@
 [[ats_tilesets-list]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance Class*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_tileSets-list,TileSets List>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list
+subject:: <<rc_tileSets-list,TileSets List>>
+classification:: Target Type:Web API
+====
 
 === Tilesets list
 

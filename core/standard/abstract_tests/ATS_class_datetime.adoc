@@ -1,4 +1,5 @@
 [[ats_datetime]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance Class*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_datetime,datetime>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/datetime
+subject:: <<rc_datetime,datetime>>
+classification:: Target Type:Web API
+====
 
 === `datetime` query parameter request and response
 

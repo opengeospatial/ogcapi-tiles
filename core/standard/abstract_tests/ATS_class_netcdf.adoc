@@ -1,4 +1,5 @@
 [[ats_netcdf]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance NetCDF*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_netcdf,NetCDF>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/netcdf
+subject:: <<rc_netcdf,NetCDF>>
+classification:: Target Type:Web API
+====
 
 === NetCDF encoding
 

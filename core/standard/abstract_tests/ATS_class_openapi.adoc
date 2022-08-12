@@ -1,4 +1,5 @@
 [[ats_oas30]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance OpenAPI Specification 3.0*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_oas30_definition,OpenAPI Specification 3.0>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
+subject:: <<rc_oas30_definition,OpenAPI Specification 3.0>>
+classification:: Target Type:Web API
+====
 
 === Web API OpenAPI definition response
 
