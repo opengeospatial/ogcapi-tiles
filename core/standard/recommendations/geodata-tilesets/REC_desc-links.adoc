@@ -1,6 +1,15 @@
 [[rec_geodata-tilesets_desc-links]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/geodata-tilesets/desc-links*
 ^|B | The URI SHOULD consist of the path of the geospatial data resources followed by `/tiles`.
 |===
+////
+
+[recommendation]
+====
+[%metadata]
+label:: /rec/geodata-tilesets/desc-links
+part:: The URI SHOULD consist of the path of the geospatial data resources followed by `/tiles`.
+====

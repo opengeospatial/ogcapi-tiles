@@ -1,4 +1,5 @@
 [[req_geojson_content]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/geojson/content*
@@ -9,3 +10,28 @@
 * a GeoJSON Feature Object for a single feature.
 ^|C | Regardless of the TileMatrixSet CRS, the geometry coordinates SHALL be in CRS84 as stated in the GeoJSON standard unless a _prior arrangement_ applies to use an alternative coordinate reference system. The fact that a TileMatrixSet is used does not constitute a _prior arrangement_. For example, an extension could negotiate another CRS for coordinates with a query parameter.
 |===
+////
+
+[requirement,label="/req/geojson/content"]
+====
+For each UML class defined or referenced in the Relief Package:
+
+[.component,class=part]
+--
+Every 200-response of the server with the media type application/geo+json SHALL be a GeoJSON document representing only one tile.
+--
+
+[.component,class=part]
+--
+The root of the GeoJSON document SHALL be
+
+* a GeoJSON FeatureCollection Object for features, or
+* a GeoJSON Feature Object for a single feature.
+--
+
+[.component,class=part]
+--
+Regardless of the TileMatrixSet CRS, the geometry coordinates SHALL be in CRS84 as stated in the GeoJSON standard unless a _prior arrangement_ applies to use an alternative coordinate reference system. The fact that a TileMatrixSet is used does not constitute a _prior arrangement_. For example, an extension could negotiate another CRS for coordinates with a query parameter.
+--
+
+====

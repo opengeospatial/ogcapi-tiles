@@ -33,7 +33,7 @@ All questions regarding this submission should be directed to the editor or the 
 
 [%unnumbered]
 |===
-| Name | Affiliation
+| *Name* | *Affiliation*
 | Joan Masó | Universitat Autònoma de Barcelona (CREAF)
 | Chuck Heazel | Heazel Tech
 | Jeff Harrison | US Army Geospatial Center

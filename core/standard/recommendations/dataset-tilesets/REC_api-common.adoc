@@ -1,6 +1,15 @@
 [[rec_dataset-tilesets_api-common]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/dataset-tilesets/api-common*
 ^|A |An implementation of this standard SHOULD consider to implement the requirements specified in the http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core Requirements Class of the OGC API-Common version 1.0 Standard.
 |===
+////
+
+[recommendation]
+====
+[%metadata]
+label:: /rec/dataset-tilesets/api-common
+part:: An implementation of this standard SHOULD consider to implement the requirements specified in the http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core Requirements Class of _OGC API - Common - Part 1: Core_ version 1.0.0.
+====
