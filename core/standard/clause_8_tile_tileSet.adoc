@@ -78,7 +78,7 @@ NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile M
 
 //include::requirements/tileset/REQ_tile-template.adoc[]
 
-NOTE: The geospatial data resource URL is expected to be the first part of the URL template (presented by the '...' in the previous note) but this standard does not mandate this.
+NOTE: When this conformance class is used together with the GeoData Tilesets conformance class, the geospatial data resource URL is typically the first part of the URL template, but this standard does not mandate this (e.g., the tileset metadata and tiles could be hosted on more affordable object storage).
 
 [[TilesetTilesURIResponseExample]]
 .Example fragment of a tileset response for a common TileMatrixSet defined in the OGC NA registry
