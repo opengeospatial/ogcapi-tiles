@@ -1,4 +1,4 @@
-[[rec_tilesets-list_tileset_title]]
+[[rec_tilesets-list_tileset-title]]
 ////
 [width="90%",cols="2,6a"]
 |===

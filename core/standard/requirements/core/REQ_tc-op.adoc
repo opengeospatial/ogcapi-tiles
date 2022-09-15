@@ -4,8 +4,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/tc-op*
 ^|A |The tiles making up a tileset containing available data SHALL be available as an HTTP GET request to a URI that can be built from a template
-containing three variables (such as `{tileMatrix}`, `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{z}`, `{y}` and `{x}`).
-The URI is obtained by substituting the variables by their respective valid values.
+containing two or three variables. If the tileset is available for more than one tilematrix, the template shall contain three variables (such as `{tileMatrix}`, `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{z}`, `{y}` and `{x}`).  If the tileset is available for a single tilematrix, the template shall contain two variables (such as `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{y}` and `{x}`).
 ^|B |These variables SHALL correspond to the tile matrix, tile row and tile column of a particular tile matrix set as defined by the 2D Tile Matrix Set standard.
 ^|C |The API SHALL provide a mechanism to obtain this template and associate the variables to their respective meaning, for example by implementing the tileset
 conformance class, or through an API definition.
@@ -17,7 +16,7 @@ conformance class, or through an API definition.
 [%metadata]
 label:: /req/core/tc-op
 part:: The tiles making up a tileset containing available data SHALL be available as an HTTP GET request to a URI that can be built from a template
-containing three variables (such as `{tileMatrix}`, `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{z}`, `{y}` and `{x}`).
+containing two or three variables. If the tileset is available for more than one tilematrix, the template shall contain three variables (such as `{tileMatrix}`, `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{z}`, `{y}` and `{x}`).  If the tileset is available for a single tilematrix, the template shall contain two variables (such as `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{y}` and `{x}`).
 The URI is obtained by substituting the variables by their respective valid values.
 part:: These variables SHALL correspond to the tile matrix, tile row and tile column of a particular tile matrix set as defined by the 2D Tile Matrix Set standard.
 part:: The API SHALL provide a mechanism to obtain this template and associate the variables to their respective meaning, for example by implementing the tileset

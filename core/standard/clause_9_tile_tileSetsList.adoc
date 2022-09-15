@@ -17,13 +17,13 @@ Each _tileset_ resource returns the necessary metadata to enable a client applic
 ==== Tilesets path
 This class does not specify the full path to a tileset list but requires that it ends with `/tiles`.
 
-include::requirements/tilesets-list/REQ_tileset-path.adoc[]
+include::requirements/tilesets-list/REQ_tilesets-list_tileset-path.adoc[]
 
 ==== Response
 
 A successful GET response to a list of tilesets resource will respond with a data structure that lists the tileset URLs available (one for each Tile Matrix Set supported).
 
-include::requirements/tilesets-list/REQ_tileset-links.adoc[]
+include::requirements/tilesets-list/REQ_tilesets-list_tileset-links.adoc[]
 
 
 [[TilesetsTilesLinkResponseExample]]
@@ -56,6 +56,6 @@ include::requirements/tilesets-list/REQ_tileset-links.adoc[]
 }
 =================
 
-include::recommendations/tilesets-list/REC_tileset-title.adoc[]
+include::recommendations/tilesets-list/REC_tilesets-list_title.adoc[]
 
-include::recommendations/tilesets-list/PER_tilesets-api.adoc[]
+include::recommendations/tilesets-list/PER_tilesets-list_api.adoc[]

@@ -28,7 +28,7 @@ When this parameter refers to more than one geospatial data resource, this param
 comma (",") as the separator between the resource identifiers in the list. Additional white space will not be used to delimit list items. If a geospatial data resource identifier includes a space or comma, it shall be escaped using the URL encoding rules (IETF RFC 2396).
 
 [[per_collections-selection_valid-collections]]
-include::recommendations/collections-selection/PER_collections-selection.adoc[]
+include::recommendations/collections-selection/PER_valid-collections.adoc[]
 
 [[req_collections-selection-response]]
 ==== Response

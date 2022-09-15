@@ -1,4 +1,4 @@
-[[req_tilesets-tileset-path]]
+[[req_tilesets-list_tileset-path]]
 ////
 [width="90%",cols="2,6a"]
 |===

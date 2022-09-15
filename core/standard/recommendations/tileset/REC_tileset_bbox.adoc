@@ -1,4 +1,4 @@
-[[rec_tileset-bbox.adoc]]
+[[rec_tileset_bbox.adoc]]
 ////
 [width="90%",cols="2,6a"]
 |===

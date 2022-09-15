@@ -1,4 +1,4 @@
-[[rec_dataset-tilesets-landingpage]]
+[[rec_dataset-tilesets_landingpage]]
 ////
 [width="90%",cols="2,6a"]
 |===
