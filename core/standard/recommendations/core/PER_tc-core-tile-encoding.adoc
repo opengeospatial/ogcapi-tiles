@@ -1,4 +1,5 @@
 [[per_tileset_tc-core-tile-encoding]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/tileset/tc-core-tile-encoding*
@@ -6,3 +7,13 @@
 ^|B |This draft specification does not impose any media type on the encoding of a response containing tiled coverage data. For coverages it MAY be a GeoTIFF, netCDF or other format.
 ^|C |This draft specification does not impose any media type on the encoding of a map tile response. For maps it MAY be a JPEG, PNG or other format.
 |===
+////
+
+[permission]
+====
+[%metadata]
+label:: /per/tileset/tc-core-tile-encoding
+part:: This draft specification does not impose any media type on the encoding of a response containing tiled feature data. For features the media type MAY be GeoJSON, Mapbox vector tiles or other format.
+part:: This draft specification does not impose any media type on the encoding of a response containing tiled coverage data. For coverages it MAY be a GeoTIFF, netCDF or other format.
+part:: This draft specification does not impose any media type on the encoding of a map tile response. For maps it MAY be a JPEG, PNG or other format.
+====

@@ -1,4 +1,5 @@
 [[rm_datetime]]
+[%unnumbered%]
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Module*
@@ -50,4 +51,3 @@ March 18, 2018, 12:31:12 UTC or earlier:
 =================
 
 A template for the definition of the parameter in YAML according to OpenAPI 3.0 is available at link:http://beta.schemas.opengis.net/ogcapi/common/part2/0.1/collections/openapi/parameters/datetime.yaml[datetime.yaml].
-

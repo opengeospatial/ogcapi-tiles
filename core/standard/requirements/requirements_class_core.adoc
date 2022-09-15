@@ -1,4 +1,5 @@
 [[rc_table-core]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*
@@ -8,3 +9,15 @@
 |Dependency |<<rfc2818,RFC 2818 (HTTP over TLS)>> (optional)
 |Dependency |http://www.opengis.net/spec/tms/2.0/req/tilematrixset
 |===
+////
+
+[requirements_class]
+.Requirements Class Core
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+subject:: Web API
+inherit:: <<rfc2616,RFC 2616 (HTTP/1.1)>>
+inherit:: <<rfc2818,RFC 2818 (HTTP over TLS)>> (optional)
+inherit:: http://www.opengis.net/spec/tms/2.0/req/tilematrixset
+====

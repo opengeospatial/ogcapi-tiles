@@ -1,4 +1,5 @@
 [[per_core_tc-tilematrixset-definition]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/core/tc-tilematrixset-definition*
@@ -17,3 +18,34 @@
   example: 'WebMercatorQuad'
 ----
 |===
+////
+
+[permission,label="/per/core/tc-tilematrixset-definition"]
+====
+
+[.component,class=part]
+--
+An extra `{tileMatrixSetId}` variable may be used by the API definition for simplification purposes and, this way, make all tileset paths homogeneous.
+--
+
+[.component,class=part]
+--
+The `{tileMatrixSetId}` variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represents all the TileMatrixSets supported by the resource.
+--
+
+[.component,class=part]
+--
+The following OpenAPI Specification 3.0 fragment) can be used in this case:
+
+[source,YAML]
+----
+  name: tileMatrixSetId
+  in: path
+  description: Identifier selecting one of the TileMatrixSetId supported by the resource.
+  required: true
+  schema:
+    type: string
+  example: 'WebMercatorQuad'
+----
+--
+====

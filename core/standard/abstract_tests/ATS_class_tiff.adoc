@@ -1,4 +1,5 @@
 [[ats_tiff]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance TIFF*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_tiff,TIFF>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tiff
+subject:: <<rc_tiff,TIFF>>
+classification:: Target Type:Web API
+====
 
 === TIFF encoding
 

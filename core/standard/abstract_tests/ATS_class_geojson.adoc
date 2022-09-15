@@ -1,4 +1,5 @@
 [[ats_geojson]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance GeoJSON*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_geojson,GeoJSON>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geojson
+subject:: <<rc_geojson,GeoJSON>>
+classification:: Target Type:Web API
+====
 
 === GeoJSON Encoding
 

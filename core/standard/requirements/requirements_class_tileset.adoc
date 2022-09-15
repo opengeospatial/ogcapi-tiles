@@ -1,4 +1,5 @@
 [[rc_table-tileset]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*
@@ -8,3 +9,15 @@
 |Dependency |http://www.opengis.net/spec/tms/2.0/req/json-tilesetmetadata
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 |===
+////
+
+[requirements_class]
+.Requirements Class Tileset
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
+subject:: Web API
+inherit:: <<rfc8288,RFC 8288 (Web Linking)>>
+inherit:: http://www.opengis.net/spec/tms/2.0/req/json-tilesetmetadata
+inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+====

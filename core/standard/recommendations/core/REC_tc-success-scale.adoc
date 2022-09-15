@@ -1,6 +1,15 @@
 [[rec_tileset_tc-success-scale]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tileset/tc-success-scale*
 ^|A |The content of that response SHOULD be simplified to comply with the scale denominator represented by the TileMatrix identified. Full resolution geographical elements are only expected for the lower values of scale denominators.
 |===
+////
+
+[recommendation]
+====
+[%metadata]
+label:: /rec/tileset/tc-success-scale
+part:: The content of that response SHOULD be simplified to comply with the scale denominator represented by the TileMatrix identified. Full resolution geographical elements are only expected for the lower values of scale denominators.
+====

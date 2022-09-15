@@ -1,6 +1,15 @@
 [[rec_tiles_tmxs-tilematrixset-response]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/tiles/tmxs/tilematrixset-response*
 ^|A |The server may support a tileMatrixSetId that is one of the TileMatrixSets defined in the Annex D and Annex G of OGC 17-083r2 and return a successful response with a description identical to the one in the Annex D and Annex G of OGC 17-083r2.
 |===
+////
+
+[recommendation]
+====
+[%metadata]
+label:: /rec/tiles/tmxs/tilematrixset-response
+part:: The server may support a tileMatrixSetId that is one of the TileMatrixSets defined in the Annex D and Annex G of OGC 17-083r2 and return a successful response with a description identical to the one in the Annex D and Annex G of OGC 17-083r2.
+====

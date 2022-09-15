@@ -1,4 +1,17 @@
-[big]*i.     Abstract*
+.Preface
+
+This document defines the OGC API - Tiles - Part 1: Core standard. A web API conforming to this standard can serve tiles of spatially referenced data or maps with predefined content, extent, and resolution. Suggested additions, changes and comments on this standard are welcome and encouraged. Such suggestions may be submitted using the GitHub repository issues: https://github.com/opengeospatial/ogcapi-tiles .
+
+////
+*OGC Declaration*
+////
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+[abstract]
+== Abstract
 
 _OGC API - Tiles_ is a standard defining building blocks to create Web APIs allowing to retrieve geospatial information as tiles.
 Different forms of geospatial information are supported, such as tiles of vector features ("vector tiles"), coverages, maps (or imagery) and other types of geospatial information.
@@ -13,39 +26,17 @@ This specification is a successor to the OGC's previous Web Map Tile Service (WM
 REST API building blocks which can be described using the OpenAPI specification.
 Whereas WMTS focused on map tiles, the _OGC API - Tiles_ standard has been designed to support any form of tiled data.
 
-[big]*ii.    Keywords*
 
-The following are keywords to be used by search engines and document catalogues.
+== Submitters
 
-ogcdoc, OGC document, tiling, tiles, WMTS, map tiles, vector tiles, tiled feature data
+All questions regarding this submission should be directed to the editor or the submitters:
 
-[big]*iii.   Preface*
-
-This document defines the OGC API - Tiles standard. A web API conforming to this standard can serve tiles of spatially referenced data or maps with predefined content, extent, and resolution. Suggested additions, changes and comments on this standard are welcome and encouraged. Such suggestions may be submitted using the GitHub repository issues: https://github.com/opengeospatial/ogcapi-tiles .
-
-Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
-
-Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
-
-[big]*iv.    Submitting organizations*
-
-The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
-
-- UAB-CREAF
-- AGC
-- Ecere Corporation
-- ESRI
-
-[big]*v.     Submitters*
-
-All questions regarding this submission should be directed to the editors or the submitters:
-
-[cols=",",options="header",]
+[%unnumbered]
 |===
-|Name |Affiliation
-|Joan Masó | UAB-CREAF
-|Chuck Heazel | Heazel Tech
-|Jeff Harrison | AGC
-|Jérôme Jacovella-St-Louis| Ecere Corporation
-|Satish Sankaran | ESRI
+| *Name* | *Affiliation*
+| Joan Masó | Universitat Autònoma de Barcelona (CREAF)
+| Chuck Heazel | Heazel Tech
+| Jeff Harrison | US Army Geospatial Center
+| Jérôme Jacovella-St-Louis| Ecere Corporation
+| Satish Sankaran | Esri
 |===

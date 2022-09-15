@@ -1,4 +1,5 @@
 [[ats-xml]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance XML*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_xml,XML>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
+subject:: <<rc_xml,XML>>
+classification:: Target Type:Web API
+====
 
 === XML encoding
 

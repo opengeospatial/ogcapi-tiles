@@ -1,4 +1,5 @@
 [[ats_mvt]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Conformance Mapbox Vector Tiles*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_mvt,Mapbox Vector Tiles>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
+subject:: <<rc_mvt,Mapbox Vector Tiles>>
+classification:: Target Type:Web API
+====
 
 === Mapbox Vector Tiles Encoding
 

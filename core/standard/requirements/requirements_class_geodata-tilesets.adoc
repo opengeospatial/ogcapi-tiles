@@ -1,4 +1,5 @@
 [[rc_table-geodata-tilesets]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*
@@ -6,3 +7,13 @@
 |Target type |Web API
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list
 |===
+////
+
+[requirements_class]
+.Requirements Class Geodata Tilesets
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-tilesets
+subject:: Web API
+inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list
+====

@@ -1,4 +1,5 @@
 [[rc_table-xml]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements XML*
@@ -8,3 +9,15 @@
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
 |Dependency |http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list (optional)
 |===
+////
+
+[requirements_class]
+.Requirements Class XML
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml
+subject:: Web API
+inherit:: http://www.opengis.net/spec/tms/2.0/req/xml-tilesetmetadata
+inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset
+inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list (optional)
+====

@@ -1,4 +1,5 @@
 [[ats_dataset-tilesets]]
+////
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class*
@@ -6,6 +7,15 @@
 |Target type |Web API
 |Requirements class |<<rc_datasetTileSets,Dataset Tile Sets>>
 |===
+////
+
+[conformance_class]
+====
+[%metadata]
+label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/dataset-tilesets
+subject:: <<rc_datasetTileSets,Dataset Tile Sets>>
+classification:: Target Type:Web API
+====
 
 === Web API landing page
 

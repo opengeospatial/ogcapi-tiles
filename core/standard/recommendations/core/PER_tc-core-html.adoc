@@ -1,6 +1,15 @@
 [[per_tileset_tc-core-html]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Permission {counter:per-id}* |*/per/tileset/tc-core-html*
 ^|A |Every `200`-response of an operation of the server MAY support the media type `text/html`.
 |===
+////
+
+[permission]
+====
+[%metadata]
+label:: /per/tileset/tc-core-html
+part:: Every `200`-response of an operation of the server MAY support the media type `text/html`.
+====

@@ -1,4 +1,5 @@
 [[req_core_core_tc-success]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/tc-success*
@@ -7,3 +8,14 @@
 ^|C |For image tiles, where this behavior is not explicitly overridden by an extension (e.g., a query parameter, or format-specific requirements), the width and height of the image (measured in raster pixels) SHALL be equal to the tileWidth and tileHeight of the corresponding tile matrix.
 ^|D |For gridded coverage tiles, where this behavior is not explicitly overridden by an extension (e.g., a query parameter, or format-specific requirements), for coverages whose cells span the whole area of the resolution, the width and height of the coverage tile (measured in cells) SHALL be the tileWidth and tileHeight of the corresponding tile matrix; and for coverages whose cells are measurements or observations for a conceptually infinitely small point the width and height of the coverage tile SHALL be tileWidth + 1 and tileHeight + 1.
 |===
+////
+
+[requirement]
+====
+[%metadata]
+label:: /req/core/tc-success
+part:: A successful execution of the tile operation with content SHALL be reported as a response with a HTTP status code `200`.
+part:: The content of that response SHALL be consistent with the format requested via HTTP content negotiation and represent elements inside or intersecting with the spatial extent of the geographical area of the tile identified by the tile matrix, tile row and tile column of the tileset's tile matrix set.
+part:: For image tiles, where this behavior is not explicitly overridden by an extension (e.g., a query parameter, or format-specific requirements), the width and height of the image (measured in raster pixels) SHALL be equal to the tileWidth and tileHeight of the corresponding tile matrix.
+part:: For gridded coverage tiles, where this behavior is not explicitly overridden by an extension (e.g., a query parameter, or format-specific requirements), for coverages whose cells span the whole area of the resolution, the width and height of the coverage tile (measured in cells) SHALL be the tileWidth and tileHeight of the corresponding tile matrix; and for coverages whose cells are measurements or observations for a conceptually infinitely small point the width and height of the coverage tile SHALL be tileWidth + 1 and tileHeight + 1.
+====
