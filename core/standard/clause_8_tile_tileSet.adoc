@@ -76,7 +76,7 @@ Clients or servers are not required to support a specific default TileMatrixSet.
 
 NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile Matrix Set standard. Refer to Annex D and E for commonly used TileMatrixSets
 
-//include::requirements/tileset/REQ_tile-template.adoc[]
+
 
 NOTE: When this conformance class is used together with the GeoData Tilesets conformance class, the geospatial data resource URL is typically the first part of the URL template, but this standard does not mandate this (e.g., the tileset metadata and tiles could be hosted on more affordable object storage).
 
