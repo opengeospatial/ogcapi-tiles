@@ -27,7 +27,7 @@ NOTE: This path template is recommended, but not prescribed. Ordering the parame
 The _tileset_ conformance class defines a mechanism to describe a tileset using a specific tile matrix set and obtain a templated link to individual tiles.
 
 [#table_resource_tileset,reftext='{table-caption} {counter:table-num}']
-.Overview of resources and common direct links that corresponds to the tileset
+.Overview of resources and common direct links that correspond to the tileset
 [cols="33,66",options="header"]
 |===
 |Resource name |**Common** path
