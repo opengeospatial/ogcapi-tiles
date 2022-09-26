@@ -125,7 +125,7 @@ All these conformance classes act as building blocks that should be implemented 
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
-NOTE: Despite the fact that full paths and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the Web API definition document and the links between resources.
+NOTE: Despite the fact that full paths and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described by the Web API definition document and the links between resources.
 
 === Declaration of conformance
 
