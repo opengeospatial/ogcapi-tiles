@@ -225,7 +225,7 @@ The TileMatrixSets endpoint retrieves links to the descriptions of the tile matr
     tileMatrixSets:
       type: array
       items:
-        $ref: 'https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/id-link'
+        $ref: '#/components/schemas/id-link'
 =================
 
 [[TileMatrixSetsResponseCommonSchema]]
