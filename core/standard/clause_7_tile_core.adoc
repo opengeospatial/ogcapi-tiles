@@ -5,7 +5,7 @@
 
 include::requirements/requirements_class_core.adoc[]
 
-The core conformance class is designed as a very generic conformance class that describes a HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard. It introduces the idea of URI templates and variables associated to the TileMatrix, TileRow and TileCol concepts defined in the 2D Tile Matrix Set standard but it does not prescribe a particular path or template form for the URL of those tiles.
+The core conformance class is designed as a very generic conformance class that describes a HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the 2D Tile Matrix Set standard. It introduces the idea of URI templates and variables associated to the TileMatrix, TileRow and TileCol concepts defined in the https://docs.ogc.org/is/17-083r4/17-083r4.html[2D Tile Matrix Set standard] but it does not prescribe a particular path or template form for the URL of those tiles.
 
 This conformance class by itself only concerns the individual tiles and does not describe the tileset as a whole. It is highly recommended that the implementer of a Web API provides tileset metadata in conjunction with the core conformance class as it provides important information to clients. This can be done by also implementing the <<rc_tileSet>> or integrating within another API providing this capability through another mechanism.
 
