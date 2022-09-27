@@ -3,7 +3,7 @@
 
 === Introduction
 
-The _OGC API - Tiles_ standard defines building blocks which can be used in a Web API to retrieve geospatial data as tiles that follow the structure defined in OGC  17-083r4 _2D Tile Matrix Set and Tileset Metadata_ standard (see <<rc_tiles_core>>). The text in this document assumes that the reader is familiar with the concepts in the OGC 17-083r4, such as tile, tile set, tile set metadata, tile matrix and tile matrix set. If that is not the case, reading the overview subsection in the OGC 17-083r4 first is recommended.
+The _OGC API - Tiles_ standard defines building blocks which can be used in a Web API to retrieve geospatial data as tiles that follow the structure defined in https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC 17-083r4] _2D Tile Matrix Set and Tileset Metadata_ standard (see <<rc_tiles_core>>). The text in this document assumes that the reader is familiar with the concepts in the OGC 17-083r4, such as tile, tile set, tile set metadata, tile matrix and tile matrix set. If that is not the case, reading the overview subsection in the OGC 17-083r4 first is recommended.
 
 Services and clients are encouraged to support as many of the TileMatrixSets defined in the OGC 17-083r4 Annex D and E, as well as others in the OGC TileMatrixSet registry as possible for all geospatial data resources to maximize interoperability.
 However support for any specific tile matrix set is not required.

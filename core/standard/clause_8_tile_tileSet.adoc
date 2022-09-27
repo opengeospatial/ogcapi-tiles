@@ -11,7 +11,7 @@ The tileset conformance class provides a mechanism to retrieve metadata for a se
 It also provides a mechanism to obtain a templated link to retrieve individual tiles as defined in the _core_ conformance class.
 
 It describes the HTTP GET operation on a tileset resource and its response, but does not prescribe an specific path.
-The response provides metadata as per the 2D Tile Matrix Set and TileSet Metadata standard.
+The response provides metadata as per the https://docs.ogc.org/is/17-083r4/17-083r4.html[2D Tile Matrix Set and TileSet Metadata standard].
 
 The essential elements of this metadata are:
 
@@ -225,7 +225,7 @@ The TileMatrixSets endpoint retrieves links to the descriptions of the tile matr
     tileMatrixSets:
       type: array
       items:
-        $ref: 'https://api.swaggerhub.com/domains/UAB-CREAF/ogc-api-common/1.0.0#/components/schemas/id-link'
+        $ref: '#/components/schemas/id-link'
 =================
 
 [[TileMatrixSetsResponseCommonSchema]]

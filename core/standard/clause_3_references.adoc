@@ -1,14 +1,13 @@
 == References
 The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
 
-[1] OGC: OGC 19-014r3 OGC Abstract Specification Topic 22 - Core Tiling Conceptual and Logical Models for 2D Euclidean Space, 2020
-https://docs.ogc.org/as/19-014r3/19-014r3.html
+[1] OGC: https://docs.ogc.org/as/19-014r3/19-014r3.html[OGC 19-014r3] OGC Abstract Specification Topic 22 - Core Tiling Conceptual and Logical Models for 2D Euclidean Space, 2020
 
-[2] OGC: OGC 17-083r4, OGC Two Dimensional Tile Matrix Set Standard (2022)
+[2] OGC: https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC 17-083r4], OGC Two Dimensional Tile Matrix Set Standard (2022)
 
 [3] OGC API - Common - Part 1: Core (2022)
 
 [4] OGC API - Common - Part 2: Geospatial data (2022)
 
 NOTE: Certain conformance classes have a dependency on OGC API - Common - Part 1: Core
-or OGC API - Common - Part 2: Geospatial data. In some cases, it is possible to replace these dependencies with OGC API - Features - Part 1: Core (http://docs.ogc.org/is/17-069r3/17-069r3.html).
+or OGC API - Common - Part 2: Geospatial data. In some cases, it is possible to replace these dependencies with http://docs.ogc.org/is/17-069r3/17-069r3.html[OGC 17-069r3] OGC API - Features - Part 1: Core.

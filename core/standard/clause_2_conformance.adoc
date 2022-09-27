@@ -7,7 +7,7 @@ The requirements classes are:
 
 === Requirements classes defining resources
 
-*<<rc_tiles_core>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core)
+*<<rc_tiles_core,Requirements Class "Core">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core)
 
 The Core specifies requirements that all Web APIs have to implement if they are claiming to support tiles from a geospatial resource following this _OGC API - Tiles Part 1: Core_ standard.
 It defines how to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.
@@ -22,7 +22,7 @@ It defines how to retrieve individual tiles by building a URI from three variabl
 
 NOTE: This path template is recommended, but not prescribed. Ordering the parameters differently within the URI is allowed.
 
-*<<rc_tileSet>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset)
+*<<rc_tileSet,Requirements Class "TileSet">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset)
 
 The _tileset_ conformance class defines a mechanism to describe a tileset using a specific tile matrix set and obtain a templated link to individual tiles.
 
@@ -35,7 +35,7 @@ The _tileset_ conformance class defines a mechanism to describe a tileset using 
 |Tile |`.../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}`
 |===
 
-*<<rc_tileSets-list>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list)
+*<<rc_tileSets-list,Requirements Class "TileSets List">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list)
 
 The _tilesets list_ conformance class defines a generic operation to retrieve a list of tilesets, without association to any particular type of resources.
 
@@ -49,7 +49,7 @@ The _tilesets list_ conformance class defines a generic operation to retrieve a 
 
 === Requirements classes defining data origins
 
-*<<rc_datasetTileSets>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets)
+*<<rc_datasetTileSets,Requirements Class "Dataset TileSets">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets)
 
 The _dataset tilesets_ conformance class allows retrieving tiles for a whole dataset potentially made up of multiple geospatial data resources.
 All Web APIs have to implement this conformance class if they are claiming to support *dataset* tiles following this _OGC API - Tiles Part 1: Core_ standard.
@@ -65,7 +65,7 @@ Dataset tiles may combine content from multiple geospatial resources, regardless
 |Styled Map tileset list | `/styles/{styleId}/map/tiles`
 |===
 
-*<<rc_geoDataResourceTileSets>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-tilesets)
+*<<rc_geoDataResourceTileSets,Requirements Class "GeoData TileSets">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-tilesets)
 
 The _geodata tilesets_ conformance class allows retrieving tiles from a specific geospatial data resource.
 
@@ -81,7 +81,7 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 
 === Requirements classes defining query parameters
 
-*<<rc_collections-selection>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
+*<<rc_collections-selection,Requirements Class "Collections Selection">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
 
 The _tiles geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve tiles, e.g. for use with data set tiles.
 
@@ -96,21 +96,21 @@ The _tiles geodata selection_ conformance class allows to list specific geospati
 |Map tile | `/map/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}?collections={collectionId},{collectionId},...`
 |===
 
-*<<rc_datetime>>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/datetime)
+*<<rc_datetime,Requirements Class "DateTime">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/datetime)
 
 The _datetime_ conformance class specifies how to provide tiles in a domain that has a generic time dimension.
 
 === Requirements classes for specific resource representations
 
-*<<rc_oas30_definition>>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/oas30)
+*<<rc_oas30_definition,Requirements Class "OpenAPI Specification 3.0 API definition">>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/oas30)
 
 The _OpenAPI Specification 3.0_ conformance class specifies requirements for an OpenAPI 3.0 definition in addition to those defined in _OGC API - Common - Part 1: Core_.
 
-*<<rc_xml>>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml)
+*<<rc_xml,Requirements Class "XML TileSet Metadata">>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml)
 
 The _XML_ conformance class specifies how to use XML as an alternative encoding for describing tilesets.
 
-*<<rc_data_encodings>>*
+*<<rc_data_encodings,Requirements Classes for tile encodings>>*
 
 This standard does not mandate a specific encoding or format for representing tiles and remains flexible and extensible to other formats that users and providers might need. However, requirements classes are provided for the following common tile formats:
 
@@ -125,7 +125,7 @@ All these conformance classes act as building blocks that should be implemented 
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
-NOTE: Despite the fact that full paths and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described in by the Web API definition document and the links between resources.
+NOTE: Despite the fact that full paths and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described by the Web API definition document and the links between resources.
 
 === Declaration of conformance
 
