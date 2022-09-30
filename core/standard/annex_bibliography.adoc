@@ -1,7 +1,7 @@
 [bibliography]
 == Bibliography
 
-This standard is deeply inspired in concepts defined in the following documents that preceded it. This standard offers and alternative interface to fulfill similar tasks included in these references:
+This standard is deeply inspired by concepts defined in the following documents that preceded it. This standard offers an alternative interface to fulfill similar tasks described in these references:
 
 * [[[OGC17-041,OGC 17-041]]], Cavazzi S.: OGC Testbed-13: Vector Tiles Engineering Report (OGC 17-041), https://docs.ogc.org/per/17-041.html
 
