@@ -16,4 +16,5 @@
 label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-tilesets
 subject:: Web API
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list
+inherit:: http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections
 ====
