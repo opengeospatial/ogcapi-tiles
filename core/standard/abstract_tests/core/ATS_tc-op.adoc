@@ -20,7 +20,7 @@ conformance class, or through an API definition.
 ====
 [%metadata]
 identifier:: /conf/core/tc-op
-target:: /req/core/tc-op 
+target:: /req/core/tc-op
 test-purpose:: With a provided template, validate that  tiles are available for the right GET request.
 test-method::
 +
