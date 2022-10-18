@@ -16,6 +16,6 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/jpeg
 subject:: Web API
-inherit:: <<ISO/IEC 10918-1>>
+inherit:: <<ISO_IEC_10918-1>>
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 ====

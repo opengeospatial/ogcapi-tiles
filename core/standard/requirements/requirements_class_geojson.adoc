@@ -16,6 +16,6 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geojson
 subject:: Web API
-inherit:: <<GeoJSON>>
+inherit:: <<rfc7946, GeoJSON>>
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 ====

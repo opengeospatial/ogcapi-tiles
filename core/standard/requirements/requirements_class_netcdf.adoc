@@ -16,6 +16,6 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/netcdf
 subject:: Web API
-inherit:: OGC 10-090r3 OGC Network Common Data Form NetCDF Core Encoding Standard version 1.0
+inherit:: <<OGC10-090r3, OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0>>
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 ====

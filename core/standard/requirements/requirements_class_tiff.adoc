@@ -16,6 +16,6 @@
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tiff
 subject:: Web API
-inherit:: <<TIFF V6>>
+inherit:: <<TIFF_V6>>
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 ====
