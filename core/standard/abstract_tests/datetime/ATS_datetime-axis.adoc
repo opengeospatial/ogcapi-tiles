@@ -15,6 +15,7 @@
 identifier:: /conf/datetime/axis
 target:: /req/datetime/axis
 test-purpose:: Validate that a request of a subset of a datetime dimension is supported by the server
+test-method::
 +
 --
 1. Validate the server support "datetime" as axisname in the subset parameter to subset the generic datetime dimension.

@@ -19,6 +19,7 @@
 identifier:: /conf/mvt/content
 target:: /req/mvt/content
 test-purpose:: Validate the particularities of a Mapbox Vector Tiles response
+test-method::
 +
 --
 1. Validate that every 200-response of the server with the media type application/vnd.mapbox-vector-tile contains a Mapbox Vector Tile document representing only one tile.

@@ -19,6 +19,7 @@
 identifier:: /conf/geojson/content
 target:: /req/geojson/content
 test-purpose:: Validate the particularities of a GeoJSON response
+test-method::
 +
 --
 1. Validate that every 200-response of the server with the media type application/geo+json contains a GeoJSON document representing only one tile.

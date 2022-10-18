@@ -16,6 +16,7 @@
 identifier:: /conf/oas30/operation-id
 target:: /req/oas30/operation-id
 test-purpose:: Validate use of operationID suffixes in OpenAPI definition
+test-method::
 +
 --
 1. Validate that at least one instance of all path operations defined in the supported conformance classes can be discovered in the API definition by identifying them based on the operationIDs suffixes specified in <<openapi-operation-id-suffixes>>.

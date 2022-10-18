@@ -18,6 +18,7 @@
 identifier:: /conf/xml/content
 target:: /req/xml/content
 test-purpose:: Validate the particularities of a XML response
+test-method::
 +
 --
 1. Validate that every request to a TileSets list or TileSet resource which: Receives a `200`-response and with the `Content-Type` header set to `application/xml` includes, or links to, a payload encoded according to the  link:https://www.w3.org/TR/xml/[Extensible Markup Language (XML) 1.0]

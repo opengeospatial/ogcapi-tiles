@@ -20,6 +20,7 @@
 identifier:: /conf/tiff/content
 target:: /req/tiff/content
 test-purpose:: Validate the particularities of a TIFF response
+test-method::
 +
 --
 1. Validate that every 200-response of the server with the media type image/tiff contains a TIFF document representing only one tile

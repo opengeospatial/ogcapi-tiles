@@ -15,6 +15,7 @@
 identifier:: /conf/dataset-tilesets/landingpage
 target:: /req/dataset-tilesets/landingpage
 test-purpose:: Validate that it is possible to retrieve the tilesets list for the dataset
+test-method::
 +
 --
 1. If the API has mechanism to expose root resources (e.g., a landing page), validate that the API advertises at least one URIs to retrieve tilesets list provided by this service with a link having a `rel` value: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`,  `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` or `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.

@@ -17,6 +17,7 @@
 identifier:: /conf/dataset-tilesets/operation
 target:: /req/dataset-tilesets/operation
 test-purpose:: Validate that there is an operation to get the tilesets list.
+test-method::
 +
 --
 1. Validate that the dataset resource (the root resource) has at least one tileset accessible at `.../tiles` supporting an HTTP GET operation

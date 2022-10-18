@@ -22,6 +22,7 @@
 identifier:: /conf/png/content
 target:: /req/png/content
 test-purpose:: Validate the particularities of a PNG response
+test-method::
 +
 --
 1. Validate that every 200-response of the server with the media type image/png contains a PNG document representing only one tile.

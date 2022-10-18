@@ -17,6 +17,7 @@
 identifier:: /conf/netcdf/content
 target:: /req/netcdf/content
 test-purpose:: Validate the particularities of a NetCDF response
+test-method::
 +
 --
 1. Validate that every 200-response of the server with the media type application/netcdf or application/x-netcdf contains a NetCDF document representing only one tile

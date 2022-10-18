@@ -17,6 +17,7 @@
 identifier:: /conf/geodata-tilesets/operation
 target:: /req/geodata-tilesets/operation
 test-purpose:: Validate that there is an operation to get the tilesets list.
+test-method::
 +
 --
 1. Validate that the geospatial data resource has an associated list of at least one tileset accessible at `.../tiles` supporting an HTTP GET operation

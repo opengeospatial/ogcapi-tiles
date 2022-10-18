@@ -26,6 +26,7 @@
 identifier:: /conf/tilesets-list/tileset-links
 target:: /req/tilesets-list/tileset-links
 test-purpose:: Validate that the content of a tileset list
+test-method::
 +
 --
 1. Validate that the API SHALL supports a GET operation on a `.../tiles` path returning a list of available tilesets

@@ -16,6 +16,7 @@
 identifier:: /conf/xml/definition
 target:: /req/xml/definition
 test-purpose:: Validate the support of the required media type
+test-method::
 +
 --
 1. Validate that `200`-responses of the server  supports the `application/xml` media type for the Tilesets list and TileSet resources.

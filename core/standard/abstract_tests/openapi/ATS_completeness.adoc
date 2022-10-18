@@ -20,6 +20,7 @@
 identifier:: /conf/oas30/completeness
 target:: /req/oas30/completeness
 test-purpose:: Validate OpenAPI completeness and consistency
+test-method::
 +
 --
 1. Validate that OpenAPI definition describes all tileset, tilesets list and tile resources provided by the API instance.
