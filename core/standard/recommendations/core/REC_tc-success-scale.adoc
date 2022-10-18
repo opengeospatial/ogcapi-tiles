@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/core/tc-success-scale
+identifier:: /rec/core/tc-success-scale
 part:: The content of that response SHOULD be simplified to comply with the scale denominator represented by the TileMatrix identified. Full resolution geographical elements are only expected for the lower values of scale denominators.
 ====

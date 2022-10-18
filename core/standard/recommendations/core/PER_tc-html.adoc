@@ -10,6 +10,6 @@
 [permission]
 ====
 [%metadata]
-label:: /per/core/tc-core-html
+identifier:: /per/core/tc-core-html
 part:: Every `200`-response of an operation of the server MAY support the media type `text/html`.
 ====

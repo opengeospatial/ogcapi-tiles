@@ -15,7 +15,7 @@ The syntax of `instant` is specified by link:https://tools.ietf.org/html/rfc3339
 |===
 ////
 
-[recommendation,label="/rec/actual-datetime"]
+[recommendation,label="/rec/actual-datetime",identifier="/rec/actual-datetime"]
 ====
 
 [.component,class=part]

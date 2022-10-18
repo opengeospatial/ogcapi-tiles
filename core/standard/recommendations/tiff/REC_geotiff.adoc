@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/tiff/geotiff
+identifier:: /rec/tiff/geotiff
 part:: A TIFF encoding SHOULD include georeference information in GeoTIFF format.
 ====

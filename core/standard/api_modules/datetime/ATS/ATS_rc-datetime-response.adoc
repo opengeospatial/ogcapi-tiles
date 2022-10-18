@@ -20,7 +20,8 @@
 ====
 [%metadata]
 identifier:: /conf/collections/rc-datetime-response
-target:: /req/collections/rc-datetime-definition, /req/collections/rc-datetime-response, /req/collections/rc-datetime-collection-response
+target:: /req/collections/rc-datetime-definition
+target:: /req/collections/rc-datetime-response
 test-purpose:: Validate that the `datetime` query parameter is processed correctly.
 test-method::
 +

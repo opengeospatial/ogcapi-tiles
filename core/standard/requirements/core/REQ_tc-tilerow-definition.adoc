@@ -20,7 +20,7 @@ following characteristics (shown as OpenAPI Specification 3.0 fragment):
 |===
 ////
 
-[requirement,label="/req/core/tc-tilerow-definition"]
+[requirement,label="/req/core/tc-tilerow-definition",identifier="/req/core/tc-tilerow-definition"]
 ====
 
 [.component,class=part]

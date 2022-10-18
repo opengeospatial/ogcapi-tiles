@@ -18,7 +18,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/tileset/description
+identifier:: /req/tileset/description
 part:: The tileset endpoint SHALL support negotiating an application/json response. In this case, a successful response of a HTTP GET for a specific tileset SHALL be encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 part:: If the tileset endpoint also support negotiating an application/xml response, a  successful response of a HTTP GET for a specific tileset SHALL be encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 part:: If the tileset uses a TileMatrixSet registered in a TileMatrixSet registry (e.g. OGC NA), the `tileMatrixSetURI` property SHALL link to the registered TileMatrixSet (e.g. `http://www.opengis.net/def/tilematrixset/{tileMatrixSet}`).

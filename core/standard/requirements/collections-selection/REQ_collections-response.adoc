@@ -12,7 +12,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/collections-selection/collections-response
+identifier:: /req/collections-selection/collections-response
 part:: Only the collections of geospatial data enumerated in the values of the `collections` parameter SHALL be used to generate the responses for the resources (tiles and tilesets) to which they apply.
 part:: If there is more than one collection name and the style applied does not specify otherwise, the comma-separated collections SHALL be included in the result starting by the first (leftmost) and ending by the last (rightmost).
 ====

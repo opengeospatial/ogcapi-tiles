@@ -13,7 +13,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/tilesets-list/tileset-links
+identifier:: /req/tilesets-list/tileset-links
 part:: A successful response of a HTTP GET SHALL consist of a list of available tilesets each element containing a subset of the tileset metadata (as defined by the 2D Tile Matrix Set and Metadata standard), consisting of: `dataType`, `crs`, a link to the tileset (with rel: `self`), a link to the tileMatrixSet defintion (with rel: `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme`) and `tileMatrixSetURI` (if the TMS is available in a registry).
 part:: Each element of that list SHALL include a link to a resource providing the full version of the tileset metadata, using link relation `self`.
 part:: The tileset-list endpoint SHALL support negotiating an application/json response. In this case, each tileset in the successful response of a HTTP GET SHALL be encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.

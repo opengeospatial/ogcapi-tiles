@@ -10,6 +10,6 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/xml/definition
+identifier:: /req/xml/definition
 part:: `200`-responses of the server SHALL support the `application/xml` media type for the Tilesets list and TileSet resources.
 ====

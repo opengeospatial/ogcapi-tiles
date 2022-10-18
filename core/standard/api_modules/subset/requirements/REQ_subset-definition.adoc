@@ -27,7 +27,7 @@ be supported to indicate an extent crossing that wrapping point.
 |===
 ////
 
-[requirement,label="/req/collections/rc-subset-definition"]
+[requirement,label="/req/collections/rc-subset-definition",identifier="/req/collections/rc-subset-definition"]
 ====
 
 [.component,class=part]

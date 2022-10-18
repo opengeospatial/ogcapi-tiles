@@ -31,7 +31,7 @@ datetime            = date-time / interval
 |===
 ////
 
-[requirement,label="/req/collections/rc-datetime-definition"]
+[requirement,label="/req/collections/rc-datetime-definition",identifier="/req/collections/rc-datetime-definition"]
 ====
 
 [.component,class=part]

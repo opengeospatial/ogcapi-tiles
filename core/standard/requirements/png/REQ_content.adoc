@@ -13,7 +13,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/png/content
+identifier:: /req/png/content
 part:: Every 200-response of the server with the media type image/png SHALL be a PNG document representing only one tile
 part:: The colors of the PNG SHALL represent the geospatial features or coverage values in the tile.
 part:: The alpha channel of the PNG SHALL be used when partial transparency is required

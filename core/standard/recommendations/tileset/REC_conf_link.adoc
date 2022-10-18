@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/tileset/conf-link
+identifier:: /rec/tileset/conf-link
 part:: Include a link with 'rel' type 'conformance' to link to the conformance page
 ====

@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/dataset-tilesets/geodata-selection
+identifier:: /rec/dataset-tilesets/geodata-selection
 part:: When it is possible and sensible, all geospatial data resources (`/collections`) SHOULD be represented in the tiles.
 ====

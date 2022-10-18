@@ -11,7 +11,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/netcdf/content
+identifier:: /req/netcdf/content
 part:: Every 200-response of the server with the media type application/netcdf or application/x-netcdf SHALL be a NetCDF document representing only one tile
 part:: The NetCDF file SHALL contain only data in two or more dimensions
 ====

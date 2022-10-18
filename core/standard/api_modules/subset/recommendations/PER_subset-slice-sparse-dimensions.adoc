@@ -15,7 +15,7 @@
 |===
 ////
 
-[permission,label="/per/coverage-subset/slice-sparse-dimension"]
+[permission,label="/per/coverage-subset/slice-sparse-dimension",identifier="/per/coverage-subset/slice-sparse-dimension"]
 ====
 
 [.component,class=part]

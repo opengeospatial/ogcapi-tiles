@@ -22,7 +22,7 @@
 ////
 
 
-[requirement,label="/req/collections-selection/query-collections"]
+[requirement,label="/req/collections-selection/query-collections",identifier="/req/collections-selection/query-collections"]
 ====
 
 [.component,class=part]

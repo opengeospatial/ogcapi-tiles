@@ -12,7 +12,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/tiff/content
+identifier:: /req/tiff/content
 part:: Every 200-response of the server with the media type image/tiff SHALL be a TIFF document representing only one tile
 part:: The TIFF file SHALL be organized in strips (avoiding organization in internal tiles).
 part:: All tiles representing parts of the same resource or resources and using the same style SHALL follow the same portrayal rules or represent data with the same reference and units of measure.

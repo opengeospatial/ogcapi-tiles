@@ -13,7 +13,7 @@ SHALL include, or link to, a payload encoded according to the  link:https://www.
 |===
 ////
 
-[requirement,label="/req/xml/content"]
+[requirement,label="/req/xml/content",identifier="/req/xml/content"]
 ====
 
 [.component,class=part]

@@ -10,7 +10,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/datetime/axis
+identifier:: /req/datetime/axis
 part:: To subset a generic time dimension, the server SHALL support "datetime" as axisname in the subset parameter
 ====
 

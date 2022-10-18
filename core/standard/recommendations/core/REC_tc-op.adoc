@@ -11,7 +11,7 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/core/tc-op
+identifier:: /rec/core/tc-op
 part:: A tiles implementation SHOULD consider to use the tiles URI template variables in the following common order and form: `{tileMatrix}/{tileRow}/{tileCol}`
 part:: A tiles implementation SHOULD consider to specify the variables `{tileMatrix}` even if there is only one valid value for them.
 ====

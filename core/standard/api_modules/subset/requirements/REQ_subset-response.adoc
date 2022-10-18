@@ -2,7 +2,7 @@
 ////
 [width="90%",cols="2,6a"]
 |===
-^|*Requirement {counter:req-id}* |*/req/collection/subset-response*
+^|*Requirement {counter:req-id}* |*/req/collections/rc-subset-response*
 ^|A |Only that part of the resource that falls within the bounds of the subset expression SHALL be returned.
 ^|B |If a lower limit of the subset expression is populated with an asterix "*" THEN the minimum extent of the resource along that axis SHALL be selected.
 ^|C |If an upper limit of the subset expression is populated with an asterix "*" THEN the maximum extent of the resource along that axis SHALL be selected.
@@ -12,7 +12,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/collection/subset-response
+identifier:: /req/collections/rc-subset-response
 part:: Only that part of the resource that falls within the bounds of the subset expression SHALL be returned.
 part:: If a lower limit of the subset expression is populated with an asterix "*" THEN the minimum extent of the resource along that axis SHALL be selected.
 part:: If an upper limit of the subset expression is populated with an asterix "*" THEN the maximum extent of the resource along that axis SHALL be selected.

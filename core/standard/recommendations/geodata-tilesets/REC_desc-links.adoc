@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/geodata-tilesets/desc-links
+identifier:: /rec/geodata-tilesets/desc-links
 part:: The URI SHOULD consist of the path of the geospatial data resources followed by `/tiles`.
 ====

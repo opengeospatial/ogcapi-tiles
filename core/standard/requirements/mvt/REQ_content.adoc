@@ -12,7 +12,7 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/mvt/content
+identifier:: /req/mvt/content
 part:: Every 200-response of the server with the media type application/vnd.mapbox-vector-tile SHALL be a Mapbox Vector Tile document representing only one tile.
 part:: A feature SHALL contain a geometry field. A feature SHALL contain a type field as described in the Geometry Types section.
 part:: The grid space for the MVT coordinates SHALL map linearly to the coordinates in the tile extent expressed in the Tileset CRS unless a _prior arrangement_ applies to use an alternative CRS; and in this case the linear mapping SHALL be done to the alternative CRS and not with the Tileset CRS. For example, an extension could negotiate another CRS for coordinates with a query parameter. In particular the 0,0 coordinate in the MVT maps to the top-left corner of the tile. The bottom-right corner of the tile corresponds the bottom-right corner of the MVT grid.

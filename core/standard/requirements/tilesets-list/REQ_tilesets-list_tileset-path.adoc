@@ -11,6 +11,6 @@
 [requirement]
 ====
 [%metadata]
-label:: /req/tilesets-list/tileset-path
+identifier:: /req/tilesets-list/tileset-path
 part:: The API SHALL support a GET operation on a `.../tiles` path returning a list of available tilesets
 ====

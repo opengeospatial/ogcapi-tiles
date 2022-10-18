@@ -23,7 +23,8 @@
 ====
 [%metadata]
 identifier:: /conf/collections/rc-op-subset
-target:: /req/collections/rc-subset-definition, /req/collections/rc-subset-response
+target:: /req/collections/rc-subset-definition
+target:: /req/collections/rc-subset-response
 test-purpose:: Validate that resources can be identified and extracted from an API server using the subset query parameter.
 test-method::
 +

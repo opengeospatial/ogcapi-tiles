@@ -23,7 +23,8 @@
 ====
 [%metadata]
 identifier:: /conf/collections/rc-op-datetime
-target:: /req/collections/rc-datetime-definition, /req/collections/rc-datetime-response
+target:: /req/collections/rc-datetime-definition
+target:: /req/collections/rc-datetime-response
 test-purpose:: Validate that resources can be identified and extracted from an API server using the datetime query parameter.
 test-method::
 +

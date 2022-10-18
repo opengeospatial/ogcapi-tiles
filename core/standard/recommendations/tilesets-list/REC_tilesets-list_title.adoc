@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/tilesets-list/tileset_title
+identifier:: /rec/tilesets-list/tileset_title
 part:: The tilesets array metadata (as defined by the 2D Tile Matrix Set and Metadata standard) subset SHOULD include a short human readable title
 ====

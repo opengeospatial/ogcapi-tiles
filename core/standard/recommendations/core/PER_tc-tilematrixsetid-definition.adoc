@@ -20,7 +20,7 @@
 |===
 ////
 
-[permission,label="/per/core/tc-tilematrixset-definition"]
+[permission,label="/per/core/tc-tilematrixset-definition",identifier="/per/core/tc-tilematrixset-definition"]
 ====
 
 [.component,class=part]

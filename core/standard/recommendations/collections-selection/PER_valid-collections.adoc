@@ -10,6 +10,6 @@
 [permission]
 ====
 [%metadata]
-label:: /per/collections-selection/valid-collections
+identifier:: /per/collections-selection/valid-collections
 part:: An implementation MAY return an error when the specified list of collections is not supported, for reasons such as an incompatible combination, or an unsupported encoding or TileMatrixSet for some of the selected collections.
 ====

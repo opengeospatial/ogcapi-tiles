@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/tileset/bbox
+identifier:: /rec/tileset/bbox
 part:: The tileset metadata SHOULD populate the bounding box element to describe the tileset extent.
 ====

@@ -19,7 +19,9 @@
 ====
 [%metadata]
 identifier:: /conf/collections/rc-subset-response
-target:: /req/collections/rc-subset-definition, /req/collections/rc-subset-response, /req/collections/rc-subset-collection-response
+target:: /req/collections/rc-subset-definition
+target:: /req/collections/rc-subset-response
+target:: /req/collections/rc-subset-collection-response
 test-purpose:: Validate that the `subset` query parameter is processed correctly.
 test-method::
 +

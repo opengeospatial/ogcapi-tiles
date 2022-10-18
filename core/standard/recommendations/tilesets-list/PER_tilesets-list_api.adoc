@@ -11,7 +11,7 @@
 [permission]
 ====
 [%metadata]
-label:: /per/tilesets-list/tilesets-api
+identifier:: /per/tilesets-list/tilesets-api
 part:: An API document can advertise a single resource path (expressed as a URI template) to get multiple tilesets.
 part:: This URI template will use the `{tileMatrixSetId}` variable. The `{tileMatrixSetId}` variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represents all the TileMatrixSets supported by the resource. Note that a `{tileMatrixSetId}` variable must NOT be used in the templated links of the tileset metadata.
 ====

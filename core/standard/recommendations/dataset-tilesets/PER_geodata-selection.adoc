@@ -11,6 +11,6 @@
 [permission]
 ====
 [%metadata]
-label:: /per/dataset-tilesets/geodata-selection
+identifier:: /per/dataset-tilesets/geodata-selection
 part:: If it is not possible and sensible to represent all geospatial data resources (`/collections`) in tiles (e.g., it compromises performance or tiles are overcrowded with too many elements), the server MAY select only the most significant geospatial data resources.
 ====

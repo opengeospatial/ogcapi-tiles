@@ -10,6 +10,6 @@
 [recommendation]
 ====
 [%metadata]
-label:: /rec/dataset-tilesets/landingpage
+identifier:: /rec/dataset-tilesets/landingpage
 part:: The URI to the dataset tilesets will be `/tiles`.
 ====

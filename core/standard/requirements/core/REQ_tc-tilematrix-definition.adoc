@@ -19,7 +19,7 @@ following characteristics (shown as OpenAPI Specification 3.0 fragment):
 |===
 ////
 
-[requirement,label="/req/core/tc-tilematrix-definition"]
+[requirement,label="/req/core/tc-tilematrix-definition",identifier="/req/core/tc-tilematrix-definition"]
 ====
 
 [.component,class=part]
