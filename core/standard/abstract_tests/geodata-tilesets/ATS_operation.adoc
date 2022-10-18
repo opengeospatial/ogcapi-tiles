@@ -1,4 +1,5 @@
 [[ats_geodata-tilesets_operation]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/geodata-tilesets/operation*
@@ -8,3 +9,18 @@
 
 2. Validate that the URI is composed of two parts: the initial part is the URI of the geospatial data resource that can be represented as tiles and the final part follows the pattern `/tiles`
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/geodata-tilesets/operation
+target:: /req/geodata-tilesets/operation
+test-purpose:: Validate that there is an operation to get the tilesets list.
++
+--
+1. Validate that the geospatial data resource has an associated list of at least one tileset accessible at `.../tiles` supporting an HTTP GET operation
+
+2. Validate that the URI is composed of two parts: the initial part is the URI of the geospatial data resource that can be represented as tiles and the final part follows the pattern `/tiles`
+--
+====

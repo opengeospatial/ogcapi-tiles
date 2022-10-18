@@ -1,4 +1,5 @@
 [[ats_tiff_content]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/tiff/content*
@@ -10,3 +11,21 @@
 
 3. Validate that all tiles representing parts of the same resource or resources and using the same style follows the same portrayal rules or represent data with the same reference and units of measure.
 |===
+////
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/tiff/content
+target:: /req/tiff/content
+test-purpose:: Validate the particularities of a TIFF response
++
+--
+1. Validate that every 200-response of the server with the media type image/tiff contains a TIFF document representing only one tile
+
+2. Validate that the TIFF file is organized in strips (avoiding organization in internal tiles).
+
+3. Validate that all tiles representing parts of the same resource or resources and using the same style follows the same portrayal rules or represent data with the same reference and units of measure.
+--
+====

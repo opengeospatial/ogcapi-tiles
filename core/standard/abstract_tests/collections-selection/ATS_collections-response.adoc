@@ -1,4 +1,5 @@
 [[ats_core_collections-selection-collections-response]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/collections-selection/collections-response*
@@ -24,3 +25,34 @@ validate that the selected collections are included in the response starting by 
 In map tiles, this will result in the first collection being portrayed at the bottom and the others are rendered on top of the previous ones, one by one
 (the rightmost collection will become topmost in the portrayal).
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/collections-selection/collections-response
+target:: /req/collections-selection/collections-response
+test-purpose:: Validate response when using `collections` parameter.
+test-method::
++
+--
+Given:
+
+Requests described in the previous abstract test (query-collections)
+
+When:
+
+The request is successful
+
+Then:
+
+Assert that the response to tilesets and tiles requests only include the selected collections.
+For tilesets, verify that only the selected collections are included in the layers.
+For tiles, verify that the content is limited to the data pertaining to the selected collections.
+
+If more than one collection is selected and no style applied specifies otherwise,
+validate that the selected collections are included in the response starting by the first (leftmost in the comma-separated list) and ending by the last (rightmost).
+In map tiles, this will result in the first collection being portrayed at the bottom and the others are rendered on top of the previous ones, one by one
+(the rightmost collection will become topmost in the portrayal).
+--
+====

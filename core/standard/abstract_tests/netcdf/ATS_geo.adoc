@@ -1,4 +1,5 @@
 [[ats_netcdf_geo]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/netcdf/geo*
@@ -6,3 +7,16 @@
 ^|Requirement |/req/netcdf/geo
 ^|Test Method |1. Validate that the NetCDF encoding incorporates georeference, this information is consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/netcdf/geo
+target:: /req/netcdf/geo
+test-purpose:: Validate NetCDF consistency of the georeference
++
+--
+1. Validate that the NetCDF encoding incorporates georeference, this information is consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
+--
+====

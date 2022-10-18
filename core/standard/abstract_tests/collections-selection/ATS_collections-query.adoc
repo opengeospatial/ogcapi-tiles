@@ -1,4 +1,5 @@
 [[ats_core_collections-selection-query-collections]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/collections-selection/query-collections*
@@ -23,3 +24,33 @@ Note that servers are free to restrict valid combinations of collectionIDs (perm
 restricted to few collections e.g., between one and five. If the sub-collections are also available individually, only collections advertising support for the same TileMatrixSet,
 CRS and encodings as used for the request should be selected.
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/collections-selection/query-collections
+target:: /req/collections-selection/query-collections
+test-purpose:: Validate support of the optional parameter `collections`.
+test-method::
++
+--
+Given:
+
+A tileset for an origin consisting of multiple geospatial data sub-resources (e.g., described in the tileset metadata as being comprised of multiple layers).
+
+When:
+
+Requesting resources either for the tileset or for individual tiles (e.g., a dataset tileset at `{datasetAPI}/tiles/WebMercatorQuad` and dataset tiles at
+`{datasetAPI}/tiles/WebMercatorQuad/{tileMatrix}/{tileRow}/{tileCol}`), with a `collections` query parameter consisting of a comma-separated list of collectionIDs
+(consistent with the collection identifiers making up that tileset, as described for example, in the tileset metadata layers).
+
+Then:
+
+Assert that the parameter is accepted for valid lists of collectionIDs.
+
+Note that servers are free to restrict valid combinations of collectionIDs (permission /per/collections-selection/valid-collections). Tests should be
+restricted to few collections e.g., between one and five. If the sub-collections are also available individually, only collections advertising support for the same TileMatrixSet,
+CRS and encodings as used for the request should be selected.
+--
+====

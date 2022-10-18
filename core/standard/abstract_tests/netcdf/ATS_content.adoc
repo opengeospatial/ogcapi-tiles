@@ -1,4 +1,5 @@
 [[ats_netcdf_content]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/netcdf/content*
@@ -8,3 +9,18 @@
 
 2. Validate that the NetCDF file contains only data in two or more dimensions
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/netcdf/content
+target:: /req/netcdf/content
+test-purpose:: Validate the particularities of a NetCDF response
++
+--
+1. Validate that every 200-response of the server with the media type application/netcdf or application/x-netcdf contains a NetCDF document representing only one tile
+
+2. Validate that the NetCDF file contains only data in two or more dimensions
+--
+====

@@ -1,4 +1,5 @@
 [[ats_png_content]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/png/content*
@@ -12,3 +13,23 @@
 
 4. Validate that all tiles representing parts of the same resource or resources and using the same style are following the same portrayal rules.
 |===
+////
+
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/png/content
+target:: /req/png/content
+test-purpose:: Validate the particularities of a PNG response
++
+--
+1. Validate that every 200-response of the server with the media type image/png contains a PNG document representing only one tile.
+
+2. Validate that the colors of the PNG represent the geospatial features or coverage values in the tile.
+
+3. Validate that the alpha channel of the PNG is used when partial transparency is required.
+
+4. Validate that all tiles representing parts of the same resource or resources and using the same style are following the same portrayal rules.
+--
+====

@@ -1,4 +1,5 @@
 [[ats_core_tc-tilerow-definition]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/core/tc-tilerow-definition*
@@ -6,3 +7,17 @@
 ^|Requirement |/req/core/tc-tilerow-definition
 ^|Test Method |1. If the API implements _OGC API - Common - Part 1: Core_, validate that the definition of a tile operation contains a mandatory integer parameter `tileCol`.
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/core/tc-tilerow-definition
+target:: /req/core/tc-tilerow-definition
+test-purpose:: Validate that there is a tileRow definition.
+test-method::
++
+--
+1. If the API implements _OGC API - Common - Part 1: Core_, validate that the definition of a tile operation contains a mandatory integer parameter `tileCol`.
+--
+====

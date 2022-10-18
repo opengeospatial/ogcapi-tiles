@@ -1,4 +1,5 @@
 [[ats_geodata-tilesets_desc-links]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/geodata-tilesets/desc-links*
@@ -6,3 +7,16 @@
 ^|Requirement |/req/geodata-tilesets/desc-links
 ^|Test Method |1. If the API has a mechanism for their geospatial data resources to expose links to geospatial aspects (e.g., feature items, metadata...), validate that the API includes at least one of three `link` with the `href` pointing to tilesets list for geospatial data resources and with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`, `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` and `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/geodata-tilesets/desc-links
+target:: /req/geodata-tilesets/desc-links
+test-purpose:: Validate that it is possible to retrieve the tilesets list for the geospatial resource
++
+--
+1. If the API has a mechanism for their geospatial data resources to expose links to geospatial aspects (e.g., feature items, metadata...), validate that the API includes at least one of three `link` with the `href` pointing to tilesets list for geospatial data resources and with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`, `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` and `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
+--
+====
