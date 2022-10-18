@@ -11,7 +11,7 @@
 :issued-date: 2029-03-30
 :published-date: 2029-03-30
 :fullname: Joan Masó
-:fullname_2: Jérôme St-Louis
+:fullname_2: Jérôme Jacovella-St-Louis
 :docsubtype: Interface
 :keywords: ogcdoc, OGC document, tiling, tiles, WMTS, map tiles, vector tiles, tiled feature data
 :submitting-organizations: Universitat Autònoma de Barcelona (CREAF); US Army Geospatial Center; Ecere Corporation; Esri
