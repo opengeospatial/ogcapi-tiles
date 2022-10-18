@@ -1,4 +1,5 @@
 [[ats_collections_rc-datetime-definition]]
+////
 [width="90%",cols="2,6a"]
 |===
 ^|*Abstract Test {counter:ats-id}* |*/conf/collections/rc-datetime-definition*
@@ -17,3 +18,28 @@ style: form
 explode: false
 ----
 |===
+////
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/collections/rc-datetime-definition
+target:: /req/collections/rc-datetime-definition
+test-purpose:: Validate that the dateTime query parameter is constructed correctly.
+test-method::
++
+--
+Verify that the `datetime` query parameter complies with the following definition (using an OpenAPI Specification 3.0 fragment):
+
+[source,YAML]
+----
+name: datetime
+in: query
+required: false
+schema:
+  type: string
+style: form
+explode: false
+----
+--
+====
