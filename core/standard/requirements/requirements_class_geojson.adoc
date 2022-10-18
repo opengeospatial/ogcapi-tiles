@@ -14,7 +14,7 @@
 .Requirements Class GeoJSON
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geojson
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geojson
 subject:: Web API
 inherit:: <<GeoJSON>>
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core

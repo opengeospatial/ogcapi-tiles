@@ -13,7 +13,7 @@
 .Requirements Class Datetime
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/datetime
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/datetime
 subject:: Web API
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 ====

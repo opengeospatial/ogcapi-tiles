@@ -15,7 +15,7 @@
 .Requirements Class XML
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml
 subject:: Web API
 inherit:: http://www.opengis.net/spec/tms/2.0/req/xml-tilesetmetadata
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset

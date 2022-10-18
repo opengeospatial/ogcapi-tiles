@@ -12,7 +12,7 @@
 [conformance_class]
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
 subject:: <<rc_mvt,Mapbox Vector Tiles>>
 classification:: Target Type:Web API
 ====

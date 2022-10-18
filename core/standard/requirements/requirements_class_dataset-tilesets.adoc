@@ -13,7 +13,7 @@
 .Requirements Class Dataset Tilesets
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets
 subject:: Web API
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list
 inherit:: http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core

@@ -12,8 +12,8 @@
 [conformance_class]
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
-subject:: <<rc_tiles_core,Core>>
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
+subject:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 classification:: Target Type:Web API
 ====
 

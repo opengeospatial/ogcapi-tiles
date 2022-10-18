@@ -15,7 +15,7 @@
 .Requirements Class Core
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
 subject:: Web API
 inherit:: <<rfc2616,RFC 2616 (HTTP/1.1)>>
 inherit:: <<rfc2818,RFC 2818 (HTTP over TLS)>> (optional)

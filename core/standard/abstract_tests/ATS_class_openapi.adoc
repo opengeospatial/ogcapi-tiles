@@ -12,7 +12,7 @@
 [conformance_class]
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/oas30
 subject:: <<rc_oas30_definition,OpenAPI Specification 3.0>>
 classification:: Target Type:Web API
 ====

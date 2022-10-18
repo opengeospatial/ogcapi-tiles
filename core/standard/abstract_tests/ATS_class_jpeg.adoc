@@ -12,7 +12,7 @@
 [conformance_class]
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/jpeg
 subject:: <<rc_jpeg,JPEG>>
 classification:: Target Type:Web API
 ====

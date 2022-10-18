@@ -13,7 +13,7 @@
 .Requirements Class Collections Selection
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection
 subject:: Web API
 inherit:: http://www.opengis.net/spec/ogcapi-common-2/1.0/req/collections (optional)
 ====

@@ -14,7 +14,7 @@
 .Requirements Class PNG
 ====
 [%metadata]
-label:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/png
+identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/png
 subject:: Web API
 inherit:: <<ISO/IEC 15948 standard>>
 inherit:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
