@@ -9,7 +9,8 @@ The following normative documents contain provisions that, through reference in 
 * [[[OGC20-024,OGC 20-024]]] Charles Heazel: OGC API - Common - Part 2: Geospatial Data (Draft). OGC 20-024, Open Geospatial Consortium, http://docs.ogc.org/DRAFTS/20-024.html[http://docs.ogc.org/DRAFTS/20-024.html]
 * [[[OGC10-090r3,OGC 10-090r3]]], Ben Domenico: OGC 10-090r3, OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0. Open Geospatial Consortium (2011)
 * [[[rfc7946,RFC 7946]]],  Internet Engineering Task Force (IETF). RFC 7946: The GeoJSON Format [online]. Edited by H. Butler, M. Daly, A. Doyle, S. Gillies, S. Hagen, T. Schaub. 2016 [viewed 2020-03-16]. Available at https://www.rfc-editor.org/rfc/rfc7946.html
-* [[[TIFF_V6,TIFF V6.0]]], Association Adobe Developers: TIFF Specification Revision 6.0. (1992)
+* [[[TIFF_V6,TIFF V6.0]]], Adobe Developers Association: TIFF Specification Revision 6.0. (1992)
+* [[[OGC19-008r4,OGC 19-008r4]]], Devys, E., Habermann, T., Heazel, C., Lott, R.,  Rouault, E.: OGC GeoTIFF 1.1 standard (2019)
 * [[[ISO_IEC_10918-1,ISO/IEC 10918-1]]], ISO/IEC: ISO/IEC 10918-1, Information technology — Digital compression and coding of continuous-tone still images: Requirements and guidelines. International Organization for Standardization, International Electrotechnical Commission, Geneva
 * [[[ISO_IEC_15948,ISO/IEC 15948]]], ISO/IEC 15948:2004, Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification
 
