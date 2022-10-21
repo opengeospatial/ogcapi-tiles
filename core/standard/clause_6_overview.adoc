@@ -3,7 +3,7 @@
 
 === Introduction
 
-The _OGC API - Tiles_ standard defines building blocks that can be used in a Web API to support the retrieval of geospatial data as tiles that follow the structure defined in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC 17-083r4] _OGC Two Dimensional Tile Matrix Set and Tile Set Metadata_ standard (see <<rc_tiles_core>>), which is also known as the 2D TMS standard. The text in this document assumes that the reader is familiar with the concepts in the OGC 17-083r4 document, such as a tile, tile set, tile set metadata, tile matrix and tile matrix set. If that is not the case, reading the overview subsection in the OGC 17-083r4 first is recommended.
+The _OGC API - Tiles_ standard defines building blocks that can be used in a Web API to support the retrieval of geospatial data as tiles that follow the structure defined in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard (OGC 17-083r4) (see <<rc_tiles_core>>), which is also known as the 2D TMS standard. The text in this document assumes that the reader is familiar with the concepts in the OGC 17-083r4 document, such as a tile, tile set, tile set metadata, tile matrix and tile matrix set. If that is not the case, reading the overview subsection in the OGC 17-083r4 first is recommended.
 
 Services and clients are encouraged to support as many of the TileMatrixSets defined in Annex D and E of the OGC 17-083r4 document as possible, as well as others in the OGC TileMatrixSet register for all geospatial data resources to maximize interoperability.
 However, support for any specific tile matrix set is not required.
@@ -78,7 +78,7 @@ Other standards or extensions of standards may also provide mechanisms (e.g., ad
 Although this standard is designed as a building block that can be leveraged by other OGC API Standards adding precisions about specific types of data available as tiles
 (e.g., _OGC API - Features_ standard, and _OGC API - Maps_ and _OGC API - Coverages_ candidate standards), the conformance classes defined in this document are still concrete enough to make it possible to distribute
 and request various types of tiled data, including coverages, vector features and maps, by relying strictly on the content herein and in the
-_OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0_ standard.
+https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard.
 
 As informative guidance on how this can be achieved, implementations should consider the following aspects.
 
@@ -94,7 +94,7 @@ a list of coordinates (for data organized as an irregular grid) along each dimen
 
 With the _TileSet_ conformance class, the tile set metadata allows to specify a spatial bounding box for tiles as a whole, as well as for each individual
 collection of geospatial data represented or contained within the tiles (the _layers_). The resolution of these layers can also be specified by including
-the minimum and maximum cell size and equivalent scale denominators. The informative Annex J of the _OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0_ standard
+the minimum and maximum cell size and equivalent scale denominators. The informative Annex J of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard
 further extends this capability to describe the domainset by enhancing the schema to include bounds and resolution for additional dimensions, also able to handle
 the particularity of unequal temporal units. The annex also includes provisions to describe tile matrix sets featuring additional dimensions which not only
 extend in other dimensions, but can also define divisions and downsampling of these additional dimensions for lower resolution tile matrices.
@@ -114,7 +114,7 @@ This standard defines six conformance classes for specific encodings to encode d
 Additional encodings can be supported using HTTP content negotiation, following conventions specific to those encodings while falling back to the closest
 encoding defined in these conformance classes (e.g., using the GeoTIFF and netCDF conformance class as a model for other coverage data, the JPEG and PNG classes
 for other map tiles encodings, and the Mapbox Vector Tiles or GeoJSON for other vector tiles encodings).
-The informative Annex J of the _OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0_ standard also describes a mechanism that can be used to deliver and access 3D content
+The informative Annex J of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard also describes a mechanism that can be used to deliver and access 3D content
 using this standard, including 3D models either batched as a single mesh, or as points vector tiles referencing shared 3D models.
 
 ==== Limitations

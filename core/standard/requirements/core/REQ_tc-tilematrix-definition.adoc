@@ -4,7 +4,7 @@
 |===
 ^|*Requirement {counter:req-id}* |*/req/core/tc-tilematrix-definition*
 ^|A |If the API implements _OGC API - Common - Part 1: Core_, the definition of this operation SHALL support a parameter `tileMatrix` with the
-following characteristics (shown as OpenAPI Specification 3.0 fragment):
+following characteristics (shown as an OpenAPI Specification 3.0 fragment):
 
 [source,YAML]
 ----

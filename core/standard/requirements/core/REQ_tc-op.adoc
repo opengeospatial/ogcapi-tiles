@@ -23,4 +23,4 @@ part:: The API SHALL provide a mechanism to obtain this template and associate t
 conformance class, or through an API definition.
 ====
 
-NOTE: The _core_ conformance class by itself does not prescribe specific names for these variables, nor does it define a specific mechanism to communicate the template.
+NOTE: The _core_ requirements class by itself does not prescribe specific names for these variables, nor does it define a specific mechanism to communicate the template.

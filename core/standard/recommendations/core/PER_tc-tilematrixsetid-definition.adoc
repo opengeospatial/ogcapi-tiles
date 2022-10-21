@@ -35,7 +35,7 @@ The `{tileMatrixSetId}` variable will be interpreted as one of TileMatrixSet ide
 
 [.component,class=part]
 --
-The following OpenAPI Specification 3.0 fragment) can be used in this case:
+The following OpenAPI Specification 3.0 fragment can be used in this case:
 
 [source,YAML]
 ----
