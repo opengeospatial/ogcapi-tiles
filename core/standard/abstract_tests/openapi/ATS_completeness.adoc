@@ -27,6 +27,6 @@ test-method::
 
 2. Validate that the OpenAPI paths are consistent with the links provided by the landing page, tileset and tilesets list resources.
 
-3. Validate that the OpenAPI paths provides the description of the parameters that the tileset and tile resources need to operate as specified in the corresponding conformance classes.
+3. Validate that the OpenAPI paths provide the description of the parameters that the tileset and tile resources need to operate as specified in the corresponding conformance classes.
 --
 ====

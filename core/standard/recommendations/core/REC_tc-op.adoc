@@ -3,8 +3,8 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Recommendation {counter:rec-id}* |*/rec/core/tc-op*
-^|A | A tiles implementation SHOULD consider to use the tiles URI template variables in the following common order and form: `{tileMatrix}/{tileRow}/{tileCol}`
-^|B | A tiles implementation SHOULD consider to specify the variables `{tileMatrix}` even if there is only one valid value for them.
+^|A | A tiles implementation SHOULD consider using the tiles URI template variables in the following common order and form: `{tileMatrix}/{tileRow}/{tileCol}`
+^|B | A tiles implementation SHOULD consider specifying the variables `{tileMatrix}` even if there is only one valid value for them.
 |===
 ////
 
@@ -12,8 +12,8 @@
 ====
 [%metadata]
 identifier:: /rec/core/tc-op
-part:: A tiles implementation SHOULD consider to use the tiles URI template variables in the following common order and form: `{tileMatrix}/{tileRow}/{tileCol}`
-part:: A tiles implementation SHOULD consider to specify the variables `{tileMatrix}` even if there is only one valid value for them.
+part:: A tiles implementation SHOULD consider using the tiles URI template variables in the following common order and form: `{tileMatrix}/{tileRow}/{tileCol}`
+part:: A tiles implementation SHOULD consider specifying the variables `{tileMatrix}` even if there is only one valid value for them.
 ====
 
 NOTE: Clients should not assume the common order of URI template variable and should extract them from the examples in the "links" section or from the API description path templates.

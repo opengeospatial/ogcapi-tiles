@@ -1,5 +1,5 @@
 == Conformance
-This standard defines fifteen requirements conformance classes.
+This standard defines multiple requirements classes and their associated conformance classes.
 
 The standardization targets of all conformance classes are "Web APIs".
 
@@ -13,7 +13,7 @@ The Core specifies requirements that all Web APIs have to implement if they are 
 It defines how to retrieve individual tiles by building a URI from three variables corresponding to the tile matrix, tile row and tile column for that tile.
 
 [#table_resource_core,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct link that corresponds to tiles defined in core conformance class
+.Overview of resource and common direct links that correspond to tiles defined in the Core Requirements Class
 [cols="33,66",options="header"]
 |===
 |Resource name |**Common** path
@@ -24,7 +24,7 @@ NOTE: This path template is recommended, but not prescribed. Ordering the parame
 
 *<<rc_tileSet,Requirements Class "TileSet">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tileset)
 
-The _tileset_ conformance class defines a mechanism to describe a tileset using a specific tile matrix set and obtain a templated link to individual tiles.
+The _tileset_ requirements class defines a mechanism for describing a tileset using a specific tile matrix set and obtaining a templated link to individual tiles.
 
 [#table_resource_tileset,reftext='{table-caption} {counter:table-num}']
 .Overview of resources and common direct links that correspond to the tileset
@@ -37,7 +37,7 @@ The _tileset_ conformance class defines a mechanism to describe a tileset using 
 
 *<<rc_tileSets-list,Requirements Class "TileSets List">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/tilesets-list)
 
-The _tilesets list_ conformance class defines a generic operation to retrieve a list of tilesets, without association to any particular type of resources.
+The _tilesets list_ requirements class defines a generic operation for retrieving a list of tilesets, without association to any particular type of resources.
 
 [#table_resource_tilesetlist,reftext='{table-caption} {counter:table-num}']
 .Overview of resource and common direct link that corresponds to the tileset list
@@ -51,8 +51,8 @@ The _tilesets list_ conformance class defines a generic operation to retrieve a 
 
 *<<rc_datasetTileSets,Requirements Class "Dataset TileSets">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets)
 
-The _dataset tilesets_ conformance class allows retrieving tiles for a whole dataset potentially made up of multiple geospatial data resources.
-All Web APIs have to implement this conformance class if they are claiming to support *dataset* tiles following this _OGC API - Tiles Part 1: Core_ standard.
+The _dataset tilesets_ requirements class supports the retrieval of tiles for a whole dataset potentially made up of multiple geospatial data resources.
+All Web APIs have to implement this requirements class if they are claiming to support *dataset* tiles following this _OGC API - Tiles Part 1: Core_ standard.
 Dataset tiles may combine content from multiple geospatial resources, regardless of whether those are available separately (as tiles or otherwise).
 
 [#table_resource_dataset_tileset,reftext='{table-caption} {counter:table-num}']
@@ -67,7 +67,7 @@ Dataset tiles may combine content from multiple geospatial resources, regardless
 
 *<<rc_geoDataResourceTileSets,Requirements Class "GeoData TileSets">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geodata-tilesets)
 
-The _geodata tilesets_ conformance class allows retrieving tiles from a specific geospatial data resource.
+The _geodata tilesets_ requirements class supports the retrieval of tiles from a specific geospatial data resource.
 
 [#table_resource_geodata_tilesets,reftext='{table-caption} {counter:table-num}']
 .Overview of resource and common direct links that corresponds to the geospatial data resources tilesets
@@ -83,7 +83,7 @@ The _geodata tilesets_ conformance class allows retrieving tiles from a specific
 
 *<<rc_collections-selection,Requirements Class "Collections Selection">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/collections-selection)
 
-The _tiles geodata selection_ conformance class allows to list specific geospatial data resources from which to retrieve tiles, e.g. for use with data set tiles.
+The _tiles geodata selection_ requirements class supports the listing of specific geospatial data resources from which to retrieve tiles, e.g. for use with data set tiles.
 
 [#table_resource_geodata_selection,reftext='{table-caption} {counter:table-num}']
 .Overview of resource and common direct links that corresponds to the geodata selection
@@ -98,17 +98,17 @@ The _tiles geodata selection_ conformance class allows to list specific geospati
 
 *<<rc_datetime,Requirements Class "DateTime">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/datetime)
 
-The _datetime_ conformance class specifies how to provide tiles in a domain that has a generic time dimension.
+The _datetime_ requirements class specifies how to provide tiles in a domain that has a generic time dimension.
 
 === Requirements classes for specific resource representations
 
 *<<rc_oas30_definition,Requirements Class "OpenAPI Specification 3.0 API definition">>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/oas30)
 
-The _OpenAPI Specification 3.0_ conformance class specifies requirements for an OpenAPI 3.0 definition in addition to those defined in _OGC API - Common - Part 1: Core_.
+The _OpenAPI Specification 3.0_ requirements class specifies requirements for an OpenAPI 3.0 definition in addition to those defined in _OGC API - Common - Part 1: Core_.
 
 *<<rc_xml,Requirements Class "XML TileSet Metadata">>*  (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml)
 
-The _XML_ conformance class specifies how to use XML as an alternative encoding for describing tilesets.
+The _XML_ requirements class specifies how to use XML as an alternative encoding for describing tilesets.
 
 *<<rc_data_encodings,Requirements Classes for tile encodings>>*
 
@@ -121,15 +121,15 @@ This standard does not mandate a specific encoding or format for representing ti
 * <<rc_geojson,GeoJSON>> (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/geojson)
 * <<rc_mvt,Mapbox Vector Tiles>> (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/mvt)
 
-All these conformance classes act as building blocks that should be implemented in combination with other more fundamental conformance classes that provide support for Web API discovery, conformity and Web API formal definition (e.g., OpenAPI). Possible alternatives for these fundamental conformance classes are _OGC API - Common Part 1: Core_, _OGC API - Features Part 1: Core_ or any other non-OGC classes that provide this functionality.
+All these requirements classes act as building blocks that should be implemented in combination with other more fundamental requirements classes that provide support for Web API discovery, conformity and Web API formal definition (e.g., OpenAPI). Possible alternatives for these fundamental requirements classes are _OGC API - Common - Part 1: Core_, _OGC API - Features - Part 1: Core_ or any other non-OGC classes that provide this functionality.
 
 All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
 
-NOTE: Despite the fact that full paths and full path templates in the previous tables are used in many implementations of the OGC API - Tiles, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described by the Web API definition document and the links between resources.
+NOTE: Despite the fact that full paths and full path templates in the previous tables are used in many implementations of the OGC API - Tiles standard, these exact paths are ONLY examples and are NOT required by this standard. Other paths are possible if correctly described by the Web API definition document and the links between resources.
 
 === Declaration of conformance
 
-Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document if the respective conformance URLs listed in <<table_conformance_urls>> is present in the conformance response. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document if the respective conformance class URIs listed in <<table_conformance_urls>> are present in the Conformance Declaration response. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures (https://docs.ogc.org/pol/08-134r11.html[OGC 08-134r11]) and the https://www.ogc.org/compliance[OGC Compliance Testing website].
 
 [#table_conformance_urls,reftext='{table-caption} {counter:table-num}']
 .Conformance class URIs

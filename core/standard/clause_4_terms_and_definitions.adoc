@@ -1,8 +1,16 @@
 == Terms, definitions and abbreviated terms
 
-=== Terms and definitions
+////
+Note that metanorma automatically adds the following text to this section. So, please keep the three paragraphs commented out to avoid repetition.
 
-This document uses the terms defined in Sub-clause 5.3 of OGC Web Services Common (OGC 06-121r9), which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+This document uses the terms defined in OGC Policy Directive 49, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this document and OGC documents do not use the equivalent phrases in the ISO/IEC Directives, Part 2.
+
+This document also uses terms defined in the OGC Standard for Modular specifications (OGC 08-131r3), also known as the ‘ModSpec’. The definitions of terms such as standard, specification, requirement, and conformance test are provided in the ModSpec.
+
+For the purposes of this document, the following additional terms and definitions apply.
+////
+
+=== Terms and definitions
 
 This document also uses terms defined in Sub-clause "Terms and Definitions" of OGC API - Common, Part 1: Core.
 
@@ -21,9 +29,9 @@ a set of data, published or curated by a single agent, and available for access 
 NOTE: A Web API implementing OGC API - Common often gives access to a single dataset which may be comprised of one or more _geospatial data resources_.
 
 ==== geospatial data resource
-web resource that consists in a set of geospatial data
+web resource that consists of a set of geospatial data
 
-NOTE: In Web APIs implementing _OGC API - Common - Part 2: Geospatial data_, geospatial data resources are referred to as collections and are defined in the _collections_ conformance class.
+NOTE: In Web APIs implementing _OGC API - Common - Part 2: Geospatial Data_, geospatial data resources are referred to as collections and are defined in the _collections_ conformance class.
 
 NOTE: _geodata_ is sometimes used in this document as an abbreviation of _geospatial data_
 
@@ -44,11 +52,11 @@ geometric shape with known properties that may or may not be the result of a til
 
 NOTE: From OGC 19-014r1: Core Tiling Conceptual and Logical Models for 2D Euclidean Space
 
-In the context of a 2D _tile matrix_, a _tile_ is one of the rectangular regions of space, which can be uniquely identified by a row and a column integer indices, making up the tile matrix.
+In the context of a 2D _tile matrix_, a _tile_ is one of the rectangular regions of space, which can be uniquely identified by row and column integer indices, making up the tile matrix.
 
 In the context of a geospatial data _tile set_, a _tile_ contains data for such a partition of space as part of an overall set of tiles for that tiled geospatial data.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
 NOTE: Tiles are useful to efficiently request, transfer, cache, display, store and process geospatial data for a specific resolution and area of interest, providing deterministic performance and scalability
 for arbitrarily large datasets.
@@ -59,7 +67,7 @@ NOTE: Tiles can contain a variety of data types, such as grid-based pictorial re
 
 tiling grid in a given 2D coordinate reference system, associated to a specific scale and partitioning space into regular conterminous _tiles_, each of which being assigned a unique identifier
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set.
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
 NOTE: Each tile of a tile matrix is uniquely identifiable by a row and a column integer indices. The number of rows is referred to as the _matrix height_, while the maximum number of columns is referred to
 as the _matrix width_ (the number of columns can vary for different rows in _variable width tile matrices_).
@@ -68,13 +76,13 @@ as the _matrix width_ (the number of columns can vary for different rows in _var
 
 _tiling scheme_ consisting of a set of _tile matrices_ defined at different scales covering approximately the same area and having a common coordinate reference system.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set.
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
 ==== tile indexing scheme
 scheme allowing to uniquely reference a _tile_ in a _tiling scheme_ by the use of a unique identifier (or set of identifiers), and reversely, which unique identifier (or unique set of identifiers) corresponds
 to a space satisfying the geometric properties of a specific tile
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
 ==== tile set
 
@@ -93,7 +101,7 @@ Those properties include which space each tile occupies, i.e. its extent, as wel
 NOTE: A tiling scheme can be defined on top of a CRS as well as other spatial reference systems such as DGGS and other organizations including irregular ones.
 In this document, only tiling schemes based on CRSs are supported.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
 ==== tile set metadata
 
@@ -101,13 +109,13 @@ additional metadata beyond the common properties defining the _tile set_. Such m
 
 metadata describing common properties defining a _tile set_, layers and styles used to produce the tile set, the limits of the tile matrix with actual data and common metadata such as abstract, owner, author, etc.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
 ==== vector tile
 
 tile that contains vector information that has been generalized (simplified) at the tile scale resolution and clipped by the tile boundaries.
 
-NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set
+NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
 ==== Web API
 

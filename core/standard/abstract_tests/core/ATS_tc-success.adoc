@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/core/tc-success
 target:: /req/core/tc-success
-test-purpose:: Validate that a successful execution with data responds with a HTTP status code `200`, the format is consistent with the requested and the elements represented in the tile are the ones present in the geographical area.
+test-purpose:: Validate that a successful execution with data responds with an HTTP status code `200`, the format is consistent with the requested and the elements represented in the tile are the ones present in the geographical area.
 test-method::
 +
 --

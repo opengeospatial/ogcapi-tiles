@@ -1,7 +1,7 @@
 [[rc_data_encodings]]
 == Requirements classes for tile encodings
 
-The OGC API Tiles is designed to support tiling data that can potentially be encoded and provided in many of the existing geospatial formats or new ones that could be invented in the future.  Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The intention of this section is NOT to limit the number of encodings offered by a Tiles Web API but to provide a minimum set of encodings that could be implemented by many Tiles Web APIs as well as to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs are free to support other encodings and data formats that can be convenient in each case, and use them despite the fact that they may not be listed as supported conformance classes by the Web API. In addition, the declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API should support all of them. Partial support could be conditioned by the different the nature of the data behind each collection.
+The OGC API - Tiles standard is designed to support tiling data that can potentially be encoded and provided in many of the existing geospatial formats or new ones that could be invented in the future.  Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The intention of this section is NOT to limit the number of encodings offered by an implementation of OGC API - Tiles but to provide a minimum set of encodings that could be implemented by many of the Web APIs that implement the standard, as well as to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs are free to support other encodings and data formats that can be convenient in each case, and use them despite the fact that they may not be listed as supported conformance classes by the Web API. In addition, the declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API should support all of them. Partial support could be determined by the differences in the nature of the data behind each collection.
 
 === Overview
 
@@ -17,9 +17,9 @@ This clause specifies six pre-defined requirements classes for encodings to be u
 NOTE: None of the encodings specified here is mandatory and an implementation of this standard may implement none of them but implement other encodings instead.
 
 [[rc_png]]
-=== Requirement Class "PNG"
+=== Requirements Class "PNG"
 
-One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The PNG is one of the most popular formats in de web defined by the ISO Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification. ISO/IEC 15948:2003 (E), also available by the W3C in https://www.w3.org/TR/PNG.
+One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The PNG format is one of the most popular formats on the World Wide Web. The format is defined by the ISO Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification (ISO/IEC 15948:2004), which is also available as a W3C Recommendation at https://www.w3.org/TR/PNG. Note that the standard is listed as ISO/IEC 15948:2003 on the W3C Recommendation.
 
 PNG supports lossless data compression. PNG supports palette-based images (with palettes of 24-bit RGB or 32-bit RGBA colors), grayscale images (with or without an alpha channel for transparency), and full-color non-palette-based RGB or RGBA images. The PNG working group designed the format for transferring images on the Internet, not for professional-quality print graphics; therefore non-RGB color spaces such as CMYK are not supported.
 
@@ -28,9 +28,9 @@ include::requirements/requirements_class_png.adoc[]
 include::requirements/png/REQ_content.adoc[]
 
 [[rc_jpeg]]
-=== Requirement Class "JPEG"
+=== Requirements Class "JPEG"
 
-One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The JPEG is one of the most popular formats in de web defined by the ITU-T Recommendation T.81 and the ISO/IEC 10918-1.
+One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The JPEG format is one of the most popular formats on the World Wide Web and is defined by the ITU-T Recommendation T.81 and the ISO/IEC 10918-1 standard.
 
 The JPEG compression algorithm operates at its best on photographs and paintings with smooth variations of tone and color. It is best used for color and grayscale still images, but not for binary images. JPEG is also the most common format saved by digital cameras. However, JPEG is not well suited for line drawings and other textual or iconic graphics, where the sharp contrasts between adjacent pixels can cause noticeable artifacts. Such images are better saved in a lossless graphics format such as PNG. Because JPEG is a lossy compression method, which reduces the image fidelity, it is inappropriate for exact reproduction of imaging data.
 
@@ -39,11 +39,11 @@ include::requirements/requirements_class_jpeg.adoc[]
 include::requirements/jpeg/REQ_content.adoc[]
 
 [[rc_tiff]]
-=== Requirement Class "TIFF"
+=== Requirements Class "TIFF"
 
-One use case for tiles is to distribute fragmented coverage values as regular grids. In these circumstances, selecting an encoding that is able to story grid values in their original format and eventually compress them using lossless compression is the right solution. The TIF is one of the older formats but still one of the most popular formats to preserve arrays of data values and defined by the TIFF v6 specification owned by Adobe Systems.
+One use case for tiles is to distribute fragmented coverage values as regular grids. In these circumstances, selecting an encoding that is able to store grid values in their original format and eventually compress them using lossless compression is the right solution. The TIFF format is one of the older formats but still one of the most popular formats to preserve arrays of data values. The format is defined by the TIFF v6 specification, which is owned by Adobe Systems.
 
-TIFF is a flexible, adaptable file format for handling images and data. The ability to store data in a lossless format makes a TIFF file a useful image archive, because, unlike standard JPEG files, a TIFF file using lossless compression such as PackBits or LZW compression.
+TIFF is a flexible, adaptable file format for handling images and data. The ability to store data in a lossless format makes a TIFF file a useful image archive, because, unlike standard JPEG files, a TIFF file can use lossless compression methods such as PackBits or LZW compression.
 
 include::requirements/requirements_class_tiff.adoc[]
 
@@ -54,9 +54,9 @@ include::recommendations/tiff/REC_geotiff.adoc[]
 include::requirements/tiff/REQ_geotiff.adoc[]
 
 [[rc_netcdf]]
-=== Requirement Class "NetCDF"
+=== Requirements Class "NetCDF"
 
-For a case of multidimensional regular grid tiles, as defined in Annex J of the 2D-TMS Standards [OGC 17-083r4], there is a need for a format able to store multidimensional data in a natural way. The NetCDF is one of the most popular formats for scientific data that is able store multi-dimensional arrays of data values. It is defined by the UCAR-Unidata.
+In the case of multidimensional regular grid tiles, as defined in Annex J of the 2D-TMS Standards [OGC 17-083r4], there is a need for a format that is able to store multidimensional data in a natural way. The NetCDF format is one of the most popular formats, for scientific data, that is able store multi-dimensional arrays of data values. It is defined by the UCAR-Unidata community and standardized in the OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0 (OGC 10-090r3).
 
 include::requirements/requirements_class_netcdf.adoc[]
 
@@ -65,9 +65,9 @@ include::requirements/netcdf/REQ_content.adoc[]
 include::requirements/netcdf/REQ_geo.adoc[]
 
 [[rc_geojson]]
-=== Requirement Class "GeoJSON"
+=== Requirements Class "GeoJSON"
 
-GeoJSON is a commonly used format for representing features with geometries and other properties. It is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based formats supporting GeoJSON is recommended for vector tiles, if the feature data can be represented in GeoJSON for the intended use.
+GeoJSON is a commonly used format for representing features with geometries and other properties. It is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using JSON-based formats supporting GeoJSON is recommended for vector tiles, if the feature data can be represented in GeoJSON for the intended use.
 
 include::requirements/requirements_class_geojson.adoc[]
 
@@ -76,9 +76,9 @@ include::requirements/geojson/REQ_content.adoc[]
 include::recommendations/geojson/PER_overflow.adoc[]
 
 [[rc_mvt]]
-=== Requirement Class "Mapbox Vector Tiles"
+=== Requirements Class "Mapbox Vector Tiles"
 
-Mapbox Vector Tiles is a well known format for representing features with geometries in tile <<Mapbox_Vector_Tiles>>. The Mapbox Vector Tile format uses Google Protocol Buffers as a encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Mapbox Vector Tile represents data based on a square extent within a tile matrix set. However, a Mapbox Vector Tile does not contain information about its bounds and TileMatrixSet. The file format assumes that the client knows the bounds and TileMatrixSet of the file before decoding it.
+Mapbox Vector Tiles is a well-known format for representing features with geometries in a tile <<Mapbox_Vector_Tiles>>. The Mapbox Vector Tile format uses Google Protocol Buffers as an encoding format. Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured binary data. A Mapbox Vector Tile represents data based on a square extent within a tile matrix set. However, a Mapbox Vector Tile does not contain information about its bounds and TileMatrixSet. The file format assumes that the client knows the bounds and TileMatrixSet of the file before decoding it.
 
 include::requirements/requirements_class_mvt.adoc[]
 

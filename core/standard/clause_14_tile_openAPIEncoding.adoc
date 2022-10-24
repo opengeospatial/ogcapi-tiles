@@ -1,22 +1,22 @@
 [[rc_oas30_definition]]
-== Requirement Class "OpenAPI Specification 3.0" API definition
+== Requirements Class "OpenAPI Specification 3.0"
 
 === Overview
 
 include::requirements/requirements_class_oas30.adoc[]
 
-This conformance class defines particularities of providing a definition of a Web API implementing this standard using OpenAPI Specification version 3.0.
+This requirements class defines particularities of providing a definition of a Web API implementing this standard using OpenAPI Specification version 3.0.
 
 === Web API OpenAPI description
 
-The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application will have the full picture of the resources that the API provides, how to retrieve them, and what responses are expected for successful and unsuccessful requests. Without this API description an application will be forced to traverse all links starting by the landing page to get an equivalent full list of resources.
+The OpenAPI definition provides a description of the complete list of API resources. Reading this description, an application would have the full picture of the resources that the API provides, how to retrieve them, and what responses are expected for successful and unsuccessful requests. Without this API description an application would be forced to traverse all links, starting with the landing page, to get an equivalent full list of resources.
 
-The _OGC API - Common - Part 1: Core_ (_oas30_) requirement class provides many details on general requirements that this requirements class adopts by dependency. In addition extra requirements are provided. Also, the _OGC API - Common_ requirement class provides details on how to request an API definition.
+The (_oas30_) requirement class from _OGC API - Common - Part 1: Core_ provides many details on general requirements that this requirements class adopts by dependency. In addition, extra requirements are provided. Also, the _OGC API - Common_ requirements class provides details on how to request an API definition.
 
 ==== Response
 
 ===== Completeness
-The OpenAPI definition resulting as a response of this request need to take into consideration the relevant resources specified in this standard.
+The OpenAPI definition resulting as a response of this request needs to take into consideration the relevant resources specified in this standard.
 
 include::requirements/oas30/REQ_completeness.adoc[]
 
@@ -28,7 +28,8 @@ Reusable components for creating OpenAPI definitions for implementations of this
 NOTE: While this specification is in draft status, the components are available from https://github.com/opengeospatial/ogcapi-tiles/tree/master/openapi .
 ////
 
-A server implementations of this OGC API can use the content in the openapi folder to generate a response for the openapi description. The http://schemas.opengis.net/ogcapi/tiles/part1/1.0/openapi/ogcapi-tiles-1.yaml[ogcapi-tiles-1.yaml] file includes paths and components. An implementation should only include the paths that are implemented and remove the references to the rest. The components part includes parameters, responses and schemas that can be reused as-is. The `api` folder contains JSON files that are templates with enumerated values for collections (all, coverages or vector), styles, tileMatrixSets. A particular implementation of this API should enumerate the actual resources exposed by the API in the same way. The server can select to dynamically implement responses to /api/* (where * is replaced by all-collections, styles,... ) or hardcode the /api/* files with the actual list of resource identifiers in the enumerations.
+
+A server implementation of this OGC API Standard can use the content in the openapi folder to generate a response for the openapi description. The http://schemas.opengis.net/ogcapi/tiles/part1/1.0/openapi/ogcapi-tiles-1.yaml[ogcapi-tiles-1.yaml] file includes paths and components. An implementation should only include the paths that are implemented and remove the references to the rest. The components part includes parameters, responses and schemas that can be reused as-is. The `api` folder contains JSON files that are templates with enumerated values for collections (all, coverages or vector), styles, tileMatrixSets. A particular implementation of this API should enumerate the actual resources exposed by the API in the same way. The server can select to dynamically implement responses to /api/* (where * is replaced by all-collections, styles,... ) or hardcode the /api/* files with the actual list of resource identifiers in the enumerations.
 
 To improve performance, the whole content of this folder can be bundled in a single document by executing a tool such as _swagger-cli_. This can be served for the OGC API - Common - Part 1 `service-desc` link from the landing page.
 
@@ -108,21 +109,30 @@ include::requirements/oas30/REQ_operation-id.adoc[]
 |_other_         |Styled^8^|_other_      |Tile^3^        |`#.style.*.getTile``
 5+|^1^ '*' represents a _resource type_ to be defined in another relevant standard. '#' represents an optional _origin_ that could be defined in another relevant standard.
 
+
 ^2^ The suffixes derived from these resource types are not required by this standard and will be proposed by the relevant standard defining them.
+
 
 ^3^ The _Tile_ resource is defined in <<rc_tiles_core>>.
 
+
 ^4^ The _TileSet_ resource is defined in <<rc_tileSet>>.
+
 
 ^5^ The _TileSetsList_ resource is defined in <<rc_tileSets-list>>.
 
-^6^ The _DataSet_ origin is defined in <<rc_datasetTileSets>> and depends on _OGC API - Common - Part 1: Core_.
 
-^7^ The _Collection_ origin is defined in <<rc_geoDataResourceTileSets>> conformance class and depends on the _Collections_ conformance class defined in _OGC API - Common - Part 2: Geospatial data_
+^6^ The _DataSet_ origin is defined in Requirements Class "Dataset Tilesets" <<rc_datasetTileSets>> and depends on _OGC API - Common - Part 1: Core_.
+
+
+^7^ The _Collection_ origin is defined in  Requirements Class "GeoData Tilesets" <<rc_geoDataResourceTileSets>> and depends on the _Collections_ requirements class defined in _OGC API - Common - Part 2: Geospatial data_
+
 
 ^8^ Styled tilesets rely on the ability to list styles defined in _OGC API - Styles_^2^.
 
+
 ^9^ Coverage tilesets rely on the _Coverage tiles_ conformance class defined in _OGC API - Coverages - Part 1: Core_^2^.
+
 
 ^10^ Map tilesets rely on the _Map tiles_ conformance class defined in _OGC API - Maps - Part 1: Core_^2^.
 |===

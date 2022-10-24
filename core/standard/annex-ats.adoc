@@ -3,23 +3,23 @@
 
 An implementation of this standard must satisfy the following system characteristics to be conformant with this specification.
 
-=== Conformance Class Core
+=== Conformance Class "Core"
 
 include::abstract_tests/ATS_class_core.adoc[leveloffset=+1]
 
-=== Conformance Class "TileSet"
+=== Conformance Class "Tileset"
 
 include::abstract_tests/ATS_class_tileset.adoc[leveloffset=+1]
 
-=== Conformance Class "TileSets List"
+=== Conformance Class "Tilesets List"
 
 include::abstract_tests/ATS_class_tilesets-list.adoc[leveloffset=+1]
 
-=== Conformance Class "Dataset Tile Sets"
+=== Conformance Class "Dataset Tilesets"
 
 include::abstract_tests/ATS_class_dataset-tilesets.adoc[leveloffset=+1]
 
-=== Conformance Class "Geo Data Resource TileSets"
+=== Conformance Class "GeoData Tilesets"
 
 include::abstract_tests/ATS_class_geodata-tilesets.adoc[leveloffset=+1]
 
@@ -27,15 +27,15 @@ include::abstract_tests/ATS_class_geodata-tilesets.adoc[leveloffset=+1]
 
 include::abstract_tests/ATS_class_collections-selection.adoc[leveloffset=+1]
 
-=== Conformance Class DateTime
+=== Conformance Class "DateTime"
 
 include::abstract_tests/ATS_class_datetime.adoc[leveloffset=+1]
 
-=== Conformance Class OpenAPI 3.0 Specification
+=== Conformance Class "OpenAPI Specification 3.0"
 
 include::abstract_tests/ATS_class_openapi.adoc[leveloffset=+1]
 
-=== Conformance Class "XML" Tileset Metadata
+=== Conformance Class "XML Tileset Metadata"
 include::abstract_tests/ATS_class_xml.adoc[leveloffset=+1]
 
 === Conformance Classes for tile encodings

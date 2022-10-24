@@ -1,6 +1,6 @@
 [[rc_collections-selection]]
 
-== Requirement Class "Collections Selection"
+== Requirements Class "Collections Selection"
 
 === Overview
 
@@ -11,7 +11,7 @@ include::requirements/requirements_class_collections-selection.adoc[]
 In a Web API providing access to a complex dataset formed by several geospatial data resources, it can be useful to select specific sub-resources of interest when requesting data from this dataset.
 This requirements class defines how to include a query parameter when requesting a resource (e.g., dataset tiles) to specify which geospatial data resources (a.k.a. collections) should be used to generate the response.
 
-This conformance class can be used e.g. in conjunction with the <<rc_datasetTileSets>> conformance class or in conjunction with an equivalent conformance class in _OGC API - Maps_.
+This requirements class can be implemented e.g. in conjunction with the Requirements Class "Dataset Tilesets" (<<rc_datasetTileSets>>) or in conjunction with an equivalent requirements class from _OGC API - Maps_.
 
 === Operation
 
@@ -39,4 +39,4 @@ include::requirements/collections-selection/REQ_collections-response.adoc[]
 
 If the value of the parameter `collections` contains a resource id of URI that does not exist on the Web API, the status code of the response is 400.
 
-If the value of the parameter `collections` has a wrong format or combines one of more geospatial data resources that are not compatible (e.g., they do not have a compatible value specified by other parameters in the request), the status code of the response is 400.
+If the value of the parameter `collections` has a wrong format or combines one or more geospatial data resources that are not compatible (e.g., they do not have a compatible value specified by other parameters in the request), the status code of the response is 400.

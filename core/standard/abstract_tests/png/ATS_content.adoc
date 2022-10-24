@@ -31,6 +31,6 @@ test-method::
 
 3. Validate that the alpha channel of the PNG is used when partial transparency is required.
 
-4. Validate that all tiles representing parts of the same resource or resources and using the same style are following the same portrayal rules.
+4. Validate that all tiles representing parts of the same resource or resources, and using the same style, are following the same portrayal rules.
 --
 ====

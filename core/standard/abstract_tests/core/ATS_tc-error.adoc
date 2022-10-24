@@ -16,7 +16,7 @@
 [%metadata]
 identifier:: /conf/core/tc-error
 target:: /req/core/tc-error
-test-purpose:: Validate that the request of tile that is out-of-range or empty, responds the right content
+test-purpose:: Validate that the request for a tile that is out-of-range or empty, responds with the right content
 test-method::
 +
 --
