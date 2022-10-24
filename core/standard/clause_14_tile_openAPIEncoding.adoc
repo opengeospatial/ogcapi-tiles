@@ -122,10 +122,10 @@ include::requirements/oas30/REQ_operation-id.adoc[]
 ^5^ The _TileSetsList_ resource is defined in <<rc_tileSets-list>>.
 
 
-^6^ The _DataSet_ origin is defined in <<rc_datasetTileSets>> and depends on _OGC API - Common - Part 1: Core_.
+^6^ The _DataSet_ origin is defined in Requirements Class "Dataset Tilesets" <<rc_datasetTileSets>> and depends on _OGC API - Common - Part 1: Core_.
 
 
-^7^ The _Collection_ origin is defined in <<rc_geoDataResourceTileSets>> conformance class and depends on the _Collections_ conformance class defined in _OGC API - Common - Part 2: Geospatial data_
+^7^ The _Collection_ origin is defined in  Requirements Class "GeoData Tilesets" <<rc_geoDataResourceTileSets>> and depends on the _Collections_ requirements class defined in _OGC API - Common - Part 2: Geospatial data_
 
 
 ^8^ Styled tilesets rely on the ability to list styles defined in _OGC API - Styles_^2^.
