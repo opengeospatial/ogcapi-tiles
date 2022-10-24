@@ -23,7 +23,7 @@ Every 200-response of the server with the media type application/geo+json SHALL 
 
 [.component,class=part]
 --
-The root of the GeoJSON document SHALL be
+The root of the GeoJSON document SHALL be:
 
 * a GeoJSON FeatureCollection Object for features, or
 * a GeoJSON Feature Object for a single feature.

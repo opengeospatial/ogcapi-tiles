@@ -11,5 +11,5 @@
 ====
 [%metadata]
 identifier:: /rec/tiff/geotiff
-part:: A TIFF encoding SHOULD include georeference information in GeoTIFF format.
+part:: A TIFF encoding SHOULD include georeference information in GeoTIFF format, and conforming to the OGC GeoTIFF 1.1 Standard (OGC 19-008r4)
 ====
