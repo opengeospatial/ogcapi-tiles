@@ -7,7 +7,7 @@
 
 include::requirements/requirements_class_geodata-tilesets.adoc[]
 
-This conformance class assumes that data is organized into one or more geospatial data resources
+This requirements class assumes that data is organized into one or more geospatial data resources
 (e.g., the "collections" http://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data]).
 Geospatial data resources are referenced using URIs.
 
