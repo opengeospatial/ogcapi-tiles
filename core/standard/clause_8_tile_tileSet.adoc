@@ -15,7 +15,7 @@ The response provides metadata as per the https://docs.ogc.org/is/17-083r4/17-08
 
 The essential elements of this metadata are:
 
-- a link to the definition of the TileMatrixSet (either one registered in the OGC TileMatrixSet register that is controlled by the OGC Naming Authority (OGC-NA) SubCommittee (SC), or to a custom TileMatrixSet definition),
+- a link to the definition of the TileMatrixSet (either one registered in the https://defs.opengis.net/vocprez/object?uri=http%3A//www.opengis.net/def/tms[OGC TileMatrixSet register] that is controlled by the https://www.ogc.org/standards/na[OGC Naming Authority (OGC-NA)] SubCommittee (SC), or to a custom TileMatrixSet definition),
 - a TileMatrixSet URI in the case of a TileMatrixSet registered with an authority (e.g. the OGC TileMatrixSet register),
 - a Coordinate Reference System (e.g. provided as a URI),
 - a templated link (URI) to individual tiles,
