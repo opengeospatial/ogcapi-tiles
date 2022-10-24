@@ -7,8 +7,8 @@
 
 include::requirements/requirements_class_tilesets-list.adoc[]
 
-This class defines a resource called _tilesets list_ that provides a list of available tilesets for a resource. It also defines a how to link to individual tileset resources, which are defined in the <<rc_tileSet>>.
-Refer to the <<rc_datasetTileSets>> and <<rc_geoDataResourceTileSets>> classes that describes two complementary mechanisms to associate tilesets to datasets and to geospatial data resources, respectively.
+This class defines a resource called _tilesets list_ that provides a list of available tilesets for a resource. It also defines how to link to individual tileset resources, which are defined in the Requirements Class "Tileset" (<<rc_tileSet>>).
+Refer to the "Dataset Tilesets" (<<rc_datasetTileSets>>) and "GeoData Tilesets" <<rc_geoDataResourceTileSets>> requirements classes that describe two complementary mechanisms for associating tilesets with datasets and geospatial data resources, respectively.
 
 === Tilesets list
 A _tilesets list_ resource represents a list of sets of tiles, each one belonging to a particular TileMatrixSet.
