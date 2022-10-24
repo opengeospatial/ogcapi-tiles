@@ -11,5 +11,5 @@
 ====
 [%metadata]
 identifier:: /rec/tileset/conf-link
-part:: Include a link with 'rel' type 'conformance' to link to the conformance page
+part:: Include a link with 'rel' type 'http://www.opengis.net/def/rel/ogc/1.0/conformance' to link to the conformance declaration page
 ====
