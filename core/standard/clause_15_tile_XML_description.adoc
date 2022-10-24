@@ -1,17 +1,17 @@
 [[rc_xml]]
-== Requirements class "XML" Tileset Metadata
+== Requirements class "XML Tileset Metadata"
 
 === Overview
 
 This standard provides several resources describing the service (landing page), the geospatial data resources, the tileset lists and the tilesets informing the client on how to retrieve tiled data.
 XML is a data-interchange format designed to facilitate structured data interchange between applications.
-The intention of this section is to define an XML encoding that could be implemented by Tiles Web APIs, but not to exclude the possibility of defining additional metadata encodings that may be offered by a Tiles Web API.
-Web APIs may adopt this XML conformance class and declare conformance to it in the list of conformance classes supported by the Web API.
+The intention of this section is to define an XML encoding that could be implemented by Web APIs that implement OGC API - Tiles, but not to exclude the possibility of defining additional metadata encodings that may be offered by the Web APIs.
+Indeed, Web APIs may adopt this XML requirements class and declare conformance to it in the list of conformance classes supported by the Web API.
 The declaration of XML in the conformance classes supported does not mean that all the resources provided by the Web API support an XML representation, but a general support of XML is expected.
 
-This clause specifies a requirements class for an XML representation that may be implemented by an OGC Web API for the tilesets list and a tileset resources in addition to the JSON representation required by <<rc_tileSet>> and <<rc_tileSets-list>>.
+This clause specifies a requirements class for an XML representation that may be implemented by a Web API, that implements OGC API - Tiles, for the tilesets list and a tileset resources in addition to the JSON representation required by <<rc_tileSet>> and <<rc_tileSets-list>>.
 
-If the service provides local TileMatrixSet definitions, it is recommended that those resources also support an XML representation conforming to the XML schema specified in the _Two Dimensional Tile Matrix Set and Tileset Metadata_ standard.
+If the service provides local TileMatrixSet definitions, it is recommended that those resources also support an XML representation conforming to the XML schema specified in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard.
 
 Please refer to _OGC API - Common_ conformance classes defining the XML representation of common resources such as the landing page, conformance and collections.
 
