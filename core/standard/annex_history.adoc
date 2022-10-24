@@ -14,4 +14,5 @@
 |2022-07-14 |1.0.0 draft 1 |J. Maso & J. St-Louis |several |Editorial fixes; synchronized OpenAPI schemas with 2DTMS & TileSet metadata standard
 |2022-09-12 |1.0.0 draft 2 |G. Hobona |all |Conversion to metanorma
 |2022-09-15 |1.0.0 |J. Maso & J. St-Louis |several |Initial version 1.0
+|2022-10-24 |1.0.0 |G. Hobona |several |OGC Staff editorial review
 |===
