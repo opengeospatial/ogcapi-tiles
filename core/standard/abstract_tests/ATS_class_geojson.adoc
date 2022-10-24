@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geojson
-subject:: <<rc_geojson,GeoJSON>>
+subject:: <<rc_geojson,Requirements Class "GeoJSON">>
 classification:: Target Type:Web API
 ====
 

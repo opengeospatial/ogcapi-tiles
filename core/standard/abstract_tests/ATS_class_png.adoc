@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/png
-subject:: <<rc_png,PNG>>
+subject:: <<rc_png,Requirements Class "PNG">>
 classification:: Target Type:Web API
 ====
 

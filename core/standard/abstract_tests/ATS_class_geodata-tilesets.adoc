@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/geodata-tilesets
-subject:: <<rc_geoDataResourceTileSets,Geo Data Resource TileSets>>
+subject:: <<rc_geoDataResourceTileSets,Requirements Class "GeoData Tilesets">>
 classification:: Target Type:Web API
 ====
 

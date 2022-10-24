@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tilesets-list
-subject:: <<rc_tileSets-list,TileSets List>>
+subject:: <<rc_tileSets-list,Requirements Class "TileSets List">>
 classification:: Target Type:Web API
 ====
 

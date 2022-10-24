@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/tiff
-subject:: <<rc_tiff,TIFF>>
+subject:: <<rc_tiff,Requirements Class "TIFF">>
 classification:: Target Type:Web API
 ====
 

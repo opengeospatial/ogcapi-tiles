@@ -12,7 +12,7 @@
 ////
 
 [requirements_class]
-.Requirements Class XML
+.Requirements Class XML Tileset Metadata
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/xml

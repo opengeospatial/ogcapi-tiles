@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/mvt
-subject:: <<rc_mvt,Mapbox Vector Tiles>>
+subject:: <<rc_mvt,Requirements Class "Mapbox Vector Tiles">>
 classification:: Target Type:Web API
 ====
 

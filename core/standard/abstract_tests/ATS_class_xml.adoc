@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/xml
-subject:: <<rc_xml,XML>>
+subject:: <<rc_xml,Requirements Class "XML Tileset Metadata">>
 classification:: Target Type:Web API
 ====
 

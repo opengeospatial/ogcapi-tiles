@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/core
-subject:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/core
+subject:: <<rc_tiles_core,Requirements Class "Core">>
 classification:: Target Type:Web API
 ====
 

@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: http://www.opengis.net/spec/ogcapi-tiles-1/1.0/conf/collections-selection
-subject:: <<rc_collections-selection,Collections Selection>>
+subject:: <<rc_collections-selection,Requirements Class "Collections Selection">>
 classification:: Target Type:Web API
 ====
 
