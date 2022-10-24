@@ -27,15 +27,15 @@ include::abstract_tests/ATS_class_geodata-tilesets.adoc[leveloffset=+1]
 
 include::abstract_tests/ATS_class_collections-selection.adoc[leveloffset=+1]
 
-=== Conformance Class DateTime
+=== Conformance Class "DateTime"
 
 include::abstract_tests/ATS_class_datetime.adoc[leveloffset=+1]
 
-=== Conformance Class OpenAPI 3.0 Specification
+=== Conformance Class "OpenAPI Specification 3.0"
 
 include::abstract_tests/ATS_class_openapi.adoc[leveloffset=+1]
 
-=== Conformance Class "XML" Tileset Metadata
+=== Conformance Class "XML Tileset Metadata"
 include::abstract_tests/ATS_class_xml.adoc[leveloffset=+1]
 
 === Conformance Classes for tile encodings

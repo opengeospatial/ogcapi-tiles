@@ -17,7 +17,7 @@
 [%metadata]
 identifier:: /conf/xml/content
 target:: /req/xml/content
-test-purpose:: Validate the particularities of a XML response
+test-purpose:: Validate the particularities of an XML response
 test-method::
 +
 --

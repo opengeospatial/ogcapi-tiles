@@ -33,14 +33,14 @@ test-purpose:: Validate the content of a tileset description
 test-method::
 +
 --
-1. Validate that the tileset endpoint SHALL support negotiating an application/json response. In this case, a successful response of a HTTP GET for a specific tileset is encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
+1. Validate that the tileset endpoint SHALL support negotiation for an application/json response. In this case, a successful response of a HTTP GET for a specific tileset is encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 
-2. If the tileset endpoint also support negotiating an application/xml response,  validate that a successful response of a HTTP GET for a specific tileset is encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
+2. If the tileset endpoint also support negotiation for an application/xml response,  validate that a successful response of a HTTP GET for a specific tileset is encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 
-3. If the tileset uses a TileMatrixSet registered in a TileMatrixSet registry (e.g. OGC NA), validate that the `tileMatrixSetURI` property links to the registered TileMatrixSet (e.g. `http://www.opengis.net/def/tilematrixset/{tileMatrixSet}`).
+3. If the tileset uses a TileMatrixSet registered in a TileMatrixSet register that is published through an accessible registry (e.g. the OGC TileMatrixSet register), validate that the `tileMatrixSetURI` property links to the registered TileMatrixSet (e.g. `http://www.opengis.net/def/tilematrixset/{tileMatrixSet}`).
 
 4. Validate that the links property includes a link to the TileMatrixSet definition with relation type `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme` following the
-https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileMatrixSet.json[tile matrix set schema], as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
+https://schemas.opengis.net/tms/2.0/json/tileMatrixSet.json[tile matrix set schema], as defined by the 2D Tile Matrix Set and Tile Set Metadata standard 2.0.
 
 5. Validate that the tileset metadata includes at least one templated link to individual tiles using the relation type `item`, and the template parameters
 `{tileMatrix}`, and `{tileRow}` and `{tileCol}`. Those variables are to be substituted by their respective valid values to obtain the URL to a tile.

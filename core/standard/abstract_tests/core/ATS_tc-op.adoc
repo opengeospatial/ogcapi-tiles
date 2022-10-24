@@ -31,9 +31,9 @@ The URI is obtained by substituting the variables by their respective valid valu
 
 2. Validate that the variables in the URL correspond to the tile matrix, tile row and tile column of a particular tile matrix set as defined by the 2D Tile Matrix Set standard.
 
-3. Validate that API SHALL provides a mechanism to obtain the template and associate the variables to their respective meaning, for example by implementing the tileset
+3. Validate that the API provides a mechanism for obtaining the template and associating the variables to their respective meaning, for example by implementing the tileset
 conformance class, or through an API definition.
 --
 ====
 
-NOTE: In practice to test the core conformance class the user of the test should provide a TileMatrixSet definition, a URL template (that contains the endpoint for tiles) with specific variable names, and a range of valid values for those variables and build URLs and execute the test.
+NOTE: In practice, to test for conformance to the Core conformance class, the user of the test should provide a TileMatrixSet definition, a URL template (that contains the endpoint for tiles) with specific variable names, and a range of valid values for those variables and building the URLs. Once the information has been provided, the user can then execute the test.
