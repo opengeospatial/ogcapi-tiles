@@ -14,10 +14,10 @@
 ====
 [%metadata]
 identifier:: /rec/tileset/tmxslink
-part:: To improve interoperability, this standard recommends that the API provides tiles following the TileMatrixSets defined in a TileMatrixSet registry.
-part:: It is also possible to use a TileMatrixSet not available in a registry. In this case the API SHOULD provide a definition of the TileMatrixSet as resolvable URI in an endpoint following the template: `/tileMatrixSets/{tileMatrixSetId}` (where `{tileMatrixSetId}` is a unique identifier of the TileMatrixSet in the service) following the TileMatrixSet schema in http://docs.ogc.org/is/17-083r4/17-083r4
-part:: When the API provides one or more definitions of TileMatrixSets as resolvable URI in `/tileMatrixSets/{tileMatrixSetId}`, the `/tileMatrixSets` endpoint SHOULD respond with the list of TileMatrixSets defined by the API using an object with a `tileMatrixSets` property that contains an array of `TileMatrixSet` objects.
+part:: To improve interoperability, this standard recommends that the API provides tiles following the TileMatrixSets defined in a TileMatrixSet register.
+part:: It is also possible to use a TileMatrixSet not available in a register. In this case the API SHOULD provide a definition of the TileMatrixSet through a resolvable URI at an endpoint following the template: `/tileMatrixSets/{tileMatrixSetId}` (where `{tileMatrixSetId}` is a unique identifier of the TileMatrixSet in the service) following the TileMatrixSet schema in http://docs.ogc.org/is/17-083r4/17-083r4
+part:: When the API provides one or more definitions of TileMatrixSets through a resolvable URI at `/tileMatrixSets/{tileMatrixSetId}`, the `/tileMatrixSets` endpoint SHOULD respond with the list of TileMatrixSets defined by the API using an object with a `tileMatrixSets` property that contains an array of `TileMatrixSet` objects.
 part:: When the API provides a `/tileMatrixSets` endpoint, this endpoint SHOULD be mentioned in one or more links in the landing page of the API with the `rel` type `http://www.opengis.net/def/rel/ogc/1.0/tiling-schemes`.
 ====
 
-NOTE: The common TileMatrixSets defined in http://docs.ogc.org/is/17-083r4/17-083r4.html#61[Annex D] of OGC 17-083r4 and the variable-width TileMatrixSets defined in http://docs.ogc.org/is/17-083r4/17-083r4.html#104[Annex E] of OGC 17-083r4 are registered in the OGC TileMatrixSets registry available at http://www.opengis.net/def/tms.
+NOTE: The common TileMatrixSets defined in http://docs.ogc.org/is/17-083r4/17-083r4.html#61[Annex D] of OGC 17-083r4 and the variable-width TileMatrixSets defined in http://docs.ogc.org/is/17-083r4/17-083r4.html#104[Annex E] of OGC 17-083r4 are registered in the OGC TileMatrixSets register available at http://www.opengis.net/def/tms.

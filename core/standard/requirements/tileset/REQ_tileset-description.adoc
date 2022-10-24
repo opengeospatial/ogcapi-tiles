@@ -19,9 +19,9 @@
 ====
 [%metadata]
 identifier:: /req/tileset/description
-part:: The tileset endpoint SHALL support negotiating an application/json response. In this case, a successful response of a HTTP GET for a specific tileset SHALL be encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
-part:: If the tileset endpoint also support negotiating an application/xml response, a  successful response of a HTTP GET for a specific tileset SHALL be encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
-part:: If the tileset uses a TileMatrixSet registered in a TileMatrixSet registry (e.g. OGC NA), the `tileMatrixSetURI` property SHALL link to the registered TileMatrixSet (e.g. `http://www.opengis.net/def/tilematrixset/{tileMatrixSet}`).
+part:: The tileset endpoint SHALL support negotiation of an application/json response. In this case, a successful response of an HTTP GET for a specific tileset SHALL be encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tile Set Metadata standard 2.0.
+part:: If the tileset endpoint also supports negotiation of an application/xml response, a  successful response of an HTTP GET for a specific tileset SHALL be encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
+part:: If the tileset uses a TileMatrixSet registered in a TileMatrixSet register (e.g. that of the OGC), the `tileMatrixSetURI` property SHALL link to the registered TileMatrixSet (e.g. `http://www.opengis.net/def/tilematrixset/{tileMatrixSet}`).
 part:: The links property SHALL include a link to the TileMatrixSet definition with relation type `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme` following the
  https://github.com/opengeospatial/2D-Tile-Matrix-Set/blob/master/schemas/tms/2.0/json/tileMatrixSet.json[tile matrix set schema], as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 part:: The tileset metadata SHALL include at least one templated link to individual tiles using the relation type `item`, and the template parameters

@@ -43,8 +43,8 @@ The tileset metadata contains all the information necessary for a client applica
 
 This class does not specify a full path to a tileset. Generally, _tileset_ resources are linked from a _tilesets list_ resource
 (refer to the Requirements Class "Tilesets List" (<<rc_tileSets-list>>) for how to list available tilesets and link to individual tileset resources).
-Refer to the Requirements Class "Dataset Tilesets" (<<rc_datasetTileSets>>) and Requirements Class "Geodata Tilesets" (<<rc_geoDataResourceTileSets>>) describing two mechanisms to associate lists of tilesets to
-an OGC API dataset (landing page) and to geospatial data (collection) resources respectively.
+Refer to the Requirements Class "Dataset Tilesets" (<<rc_datasetTileSets>>) and Requirements Class "GeoData Tilesets" (<<rc_geoDataResourceTileSets>>) for a description of two mechanisms that associate lists of tilesets to
+an OGC API landing page for a dataset and to geospatial data (collection) resources respectively.
 It is expected that a tileset can be used as a building block in other Web APIs and can be used to provide tiles of different types of data such as maps, features, coverages or other types of geospatial data that can benefit from tiling.
 
 ==== Response
@@ -62,7 +62,7 @@ include::recommendations/tileset/REC_header_linktemplates.adoc[]
 
 See the <<rc_xml>> for providing an XML representation of the tileset metadata.
 
-Support for alternative encodings for tileset metadata can be added, such as TileJSON.
+Support for alternative encodings for tileset metadata can be added, such as https://github.com/mapbox/tilejson-spec[TileJSON].
 
 Currently, use of the TileJSON specification usually implies a WebMercatorQuad TileMatrixSet and the reference to it is implicit. TileJSON version 3 provides an additional mechanism to cite data sources.
 
@@ -74,14 +74,14 @@ include::recommendations/tileset/REC_conf_link.adoc[]
 
 Clients or servers are not required to support a specific default TileMatrixSet.
 
-NOTE: The OGC TileMatrixSets registry is based on the OGC Two Dimensional Tile Matrix Set standard. Refer to Annex D and E for commonly used TileMatrixSets
+NOTE: The OGC TileMatrixSets register is based on the OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard, version 2.0 (OGC 17-083r4). Refer to Annex D and E for commonly used TileMatrixSets.
 
 
 
-NOTE: When this conformance class is used together with the GeoData Tilesets conformance class, the geospatial data resource URL is typically the first part of the URL template, but this standard does not mandate this (e.g., the tileset metadata and tiles could be hosted on more affordable object storage).
+NOTE: When this requirements class is used together with the GeoData Tilesets requirements class, the geospatial data resource URL is typically the first part of the URL template, but this standard does not mandate this (e.g., the tileset metadata and tiles could be hosted on more affordable object storage).
 
 [[TilesetTilesURIResponseExample]]
-.Example fragment of a tileset response for a common TileMatrixSet defined in the OGC NA registry
+.Example fragment of a tileset response for a common TileMatrixSet defined in the OGC TileMatrixSet register
 =================
 [source,JSON]
 {
@@ -181,9 +181,9 @@ This section provides more details on the recommendations for Web API-defined Ti
 
 ==== Web API landing page
 
-The landing page provides links to start exploring the resources offered by the Web API. It mainly consists in a list of links. New links for TileMatrixSets on top of the common ones are introduced.
+The landing page provides links to start exploring the resources offered by the Web API. It mainly consists of a list of links. New links for TileMatrixSets on top of the common ones are introduced.
 
-In the landing page, in JSON format, the links follow the link schema defined in the OGC API - Common. The following is an example fragment of the response to an OGC API - Tiles landing page.
+On the landing page, in JSON format, the links follow the link schema defined in OGC API - Common. The following is an example fragment of the response to an OGC API - Tiles landing page.
 
 [[landingPageTilesTmxs]]
 .Web API Landing Page fragment with links to TileMatrixSet descriptions
