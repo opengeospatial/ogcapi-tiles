@@ -1,5 +1,5 @@
 [[rc_datasetTileSets]]
-== Requirement Class "Dataset Tile Sets"
+== Requirements Class "Dataset Tilesets"
 
 === Overview
 

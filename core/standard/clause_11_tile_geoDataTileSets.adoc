@@ -1,5 +1,5 @@
 [[rc_geoDataResourceTileSets]]
-== Requirement Class "Geo Data Resource TileSets"
+== Requirements Class "GeoData Tilesets"
 
 === Overview
 

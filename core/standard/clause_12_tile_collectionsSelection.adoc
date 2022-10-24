@@ -1,6 +1,6 @@
 [[rc_collections-selection]]
 
-== Requirement Class "Collections Selection"
+== Requirements Class "Collections Selection"
 
 === Overview
 

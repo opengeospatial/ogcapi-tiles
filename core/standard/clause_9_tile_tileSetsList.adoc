@@ -1,5 +1,5 @@
 [[rc_tileSets-list]]
-== Requirement Class "TileSets List"
+== Requirements Class "Tilesets List"
 
 === Overview
 
