@@ -12,7 +12,7 @@
 | OGC API - Tiles
 | https://github.com/joanma747[Joan Maso]
 
-| https://maps.ecere.com/ogcapi/[GNOSIS Map Server (Vector Tiles Pilot 2, D103 deliverable)]
+| https://maps.gnosis.earth/ogcapi/[GNOSIS Map Server (Vector Tiles Pilot 2, D103 deliverable)]
 | OGC API - Tiles
 | https://github.com/jerstlouis[Jerome St Louis]
 
