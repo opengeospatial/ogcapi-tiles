@@ -78,7 +78,7 @@
 | OGC API - Tiles
 | https://github.com/robinhoutmeyers[Robin Houtmeyers]
 
-| https://github.com/openlayers/openlayers/pull/10963[OpenLayers]
+| OpenLayers https://openlayers.org/en/latest/examples/ogc-map-tiles.html[map] and https://openlayers.org/en/latest/examples/ogc-vector-tiles.html[vector] examples
 | OGC API - Tiles
 | https://github.com/tschaub[Tim Schaub]
 
