@@ -11,7 +11,7 @@ All requirements and conformance tests that appear in this document are denoted 
 
 To express relationships between resources, https://tools.ietf.org/rfc/rfc8288.txt[RFC 8288 (Web Linking)] is used.
 
-The following https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA link relation types] are used in this document:
+The following https://www.iana.org/assignments/link-relations/link-relations.xhtml[IANA link relation types] are used in this Standard:
 
 * **alternate**: Refers to a substitute for this context.
 
@@ -23,7 +23,7 @@ The following https://www.iana.org/assignments/link-relations/link-relations.xh
 
 * **service-doc**: Identifies service documentation for the context that is primarily intended for human consumption.
 
-The following link relation types specified in the _Two Dimensional Tile Matrix Set and Tileset Metadata_ standard are used:
+The following link relation types specified in the _Two Dimensional Tile Matrix Set and Tileset Metadata_ Standard are used:
 
 * **http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme**: The target IRI points to a resource that describes the TileMatrixSet according to the 2D-TMS standard.
 
@@ -54,4 +54,4 @@ Each resource representation includes an array of links. Implementations are fre
 
 === Use of HTTPS
 
-For simplicity, this document in general only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS and simply is a shorthand notation for "HTTP or HTTPS." In fact, most servers are expected to use https://tools.ietf.org/html/rfc2818[HTTPS], not https://www.ietf.org/rfc/rfc2616.txt[HTTP].
+For simplicity, this Standard in general only refers to the HTTP protocol. This is not meant to exclude the use of HTTPS and simply is a shorthand notation for "HTTP or HTTPS." In fact, most servers are expected to use https://tools.ietf.org/html/rfc2818[HTTPS], not https://www.ietf.org/rfc/rfc2616.txt[HTTP].
