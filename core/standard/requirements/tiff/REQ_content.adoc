@@ -18,4 +18,4 @@ part:: The TIFF file SHALL be organized in strips (avoiding organization in inte
 part:: All tiles representing parts of the same resource or resources and using the same style SHALL follow the same portrayal rules or represent data with the same reference and units of measure.
 ====
 
-NOTE: TIFF is an ideal format for storing geospatial grid data with its original data values. However, it can also be used for image palette or RGB imagery.
+NOTE: TIFF is an ideal format for storing geospatial grid data with its original data values. However, TIFF can also be used for image palette or RGB imagery.

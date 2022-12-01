@@ -15,12 +15,12 @@ conformance class, or through an API definition.
 ====
 [%metadata]
 identifier:: /req/core/tc-op
-part:: The tiles making up a tileset containing available data SHALL be available as an HTTP GET request to a URI that can be built from a template
-containing two or three variables. If the tileset is available for more than one tilematrix, the template shall contain three variables (such as `{tileMatrix}`, `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{z}`, `{y}` and `{x}`).  If the tileset is available for a single tilematrix, the template shall contain two variables (such as `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{y}` and `{x}`).
+part:: The tiles making up a tileset containing available data SHALL be available via an HTTP GET request to a URI that can be built from a template
+containing two or three variables. If the tileset is available for more than one tilematrix, the template SHALL contain three variables (such as `{tileMatrix}`, `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{z}`, `{y}` and `{x}`).  If the tileset is available for a single tilematrix, the template SHALL contain two variables (such as `{tileRow}` and `{tileCol}` as defined by the tileset conformance class, or `{y}` and `{x}`).
 The URI is obtained by substituting the variables by their respective valid values.
 part:: These variables SHALL correspond to the tile matrix, tile row and tile column of a particular tile matrix set as defined by the 2D Tile Matrix Set standard.
 part:: The API SHALL provide a mechanism to obtain this template and associate the variables to their respective meaning, for example by implementing the tileset
 conformance class, or through an API definition.
 ====
 
-NOTE: The _core_ requirements class by itself does not prescribe specific names for these variables, nor does it define a specific mechanism to communicate the template.
+NOTE: The _core_ Requirements Class by itself does not prescribe specific names for these variables, nor does it define a specific mechanism to communicate the template.

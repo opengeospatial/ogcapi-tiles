@@ -11,7 +11,7 @@
 ====
 [%metadata]
 identifier:: /req/datetime/axis
-part:: To subset a generic time dimension, the server SHALL support "datetime" as axisname in the subset parameter
+part:: To subset a generic time dimension, the server SHALL support "datetime" as axis name in the subset parameter
 ====
 
 .A date-time (subset)

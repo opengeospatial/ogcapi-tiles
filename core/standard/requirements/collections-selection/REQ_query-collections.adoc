@@ -45,7 +45,7 @@ An operation that acts on a resource consisting of multiple geospatial data sub-
 
 [.component,class=part]
 --
-The parameter `collections` SHALL be supported by tileset resources and tiles resources for origins consisting of multiple geospatial data sub-resources (e.g. dataset tileset at `{datasetAPI}/tiles/WebMercatorQuad` and dataset tiles at `{datasetAPI}/tiles/WebMercatorQuad/{tileMatrix}/{tileRow}/{tileCol}`).
+The parameter `collections` SHALL be supported by tileset resources and tiles resources for origins consisting of multiple geospatial data sub-resources (e.g., dataset tileset at `{datasetAPI}/tiles/WebMercatorQuad` and dataset tiles at `{datasetAPI}/tiles/WebMercatorQuad/{tileMatrix}/{tileRow}/{tileCol}`).
 --
 
 [.component,class=part]

@@ -25,17 +25,17 @@
 
 [.component,class=part]
 --
-An extra `{tileMatrixSetId}` variable may be used by the API definition for simplification purposes and, this way, make all tileset paths homogeneous.
+An extra `{tileMatrixSetId}` variable MAY be used by the API definition for simplification purposes and, this way, make all tileset paths homogeneous.
 --
 
 [.component,class=part]
 --
-The `{tileMatrixSetId}` variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, it represents all the TileMatrixSets supported by the resource.
+The `{tileMatrixSetId}` variable will be interpreted as one of TileMatrixSet identifiers supported by the resource. In other words, tileMatrixSetId represents all the TileMatrixSets supported by the resource.
 --
 
 [.component,class=part]
 --
-The following OpenAPI Specification 3.0 fragment can be used in this case:
+The following OpenAPI Specification 3.0 fragment MAY be used in this case:
 
 [source,YAML]
 ----

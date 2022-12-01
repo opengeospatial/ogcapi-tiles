@@ -1,6 +1,6 @@
 .Preface
 
-This document defines the OGC API - Tiles - Part 1: Core standard. A web API conforming to this standard can serve tiles of spatially referenced data or maps with predefined content, extent, and resolution. Suggested additions, changes and comments on this standard are welcome and encouraged. Such suggestions may be submitted using the issues log on the GitHub repository: https://github.com/opengeospatial/ogcapi-tiles .
+This document defines the _OGC API — Tiles — Part 1: Core_ Standard. A Web API conforming to this Standard can serve tiles of spatially referenced data or maps with predefined content, extent, and resolution. Suggested additions, changes and comments on this standard are welcome and encouraged. Such suggestions may be submitted using the issues log on the GitHub repository: https://github.com/opengeospatial/ogcapi-tiles .
 
 ////
 *OGC Declaration*
@@ -24,7 +24,10 @@ A tile matrix set is a tiling scheme that enables an application to partition an
 The _OGC API - Tiles_ Standard is a successor to the OGC’s Web Map Tile Service (WMTS) Standard. 
 Instead of a fixed Web interface, OGC API — Tiles focuses on simple reusable REST API building blocks which can be described using the OpenAPI specification. 
 Whereas WMTS focused on map tiles, the _OGC API — Tiles_ Standard is designed to support any form of tiled data.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 31ad632ac70e475a2f8a8b8588db9bb7cca9e79f
 
 == Submitters
 

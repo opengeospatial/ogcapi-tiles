@@ -16,16 +16,13 @@
 | OGC API - Tiles
 | https://github.com/jerstlouis[Jerome St Louis]
 
-
-| https://demo.ldproxy.net/daraa[interactive instruments demo server]
-| OGC API - Tiles, Features, Styles
+| https://demo.ldproxy.net/[ldproxy demo server, multiple datasets]
+| OGC API - Tiles 1.0, Features 1.0, Styles
 | https://github.com/cportele[Clemens Portele]
-
 
 | http://ogc-vtp.gospatial.org/ogc-api-tiles[Terranodo Tiles Server (Vector Tiles Pilot 2, D100 deliverable)]
 | OGC API - Tiles
 | https://github.com/jj0hns0n[Jeffrey Johnson]
-
 
 | https://vtp2.geo-solutions.it/geoserver/ogc/features[GeoSolutions Feature Server (http/https supported) (Vector Tiles Pilot 2, D100 deliverable) ]
 | OGC API - Features
@@ -42,6 +39,10 @@
 | https://github.com/geopython/pygeoapi/pull/419[pygeoapi implementation of OGC API - Tiles (draft PR)]
 | OGC API - Tiles
 | https://github.com/francbartoli[Francesco Bartoli]
+
+| https://test.cubewerx.com/cubewerx/cubeserv/demo/ogcapi/Daraa[MariaDB Geospatial (CubeWerx) OGC API test server]
+| OGC API - Maps, Tiles, Styles, Features, Coverages, etc.
+| https://github.com/pomakis[Keith Pomakis]
 
 | TBA
 | TBA
@@ -78,7 +79,7 @@
 | OGC API - Tiles
 | https://github.com/robinhoutmeyers[Robin Houtmeyers]
 
-| https://github.com/openlayers/openlayers/pull/10963[OpenLayers]
+| OpenLayers https://openlayers.org/en/latest/examples/ogc-map-tiles.html[map] and https://openlayers.org/en/latest/examples/ogc-vector-tiles.html[vector] examples
 | OGC API - Tiles
 | https://github.com/tschaub[Tim Schaub]
 

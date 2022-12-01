@@ -14,5 +14,5 @@ for example, `Link-Template: </ogcapi/collections/blueMarble/map/tiles/GNOSISGlo
 [%metadata]
 identifier:: /rec/tileset/header-linktemplates
 part:: The tileset metadata response SHOULD include a `Link-Template:` in the header following the https://www.ietf.org/archive/id/draft-ietf-httpapi-link-template-00.html[Link-Template HTTP Header Field] draft specification, for example, `Link-Template: </ogcapi/collections/blueMarble/map/tiles/GNOSISGlobalGrid/{tileMatrix}/{tileRow}/{tileCol}.png>; rel="item"; type="image/png"; var-base="/ogcapi/vars/"` .
-part:: The templated link in the tilesetmetadata SHOULD include a `varBase`, if the implementation additionally supports providing semantic information about the parameters.
+part:: The templated link in the tileset metadata SHOULD include a `varBase`, if the implementation additionally supports providing semantic information about the parameters.
 ====

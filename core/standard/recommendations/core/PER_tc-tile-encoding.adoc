@@ -13,7 +13,7 @@
 ====
 [%metadata]
 identifier:: /per/core/tc-core-tile-encoding
-part:: This standard does not impose any media type on the encoding of a response containing tiled feature data. For features, the media type MAY be GeoJSON, Mapbox Vector Tiles or other format.
-part:: This standard does not impose any media type on the encoding of a response containing tiled coverage data. For coverages, it MAY be a GeoTIFF, netCDF or other format.
-part:: This standard does not impose any media type on the encoding of a map tile response. For maps, it MAY be JPEG, PNG or other format.
+part:: This Standard does not impose any media type on the encoding of a response containing tiled feature data. For features, the media type MAY be GeoJSON, Mapbox Vector Tiles or some other format.
+part:: This Standard does not impose any media type on the encoding of a response containing tiled coverage data. For coverages, the media type MAY be a GeoTIFF, netCDF or some other format.
+part:: This Standard does not impose any media type on the encoding of a map tile response. For maps, the media type MAY be JPEG, PNG or some other format.
 ====

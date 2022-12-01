@@ -13,5 +13,5 @@
 [%metadata]
 identifier:: /req/dataset-tilesets/operation
 part:: The dataset resource (the root resource) SHALL have at least one tileset accessible at `.../tiles` supporting an HTTP GET operation.
-part:: The URI SHALL be composed of two parts: the initial part is the URI of the dataset resource (the root resource) that can be represented as tiles and the final part follows the pattern `/tiles`.
+part:: The URI SHALL be composed of two parts: The initial part is the URI of the dataset resource (the root resource) that can be represented as tiles and the final part follows the pattern `/tiles`.
 ====

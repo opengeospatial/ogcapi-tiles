@@ -7,33 +7,33 @@
 
 include::requirements/requirements_class_tileset.adoc[]
 
-The tileset requirements class provides a mechanism to retrieve metadata for a set of tiles of geospatial data tiled according to one specific TileMatrixSet.
-It also provides a mechanism to obtain a templated link to retrieve individual tiles as defined in the _core_ conformance class.
+The _tileset_ Requirements Class provides a mechanism to retrieve metadata for a set of tiles of geospatial data tiled according to one specific TileMatrixSet.
+This Class also provides a mechanism to obtain a templated link to retrieve individual tiles as defined in the _core_ conformance class.
 
-It describes the HTTP GET operation for accessing a tileset resource and its response, but does not prescribe a specific path.
-The response provides metadata as per the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard.
+This Class describes the HTTP GET operation for accessing a tileset resource and its response but does not prescribe a specific path.
+The response provides metadata as per the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard.
 
 The essential elements of this metadata are:
 
-- a link to the definition of the TileMatrixSet (either one registered in the https://defs.opengis.net/vocprez/object?uri=http%3A//www.opengis.net/def/tms[OGC TileMatrixSet register] that is controlled by the https://www.ogc.org/standards/na[OGC Naming Authority (OGC-NA)] SubCommittee (SC), or to a custom TileMatrixSet definition),
-- a TileMatrixSet URI in the case of a TileMatrixSet registered with an authority (e.g. the OGC TileMatrixSet register),
-- a Coordinate Reference System (e.g. provided as a URI),
-- a templated link (URI) to individual tiles,
-- and a data type (indicating whether the tileset consists of vector, coverage or map tiles).
+- A link to the definition of the TileMatrixSet (either one registered in the https://defs.opengis.net/vocprez/object?uri=http%3A//www.opengis.net/def/tms[OGC TileMatrixSet register] that is controlled by the https://www.ogc.org/standards/na[OGC Naming Authority (OGC-NA)] SubCommittee (SC), or to a custom TileMatrixSet definition).
+- A TileMatrixSet URI in the case of a TileMatrixSet registered with an authority (e.g. the OGC TileMatrixSet register).
+- A Coordinate Reference System (usually provided as a URI).
+- A templated link (URI) to individual tiles.
+- A data type (indicating whether the tileset consists of vector, coverage or map tiles).
 
-It may optionally also provide additional information, such as:
+Metadata may optionally also provide additional information, such as:
 
-- a title,
-- a description,
-- the limits of the tileset if it does not span the full extent of the TileMatrixSet,
-- the geospatial data resources involved in the creation of the tiles (potentially including links to OGC API collections),
-- a schema of the available properties contained within the tiles,
-- styles used to create the tiles,
-- a central point on which a viewer may initially focus,
-- attribution.
+- A title.
+- A description.
+- The limits of the tileset if it does not span the full extent of the TileMatrixSet.
+- The geospatial data resources involved in the creation of the tiles (potentially including links to OGC API collections).
+- A schema of the available properties contained within the tiles.
+- Styles used to create the tiles.
+- A central point on which a viewer may initially focus.
+- Attribution.
 
 A link to a definition of a TileMatrixSet is always required whether a custom TileMatrixSet or a registered TileMatrixSet is used.
-It is recommended that the Web API hosts a local definition of each supported TileMatrixSet to ensure availability.
+Having the Web API hosts a local definition of each supported TileMatrixSet to ensure availability is recommended.   
 
 === Tileset resource
 A tileset consists of a set of tiles obtained by partitioning geospatial data according to a particular TileMatrixSet.
@@ -45,22 +45,22 @@ This class does not specify a full path to a tileset. Generally, _tileset_ resou
 (refer to the Requirements Class "Tilesets List" (<<rc_tileSets-list>>) for how to list available tilesets and link to individual tileset resources).
 Refer to the Requirements Class "Dataset Tilesets" (<<rc_datasetTileSets>>) and Requirements Class "GeoData Tilesets" (<<rc_geoDataResourceTileSets>>) for a description of two mechanisms that associate lists of tilesets to
 an OGC API landing page for a dataset and to geospatial data (collection) resources respectively.
-It is expected that a tileset can be used as a building block in other Web APIs and can be used to provide tiles of different types of data such as maps, features, coverages or other types of geospatial data that can benefit from tiling.
+The expectation is that a tileset can be used as a building block in other Web APIs and can be used to provide tiles of different types of data such as maps, features, coverages, or other types of geospatial data that can benefit from tiling.
 
 ==== Response
-A successful GET response to a tileset resource will be metadata consisting of a data structure with the specific information necessary to build a complete GET request of the tiles representing the geospatial data resource.
+A successful GET response to a tileset resource is metadata consisting of a data structure with the specific information necessary to build a complete GET request of the tiles representing the geospatial data resource.
 
 include::requirements/tileset/REQ_tileset-description.adoc[]
 
 
 In addition to the recommendation to include links in the HTTP response headers as specified in OGC API - Common - Part 1,
-this standard recommends following the https://www.ietf.org/archive/id/draft-ietf-httpapi-link-template-00.html[Link-Template HTTP Header Field] draft specification,
+this Standard recommends following the https://www.ietf.org/archive/id/draft-ietf-httpapi-link-template-00.html[Link-Template HTTP Header Field] draft specification,
 to include `Link-Template` for templated links, such as the URI for individual tiles.
 
 include::recommendations/tileset/REC_header_linktemplates.adoc[]
 
 
-See the <<rc_xml>> for providing an XML representation of the tileset metadata.
+See <<rc_xml>> for providing an XML representation of the tileset metadata.
 
 Support for alternative encodings for tileset metadata can be added, such as https://github.com/mapbox/tilejson-spec[TileJSON].
 
@@ -78,7 +78,7 @@ NOTE: The OGC TileMatrixSets register is based on the OGC Two Dimensional Tile M
 
 
 
-NOTE: When this requirements class is used together with the GeoData Tilesets requirements class, the geospatial data resource URL is typically the first part of the URL template, but this standard does not mandate this (e.g., the tileset metadata and tiles could be hosted on more affordable object storage).
+NOTE: When this Requirements Class is used together with the GeoData Tilesets Requirements Class, the geospatial data resource URL is typically the first part of the URL template, but this standard does not mandate this (e.g., the tileset metadata and tiles could be hosted on more affordable object storage).
 
 [[TilesetTilesURIResponseExample]]
 .Example fragment of a tileset response for a common TileMatrixSet defined in the OGC TileMatrixSet register
@@ -123,7 +123,7 @@ NOTE: When this requirements class is used together with the GeoData Tilesets re
 }
 =================
 
-NOTE: The use of "templated" is inspired by the JSON Hypertext Application Language (HAL), https://tools.ietf.org/html/draft-kelly-json-hal-08
+NOTE: The use of "templated" is inspired by the JSON Hypertext Application Language (HAL), https://tools.ietf.org/html/draft-kelly-json-hal-08.
 
 The following table explains the meaning of the URI template variables.
 
@@ -177,16 +177,16 @@ The following table explains the meaning of the URI template variables.
 
 === Web API-defined TileMatrixSets
 
-This section provides more details on the recommendations for Web API-defined TileMatrixSets. In the future, an extension of this standard could describe a mechanism to manage (create, update...) tiling schemes for a Web API and make some of the recommendations expressed here mandatory.
+This section provides more details on the recommendations for implementing TileMatrixSets in Web API based servers and client applications. In the future, an extension of this Standard may describe a mechanism to manage (create, update, …) tiling schemes for a Web application implementing OGC API definitions including OGC API – Tiles Requirements Classes and make some of the recommendations mandatory.
 
-==== Web API landing page
+==== Web API Landing Page
 
-The landing page provides links to start exploring the resources offered by the Web API. It mainly consists of a list of links. New links for TileMatrixSets on top of the common ones are introduced.
+An OGC API landing page provides links to start exploring the resources offered by the Web API. A landing page mainly consists of a list of links. New links for TileMatrixSets on top of the ones defined in _OGC API - Common_ are introduced.
 
-On the landing page, in JSON format, the links follow the link schema defined in OGC API - Common. The following is an example fragment of the response to an OGC API - Tiles landing page.
+Using the JSON format, the landing page links follow the link schema defined in _OGC API - Common_. The following is an example fragment of the response to an OGC API - Tiles landing page.
 
 [[landingPageTilesTmxs]]
-.Web API Landing Page fragment with links to TileMatrixSet descriptions
+.Web API Landing Page fragment with links to TileMatrixSet descriptions.
 =================
 [source,JSON]
 ----
@@ -212,7 +212,7 @@ On the landing page, in JSON format, the links follow the link schema defined in
 
 ==== TileMatrixSets
 
-The TileMatrixSets endpoint retrieves links to the descriptions of the tile matrix sets supported by the Web API in addition to the TileMatrixSets defined in the Annex D and the Annex E of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard. The response follows the schema below.
+An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the descriptions of the tile matrix sets supported by the OGC Web API. The MAY be the TileMatrixSets defined in the Annex D and the Annex E of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard or customized ones. The response follows the schema below.
 
 [[TileMatrixSetsResponseSchema]]
 .Schema for the TileMatrixSets resource
@@ -281,7 +281,7 @@ id-link:
 
 ==== TileMatrixSet
 
-The TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by the Web API following the schema described in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard. The response follows the TileMatrixSet schema.
+A HTTP GET request to a TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by Web API based servers and client applications following the schema described in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard. The response follows the TileMatrixSet schema.
 
 [[TileMatrixSetResponseExample]]
 .Fragment of a TileMatrixSet resource example
