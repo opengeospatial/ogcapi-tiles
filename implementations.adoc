@@ -36,7 +36,7 @@
 | STAC, OGC API - Tiles, Features
 | https://github.com/notthatbreezy[Chris Brown]
 
-| https://github.com/geopython/pygeoapi/pull/419[pygeoapi implementation of OGC API - Tiles (draft PR)]
+| https://pygeoapi.io[pygeoapi] (https://demo.pygeoapi.io/master[demo])
 | OGC API - Tiles
 | https://github.com/francbartoli[Francesco Bartoli]
 
