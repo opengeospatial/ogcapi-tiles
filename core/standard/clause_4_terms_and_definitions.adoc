@@ -39,6 +39,11 @@ web accessible resource that represents a component of geospatial information (m
 
 NOTE: Not to be confused with a web accessible resource representation. While resource representations share the same path and are selected by format negotiation, geospatial aspects use different paths. Commonly a geospatial aspect is a subpath of a geospatial data resource.
 
+==== landing page
+any page whose primary purpose is to contain a description of something else. (W3C, URLs in Data Primer)
+
+NOTE: A landing page for a Web API serves as the root node of the API Resource tree and provides the information needed to navigate all the resources exposed through the API.
+
 ==== map tile
 
 _tile_ that contains information in a raster form where the values of cells are colors which can be readily displayed on rendering devices
@@ -121,3 +126,9 @@ NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metada
 API using an architectural style that is founded on the technologies of the Web [source: OGC API - Features - Part 1: Core]
 
 NOTE: See link:https://www.w3.org/TR/dwbp/#APIHttpVerbs[Best Practice 24: Use Web Standards as the foundation of APIs] (W3C Data on the Web Best Practices) for more detail.
+
+==== Web API based implementation
+
+A server that uses a Web API as an architectural style or a client application that is compatible with a server side Web API definition.
+
+NOTE: The Web API based implementations mentioned in the context of this Standard declare conformity to at least one Conformance Class defined by this Standard. 

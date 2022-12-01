@@ -17,4 +17,4 @@ part:: Only the collections of geospatial data enumerated in the values of the `
 part:: If there is more than one collection name and the style applied does not specify otherwise, the comma-separated collections SHALL be included in the result starting by the first (leftmost) and ending by the last (rightmost).
 ====
 
-NOTE: In map tiles, sub-requirement B will result in the first collection being portrayed in the bottom with the others rendered on top of the previous ones, one by one (the rightmost collection will become topmost in the portrayal).
+NOTE: For tiles representing maps, sub-requirement B will result in the first collection being portrayed at the bottom of the display with the others rendered on top of the previous ones, one by one (the collection mentioned rightmost in the collections parameter will become topmost in the portrayal).

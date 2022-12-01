@@ -7,14 +7,14 @@
 
 include::requirements/requirements_class_datetime.adoc[]
 
-This requirements class defines the way date and time can be used as a parameter to filter the content in the tile resource. This requirements class imports most of the functionality from OGC API - Commons.
+The DateTime Requirements Class defines the way date and time can be used as a parameter to filter the content in the tile resource. This Requirements Class imports most of the functionality from OGC API - Commons.
 
 === Describing the temporal extent
 
 Depending on the type of resource, the way the temporal extent and the resolution of the datetime values available for the client to request are described may be different:
 
 * For Geodata Tilesets, the collection description should specify the temporal extent of the resources. Tiles can be requested inside this extent. If the extent is specified in a way that instant values are provided (e.g. by listing them or by including a resolution), then it may be possible to request tiles for these instants.
-* If tileset metadata is available, a future revision of the 2D Tile Matrix Set and Tile Set Metadata standard could take precedence providing more details on the available values for datetime.
+* If tileset metadata is available, a future revision of the 2D Tile Matrix Set and Tile Set Metadata Standard could take precedence providing more details on the available values for datetime.
 
 === `datetime` query parameter request and response
 

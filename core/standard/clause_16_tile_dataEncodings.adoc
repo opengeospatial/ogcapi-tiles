@@ -1,7 +1,7 @@
 [[rc_data_encodings]]
 == Requirements classes for tile encodings
 
-The OGC API - Tiles standard is designed to support tiling data that can potentially be encoded and provided in many of the existing geospatial formats or new ones that could be invented in the future.  Web APIs may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The intention of this section is NOT to limit the number of encodings offered by an implementation of OGC API - Tiles but to provide a minimum set of encodings that could be implemented by many of the Web APIs that implement the standard, as well as to provide a practical way to test conformance to the standard. For each of these encodings, a requirements class is defined. Web APIs are free to support other encodings and data formats that can be convenient in each case, and use them despite the fact that they may not be listed as supported conformance classes by the Web API. In addition, the declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API should support all of them. Partial support could be determined by the differences in the nature of the data behind each collection.
+The _OGC API - Tiles_ Standard is designed to support tiling data that can potentially be encoded and provided in many of the existing geospatial formats or new ones that could be invented in the future.  Web API implementations may adopt these encodings and declare conformance to them in the list of conformance classes supported by the Web API. The intention of this section is NOT to limit the number of encodings offered by an implementation of OGC API - Tiles but to provide a minimum set of encodings that could be implemented by Web APIs that implement this Standard, as well as to provide a practical way to test conformance to this Standard. For each of these encodings, a Requirements Class is defined. Web API implementations are free to support other encodings and data formats that can be convenient in each case and use them even though they may not be listed as supported conformance classes by the Web API. In addition, the declaration of an encoding in the conformance classes supported does not mean that all the resources provided by the Web API should support all of them. Partial support could be determined by the differences in the nature of the data behind each collection.
 
 === Overview
 
@@ -19,9 +19,9 @@ NOTE: None of the encodings specified here is mandatory and an implementation of
 [[rc_png]]
 === Requirements Class "PNG"
 
-One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The PNG format is one of the most popular formats on the World Wide Web. The format is defined by the ISO Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification (ISO/IEC 15948:2004), which is also available as a W3C Recommendation at https://www.w3.org/TR/PNG. Note that the standard is listed as ISO/IEC 15948:2003 on the W3C Recommendation.
+One fundamental use case for tiled geospatial content is visualization in a web browser. For this use case, selecting an encoding that can be natively interpreted by the web browser is fundamental. The PNG format is one of the most popular formats on the World Wide Web. The format is defined by the ISO Information technology — Computer graphics and image processing — Portable Network Graphics (PNG): Functional specification (ISO/IEC 15948:2004), which is also available as a W3C Recommendation at https://www.w3.org/TR/PNG. Note that the standard is listed as ISO/IEC 15948:2003 on the W3C Recommendation.
 
-PNG supports lossless data compression. PNG supports palette-based images (with palettes of 24-bit RGB or 32-bit RGBA colors), grayscale images (with or without an alpha channel for transparency), and full-color non-palette-based RGB or RGBA images. The PNG working group designed the format for transferring images on the Internet, not for professional-quality print graphics; therefore non-RGB color spaces such as CMYK are not supported.
+PNG supports lossless data compression. PNG supports palette-based images (with palettes of 24-bit RGB or 32-bit RGBA colors), grayscale images (with or without an alpha channel for transparency), and full-color non-palette-based RGB or RGBA images. The PNG working group designed the format for transferring images on the Internet, not for professional-quality print graphics. Therefore non-RGB color spaces such as CMYK are not supported.
 
 include::requirements/requirements_class_png.adoc[]
 
@@ -30,9 +30,9 @@ include::requirements/png/REQ_content.adoc[]
 [[rc_jpeg]]
 === Requirements Class "JPEG"
 
-One fundamental use case for tiles is immediate visualization in a web browser. In these circumstances, selecting an encoding that can be natively interpreted by the web browser is fundamental. The JPEG format is one of the most popular formats on the World Wide Web and is defined by the ITU-T Recommendation T.81 and the ISO/IEC 10918-1 standard.
+As above, selecting an encoding that can be natively interpreted by the web browser is fundamental. The JPEG format is one of the most popular formats on the World Wide Web and is defined by the ITU-T Recommendation T.81 and the ISO/IEC 10918-1 standard.
 
-The JPEG compression algorithm operates at its best on photographs and paintings with smooth variations of tone and color. It is best used for color and grayscale still images, but not for binary images. JPEG is also the most common format saved by digital cameras. However, JPEG is not well suited for line drawings and other textual or iconic graphics, where the sharp contrasts between adjacent pixels can cause noticeable artifacts. Such images are better saved in a lossless graphics format such as PNG. Because JPEG is a lossy compression method, which reduces the image fidelity, it is inappropriate for exact reproduction of imaging data.
+The JPEG compression algorithm operates at its best on photographs and paintings with smooth variations of tone and color. . JPEG is best used for color and grayscale still images, but not for binary images. JPEG is also the most common format used digital cameras to encode and store pictures. However, JPEG is not well suited for line drawings and other textual or iconic graphics, where the sharp contrasts between adjacent pixels can cause noticeable artifacts. Such images are better saved in a lossless graphics format such as PNG. Because JPEG is a lossy compression method, which reduces the image fidelity, it is inappropriate for exact reproduction of imaging data.
 
 include::requirements/requirements_class_jpeg.adoc[]
 
@@ -41,9 +41,9 @@ include::requirements/jpeg/REQ_content.adoc[]
 [[rc_tiff]]
 === Requirements Class "TIFF"
 
-One use case for tiles is to distribute fragmented coverage values as regular grids. In these circumstances, selecting an encoding that is able to store grid values in their original format and eventually compress them using lossless compression is the right solution. The TIFF format is one of the older formats but still one of the most popular formats to preserve arrays of data values. The format is defined by the TIFF v6 specification, which is owned by Adobe Systems.
+One use case for tiles is to distribute fragmented coverage values as regular grids. In these circumstances, selecting an encoding that can store grid values in their original format and eventually compress them using lossless compression is the right solution. The TIFF format is one of the older formats but still is one of the most popular formats to preserve arrays of data values. The format is defined by the TIFF v6 specification, which is owned by Adobe Systems.
 
-TIFF is a flexible, adaptable file format for handling images and data. The ability to store data in a lossless format makes a TIFF file a useful image archive, because, unlike standard JPEG files, a TIFF file can use lossless compression methods such as PackBits or LZW compression.
+TIFF is a flexible, adaptable file format for handling images and data. The ability to store data in a lossless format makes a TIFF file a useful image archive. This is because, unlike standard JPEG files, a TIFF file can use lossless compression methods such as PackBits or LZW compression.
 
 include::requirements/requirements_class_tiff.adoc[]
 
@@ -56,7 +56,7 @@ include::requirements/tiff/REQ_geotiff.adoc[]
 [[rc_netcdf]]
 === Requirements Class "NetCDF"
 
-In the case of multidimensional regular grid tiles, as defined in Annex J of the 2D-TMS Standards [OGC 17-083r4], there is a need for a format that is able to store multidimensional data in a natural way. The NetCDF format is one of the most popular formats, for scientific data, that is able store multi-dimensional arrays of data values. It is defined by the UCAR-Unidata community and standardized in the OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0 (OGC 10-090r3).
+In the case of multidimensional regular grid tiles, as defined in Annex J of the 2D-TMS Standards [OGC 17-083r4], there is a need for a format that can store multidimensional data in a natural way. The NetCDF format is one of the most popular formats for scientific data that is able store multi-dimensional arrays of data values. NetCDF format is defined by the UCAR-Unidata community and standardized in the OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0 (OGC 10-090r3).
 
 include::requirements/requirements_class_netcdf.adoc[]
 
@@ -67,7 +67,7 @@ include::requirements/netcdf/REQ_geo.adoc[]
 [[rc_geojson]]
 === Requirements Class "GeoJSON"
 
-GeoJSON is a commonly used format for representing features with geometries and other properties. It is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using JSON-based formats supporting GeoJSON is recommended for vector tiles, if the feature data can be represented in GeoJSON for the intended use.
+GeoJSON is a commonly used format for representing features with simple geometries and related properties. GeoJSON is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using JSON-based formats, supporting GeoJSON is recommended for vector tiles. The caveat is whether the feature data can be represented in GeoJSON for the intended use.
 
 include::requirements/requirements_class_geojson.adoc[]
 
@@ -84,4 +84,4 @@ include::requirements/requirements_class_mvt.adoc[]
 
 include::requirements/mvt/REQ_content.adoc[]
 
-NOTE: The support of Mapbox Vector Tiles does not make the OGC API dependent on the Mapbox Vector Tile Specification. The support of Mapbox Vector Tiles is completely optional in a Web API. This requirements class is completely independent of the version of Mapbox Vector Tiles and its future evolution.
+NOTE: The support of Mapbox Vector Tiles does not make the OGC API dependent on the Mapbox Vector Tile Specification. The support of Mapbox Vector Tiles is completely optional in a Web API. This Requirements Class is completely independent of the version of Mapbox Vector Tiles and future versions.

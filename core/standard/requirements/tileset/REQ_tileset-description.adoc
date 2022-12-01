@@ -26,6 +26,6 @@ part:: The links property SHALL include a link to the TileMatrixSet definition w
  https://schemas.opengis.net/tms/2.0/json/tileMatrixSet.json[tile matrix set schema], as defined by the 2D Tile Matrix Set and Tileset Metadata standard 2.0.
 part:: The tileset metadata SHALL include at least one templated link to individual tiles using the relation type `item`, and the template parameters
 `{tileMatrix}`, and `{tileRow}` and `{tileCol}`. Those variables are to be substituted by their respective valid values to obtain the URL to a tile.
-part:: If a tiles link template is specific to a particular format, it SHALL contain the media type for that format in the `"type"` property. Otherwise, normal HTTP content type negotiation rules apply (`Accept:` header).
+part:: If a tiles link template is specific to a particular format, the link SHALL contain the media type for that format in the `"type"` property. Otherwise, normal HTTP content type negotiation rules apply (`Accept:` header).
 part:: A property `templated` with a boolean `true` value SHALL be part of the link properties to indicate that the link needs to be processed to substitute the templated variables with valid values before being used as a URL to a tile.
 ====

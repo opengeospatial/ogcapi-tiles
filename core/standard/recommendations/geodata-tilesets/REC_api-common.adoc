@@ -11,5 +11,5 @@
 ====
 [%metadata]
 identifier:: /rec/geodata-tilesets/api-common
-part:: An implementation of this standard SHOULD consider to implement the requirements specified in the http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core (OGC API - Common - Part 1 version 1.0).
+part:: An implementation of this Standard SHOULD consider implementing the requirements specified in the http://www.opengis.net/spec/ogcapi-common-1/1.0/req/core (OGC API - Common - Part 1 version 1.0).
 ====

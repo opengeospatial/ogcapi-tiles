@@ -25,13 +25,13 @@ Every 200-response of the server with the media type application/geo+json SHALL 
 --
 The root of the GeoJSON document SHALL be:
 
-* a GeoJSON FeatureCollection Object for features, or
-* a GeoJSON Feature Object for a single feature.
+* A GeoJSON FeatureCollection Object for features.
+* A GeoJSON Feature Object for a single feature.
 --
 
 [.component,class=part]
 --
-Regardless of the TileMatrixSet CRS, the geometry coordinates SHALL be in CRS84 as stated in the GeoJSON standard unless a _prior arrangement_ applies to use an alternative coordinate reference system. The fact that a TileMatrixSet is used does not constitute a _prior arrangement_. For example, an extension could negotiate another CRS for coordinates with a query parameter.
+Regardless of the TileMatrixSet CRS, coordinates SHALL be in CRS84 as stated in the GeoJSON standard unless a _prior arrangement_ applies to use an alternative coordinate reference system. The fact that a TileMatrixSet is used does not constitute a _prior arrangement_. For example, an extension could negotiate another CRS for coordinates with a query parameter.
 --
 
 ====

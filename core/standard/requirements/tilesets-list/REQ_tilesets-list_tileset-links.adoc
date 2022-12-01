@@ -14,8 +14,71 @@
 ====
 [%metadata]
 identifier:: /req/tilesets-list/tileset-links
-part:: A successful response of an HTTP GET SHALL consist of a list of available tilesets each element containing a subset of the tileset metadata (as defined by the 2D Tile Matrix Set and Tile Set Metadata standard), consisting of: `dataType`, `crs`, a link to the tileset (with rel: `self`), a link to the tileMatrixSet definition (with rel: `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme`) and `tileMatrixSetURI` (if the TMS is available in a register).
-part:: Each element of that list SHALL include a link to a resource providing the full version of the tileset metadata, using link relation `self`.
-part:: The tileset-list endpoint SHALL support negotiation of an application/json response. In this case, each tileset in the successful response of an HTTP GET SHALL be encoded following the data model and JSON schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tile Set Metadata standard 2.0.
-part:: If the tileset-list endpoint also supports negotiation of an application/xml response, each tileset in the successful response of an HTTP GET SHALL be encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tile Set Metadata standard 2.0.
+part:: A successful response of an HTTP GET SHALL consist of an object called `tilesets` containing a list of available tilesets, each element containing: `dataType`, `crs`, a `link` to the tileset (with rel: `self`), a `link` to the tileMatrixSet definition (with rel: `http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme`) and `tileMatrixSetURI` (if the TMS is available in a register) (this is a subset of the tileset metadata; as defined by the 2D Tile Matrix Set and Tile Set Metadata standard). 
+part:: Each element of that list SHALL include a `link` to a resource providing the full version of the _tileset metadata_, using link relation `self`.
+part:: The tileset-list endpoint SHALL support negotiation of an application/json response. In this case, a successful response of an HTTP GET SHALL be encoded following the JSON schema (that represents a subset of the TileSet Metadata in 2D Tile Matrix Set and Tile Set Metadata standard 2.0).
+
+[source,JSON]
+----
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"description": "List of available tilesets.",
+	"type": "object",
+	"required": [ "tilesets" ],
+	"properties": {
+		"links": {
+			"type": "array",
+			"items": {
+				"$ref": "https://schemas.opengis.net/tms/2.0/json/link.json"
+			}
+		},
+		"tilesets": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": [ "dataType", "links", "crs" ],
+				"properties": {
+					"title": {
+						"description": "A title for this tileset",
+						"type": "string"
+					},
+					"dataType": {
+						"description": "Type of data represented in the tileset",
+						"allOf": [
+							{ "type": "string" },
+                            {
+                                "type": "string",
+                                "enum": ["map", "vector", "coverage"]
+                            }
+						]
+					},
+					"crs": {
+						"allOf": [
+							{
+								"description": "Coordinate Reference System (CRS)"
+							},
+							{
+								"$ref": "https://schemas.opengis.net/tms/2.0/json/crs.json"
+							}
+						]
+					},
+					"tileMatrixSetURI": {
+						"description": "Reference to a Tile Matrix Set on an offical source for Tile Matrix Sets such as the OGC NA definition server (http://www.opengis.net/def/tms/). Required if the tile matrix set is registered on an open official source.",
+						"type": "string",
+						"format": "uri"
+					},
+					"links": {
+						"description": "Links to related resources. A 'self' link to the tileset as well as a 'http://www.opengis.net/def/rel/ogc/1.0/tiling-scheme' link to a definition of the TileMatrixSet are required.",
+						"type": "array",
+						"items": {
+							"$ref": "https://schemas.opengis.net/tms/2.0/json/link.json"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+----
+part:: If the tileset-list endpoint also supports negotiation of an application/xml response, each item in the tilesets list in a successful response of an HTTP GET SHALL be encoded following the data model and XML schema for tileset metadata, as defined by the 2D Tile Matrix Set and Tile Set Metadata standard 2.0.
 ====
