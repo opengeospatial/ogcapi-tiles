@@ -16,8 +16,8 @@
 | OGC API - Tiles
 | https://github.com/jerstlouis[Jerome St Louis]
 
-| https://demo.ldproxy.net/daraa[interactive instruments demo server]
-| OGC API - Tiles, Features, Styles
+| https://demo.ldproxy.net/[ldproxy demo server, multiple datasets]
+| OGC API - Tiles 1.0, Features 1.0, Styles
 | https://github.com/cportele[Clemens Portele]
 
 | http://ogc-vtp.gospatial.org/ogc-api-tiles[Terranodo Tiles Server (Vector Tiles Pilot 2, D100 deliverable)]
