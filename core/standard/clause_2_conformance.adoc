@@ -50,7 +50,7 @@ The _TileSets List_ Requirements Class defines a generic operation for retrievin
 
 *<<rc_datasetTileSets,Requirements Class "Dataset TileSets">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets)
 
-The _Dataset Tilesets_ Requirements Class sdefines how to retrieve all tiles for a dataset that could potentially consists of multiple geospatial data resources. All implementation instances of the Tiles API must implement this Requirements Class if they are claiming to support *dataset* tiles following this _OGC API - Tiles Part 1: Core_ Standard.
+The _Dataset Tilesets_ Requirements Class defines how to retrieve all tiles for a dataset that could potentially consists of multiple geospatial data resources. All implementation instances of the Tiles API must implement this Requirements Class if they are claiming to support *dataset* tiles following this _OGC API - Tiles Part 1: Core_ Standard.
 Dataset tiles may combine content from multiple geospatial resources, regardless of whether those are available separately (as tiles or otherwise).
 
 [#table_resource_dataset_tileset,reftext='{table-caption} {counter:table-num}']

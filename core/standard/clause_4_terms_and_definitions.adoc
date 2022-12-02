@@ -40,9 +40,12 @@ web accessible resource that represents a component of geospatial information (m
 NOTE: Not to be confused with a web accessible resource representation. While resource representations share the same path and are selected by format negotiation, geospatial aspects use different paths. Commonly a geospatial aspect is a subpath of a geospatial data resource.
 
 ==== landing page
-any page whose primary purpose is to contain a description of something else. (W3C, URLs in Data Primer)
+any page whose primary purpose is to contain a description of something else.
+Landing pages often provide summaries or additional information about the thing that they describe.
+(W3C, URLs in Data Primer)
 
-NOTE: A landing page for a Web API serves as the root node of the API Resource tree and provides the information needed to navigate all the resources exposed through the API.
+In the context of the OGC API Standads, a landing page serves as the root node of the API Resource tree and provides the information needed to navigate all the resources exposed through the API.
+The landing page provides access to the root of a dataset.
 
 ==== map tile
 
@@ -73,7 +76,7 @@ tiling grid in a given 2D coordinate reference system, associated to a specific 
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
-NOTE: Each tile of a tile matrix is uniquely identifiable by a row and a column integer index. The number of rows is referred to as the _matrix height_, while the maximum number of columns is referred to
+NOTE: Each tile of a tile matrix is uniquely identifiable by integer indices for the row and the column. The number of rows is referred to as the _matrix height_, while the maximum number of columns is referred to
 as the _matrix width_ (the number of columns can vary for different rows in _variable width tile matrices_).
 
 ==== tile matrix set
@@ -100,7 +103,7 @@ data and following a common tiling scheme.
 scheme that defines how space is partitioned into individual _tiles_, potentially featuring multiple levels of detail (each tiling at a different granularity to reflect a different resolution or scale)
 
 A tiling scheme defines the spatial reference system and the geometric properties of each tile defined by the scheme.
-Those properties include which space each tile occupies, such as the tiles spatial extent, as well as a tile coordinate origin if a particular corner of origin convention is established.
+Those properties include which space each tile occupies (the tile's spatial extent), as well as a tile coordinate origin if a particular corner of origin convention is established.
 
 NOTE: A tiling scheme can be defined on top of a CRS as well as other spatial reference systems such as DGGS and other organizations including irregular ones.
 In this document, only tiling schemes based on CRSs are supported.
@@ -115,9 +118,9 @@ metadata describing common properties defining a _tile set_, layers and styles u
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
-==== vector tile (aka tiled vector or feature data)
+==== vector tile (a.k.a. tiled vector feature data)
 
-tile that contains vector data that has been generalized (simplified) at the tile scale resolution and clipped by the tile boundaries.
+tile that contains vector data that has been generalized (simplified) at the tile scale resolution and clipped by the tile boundaries
 
 NOTE: From OGC 17-083r4: OGC Two Dimensional Tile Matrix Set and Tile Set Metadata standard
 
@@ -129,6 +132,6 @@ NOTE: See link:https://www.w3.org/TR/dwbp/#APIHttpVerbs[Best Practice 24: Use We
 
 ==== Web API based implementation
 
-A server that uses a Web API as an architectural style or a client application that is compatible with a server side Web API definition.
+a server software that implements a Web API
 
-NOTE: The Web API based implementations mentioned in the context of this Standard declare conformity to at least one Conformance Class defined by this Standard. 
+NOTE: The Web API based implementations mentioned in the context of this Standard declare conformity to at least one Conformance Class defined by this Standard.

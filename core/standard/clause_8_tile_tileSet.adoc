@@ -33,7 +33,7 @@ Metadata may optionally also provide additional information, such as:
 - Attribution.
 
 A link to a definition of a TileMatrixSet is always required whether a custom TileMatrixSet or a registered TileMatrixSet is used.
-Having the Web API hosts a local definition of each supported TileMatrixSet to ensure availability is recommended.   
+Having the Web API hosts a local definition of each supported TileMatrixSet to ensure availability is recommended.
 
 === Tileset resource
 A tileset consists of a set of tiles obtained by partitioning geospatial data according to a particular TileMatrixSet.
@@ -177,7 +177,7 @@ The following table explains the meaning of the URI template variables.
 
 === Web API-defined TileMatrixSets
 
-This section provides more details on the recommendations for implementing TileMatrixSets in Web API based servers and client applications. In the future, an extension of this Standard may describe a mechanism to manage (create, update, …) tiling schemes for a Web application implementing OGC API definitions including OGC API – Tiles Requirements Classes and make some of the recommendations mandatory.
+This section provides more details on the recommendations for implementing TileMatrixSets in Web API based servers and client applications. In the future, an extension of this Standard may describe a mechanism to manage (create, update, ...) tiling schemes for a Web application implementing OGC API definitions including OGC API – Tiles Requirements Classes and make some of the recommendations mandatory.
 
 ==== Web API Landing Page
 
@@ -212,7 +212,7 @@ Using the JSON format, the landing page links follow the link schema defined in 
 
 ==== TileMatrixSets
 
-An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the descriptions of the tile matrix sets supported by the OGC Web API. The MAY be the TileMatrixSets defined in the Annex D and the Annex E of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard or customized ones. The response follows the schema below.
+An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the descriptions of the tile matrix sets supported by the OGC Web API. They may be the TileMatrixSets defined in the Annex D and the Annex E of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard or customized ones. The response follows the schema below.
 
 [[TileMatrixSetsResponseSchema]]
 .Schema for the TileMatrixSets resource
@@ -235,7 +235,7 @@ An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the 
 id-link:
   type: object
   description: |-
-    Potentially reusable object that contains an id to a resource and links where the object is described or a representation retrieved. Typically it is useful for paths like `/resources` and `/resources/{resourceId}`. `/resources` responds to an array of id-link listing the `resourceId` and the links to get it. /collections and /collections/{collectionId} in OGC APII - Common is an exception to this pattern.
+    Potentially reusable object that contains an id to a resource and links where the object is described or a representation retrieved. Typically it is useful for paths like `/resources` and `/resources/{resourceId}`. `/resources` responds to an array of id-link listing the `resourceId` and the links to get it. /collections and /collections/{collectionId} in OGC API - Common is an exception to this pattern.
     The fact that `links` is an array can be used to advertise the same object representation in different formats.
   required:
     - id
@@ -246,7 +246,7 @@ id-link:
     uri:
       type: string
       format: uri
-      description: If the Tile Matrix Set is registered in a authoritative definitions server, this property should the reference to this definition
+      description: If the Tile Matrix Set is registered in an authoritative definitions server, this property should the reference to this definition
     title:
       type: string
     links:

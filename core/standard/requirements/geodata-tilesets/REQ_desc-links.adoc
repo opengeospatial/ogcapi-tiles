@@ -12,5 +12,5 @@
 ====
 [%metadata]
 identifier:: /req/geodata-tilesets/desc-links
-part:: If the Web API based server has a mechanism for geospatial data resources to expose links to geospatial aspects (e.g., feature items, metadata…), the API implementation SHALL include at least one of three `link` with the `href` pointing to tilesets list for geospatial data resources and with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`, `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` and `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
+part:: If the Web API based server has a mechanism for geospatial data resources to expose links to geospatial resource aspects (e.g., feature items, metadata...), the API implementation SHALL include at least one of three `link` with the `href` pointing to tilesets list for geospatial data resources and with rel: `http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector`, `http://www.opengis.net/def/rel/ogc/1.0/tilesets-map` and `http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage`.
 ====

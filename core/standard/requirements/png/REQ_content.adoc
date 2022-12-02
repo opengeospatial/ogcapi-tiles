@@ -3,7 +3,7 @@
 [width="90%",cols="2,6a"]
 |===
 ^|*Requirement {counter:req-id}* |*/req/png/content*
-^|A |Every 200-response of the server with the media type image/png SHALL be a PNG document representing only one tile
+^|A |Every 200-response of the server with the media type image/png SHALL be a PNG image representing only one tile
 ^|B |The colors of the PNG SHALL represent the geospatial features or coverage values in the tile.
 ^|C |The alpha channel of the PNG SHALL be used when partial transparency is required
 ^|D |All tiles representing parts of the same resource or resources and using the same style SHALL follow the same portrayal rules
@@ -14,10 +14,10 @@
 ====
 [%metadata]
 identifier:: /req/png/content
-part:: Every 200-response of the server with the media type image/png SHALL be a PNG document representing only one tile
+part:: Every 200-response of the server with the media type image/png SHALL be a PNG image representing only one tile
 part:: The colors of the PNG SHALL represent the geospatial features or coverage values in the tile.
 part:: The alpha channel of the PNG SHALL be used when partial transparency is required
 part:: All tiles representing parts of the same resource or resources and using the same style SHALL follow the same portrayal rules
 ====
 
-NOTE: The way colors in a PNG encoding are mapped to geospatial features or coverage values is out of scope of this Standard. However, a common set of portrayal rules for all tiles representing part of the same resource is essential, as adjacent tiles are normally represented one next to the other and presented as a single image to the user.
+NOTE: The way colors in a PNG image are mapped to geospatial features or coverage values is out of scope of this Standard. However, a common set of portrayal rules for all tiles representing part of the same resource is essential, as adjacent tiles are normally represented one next to the other and presented as a single image to the user.

@@ -25,7 +25,7 @@ The landing page provides links to start exploring the resources offered by the 
 include::requirements/dataset-tilesets/REQ_landingpage.adoc[]
 
 In the landing page, in JSON format, the links follow the link schema defined in the _OGC API - Common - Part 1: Core_ or in _OGC API - Features - Part 1: Core_ 1.0.
-Below you find an example fragment of the response to an _OGC API - Tiles_ landing page showing links to dataset tilesets.
+The example below shows a fragment of the response to an _OGC API - Tiles_ landing page showing links to dataset tilesets.
 
 [[landingPageTilesRoot]]
 .Web API Landing Page fragment that advertises dataset tilesets.
