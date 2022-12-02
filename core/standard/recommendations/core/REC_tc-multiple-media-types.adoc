@@ -1,0 +1,8 @@
+[[rec_core_tc-multiple-media-types]]
+
+[recommendation]
+====
+[%metadata]
+identifier:: /rec/core/tc-multiple-media-types
+part:: If both "image/png" and "image/jpeg" are supported at an endpoint and are present in the HTTP "Accept" request header with the same q value, and no other supported output format is present with a higher q value, the server SHOULD return the requested image in whichever of these two formats is considered optimal (typically PNG if there's transparency or for categorical maps where a limited number of colors is used, and JPEG otherwise).
+====
