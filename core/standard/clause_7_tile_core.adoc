@@ -24,8 +24,8 @@ maps (specified in OGC API - Maps) or coverages (specified in OGC API - Coverage
 
 include::recommendations/core/REC_tc-op.adoc[]
 
-The Tiles API implementation can determine the supported encodings, or more precisely the media types of the supported encodings, from the Web API definition, or from the conformance declaration (see <<rc_data_encodings>>).
-The desired encoding is selected using HTTP content negotiation.
+The desired encoding is selected by the client using HTTP content negotiation.
+If necessary, the client can determine the supported encodings, or more precisely the media types of the supported encodings, from the Web API definition, or from the conformance declaration (see <<rc_data_encodings>>).
 
 The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet that is agreed between the client and server. This Core Requirements Class does not discuss the details of how the client and service agree on which TileMatrixSet they use.
 
@@ -53,6 +53,8 @@ A successful response to a tile GET operation will be consistent with the media 
 include::requirements/core/REQ_tc-success.adoc[]
 
 include::recommendations/core/PER_tc-tile-encoding.adoc[]
+
+include::recommendations/core/REC_tc-multiple-media-types.adoc[]
 
 Normally, the content partially outside the tile bounding box will be clipped at the extent of the bounding box. This can be done efficiently when tiles are in raster format (e.g., map tiles).
 However, tiles containing features in vector format may not clip features that are partially outside, or clip to a slightly enlarged bounding box (a buffer), to ensure continuity of features or for performance.
