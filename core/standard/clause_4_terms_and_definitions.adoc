@@ -44,7 +44,7 @@ any page whose primary purpose is to contain a description of something else.
 Landing pages often provide summaries or additional information about the thing that they describe.
 (W3C, URLs in Data Primer)
 
-In the context of the OGC API Standads, a landing page serves as the root node of the API Resource tree and provides the information needed to navigate all the resources exposed through the API.
+In the context of the OGC API Standards, a landing page serves as the root node of the API Resource tree and provides the information needed to navigate all the resources exposed through the API.
 The landing page provides access to the root of a dataset.
 
 ==== map tile
