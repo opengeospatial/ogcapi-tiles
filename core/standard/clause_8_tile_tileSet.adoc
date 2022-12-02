@@ -229,13 +229,13 @@ An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the 
 =================
 
 [[TileMatrixSetsResponseCommonSchema]]
-.Schema for id-link from OGC API - Common used in TileMatrixSets resource.
+.Schema for id-link used to validate TileMatrixSets resource.
 =================
 [source,YAML]
 id-link:
   type: object
   description: |-
-    Reusable object that contains an id to a resource and links where the object is described or a representation retrieved. Typically it is useful for paths like `/resources` and `/resources/{resourceId}`.   `/resources` will respond an array of id-link listing the `resourceId` and the links to get it. /collections and /collections/{collectionId} is an exception to this pattern.
+    Potentially reusable object that contains an id to a resource and links where the object is described or a representation retrieved. Typically it is useful for paths like `/resources` and `/resources/{resourceId}`. `/resources` responds to an array of id-link listing the `resourceId` and the links to get it. /collections and /collections/{collectionId} in OGC APII - Common is an exception to this pattern.
     The fact that `links` is an array can be used to advertise the same object representation in different formats.
   required:
     - id
@@ -243,10 +243,10 @@ id-link:
   properties:
     id:
       type: string
-    tileMatrixSetURI:
+    uri:
       type: string
       format: uri
-      description: If the Tile Matrix Set is registered in the Definitions Server, this property should the reference to this definition
+      description: If the Tile Matrix Set is registered in a authoritative definitions server, this property should the reference to this definition
     title:
       type: string
     links:
