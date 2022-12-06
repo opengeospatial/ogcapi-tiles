@@ -14,7 +14,6 @@
 
 [requirement,label="/req/geojson/content",identifier="/req/geojson/content"]
 ====
-For each UML class defined or referenced in the Relief Package:
 
 [.component,class=part]
 --

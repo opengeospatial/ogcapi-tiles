@@ -13,11 +13,11 @@ Recipients of this document are requested to submit, with their comments, notifi
 [abstract]
 == Abstract
 
-_OGC API — Tiles_ Standard defines building blocks for implementing Web APIs that support the retrieval of tiled geospatial information.
-A Web API is an [.underline]#application programming interface# for either a [.underline]#web server# or a [.underline]#web browser# [Wikipedia, 2022].
-The OGC suite of Web APIs is an extensible framework for building HTTP based services that can be accessed in different applications on different platforms such as the Web, desktop, mobile, etc.
-_OGC API — Tiles_ Standard specifies how different forms/types of geospatial resources are supported, such as tiles of vector features ("vector tiles"), coverages, and maps (or imagery). Although OGC API - Tiles can be used independently, the building blocks can be combined with other OGC API Standards for additional capabilities or increased interoperability for specific types of data.
-The _OGC API — Tiles_ references the OGC Two-Dimensional Tile Matrix Set (TMS) and Tileset Metadata Standard [OGC 17-083r4].
+The _OGC API — Tiles_ Standard defines building blocks for implementing Web APIs that support the retrieval of tiled geospatial information. A Web API is an [.underline]#application programming interface# for either a [.underline]#web server# or a [.underline]#web browser# [Wikipedia, 2022].
+
+The OGC suite of Web API standards is an extensible framework for building HTTP based services that can be accessed in different applications on different platforms such as the Web, desktop, mobile, etc.
+The _OGC API — Tiles_ Standard specifies how different forms/types of geospatial resources are supported, such as tiles of vector features ("vector tiles"), coverages, and maps (or imagery). Although OGC API - Tiles can be used independently, the building blocks can be combined with other OGC API Standards for additional capabilities or increased interoperability for specific types of data.
+The _OGC API — Tiles_ Standard references the _OGC Two-Dimensional Tile Matrix Set (TMS) and Tile Set Metadata_ Standard [OGC 17-083r4].
 That Standard defines logical models and encodings for specifying tile matrix sets and describing tile sets.
 A tile matrix set is a tiling scheme that enables an application to partition and index space based on a set of regular grids defined for multiple scales in a Coordinate Reference System (CRS).
 

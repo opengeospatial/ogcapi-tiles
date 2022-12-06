@@ -11,5 +11,5 @@
 ====
 [%metadata]
 identifier:: /req/tiff/geotiff
-part:: If the TIFF encoding incorporates GeoTIFF georeference, this information SHALL be consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
+part:: If the TIFF encoding incorporates a GeoTIFF georeference, this information SHALL be consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
 ====

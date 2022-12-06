@@ -32,7 +32,7 @@ include::requirements/png/REQ_content.adoc[]
 
 As above, selecting an encoding that can be natively interpreted by the web browser is fundamental. The JPEG format is one of the most popular formats on the World Wide Web and is defined by the ITU-T Recommendation T.81 and the ISO/IEC 10918-1 standard.
 
-The JPEG compression algorithm operates at its best on photographs and paintings with smooth variations of tone and color. JPEG is best used for color and grayscale still images, but not for binary images. JPEG is also the most common format used digital cameras to encode and store pictures. However, JPEG is not well suited for line drawings and other textual or iconic graphics, where the sharp contrasts between adjacent pixels can cause noticeable artifacts. Such images are better saved in a lossless graphics format such as PNG. Because JPEG is a lossy compression method, which reduces the image fidelity, it is inappropriate for exact reproduction of imaging data.
+The JPEG compression algorithm operates at its best on photographs and paintings with smooth variations of tone and color. JPEG is best used for color and grayscale still images, but not for binary images. JPEG is also the most common format used by digital cameras to encode and store pictures. However, JPEG is not well suited for line drawings and other textual or iconic graphics, where the sharp contrasts between adjacent pixels can cause noticeable artifacts. Such images are better saved in a lossless graphics format such as PNG. Because JPEG is a lossy compression method, which reduces the image fidelity, it is inappropriate for exact reproduction of imaging data.
 
 include::requirements/requirements_class_jpeg.adoc[]
 
@@ -56,7 +56,7 @@ include::requirements/tiff/REQ_geotiff.adoc[]
 [[rc_netcdf]]
 === Requirements Class "NetCDF"
 
-In the case of multidimensional regular grid tiles, as defined in Annex J of the 2D-TMS Standards [OGC 17-083r4], there is a need for a format that can store multidimensional data in a natural way. The NetCDF format is one of the most popular formats for scientific data that is able store multi-dimensional arrays of data values. NetCDF format is defined by the UCAR-Unidata community and standardized in the OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0 (OGC 10-090r3).
+In the case of multidimensional regular grid tiles, as defined in Annex J of the 2D TMS Standard [OGC 17-083r4], there is a need for a format that can store multidimensional data in a natural way. The NetCDF format is one of the most popular formats for scientific data that is able to store multi-dimensional arrays of data values. NetCDF format is defined by the UCAR-Unidata community and standardized in the OGC Network Common Data Form (NetCDF) Core Encoding Standard version 1.0 (OGC 10-090r3).
 
 include::requirements/requirements_class_netcdf.adoc[]
 

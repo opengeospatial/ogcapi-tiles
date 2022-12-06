@@ -7,9 +7,9 @@
 :draft: 3.0
 :external-id: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
 :docnumber: 20-057
-:received-date: 2029-03-30
-:issued-date: 2029-03-30
-:published-date: 2029-03-30
+:received-date: 2022-06-15
+:issued-date: 2022-08-26
+:published-date: 2022-11-10
 :fullname: Joan Masó
 :fullname_2: Jérôme Jacovella-St-Louis
 :docsubtype: Interface
