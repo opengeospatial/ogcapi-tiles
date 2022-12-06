@@ -7,8 +7,8 @@
 
 include::requirements/requirements_class_geodata-tilesets.adoc[]
 
-The GeoData Tilesets Requirements Class assumes assumes that data is organized into one or more geospatial data resources
-(e.g., the "collections" http://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial data]).
+The GeoData Tilesets Requirements Class assumes that data is organized into one or more geospatial data resources
+(e.g., the "collections" http://docs.ogc.org/DRAFTS/20-024.html[OGC API - Common - Part 2: Geospatial Data]).
 Geospatial data resources are referenced using URIs.
 
 The GeoData Tilesets Class defines how to specify link(s) to one or more list(s) of tilesets containing a representation of this geospatial data resource (path). This Class is used in conjunction with <<rc_tileSets-list>> that specifies the response to this GET request.
@@ -16,21 +16,21 @@ The GeoData Tilesets Class defines how to specify link(s) to one or more list(s)
 === General
 include::recommendations/geodata-tilesets/REC_api-common.adoc[]
 
-This Requirements Class depends on _OGC API - Part 2: Geospatial data_, but stays flexible and does not require implementation of OGC API - Common - Part 1. This 
+This Requirements Class depends on _OGC API - Common - Part 2: Geospatial Data_, but stays flexible and does not require implementation of _OGC API - Common - Part 1_. This
 allows for other Web API architectures outside the OGC API framework to adopt this Class.
-However, a server implementing other OGC APIs is expected to implement OGC API - Common - Part 1.
-In practice, this means that the landing page and the conformance page follow OGC API - Common core requirement classes when used.
-Combining this building block with https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] instead of _OGC API - Common - Part 2 is also possible.
+However, a server implementing other OGC APIs is expected to implement _OGC API - Common - Part 1_.
+In practice, this means that the landing page and the conformance page follow _OGC API - Common_ core requirements classes when used.
+Combining this building block with https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] instead of _OGC API - Common - Part 2_ is also possible.
 
 === Geospatial data resources
-This Standard does not specify how geospatial data resources are exposed in a Web API based server that implements OGC APIs and whether they can be retrieved as geospatial data (e.g., feature items). For example, https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the `/collections/{collectionId}` path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
+This Standard does not specify how geospatial data resources are exposed in a server that implements OGC APIs and whether they can be retrieved as geospatial data (e.g., feature items). For example, https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the `/collections/{collectionId}` path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
 
 NOTE: The concept of geospatial data resource path replaces the concept of "layer" found in WMTS 1.0 but is intended to result in a better integration between data visualization and data access.
 
 include::requirements/geodata-tilesets/REQ_desc-links.adoc[]
 
-For example, an implementation of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core] returns a list of links that include geospatial resource aspects for each geospatial data resource in the `/collections/{collectionId}` path.
-_OGC API - Common - Part 2: Geospatial data_ provides a similar mechanism.
+For example, an implementation of the https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core] Standard returns a list of links that include geospatial resource aspects for each geospatial data resource in the `/collections/{collectionId}` path.
+_OGC API - Common - Part 2: Geospatial Data_ provides a similar mechanism.
 In the JSON response, the `links` array is where links to lists of tilesets must be added.
 
 .Fragment of a collection with a links array including two items pointing to lists of tilesets (one for vector tiles and one for map tiles).

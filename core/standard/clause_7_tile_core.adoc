@@ -7,7 +7,7 @@ include::requirements/requirements_class_core.adoc[]
 
 The Core Requirements Class is generically designed to describe an HTTP GET operation, as well as its response, to retrieve tiles from a tileset which can be described by the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] standard. The Core introduces the idea of URI templates and variables associated with the TileMatrix, TileRow, and TileCol concepts defined in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard but it does not prescribe a particular path or template form for the URL of those tiles.
 
-The Core focuses on the individual tiles and does not describe the tileset as a whole. The implementer of a Web API should also implements support for tileset metadata in conjunction with the core requirements class as it provides important information to clients. This can be done by also implementing the Requirements Class "Tileset" (<<rc_tileSet>>) or integrating within another API providing this capability through another mechanism.
+The Core focuses on the individual tiles and does not describe the tileset as a whole. The implementer of a Web API should also implement support for tileset metadata in conjunction with the core requirements class as it provides important information to clients. This can be done by also implementing the Requirements Class "Tileset" (<<rc_tileSet>>) or integrating within another API providing this capability through another mechanism.
 
 === A tile
 A tile resource is a geospatial resource presenting a fragment of a much bigger geospatial data resource that is spatially constrained at the boundaries of the selected tile in a tile matrix set.
@@ -27,7 +27,7 @@ include::recommendations/core/REC_tc-op.adoc[]
 The desired encoding is selected by the client using HTTP content negotiation.
 If necessary, the client can determine the supported encodings, or more precisely the media types of the supported encodings, from the Web API definition, or from the conformance declaration (see <<rc_data_encodings>>).
 
-The core of the OGC API - Tiles standard provides a mechanism to select and retrieve a tile in a TileMatrixSet that is agreed between the client and server. This Core Requirements Class does not discuss the details of how the client and service agree on which TileMatrixSet they use.
+The core of the OGC API - Tiles Standard provides a mechanism to select and retrieve a tile in a TileMatrixSet that is agreed between the client and server. This Core Requirements Class does not discuss the details of how the client and service agree on which TileMatrixSet they use.
 
 ==== Parameter tileMatrix
 include::requirements/core/REQ_tc-tilematrix-definition.adoc[]
@@ -83,7 +83,7 @@ The conformance declaration mainly consists of a list of links.
 
 include::requirements/core/REQ_tc-conformance-success.adoc[]
 
-If the server also declares conformity to OGC API - Common - Part 1: Core or to https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0], then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a conformance declaration page. In the JSON format the conformance declaration page is an array of links following the link schema defined in the OGC API - Common or in https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] standards. Below is an example fragment of a conformance a Web API declaration page conformant to OGC API - Common and OGC API - Tiles is shown.
+If the server also declares conformity to OGC API - Common - Part 1: Core or to https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0], then it has to consider the OGC API - Common requirements for declaring conformance, i.e. the use of a conformance declaration page. In the JSON format the conformance declaration page is an array of links following the link schema defined in the OGC API - Common or in https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] standards. Below is an example fragment of a conformance declaration page conformant to OGC API - Common and OGC API - Tiles.
 
 [[ConformancePageTileset]]
 .Conformance Information Page fragment

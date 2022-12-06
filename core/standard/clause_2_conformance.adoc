@@ -50,11 +50,11 @@ The _TileSets List_ Requirements Class defines a generic operation for retrievin
 
 *<<rc_datasetTileSets,Requirements Class "Dataset TileSets">>* (http://www.opengis.net/spec/ogcapi-tiles-1/1.0/req/dataset-tilesets)
 
-The _Dataset Tilesets_ Requirements Class defines how to retrieve all tiles for a dataset that could potentially consists of multiple geospatial data resources. All implementation instances of the Tiles API must implement this Requirements Class if they are claiming to support *dataset* tiles following this _OGC API - Tiles Part 1: Core_ Standard.
+The _Dataset Tilesets_ Requirements Class defines how to retrieve all tiles for a dataset that could potentially consist of multiple geospatial data resources. All implementation instances of the Tiles API must implement this Requirements Class if they are claiming to support *dataset* tiles following this _OGC API - Tiles - Part 1: Core_ Standard.
 Dataset tiles may combine content from multiple geospatial resources, regardless of whether those are available separately (as tiles or otherwise).
 
 [#table_resource_dataset_tileset,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the dataset tileset
+.Overview of resource and common direct links that correspond to the dataset tileset
 [cols="33,66",options="header"]
 |===
 |Resource name |**Common** path
@@ -68,7 +68,7 @@ Dataset tiles may combine content from multiple geospatial resources, regardless
 The _GeoData TileSets_ Requirements Class supports the retrieval of tiles from a specific geospatial data resource.
 
 [#table_resource_geodata_tilesets,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the geospatial data resources tilesets
+.Overview of resource and common direct links that correspond to the geospatial data resources tilesets
 [cols="33,66",options="header"]
 |===
 |Resource name |Example of possible paths
@@ -84,7 +84,7 @@ The _GeoData TileSets_ Requirements Class supports the retrieval of tiles from a
 The _Collections Selection_ Requirements Class supports the listing of specific geospatial data resources from which to retrieve tiles such as for use with data set tiles.
 
 [#table_resource_geodata_selection,reftext='{table-caption} {counter:table-num}']
-.Overview of resource and common direct links that corresponds to the geodata selection
+.Overview of resource and common direct links that correspond to geodata selection
 [cols="33,66",options="header"]
 |===
 |Resource name |Example of possible paths

@@ -19,6 +19,6 @@ test-purpose:: Validate GeoTIFF consistency of the georeference
 test-method::
 +
 --
-1. If the TIFF encoding incorporates GeoTIFF georeference, validate that this information is consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
+1. If the TIFF encoding incorporates a GeoTIFF georeference, validate that this information is consistent with the TileMatrixSet, TileMatrix, TileRow and TileCol
 --
 ====

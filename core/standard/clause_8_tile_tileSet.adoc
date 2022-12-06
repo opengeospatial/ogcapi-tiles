@@ -33,7 +33,7 @@ Metadata may optionally also provide additional information, such as:
 - Attribution.
 
 A link to a definition of a TileMatrixSet is always required whether a custom TileMatrixSet or a registered TileMatrixSet is used.
-Having the Web API hosts a local definition of each supported TileMatrixSet to ensure availability is recommended.
+Having the Web API host a local definition of each supported TileMatrixSet to ensure availability is recommended.
 
 === Tileset resource
 A tileset consists of a set of tiles obtained by partitioning geospatial data according to a particular TileMatrixSet.
@@ -186,7 +186,7 @@ An OGC API landing page provides links to start exploring the resources offered 
 Using the JSON format, the landing page links follow the link schema defined in _OGC API - Common_. The following is an example fragment of the response to an OGC API - Tiles landing page.
 
 [[landingPageTilesTmxs]]
-.Web API Landing Page fragment with links to TileMatrixSet descriptions.
+.Web API Landing Page fragment with links to TileMatrixSet descriptions
 =================
 [source,JSON]
 ----
@@ -212,7 +212,7 @@ Using the JSON format, the landing page links follow the link schema defined in 
 
 ==== TileMatrixSets
 
-An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the descriptions of the tile matrix sets supported by the OGC Web API. They may be the TileMatrixSets defined in the Annex D and the Annex E of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard or customized ones. The response follows the schema below.
+An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the descriptions of the tile matrix sets supported by the OGC Web API. They may be the TileMatrixSets defined in Annex D and Annex E of the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard, or in customized definitions. The response follows the schema below.
 
 [[TileMatrixSetsResponseSchema]]
 .Schema for the TileMatrixSets resource
@@ -229,7 +229,7 @@ An HTTP request to the TileMatrixSets endpoint retrieves a list of links to the 
 =================
 
 [[TileMatrixSetsResponseCommonSchema]]
-.Schema for id-link used to validate TileMatrixSets resource.
+.Schema for id-link used to validate TileMatrixSets resource
 =================
 [source,YAML]
 id-link:
@@ -281,7 +281,7 @@ id-link:
 
 ==== TileMatrixSet
 
-A HTTP GET request to a TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by Web API based servers and client applications following the schema described in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard. The response follows the TileMatrixSet schema.
+An HTTP GET request to a TileMatrixSet endpoint retrieves the full description of a tile matrix set supported by Web API based servers and client applications following the schema described in the https://docs.ogc.org/is/17-083r4/17-083r4.html[OGC Two Dimensional Tile Matrix Set and Tile Set Metadata 2.0] Standard. The response follows the TileMatrixSet schema.
 
 [[TileMatrixSetResponseExample]]
 .Fragment of a TileMatrixSet resource example

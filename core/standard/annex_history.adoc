@@ -15,4 +15,5 @@
 |2022-09-12 |1.0.0 draft 2 |G. Hobona |all |Conversion to metanorma
 |2022-09-15 |1.0.0 |J. Maso & J. St-Louis |several |Initial version 1.0
 |2022-10-24 |1.0.0 |G. Hobona |several |OGC Staff editorial review
+|2022-12-05 |1.0.0 |C. Reed, J. Maso, J. St-Louis & G. Hobona |multiple |This release of version 1.0 fixes minor non-normative issues that were in the 2022-11-10 release of version 1.0
 |===
