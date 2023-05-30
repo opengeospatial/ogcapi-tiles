@@ -6,7 +6,7 @@ This is the **current** working version of this initiative, written using many A
 
 Please see the latest compiled draft specification available in [HTML](https://opengeospatial.github.io/ogcna-auto-review/20-057.html) and [PDF](https://opengeospatial.github.io/ogcna-auto-review/20-057.pdf) which are easier to read.
 
-This specification relies on the [_Tile Matrix Set and Tile Set Metadata_ standard](https://github.com/opengeospatial/2D-Tile-Matrix-Set/) (version 2.0: [HTML](https://docs.opengeospatial.org/is/17-083r4/17-083r4.html) or [PDF](https://docs.opengeospatial.org/is/17-083r4/17-083r4.pdf)).
+This specification relies on the [_Tile Matrix Set and Tile Set Metadata_ standard](https://github.com/opengeospatial/2D-Tile-Matrix-Set/) (version 2.0: [HTML](https://docs.ogc.org/is/20-057/20-057.html) or [PDF](https://docs.ogc.org/is/20-057/20-057.pdf)).
 
 See the latest [OpenAPI definition](https://github.com/opengeospatial/ogcapi-tiles/tree/master/openapi) with [SwaggerUI](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/opengeospatial/ogcapi-tiles/master/openapi/ogcapi-tiles-1.bundled.json).
 
