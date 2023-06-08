@@ -87,6 +87,10 @@
 | OGC API - Features/Coverages/Maps/Tiles
 | https://github.com/osgeo/gdal[osgeo/gdal]
 
+| https://qgis.org/en/site/[QGIS] (https://github.com/qgis/QGIS/pull/52819[Add an OGC API Layer])
+| OGC API - Tiles
+| https://github.com/qgis/QGIS/[QGIS]
+
 | TBA
 | TBA
 | TBA
