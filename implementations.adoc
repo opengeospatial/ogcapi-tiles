@@ -24,11 +24,7 @@
 | OGC API - Tiles
 | https://github.com/jj0hns0n[Jeffrey Johnson]
 
-| https://vtp2.geo-solutions.it/geoserver/ogc/features[GeoSolutions Feature Server (http/https supported) (Vector Tiles Pilot 2, D100 deliverable) ]
-| OGC API - Features
-| https://github.com/aaime[Andrea Aime]
-
-| https://vtp2.geo-solutions.it/geoserver/ogc/tiles[GeoSolutions Tiles Server (http/https supported) (Vector Tiles Pilot 2, D102 deliverable)]
+| https://docs.geoserver.org/main/en/user/community/ogc-api/tiles/index.html[GeoSolutions Tiles Server (http/https supported) (Vector Tiles Pilot 2, D102 deliverable)]
 | OGC API - Tiles
 | https://github.com/aaime[Andrea Aime]
 
