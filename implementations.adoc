@@ -10,7 +10,7 @@
 
 | https://api.pdok.nl/lv/bag/ogc/v1_0[Dutch Kadaster implementation of OGC API - Tiles]
 | OGC API - Tiles
-| https://www.pdok.nl/datasets[PDOK]
+| mailto:pdok@kadaster.nl[PDOK]
 
 
 | https://app.swaggerhub.com/domains/UAB-CREAF/ogc-api-tiles/1.0.0[UAB CREAF implementation of OGC API - Tiles]
