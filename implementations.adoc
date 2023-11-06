@@ -8,7 +8,9 @@
 |===
 |Implementation | Type | Contact
 
-| https://api.pdok.nl/lv/bag/ogc/v1_0[Dutch Kadaster implementation of OGC API - Tiles]
+| https://api.pdok.nl/lv/bag/ogc/v1_0[OGC API - Tiles interface for Dutch Kadaster BAG dataset]
+
+https://api.pdok.nl/lv/bgt/ogc/v1_0[OGC API - Tiles interface for Dutch Kadaster BGT dataset]
 | OGC API - Tiles
 | mailto:pdok@kadaster.nl[PDOK]
 
