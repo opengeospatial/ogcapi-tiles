@@ -20,7 +20,7 @@ NOTE: The geospatial data resources (e.g., collections) replace the concept of l
 The concept of collections allows to provide multiple access mechanisms defined in complementary OGC API Standards, such as tiles and features, to the same collection of data (through different geospatial resource aspects).
 Geospatial data resources can advertise one or more lists of available tilesets (see <<rc_tileSet>> and <<rc_tileSets-list>>).
 This Standard also defines how to link to tilesets originating from two specific data resources:
-OGC API datasets (see <<rc_datasetTileSets>>) and collections (see <<rc_geoDataResourceTileSets>>). However, other OGC APIs can provide other access and linking possibilities.
+OGC API datasets (see <<rc_datasetTileSets>>) and collections (see <<rc_geoDataResourceTileSets>>). However, other OGC API Standards can provide other access and linking possibilities.
 Accessing the _geospatial data resource_ content (other than as tiles) or its descriptions is possible but out of the scope of this Standard.
 If a description of the _geospatial data resource_ is specified by another Standard, and this description has a mechanism to add links to other resources, this Standard indicates the need to add a link to the list of available tilesets.
 
@@ -38,14 +38,14 @@ Beside the general alignment with the architecture of the Web (e.g., consistency
 
 * Clear separation between core requirements and more advanced capabilities. This _OGC API - Tiles - Part 1: Core_ Standard defines the requirements that are relevant for anyone who wants to share or use Tiled Data at a fine-grained level. Additional capabilities that several communities are using today will be specified as extensions to this Standard.
 * Technologies that change more frequently are decoupled and specified in separate modules ("requirements classes" in OGC terminology). This enables, for example, the use/re-use of new encodings for spatial data or Web API definition (such as a new version of the OpenAPI description document).
-* Modularization is not just about a single "service". OGC APIs provide building blocks that can be reused in Web APIs in general. In other words, a server supporting OGC API - Tiles Requirements should not be seen as a standalone service. Rather, the web API implementation  should be viewed as a collection of Web API building blocks which together implement Tile capabilities. A corollary for this is that it should be possible to implement a Web API that concurrently conforms to conformance classes from the Features, Coverages, Maps, Tiles, and other future OGC API Standards.
+* Modularization is not just about a single "service". OGC API Standards provide building blocks that can be reused in Web APIs in general. In other words, a server supporting OGC API - Tiles Requirements should not be seen as a standalone service. Rather, the web API implementation  should be viewed as a collection of Web API building blocks which together implement Tile capabilities. A corollary for this is that it should be possible to implement a Web API that concurrently conforms to conformance classes from the Features, Coverages, Maps, Tiles, and other future OGC API Standards.
 
-The OGC APIs approach is intended  to support two types of client developers:
+The approach taken by OGC API Standards is intended  to support two types of client developers:
 
 * Those that have never heard about the OGC. Developers should be able to create a client using the Web API definition without the need to adopt a specific OGC approach (they no longer need to read how to implement a GetCapabilities response document, allowing them to focus on the geospatial resource aspects).
-* Those that want to write a "generic" client that can access OGC APIs. In other words, they are not specific to a particular Web API.
+* Those that want to write a "generic" client that can access implementations of OGC API Standards. In other words, they are not specific to a particular Web API.
 
-As a result of following a RESTful approach, implementations of an OGC API are not backwards compatible with OWS implementations per se. However, a design goal is to define OGC APIs in a way that an OGC API interface can be mapped to or used as a façade to an existing OWS implementation (where appropriate). OGC APIs are intended to be simpler and more modern, but still an evolution from the previous versions and their implementations making the transition easy such as by initially implementing façades in front of the current OWS services.
+As a result of following a RESTful approach, implementations of an OGC API are not backwards compatible with OWS implementations per se. However, a design goal is to define OGC API Standards in a way that an interface of an implementation of an OGC API Standard can be mapped to or used as a façade to an existing OWS implementation (where appropriate). OGC API Standards are intended to be simpler and more modern, but still an evolution from the previous versions and their implementations making the transition easy such as by initially implementing façades in front of the current OWS services.
 
 === Relationship to other OGC API standards
 

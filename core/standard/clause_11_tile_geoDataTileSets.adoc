@@ -18,12 +18,12 @@ include::recommendations/geodata-tilesets/REC_api-common.adoc[]
 
 This Requirements Class depends on _OGC API - Common - Part 2: Geospatial Data_, but stays flexible and does not require implementation of _OGC API - Common - Part 1_. This
 allows for other Web API architectures outside the OGC API framework to adopt this Class.
-However, a server implementing other OGC APIs is expected to implement _OGC API - Common - Part 1_.
+However, a server implementing other OGC API Standards is expected to implement _OGC API - Common - Part 1_.
 In practice, this means that the landing page and the conformance page follow _OGC API - Common_ core requirements classes when used.
 Combining this building block with https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] instead of _OGC API - Common - Part 2_ is also possible.
 
 === Geospatial data resources
-This Standard does not specify how geospatial data resources are exposed in a server that implements OGC APIs and whether they can be retrieved as geospatial data (e.g., feature items). For example, https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the `/collections/{collectionId}` path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
+This Standard does not specify how geospatial data resources are exposed in a server that implements OGC API Standards and whether they can be retrieved as geospatial data (e.g., feature items). For example, https://docs.ogc.org/is/17-069r4/17-069r4.html[OGC API - Features - Part 1: Core, version 1.0] includes the definition of collections and each collection is available in the `/collections/{collectionId}` path. OGC API - Common will provide a similar mechanism. Other paths in the Web API could also give access to geospatial data resources.
 
 NOTE: The concept of geospatial data resource path replaces the concept of "layer" found in WMTS 1.0 but is intended to result in a better integration between data visualization and data access.
 
